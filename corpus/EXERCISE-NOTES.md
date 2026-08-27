@@ -208,3 +208,36 @@ inside a heredoc, and because the commands were newline-separated rather than `&
 shell carried on and reported success. **It was caught only because the verification step
 asserted on the output** rather than trusting the build. Assert on the artifact, not on the
 step that made it.
+
+## The spotlight — showing context without competing with it (2026-08-27)
+
+Wilson, on the crop that now included the initial: *"that first letter dwarfs everything else
+and brings up other lines. this will be a continual problem so we need a way to show the first
+one but keep the eyes on the top line and not be confused. if we could blur the other lines."*
+
+He is right that it is continual, and it was never only about initials: **on a page written
+46 px apart in letters 77 px tall, every crop carries bleed from its neighbours.**
+
+Three approaches, and the first two are both wrong:
+
+| | |
+|---|---|
+| **Hard mask** (white outside the polygon) | Erases an initial that lies outside the line's polygon, and cuts neighbours off mid-stroke, which reads as damage to the page. |
+| **Leave it** | The eye has nothing to tell it which line is the subject. |
+| ✅ **Spotlight** | Everything stays visible and in place; only the target line is in focus. Neighbours blur and wash toward the parchment. |
+
+`spotlight()` takes polygons or rectangles in crop coordinates, feathers the mask so nothing
+looks cut out, and composites the sharp original over a blurred-and-faded copy. It runs on
+**both** crop paths:
+
+- `crop_line` — the target polygon, **plus the initial's strip** where one was found, so the
+  initial stays in focus with the line it belongs to.
+- `crop_baseline` — the polygon's median band, so the bleed at the top and bottom of the band
+  recedes. This is the dense-page case and the one that needed it most.
+
+⚑ **The convention is stated in the orientation** rather than left to be discovered: the soft
+material is really on the parchment, it is not a bad scan and nothing is being hidden — it is
+out of focus so the eye knows where to sit. Without saying so, the next report would rightly
+have been "the image quality got worse".
+
+⭐ Side effect: the payload got **smaller** (4.9 MB → 4.3 MB). Blurred regions compress well.

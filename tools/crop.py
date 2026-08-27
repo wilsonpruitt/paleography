@@ -14,7 +14,7 @@ Deliberate choices:
 """
 import json, argparse, math, statistics
 from pathlib import Path
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
 
 Image.MAX_IMAGE_PIXELS = None
 
@@ -143,7 +143,8 @@ def _ink_extent(win, my, lh, max_up, max_dn):
     return up, dn
 
 
-def crop_baseline(img, baseline, lh, poly=None, asc=1.25, desc=0.40, pad=4, deskew=True):
+def crop_baseline(img, baseline, lh, poly=None, asc=1.25, desc=0.40, pad=4,
+                  deskew=True, spot=True):
     """Crop a band around the baseline, sized to the ink rather than to a fixed multiple.
 
     Rotates FIRST, then bands. Doing it the other way adds the baseline's own tilt to the
@@ -196,7 +197,17 @@ def crop_baseline(img, baseline, lh, poly=None, asc=1.25, desc=0.40, pad=4, desk
     by1 = min(int(my + dn), win.height)
     if bx1 <= bx0 or by1 <= by0:
         return None
-    return win.crop((bx0, by0, bx1, by1))
+    out = win.crop((bx0, by0, bx1, by1))
+    if spot and band:
+        # The band carries bleed from its neighbours -- unavoidable on a page written 46 px
+        # apart in letters 77 px tall. Put the line itself in focus and let the bleed recede,
+        # rather than cutting it off mid-stroke.
+        base_y = int(my) - by0                      # the baseline, in the finished crop
+        top = base_y - (cy - band[0])
+        bot = base_y + (band[1] - cy)
+        out = spotlight(out, [(0, int(top), out.width, int(bot))], blur=2.2, fade=0.5,
+                        feather=7)
+    return out
 
 
 def extend_for_initial(img, poly, lh, max_reach=3.2, bg_pct=0.85):
@@ -256,6 +267,41 @@ def extend_for_initial(img, poly, lh, max_reach=3.2, bg_pct=0.85):
     return max(sx0 + last - int(0.25 * lh), 0)
 
 
+def spotlight(box, shapes, blur=2.6, fade=0.55, feather=9, bg=(255, 255, 255)):
+    """Keep `shapes` sharp; blur and fade everything else in the crop.
+
+    A hard mask (white outside the polygon) was the first approach and it is wrong twice:
+    it erases an enlarged initial that lies outside the line's polygon, and on a densely
+    written page it cuts neighbours off mid-stroke, which reads as damage.
+
+    Leaving the crop untouched is wrong too -- Wilson, on a line opening with a two-line
+    decorated Q: *"that first letter dwarfs everything else and brings up other lines…
+    we need a way to show the first one but keep the eyes on the top line"*.
+
+    So: everything stays visible and in place, but only the target line is in focus. The
+    neighbours remain as context -- which is honest about what a manuscript page is -- and
+    the eye is told where to sit. `shapes` is a list of polygons or (x0,y0,x1,y1) boxes in
+    CROP coordinates.
+    """
+    if not shapes:
+        return box
+    m = Image.new("L", box.size, 0)
+    d = ImageDraw.Draw(m)
+    for sh in shapes:
+        if not sh:
+            continue
+        if isinstance(sh, tuple) and len(sh) == 4 and all(isinstance(v, (int, float)) for v in sh):
+            d.rectangle([int(v) for v in sh], fill=255)
+        else:
+            d.polygon([(int(x), int(y)) for x, y in sh], fill=255)
+    if feather:
+        m = m.filter(ImageFilter.GaussianBlur(feather))
+    dim = box.filter(ImageFilter.GaussianBlur(blur))
+    flat = Image.new(box.mode, box.size, bg[:len(box.getbands())] if box.mode != "L" else 255)
+    dim = Image.blend(dim, flat, fade)          # wash the out-of-focus material toward the page
+    return Image.composite(box, dim, m)
+
+
 def crop_line(img, poly, pad=6, mask=True, bg=(255, 255, 255), lh=None,
               initials=True, text=None, flags=None):
     xs = [x for x, y in poly]; ys = [y for x, y in poly]
@@ -270,19 +316,19 @@ def crop_line(img, poly, pad=6, mask=True, bg=(255, 255, 255), lh=None,
         ext = extend_for_initial(img, poly, lh)
         if ext is not None and ext < x0 - 2:
             x0 = ext
-            mask = False          # the initial lies outside the polygon; masking erases it
+            # No longer disables the mask: spotlight() keeps the initial in focus alongside
+            # the line, where the old hard mask would have erased it.
             if flags is not None:
                 flags["initial"] = True
     if x1 <= x0 or y1 <= y0:
         return None
     box = img.crop((x0, y0, x1, y1))
     if mask:
-        m = Image.new("L", box.size, 0)
-        ImageDraw.Draw(m).polygon([(x - x0, y - y0) for x, y in poly], fill=255)
-        flat = Image.new(box.mode, box.size, bg[:len(box.getbands())]
-                         if box.mode != "L" else 255)
-        flat.paste(box, (0, 0), m)
-        box = flat
+        shapes = [[(x - x0, y - y0) for x, y in poly]]
+        if ext is not None and ext < min(xs) - 2:
+            # the initial: its own strip, full crop height, kept in focus with the line
+            shapes.append((0, 0, int(min(xs) - x0) + int(0.2 * (lh or 40)), box.height))
+        box = spotlight(box, shapes)
     return box
 
 
@@ -296,6 +342,8 @@ def main():
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--no-mask", action="store_true")
     ap.add_argument("--no-deskew", action="store_true")
+    ap.add_argument("--no-spotlight", action="store_true",
+                    help="do not blur/fade material outside the target line")
     ap.add_argument("--no-initials", action="store_true",
                     help="do not reach left for an enlarged opening initial")
     ap.add_argument("--mode", choices=["baseline", "polygon"], default="baseline",
@@ -326,7 +374,8 @@ def main():
             if p not in lh_cache:
                 lh_cache[p] = page_line_height([x for x in rows if x["page"] == r["page"]])
             box = crop_baseline(cache[p], r["baseline"], lh_cache[p],
-                                poly=r.get("polygon"), deskew=not a.no_deskew)
+                                poly=r.get("polygon"), deskew=not a.no_deskew,
+                                spot=not a.no_spotlight)
         else:
             if p not in lh_cache:
                 lh_cache[p] = page_line_height([x for x in rows if x["page"] == r["page"]])
