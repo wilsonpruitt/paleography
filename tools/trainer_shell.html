@@ -1,17 +1,18 @@
 <title>Scriptorium</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif:wght@400;500&display=swap">
 <style>
 :root{
   --ink:#14120F; --surface:#1E1B17; --raised:#2A2621; --line:#3A342D;
   --text:#EAE4DA; --muted:#A0958A; --dim:#7B7168;
   --accent:#5B82BE; --accent-soft:#2F415E;
   --ok:#78A279; --ok-soft:#26351F; --err:#C05F5A; --err-soft:#3B211F;
-  --plate:#100E0C;
-  --serif:"EB Garamond",Georgia,"Times New Roman",serif;
+  --plate:#100E0C; --gap:#3E4C63;
+  --serif:"EB Garamond",Georgia,serif;
+  --greek:"Noto Serif","EB Garamond",Georgia,serif;
   --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --r:3px;
 }
 :root[data-theme="light"]{
@@ -19,7 +20,7 @@
   --text:#211E19; --muted:#5F574C; --dim:#857C70;
   --accent:#2E4B7A; --accent-soft:#DDE5F1;
   --ok:#41703F; --ok-soft:#E0EBDD; --err:#9A3B37; --err-soft:#F5E0DE;
-  --plate:#EBE5DA;
+  --plate:#EBE5DA; --gap:#BACADF;
 }
 @media (prefers-color-scheme:light){
   :root:not([data-theme="dark"]){
@@ -27,19 +28,16 @@
     --text:#211E19; --muted:#5F574C; --dim:#857C70;
     --accent:#2E4B7A; --accent-soft:#DDE5F1;
     --ok:#41703F; --ok-soft:#E0EBDD; --err:#9A3B37; --err-soft:#F5E0DE;
-    --plate:#EBE5DA;
+    --plate:#EBE5DA; --gap:#BACADF;
   }
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);
   font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1000px;margin:0 auto;padding:0 24px 80px}
-
-/* ---- masthead ---- */
-header{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;
-  padding:30px 0 18px;border-bottom:1px solid var(--line);margin-bottom:26px}
-h1{font-family:var(--serif);font-weight:500;font-size:34px;margin:0;letter-spacing:.01em}
-h1 em{font-style:italic;color:var(--accent)}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px 90px}
+header{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
+  padding:28px 0 16px;border-bottom:1px solid var(--line);margin-bottom:22px}
+h1{font-family:var(--serif);font-weight:500;font-size:32px;margin:0}
 .tag{font-size:12.5px;color:var(--muted);letter-spacing:.09em;text-transform:uppercase}
 .spacer{flex:1}
 button{font-family:var(--sans);font-size:14px;cursor:pointer;border-radius:var(--r);
@@ -47,36 +45,50 @@ button{font-family:var(--sans);font-size:14px;cursor:pointer;border-radius:var(-
   padding:7px 14px;transition:border-color .15s,background .15s}
 button:hover{border-color:var(--accent)}
 button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.tabs{display:flex;gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+button[disabled]{opacity:.4;cursor:not-allowed}
+.tabs{display:flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .tabs button{border:0;border-radius:0;background:transparent;padding:8px 16px;color:var(--muted)}
 .tabs button[aria-selected="true"]{background:var(--accent-soft);color:var(--text)}
 
-/* ---- meta strip ---- */
-.meta{display:flex;gap:26px;flex-wrap:wrap;align-items:baseline;
-  font-size:13.5px;color:var(--muted);margin-bottom:8px}
-.meta b{color:var(--text);font-weight:500}
-.layerchip{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:var(--muted)}
-.note{font-family:var(--serif);font-size:17px;color:var(--muted);font-style:italic;
-  margin:0 0 22px;max-width:64ch}
+/* stage rail */
+.stages{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.stages button{flex:1 1 140px;text-align:left;padding:9px 12px;background:var(--surface);
+  border:1px solid var(--line);line-height:1.3}
+.stages button .n{display:block;font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--dim);margin-bottom:2px}
+.stages button .t{font-size:13.5px;color:var(--muted)}
+.stages button[aria-selected="true"]{background:var(--accent-soft);border-color:var(--accent)}
+.stages button[aria-selected="true"] .t{color:var(--text)}
+.stages button[aria-selected="true"] .n{color:var(--accent)}
+.stagenote{font-family:var(--serif);font-size:17.5px;font-style:italic;color:var(--muted);
+  margin:14px 0 20px;max-width:66ch}
 
-/* ---- the plate ---- */
+/* plate */
 .plate{background:var(--plate);border:1px solid var(--line);border-radius:var(--r);
-  padding:18px;display:flex;align-items:center;justify-content:center;min-height:110px}
-.plate img{max-width:100%;height:auto;display:block;border-radius:1px}
-.platebar{display:flex;justify-content:space-between;align-items:baseline;
-  font-size:12px;color:var(--dim);margin:8px 2px 0;letter-spacing:.04em}
-.progress{height:2px;background:var(--line);margin:22px 0 0;border-radius:2px;overflow:hidden}
-.progress i{display:block;height:100%;background:var(--accent);transition:width .3s}
+  padding:16px;display:flex;align-items:center;justify-content:center;min-height:100px}
+.plate img{max-width:100%;height:auto;display:block}
+.platebar{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);
+  margin:7px 2px 0;letter-spacing:.04em}
 
-/* ---- input ---- */
-.inputrow{margin-top:22px}
-label.lbl{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--dim);margin-bottom:7px}
-textarea{width:100%;font-family:var(--mono);font-size:16.5px;line-height:1.7;
+/* printed line */
+.printedwrap{margin-top:18px}
+.lbl{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:8px}
+.printed{font-family:var(--serif);font-size:27px;line-height:1.62;color:var(--text);
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:14px 16px;overflow-x:auto;word-break:break-word}
+.printed.gk{font-family:var(--greek);font-size:25px}
+.printed .blank{display:inline-block;min-width:4.5ch;border-bottom:2px solid var(--gap);
+  color:transparent;user-select:none}
+.printed .filled{color:var(--ok)}
+.printed .wrongfill{color:var(--err);text-decoration:line-through}
+
+/* input */
+.inputrow{margin-top:20px}
+textarea,input.one{width:100%;font-family:var(--mono);font-size:17px;line-height:1.7;
   background:var(--surface);color:var(--text);border:1px solid var(--line);
-  border-radius:var(--r);padding:13px 14px;resize:vertical;min-height:64px}
-textarea:focus{outline:0;border-color:var(--accent)}
+  border-radius:var(--r);padding:12px 14px;resize:vertical}
+textarea:focus,input.one:focus{outline:0;border-color:var(--accent)}
 .palette{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
 .palette button{font-family:var(--mono);font-size:15px;padding:4px 9px;min-width:32px;
   background:var(--surface);color:var(--muted)}
@@ -84,51 +96,52 @@ textarea:focus{outline:0;border-color:var(--accent)}
 .palette .sep{width:1px;background:var(--line);margin:2px 5px}
 .actions{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap;align-items:center}
 .primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:500}
-:root[data-theme="light"] .primary{color:#fff}
 .primary:hover{filter:brightness(1.1)}
-.switch{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);
-  cursor:pointer;user-select:none}
-.switch input{accent-color:var(--accent);cursor:pointer}
+.switch{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);cursor:pointer}
+.switch input{accent-color:var(--accent)}
 
-/* ---- diff ---- */
-.result{margin-top:24px;border-top:1px solid var(--line);padding-top:20px;display:none}
+/* result */
+.result{margin-top:22px;border-top:1px solid var(--line);padding-top:18px;display:none}
 .result.show{display:block}
-.score{display:flex;gap:24px;align-items:baseline;margin-bottom:16px;flex-wrap:wrap}
-.score .big{font-family:var(--serif);font-size:30px;color:var(--text);
-  font-variant-numeric:tabular-nums}
+.score{display:flex;gap:20px;align-items:baseline;margin-bottom:14px;flex-wrap:wrap}
+.score .big{font-family:var(--serif);font-size:29px;font-variant-numeric:tabular-nums}
 .score .big.good{color:var(--ok)} .score .big.bad{color:var(--err)}
 .score span{font-size:13px;color:var(--muted)}
-.difflines{display:flex;flex-direction:column;gap:14px}
-.diffrow{display:flex;gap:14px;align-items:flex-start}
+.diffrow{display:flex;gap:14px;align-items:flex-start;margin-bottom:10px}
 .diffrow .k{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);
-  min-width:58px;padding-top:4px;flex-shrink:0}
+  min-width:58px;padding-top:5px;flex-shrink:0}
 .diffrow .v{font-family:var(--mono);font-size:16.5px;line-height:1.75;
   overflow-x:auto;white-space:pre-wrap;word-break:break-word;flex:1}
 .c-ok{color:var(--text)}
 .c-bad{background:var(--err-soft);color:var(--err);border-radius:2px}
 .c-miss{background:var(--ok-soft);color:var(--ok);border-radius:2px}
-.hint{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--muted);
-  margin-top:16px;max-width:66ch}
+.hint{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--muted);
+  margin-top:14px;max-width:66ch}
 .hint b{font-style:normal;font-weight:500;color:var(--text)}
 
-/* ---- conventions panel ---- */
-details.conv{margin-top:30px;border:1px solid var(--line);border-radius:var(--r);
-  background:var(--surface)}
-details.conv summary{cursor:pointer;padding:12px 16px;font-size:13.5px;color:var(--muted);
-  list-style:none}
-details.conv summary::-webkit-details-marker{display:none}
-details.conv summary::before{content:"▸ ";color:var(--accent)}
-details.conv[open] summary::before{content:"▾ "}
-details.conv .body{padding:2px 18px 18px;font-family:var(--serif);font-size:17px;
-  color:var(--muted);max-width:68ch}
-details.conv .body b{color:var(--text);font-weight:500}
-details.conv .body code{font-family:var(--mono);font-size:14px;color:var(--accent)}
-footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+/* orientation */
+.orient{font-family:var(--serif);font-size:18px;line-height:1.68;color:var(--muted);max-width:66ch}
+.orient p{margin:0 0 15px}
+.orient b{color:var(--text);font-weight:500}
+.orient code{font-family:var(--mono);font-size:14.5px;color:var(--accent)}
+.orient h3{font-family:var(--sans);font-size:12px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--dim);margin:26px 0 10px;font-weight:600}
+.compare{display:grid;gap:0;border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;margin:8px 0 22px}
+.compare .row{padding:14px 16px;border-bottom:1px solid var(--line)}
+.compare .row:last-child{border-bottom:0}
+.compare .cap{font-family:var(--sans);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--dim);margin-bottom:9px}
+.compare .row.dark{background:var(--plate)}
+.compare img{max-width:100%;height:auto;display:block}
+.compare .big{font-family:var(--serif);font-size:27px;color:var(--text);line-height:1.5}
+.compare .big.gk{font-family:var(--greek);font-size:25px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
   font-size:12.5px;color:var(--dim);line-height:1.7}
 footer a{color:var(--muted)}
 @media (max-width:620px){
-  h1{font-size:27px} .wrap{padding:0 16px 60px}
-  .diffrow{flex-direction:column;gap:4px} .diffrow .k{padding-top:0}
+  h1{font-size:26px} .wrap{padding:0 16px 60px} .printed{font-size:22px}
+  .diffrow{flex-direction:column;gap:3px} .diffrow .k{padding-top:0}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -136,7 +149,7 @@ footer a{color:var(--muted)}
 <div class="wrap">
 <header>
   <h1>Scriptorium</h1>
-  <div class="tag">line transcription</div>
+  <div class="tag" id="hdr-tag">learning to read the hand</div>
   <div class="spacer"></div>
   <div class="tabs" role="tablist">
     <button role="tab" id="tab-latin" aria-selected="true">Latin</button>
@@ -144,58 +157,52 @@ footer a{color:var(--muted)}
   </div>
 </header>
 
-<div class="meta">
-  <div><b id="m-name">—</b></div>
-  <div id="m-witness">—</div>
-  <div><span class="layerchip" id="m-layer">—</span></div>
-</div>
-<p class="note" id="m-note"></p>
+<div class="stages" id="stages"></div>
+<p class="stagenote" id="stagenote"></p>
 
-<div class="plate"><img id="plate-img" alt="A single line cut from the manuscript page"></div>
-<div class="platebar">
-  <span id="pb-left">—</span>
-  <span id="pb-right">—</span>
-</div>
-<div class="progress"><i id="bar" style="width:0%"></i></div>
+<div id="orient" class="orient" style="display:none"></div>
 
-<div class="inputrow">
-  <label class="lbl" for="entry">Your reading</label>
-  <textarea id="entry" rows="2" spellcheck="false" autocapitalize="off"
-    autocomplete="off" placeholder="Type the line as you read it…"></textarea>
-  <div class="palette" id="palette"></div>
-  <div class="actions">
-    <button class="primary" id="check">Check</button>
-    <button id="reveal">Show the line</button>
-    <button id="next">Next line →</button>
-    <div class="spacer"></div>
-    <label class="switch"><input type="checkbox" id="forgiving" checked>
-      Ignore accents &amp; punctuation</label>
+<div id="practice">
+  <div class="plate"><img id="plate-img" alt="One line cut from the manuscript page"></div>
+  <div class="platebar"><span id="pb-left">—</span><span id="pb-right">—</span></div>
+
+  <div class="printedwrap" id="printedwrap">
+    <span class="lbl" id="printed-lbl">The same line, in print</span>
+    <div class="printed" id="printed"></div>
+  </div>
+
+  <div class="inputrow" id="inputrow">
+    <label class="lbl" for="entry" id="entry-lbl">Your reading</label>
+    <textarea id="entry" rows="2" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+    <div class="palette" id="palette"></div>
+    <div class="actions">
+      <button class="primary" id="check">Check</button>
+      <button id="reveal">Show me</button>
+      <button id="next">Next line →</button>
+      <div class="spacer"></div>
+      <label class="switch"><input type="checkbox" id="forgiving" checked>
+        Ignore accents &amp; punctuation</label>
+    </div>
+  </div>
+
+  <div class="actions" id="readrow" style="display:none">
+    <button class="primary" id="readnext">I've read it →</button>
+    <span style="font-size:13px;color:var(--muted)" id="readcount"></span>
+  </div>
+
+  <div class="result" id="result">
+    <div class="score"><div class="big" id="pct">—</div><span id="score-detail"></span></div>
+    <div class="diffrow"><div class="k">You typed</div><div class="v" id="d-you"></div></div>
+    <div class="diffrow"><div class="k">The ink</div><div class="v" id="d-truth"></div></div>
+    <p class="hint" id="hint"></p>
   </div>
 </div>
-
-<div class="result" id="result">
-  <div class="score">
-    <div class="big" id="pct">—</div>
-    <span id="score-detail"></span>
-  </div>
-  <div class="difflines">
-    <div class="diffrow"><div class="k">You read</div><div class="v" id="d-you"></div></div>
-    <div class="diffrow"><div class="k">The line</div><div class="v" id="d-truth"></div></div>
-  </div>
-  <p class="hint" id="hint"></p>
-</div>
-
-<details class="conv" id="conv">
-  <summary>Conventions of this transcription — read once before you start</summary>
-  <div class="body" id="conv-body"></div>
-</details>
 
 <footer>
-  Ground truth CC&nbsp;BY&nbsp;4.0 — Leiden Voss. Lat. O. 41 via the
-  <a href="https://github.com/malamatenia/Eutyches">Eutyches</a> dataset;
+  Ground truth CC&nbsp;BY&nbsp;4.0 — Leiden Voss. Lat. O. 41 via
+  <a href="https://github.com/malamatenia/Eutyches">Eutyches</a>;
   Heidelberg Pal. gr. 23 via <a href="https://gitlab.huma-num.fr/ecrinum/anthologia/htr_cpgr23">ecrinum/anthologia</a>.
-  Line images cut from the page facsimiles along the ground-truth baselines.
-  Progress is kept in this browser only.
+  Lines cut along the ground-truth baselines. Progress is kept in this browser only.
 </footer>
 </div>
 
@@ -205,179 +212,277 @@ footer a{color:var(--muted)}
 "use strict";
 var DATA = JSON.parse(document.getElementById("payload").textContent);
 
-var CONV = {
-  latin: "<p><b>Abbreviations are preserved as signs.</b> Type what is on the page, not what it stands for: "+
-    "<code>ꝓ</code> stays <code>ꝓ</code>, it does not become <em>pro</em>. A stroke over a vowel "+
-    "(<code>ũ ẽ ã õ ĩ</code>) marks an omitted <em>m</em> or <em>n</em> and is typed as the accented letter.</p>"+
-    "<p><b>e caudata</b> — <code>ę</code> is the medieval way of writing <em>ae</em>. It is not <code>e</code>.</p>"+
-    "<p><b>u and v are one letter</b>, and there is no <em>j</em>. Write <em>uerbum</em>.</p>"+
-    "<p>Greek capitals appear inside the Latin — this is a grammar book quoting Greek.</p>",
-  greek: "<p><b>Final sigma does not exist here.</b> Always <code>σ</code>, never <code>ς</code> — "+
-    "the scribe used only the one form, so the transcription follows him. Typing <code>ς</code> is "+
-    "silently accepted.</p>"+
-    "<p><b>All punctuation is one sign.</b> Every pause in the manuscript is transcribed as the "+
-    "interpunct <code>·</code>. There are no commas or full stops.</p>"+
-    "<p><b>Abbreviations are already expanded</b> in this dataset — <code>ϗ</code> is written out as "+
-    "<em>καί</em>. So this witness cannot teach you the abbreviation signs; it teaches letterforms "+
-    "and ligatures.</p>"+
-    "<p>Structural marks: <code>⁛</code> opens an epigram, <code>⋇</code> closes one, "+
-    "<code>∻</code> and <code>※</code> open a scholion.</p>"
+var STAGES = [
+  {id:0, n:"Start here", t:"What you are looking at",
+   note:"Read this once. Nothing to type."},
+  {id:1, n:"Stage one", t:"Read along",
+   note:"The line and its text, side by side. Look from the ink to the letters and back until you can see how each word is written. Nothing to type — this stage is only for your eye.",
+   band:[0,14]},
+  {id:2, n:"Stage two", t:"One word",
+   note:"The text is given except for one word. Find that word in the ink and type it.",
+   band:[0,24]},
+  {id:3, n:"Stage three", t:"Finish the line",
+   note:"The opening of the line is given. Read the rest off the page and type it.",
+   band:[8,36]},
+  {id:4, n:"Stage four", t:"The whole line",
+   note:"No help. Read the line and write it out.",
+   band:[16,48]}
+];
+
+var ORIENT = {
+ latin:
+  "<p>You already read Latin. What you have never done is read it in a <b>ninth-century hand</b> — "+
+  "and that is a separate skill, closer to learning to read someone's handwriting than to learning a language.</p>"+
+  "<p>This manuscript is <b>Caroline minuscule</b>, the script Charlemagne's schools standardised around the "+
+  "year 800. It is the easiest medieval hand, and you have a head start: the humanists of the fifteenth century "+
+  "mistook it for Roman writing and copied it, and their copy became roman type. <b>The letters on your screen "+
+  "right now are its descendants.</b></p>"+
+  "<h3>The same line, twice</h3>",
+ greek:
+  "<p>You already read polytonic Greek in print. The gap between that and a tenth-century Byzantine hand is "+
+  "wider than it looks, and it is worth naming before you start.</p>"+
+  "<p><b>Printed Greek gives you one shape per letter. This hand does not.</b> A scribe writing quickly fuses "+
+  "letters into <b>ligatures</b> — two or three letters run together into a single compound shape that shares "+
+  "very little with its parts. And one letter can take several forms in the same line depending on what stands "+
+  "beside it. That, not the alphabet, is the thing you are learning.</p>"+
+  "<p>Two conventions of this manuscript will look wrong to you and are not: <b>there is no final sigma</b> "+
+  "(this scribe wrote <code>σ</code> everywhere, so the transcription does too), and <b>every punctuation mark "+
+  "is a single raised dot</b> <code>·</code>. Type <code>ς</code> if you like — it is always accepted.</p>"+
+  "<h3>The same line, twice</h3>"
 };
+var ORIENT_TAIL = {
+ latin:
+  "<p>Look back and forth. The ink is doing what the printed line says, but with a scribe's habits: "+
+  "<b>a tall <code>ſ</code></b> that looks like an <em>f</em> without its crossbar, <b>no <em>j</em> and no "+
+  "<em>w</em></b>, and <b><code>u</code> and <code>v</code> as one letter</b> — so <em>uerbum</em>, never "+
+  "<em>verbum</em>.</p>"+
+  "<p>Later lines carry <b>abbreviation signs</b>: a stroke over a vowel (<code>ũ ẽ ã õ ĩ</code>) stands for a "+
+  "missing <em>m</em> or <em>n</em>; <code>ę</code> is the medieval way of writing <em>ae</em>. You type the "+
+  "sign, not what it stands for. The buttons under the typing box will enter them for you.</p>"+
+  "<p>When you are ready, go to <b>Stage one</b> and just look at a dozen lines. Do not try to type anything yet.</p>",
+ greek:
+  "<p>Look back and forth between the two until the shapes start to settle. Do not try to read the line as a "+
+  "sentence yet — find single letters you are sure of, then the ones on either side of them.</p>"+
+  "<p>When you are ready, go to <b>Stage one</b>. It shows you a dozen lines with their text and asks nothing "+
+  "of you but to look.</p>"
+};
+
 var PALETTE = {
-  latin: ["ã","ẽ","ĩ","õ","ũ","ū","ę","đ","ł","ꝑ","ꝓ","ꝗ","ꝵ","ꝰ","⁊","÷","¬","|","ſ"],
-  greek: ["ά","έ","ή","ί","ό","ύ","ώ","|","ἀ","ἁ","ἐ","ἑ","ἠ","ἡ","ὀ","ὁ","ὐ","ὑ","|","ᾶ","ῆ","ῖ","ῦ","ῶ","|","ὰ","ὲ","ὴ","ὶ","ὸ","ὺ","|","·","᾽","⁛","⋇"]
+  latin:["ã","ẽ","ĩ","õ","ũ","ū","ę","đ","ł","ꝑ","ꝓ","ꝗ","ꝵ","ꝰ","⁊","÷","¬","|","ſ"],
+  greek:["ά","έ","ή","ί","ό","ύ","ώ","|","ἀ","ἁ","ἐ","ἑ","ἠ","ἡ","ὀ","ὁ","ὐ","ὑ","|",
+         "ᾶ","ῆ","ῖ","ῦ","ῶ","|","ὰ","ὲ","ὴ","ὶ","ὸ","ὺ","|","·","᾽"]
 };
 
-var state = { track:"latin", i:0, revealed:false };
-var LS = "scriptorium.v1";
-function loadProg(){ try{ return JSON.parse(localStorage.getItem(LS)||"{}"); }catch(e){ return {}; } }
-function saveProg(p){ try{ localStorage.setItem(LS, JSON.stringify(p)); }catch(e){} }
-var prog = loadProg();
+var state={track:"latin",stage:0,i:0,revealed:false};
+var LS="scriptorium.v2";
+function load(){try{return JSON.parse(localStorage.getItem(LS)||"{}")}catch(e){return{}}}
+function save(p){try{localStorage.setItem(LS,JSON.stringify(p))}catch(e){}}
+var prog=load();
 
-function items(){ return DATA.tracks[state.track].items; }
-function cur(){ return items()[state.i % items().length]; }
+function allItems(){return DATA.tracks[state.track].items}
+function band(){
+  var st=STAGES[state.stage]; if(!st.band) return allItems();
+  var a=allItems();
+  return a.slice(Math.min(st.band[0],a.length-1), Math.min(st.band[1],a.length));
+}
+function cur(){var b=band();return b[state.i % b.length]}
+function isGk(){return state.track==="greek"}
 
 /* ---------- normalisation ---------- */
-function stripCombining(s){ return s.normalize("NFD").replace(/[̀-ͯ᷀-᷿]/g,"").normalize("NFC"); }
-function norm(s, track, forgiving){
-  s = s.normalize("NFC").trim().replace(/\s+/g," ");
-  if(track==="greek") s = s.replace(/ς/g,"σ");          // witness convention: always applied
-  if(track==="latin") s = s.replace(/ſ/g,"s");          // long s is a letterform, not a reading
-  if(!forgiving) return s;
-  s = s.toLowerCase();
-  if(track==="greek") s = stripCombining(s);
-  s = s.replace(/[·.,:;!?·‧⁛⋇∻※~·‧\-¬/]/g,"");
-  s = s.replace(/\s+/g,"");
-  return s;
+function stripCombining(s){return s.normalize("NFD").replace(/[̀-ͯ᷀-᷿]/g,"").normalize("NFC")}
+function norm(s,track,forg){
+  s=s.normalize("NFC").trim().replace(/\s+/g," ");
+  if(track==="greek") s=s.replace(/ς/g,"σ");
+  if(track==="latin") s=s.replace(/ſ/g,"s");
+  if(!forg) return s;
+  s=s.toLowerCase();
+  if(track==="greek") s=stripCombining(s);
+  s=s.replace(/[·.,:;!?‧⁛⋇∻※~\-¬\/]/g,"");
+  return s.replace(/\s+/g,"");
 }
-
-/* ---------- alignment (Levenshtein backtrace, so inserts/deletes show correctly) ---------- */
 function align(a,b){
-  var n=a.length, m=b.length;
-  if(n*m > 900000){ // guard: fall back to index compare on pathological input
-    var out=[],k=Math.max(n,m);
-    for(var q=0;q<k;q++) out.push([a[q]||null,b[q]||null]);
-    return out;
-  }
-  var d=new Int32Array((n+1)*(m+1)), W=m+1;
-  for(var i=0;i<=n;i++) d[i*W]=i;
-  for(var j=0;j<=m;j++) d[j]=j;
-  for(i=1;i<=n;i++) for(j=1;j<=m;j++){
-    var c=a[i-1]===b[j-1]?0:1;
-    d[i*W+j]=Math.min(d[(i-1)*W+j]+1, d[i*W+j-1]+1, d[(i-1)*W+j-1]+c);
-  }
-  var res=[]; i=n; j=m;
+  var n=a.length,m=b.length;
+  if(n*m>800000){var o=[],k=Math.max(n,m);for(var q=0;q<k;q++)o.push([a[q]||null,b[q]||null]);return o}
+  var d=new Int32Array((n+1)*(m+1)),W=m+1,i,j;
+  for(i=0;i<=n;i++)d[i*W]=i; for(j=0;j<=m;j++)d[j]=j;
+  for(i=1;i<=n;i++)for(j=1;j<=m;j++){var c=a[i-1]===b[j-1]?0:1;
+    d[i*W+j]=Math.min(d[(i-1)*W+j]+1,d[i*W+j-1]+1,d[(i-1)*W+j-1]+c)}
+  var r=[];i=n;j=m;
   while(i>0||j>0){
-    if(i>0&&j>0&&d[i*W+j]===d[(i-1)*W+j-1]+(a[i-1]===b[j-1]?0:1)){ res.push([a[i-1],b[j-1]]); i--; j--; }
-    else if(i>0&&d[i*W+j]===d[(i-1)*W+j]+1){ res.push([a[i-1],null]); i--; }
-    else { res.push([null,b[j-1]]); j--; }
+    if(i>0&&j>0&&d[i*W+j]===d[(i-1)*W+j-1]+(a[i-1]===b[j-1]?0:1)){r.push([a[i-1],b[j-1]]);i--;j--}
+    else if(i>0&&d[i*W+j]===d[(i-1)*W+j]+1){r.push([a[i-1],null]);i--}
+    else{r.push([null,b[j-1]]);j--}
   }
-  return res.reverse();
+  return r.reverse();
 }
-function esc(c){ return c==null?"":c.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function esc(c){return c==null?"":String(c).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+
+/* ---------- what the learner must supply, per stage ---------- */
+function target(it){
+  if(state.stage===2) return it.words[it.cloze];
+  if(state.stage===3) return it.words.slice(Math.ceil(it.words.length/2)).join(" ");
+  return it.text;
+}
+function printedHTML(it,filled){
+  if(state.stage===1) return esc(it.text);
+  if(state.stage===2){
+    return it.words.map(function(w,k){
+      if(k!==it.cloze) return esc(w);
+      if(filled==null) return '<span class="blank">'+esc(w)+'</span>';
+      return '<span class="'+(filled?"filled":"wrongfill")+'">'+esc(w)+'</span>';
+    }).join(" ");
+  }
+  if(state.stage===3){
+    var cut=Math.ceil(it.words.length/2);
+    return it.words.map(function(w,k){
+      if(k<cut) return esc(w);
+      if(filled==null) return '<span class="blank">'+esc(w)+'</span>';
+      return '<span class="'+(filled?"filled":"wrongfill")+'">'+esc(w)+'</span>';
+    }).join(" ");
+  }
+  return "";
+}
 
 /* ---------- render ---------- */
-function renderTrack(){
-  var t = DATA.tracks[state.track], m = t.meta;
-  document.getElementById("m-name").textContent = m.name;
-  document.getElementById("m-witness").textContent = m.witness;
-  document.getElementById("m-layer").textContent = m.layer;
-  document.getElementById("m-note").textContent = m.note;
-  document.getElementById("conv-body").innerHTML = CONV[state.track];
-  document.getElementById("tab-latin").setAttribute("aria-selected", state.track==="latin");
-  document.getElementById("tab-greek").setAttribute("aria-selected", state.track==="greek");
-  var pal = document.getElementById("palette"); pal.innerHTML="";
-  PALETTE[state.track].forEach(function(ch){
-    if(ch==="|"){ var s=document.createElement("div"); s.className="sep"; pal.appendChild(s); return; }
-    var b=document.createElement("button"); b.type="button"; b.textContent=ch;
-    b.title="Insert "+ch;
-    b.addEventListener("click", function(){ insert(ch); });
-    pal.appendChild(b);
+function renderStages(){
+  var host=document.getElementById("stages"); host.innerHTML="";
+  STAGES.forEach(function(s){
+    var b=document.createElement("button");
+    b.type="button"; b.setAttribute("role","tab");
+    b.setAttribute("aria-selected", String(s.id===state.stage));
+    b.innerHTML='<span class="n">'+s.n+'</span><span class="t">'+s.t+'</span>';
+    b.addEventListener("click",function(){state.stage=s.id;state.i=0;renderAll()});
+    host.appendChild(b);
   });
+}
+function renderAll(){
+  renderStages();
+  var st=STAGES[state.stage];
+  document.getElementById("stagenote").textContent=st.note;
+  document.getElementById("tab-latin").setAttribute("aria-selected",String(state.track==="latin"));
+  document.getElementById("tab-greek").setAttribute("aria-selected",String(state.track==="greek"));
+  document.getElementById("hdr-tag").textContent=DATA.tracks[state.track].meta.witness;
+
+  var pal=document.getElementById("palette"); pal.innerHTML="";
+  PALETTE[state.track].forEach(function(ch){
+    if(ch==="|"){var s=document.createElement("div");s.className="sep";pal.appendChild(s);return}
+    var b=document.createElement("button");b.type="button";b.textContent=ch;b.title="Insert "+ch;
+    b.addEventListener("click",function(){insert(ch)});pal.appendChild(b);
+  });
+
+  if(state.stage===0){ renderOrient(); return; }
+  document.getElementById("orient").style.display="none";
+  document.getElementById("practice").style.display="";
   renderItem();
 }
-function insert(ch){
-  var ta=document.getElementById("entry");
-  var s=ta.selectionStart, e=ta.selectionEnd, v=ta.value;
-  ta.value = v.slice(0,s)+ch+v.slice(e);
-  ta.selectionStart = ta.selectionEnd = s+ch.length;
-  ta.focus();
+function renderOrient(){
+  document.getElementById("practice").style.display="none";
+  var o=document.getElementById("orient"); o.style.display="";
+  var it=allItems()[0];
+  var gk=isGk()?" gk":"";
+  o.innerHTML = ORIENT[state.track]+
+    '<div class="compare">'+
+      '<div class="row dark"><div class="cap">The manuscript — '+esc(it.page)+'</div>'+
+        '<img src="data:image/jpeg;base64,'+it.img+'" alt="A line of the manuscript"></div>'+
+      '<div class="row"><div class="cap">The same words, in print</div>'+
+        '<div class="big'+gk+'">'+esc(it.text)+'</div></div>'+
+    '</div>'+ ORIENT_TAIL[state.track];
 }
 function renderItem(){
-  var it = cur();
-  var img = document.getElementById("plate-img");
-  img.src = "data:image/jpeg;base64,"+it.img;
-  img.alt = "Manuscript line "+((state.i%items().length)+1)+" from "+it.page;
-  document.getElementById("pb-left").textContent = it.page;
-  document.getElementById("pb-right").textContent =
-    (state.i%items().length+1)+" of "+items().length;
-  document.getElementById("bar").style.width =
-    (((state.i%items().length)+1)/items().length*100)+"%";
-  document.getElementById("entry").value="";
+  var it=cur(), b=band();
+  var img=document.getElementById("plate-img");
+  img.src="data:image/jpeg;base64,"+it.img;
+  img.alt="Manuscript line from "+it.page;
+  document.getElementById("pb-left").textContent=it.page;
+  document.getElementById("pb-right").textContent=((state.i%b.length)+1)+" of "+b.length;
+
+  var pw=document.getElementById("printedwrap");
+  var pr=document.getElementById("printed");
+  pr.className="printed"+(isGk()?" gk":"");
+  if(state.stage===4){ pw.style.display="none"; }
+  else { pw.style.display=""; pr.innerHTML=printedHTML(it,null); }
+  document.getElementById("printed-lbl").textContent =
+    state.stage===1 ? "The same line, in print" : "The line, with the gap to fill";
+
+  var reading = state.stage===1;
+  document.getElementById("inputrow").style.display = reading?"none":"";
+  document.getElementById("readrow").style.display = reading?"":"none";
+  if(reading){
+    var t=prog[state.track+".read"]||0;
+    document.getElementById("readcount").textContent=t+" line"+(t===1?"":"s")+" looked at";
+  }
+  document.getElementById("entry-lbl").textContent =
+    state.stage===2 ? "The missing word" :
+    state.stage===3 ? "The rest of the line" : "Your reading";
+  var e=document.getElementById("entry");
+  e.value=""; e.rows = state.stage===2?1:2;
   document.getElementById("result").classList.remove("show");
   state.revealed=false;
-  document.getElementById("reveal").textContent="Show the line";
+  document.getElementById("reveal").textContent="Show me";
+}
+function insert(ch){
+  var ta=document.getElementById("entry"),s=ta.selectionStart,en=ta.selectionEnd,v=ta.value;
+  ta.value=v.slice(0,s)+ch+v.slice(en);
+  ta.selectionStart=ta.selectionEnd=s+ch.length; ta.focus();
 }
 function check(){
   var it=cur(), forg=document.getElementById("forgiving").checked;
-  var you=norm(document.getElementById("entry").value, state.track, forg);
-  var truth=norm(it.text, state.track, forg);
-  if(!you){ document.getElementById("entry").focus(); return; }
-  var pairs=align(Array.from(you), Array.from(truth));
-  var hitCount=0, yh="", th="";
+  var raw=document.getElementById("entry").value;
+  if(!raw.trim()){document.getElementById("entry").focus();return}
+  var you=norm(raw,state.track,forg), truth=norm(target(it),state.track,forg);
+  var pairs=align(Array.from(you),Array.from(truth));
+  var hit=0,yh="",th="";
   pairs.forEach(function(p){
-    var same = p[0]!=null && p[1]!=null && p[0]===p[1];
-    if(same) hitCount++;
-    yh += p[0]==null ? "" : '<span class="'+(same?"c-ok":"c-bad")+'">'+esc(p[0])+"</span>";
-    th += p[1]==null ? "" : '<span class="'+(same?"c-ok":"c-miss")+'">'+esc(p[1])+"</span>";
+    var same=p[0]!=null&&p[1]!=null&&p[0]===p[1];
+    if(same)hit++;
+    yh+=p[0]==null?"":'<span class="'+(same?"c-ok":"c-bad")+'">'+esc(p[0])+"</span>";
+    th+=p[1]==null?"":'<span class="'+(same?"c-ok":"c-miss")+'">'+esc(p[1])+"</span>";
   });
-  // score over the ALIGNMENT length, not the truth length: otherwise an inserted
-  // character is free, and "uerbXum" for "uerbum" scores 100%.
-  var pctv = pairs.length ? Math.round(hitCount/pairs.length*100) : 0;
+  var pct=pairs.length?Math.round(hit/pairs.length*100):0;
   var el=document.getElementById("pct");
-  el.textContent = pctv+"%";
-  el.className = "big "+(pctv>=90?"good":(pctv<60?"bad":""));
-  var adrift = pairs.length - hitCount;
-  document.getElementById("score-detail").textContent =
-    hitCount+" characters right, "+adrift+" adrift"+
-    (forg?" — accents and punctuation ignored":" — strict");
-  document.getElementById("d-you").innerHTML = yh || '<span class="c-bad">—</span>';
-  document.getElementById("d-truth").innerHTML = th;
-  var wrong = pairs.filter(function(p){ return !(p[0]!=null&&p[1]!=null&&p[0]===p[1]); }).length;
-  document.getElementById("hint").innerHTML = hintFor(pctv, wrong, forg);
-  document.getElementById("result").classList.add("show");
-  var key=state.track;
+  el.textContent=pct+"%"; el.className="big "+(pct>=90?"good":(pct<60?"bad":""));
+  document.getElementById("score-detail").textContent=
+    hit+" right, "+(pairs.length-hit)+" adrift"+(forg?" — accents and punctuation ignored":" — strict");
+  document.getElementById("d-you").innerHTML=yh||'<span class="c-bad">—</span>';
+  document.getElementById("d-truth").innerHTML=th;
+  if(state.stage===2||state.stage===3)
+    document.getElementById("printed").innerHTML=printedHTML(it,pct>=90);
+  var key=state.track+".s"+state.stage;
   prog[key]=prog[key]||{done:0,chars:0,hits:0};
-  prog[key].done++; prog[key].chars+=pairs.length; prog[key].hits+=hitCount;
-  saveProg(prog);
+  prog[key].done++; prog[key].chars+=pairs.length; prog[key].hits+=hit; save(prog);
+  document.getElementById("hint").innerHTML=hintFor(pct,pairs.length-hit,forg,key);
+  document.getElementById("result").classList.add("show");
 }
-function hintFor(p, wrong, forg){
-  var t = prog[state.track]||{done:0,chars:0,hits:0};
-  var run = t.chars ? Math.round(t.hits/t.chars*100) : 0;
-  var lead;
-  if(p===100) lead = "<b>Exact.</b> ";
-  else if(p>=90) lead = "<b>Close.</b> "+wrong+" character"+(wrong===1?"":"s")+" adrift. ";
-  else if(p>=60) lead = "<b>Readable.</b> "+wrong+" characters adrift. ";
-  else lead = "<b>Not yet.</b> Read the green line, then look back at the ink before moving on. ";
-  var tail = "Across "+t.done+" line"+(t.done===1?"":"s")+" in this track you are at "+run+"% overall.";
-  if(!forg && p<100) tail += " Strict mode counts every accent and point.";
+function hintFor(p,wrong,forg,key){
+  var t=prog[key], run=t.chars?Math.round(t.hits/t.chars*100):0, lead;
+  if(p===100) lead="<b>Exact.</b> ";
+  else if(p>=90) lead="<b>Close.</b> "+wrong+" character"+(wrong===1?"":"s")+" adrift. ";
+  else if(p>=60) lead="<b>Readable.</b> "+wrong+" characters adrift. ";
+  else lead="<b>Not yet.</b> Look at the green line, then back at the ink, before you move on. ";
+  var tail="Stage "+state.stage+": "+t.done+" attempt"+(t.done===1?"":"s")+", "+run+"% overall.";
+  if(state.stage<4 && t.done>=8 && run>=88)
+    tail+=" <b>You are ready for stage "+(state.stage+1)+".</b>";
+  if(!forg&&p<100) tail+=" Strict mode counts every accent.";
   return lead+tail;
 }
 
-/* ---------- events ---------- */
-document.getElementById("tab-latin").addEventListener("click",function(){ state.track="latin"; state.i=0; renderTrack(); });
-document.getElementById("tab-greek").addEventListener("click",function(){ state.track="greek"; state.i=0; renderTrack(); });
-document.getElementById("check").addEventListener("click", check);
-document.getElementById("next").addEventListener("click", function(){ state.i++; renderItem(); document.getElementById("entry").focus(); });
-document.getElementById("reveal").addEventListener("click", function(){
+document.getElementById("tab-latin").addEventListener("click",function(){state.track="latin";state.i=0;renderAll()});
+document.getElementById("tab-greek").addEventListener("click",function(){state.track="greek";state.i=0;renderAll()});
+document.getElementById("check").addEventListener("click",check);
+document.getElementById("next").addEventListener("click",function(){state.i++;renderItem();document.getElementById("entry").focus()});
+document.getElementById("readnext").addEventListener("click",function(){
+  prog[state.track+".read"]=(prog[state.track+".read"]||0)+1; save(prog);
+  state.i++; renderItem();
+});
+document.getElementById("reveal").addEventListener("click",function(){
   var ta=document.getElementById("entry");
-  if(!state.revealed){ ta.value=cur().text; state.revealed=true; this.textContent="Clear"; }
-  else { ta.value=""; state.revealed=false; this.textContent="Show the line"; }
+  if(!state.revealed){ta.value=target(cur());state.revealed=true;this.textContent="Clear"}
+  else{ta.value="";state.revealed=false;this.textContent="Show me"}
   ta.focus();
 });
-document.getElementById("entry").addEventListener("keydown", function(e){
-  if((e.metaKey||e.ctrlKey) && e.key==="Enter"){ e.preventDefault(); check(); }
+document.getElementById("entry").addEventListener("keydown",function(e){
+  if((e.metaKey||e.ctrlKey)&&e.key==="Enter"){e.preventDefault();check()}
 });
-renderTrack();
+renderAll();
 })();
 </script>
