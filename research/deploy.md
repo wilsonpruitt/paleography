@@ -40,13 +40,19 @@ build.
   public site the right shape is separate `.jpg` files fetched lazily. Worth doing before the
   bank grows much past 330 lines.
 
-## Reading data — wiring it up (2026-08-27)
+## Reading data — ✅ LIVE 2026-08-27
 
-Everything is built and deployed; it needs a store, which needs a dashboard login.
-`/api/attempts` currently answers **503 `collection not configured`**, and the trainer keeps
-working locally regardless — a missing backend must never break the tool.
+Supabase `qbcvyvuggjxpblfqidhr` (ca-central-1, `the owner account`; recorded in
+`reference_supabase-registry.md`). Verified end to end with `tools/verify_collection.sh`:
+GET refused 405 · malformed body refused 400 · valid attempt **stored** · keep-alive 200.
+Cron `/api/keepalive` registered at `0 7 * * *`.
 
-**Three steps, about two minutes:**
+⭐ **`stored:1` is itself the proof that the junk fields were dropped.** The probe deliberately
+carried `typed` and `text`; the table has no such columns, so had the allowlist leaked them
+PostgREST would have rejected the whole insert and the endpoint would have answered
+502 *store rejected the write*. A 200 can only mean they never reached the database.
+
+### How it was wired (for the next project)
 
 1. **Create a Supabase project** (free tier). Record it in `reference_supabase-registry.md`
    with the email that owns it, as with every other project.
