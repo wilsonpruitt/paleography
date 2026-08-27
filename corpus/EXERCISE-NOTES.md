@@ -317,3 +317,52 @@ three line-heights and ended by a real word gap.
 ⚑ The extended tail is added to the **spotlight's** in-focus shapes as well. Without that, the
 newly recovered letters would come back blurred — rescued from the crop and then hidden by the
 very device meant to make the line clear.
+
+## Reading all of Stage 1: one bug class, four faces (2026-08-27)
+
+Wilson read the whole of Latin I stage 1 and then all of Greek, reporting as he went. His
+summary was the useful part: *"the only issues were the first letter crops so if we fix that,
+they all read fine."* Four separate reports, one cause.
+
+**The GT polygons under-cover the line on every side.** Measured on 65 lines of Cod. 940: the
+median line has **77 px of its own ink outside the polygon on the left**, p90 **120 px** —
+routinely a whole letter. It cost the `d` of `dus`, the `I` of `In principio`, the `r` of
+`mensuratur`, and — in the other code path — the first letter of Greek lines.
+
+| face | remedy |
+|---|---|
+| left clipped | `extend_left()` — short reach, ends at a real word gap |
+| right clipped | `extend_right()` |
+| tall letters faded at their extremes | **dilate the spotlight mask** — the long `I` of `Iohannis` reaches past the band, so the device meant to clarify was hiding it |
+| Greek clipped | the same measurement in `crop_baseline` — the baseline starts only ~3 px inside the polygon there, so the polygon was no help |
+
+⚑ Both recovered ends are added to the **spotlight's in-focus shapes**. Twice now the fix for a
+crop bug would have been undone by the blur: letters rescued from the crop and then hidden.
+
+⚑ Mask dilation is blur-then-threshold, not `MaxFilter` — a MaxFilter that wide is ~2,200
+operations per pixel.
+
+## Glosses a reader asked for, and one that never fired
+
+From the same sitting: **`¬`** (the line-break mark: the word continues below, and the break
+falls wherever the margin arrives), **`&`**, **word division**, and for Greek **`κ` written in
+two strokes** — an upright and a detached arc that commonly do not meet, which until you expect
+it reads as two unrelated marks. That one was magnified and verified on the page.
+
+⛔ **The word-division trigger never fired on Greek and nobody noticed for two builds.** Its
+regex was `[A-Za-zÀ-ſ]` — a Latin-only character class. Greek letters are not in that range, so
+the gloss silently matched nothing on the track where word division is just as hard. Now
+`[^\W\d_]`, which is Unicode-aware. ⚑ **A trigger that fires zero times looks exactly like a
+trigger for a phenomenon that is absent.**
+
+⚠ **Two Greek letterform glosses ship as `proposed`, not `verified`** — the alpha riding high on
+a rho, and omega closing into a figure-eight. Both are Wilson's observations and both are
+plausible, but **Pal. gr. 23's images are not sharp enough at letter scale for me to confirm
+them**, and a gloss that says *verified* must mean I read the source. They say so on their face.
+
+## Capping the glosses
+
+Greek letterform triggers are common by nature: omega fires on 23 of 44 lines, kappa on 21. Four
+explanations under one line is a wall of prose, not help. Glosses are now capped at **three per
+line, keeping the rarest** — the ones a reader has least chance of having met already. Latin
+averages 0.5 per line, Greek 1.8.

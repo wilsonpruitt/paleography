@@ -174,9 +174,58 @@
    "name": "word division",
    "mechanism": "layout, not abbreviation",
    "status": "verified",
-   "trigger": "\\b[A-Za-zÀ-ſ]{1,4}\\b[^A-Za-z]+\\b[A-Za-zÀ-ſ]{1,4}\\b[^A-Za-z]+\\b[A-Za-zÀ-ſ]{1,4}\\b",
+   "trigger": "(?:^|\\s)[^\\W\\d_]{1,4}\\s+[^\\W\\d_]{1,4}\\s+[^\\W\\d_]{1,4}(?:\\s|$)",
    "short": "the gaps between words are not where you expect them",
    "note": "Ancient books were written in <i>scriptio continua</i> — <b>no spaces at all</b>. Word division was introduced gradually, and in the ninth century the job is only half done. Short words cling to their neighbours, and a gap can open in the middle of a long one. On this page the ink reads <code>quarequomodolongitudinem</code> where the print gives <em>Quare quomodo longitudinem</em>. ⚑ <b>So do not trust the gaps.</b> Read a run of letters, find a word you know inside it, and let the rest fall out — the Latin divides the line, not the spacing. This is the single thing that most often defeats a reader who can already name every letter."
+  },
+  {
+   "char": "¬",
+   "display": "¬",
+   "name": "the line-break mark",
+   "mechanism": "layout, not abbreviation",
+   "status": "verified",
+   "short": "the word is not finished — it continues on the next line",
+   "note": "A scribe fits the line to the ruling, not to the words, so a word breaks wherever the margin arrives and carries on below. The transcription marks the break <code>¬</code>; in the ink it is a small stroke at the very end of the line, and sometimes nothing at all. Read on this page: the line ends <code>…arboris ge¬</code> and the next begins <code>nerę</code> — together <em>generę</em>. ⚑ <b>The break falls wherever it falls</b>, with no regard for syllables you would recognise, so never try to make sense of the fragment on its own. Several lines in this bank are cut from the middle of a sentence for the same reason."
+  },
+  {
+   "char": "KAPPA",
+   "display": "κ",
+   "name": "kappa, in two strokes",
+   "mechanism": "letterform",
+   "status": "verified",
+   "trigger": "(?:^|\\s)κ",
+   "short": "κ is made of two separate marks that often do not touch",
+   "note": "In print the arms of a <b>kappa</b> spring from its upright. This scribe writes it in <b>two pen-strokes — an upright, and a small detached arc for the arms — and the two commonly do not meet.</b> Magnified on this manuscript the gap is plain. Until you expect it, a κ reads as two unrelated marks, or as a stray stroke beside a letter you cannot name. Verified on the page (Pal. gr. 23, f. 174)."
+  },
+  {
+   "char": "LIGATURE",
+   "display": "ει",
+   "name": "ligatures",
+   "mechanism": "letterform",
+   "status": "proposed",
+   "trigger": "(στ|ου|ει)",
+   "short": "pairs of letters fused into one shape",
+   "note": "This is the difficulty the Greek track exists for. Writing at speed, the scribe runs letters together into a <b>single compound shape that may resemble neither of its parts</b> — <code>ει</code>, <code>ου</code>, <code>στ</code>, <code>σθ</code> are the commonest. ⚑ <b>Do not try to find the letters inside the shape.</b> Learn the shape whole, as its own sign, the way you learned <code>&amp;</code>. That is why this track asks you to look before it asks you to type."
+  },
+  {
+   "char": "RHOALPHA",
+   "display": "ῥα",
+   "name": "rho with alpha",
+   "mechanism": "letterform",
+   "status": "proposed",
+   "trigger": "ῥ[αά]|ρ[αά]",
+   "short": "the alpha rides high on the rho, not beside it",
+   "note": "Where <b>rho</b> is followed by <b>alpha</b>, the alpha is often written small and high, tucked against the rho's shoulder rather than set beside it on the line. The pair reads as one mark with a tail. ⚠ <b>Proposed, not yet verified</b> — this manuscript's images are not sharp enough at letter scale for me to confirm it, so treat it as a hint to test with your own eye rather than a settled fact."
+  },
+  {
+   "char": "OMEGA",
+   "display": "ω",
+   "name": "omega like a figure eight",
+   "mechanism": "letterform",
+   "status": "proposed",
+   "trigger": "[ωώῶὼ]",
+   "short": "ω can look like an 8 lying on its side",
+   "note": "The printed <b>omega</b> is a cup with two humps. In this hand the pen frequently closes both curves, giving a shape much closer to <b>a figure eight on its side</b> — and in the common ending <code>-ῶν</code> it carries a circumflex on top, which closes it further. ⚠ <b>Proposed, not yet verified</b> at letter scale on this witness."
   }
  ]
 }

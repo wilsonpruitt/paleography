@@ -79,6 +79,9 @@ def cloze_index(words):
     return bi
 
 
+GLOSS_FREQ = {}          # filled per track in pack(): how many lines each gloss fires on
+
+
 def pack(manifest_dir, n, max_w, quality, track, scorer):
     rows = [json.loads(l) for l in open(Path(manifest_dir) / "manifest.jsonl", encoding="utf-8")]
     rows = [r for r in rows if is_sentence(r["text"])]
@@ -92,6 +95,20 @@ def pack(manifest_dir, n, max_w, quality, track, scorer):
     pool = rows[: max(n, int(len(rows) * 0.55))]
     step = max(1, len(pool) // n)
     picked = pool[::step][:n]
+    # count how often each gloss would fire across the selection, so the cap keeps the rare
+    GLOSS_FREQ.clear()
+    for r in picked:
+        seen = set()
+        if r.get("initial"):
+            seen.add("INITIAL")
+        for ch in r["text"]:
+            if ch in GLOSS:
+                seen.add(ch)
+        for g in GLOSS.values():
+            if g.get("trigger") and re.search(g["trigger"], r["text"]):
+                seen.add(g["char"])
+        for k in seen:
+            GLOSS_FREQ[k] = GLOSS_FREQ.get(k, 0) + 1
     out = []
     for r in picked:
         p = Path(manifest_dir) / r["image"]
@@ -115,6 +132,12 @@ def pack(manifest_dir, n, max_w, quality, track, scorer):
                 if re.search(g["trigger"], r["text"]):
                     seen.add(g["char"]); gl.append(g)
         damaged = any(c in "()[]" for c in r["text"])
+        # Cap the glosses per line. Greek letterform triggers are common by nature -- omega
+        # fires on 23 of 44 lines, kappa on 21 -- and four explanations under one line is a
+        # wall of prose, not help. Keep the rarest, which are the ones a reader has least
+        # chance of having met already.
+        gl.sort(key=lambda g: GLOSS_FREQ.get(g["char"], 0))
+        gl = gl[:3]
         out.append(dict(id=r["image"].rsplit(".", 1)[0][-12:], track=track, damaged=damaged,
                         text=r["text"], words=words, cloze=cloze_index(words),
                         diff=r["diff"], glosses=gl, layer=r["layer"], witness=r["witness"],

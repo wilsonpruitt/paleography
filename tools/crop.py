@@ -156,6 +156,15 @@ def crop_baseline(img, baseline, lh, poly=None, asc=1.25, desc=0.40, pad=4,
     """
     xs = [x for x, y in baseline]; ys = [y for x, y in baseline]
     x0, x1 = min(xs), max(xs)
+    # The ink runs past the polygon at both ends in this corpus, and the baseline is shorter
+    # still. Measured on Pal. gr. 23 the baseline starts only ~3px inside the polygon, so the
+    # polygon is no help -- the fix is the same ink measurement used on the other crop path,
+    # or the first letter of a Greek line is sliced off exactly as it was in the Latin.
+    if poly:
+        lx = extend_left(img, poly, lh)
+        rx = extend_right(img, poly, lh)
+        x0 = min(x0, lx, min(p[0] for p in poly))
+        x1 = max(x1, rx, max(p[0] for p in poly))
     ang = 0.0
     if deskew and len(baseline) >= 2:
         dx, dy = baseline[-1][0] - baseline[0][0], baseline[-1][1] - baseline[0][1]
@@ -206,7 +215,7 @@ def crop_baseline(img, baseline, lh, poly=None, asc=1.25, desc=0.40, pad=4,
         top = base_y - (cy - band[0])
         bot = base_y + (band[1] - cy)
         out = spotlight(out, [(0, int(top), out.width, int(bot))], blur=2.2, fade=0.5,
-                        feather=7)
+                        feather=7, dilate=int(0.22 * lh))
     return out
 
 
@@ -355,7 +364,53 @@ def extend_right(img, poly, lh, max_reach=3.0, bg_pct=0.85):
     return min(int(x1) + last + int(0.2 * lh), img.width)
 
 
-def spotlight(box, shapes, blur=2.6, fade=0.55, feather=9, bg=(255, 255, 255)):
+def extend_left(img, poly, lh, max_reach=1.5, bg_pct=0.85):
+    """How far the line's ink runs BEFORE the left edge of its polygon.
+
+    The GT polygons under-cover both ends. Measured over 65 lines of Cod. 940: the median
+    line has **77 px** of ink outside its polygon on the left, the 90th percentile 120 px --
+    routinely a whole letter. It cost the `d` of `dus` and the `I` of `In principio`.
+
+    Deliberately a SHORT reach, unlike the opening-initial search: this recovers letters
+    clipped from the line's own first word, and must not wander across the margin into a
+    decorated initial (which `find_initial` handles, with its own gutter rules) or into the
+    dark binding edge.
+    """
+    xs = [p[0] for p in poly]; ys = [p[1] for p in poly]
+    x0, y0, y1 = min(xs), min(ys), max(ys)
+    sx0 = max(int(x0 - max_reach * lh), 0)
+    if sx0 >= x0 - 2:
+        return x0
+    ty0 = max(int(y0 - 0.15 * lh), 0)
+    ty1 = min(int(y1 + 0.15 * lh), img.height)
+    strip = img.crop((sx0, ty0, int(x0), ty1)).convert("L")
+    w, h = strip.size
+    if w < 4 or h < 4:
+        return x0
+    px = strip.load()
+    samples = sorted(px[x, y] for y in range(0, h, max(1, h // 30))
+                     for x in range(0, w, max(1, w // 30)))
+    if not samples:
+        return x0
+    thresh = samples[int(len(samples) * bg_pct)] - 30
+    cols = [sum(1 for y in range(0, h, 2) if px[x, y] < thresh) for x in range(w)]
+    if not cols or max(cols) < 2:
+        return x0
+    ink = max(1, int(max(cols) * 0.05))
+    last, gap = None, 0
+    for i in range(w - 1, -1, -1):
+        if cols[i] >= ink:
+            last = i; gap = 0
+        elif last is not None:
+            gap += 1
+            if gap > lh * 0.5:          # a real word gap ends the line's own text
+                break
+    if last is None:
+        return x0
+    return max(sx0 + last - int(0.18 * lh), 0)
+
+
+def spotlight(box, shapes, blur=2.6, fade=0.55, feather=9, bg=(255, 255, 255), dilate=0):
     """Keep `shapes` sharp; blur and fade everything else in the crop.
 
     A hard mask (white outside the polygon) was the first approach and it is wrong twice:
@@ -382,6 +437,14 @@ def spotlight(box, shapes, blur=2.6, fade=0.55, feather=9, bg=(255, 255, 255)):
             d.rectangle([int(v) for v in sh], fill=255)
         else:
             d.polygon([(int(x), int(y)) for x, y in sh], fill=255)
+    if dilate:
+        # Grow the mask before feathering. The polygon is a band drawn around the body of
+        # the writing, and it under-covers TALL letters: the long I of `Iohannis` reaches
+        # above and below it, so the spotlight faded the very letter that most needed to be
+        # seen. Blur-then-threshold is a cheap dilation (a MaxFilter this wide would be
+        # ~2200 operations per pixel).
+        m = m.filter(ImageFilter.GaussianBlur(dilate))
+        m = m.point(lambda v: 255 if v > 48 else 0)
     if feather:
         m = m.filter(ImageFilter.GaussianBlur(feather))
     dim = box.filter(ImageFilter.GaussianBlur(blur))
@@ -413,7 +476,10 @@ def crop_line(img, poly, pad=6, mask=True, bg=(255, 255, 255), lh=None,
         else:
             init = None
     if initials and lh:
-        # the same measurement at the other end: polygons under-cover some line ends
+        # polygons under-cover BOTH ends; measure where the ink really starts and stops
+        lx = extend_left(img, poly, lh)
+        if lx < x0:
+            x0 = max(lx, 0)
         rx = extend_right(img, poly, lh)
         if rx > x1:
             x1 = min(rx, img.width)
@@ -427,12 +493,17 @@ def crop_line(img, poly, pad=6, mask=True, bg=(255, 255, 255), lh=None,
             # keep the measured tail in focus -- it is part of the line, not bleed
             shapes.append((max(pxs) - x0 - int(0.1 * (lh or 40)), min(pys) - y0,
                            x1 - x0, max(pys) - y0))
+        if min(pxs) - x0 > 2:
+            # likewise the recovered head, or the letters rescued from the crop come back
+            # blurred by the very device meant to make the line clear
+            shapes.append((0, min(pys) - y0,
+                           min(pxs) - x0 + int(0.1 * (lh or 40)), max(pys) - y0))
         if init is not None:
             # the initial's own measured rectangle, kept in focus with the line it opens
             shapes.append((0, max(init[1] - y0, 0),
                            int(min(xs) - x0) + int(0.2 * (lh or 40)),
                            min(init[2] - y0, box.height)))
-        box = spotlight(box, shapes)
+        box = spotlight(box, shapes, dilate=int(0.30 * (lh or 40)))
     return box
 
 
