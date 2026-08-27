@@ -241,3 +241,34 @@ out of focus so the eye knows where to sit. Without saying so, the next report w
 have been "the image quality got worse".
 
 ⭐ Side effect: the payload got **smaller** (4.9 MB → 4.3 MB). Blurred regions compress well.
+
+## Giving the initial its full height (2026-08-27)
+
+Wilson, on the spotlit crop: *"with capitals we will have to show 2-4 lines to get the full
+character. so we still spotlight, but more space."* He was right — the crop was still one line
+band tall, so the Q was cut off at the waist.
+
+`find_initial()` now measures the initial's **vertical** extent as well and the crop grows to
+fit; the spotlight keeps the line *and* the whole initial in focus while the extra lines that
+come into view recede. On Cod. 940 f. 30 that is a 809 × 223 crop — the full decorated Q with
+its tail, the line it opens sharp along the top, three faded lines beneath.
+
+Three measurement traps, each found by looking at the numbers rather than the picture:
+
+**1. The page edge saturates the profile.** The strip runs from the initial out to the text, and
+on this page it reached the dark binding edge. Judged against *that* peak, the Q's own strokes
+looked weak and the hollow of its bowl looked like a gutter. Measured column densities: page
+edge 53–71, Q strokes 30–40, **Q bowl 1–12**, true gutter **0**. ⚑ **Only the gutter is actually
+empty**, so ink is now *any* column with a mark in it, not one above a fraction of the peak.
+
+**2. The vertical run must be contiguous with the line.** Taking every inked row in the strip
+measured **6.3 line-heights** — it was collecting other lines' marginalia sharing those columns.
+Now it expands up and down from the line itself and stops at a gap.
+
+**3. Bounds, because the detector will still be wrong sometimes.** Sampled across 14 pages, the
+run-based measurement gave a median of **5.07** line-heights and a minimum of **0.43** — both
+impossible for a decorated initial. An initial in this hand is ~1.5–3.5 lines deep and ~1–2.5
+wide; outside that, **reject**. Of 25 capital-initial lines sampled, **4 survive**, at 2.6–3.8
+line-heights. ⚑ A capital at the start of a line does not imply a decorated initial, and a
+rejected detection merely crops the line normally — no worse than before — whereas a six-line
+crop is actively worse.

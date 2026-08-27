@@ -210,61 +210,107 @@ def crop_baseline(img, baseline, lh, poly=None, asc=1.25, desc=0.40, pad=4,
     return out
 
 
-def extend_for_initial(img, poly, lh, max_reach=3.2, bg_pct=0.85):
-    """How far left the crop must reach to include an enlarged opening initial.
+def find_initial(img, poly, lh, max_reach=3.2, max_rise=2.6, bg_pct=0.85):
+    """Locate an enlarged opening initial to the left of a line. Returns (x0, y0, y1) or None.
 
-    A section in a medieval book opens with a large decorated capital that hangs OUTSIDE
-    the ruled text block, in the margin, and the scribe does not repeat the letter: the
-    body of the line begins with the second letter. On Cod. 940 f. 30 the line reads
-    `uaeritur quod cooperantur` beside a tall rubricated Q -- together, *Quaeritur*.
+    A section in a medieval book opens with a large decorated capital that hangs OUTSIDE the
+    ruled text block, and the scribe does not repeat the letter: the body of the line begins
+    with the SECOND letter. On Cod. 940 f. 30 the line reads `uaeritur quod cooperantur`
+    beside a tall rubricated Q -- together, *Quaeritur*.
 
-    The GT polygon covers only the ordinary script, so a crop taken from it starts at
-    `uaeritur` while the printed transcription says `Quaeritur`, which is exactly as
-    confusing as it sounds.
-
-    Returns a new left edge: scans leftwards for a band of ink lying within the line's
-    vertical extent, and stops at the first clear gutter beyond it.
+    The vertical extent is measured, not assumed: such a letter is commonly two to four lines
+    deep, and a crop sized to one line band decapitates it just as surely as the old hard mask
+    erased it.
     """
     xs = [p[0] for p in poly]; ys = [p[1] for p in poly]
     x0, y0, y1 = min(xs), min(ys), max(ys)
     reach = int(max_reach * lh)
     sx0 = max(int(x0 - reach), 0)
     if sx0 >= x0:
-        return x0
-    # an initial is TALL: look a little above and below the line band
-    ty0 = max(int(y0 - 0.5 * lh), 0)
-    ty1 = min(int(y1 + 0.5 * lh), img.height)
+        return None
+    # scan TALL: the initial may run well below the line it opens
+    ty0 = max(int(y0 - max_rise * lh), 0)
+    ty1 = min(int(y1 + max_rise * lh), img.height)
     strip = img.crop((sx0, ty0, int(x0), ty1)).convert("L")
     w, h = strip.size
     if w < 4 or h < 4:
-        return x0
+        return None
     px = strip.load()
-    samples = sorted(px[x, y] for y in range(0, h, max(1, h // 30))
-                     for x in range(0, w, max(1, w // 30)))
+    samples = sorted(px[x, y] for y in range(0, h, max(1, h // 40))
+                     for x in range(0, w, max(1, w // 40)))
     if not samples:
-        return x0
+        return None
     thresh = samples[int(len(samples) * bg_pct)] - 30
-    cols = [sum(1 for y in range(0, h, 2) if px[x, y] < thresh) for x in range(w)]
-    if not any(cols):
-        return x0
+
+    # restrict the search to rows near the line, to find the initial's HORIZONTAL start
+    band0 = max(int(y0 - 0.5 * lh) - ty0, 0)
+    band1 = min(int(y1 + 0.5 * lh) - ty0, h)
+    cols = [sum(1 for y in range(band0, band1, 2) if px[x, y] < thresh) for x in range(w)]
+    if not cols or max(cols) < 2:
+        return None
     peak = max(cols)
-    if peak < 2:
-        return x0
-    # walk left from the polygon edge; remember the last inked column, stop after a gutter
+    # Ink is ANY column with a mark in it, not one above a fraction of the peak. The page
+    # edge sits at the far left of this strip and saturates the profile: judged against it,
+    # the Q's own strokes look weak and the hollow of its bowl looks like a gutter. Measured
+    # on Cod. 940 f.30 -- edge columns 53-71, Q strokes 30-40, Q bowl 1-12, true gutter 0.
+    # Only the gutter is actually empty, so only the gutter should stop the walk.
+    ink = max(1, int(peak * 0.03))
     last, gap = None, 0
     for i in range(w - 1, -1, -1):
-        if cols[i] > peak * 0.18:
+        if cols[i] >= ink:
             last = i; gap = 0
         elif last is not None:
             gap += 1
-            # an initial is DELIBERATELY set apart from the text it opens, so the gutter
-            # tolerance here must be generous -- 0.6*lh stopped short of a Q sitting 50px
-            # clear of its line.
-            if gap > lh * 1.5:
+            if gap > lh * 0.4:
                 break
     if last is None:
-        return x0
-    return max(sx0 + last - int(0.25 * lh), 0)
+        return None
+    ix0 = max(sx0 + last - int(0.25 * lh), 0)
+
+    # now the VERTICAL extent, over the initial's own columns only
+    c0 = max(ix0 - sx0, 0); c1 = w
+    rows = [sum(1 for x in range(c0, c1, 2) if px[x, y] < thresh) for y in range(h)]
+    rpeak = max(rows) if rows else 0
+    if rpeak < 2:
+        return None
+    # Take only the run of inked rows CONTIGUOUS with the line itself. Taking every inked
+    # row in the strip measured 6.3 line-heights on Cod. 940 f.30 -- it was collecting the
+    # marginalia and initials of other lines that happen to share these columns.
+    thr = max(1, rpeak * 0.10)
+    mid = min(max((band0 + band1) // 2, 0), h - 1)
+    gap_max = int(0.45 * lh)
+    top = mid
+    gap = 0
+    for y in range(mid, -1, -1):
+        if rows[y] > thr:
+            top = y; gap = 0
+        else:
+            gap += 1
+            if gap > gap_max:
+                break
+    bot = mid
+    gap = 0
+    for y in range(mid, h):
+        if rows[y] > thr:
+            bot = y; gap = 0
+        else:
+            gap += 1
+            if gap > gap_max:
+                break
+    iy0 = ty0 + top - int(0.12 * lh)
+    iy1 = ty0 + bot + int(0.12 * lh)
+
+    # Sanity bounds. A decorated opening initial in this hand runs roughly one and a half to
+    # three and a half lines deep and about one to two and a half lines wide. Measurements
+    # outside that are not initials: too tall means the run has escaped into marginalia or
+    # the page edge, too short means a stray mark or a neighbour's descender. Reject rather
+    # than return a monster crop -- the line then crops normally, which is merely no better
+    # than before, whereas a six-line crop is actively worse.
+    hh = (iy1 - iy0) / float(lh)
+    ww = (x0 - ix0) / float(lh)
+    if not (1.2 <= hh <= 3.8 and 0.55 <= ww <= 3.0):
+        return None
+    return (ix0, max(iy0, 0), min(iy1, img.height))
 
 
 def spotlight(box, shapes, blur=2.6, fade=0.55, feather=9, bg=(255, 255, 255)):
@@ -307,27 +353,33 @@ def crop_line(img, poly, pad=6, mask=True, bg=(255, 255, 255), lh=None,
     xs = [x for x, y in poly]; ys = [y for x, y in poly]
     x0, y0 = max(min(xs) - pad, 0), max(min(ys) - pad, 0)
     x1, y1 = min(max(xs) + pad, img.width), min(max(ys) + pad, img.height)
-    ext = None
-    # Reach for an opening initial ONLY when the transcription itself starts with a
-    # capital. A tall initial hangs down beside the NEXT line too, and without this test
-    # that line grabs it -- measured: `euangelii non difficile...` came back carrying the
-    # Q that belongs to `Quaeritur` above it.
+    init = None
+    # Reach for an opening initial ONLY when the transcription itself starts with a capital.
+    # A tall initial hangs down beside the NEXT line too, and without this test that line
+    # grabs it -- measured: `euangelii non difficile...` came back carrying the Q belonging
+    # to `Quaeritur` above it.
     if initials and lh and text and text[:1].isupper():
-        ext = extend_for_initial(img, poly, lh)
-        if ext is not None and ext < x0 - 2:
-            x0 = ext
-            # No longer disables the mask: spotlight() keeps the initial in focus alongside
-            # the line, where the old hard mask would have erased it.
+        init = find_initial(img, poly, lh)
+        if init is not None and init[0] < x0 - 2:
+            x0 = init[0]
+            # Grow the box to the initial's measured height: these letters run two to four
+            # lines deep, and a one-line band cuts them off at the waist.
+            y0 = max(min(y0, init[1]), 0)
+            y1 = min(max(y1, init[2]), img.height)
             if flags is not None:
                 flags["initial"] = True
+        else:
+            init = None
     if x1 <= x0 or y1 <= y0:
         return None
     box = img.crop((x0, y0, x1, y1))
     if mask:
         shapes = [[(x - x0, y - y0) for x, y in poly]]
-        if ext is not None and ext < min(xs) - 2:
-            # the initial: its own strip, full crop height, kept in focus with the line
-            shapes.append((0, 0, int(min(xs) - x0) + int(0.2 * (lh or 40)), box.height))
+        if init is not None:
+            # the initial's own measured rectangle, kept in focus with the line it opens
+            shapes.append((0, max(init[1] - y0, 0),
+                           int(min(xs) - x0) + int(0.2 * (lh or 40)),
+                           min(init[2] - y0, box.height)))
         box = spotlight(box, shapes)
     return box
 
