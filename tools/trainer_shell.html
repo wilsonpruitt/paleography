@@ -83,6 +83,26 @@ button[disabled]{opacity:.4;cursor:not-allowed}
 .printed .filled{color:var(--ok)}
 .printed .wrongfill{color:var(--err);text-decoration:line-through}
 
+/* abbreviation glosses */
+.glosses{margin-top:14px;display:flex;flex-direction:column;gap:0;
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.gloss{padding:13px 16px;border-bottom:1px solid var(--line);background:var(--surface)}
+.gloss:last-child{border-bottom:0}
+.gloss .head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.gloss .sign{font-family:var(--serif);font-size:30px;line-height:1;color:var(--accent);
+  min-width:1.4em;text-align:center}
+.gloss .nm{font-size:13.5px;color:var(--text);font-weight:500}
+.gloss .mech{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);
+  border:1px solid var(--line);border-radius:20px;padding:2px 9px}
+.gloss .mech.unratified{color:var(--err);border-color:var(--err)}
+.gloss p{font-family:var(--serif);font-size:16.5px;line-height:1.62;color:var(--muted);
+  margin:0;max-width:64ch}
+.gloss p b{color:var(--text);font-weight:500}
+.gloss p code{font-family:var(--mono);font-size:14.5px;color:var(--text)}
+.gloss p em{font-style:italic}
+.glosshdr{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+  margin:22px 0 8px}
+
 /* input */
 .inputrow{margin-top:20px}
 textarea,input.one{width:100%;font-family:var(--mono);font-size:17px;line-height:1.7;
@@ -170,6 +190,8 @@ footer a{color:var(--muted)}
     <span class="lbl" id="printed-lbl">The same line, in print</span>
     <div class="printed" id="printed"></div>
   </div>
+
+  <div id="glosshost"></div>
 
   <div class="inputrow" id="inputrow">
     <label class="lbl" for="entry" id="entry-lbl">Your reading</label>
@@ -377,6 +399,7 @@ function renderAll(){
 }
 function renderOrient(){
   document.getElementById("practice").style.display="none";
+  document.getElementById("glosshost").innerHTML="";
   var o=document.getElementById("orient"); o.style.display="";
   var it=allItems()[0];
   var gk=isGk()?" gk":"";
@@ -404,6 +427,7 @@ function renderItem(){
   document.getElementById("printed-lbl").textContent =
     state.stage===1 ? "The same line, in print" : "The line, with the gap to fill";
 
+  renderGlosses(it);
   var reading = state.stage===1;
   document.getElementById("inputrow").style.display = reading?"none":"";
   document.getElementById("readrow").style.display = reading?"":"none";
@@ -419,6 +443,22 @@ function renderItem(){
   document.getElementById("result").classList.remove("show");
   state.revealed=false;
   document.getElementById("reveal").textContent="Show me";
+}
+function renderGlosses(it){
+  var host=document.getElementById("glosshost");
+  // Stage 4 is unaided; everywhere else, explain the signs this line actually contains.
+  if(state.stage>=4 || !it.glosses || !it.glosses.length){ host.innerHTML=""; return }
+  var h='<div class="glosshdr">Signs in this line</div><div class="glosses">';
+  it.glosses.forEach(function(g){
+    var un = g.status!=="verified";
+    h+='<div class="gloss"><div class="head">'+
+       '<span class="sign">'+esc(g.display||g.char)+'</span>'+
+       '<span class="nm">'+esc(g.short)+'</span>'+
+       '<span class="mech'+(un?" unratified":"")+'">'+
+         esc(un?"not yet ratified":g.mechanism)+'</span>'+
+       '</div><p>'+g.note+'</p></div>';
+  });
+  host.innerHTML=h+'</div>';
 }
 function insert(ch){
   var ta=document.getElementById("entry"),s=ta.selectionStart,en=ta.selectionEnd,v=ta.value;

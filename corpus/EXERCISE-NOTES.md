@@ -114,3 +114,42 @@ Design decisions that are pedagogy, not styling:
 ⚠ **Private-use (MUFI) codepoints do not render in any web font.** The current 45-line
 Latin selection happens to contain none, but any wider selection will. Either filter
 them at build time or ship a MUFI font (Junicode) as a data URI.
+
+## Abbreviation glosses in the reading stages (2026-08-27)
+
+Wilson: *"gonna need more context when we get to these abbreviations. during stage one, if
+there is a strange abbreviation, let's have a paragraph under it explaining it."*
+
+⭐ **This is where Level 2 actually lives, and it needs no word boxes either.** The earlier
+note said abbreviation training was blocked on segmentation. It is not: a sign can be
+*explained in prose beneath the line it occurs in*, which teaches it in the place a learner
+meets it. Segmentation is needed only for a standalone flashcard deck, which is a much
+later and much less useful thing.
+
+`corpus/abbreviation-glosses.json` carries one entry per sign — expansion, mechanism,
+a worked example from this very corpus, and a `status`. The bank attaches to each line
+the glosses for the signs it contains; the trainer shows them in stages 1–3 and withholds
+them at stage 4.
+
+⚠⚠ **`status` is rendered, not just stored.** 11 of the 15 glosses are `proposed` (mine,
+from standard convention) and display a red **not yet ratified** chip; only 4 are
+`verified` against a source. A learner is never shown an unratified expansion as though it
+were settled. This is the same discipline as `latin-abbreviations.json` and it must survive
+any future edit to the table.
+
+Mechanism follows Thompson 1912 ch. VII: **contraction** keeps the word's ending so the
+inflection survives, **suspension** cuts it off and destroys it — which is why `᷑` = *-ur*
+is worth flagging to a reader (it is what makes a verb passive).
+
+## Two smaller corrections from the same sitting
+
+**Round and square brackets: excluded from the bank.** `factum (co)nprobamus`,
+`(des)inentem`, `(pro)pe` — these mark editorially supplied letters, mostly at line
+openings where the page edge has taken them. **The dataset does not document the
+convention**, so rather than teach an unverified rule the lines are filtered out
+(`is_sentence`). Worth resolving later; a plate read on one instance would settle it.
+
+**Delivered image width raised 1400 → 2200 px cap** (median crop now ~1720 px, was 1400).
+The crops were never the limit — the source pages are 3305 × 4186 — but a 1400 px image
+shown at ~1070 CSS px on a 2× display was being upscaled 1.5×, which reads as softness.
+It now upscales ~1.2×. Bank is 4.4 MB, well under the 16 MB artifact ceiling.

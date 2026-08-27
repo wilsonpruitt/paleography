@@ -23,6 +23,10 @@ from PIL import Image
 
 Image.MAX_IMAGE_PIXELS = None
 
+GLOSS = {g["char"]: g for g in
+         json.loads(Path(__file__).resolve().parent.parent
+                    .joinpath("corpus/abbreviation-glosses.json").read_text(encoding="utf-8"))["signs"]}
+
 GREEK_PLAIN = set("αβγδεζηθικλμνξοπρστυφχψωςΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ ")
 STRUCT = set("~⁛⋇∻※")
 
@@ -47,6 +51,11 @@ def greek_difficulty(t):
 
 def is_sentence(t):
     if any(c in STRUCT for c in t):
+        return False
+    # Round/square brackets mark editorially supplied letters (mostly at line openings,
+    # lost at the page edge). The dataset does not document the convention, so rather
+    # than teach an unverified rule we keep those lines out of the bank entirely.
+    if any(c in "()[]" for c in t):
         return False
     if len(t.split()) < 3:
         return False
@@ -87,9 +96,13 @@ def pack(manifest_dir, n, max_w, quality, track, scorer):
             im = im.resize((max_w, max(1, int(im.height * max_w / im.width))), Image.LANCZOS)
         buf = BytesIO(); im.save(buf, "JPEG", quality=quality, optimize=True)
         words = r["text"].split()
+        seen, gl = set(), []
+        for ch in r["text"]:
+            if ch in GLOSS and ch not in seen:
+                seen.add(ch); gl.append(GLOSS[ch])
         out.append(dict(id=r["image"].rsplit(".", 1)[0][-12:], track=track,
                         text=r["text"], words=words, cloze=cloze_index(words),
-                        diff=r["diff"], layer=r["layer"], witness=r["witness"],
+                        diff=r["diff"], glosses=gl, layer=r["layer"], witness=r["witness"],
                         page=r["page"], w=im.width, h=im.height,
                         img=base64.b64encode(buf.getvalue()).decode()))
     return out
@@ -99,8 +112,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True)
     ap.add_argument("--n", type=int, default=48)
-    ap.add_argument("--max-w", type=int, default=1400)
-    ap.add_argument("--quality", type=int, default=84)
+    ap.add_argument("--max-w", type=int, default=2200)
+    ap.add_argument("--quality", type=int, default=87)
     a = ap.parse_args()
     specs = [
         ("latin", "corpus/crops/eutyches-VLO41", latin_difficulty,
