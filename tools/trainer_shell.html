@@ -156,6 +156,31 @@ textarea:focus,input.one:focus{outline:0;border-color:var(--accent)}
 .compare img{max-width:100%;height:auto;display:block}
 .compare .big{font-family:var(--serif);font-size:27px;color:var(--text);line-height:1.5}
 .compare .big.gk{font-family:var(--greek);font-size:25px}
+/* reading data */
+details.data{margin-top:30px;border:1px solid var(--line);border-radius:var(--r);
+  background:var(--surface)}
+details.data summary{cursor:pointer;padding:12px 16px;font-size:13.5px;color:var(--muted);
+  list-style:none}
+details.data summary::-webkit-details-marker{display:none}
+details.data summary::before{content:"\25B8 ";color:var(--accent)}
+details.data[open] summary::before{content:"\25BE "}
+details.data .body{padding:2px 18px 18px}
+.confgrid{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.conf{display:flex;align-items:center;gap:9px;border:1px solid var(--line);
+  border-radius:var(--r);padding:7px 11px;background:var(--raised)}
+.conf .pair{font-family:var(--mono);font-size:17px}
+.conf .pair .you{color:var(--err)} .conf .pair .arrow{color:var(--dim);padding:0 5px}
+.conf .pair .truth{color:var(--ok)}
+.conf .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.datanote{font-family:var(--serif);font-size:16.5px;font-style:italic;color:var(--muted);
+  margin:6px 0 14px;max-width:64ch}
+.datanote b{font-style:normal;font-weight:500;color:var(--text)}
+.datarow{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.datarow .stat{font-size:13px;color:var(--muted)}
+.datarow .stat b{color:var(--text);font-weight:500;font-variant-numeric:tabular-nums}
+textarea.export{margin-top:11px;font-size:11.5px;height:110px;color:var(--muted);display:none}
+textarea.export.show{display:block}
+
 footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
   font-size:12.5px;color:var(--dim);line-height:1.7}
 footer a{color:var(--muted)}
@@ -219,6 +244,22 @@ footer a{color:var(--muted)}
     <p class="hint" id="hint"></p>
   </div>
 </div>
+
+<details class="data" id="datapanel">
+  <summary>What you are getting wrong — your reading data</summary>
+  <div class="body">
+    <p class="datanote" id="data-note"></p>
+    <div class="confgrid" id="confgrid"></div>
+    <div class="datarow">
+      <span class="stat" id="data-stats"></span>
+      <div class="spacer"></div>
+      <button id="savedata" style="display:none">Save the file</button>
+      <button id="copydata">Copy all of it</button>
+      <button id="cleardata">Erase</button>
+    </div>
+    <textarea class="export" id="exportbox" readonly spellcheck="false"></textarea>
+  </div>
+</details>
 
 <footer>
   Ground truth CC&nbsp;BY&nbsp;4.0 — Leiden Voss. Lat. O. 41 via
@@ -498,9 +539,63 @@ function check(){
     document.getElementById("printed").innerHTML=printedHTML(it,pct>=90);
   var key=state.track+".s"+state.stage;
   prog[key]=prog[key]||{done:0,chars:0,hits:0};
-  prog[key].done++; prog[key].chars+=pairs.length; prog[key].hits+=hit; save(prog);
+  prog[key].done++; prog[key].chars+=pairs.length; prog[key].hits+=hit;
+  recordAttempt(it, pairs, hit, forg);
+  save(prog);
   document.getElementById("hint").innerHTML=hintFor(pct,pairs.length-hit,forg,key);
   document.getElementById("result").classList.add("show");
+}
+/* ---------- the confusion matrix ----------
+   This is the one table that makes the learner side and the model side the same project:
+   which letter you read for which. The alignment needed to build it is already computed
+   for the diff, so the only thing that was ever missing was writing it down.
+   A revealed line is never recorded -- the answer was on the screen.                    */
+function recordAttempt(it, pairs, hit, forg){
+  if(state.revealed) return;
+  prog.conf = prog.conf || {};
+  prog.attempts = prog.attempts || [];
+  var compact=[];
+  pairs.forEach(function(p){
+    if(p[0]!=null && p[1]!=null && p[0]===p[1]) return;
+    var k=(p[1]==null?"\u2205":p[1])+">"+(p[0]==null?"\u2205":p[0]);  // truth > what you typed
+    prog.conf[k]=(prog.conf[k]||0)+1;
+    compact.push(k);
+  });
+  prog.attempts.push({t:state.track, s:state.stage, id:it.id, page:it.page,
+                      n:pairs.length, hit:hit, forgiving:forg, miss:compact});
+  // keep the store small enough that localStorage never rejects a write
+  if(prog.attempts.length>400) prog.attempts=prog.attempts.slice(-400);
+  renderData();
+}
+function renderData(){
+  var conf=prog.conf||{}, host=document.getElementById("confgrid");
+  var rows=Object.keys(conf).map(function(k){return [k,conf[k]]})
+             .sort(function(a,b){return b[1]-a[1]}).slice(0,14);
+  if(!rows.length){
+    host.innerHTML="";
+    document.getElementById("data-note").innerHTML=
+      "Nothing recorded yet. Once you have checked a few lines this will show the letters "+
+      "you most often mistake for one another \u2014 which is both the fastest guide to what "+
+      "to practise, and the table a transcription model would need to learn the same hand.";
+    document.getElementById("data-stats").textContent="";
+    return;
+  }
+  host.innerHTML=rows.map(function(r){
+    var p=r[0].split(">");
+    return '<div class="conf"><span class="pair"><span class="truth">'+esc(p[0])+
+      '</span><span class="arrow">\u2192</span><span class="you">'+esc(p[1])+
+      '</span></span><span class="n">'+r[1]+'</span></div>';
+  }).join("");
+  var top=rows[0][0].split(">");
+  document.getElementById("data-note").innerHTML=
+    "Read each as <b>what the page had \u2192 what you typed</b>. \u2205 means you left it out, or "+
+    "put something in that was not there. Your commonest slip so far is reading <b>"+
+    esc(top[0])+"</b> as <b>"+esc(top[1])+"</b>.";
+  var a=prog.attempts||[];
+  var chars=a.reduce(function(x,y){return x+y.n},0), hits=a.reduce(function(x,y){return x+y.hit},0);
+  document.getElementById("data-stats").innerHTML=
+    "<b>"+a.length+"</b> lines checked \u00b7 <b>"+chars+"</b> characters \u00b7 <b>"+
+    (chars?Math.round(hits/chars*100):0)+"%</b> right overall";
 }
 function hintFor(p,wrong,forg,key){
   var t=prog[key], run=t.chars?Math.round(t.hits/t.chars*100):0, lead;
@@ -532,6 +627,42 @@ document.getElementById("reveal").addEventListener("click",function(){
 document.getElementById("entry").addEventListener("keydown",function(e){
   if((e.metaKey||e.ctrlKey)&&e.key==="Enter"){e.preventDefault();check()}
 });
+/* Saving the data out. The page keeps everything in this browser, so the only way the
+   confusion matrix ever reaches the corpus is if the reader hands it over. Prefer a real
+   file when the viewer can save one; fall back to the clipboard, then to select-and-copy. */
+var DL=null;
+if(window.claude && claude.use){ claude.use("downloads").then(function(d){
+  DL=d; if(d) document.getElementById("savedata").style.display="";
+}, function(){}); }
+
+function exportPayload(){
+  return JSON.stringify({exported:new Date().toISOString(), version:"scriptorium.v2",
+                         conf:prog.conf||{}, attempts:prog.attempts||[]}, null, 1);
+}
+document.getElementById("savedata").addEventListener("click",function(){
+  if(!DL) return;
+  var btn=this; btn.disabled=true;
+  DL.save({filename:"scriptorium-reading-data.json", data:exportPayload()})
+    .then(function(){ btn.textContent="Saved"; },
+          function(e){ btn.textContent = (e&&e.code==="declined") ? "Save the file" : "Could not save"; })
+    .then(function(){ setTimeout(function(){btn.textContent="Save the file";btn.disabled=false},2200) });
+});
+document.getElementById("copydata").addEventListener("click",function(){
+  var box=document.getElementById("exportbox");
+  var payload=exportPayload();
+  box.value=payload; box.classList.add("show"); box.select();
+  var btn=this;
+  function done(ok){ btn.textContent = ok?"Copied":"Select it and copy";
+                     setTimeout(function(){btn.textContent="Copy all of it"},2200) }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(payload).then(function(){done(true)},function(){done(false)});
+  } else { done(false) }
+});
+document.getElementById("cleardata").addEventListener("click",function(){
+  prog.conf={}; prog.attempts=[]; save(prog); renderData();
+  document.getElementById("exportbox").classList.remove("show");
+});
+renderData();
 renderAll();
 })();
 </script>
