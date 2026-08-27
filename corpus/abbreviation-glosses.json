@@ -1,14 +1,15 @@
 {
- "_note": "Plain-English glosses for the abbreviation signs that actually occur in the exercise bank. `status` is load-bearing: `verified` = the expansion comes from a source (the chocomufin table shipped with the Eutyches dataset, or Thompson); `proposed` = standard palaeographic convention, mine, AWAITING WILSON'S RATIFICATION. Never silently promote one to the other. `mechanism` follows Thompson 1912 ch. VII: a CONTRACTION keeps the word's ending so the inflection survives; a SUSPENSION cuts the end off and destroys it.",
+ "_note": "Plain-English glosses for the abbreviation signs that actually occur in the exercise bank. `status` is load-bearing: `verified` = the expansion comes from a source AND the source page was read as an image (the chocomufin table shipped with the Eutyches dataset; Thompson 1912; Cappelli 1929 -- see research/cappelli-index.md for the leaf of every sign); `proposed` = standard palaeographic convention, mine, AWAITING WILSON'S RATIFICATION. Never silently promote one to the other. `mechanism` follows Thompson 1912 ch. VII: a CONTRACTION keeps the word's ending so the inflection survives; a SUSPENSION cuts the end off and destroys it.",
  "signs": [
   {
    "char": "̃",
    "display": "◌̃",
    "name": "the abbreviation stroke",
    "mechanism": "suspension or contraction",
-   "status": "proposed",
+   "status": "verified",
    "short": "a stroke over a letter: something has been left out",
-   "note": "The commonest mark in Latin manuscripts, and the least specific — it says only that letters are missing here. Over a vowel it is almost always an omitted <b>m</b> or <b>n</b>. Over a <b>c</b> it very often stands for <b>con</b>: in this book <code>c̃sidero</code> is <em>considero</em>, <code>c̃sonans</code> is <em>consonans</em>. At a word's end it can be <b>-er</b>: <code>frequent̃</code> is <em>frequenter</em>. There is no rule that settles it — your Latin does."
+   "note": "The commonest mark in Latin manuscripts, and the least specific — it says only that letters are missing. Over a vowel it is an omitted <b>m</b> or <b>n</b> (Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV: <code>cōdo</code>=<em>conditio</em>, <code>ī</code>=<em>in</em>). Over a <b>c</b> it is <b>cum, con, cen</b> (p. XXX) — in this book <code>c̃sidero</code> is <em>considero</em>. At a word's end it can be <b>-er</b>: <code>frequent̃</code> is <em>frequenter</em>. Cappelli devotes a whole section to signs like this — <i>segni abbreviativi con significato relativo</i>, p. XXIX — signs whose value <b>is not fixed but changes with the letter they are attached to</b>. That is why an abbreviation table can never be a simple list of one sign, one meaning.",
+   "source": "Cappelli, <i>Lexicon Abbreviaturarum</i> (1929)"
   },
   {
    "char": "ũ",
@@ -51,18 +52,20 @@
    "display": "ꝑ",
    "name": "p with a stroke through the descender",
    "mechanism": "contraction",
-   "status": "proposed",
-   "short": "ꝑ = per",
-   "note": "The stroke crosses the descender of the <b>p</b>. Usually <b>per</b>, occasionally <em>par</em> or <em>por</em> — again the Latin decides. Its near neighbour <code>ꝓ</code>, with a loop rather than a bar, is <em>pro</em>; the two are worth learning as a pair so you never confuse them."
+   "status": "verified",
+   "short": "ꝑ = per (also par, por)",
+   "note": "The stroke crosses the descender of the <b>p</b>. Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXX, gives it as <b>per, par… por…</b> — read confirmed on the plate. Its near neighbour <code>ꝓ</code>, with a loop rather than a bar, is <em>pro</em> (Cappelli p. XXXVIII); learn the two as a pair so you never confuse them.",
+   "source": "Cappelli, <i>Lexicon Abbreviaturarum</i> (1929)"
   },
   {
    "char": "ꝗ",
    "display": "ꝗ",
    "name": "q with a stroke through the descender",
    "mechanism": "contraction",
-   "status": "proposed",
-   "short": "ꝗ = qui, sometimes quod",
-   "note": "The <b>q</b> family is large and worth care: the bar through the tail gives <em>qui</em>; a stroke above gives <em>quod</em>; a superscript vowel gives that vowel after the q (see below)."
+   "status": "verified",
+   "short": "ꝗ = qui — but see the date",
+   "note": "Cappelli p. XXX gives <code>q̶</code> = <b>qui</b>. ⚠ <b>His footnote matters for us:</b> <i>“Nel sec. VIII lo stesso segno vale <b>que</b>”</i> — in the eighth century the same sign means <em>que</em>, and in Anglo-Saxon writing <em>quam</em> or <em>quia</em>. <b>Our manuscripts are ninth-century, sitting right on that boundary</b>, so read the sentence before you trust the sign.",
+   "source": "Cappelli, <i>Lexicon Abbreviaturarum</i> (1929)"
   },
   {
    "char": "ͣ",
@@ -114,9 +117,10 @@
    "display": "ł",
    "name": "l with a stroke",
    "mechanism": "contraction",
-   "status": "proposed",
-   "short": "ł = vel",
-   "note": "‘or’ — extremely common in a grammar book, which spends its time saying that a form may be this <em>or</em> that."
+   "status": "verified",
+   "short": "ł = vel (and, inside a word, ul or el)",
+   "note": "Cappelli p. XXX: <code>ł</code> = <b>vel, ul…, …el</b>. So it is not always the word ‘or’: crossing the ascender of an <b>l</b> mid-word it can simply supply <em>ul</em> or <em>el</em>. In a grammar book, which spends its life saying a form may be this <em>or</em> that, <em>vel</em> is still much the likeliest.",
+   "source": "Cappelli, <i>Lexicon Abbreviaturarum</i> (1929)"
   },
   {
    "char": "đ",

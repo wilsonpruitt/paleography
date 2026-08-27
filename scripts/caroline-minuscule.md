@@ -86,14 +86,27 @@ nasal. Context decides.
 
 ### (ii) Special letterforms with a stroke through the descender
 
-| sign | count | reads as |
-|---|---|---|
-| `ꝑ` | 567 | **per** (also *par*, *por*) |
-| `ꝓ` | 468 | **pro** |
-| `đ` | 646 | *d*- word, usually **quod** as `qđ` |
-| `ł` | 1,072 | **vel** ("or") |
-| `ꝗ` | 232 | **qui / quod** |
-| `ꝵ` | 63 | **-rum** (genitive plural) |
+| sign | count | reads as | attested |
+|---|---|---|---|
+| `ꝑ` | 567 | **per**, also *par*, *por* | Cappelli p. XXX ✅ |
+| `ꝓ` | 468 | **pro** | Cappelli p. XXXVIII ✅ |
+| `đ` | 646 | a *d*- word, usually **quod** as `qđ` | Cappelli p. 307 ✅ |
+| `ł` | 1,072 | **vel** — *but also* **ul** or **el** inside a word | Cappelli p. XXX ✅ |
+| `ꝗ` | 232 | **qui** — ⚠ *but see below* | Cappelli p. XXX ✅ |
+| `ꝵ` | 63 | **-rum** (genitive plural) | proposed |
+
+⚠⚠ **Two corrections that only came out of reading Cappelli, and both were mine.**
+
+**`ł` is not simply *vel*.** Cappelli gives it as *vel, ul…, …el* — crossing the ascender of an
+`l` in the middle of a word it can just supply those letters. In a grammar book, forever saying
+a form may be this *or* that, *vel* remains much the likeliest; but "ł = vel" as a flat rule is
+wrong.
+
+**`ꝗ` depends on the century, and ours is the awkward one.** Cappelli's footnote: *"Nel sec.
+VIII lo stesso segno vale **que**"* — in the eighth century this same sign means *que*, and in
+Anglo-Saxon hands *quam* or *quia*. **Our manuscripts are ninth-century, sitting directly on
+that boundary.** Read the sentence before trusting the sign. This is the concrete case of
+Thompson's warning that a sign's meaning shifts with the period.
 
 ### (iii) Superscript letters
 
@@ -112,16 +125,20 @@ combining `a` `e` `i` `o` `u` `r` `t` above the line, 700+ occurrences together.
 | `` (U+F1AC) | 424 | **-que** or **-bus** | ⚠ **context-dependent**: after `q` → *que* (`cuiusq` = cuiusque); after `b` → *bus* (`dieb` = diebus) |
 | `ħ` (U+E8A3) | — | **autem** | ✅ verified from `table.csv` |
 
-⭐ **That last row is the lesson of this whole track.** Expansion is not a character
-map. The same sign means different things after different letters, and only reading
+⭐ **That last row is the lesson of this whole track, and Cappelli gives it a name.** His
+section IV (p. XXIX) is headed *segni abbreviativi con significato relativo* — **abbreviative
+signs with relative meaning**, whose value is not fixed but changes with the letter they are
+attached to. Expansion is not a character map. The same sign means different things after different letters, and only reading
 Latin tells you which. **This is exactly the fusion of vision and language prior that
 paleography trains** — and the reason a learner who already knows Latin can be taught
 this quickly, while a model needs the language model bolted on.
 
 ### ⚠ What is NOT yet settled
 
-Of the 64 characters occurring ≥20 times in our Latin corpus, only **4** have an
-expansion verified from a source character table. **23 more carry expansions I proposed
+Of the 64 characters occurring ≥20 times in our Latin corpus, **9 of the 16 taught here**
+now have an expansion verified against a source page read as an image — the dataset's own
+character table, Thompson 1912, and **Cappelli's *Lexicon Abbreviaturarum* (1929), whose page
+for every sign is indexed in `research/cappelli-index.md`.** **23 more carry expansions I proposed
 from standard convention — they need Wilson's ratification before they teach anyone**
 (`corpus/latin-abbreviations.json`, field `expansion_proposed`). 37 have no expansion
 recorded at all.
