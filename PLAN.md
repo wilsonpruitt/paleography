@@ -171,10 +171,16 @@ Not to be built now. What is decided now so the corpus is ready:
 ## 6. Phases
 
 - **Phase 0 (this doc).** First principles, schema, script taxonomy skeleton. *Fable.*
-- **Phase 1 — corpus seed. ✅ DONE 2026-08-26** (see `README.md`, `corpus/INGEST-NOTES.md`).
-  24,017 lines / 7 witnesses ingested and layer-declared; normalizer handles ALTO v4 +
-  PAGE XML + TEI-facsimile; abbreviation inventory built; both primers written.
-  ⬜ Owed to Wilson: ratify 23 proposed Latin expansions; rule on the Greek Level-2 gap.
+- **Phase 1 — corpus seed. ◐ SUBSTANTIALLY DONE, three gaps** (audited 2026-08-27; the
+  earlier "✅ DONE" here was an overclaim and is corrected).
+  ✅ 24,017 lines / 7 witnesses ingested and layer-declared; normalizer reads ALTO v4 +
+  PAGE XML + TEI-facsimile; abbreviation inventory + glosses; both primers written.
+  ⬜ **No PAGE XML *export*.** Import works; export is the half that guarantees
+  zero-migration into Phase 4 tooling, and it does not exist.
+  ⬜ **No IIIF fetch of any witness.** Every image so far came bundled inside a GT repo.
+  This is why **wien940 — 7,889 lines, our largest Latin set — yields zero exercises**.
+  ⬜ **Primers lack the promised 3 dated exemplars with IIIF references** per script.
+  ⬜ Owed to Wilson: ratify the proposed Latin expansions; rule on the Greek Level-2 gap.
   ~~Phase 1 (original scope)~~: Script taxonomy file (`scripts/*.md`, one per family:
   letterform table, abbreviation inventory, 3 dated exemplars with IIIF refs). Ingest
   2–3 HTR-United Latin + Greek datasets into the schema; IIIF fetch of 3–5
@@ -183,6 +189,18 @@ Not to be built now. What is decided now so the corpus is ready:
   cards (SRS) → expand → line with diff. Caroline + Greek minuscule. No accounts
   beyond magic-link; progress + Attempts stored. *Opus for pilot screens, Sonnet for
   the rest once the pattern exists.*
+  - **◐ Phase 2a — static prototype, DONE and in use.** `build/scriptorium.html`, a
+    self-contained page: five stages (orientation → read along → one word → finish the
+    line → whole line), difficulty graded per track, abbreviation glosses, character
+    palette, Levenshtein-aligned diff. Deliberately ahead of the real Phase 2 because it
+    tests the *pedagogy* for a fraction of the cost — and it has already earned that:
+    every one of Wilson's four corrections landed on it, not on a database.
+  - ⛔ **What the prototype does NOT do, and it is the load-bearing one: it does not
+    record Attempts.** `localStorage` keeps only aggregate counts. The trainer already
+    computes the exact character-alignment pairs the **confusion matrix** needs — the
+    single shared table that makes the learner side and the model side one project
+    (§5) — and then throws them away. **Capturing Attempts is the reason Phase 2 needs a
+    database, and it should be the first thing built, not the last.**
 - **Phase 3 — contribution mode.** Double-keying, expert queue, CC BY export,
   public GT release page. *Sonnet/Opus.*
 - **Phase 4 — models (funded).** Kraken fine-tunes per script, eval harness, model
