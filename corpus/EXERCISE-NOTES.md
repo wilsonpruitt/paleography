@@ -167,3 +167,44 @@ test; widen before concluding.
 The crops were never the limit — the source pages are 3305 × 4186 — but a 1400 px image
 shown at ~1070 CSS px on a 2× display was being upscaled 1.5×, which reads as softness.
 It now upscales ~1.2×. Bank is 4.4 MB, well under the 16 MB artifact ceiling.
+
+## The enlarged opening initial (2026-08-27)
+
+Wilson, on the first line of the Latin I track: *"i am confused on the very first character.
+is the qu merged here or cut off?"*
+
+**Neither — and it is a real feature of the page, not a defect.** A new section opens with a
+**large decorated capital set out in the margin**, clear of the ruled text block and two lines
+deep. **The scribe does not write the letter twice.** So the ordinary script begins with the
+second letter: the line reads *uaeritur quod cooperantur*, the tall rubricated **Q** beside it
+supplies the first, and together they are *Quaeritur*.
+
+The crop was cutting the initial off, because the GT polygon covers only the ordinary script.
+`extend_for_initial()` now scans leftward for a band of ink within the line's vertical extent
+and reaches out to include it. **72 of 400 Cod. 940 crops carry one.**
+
+Two calibrations, both bought by a failure:
+
+- **The gutter tolerance had to go up to 1.5 × line height.** At 0.6 the scan stopped short of
+  a Q sitting 50 px clear of its own line — *an initial is deliberately set apart from the text
+  it opens*, so the usual inter-word logic is exactly wrong here.
+- **The reach is gated on the transcription starting with a capital.** Without that test the
+  line *below* grabs the initial, because a two-line-deep letter hangs beside it too —
+  measured: `euangelii non difficile…` came back carrying the Q belonging to `Quaeritur`.
+
+The trainer now **explains it** rather than leaving it to be puzzled out: a `verified` gloss
+fires on any line whose crop reached for an initial.
+
+## Editorial marks typed as literal text
+
+Cod. 940 has **59 lines carrying `<del>` / `<add>`** — Transkribus editorial marks the
+transcribers typed as plain angle brackets, which were then escaped into the TEI as text:
+`di<del>f</del>ficile`, `ca<add>no</add>num`. They are notes *about* the text rather than the
+text, and no learner can type them. Filtered out in `is_sentence`.
+
+⚠ **A process note worth more than the fix.** My first attempt at this filter silently did
+nothing: the anchor string it patched had been removed by an earlier edit, the `assert` fired
+inside a heredoc, and because the commands were newline-separated rather than `&&`-chained the
+shell carried on and reported success. **It was caught only because the verification step
+asserted on the output** rather than trusting the build. Assert on the artifact, not on the
+step that made it.

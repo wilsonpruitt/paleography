@@ -148,6 +148,15 @@
    "status": "verified",
    "short": "( ) = letters supplied because the ink cannot be read",
    "note": "<b>These letters are not on the page.</b> Where the ink is lost the editors restored what the word must have been and put it in brackets. Verified by reading the manuscript itself at four places: purple mould stains sitting over the words; ink simply worn away; a gloss too faint to make out; and, in one case, a tear that has taken the parchment clean away. <b>Do not hunt for them in the ink — there is nothing there.</b> Damage of this kind is ordinary; a thousand-year-old book has been rained on, handled, and eaten by mould, and part of reading manuscripts is knowing what your edition is quietly doing for you."
+  },
+  {
+   "char": "INITIAL",
+   "display": "Q",
+   "name": "the enlarged opening initial",
+   "mechanism": "layout, not abbreviation",
+   "status": "verified",
+   "short": "a big letter out in the margin — it is the word's first letter",
+   "note": "A new section opens with a <b>large decorated capital set out in the margin</b>, clear of the ruled text block and often two lines deep. <b>The scribe does not write the letter twice.</b> So the ordinary script begins with the SECOND letter: the line here starts <em>uaeritur</em>, the tall <b>Q</b> beside it supplies the first, and together they are <em>Quaeritur</em>. Verified on the page (Cod. 940 f. 30). Once you know to look for it this is a help rather than a trap — it tells you a new argument is beginning."
   }
  ]
 }

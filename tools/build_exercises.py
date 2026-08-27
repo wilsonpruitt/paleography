@@ -58,6 +58,11 @@ def is_sentence(t):
     # learner to type -- you cannot type letters that are not on the page.
     if len(t.split()) < 3:
         return False
+    # Transkribus editorial marks typed as literal text and then escaped into the TEI:
+    # `di<del>f</del>ficile`, `<add>no</add>`. 59 lines in Cod. 940. They are notes ABOUT
+    # the text rather than the text, and a learner cannot type them.
+    if "<" in t or ">" in t:
+        return False
     return sum(1 for c in t if c.isalpha()) / max(len(t), 1) > 0.72
 
 
@@ -96,6 +101,8 @@ def pack(manifest_dir, n, max_w, quality, track, scorer):
         buf = BytesIO(); im.save(buf, "JPEG", quality=quality, optimize=True)
         words = r["text"].split()
         seen, gl = set(), []
+        if r.get("initial") and "INITIAL" in GLOSS:
+            gl.append(GLOSS["INITIAL"])
         for ch in r["text"]:
             if ch in GLOSS and ch not in seen:
                 seen.add(ch); gl.append(GLOSS[ch])

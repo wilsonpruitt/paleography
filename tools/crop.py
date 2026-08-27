@@ -199,10 +199,80 @@ def crop_baseline(img, baseline, lh, poly=None, asc=1.25, desc=0.40, pad=4, desk
     return win.crop((bx0, by0, bx1, by1))
 
 
-def crop_line(img, poly, pad=6, mask=True, bg=(255, 255, 255)):
+def extend_for_initial(img, poly, lh, max_reach=3.2, bg_pct=0.85):
+    """How far left the crop must reach to include an enlarged opening initial.
+
+    A section in a medieval book opens with a large decorated capital that hangs OUTSIDE
+    the ruled text block, in the margin, and the scribe does not repeat the letter: the
+    body of the line begins with the second letter. On Cod. 940 f. 30 the line reads
+    `uaeritur quod cooperantur` beside a tall rubricated Q -- together, *Quaeritur*.
+
+    The GT polygon covers only the ordinary script, so a crop taken from it starts at
+    `uaeritur` while the printed transcription says `Quaeritur`, which is exactly as
+    confusing as it sounds.
+
+    Returns a new left edge: scans leftwards for a band of ink lying within the line's
+    vertical extent, and stops at the first clear gutter beyond it.
+    """
+    xs = [p[0] for p in poly]; ys = [p[1] for p in poly]
+    x0, y0, y1 = min(xs), min(ys), max(ys)
+    reach = int(max_reach * lh)
+    sx0 = max(int(x0 - reach), 0)
+    if sx0 >= x0:
+        return x0
+    # an initial is TALL: look a little above and below the line band
+    ty0 = max(int(y0 - 0.5 * lh), 0)
+    ty1 = min(int(y1 + 0.5 * lh), img.height)
+    strip = img.crop((sx0, ty0, int(x0), ty1)).convert("L")
+    w, h = strip.size
+    if w < 4 or h < 4:
+        return x0
+    px = strip.load()
+    samples = sorted(px[x, y] for y in range(0, h, max(1, h // 30))
+                     for x in range(0, w, max(1, w // 30)))
+    if not samples:
+        return x0
+    thresh = samples[int(len(samples) * bg_pct)] - 30
+    cols = [sum(1 for y in range(0, h, 2) if px[x, y] < thresh) for x in range(w)]
+    if not any(cols):
+        return x0
+    peak = max(cols)
+    if peak < 2:
+        return x0
+    # walk left from the polygon edge; remember the last inked column, stop after a gutter
+    last, gap = None, 0
+    for i in range(w - 1, -1, -1):
+        if cols[i] > peak * 0.18:
+            last = i; gap = 0
+        elif last is not None:
+            gap += 1
+            # an initial is DELIBERATELY set apart from the text it opens, so the gutter
+            # tolerance here must be generous -- 0.6*lh stopped short of a Q sitting 50px
+            # clear of its line.
+            if gap > lh * 1.5:
+                break
+    if last is None:
+        return x0
+    return max(sx0 + last - int(0.25 * lh), 0)
+
+
+def crop_line(img, poly, pad=6, mask=True, bg=(255, 255, 255), lh=None,
+              initials=True, text=None, flags=None):
     xs = [x for x, y in poly]; ys = [y for x, y in poly]
     x0, y0 = max(min(xs) - pad, 0), max(min(ys) - pad, 0)
     x1, y1 = min(max(xs) + pad, img.width), min(max(ys) + pad, img.height)
+    ext = None
+    # Reach for an opening initial ONLY when the transcription itself starts with a
+    # capital. A tall initial hangs down beside the NEXT line too, and without this test
+    # that line grabs it -- measured: `euangelii non difficile...` came back carrying the
+    # Q that belongs to `Quaeritur` above it.
+    if initials and lh and text and text[:1].isupper():
+        ext = extend_for_initial(img, poly, lh)
+        if ext is not None and ext < x0 - 2:
+            x0 = ext
+            mask = False          # the initial lies outside the polygon; masking erases it
+            if flags is not None:
+                flags["initial"] = True
     if x1 <= x0 or y1 <= y0:
         return None
     box = img.crop((x0, y0, x1, y1))
@@ -226,6 +296,8 @@ def main():
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--no-mask", action="store_true")
     ap.add_argument("--no-deskew", action="store_true")
+    ap.add_argument("--no-initials", action="store_true",
+                    help="do not reach left for an enlarged opening initial")
     ap.add_argument("--mode", choices=["baseline", "polygon"], default="baseline",
                     help="baseline band (robust, default) or polygon bbox+mask")
     ap.add_argument("--max-height", type=int, default=160,
@@ -256,7 +328,14 @@ def main():
             box = crop_baseline(cache[p], r["baseline"], lh_cache[p],
                                 poly=r.get("polygon"), deskew=not a.no_deskew)
         else:
-            box = crop_line(cache[p], r["polygon"], mask=not a.no_mask)
+            if p not in lh_cache:
+                lh_cache[p] = page_line_height([x for x in rows if x["page"] == r["page"]])
+            flags = {}
+            box = crop_line(cache[p], r["polygon"], mask=not a.no_mask,
+                            lh=lh_cache[p], initials=not a.no_initials,
+                            text=r["text"], flags=flags)
+            if flags.get("initial"):
+                r = dict(r); r["initial"] = True
         if box is None: skipped_filter += 1; continue
         if box.height > a.max_height:
             box = box.resize((max(1, int(box.width * a.max_height / box.height)),
@@ -266,6 +345,7 @@ def main():
         man.write(json.dumps(dict(image=name, text=r["text"], layer=r["layer"],
                                   witness=r["witness"], page=r["page"],
                                   region_type=r.get("region_type"),
+                                  initial=bool(r.get("initial")),
                                   w=box.width, h=box.height), ensure_ascii=False) + "\n")
         kept += 1
         if a.limit and kept >= a.limit: break
