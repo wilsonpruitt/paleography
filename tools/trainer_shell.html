@@ -197,7 +197,8 @@ footer a{color:var(--muted)}
   <div class="tag" id="hdr-tag">learning to read the hand</div>
   <div class="spacer"></div>
   <div class="tabs" role="tablist">
-    <button role="tab" id="tab-latin" aria-selected="true">Latin</button>
+    <button role="tab" id="tab-latin" aria-selected="true">Latin I</button>
+    <button role="tab" id="tab-latin2" aria-selected="false">Latin II</button>
     <button role="tab" id="tab-greek" aria-selected="false">Greek</button>
   </div>
 </header>
@@ -295,41 +296,54 @@ var STAGES = [
 var ORIENT = {
  latin:
   "<p>You already read Latin. What you have never done is read it in a <b>ninth-century hand</b> — "+
-  "and that is a separate skill, closer to learning to read someone's handwriting than to learning a language.</p>"+
-  "<p>This manuscript is <b>Caroline minuscule</b>, the script Charlemagne's schools standardised around the "+
-  "year 800. It is the easiest medieval hand, and you have a head start: the humanists of the fifteenth century "+
-  "mistook it for Roman writing and copied it, and their copy became roman type. <b>The letters on your screen "+
-  "right now are its descendants.</b></p>"+
+  "and that is a separate skill, closer to learning someone's handwriting than to learning a language.</p>"+
+  "<p>This is <b>Caroline minuscule</b>, the script Charlemagne's schools standardised around the year "+
+  "800, and the easiest medieval hand there is. You have a head start: the humanists of the fifteenth "+
+  "century mistook it for Roman writing and copied it, and their copy became roman type. <b>The letters "+
+  "on your screen now are its descendants.</b></p>"+
+  "<p><b>This track asks you to learn the letters and nothing else.</b> The manuscript is full of "+
+  "abbreviations, but the editors wrote every one of them out, so what you read here is plain Latin in "+
+  "an old hand. The signs themselves wait for you in <b>Latin II</b>.</p>"+
+  "<h3>The same line, twice</h3>",
+ latin2:
+  "<p>The same script as Latin I, and much harder going — because this time <b>the abbreviations are "+
+  "left as the scribe wrote them</b>.</p>"+
+  "<p>It is also a harder kind of book: a school grammar, buried under layers of commentary crammed "+
+  "between and around the lines. Some pages carry three hundred lines of writing.</p>"+
+  "<p><b>Type what is on the page, not what it stands for.</b> <code>ꝓ</code> stays <code>ꝓ</code>; it "+
+  "does not become <em>pro</em>. When a line contains a sign you have not met, it is explained "+
+  "underneath. Come here once Cod. 940 reads easily.</p>"+
   "<h3>The same line, twice</h3>",
  greek:
-  "<p>You already read polytonic Greek in print. The gap between that and a tenth-century Byzantine hand is "+
-  "wider than it looks, and it is worth naming before you start.</p>"+
-  "<p><b>Printed Greek gives you one shape per letter. This hand does not.</b> A scribe writing quickly fuses "+
-  "letters into <b>ligatures</b> — two or three letters run together into a single compound shape that shares "+
-  "very little with its parts. And one letter can take several forms in the same line depending on what stands "+
-  "beside it. That, not the alphabet, is the thing you are learning.</p>"+
-  "<p>Two conventions of this manuscript will look wrong to you and are not: <b>there is no final sigma</b> "+
-  "(this scribe wrote <code>σ</code> everywhere, so the transcription does too), and <b>every punctuation mark "+
-  "is a single raised dot</b> <code>·</code>. Type <code>ς</code> if you like — it is always accepted.</p>"+
+  "<p>You already read polytonic Greek in print. The gap between that and a tenth-century Byzantine hand "+
+  "is wider than it looks, and worth naming before you start.</p>"+
+  "<p><b>Printed Greek gives you one shape per letter. This hand does not.</b> A scribe writing quickly "+
+  "fuses letters into <b>ligatures</b> — two or three run together into a single compound shape that "+
+  "shares little with its parts. And one letter takes several forms in a line depending on what stands "+
+  "beside it. That, not the alphabet, is what you are learning.</p>"+
+  "<p>Two conventions here will look wrong and are not: <b>there is no final sigma</b> (this scribe used "+
+  "only <code>σ</code>, so the transcription does too — but typing <code>ς</code> is always accepted), and "+
+  "<b>every punctuation mark is a single raised dot</b> <code>·</code>.</p>"+
   "<h3>The same line, twice</h3>"
 };
 var ORIENT_TAIL = {
  latin:
-  "<p>Look back and forth. The ink is doing what the printed line says, but with a scribe's habits: "+
-  "<b>a tall <code>ſ</code></b> that looks like an <em>f</em> without its crossbar, <b>no <em>j</em> and no "+
-  "<em>w</em></b>, and <b><code>u</code> and <code>v</code> as one letter</b> — so <em>uerbum</em>, never "+
-  "<em>verbum</em>.</p>"+
-  "<p>Later lines carry <b>abbreviation signs</b>: a stroke over a vowel (<code>ũ ẽ ã õ ĩ</code>) stands for a "+
-  "missing <em>m</em> or <em>n</em>; <code>ę</code> is the medieval way of writing <em>ae</em>. You type the "+
-  "sign, not what it stands for. The buttons under the typing box will enter them for you.</p>"+
-  "<p>When you are ready, go to <b>Stage one</b> and just look at a dozen lines. Do not try to type anything yet.</p>",
+  "<p>Look back and forth. The ink is doing what the printed line says, with a scribe's habits: "+
+  "<b>a tall <code>ſ</code></b> like an <em>f</em> without its crossbar, <b>no <em>j</em> and no "+
+  "<em>w</em></b>, and <b><code>u</code> and <code>v</code> as one letter</b> — so <em>uerbum</em>, "+
+  "never <em>verbum</em>.</p>"+
+  "<p>Go to <b>Stage one</b> and just look at a dozen lines. Do not try to type anything yet.</p>",
+ latin2:
+  "<p>Beyond the letterforms, watch for <b>abbreviation signs</b>: a stroke over a vowel "+
+  "(<code>ũ ẽ ã õ ĩ</code>) for a missing <em>m</em> or <em>n</em>; <code>ę</code> as the medieval way "+
+  "of writing <em>ae</em>; <code>ꝑ</code> for <em>per</em>. The buttons under the typing box enter them "+
+  "for you, and every line explains its own signs.</p>"+
+  "<p>Go to <b>Stage one</b> and read a dozen lines before typing a word.</p>",
  greek:
-  "<p>Look back and forth between the two until the shapes start to settle. Do not try to read the line as a "+
-  "sentence yet — find single letters you are sure of, then the ones on either side of them.</p>"+
-  "<p>When you are ready, go to <b>Stage one</b>. It shows you a dozen lines with their text and asks nothing "+
-  "of you but to look.</p>"
+  "<p>Look back and forth until the shapes settle. Do not try to read the line as a sentence yet — find "+
+  "single letters you are sure of, then the ones on either side of them.</p>"+
+  "<p>Go to <b>Stage one</b>. It shows a dozen lines with their text and asks nothing of you but to look.</p>"
 };
-
 var PALETTE = {
   latin:["ã","ẽ","ĩ","õ","ũ","ū","ę","đ","ł","ꝑ","ꝓ","ꝗ","ꝵ","ꝰ","⁊","÷","¬","|","ſ"],
   greek:["ά","έ","ή","ί","ό","ύ","ώ","|","ἀ","ἁ","ἐ","ἑ","ἠ","ἡ","ὀ","ὁ","ὐ","ὑ","|",
@@ -359,6 +373,7 @@ function band(){
 }
 function cur(){var b=band();return b[state.i % b.length]}
 function isGk(){return state.track==="greek"}
+function fam(){return state.track==="greek"?"greek":"latin"}
 
 /* ---------- normalisation ---------- */
 function stripCombining(s){return s.normalize("NFD").replace(/[̀-ͯ᷀-᷿]/g,"").normalize("NFC")}
@@ -431,12 +446,13 @@ function renderAll(){
   renderStages();
   var st=STAGES[state.stage];
   document.getElementById("stagenote").textContent=st.note;
-  document.getElementById("tab-latin").setAttribute("aria-selected",String(state.track==="latin"));
-  document.getElementById("tab-greek").setAttribute("aria-selected",String(state.track==="greek"));
+  ["latin","latin2","greek"].forEach(function(t){
+    document.getElementById("tab-"+t).setAttribute("aria-selected",String(state.track===t));
+  });
   document.getElementById("hdr-tag").textContent=DATA.tracks[state.track].meta.witness;
 
   var pal=document.getElementById("palette"); pal.innerHTML="";
-  PALETTE[state.track].forEach(function(ch){
+  PALETTE[fam()].forEach(function(ch){
     if(ch==="|"){var s=document.createElement("div");s.className="sep";pal.appendChild(s);return}
     var b=document.createElement("button");b.type="button";b.textContent=ch;b.title="Insert "+ch;
     b.addEventListener("click",function(){insert(ch)});pal.appendChild(b);
@@ -519,7 +535,7 @@ function check(){
   var it=cur(), forg=document.getElementById("forgiving").checked;
   var raw=document.getElementById("entry").value;
   if(!raw.trim()){document.getElementById("entry").focus();return}
-  var you=norm(raw,state.track,forg), truth=norm(target(it),state.track,forg);
+  var you=norm(raw,fam(),forg), truth=norm(target(it),fam(),forg);
   var pairs=align(Array.from(you),Array.from(truth));
   var hit=0,yh="",th="";
   pairs.forEach(function(p){
@@ -610,8 +626,9 @@ function hintFor(p,wrong,forg,key){
   return lead+tail;
 }
 
-document.getElementById("tab-latin").addEventListener("click",function(){state.track="latin";state.i=0;renderAll()});
-document.getElementById("tab-greek").addEventListener("click",function(){state.track="greek";state.i=0;renderAll()});
+["latin","latin2","greek"].forEach(function(t){
+  document.getElementById("tab-"+t).addEventListener("click",function(){state.track=t;state.i=0;renderAll()});
+});
 document.getElementById("check").addEventListener("click",check);
 document.getElementById("next").addEventListener("click",function(){state.i++;renderItem();document.getElementById("entry").focus()});
 document.getElementById("readnext").addEventListener("click",function(){

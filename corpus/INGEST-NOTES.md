@@ -150,3 +150,52 @@ region from each and read it against its transcription.** Both came back correct
 ⭐ Worth noting for the curriculum, not just the pipeline: Cod. 940 is **continuous prose in
 a clean hand**, far gentler than the Eutyches glossed grammar with its 300 lines a page. It
 is the better beginner text, and it was the one we could not use.
+
+## ⛔⛔⛔ 10. I committed the error in §1 myself, and my "evidence" was the tell
+
+**2026-08-27.** `corpus/sources.yml` declared Wien ÖNB Cod. 940 `layer: diplomatic`, with
+`layer_evidence: "line-break hyphen ¬ preserved (1790x)"`.
+
+**The probe, run only after a plate raised a doubt:**
+
+| sign | occurrences in 7,889 lines |
+|---|---|
+| `ꝑ ꝓ ꝗ ꝰ ᷑ ÷ ⁊ ł đ` | **0** |
+| combining tilde, `ũ ã õ ĩ` | **0** |
+
+**A ninth-century Latin manuscript cannot contain no abbreviations.** They were all resolved
+silently. Confirmed on the plate: the ink of `0159_p159` reads `sca` (stroked) and `ē`; the
+transcription writes `sancta` and `est`. **wien940 is `expanded`.**
+
+⚑⚑ **The evidence I recorded was about lineation and said nothing whatever about
+abbreviation.** It pointed the way I already believed, so I accepted it. §1 of this very file
+says to verify the layer with a character probe; I wrote that sentence and then did not run the
+probe. ⭐ **The rule is not "check the layer" — it is "check the layer WITH EVIDENCE OF THE RIGHT
+KIND". Evidence about one property is not evidence about another, however confidently filed.**
+
+## ⚠ 11. Ground truth from a teaching workshop is not finished ground truth
+
+Cod. 940's GT comes from an **HTR Winter School**, and the opening pages show it. Leaf 6's
+first text line is transcribed `scrminiomin puti etnetatioer inri`; **the ink plainly reads
+`Nouum opus facere me cogis ex vete[ri]`** — the opening of Jerome's preface to the Gospels.
+No expansion policy explains that; it is uncorrected machine output. The display-script heading
+lines above it are garbled the same way (`INIET EPSOSDIA HERNM` for *INCIPIT EPISTOLA
+HIERONYMI*).
+
+**Where the damage is, measured rather than assumed:** seven body lines sampled from across the
+manuscript (leaves 30, 32, 37, 58, 93, 159, 224) were **7/7 correct**. The failures cluster in
+the front matter and in display capitals, exactly where an ATR model is weakest and a
+workshop's correctors got least far. The bank therefore ships `leaf >= 30` and no all-caps
+lines — 7,641 of 7,889 — and the shipping selection was sample-verified against the plates.
+
+⛔ **A statistical detector did not find this and cannot.** A character-bigram model trained on
+known-good Latin ranked the garbage line **1607th of 7,869** — while its ten "worst" lines were
+all *correct*: `HVCVSQVE VI · NVNC V ·`, Eusebian canon references, penalised for not being
+running prose. **Every one of its top findings was a false positive and the true error was
+invisible.** The same shape as [[reference_plate-read-triage]]: frequency evidence is worthless
+against well-formed text, and only the plate settles it.
+
+⭐ **The correction improved the product.** An expanded text with no abbreviation signs is the
+*right* first Latin track — the learner meets letterforms alone — with the diplomatic,
+abbreviation-rich grammar as the second. The ramp now mirrors the layer field: **expanded
+before diplomatic**, in Latin as in Greek.

@@ -116,11 +116,17 @@ if __name__ == "__main__":
     ap.add_argument("--quality", type=int, default=87)
     a = ap.parse_args()
     specs = [
-        ("latin", "corpus/crops/eutyches-VLO41", latin_difficulty,
+        ("latin", "corpus/crops/wien940", latin_difficulty,
          dict(name="Latin — Caroline minuscule",
+              witness="Wien, ÖNB Cod. 940 (Saint-Amand, s. IX in.)",
+              layer="expanded",
+              printed="A commentary on Matthew in a clear, roomy hand, and the gentlest start available: the transcribers wrote every abbreviation out in full, so here you learn the LETTERS and nothing else. The signs come next door, in the grammar.",
+              attribution="Österreichische Nationalbibliothek")),
+        ("latin2", "corpus/crops/eutyches-VLO41", latin_difficulty,
+         dict(name="Latin — a glossed grammar",
               witness="Leiden, Voss. Lat. O. 41 (s. IX)",
               layer="diplomatic",
-              printed="This is a glossed grammar book. The transcription keeps the scribe's abbreviation signs, so what you type is what is on the page — not what it stands for.")),
+              printed="The same script, much harder going: a school grammar buried under commentary, and the transcription keeps every abbreviation sign the scribe used. Come here once Cod. 940 reads easily.")),
         ("greek", "corpus/crops/cpgr23", greek_difficulty,
          dict(name="Greek — Byzantine minuscule",
               witness="Heidelberg, Pal. gr. 23 (s. X)",

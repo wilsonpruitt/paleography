@@ -12,8 +12,15 @@ latin_caroline:
     script: Carolingian minuscule
     format: TEI-facsimile        # catalogue says Page-XML and is WRONG
     lines: 7889
-    layer: diplomatic
-    layer_evidence: "Geelhaar Transkribus Carolingian guidelines; line-break hyphen ¬ preserved (1790x)"
+    layer: expanded            # ⛔ CORRECTED 2026-08-27 -- I had this as `diplomatic`
+    layer_evidence: >
+      PROBE, 7,889 lines: ZERO occurrences of ꝑ ꝓ ꝗ ꝰ ᷑ ÷ ⁊ ł đ, zero combining tilde,
+      zero nasal-marked vowels. A 9th-c. Latin manuscript cannot contain no abbreviations;
+      the transcribers resolved them all silently. Confirmed on the plate: the ink of
+      0159_p159 reads `sca` (stroked) and `ē`, the transcription writes `sancta` and `est`.
+      ⛔ My earlier evidence -- "line-break hyphen ¬ preserved (1790x)" -- was about
+      LINEATION and said nothing about abbreviation. It is the exact error INGEST-NOTES §1
+      documents, committed by the person who wrote that note.
     license: CC-BY-4.0
     url: https://github.com/HTR-School-Vienna/-2024--carolingian-latin
     images_in_repo: false        # 3.4 MB, XML only
