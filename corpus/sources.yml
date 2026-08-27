@@ -16,7 +16,31 @@ latin_caroline:
     layer_evidence: "Geelhaar Transkribus Carolingian guidelines; line-break hyphen ¬ preserved (1790x)"
     license: CC-BY-4.0
     url: https://github.com/HTR-School-Vienna/-2024--carolingian-latin
-    images_in_repo: false        # 3.4 MB, XML only -- images must be fetched separately
+    images_in_repo: false        # 3.4 MB, XML only
+    # Images fetched from the Austrian National Library over IIIF, 2026-08-27.
+    # Full detail and the failed routes: research/onb-cod940-iiif.md
+    iiif:
+      manifest: https://api.onb.ac.at/iiif/presentation/v3/manifest/10047947
+      canvases: 290              # exactly matches the TEI's 290 surfaces
+      leaf_to_canvas_offset: -2  # VERIFIED: 125/125 exact dimension matches.
+                                 # offset 0 gives 88/125 -- plausible, and wrong for 37 pages
+      full_resolution: ~1220x1853  # this is the real maximum, not a cap (see info.json)
+      attribution: "Österreichische Nationalbibliothek"
+      rights: >
+        No rights IRI on the manifest; a requiredStatement asks for attribution. ÖNB's
+        site terms state it claims no exploitation right and consents to re-use at web
+        resolution with attribution requested. ⚠ Treat as attribution-required, and keep
+        the statement with any published crop.
+      coordinate_scaling: >
+        REQUIRED, and not uniform. The TEI states 2479x3508 for 137 of the 262 GT-bearing
+        pages; that is a Transkribus PLACEHOLDER, not a real size -- canvases at those
+        leaves run 566-1320 px wide. Those pages were uploaded stretched to a fixed size,
+        so x and y scale INDEPENDENTLY (sx = canvas_w/tei_w, sy = canvas_h/tei_h). The
+        other 125 pages carry real dimensions and scale 1:1. Both classes were verified by
+        fetching a line region and reading it against its transcription.
+    derived:
+      images: corpus/raw/wien940-images/
+      rescaled_gt: corpus/normalized/wien940-iiif.jsonl   # coordinates in IIIF image space
 
   - id: eutyches-VLO41
     title: "Eutyches, De uerbo -- Leiden Voss. Lat. O. 41"

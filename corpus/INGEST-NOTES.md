@@ -111,3 +111,42 @@ abbreviation table is ours to author — see `corpus/latin-abbreviations.json`, 
 ⚑ And expansion is **context-dependent**: the `;` sign is *-que* after `q`
 (`cuiusq;` = cuiusque) but *-bus* after `b` (`dieb;` = diebus). The abbreviation model
 cannot be a flat character map.
+
+## ⛔⛔ 9. Two calibrations that both look right when assumed and are both wrong
+
+**2026-08-27, fetching Wien ÖNB Cod. 940's images from IIIF** (`research/onb-cod940-iiif.md`,
+`corpus/sources.yml`). The GT ships with no images; the manuscript is digitised; joining the
+two needs two numbers, and guessing either quietly ruins the result.
+
+### The leaf → canvas offset
+
+The manifest has **290 canvases and the TEI has exactly 290 surfaces**, which invites
+`canvas = leaf`. Verified against stated image dimensions instead:
+
+| offset | exact dimension matches |
+|---|---|
+| −2 | **125 / 125** ✅ |
+| 0 | 88 / 125 |
+| −1, +1 | 0 / 125 |
+
+⚑ **Offset 0 matches 88 of 125 pages.** A spot check of two or three pages would have
+passed, and 37 pages would have been silently cropped from the wrong folio. Calibrate
+against every page you can, not a sample — and prefer a check the data can fail.
+
+### The coordinate scale, which is not uniform
+
+The TEI records **2479×3508 for 137 of the 262 GT-bearing pages**. That is a **Transkribus
+placeholder, not a real size**: the canvases at those leaves run from **566 to 1320 px
+wide**. Those pages were uploaded stretched to a fixed size, so `x` and `y` must be scaled
+**independently** (`sx = canvas_w/tei_w`, `sy = canvas_h/tei_h`). The other 125 pages carry
+real dimensions and map 1:1.
+
+⚑ **A uniform image size repeated across 165 pages of a hand-photographed manuscript is a
+placeholder.** Real photography does not produce identical dimensions.
+
+⚑ Both classes were settled the only way that settles anything here: **fetch one line
+region from each and read it against its transcription.** Both came back correct.
+
+⭐ Worth noting for the curriculum, not just the pipeline: Cod. 940 is **continuous prose in
+a clean hand**, far gentler than the Eutyches glossed grammar with its 300 lines a page. It
+is the better beginner text, and it was the one we could not use.
