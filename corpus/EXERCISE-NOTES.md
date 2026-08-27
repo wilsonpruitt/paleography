@@ -272,3 +272,48 @@ wide; outside that, **reject**. Of 25 capital-initial lines sampled, **4 survive
 line-heights. ⚑ A capital at the start of a line does not imply a decorated initial, and a
 rejected detection merely crops the line normally — no worse than before — whereas a six-line
 crop is actively worse.
+
+## Two glosses a reader asked for, and why one of them needed a new trigger (2026-08-27)
+
+Wilson, reading Stage 1: *"merging the e and et at the end of suplet is unique and deserves a
+gloss"* — the ink reads `ſupl&` where the print says *suplet* — and *"the spacing between words
+in paleography deserves a gloss as well since that is what trips up neophytes like me a lot of
+the time."*
+
+**The et-ligature.** `&` began as a ligature of *e* and *t*, and in a manuscript it has not yet
+narrowed to meaning only the word *et*: the scribe uses it for **the letters e-t wherever they
+fall**, including word-finally. Distinct from the Tironian `⁊`, which is shorthand for the
+*word* and never supplies a syllable.
+
+⛔⛔ **This exposed a structural hole, not a missing entry.** Glosses fired on characters
+present in the text — but **Cod. 940 contains 0 literal `&` in 7,641 lines**, because it is an
+*expanded* witness and the editors resolved every one. **An expanded transcription has, by
+definition, edited out the very signs a learner needs explained.** A character trigger can
+never fire on them.
+
+⚑ So glosses now also accept a **regex trigger keyed on the expanded spelling**: `&` fires on a
+word of four or more letters ending `-et` (2 of 44 lines — *suplet*, *habet*, *manet*). And the
+orientation for any expanded track now lists, up front, **the marks that appear in the ink and
+nowhere in the printed line** — `&`, the nasal stroke, contracted words like `ſca`/`ē`, `ę`,
+the line-break `¬` — so the mismatch reads as a convention rather than an error.
+
+**Word division.** *Scriptio continua* had no spaces at all, and by the ninth century the job is
+only half done: short words cling to their neighbours and gaps open inside long ones. The ink of
+one Stage 1 line reads `quarequomodolongitudinem` for *Quare quomodo longitudinem*.
+
+⚑ Trigger choice mattered here. Firing on any line with a common short word gave **35 of 44** —
+accurate but useless as a repeated note. Two adjacent short words gave 24. **Three** adjacent
+gives **6 of 44**, which marks the genuinely hard lines. The general statement lives in the
+orientation, where it is always available; the gloss flags the cases.
+
+## Polygons under-cover the right-hand end too
+
+Same sitting: *"the last r of the phrase is cut off."* On Cod. 940 f. 41 the polygon stops at
+**x=1090** while `mensuratur` runs on to about **x=1230** — a 140 px shortfall. This is the
+opening-initial failure at the other end of the line, and it takes the same remedy:
+`extend_right()` measures where the ink actually stops rather than trusting the box, capped at
+three line-heights and ended by a real word gap.
+
+⚑ The extended tail is added to the **spotlight's** in-focus shapes as well. Without that, the
+newly recovered letters would come back blurred — rescued from the crop and then hidden by the
+very device meant to make the line clear.

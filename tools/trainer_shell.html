@@ -142,6 +142,8 @@ textarea:focus,input.one:focus{outline:0;border-color:var(--accent)}
 /* orientation */
 .orient{font-family:var(--serif);font-size:18px;line-height:1.68;color:var(--muted);max-width:66ch}
 .orient p{margin:0 0 15px}
+.orient ul{margin:0 0 15px;padding-left:1.15em}
+.orient li{margin:0 0 7px}
 .orient b{color:var(--text);font-weight:500}
 .orient code{font-family:var(--mono);font-size:14.5px;color:var(--accent)}
 .orient h3{font-family:var(--sans);font-size:12px;letter-spacing:.11em;text-transform:uppercase;
@@ -304,6 +306,28 @@ var ORIENT = {
   "<p><b>This track asks you to learn the letters and nothing else.</b> The manuscript is full of "+
   "abbreviations, but the editors wrote every one of them out, so what you read here is plain Latin in "+
   "an old hand. The signs themselves wait for you in <b>Latin II</b>.</p>"+
+  "<p>⚠ <b>That has one consequence worth knowing before it puzzles you.</b> Because the editors "+
+  "resolved everything, <b>the ink contains marks you will not find anywhere in the printed line.</b> "+
+  "You are not missing something and the transcription is not wrong — the two simply do not "+
+  "correspond letter for letter. The commonest are:</p>"+
+  "<ul>"+
+  "<li><code>&amp;</code> — <em>e</em> and <em>t</em> written as one, and <b>it works inside a word</b>: "+
+  "the ink reads <code>ſupl&amp;</code> where the print says <em>suplet</em>.</li>"+
+  "<li><b>a stroke over a vowel</b> for a missing <em>m</em> or <em>n</em> — <code>nō</code> is "+
+  "<em>non</em>, and the print simply says <em>non</em>.</li>"+
+  "<li><code>ſca</code>, <code>ē</code> and their kind — contracted words written out in full in the "+
+  "print (<em>sancta</em>, <em>est</em>).</li>"+
+  "<li><code>ę</code>, the <em>e</em> with a little tail, which is how the Middle Ages wrote "+
+  "<b>ae</b>.</li>"+
+  "<li><code>¬</code> at a line's end, where a word breaks and continues on the next line.</li>"+
+  "</ul>"+
+  "<p>When a line contains one of these, it is explained underneath.</p>"+
+  "<p>⚑ <b>And one thing that will trip you more than any letterform: the spaces.</b> Ancient "+
+  "books had none at all, and by the ninth century word division is still only half done. Short "+
+  "words cling to their neighbours and gaps open inside long ones — the ink on one of these very "+
+  "lines reads <code>quarequomodolongitudinem</code> for <em>Quare quomodo longitudinem</em>. "+
+  "<b>Do not trust the gaps.</b> Find a word you know inside the run of letters and let the rest "+
+  "fall out; it is the Latin that divides the line, not the spacing.</p>"+
   "<p><b>One thing about these pictures.</b> Every line here is cut from a real page, and a real page is crowded — lines above and below crowd in, and a decorated capital may loom beside them. So <b>the line you are working on is left in focus and everything else is softened.</b> The soft material is really there on the parchment; it is not a bad scan, and it is not being hidden from you. It is out of focus so your eye knows where to sit.</p><h3>The same line, twice</h3>",
  latin2:
   "<p>The same script as Latin I, and much harder going — because this time <b>the abbreviations are "+

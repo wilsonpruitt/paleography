@@ -16,7 +16,7 @@ steps to get there"):
 Fragments are filtered out: a line carrying a structural mark, or fewer than three
 words, or less than ~72% letters, is a scrap of apparatus, not a sentence to read.
 """
-import json, base64, argparse, statistics, unicodedata
+import json, base64, argparse, statistics, unicodedata, re
 from pathlib import Path
 from io import BytesIO
 from PIL import Image
@@ -106,6 +106,14 @@ def pack(manifest_dir, n, max_w, quality, track, scorer):
         for ch in r["text"]:
             if ch in GLOSS and ch not in seen:
                 seen.add(ch); gl.append(GLOSS[ch])
+        # Regex triggers exist because an EXPANDED transcription has, by definition, edited
+        # out the very signs a learner needs explained: Cod. 940 has 0 literal "&" in 7,641
+        # lines, though the scribe writes it constantly. A character trigger can never fire
+        # on a sign the editors resolved, so those glosses key on the expanded spelling.
+        for g in GLOSS.values():
+            if g.get("trigger") and g["char"] not in seen:
+                if re.search(g["trigger"], r["text"]):
+                    seen.add(g["char"]); gl.append(g)
         damaged = any(c in "()[]" for c in r["text"])
         out.append(dict(id=r["image"].rsplit(".", 1)[0][-12:], track=track, damaged=damaged,
                         text=r["text"], words=words, cloze=cloze_index(words),

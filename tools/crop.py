@@ -313,6 +313,48 @@ def find_initial(img, poly, lh, max_reach=3.2, max_rise=2.6, bg_pct=0.85):
     return (ix0, max(iy0, 0), min(iy1, img.height))
 
 
+def extend_right(img, poly, lh, max_reach=3.0, bg_pct=0.85):
+    """How far the line's ink actually runs past the right edge of its polygon.
+
+    The GT polygons under-cover some line ends: on Cod. 940 f. 41 the polygon stops at
+    x=1090 while `mensuratur` runs on to about x=1230, so the crop cut the last letters off.
+    Same failure as the opening initial, at the other end of the line, and it needs the same
+    remedy -- measure the ink rather than trust the box.
+    """
+    xs = [p[0] for p in poly]; ys = [p[1] for p in poly]
+    x1, y0, y1 = max(xs), min(ys), max(ys)
+    sx1 = min(int(x1 + max_reach * lh), img.width)
+    if sx1 <= x1 + 2:
+        return x1
+    ty0 = max(int(y0 - 0.15 * lh), 0)
+    ty1 = min(int(y1 + 0.15 * lh), img.height)
+    strip = img.crop((int(x1), ty0, sx1, ty1)).convert("L")
+    w, h = strip.size
+    if w < 4 or h < 4:
+        return x1
+    px = strip.load()
+    samples = sorted(px[x, y] for y in range(0, h, max(1, h // 30))
+                     for x in range(0, w, max(1, w // 30)))
+    if not samples:
+        return x1
+    thresh = samples[int(len(samples) * bg_pct)] - 30
+    cols = [sum(1 for y in range(0, h, 2) if px[x, y] < thresh) for x in range(w)]
+    if not cols or max(cols) < 2:
+        return x1
+    ink = max(1, int(max(cols) * 0.05))
+    last, gap = None, 0
+    for i in range(w):
+        if cols[i] >= ink:
+            last = i; gap = 0
+        elif last is not None:
+            gap += 1
+            if gap > lh * 0.55:        # a real word gap ends the line
+                break
+    if last is None:
+        return x1
+    return min(int(x1) + last + int(0.2 * lh), img.width)
+
+
 def spotlight(box, shapes, blur=2.6, fade=0.55, feather=9, bg=(255, 255, 255)):
     """Keep `shapes` sharp; blur and fade everything else in the crop.
 
@@ -370,11 +412,21 @@ def crop_line(img, poly, pad=6, mask=True, bg=(255, 255, 255), lh=None,
                 flags["initial"] = True
         else:
             init = None
+    if initials and lh:
+        # the same measurement at the other end: polygons under-cover some line ends
+        rx = extend_right(img, poly, lh)
+        if rx > x1:
+            x1 = min(rx, img.width)
     if x1 <= x0 or y1 <= y0:
         return None
     box = img.crop((x0, y0, x1, y1))
     if mask:
+        pxs = [x for x, _ in poly]; pys = [y for _, y in poly]
         shapes = [[(x - x0, y - y0) for x, y in poly]]
+        if x1 - x0 > (max(pxs) - x0) + 2:
+            # keep the measured tail in focus -- it is part of the line, not bleed
+            shapes.append((max(pxs) - x0 - int(0.1 * (lh or 40)), min(pys) - y0,
+                           x1 - x0, max(pys) - y0))
         if init is not None:
             # the initial's own measured rectangle, kept in focus with the line it opens
             shapes.append((0, max(init[1] - y0, 0),

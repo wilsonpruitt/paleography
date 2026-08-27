@@ -157,6 +157,26 @@
    "status": "verified",
    "short": "a big letter out in the margin — it is the word's first letter",
    "note": "A new section opens with a <b>large decorated capital set out in the margin</b>, clear of the ruled text block and often two lines deep. <b>The scribe does not write the letter twice.</b> So the ordinary script begins with the SECOND letter: the line here starts <em>uaeritur</em>, the tall <b>Q</b> beside it supplies the first, and together they are <em>Quaeritur</em>. Verified on the page (Cod. 940 f. 30). Once you know to look for it this is a help rather than a trap — it tells you a new argument is beginning."
+  },
+  {
+   "char": "&",
+   "display": "&",
+   "name": "the et-ligature",
+   "mechanism": "ligature, not abbreviation",
+   "status": "verified",
+   "trigger": "\\b\\w{3,}et\\b",
+   "short": "& is e and t written as one — and it works INSIDE a word",
+   "note": "Our ampersand began life as a <b>ligature of <em>e</em> and <em>t</em></b>, and in a manuscript it has not yet settled into meaning only the word <em>et</em>. The scribe uses it for <b>the letters e-t wherever they fall</b>, including in the middle or at the end of a word: this line's ink reads <code>ſupl&amp;</code> and the word is <em>suplet</em>. Likewise <code>hab&amp;</code> for <em>habet</em>, <code>man&amp;</code> for <em>manet</em>. ⚠ Do not confuse it with the Tironian <code>⁊</code>, which is a shorthand sign for the <em>word</em> <em>et</em> and never supplies a syllable. Verified on the page (Cod. 940 f. 41)."
+  },
+  {
+   "char": "SPACING",
+   "display": "⎵",
+   "name": "word division",
+   "mechanism": "layout, not abbreviation",
+   "status": "verified",
+   "trigger": "\\b[A-Za-zÀ-ſ]{1,4}\\b[^A-Za-z]+\\b[A-Za-zÀ-ſ]{1,4}\\b[^A-Za-z]+\\b[A-Za-zÀ-ſ]{1,4}\\b",
+   "short": "the gaps between words are not where you expect them",
+   "note": "Ancient books were written in <i>scriptio continua</i> — <b>no spaces at all</b>. Word division was introduced gradually, and in the ninth century the job is only half done. Short words cling to their neighbours, and a gap can open in the middle of a long one. On this page the ink reads <code>quarequomodolongitudinem</code> where the print gives <em>Quare quomodo longitudinem</em>. ⚑ <b>So do not trust the gaps.</b> Read a run of letters, find a word you know inside it, and let the rest fall out — the Latin divides the line, not the spacing. This is the single thing that most often defeats a reader who can already name every letter."
   }
  ]
 }
