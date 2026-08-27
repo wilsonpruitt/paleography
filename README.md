@@ -19,6 +19,11 @@ phases and Wilson's rulings.
 | `corpus/latin-abbreviations.json` | abbreviation inventory, verified vs proposed |
 | `tools/ingest.py` | ALTO v4 / PAGE XML / TEI-facsimile → canonical JSONL |
 | `tools/fetch-seeds.sh` | re-fetch + re-ingest the whole seed corpus (idempotent) |
+| `tools/export_page.py` | canonical JSONL → **PAGE XML 2019-07-15** (eScriptorium / Transkribus / Kraken) |
+| `tools/roundtrip_check.py` | export → re-import → compare; proves nothing is lost |
+| `tools/export-all.sh` | export every witness and verify all of them |
+| `tools/crop.py` · `build_exercises.py` · `make_trainer.py` | line crops → exercise bank → the trainer page |
+| `tools/plate.py` | full-resolution plate around one line, for reading by eye |
 
 ## Getting the corpus
 

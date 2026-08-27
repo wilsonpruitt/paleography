@@ -175,8 +175,12 @@ Not to be built now. What is decided now so the corpus is ready:
   earlier "✅ DONE" here was an overclaim and is corrected).
   ✅ 24,017 lines / 7 witnesses ingested and layer-declared; normalizer reads ALTO v4 +
   PAGE XML + TEI-facsimile; abbreviation inventory + glosses; both primers written.
-  ⬜ **No PAGE XML *export*.** Import works; export is the half that guarantees
-  zero-migration into Phase 4 tooling, and it does not exist.
+  ✅ **PAGE XML export — DONE 2026-08-27.** `tools/export_page.py` writes PAGE
+  2019-07-15 (the version eScriptorium and Transkribus both read); `tools/export-all.sh`
+  exports all seven witnesses (484 files) and **`tools/roundtrip_check.py` proves the
+  claim rather than asserting it** — export, re-import, compare: line count, ids, text
+  (NFC), polygons, baselines and region types all identical, 979,934 characters across
+  every witness. Includes a real **TEI → PAGE** conversion for wien940.
   ⬜ **No IIIF fetch of any witness.** Every image so far came bundled inside a GT repo.
   This is why **wien940 — 7,889 lines, our largest Latin set — yields zero exercises**.
   ⬜ **Primers lack the promised 3 dated exemplars with IIIF references** per script.
