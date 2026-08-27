@@ -1,0 +1,105 @@
+# Seed ground truth registry. Phase 1, 2026-08-26.
+#
+# `layer` is DECLARED here, never inferred from the file, and every entry carries
+# `layer_evidence` -- the catalogue was wrong about this once already (see INGEST-NOTES §1).
+# All entries CC-BY 4.0: attribution required, redistribution and training permitted.
+
+latin_caroline:
+  - id: wien940
+    title: "Wien ÖNB Cod. 940, ff. 13r-142v (HTR Winter School 2024)"
+    witness: "Salzburg/Saint-Amand, s. VIII ex./IX in.; anonymous Irish commentary on Matthew"
+    date: 800-850
+    script: Carolingian minuscule
+    format: TEI-facsimile        # catalogue says Page-XML and is WRONG
+    lines: 7889
+    layer: diplomatic
+    layer_evidence: "Geelhaar Transkribus Carolingian guidelines; line-break hyphen ¬ preserved (1790x)"
+    license: CC-BY-4.0
+    url: https://github.com/HTR-School-Vienna/-2024--carolingian-latin
+    images_in_repo: false        # 3.4 MB, XML only -- images must be fetched separately
+
+  - id: eutyches-VLO41
+    title: "Eutyches, De uerbo -- Leiden Voss. Lat. O. 41"
+    date: 850-900
+    script: Caroline minuscule, 4 hands + 4 annotating hands
+    format: ALTO-v4
+    lines: 2741
+    pages: 63
+    layer: diplomatic
+    layer_evidence: "repo README: graphematic, abbreviations preserved; chocomufin table.csv controls charset"
+    license: CC-BY-4.0
+    url: https://github.com/malamatenia/Eutyches
+    note: "richly glossed; MainZone + MarginTextZone both present"
+
+  - id: eutyches-Lat7499
+    title: "Eutyches, De uerbo -- BnF lat. 7499"
+    date: 850-900
+    format: ALTO-v4
+    lines: 6106
+    pages: 39
+    layer: diplomatic
+    layer_evidence: same as eutyches-VLO41
+    license: CC-BY-4.0
+    note: "DENSE: median 191 lines/page, max 313 (181 marginal + 132 main on f74v). Not a bug."
+
+  - id: eutyches-BambergMsc30
+    title: "Eutyches, De uerbo -- Bamberg Msc. Class. 30"
+    date: 850-900
+    format: ALTO-v4
+    lines: 3385
+    pages: 30
+    layer: diplomatic
+    license: CC-BY-4.0
+
+  - id: eutyches-Lat14087
+    title: "Eutyches, De uerbo -- BnF lat. 14087"
+    format: ALTO-v4
+    lines: 82
+    pages: 3
+    layer: diplomatic
+    license: CC-BY-4.0
+
+  - id: rescribe-caroline
+    title: "Caroline Minuscule ground truth (Rescribe)"
+    date: 800-1199
+    format: ALTO-v4
+    lines: 440
+    layer: normalised
+    layer_evidence: "repo guidelines: 'gently modernized', medieval punctuation transcribed with modern equivalents"
+    license: CC-BY-4.0
+    url: https://github.com/rescribe/carolineminuscule-groundtruth
+    warning: "DIFFERENT LAYER from the rest. Do not mix into diplomatic exercises."
+
+greek_minuscule:
+  - id: cpgr23
+    title: "Codex Palatinus graecus 23 (Palatine Anthology)"
+    witness: "Heidelberg, Pal. gr. 23; Byzantine bookhand, s. X"
+    date: 900-1000
+    format: ALTO-v4
+    lines: 3374
+    pages: 70
+    layer: expanded              # catalogue claimed diplomatic -- WRONG, see INGEST-NOTES §1
+    layer_evidence: >
+      repo README 'All abbreviations transcribed in expanded form'; verified in data:
+      0 occurrences of ϗ and ȣ; 0 final sigma ς; 0 comma/stop/semicolon; 3437 interpuncts.
+    license: CC-BY-4.0
+    url: https://gitlab.huma-num.fr/ecrinum/anthologia/htr_cpgr23
+    conventions:
+      - "final sigma NOT distinguished -- always σ (scribe's own practice)"
+      - "all punctuation collapsed to interpunct ·"
+      - "structural marks: ⁛ U+205B epigram start, ⋇ U+22C7 epigram end, ∻ margin scholion, ※ main-text scholion"
+
+# NOT ingested, deliberately:
+excluded:
+  - path: eutyches/kraken-YALTAi/test/Bodl_Auct.F.4.32
+    reason: "held-out TEST set from a foreign manuscript -- ingesting it destroys the split"
+  - path: eutyches/*/XML-XSLT/out/*allALTOS*.xml
+    reason: "concatenated aggregates that duplicate every page of the witness"
+
+# Candidates for Phase 1b (catalogued, not yet fetched):
+queue:
+  - {id: stavronikita-53, lines: 1038, date: 1301-1350, layer: expanded, license: CC-BY-4.0, note: "Athos gospel MS, elegant minuscule; abbreviations+ligatures RESOLVED"}
+  - {id: stavronikita-114, lines: 1006, date: 1401-1500, license: CC-BY-4.0}
+  - {id: eparchos, lines: 2272, date: 1500-1530, license: CC-BY-4.0}
+  - {id: zenon-papyri, lines: 321, date: -250--230, layer: diplomatic, license: CC-BY-4.0, note: "PAPYRI -- Phase 3 per Wilson's ruling"}
+  - {id: cremma-medii-aevi, lines: 7274, date: 1100-1599, license: CC-BY-4.0, note: "POST-Caroline; Gothic-era. Wrong track for the MVP."}

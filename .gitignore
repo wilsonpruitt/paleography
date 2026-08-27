@@ -1,0 +1,6 @@
+# Cloned upstream ground truth: 2.1 GB, each with its own .git. Re-fetch with tools/fetch-seeds.sh
+corpus/raw/
+# Derived from corpus/raw by tools/ingest.py -- regenerate, don't commit
+corpus/normalized/
+.DS_Store
+__pycache__/
