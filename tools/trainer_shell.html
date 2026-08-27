@@ -1,4 +1,4 @@
-<title>Scriptorium</title>
+<title>Paleography</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif:wght@400;500&display=swap">
@@ -38,6 +38,8 @@ body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);
 header{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
   padding:28px 0 16px;border-bottom:1px solid var(--line);margin-bottom:22px}
 h1{font-family:var(--serif);font-weight:500;font-size:32px;margin:0}
+.home{font-size:13px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.home:hover{color:var(--text);border-color:var(--accent)}
 .tag{font-size:12.5px;color:var(--muted);letter-spacing:.09em;text-transform:uppercase}
 .spacer{flex:1}
 button{font-family:var(--sans);font-size:14px;cursor:pointer;border-radius:var(--r);
@@ -220,9 +222,10 @@ footer .fcta a{color:var(--accent);text-decoration:underline;text-underline-offs
 
 <div class="wrap">
 <header>
-  <h1>Scriptorium</h1>
+  <h1>Paleography</h1>
   <div class="tag" id="hdr-tag">learning to read the hand</div>
   <div class="spacer"></div>
+  <a class="home" href="/">← about</a>
   <div class="tabs" role="tablist">
     <button role="tab" id="tab-latin" aria-selected="true">Latin I</button>
     <button role="tab" id="tab-latin2" aria-selected="false">Latin II</button>
@@ -427,8 +430,28 @@ var PALETTE = {
 };
 
 var state={track:"latin",stage:0,i:0,revealed:false};
-var LS="scriptorium.v2";
-function load(){try{return JSON.parse(localStorage.getItem(LS)||"{}")}catch(e){return{}}}
+(function(){
+  // The landing page links to /latin, /latin-ii, /greek. Those are Vercel REWRITES, so the
+  // browser's URL stays as typed and `location.search` is empty -- the ?track= the rewrite
+  // adds is only ever visible server-side. Read the PATH; keep the query as a fallback for
+  // anyone linking straight to /read/?track=…
+  var PATH={"/latin":"latin","/latin-ii":"latin2","/greek":"greek"};
+  try{
+    var p=location.pathname.replace(/\/+$/,"");
+    var t=PATH[p] || new URLSearchParams(location.search).get("track");
+    if(t && DATA.tracks[t]) state.track=t;
+  }catch(e){}
+})();
+var LS="paleography.v2", LS_OLD="scriptorium.v2";
+function load(){
+  try{
+    var raw=localStorage.getItem(LS);
+    // The tool was called Scriptorium until 2026-08-27. Read the old key once rather than
+    // silently discarding a reader's history because the name on the door changed.
+    if(raw===null){ raw=localStorage.getItem(LS_OLD); if(raw!==null) localStorage.setItem(LS,raw); }
+    return JSON.parse(raw||"{}");
+  }catch(e){ return {}; }
+}
 function save(p){try{localStorage.setItem(LS,JSON.stringify(p))}catch(e){}}
 var prog=load();
 
@@ -671,7 +694,7 @@ function mailto(subject, body){
 }
 function updateReportLinks(){
   var g = document.getElementById("fb-general");
-  if (g) g.href = mailto("Scriptorium — a note about the tool", "");
+  if (g) g.href = mailto("Paleography — a note about the tool", "");
   var el = document.getElementById("fb-line");
   if (!el) return;
   if (state.stage === 0) { el.style.display = "none"; return; }
@@ -679,7 +702,7 @@ function updateReportLinks(){
   var it = cur(), meta = DATA.tracks[state.track].meta;
   var signs = (it.glosses || []).map(function(x){ return x.name || x.char; }).join(", ") || "none";
   el.href = mailto(
-    "Scriptorium — line " + it.id + " (" + meta.witness + ")",
+    "Paleography — line " + it.id + " (" + meta.witness + ")",
     "Witness: " + meta.witness + "\n" +
     "Page: " + it.page + "\n" +
     "Line id: " + it.id + "\n" +
@@ -815,13 +838,13 @@ if(window.claude && claude.use){ claude.use("downloads").then(function(d){
 }, function(){}); }
 
 function exportPayload(){
-  return JSON.stringify({exported:new Date().toISOString(), version:"scriptorium.v2",
+  return JSON.stringify({exported:new Date().toISOString(), version:"paleography.v2",
                          conf:prog.conf||{}, attempts:prog.attempts||[]}, null, 1);
 }
 document.getElementById("savedata").addEventListener("click",function(){
   if(!DL) return;
   var btn=this; btn.disabled=true;
-  DL.save({filename:"scriptorium-reading-data.json", data:exportPayload()})
+  DL.save({filename:"paleography-reading-data.json", data:exportPayload()})
     .then(function(){ btn.textContent="Saved"; },
           function(e){ btn.textContent = (e&&e.code==="declined") ? "Save the file" : "Could not save"; })
     .then(function(){ setTimeout(function(){btn.textContent="Save the file";btn.disabled=false},2200) });

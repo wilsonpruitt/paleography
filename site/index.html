@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paleography</title>
+<meta name="description" content="Learn to read Greek and Latin manuscripts — staged from orientation to full transcription, on images of the manuscripts themselves.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Paleography">
+<meta property="og:description" content="Learn to read Greek and Latin manuscripts, staged from orientation to full transcription.">
+<meta property="og:url" content="https://paleography.app">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='.9em' font-size='56'>%E2%9C%92%EF%B8%8F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif:wght@400&display=swap">
+<style>
+:root{
+  --ink:#14120F; --surface:#1E1B17; --raised:#2A2621; --line:#3A342D;
+  --text:#EAE4DA; --muted:#A0958A; --dim:#7B7168;
+  --accent:#5B82BE; --accent-soft:#2F415E; --plate:#100E0C;
+  --serif:"EB Garamond",Georgia,serif;
+  --greek:"Noto Serif","EB Garamond",Georgia,serif;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:3px;
+}
+:root[data-theme="light"]{
+  --ink:#F2EEE7; --surface:#FBF9F5; --raised:#FFFFFF; --line:#DED7CB;
+  --text:#211E19; --muted:#5F574C; --dim:#857C70;
+  --accent:#2E4B7A; --accent-soft:#DDE5F1; --plate:#EBE5DA;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --ink:#F2EEE7; --surface:#FBF9F5; --raised:#FFFFFF; --line:#DED7CB;
+    --text:#211E19; --muted:#5F574C; --dim:#857C70;
+    --accent:#2E4B7A; --accent-soft:#DDE5F1; --plate:#EBE5DA;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 90px}
+a{color:var(--accent)}
+
+header{padding:56px 0 30px}
+h1{font-family:var(--serif);font-weight:500;font-size:52px;margin:0 0 6px;letter-spacing:.005em}
+.sub{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--muted);
+  margin:0;max-width:44ch;line-height:1.45}
+
+.lede{font-family:var(--serif);font-size:20px;line-height:1.62;color:var(--text);
+  max-width:62ch;margin:30px 0 0}
+.lede + .lede{margin-top:16px;color:var(--muted)}
+.lede b{font-weight:500}
+
+h2{font-family:var(--sans);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--dim);font-weight:600;margin:52px 0 16px}
+
+/* tracks */
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.track{display:block;text-decoration:none;color:inherit;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 18px;
+  transition:border-color .15s,transform .15s}
+.track:hover{border-color:var(--accent);transform:translateY(-2px)}
+.track .n{font-family:var(--serif);font-size:25px;color:var(--text);margin-bottom:3px}
+.track .n .gk{font-family:var(--greek)}
+.track .w{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px}
+.track .d{font-family:var(--serif);font-size:16.5px;color:var(--muted);line-height:1.5}
+.track .go{margin-top:14px;font-size:13px;color:var(--accent);font-weight:500}
+.chip{display:inline-block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:20px;padding:2px 8px;color:var(--dim);
+  margin-bottom:10px}
+
+/* stages */
+.stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.st{background:var(--surface);padding:15px 16px}
+.st .num{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:5px}
+.st .t{font-size:14px;color:var(--text);font-weight:500;margin-bottom:4px}
+.st .b{font-family:var(--serif);font-size:15.5px;color:var(--muted);line-height:1.45}
+
+.body p{font-family:var(--serif);font-size:17.5px;line-height:1.66;color:var(--muted);
+  max-width:64ch;margin:0 0 15px}
+.body p b{color:var(--text);font-weight:500}
+.body code{font-family:var(--mono);font-size:14px;color:var(--text)}
+
+.facts{display:flex;flex-wrap:wrap;gap:26px;margin:6px 0 0}
+.fact .v{font-family:var(--serif);font-size:30px;color:var(--text);
+  font-variant-numeric:tabular-nums;line-height:1.1}
+.fact .k{font-size:12.5px;color:var(--dim);margin-top:2px}
+
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 16px;margin:22px 0}
+.note p{margin:0 0 9px}
+.note p:last-child{margin:0}
+
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--dim);line-height:1.75;max-width:74ch}
+footer a{color:var(--muted)}
+footer p{margin:0 0 10px}
+footer b{color:var(--muted);font-weight:500}
+@media (max-width:620px){
+  header{padding:36px 0 22px} h1{font-size:38px} .sub{font-size:19px}
+  .lede{font-size:18px} .wrap{padding:0 18px 60px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Paleography</h1>
+  <p class="sub">Learning to read the manuscripts, one line at a time.</p>
+</header>
+
+<p class="lede">You can read Latin, or Greek, or both. That is a different skill from reading
+a <b>ninth-century hand</b> — closer to learning someone's handwriting than to learning a
+language, and nobody is born able to do it.</p>
+
+<p class="lede">This is a place to practise. Every line here is cut from a photograph of a real
+manuscript, and the work is staged: you begin by looking, and only much later by writing
+anything down.</p>
+
+<h2>Choose a hand</h2>
+<div class="tracks">
+  <a class="track" href="/latin">
+    <div class="chip">start here</div>
+    <div class="n">Latin — Caroline minuscule</div>
+    <div class="w">Wien, Österreichische Nationalbibliothek, Cod. 940<br>Saint-Amand, early 9th century</div>
+    <div class="d">A commentary on Matthew in a clear, roomy hand. The editors wrote every
+      abbreviation out in full, so here you learn the letters and nothing else.</div>
+    <div class="go">Begin →</div>
+  </a>
+
+  <a class="track" href="/latin-ii">
+    <div class="chip">then</div>
+    <div class="n">Latin — a glossed grammar</div>
+    <div class="w">Leiden, Universiteitsbibliotheek, Voss. Lat. O. 41<br>9th century</div>
+    <div class="d">The same script, much harder going: a school grammar buried under commentary,
+      with every abbreviation sign left as the scribe wrote it. Some pages carry three hundred
+      lines.</div>
+    <div class="go">Begin →</div>
+  </a>
+
+  <a class="track" href="/greek">
+    <div class="chip">greek</div>
+    <div class="n"><span class="gk">Greek</span> — Byzantine minuscule</div>
+    <div class="w">Heidelberg, Cod. Pal. graec. 23 — the Palatine Anthology<br>10th century</div>
+    <div class="d">Printed Greek gives one shape per letter. This hand does not: it fuses letters
+      into ligatures, and one letter takes several forms depending on its neighbours. Type with
+      your ordinary keyboard.</div>
+    <div class="go">Begin →</div>
+  </a>
+</div>
+
+<h2>How it works</h2>
+<div class="stages">
+  <div class="st"><div class="num">00</div><div class="t">Start here</div>
+    <div class="b">The same line as ink and as print, side by side, and what differs.</div></div>
+  <div class="st"><div class="num">01</div><div class="t">Read along</div>
+    <div class="b">Line and text together. Nothing to type — this stage is for your eye.</div></div>
+  <div class="st"><div class="num">02</div><div class="t">One word</div>
+    <div class="b">The text is given but for one word. Find it in the ink.</div></div>
+  <div class="st"><div class="num">03</div><div class="t">Finish the line</div>
+    <div class="b">The opening is given. Read the rest off the page.</div></div>
+  <div class="st"><div class="num">04</div><div class="t">The whole line</div>
+    <div class="b">No help. Read it and write it out.</div></div>
+</div>
+
+<h2>What it is built on</h2>
+<div class="body">
+  <div class="facts">
+    <div class="fact"><div class="v">24,017</div><div class="k">lines of ground truth</div></div>
+    <div class="fact"><div class="v">7</div><div class="k">witnesses</div></div>
+    <div class="fact"><div class="v">330</div><div class="k">lines in the exercises</div></div>
+    <div class="fact"><div class="v">19&thinsp;/&thinsp;24</div><div class="k">expansions verified</div></div>
+  </div>
+
+  <p style="margin-top:26px">Openly licensed transcriptions, catalogued by HTR-United, joined to
+  the library facsimiles they were made from. Nothing is redrawn or reconstructed: the lines are
+  cut from the page images along the transcribers' own baselines, and material outside the line
+  you are working on is <b>blurred rather than removed</b> — a manuscript page is crowded, and
+  pretending otherwise teaches the wrong habit.</p>
+
+  <p>When a line carries a sign you may not know — an abbreviation, a decorated initial, a word
+  broken across the line-end — it is explained underneath, with a worked example from that same
+  manuscript.</p>
+
+  <div class="note">
+    <p><b>Where an expansion has not been checked against a source, it says so.</b> Nineteen of
+    the twenty-four signs taught here are verified against Cappelli's <i>Lexicon
+    Abbreviaturarum</i> or Thompson, with the page read as an image. The other five carry a
+    mark on their face saying they are not.</p>
+    <p>This matters more than it sounds: a tool that teaches a wrong expansion confidently is
+    worse than one that teaches nothing.</p>
+  </div>
+
+  <p><b>Your reading stays in your browser.</b> Nothing is sent anywhere. As you work, the tool
+  records which letters you mistake for which and shows you your own commonest slips — the
+  fastest guide to what to practise next.</p>
+</div>
+
+<h2>A prototype</h2>
+<div class="body">
+  <p>Three witnesses, a few hundred lines, and an apparatus still being checked. It is offered
+  now because the fastest way to find out what is wrong with it is to put it in front of people
+  who read these hands for a living.</p>
+  <p><b>Corrections and objections are wanted</b>, and so are the awkward questions — which
+  scripts belong here, what a class would actually need, and where the teaching is simply wrong.
+  Every line carries a link that reports its shelfmark, folio and transcription, so an objection
+  arrives checkable.</p>
+  <p style="font-family:var(--sans);font-size:15px">Write to
+  <a href="mailto:corrections@paleography.app">corrections@paleography.app</a>.</p>
+</div>
+
+<footer>
+  <p><b>Manuscript images.</b>
+  Wien, Österreichische Nationalbibliothek, Cod. 940 — courtesy of the
+  <a href="https://www.onb.ac.at/">Österreichische Nationalbibliothek</a>, by IIIF.
+  Heidelberg, Cod. Pal. graec. 23 —
+  <a href="https://doi.org/10.11588/diglit.3449">digitised by Heidelberg University Library</a>.
+  Leiden, Universiteitsbibliotheek, Voss. Lat. O. 41.</p>
+
+  <p><b>Ground truth</b> CC&nbsp;BY&nbsp;4.0 —
+  <a href="https://github.com/malamatenia/Eutyches">Eutyches</a>;
+  <a href="https://gitlab.huma-num.fr/ecrinum/anthologia/htr_cpgr23">ecrinum/anthologia</a>;
+  <a href="https://github.com/HTR-School-Vienna/-2024--carolingian-latin">HTR Winter School Vienna 2024</a>.
+  Catalogued by <a href="https://htr-united.github.io/">HTR-United</a>.
+  Abbreviations checked against Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), and Thompson,
+  <i>Introduction to Greek and Latin Palaeography</i> (1912).</p>
+</footer>
+
+</div>
+</body>
+</html>
