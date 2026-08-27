@@ -38,6 +38,8 @@ body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);
 header{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
   padding:28px 0 16px;border-bottom:1px solid var(--line);margin-bottom:22px}
 h1{font-family:var(--serif);font-weight:500;font-size:32px;margin:0}
+h1 a.wm{color:inherit;text-decoration:none}
+h1 a.wm:hover{color:var(--accent)}
 .home{font-size:13px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
 .home:hover{color:var(--text);border-color:var(--accent)}
 .tag{font-size:12.5px;color:var(--muted);letter-spacing:.09em;text-transform:uppercase}
@@ -224,10 +226,10 @@ footer .fpress a{color:var(--accent);text-decoration:underline;text-underline-of
 
 <div class="wrap">
 <header>
-  <h1>Paleography</h1>
+  <h1><a class="wm" href="/">Paleography</a></h1>
   <div class="tag" id="hdr-tag">learning to read the hand</div>
   <div class="spacer"></div>
-  <a class="home" href="/">← about</a>
+  <a class="home" href="/about">about</a>
   <div class="tabs" role="tablist">
     <button role="tab" id="tab-latin" aria-selected="true">Latin I</button>
     <button role="tab" id="tab-latin2" aria-selected="false">Latin II</button>

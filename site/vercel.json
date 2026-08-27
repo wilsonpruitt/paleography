@@ -1,13 +1,35 @@
 {
   "rewrites": [
-    { "source": "/latin",    "destination": "/read/index.html?track=latin"  },
-    { "source": "/latin-ii", "destination": "/read/index.html?track=latin2" },
-    { "source": "/greek",    "destination": "/read/index.html?track=greek"  },
-    { "source": "/read",     "destination": "/read/index.html"             }
+    {
+      "source": "/latin",
+      "destination": "/read/index.html?track=latin"
+    },
+    {
+      "source": "/latin-ii",
+      "destination": "/read/index.html?track=latin2"
+    },
+    {
+      "source": "/greek",
+      "destination": "/read/index.html?track=greek"
+    },
+    {
+      "source": "/read",
+      "destination": "/read/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    }
   ],
   "headers": [
-    { "source": "/(.*)", "headers": [
-      { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
-    ]}
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
   ]
 }

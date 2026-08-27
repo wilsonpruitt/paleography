@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Paleography Is</title>
+<meta name="description" content="What paleography is, where these hands came from, and which of the old authorities still hold.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="What Paleography Is">
+<meta property="og:description" content="Learn to read Greek and Latin manuscripts, staged from orientation to full transcription.">
+<meta property="og:url" content="https://paleography.app/about">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='.9em' font-size='56'>%E2%9C%92%EF%B8%8F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif:wght@400&display=swap">
+<style>
+:root{
+  --ink:#14120F; --surface:#1E1B17; --raised:#2A2621; --line:#3A342D;
+  --text:#EAE4DA; --muted:#A0958A; --dim:#7B7168;
+  --accent:#5B82BE; --accent-soft:#2F415E; --plate:#100E0C;
+  --serif:"EB Garamond",Georgia,serif;
+  --greek:"Noto Serif","EB Garamond",Georgia,serif;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:3px;
+}
+:root[data-theme="light"]{
+  --ink:#F2EEE7; --surface:#FBF9F5; --raised:#FFFFFF; --line:#DED7CB;
+  --text:#211E19; --muted:#5F574C; --dim:#857C70;
+  --accent:#2E4B7A; --accent-soft:#DDE5F1; --plate:#EBE5DA;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --ink:#F2EEE7; --surface:#FBF9F5; --raised:#FFFFFF; --line:#DED7CB;
+    --text:#211E19; --muted:#5F574C; --dim:#857C70;
+    --accent:#2E4B7A; --accent-soft:#DDE5F1; --plate:#EBE5DA;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 90px}
+a{color:var(--accent)}
+
+header{padding:56px 0 30px}
+h1{font-family:var(--serif);font-weight:500;font-size:52px;margin:0 0 6px;letter-spacing:.005em}
+.sub{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--muted);
+  margin:0;max-width:44ch;line-height:1.45}
+
+.navline{margin:18px 0 0;font-size:14.5px}
+.navline a{text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.navline a:hover{border-color:var(--accent)}
+.lede{font-family:var(--serif);font-size:20px;line-height:1.62;color:var(--text);
+  max-width:62ch;margin:30px 0 0}
+.lede + .lede{margin-top:16px;color:var(--muted)}
+.lede b{font-weight:500}
+
+h2{font-family:var(--sans);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--dim);font-weight:600;margin:52px 0 16px}
+
+/* tracks */
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.track{display:block;text-decoration:none;color:inherit;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 18px;
+  transition:border-color .15s,transform .15s}
+.track:hover{border-color:var(--accent);transform:translateY(-2px)}
+.track .n{font-family:var(--serif);font-size:25px;color:var(--text);margin-bottom:3px}
+.track .n .gk{font-family:var(--greek)}
+.track .w{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px}
+.track .d{font-family:var(--serif);font-size:16.5px;color:var(--muted);line-height:1.5}
+.track .go{margin-top:14px;font-size:13px;color:var(--accent);font-weight:500}
+.chip{display:inline-block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:20px;padding:2px 8px;color:var(--dim);
+  margin-bottom:10px}
+
+/* stages */
+.stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.st{background:var(--surface);padding:15px 16px}
+.st .num{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:5px}
+.st .t{font-size:14px;color:var(--text);font-weight:500;margin-bottom:4px}
+.st .b{font-family:var(--serif);font-size:15.5px;color:var(--muted);line-height:1.45}
+
+.body p{font-family:var(--serif);font-size:17.5px;line-height:1.66;color:var(--muted);
+  max-width:64ch;margin:0 0 15px}
+.body p b{color:var(--text);font-weight:500}
+.body code{font-family:var(--mono);font-size:14px;color:var(--text)}
+
+.facts{display:flex;flex-wrap:wrap;gap:26px;margin:6px 0 0}
+.fact .v{font-family:var(--serif);font-size:30px;color:var(--text);
+  font-variant-numeric:tabular-nums;line-height:1.1}
+.fact .k{font-size:12.5px;color:var(--dim);margin-top:2px}
+
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 16px;margin:22px 0}
+.note p{margin:0 0 9px}
+.note p:last-child{margin:0}
+
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--dim);line-height:1.75;max-width:74ch}
+footer a{color:var(--muted)}
+footer p{margin:0 0 10px}
+footer b{color:var(--muted);font-weight:500}
+footer .press{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--muted);
+  margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+footer .press a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+@media (max-width:620px){
+  header{padding:36px 0 22px} h1{font-size:38px} .sub{font-size:19px}
+  .lede{font-size:18px} .wrap{padding:0 18px 60px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+blockquote{font-family:var(--serif);font-size:18px;line-height:1.6;color:var(--text);
+  margin:22px 0;padding:16px 20px;background:var(--surface);border-left:2px solid var(--accent);
+  border-radius:0 var(--r) var(--r) 0;max-width:64ch}
+blockquote b{font-weight:500}
+blockquote .cite{display:block;margin-top:10px;font-family:var(--sans);font-style:normal;
+  font-size:12.5px;color:var(--dim);letter-spacing:.01em}
+.mono{font-family:var(--mono);font-size:14px;color:var(--text)}
+.body h2{margin-top:48px}
+.cta{margin-top:34px;font-family:var(--sans);font-size:16px}
+.cta a{text-decoration:none;border-bottom:1px solid var(--accent-soft);padding-bottom:2px}
+.cta a:hover{border-color:var(--accent)}
+h1 a.wm{color:inherit;text-decoration:none}
+h1 a.wm:hover{color:var(--accent)}
+.navline{margin:18px 0 0;font-size:14.5px}
+.navline a{text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+.navline a:hover{border-color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1><a class="wm" href="/">Paleography</a></h1>
+  <p class="sub">What it is, where these hands came from, and which of the old books still hold.</p>
+  <p class="navline"><a href="/">← back to the hands</a></p>
+</header>
+
+<div class="body">
+
+<h2>The skill</h2>
+
+<p>Paleography is the study of old handwriting: identifying it, dating it, localising it, and —
+first of all — <b>reading it</b>. That last is the part this site is for, and it is worth saying
+plainly that it is a separate skill from knowing the language.</p>
+
+<p>A reader who knows Latin brings a powerful advantage to a manuscript: they know which words
+are likely, so a half-legible run of letters can be resolved by sense. What they do not yet have
+is the other half — the trained eye that maps ink to letters in a script it has never seen. The
+two halves work together, and each can mislead. <b>Fluent Latin will confidently supply a word
+the scribe did not write</b>; a sharp eye with no Latin will read letters faithfully and produce
+nonsense. Learning to read a hand is learning to hold both at once.</p>
+
+<h2>How Greek got the way it is</h2>
+
+<p>Until about the year 800, Greek books were written in <b>majuscule</b> — capitals throughout,
+no spaces between words, no accents or breathings as a matter of course. This is the writing of
+the great fourth-century Bibles. Reading it is an exercise in dividing a continuous stream of
+letters into words, and ancient readers did it out loud, which helped.</p>
+
+<p>Then, within a few generations, Byzantine scribes adopted <b>minuscule</b> — a small,
+connected book hand developed out of everyday cursive. The change was not merely cosmetic. It
+brought word division, accents and breathings written as standard, and punctuation. A
+tenth-century Greek page is far closer to a printed page than a fifth-century one is, and that
+is why this site teaches minuscule: it is both the more approachable hand and the one in which
+nearly all classical and patristic Greek actually survives, because it is what the Byzantine
+scriptoria copied.</p>
+
+<p>What replaces the old difficulty is a new one. A scribe writing at speed fuses letters into
+<b>ligatures</b> — compound shapes that may resemble neither of their parts — and one letter can
+take several forms in a single line depending on what stands next to it. That, rather than the
+alphabet, is what a reader of printed Greek has to learn.</p>
+
+<h2>How Latin got the way it is</h2>
+
+<p>The Latin story runs the other way round: from a formal, monumental hand towards a workaday
+one, with a deliberate reform in the middle.</p>
+
+<p>Roman books were written in capitals, then in <b>uncial</b> — a rounder hand suited to pen and
+parchment rather than chisel and stone. The word itself survives from a complaint. Jerome, in his
+preface to the Book of Job, grumbles at luxury manuscripts:</p>
+
+<blockquote>Habeant qui volunt veteres libros vel in membranis purpureis auro argentoque
+descriptos vel <b>uncialibus, ut vulgo aiunt, litteris</b>, onera magis exarata quam
+codices.<span class="cite">— quoted in Thompson, <i>Introduction</i> (1912)</span></blockquote>
+
+<p><i>“…or in uncial letters, as they commonly call them — burdens rather than books.”</i>
+Nobody is sure what Jerome meant by the word. The name stuck to the script anyway, on the
+strength of a fourth-century aside about other people's extravagance.</p>
+
+<p>After Rome the western kingdoms each developed their own minuscule out of Roman cursive, and
+by the eighth century a scribe from one region could struggle badly with a book from another.
+The <b>Carolingian reform</b> ended that: the schools of Charlemagne's empire standardised a
+clear, round, well-spaced minuscule that could be read anywhere. It is the easiest medieval Latin
+hand, and it is where a beginner should start.</p>
+
+<p>It also has a long tail. When fifteenth-century humanists went looking for classical texts,
+what they found were Carolingian copies — which they took for genuinely ancient writing and
+imitated. Their imitation became roman type. <b>The letters you are reading now are its
+descendants</b>, which is why a modern reader meeting Caroline minuscule for the first time
+often feels an odd flicker of recognition.</p>
+
+<h2>Abbreviation, and a surprise about where it came from</h2>
+
+<p>Scribes abbreviated constantly, to save parchment and labour. Thompson draws the distinction
+that still organises the subject:</p>
+
+<blockquote>Abbreviation is the shortening of a word by the omission or suspension, as it is
+called, of the end…; contraction is the shortening of a word by omitting letters from the body
+and leaving the beginning and end. <b>The system of contraction is superior to that of
+suspension, in that it affords a key to the inflections.</b><span class="cite">— Thompson,
+<i>Introduction</i> (1912), ch. VII</span></blockquote>
+
+<p>That last clause is a practical fact rather than a taxonomy. A contraction keeps the word's
+ending, so its case and number survive and the sentence can still be parsed; a suspension cuts
+the ending off and destroys exactly that information. It is why one abbreviation can be resolved
+from the grammar and another cannot.</p>
+
+<p>The surprise is where contraction came from. The ancient Greek system, Thompson says, was
+suspension only. Contraction arrives later, and:</p>
+
+<blockquote>The contraction system was a Christian system, an innovation brought in through the
+Hellenistic Jews who translated from the Hebrew, particularly the authors of the Septuagint
+translation of the Old Testament.<span class="cite">— Thompson, <i>Introduction</i> (1912)</span></blockquote>
+
+<p>The <i>nomina sacra</i> — <span class="mono">DS</span> for <i>deus</i>,
+<span class="mono">DNS</span> for <i>dominus</i>, <span class="mono">XPS</span> for
+<i>Christus</i> under a stroke — are the visible residue of that. They pass from Greek into Latin
+practice and then into the whole medieval system of abbreviation. A habit of reverence about
+divine names became, by degrees, a general technology for saving parchment.</p>
+
+<h2>The books this site leans on</h2>
+
+<p>Two are public domain and both are used here directly.</p>
+
+<p><b>E. M. Thompson, <i>An Introduction to Greek and Latin Palaeography</i> (Oxford, 1912).</b>
+His own expanded replacement for the 1893 <i>Handbook</i> — same architecture, roughly twice the
+text. Prefer the later book; the earlier one is not wrong, only thinner.</p>
+
+<p><b>A. Cappelli, <i>Lexicon Abbreviaturarum</i> (1929).</b> The standard dictionary of Latin
+manuscript abbreviations, some fourteen thousand forms. Where a sign's expansion is marked
+<i>verified</i> in the exercises, it means Cappelli's or Thompson's page was read as an image and
+says so.</p>
+
+<div class="note">
+  <p><b>What has not held.</b> A century of work has redrawn much of Thompson: the dating and
+  localising of individual hands above all, and the tidy national-hands scheme of his chapter on
+  Visigothic, Lombardic and Merovingian writing.</p>
+  <p>He half-expected it. A footnote in the 1912 edition points the reader to a work by
+  E. A. Lowe, <i>Scriptura Latina Minuscula Antiquior</i>, “announced, but not yet published” —
+  the project that became the <i>Codices Latini Antiquiores</i> and superseded a good deal of
+  what surrounds the footnote. For current guidance the standard replacements are Bischoff's
+  <i>Latin Palaeography</i> and, for Greek, Reynolds and Wilson's <i>Scribes and Scholars</i>;
+  neither is public domain.</p>
+</div>
+
+<h2>What this site does, and does not</h2>
+
+<p>It teaches reading, and only reading. It will not teach you Latin or Greek, and it does not
+try to date or localise a hand — that is the graduate seminar, and it needs a teacher.</p>
+
+<p>Everything shown is cut from photographs of real manuscripts along transcribers' own
+baselines, on openly licensed ground truth. Nothing is redrawn. Where an expansion has not been
+checked against a printed authority, the tool says so on the face of the gloss, because a
+confident wrong expansion is worse than none.</p>
+
+<p class="cta"><a href="/">Choose a hand and begin →</a></p>
+
+</div>
+
+<footer>
+  <p class="press">Made alongside <a href="https://wrootpress.com">Wroot&nbsp;Press</a>, which
+  publishes translations from the manuscripts these hands were written in.</p>
+  <p>Thompson and Cappelli are in the public domain and were read from scans at the
+  <a href="https://archive.org/">Internet Archive</a>. Corrections to
+  <a href="mailto:wilson.pruitt@gmail.com?subject=Paleography">wilson.pruitt@gmail.com</a>.</p>
+</footer>
+
+</div>
+</body>
+</html>
