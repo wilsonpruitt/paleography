@@ -305,7 +305,16 @@ function allItems(){return DATA.tracks[state.track].items}
 function band(){
   var st=STAGES[state.stage]; if(!st.band) return allItems();
   var a=allItems();
-  return a.slice(Math.min(st.band[0],a.length-1), Math.min(st.band[1],a.length));
+  // Lines carrying the editors' supply are for reading only: at stage 2 and beyond the
+  // learner is asked to type, and those letters are not on the page to be read.
+  if(state.stage>=2) return a.filter(function(x){return !x.damaged})
+                             .slice(st.band[0], st.band[1]);
+  // Stage 1 is where damage belongs, so make sure a couple of those lines are actually
+  // reached: the difficulty ordering otherwise pushes them past the end of the band and
+  // the lesson never fires.
+  var plain=a.filter(function(x){return !x.damaged}).slice(st.band[0], st.band[1]);
+  var dmg=a.filter(function(x){return x.damaged}).slice(0,2);
+  return plain.concat(dmg);
 }
 function cur(){var b=band();return b[state.i % b.length]}
 function isGk(){return state.track==="greek"}

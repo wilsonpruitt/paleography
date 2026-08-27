@@ -143,11 +143,25 @@ is worth flagging to a reader (it is what makes a verb passive).
 
 ## Two smaller corrections from the same sitting
 
-**Round and square brackets: excluded from the bank.** `factum (co)nprobamus`,
-`(des)inentem`, `(pro)pe` — these mark editorially supplied letters, mostly at line
-openings where the page edge has taken them. **The dataset does not document the
-convention**, so rather than teach an unverified rule the lines are filtered out
-(`is_sentence`). Worth resolving later; a plate read on one instance would settle it.
+**Round and square brackets: ✅ SETTLED BY PLATE READ, 2026-08-27** —
+`manual-review/eutyches-parentheses-plate-read.md`. They are **the editors' supply where
+the ink cannot be read**, confirmed on four plates with four different physical causes
+(mould staining · worn ink · a gloss too faint to read · a tear that has taken the
+parchment away). **In no instance does a bracket correspond to an abbreviation sign**, so
+the hypothesis that mattered — that a learner should be hunting for a sign in the ink — is
+refuted 4/4, consistent with the dataset's own "abbreviations preserved" guideline.
+
+So the lines are **readmitted, flagged `damaged`**: shown in stage 1 with a verified gloss
+explaining the damage, withheld from stages 2–4 where the learner is asked to type letters
+that are not on the page.
+
+⚠ **Two of my own claims here were wrong and are corrected in the plate-read record.** I had
+written the brackets were "mostly at line openings, lost at the page edge": in fact **37 of
+66 are mid-line**, and the one line-opening case I read is nowhere near the page edge — it
+starts at x=1141 of a 3406-px page, and the loss is a tear in the middle of the leaf. ⛔ The
+first cut of that plate *looked* like edge loss only because **my own crop box clipped it
+52 px before the line**. A plate cut too tight can manufacture the evidence it was meant to
+test; widen before concluding.
 
 **Delivered image width raised 1400 → 2200 px cap** (median crop now ~1720 px, was 1400).
 The crops were never the limit — the source pages are 3305 × 4186 — but a 1400 px image

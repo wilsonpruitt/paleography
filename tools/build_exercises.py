@@ -52,11 +52,10 @@ def greek_difficulty(t):
 def is_sentence(t):
     if any(c in STRUCT for c in t):
         return False
-    # Round/square brackets mark editorially supplied letters (mostly at line openings,
-    # lost at the page edge). The dataset does not document the convention, so rather
-    # than teach an unverified rule we keep those lines out of the bank entirely.
-    if any(c in "()[]" for c in t):
-        return False
+    # Bracketed lines are ADMITTED (see manual-review/eutyches-parentheses-plate-read.md:
+    # the brackets are the editors' supply where the ink is unreadable) but flagged, so the
+    # trainer can show them for reading and withhold them from every stage that asks the
+    # learner to type -- you cannot type letters that are not on the page.
     if len(t.split()) < 3:
         return False
     return sum(1 for c in t if c.isalpha()) / max(len(t), 1) > 0.72
@@ -100,7 +99,8 @@ def pack(manifest_dir, n, max_w, quality, track, scorer):
         for ch in r["text"]:
             if ch in GLOSS and ch not in seen:
                 seen.add(ch); gl.append(GLOSS[ch])
-        out.append(dict(id=r["image"].rsplit(".", 1)[0][-12:], track=track,
+        damaged = any(c in "()[]" for c in r["text"])
+        out.append(dict(id=r["image"].rsplit(".", 1)[0][-12:], track=track, damaged=damaged,
                         text=r["text"], words=words, cloze=cloze_index(words),
                         diff=r["diff"], glosses=gl, layer=r["layer"], witness=r["witness"],
                         page=r["page"], w=im.width, h=im.height,

@@ -1,107 +1,149 @@
 {
-  "_note": "Plain-English glosses for the abbreviation signs that actually occur in the exercise bank. `status` is load-bearing: `verified` = the expansion comes from a source (the chocomufin table shipped with the Eutyches dataset, or Thompson); `proposed` = standard palaeographic convention, mine, AWAITING WILSON'S RATIFICATION. Never silently promote one to the other. `mechanism` follows Thompson 1912 ch. VII: a CONTRACTION keeps the word's ending so the inflection survives; a SUSPENSION cuts the end off and destroys it.",
-  "signs": [
-    {
-      "char": "̃",
-      "display": "◌̃",
-      "name": "the abbreviation stroke",
-      "mechanism": "suspension or contraction",
-      "status": "proposed",
-      "short": "a stroke over a letter: something has been left out",
-      "note": "The commonest mark in Latin manuscripts, and the least specific — it says only that letters are missing here. Over a vowel it is almost always an omitted <b>m</b> or <b>n</b>. Over a <b>c</b> it very often stands for <b>con</b>: in this book <code>c̃sidero</code> is <em>considero</em>, <code>c̃sonans</code> is <em>consonans</em>. At a word's end it can be <b>-er</b>: <code>frequent̃</code> is <em>frequenter</em>. There is no rule that settles it — your Latin does."
-    },
-    {
-      "char": "ũ",
-      "display": "ũ",
-      "name": "u with a stroke",
-      "mechanism": "suspension",
-      "status": "proposed",
-      "short": "ũ = um or un",
-      "note": "A vowel carrying the stroke has lost a following <b>m</b> or <b>n</b>. <code>locũ</code> is <em>locum</em>. This is the single most frequent abbreviation in the whole corpus — worth knowing cold before anything else."
-    },
-    {
-      "char": "ã", "display": "ã", "name": "a with a stroke",
-      "mechanism": "suspension", "status": "proposed",
-      "short": "ã = am or an",
-      "note": "The same stroke on an <b>a</b>: an omitted <b>m</b> or <b>n</b> follows."
-    },
-    {
-      "char": "õ", "display": "õ", "name": "o with a stroke",
-      "mechanism": "suspension", "status": "proposed",
-      "short": "õ = om or on",
-      "note": "The same stroke on an <b>o</b>. <code>cõmouere</code> is <em>commouere</em> — note the doubled m is not written twice."
-    },
-    {
-      "char": "ĩ", "display": "ĩ", "name": "i with a stroke",
-      "mechanism": "suspension", "status": "proposed",
-      "short": "ĩ = in or im",
-      "note": "The same stroke on an <b>i</b>. Very often the whole word <em>in</em>."
-    },
-    {
-      "char": "ꝑ", "display": "ꝑ", "name": "p with a stroke through the descender",
-      "mechanism": "contraction", "status": "proposed",
-      "short": "ꝑ = per",
-      "note": "The stroke crosses the descender of the <b>p</b>. Usually <b>per</b>, occasionally <em>par</em> or <em>por</em> — again the Latin decides. Its near neighbour <code>ꝓ</code>, with a loop rather than a bar, is <em>pro</em>; the two are worth learning as a pair so you never confuse them."
-    },
-    {
-      "char": "ꝗ", "display": "ꝗ", "name": "q with a stroke through the descender",
-      "mechanism": "contraction", "status": "proposed",
-      "short": "ꝗ = qui, sometimes quod",
-      "note": "The <b>q</b> family is large and worth care: the bar through the tail gives <em>qui</em>; a stroke above gives <em>quod</em>; a superscript vowel gives that vowel after the q (see below)."
-    },
-    {
-      "char": "ͣ", "display": "ͣ (over a letter)", "name": "a written above the line",
-      "mechanism": "superscript vowel",
-      "status": "proposed",
-      "short": "a small a above a letter supplies that vowel — qͣ = qua",
-      "note": "A vowel written small and high belongs immediately after the letter it sits on. Over a <b>q</b> it gives <b>qua</b>: <code>aliqͣ</code> is <em>aliqua</em>, and <code>qͣsi</code> is <em>quasi</em>. The same trick with a small <b>i</b> gives <em>qui</em>, with a small <b>o</b>, <em>quo</em>. Once you see it as a letter that has simply climbed above the line, it stops being strange."
-    },
-    {
-      "char": "ꝰ", "display": "ꝰ", "name": "the us-sign",
-      "mechanism": "suspension",
-      "status": "verified",
-      "short": "ꝰ = -us",
-      "note": "A word-ending sign, standing on the line after the last written letter: <code>c̃seruatꝰ</code> is <em>conservatus</em>. Verified against the character table shipped with this dataset."
-    },
-    {
-      "char": "᷑", "display": "᷑", "name": "the ur-sign",
-      "mechanism": "suspension",
-      "status": "verified",
-      "short": "᷑ = -ur",
-      "note": "A small hook above the line at a word's end: <code>seruat᷑</code> is <em>seruatur</em>. This one matters for reading sense, because <b>-ur</b> is what makes a Latin verb passive. Verified against this dataset's character table."
-    },
-    {
-      "char": "÷", "display": "÷", "name": "the est-sign",
-      "mechanism": "word-sign",
-      "status": "verified",
-      "short": "÷ = est",
-      "note": "A whole word in one mark. Its dataset character table names it outright, and Thompson gives the same. When a sentence seems to have no verb, look for this."
-    },
-    {
-      "char": "⁊", "display": "⁊", "name": "the Tironian et",
-      "mechanism": "word-sign",
-      "status": "verified",
-      "short": "⁊ = et",
-      "note": "Not a letter at all: a surviving sign from the ancient Roman shorthand attributed to Cicero's secretary Tiro. It outlived the rest of that system by a thousand years, and is still written in Irish today."
-    },
-    {
-      "char": "ł", "display": "ł", "name": "l with a stroke",
-      "mechanism": "contraction", "status": "proposed",
-      "short": "ł = vel",
-      "note": "‘or’ — extremely common in a grammar book, which spends its time saying that a form may be this <em>or</em> that."
-    },
-    {
-      "char": "đ", "display": "đ", "name": "d with a stroke",
-      "mechanism": "contraction", "status": "proposed",
-      "short": "đ = a d-word, most often quod as qđ",
-      "note": "Rarely alone. You will nearly always meet it as <code>qđ</code> = <em>quod</em>."
-    },
-    {
-      "char": "ę", "display": "ę", "name": "e caudata, the e with a tail",
-      "mechanism": "spelling",
-      "status": "proposed",
-      "short": "ę = ae",
-      "note": "Not an abbreviation at all but a spelling: the little tail is how the Middle Ages wrote the diphthong <b>ae</b>. <code>ecclesię</code> is <em>ecclesiae</em>. If you read it as a plain e, the case ending will mislead you."
-    }
-  ]
+ "_note": "Plain-English glosses for the abbreviation signs that actually occur in the exercise bank. `status` is load-bearing: `verified` = the expansion comes from a source (the chocomufin table shipped with the Eutyches dataset, or Thompson); `proposed` = standard palaeographic convention, mine, AWAITING WILSON'S RATIFICATION. Never silently promote one to the other. `mechanism` follows Thompson 1912 ch. VII: a CONTRACTION keeps the word's ending so the inflection survives; a SUSPENSION cuts the end off and destroys it.",
+ "signs": [
+  {
+   "char": "̃",
+   "display": "◌̃",
+   "name": "the abbreviation stroke",
+   "mechanism": "suspension or contraction",
+   "status": "proposed",
+   "short": "a stroke over a letter: something has been left out",
+   "note": "The commonest mark in Latin manuscripts, and the least specific — it says only that letters are missing here. Over a vowel it is almost always an omitted <b>m</b> or <b>n</b>. Over a <b>c</b> it very often stands for <b>con</b>: in this book <code>c̃sidero</code> is <em>considero</em>, <code>c̃sonans</code> is <em>consonans</em>. At a word's end it can be <b>-er</b>: <code>frequent̃</code> is <em>frequenter</em>. There is no rule that settles it — your Latin does."
+  },
+  {
+   "char": "ũ",
+   "display": "ũ",
+   "name": "u with a stroke",
+   "mechanism": "suspension",
+   "status": "proposed",
+   "short": "ũ = um or un",
+   "note": "A vowel carrying the stroke has lost a following <b>m</b> or <b>n</b>. <code>locũ</code> is <em>locum</em>. This is the single most frequent abbreviation in the whole corpus — worth knowing cold before anything else."
+  },
+  {
+   "char": "ã",
+   "display": "ã",
+   "name": "a with a stroke",
+   "mechanism": "suspension",
+   "status": "proposed",
+   "short": "ã = am or an",
+   "note": "The same stroke on an <b>a</b>: an omitted <b>m</b> or <b>n</b> follows."
+  },
+  {
+   "char": "õ",
+   "display": "õ",
+   "name": "o with a stroke",
+   "mechanism": "suspension",
+   "status": "proposed",
+   "short": "õ = om or on",
+   "note": "The same stroke on an <b>o</b>. <code>cõmouere</code> is <em>commouere</em> — note the doubled m is not written twice."
+  },
+  {
+   "char": "ĩ",
+   "display": "ĩ",
+   "name": "i with a stroke",
+   "mechanism": "suspension",
+   "status": "proposed",
+   "short": "ĩ = in or im",
+   "note": "The same stroke on an <b>i</b>. Very often the whole word <em>in</em>."
+  },
+  {
+   "char": "ꝑ",
+   "display": "ꝑ",
+   "name": "p with a stroke through the descender",
+   "mechanism": "contraction",
+   "status": "proposed",
+   "short": "ꝑ = per",
+   "note": "The stroke crosses the descender of the <b>p</b>. Usually <b>per</b>, occasionally <em>par</em> or <em>por</em> — again the Latin decides. Its near neighbour <code>ꝓ</code>, with a loop rather than a bar, is <em>pro</em>; the two are worth learning as a pair so you never confuse them."
+  },
+  {
+   "char": "ꝗ",
+   "display": "ꝗ",
+   "name": "q with a stroke through the descender",
+   "mechanism": "contraction",
+   "status": "proposed",
+   "short": "ꝗ = qui, sometimes quod",
+   "note": "The <b>q</b> family is large and worth care: the bar through the tail gives <em>qui</em>; a stroke above gives <em>quod</em>; a superscript vowel gives that vowel after the q (see below)."
+  },
+  {
+   "char": "ͣ",
+   "display": "ͣ (over a letter)",
+   "name": "a written above the line",
+   "mechanism": "superscript vowel",
+   "status": "proposed",
+   "short": "a small a above a letter supplies that vowel — qͣ = qua",
+   "note": "A vowel written small and high belongs immediately after the letter it sits on. Over a <b>q</b> it gives <b>qua</b>: <code>aliqͣ</code> is <em>aliqua</em>, and <code>qͣsi</code> is <em>quasi</em>. The same trick with a small <b>i</b> gives <em>qui</em>, with a small <b>o</b>, <em>quo</em>. Once you see it as a letter that has simply climbed above the line, it stops being strange."
+  },
+  {
+   "char": "ꝰ",
+   "display": "ꝰ",
+   "name": "the us-sign",
+   "mechanism": "suspension",
+   "status": "verified",
+   "short": "ꝰ = -us",
+   "note": "A word-ending sign, standing on the line after the last written letter: <code>c̃seruatꝰ</code> is <em>conservatus</em>. Verified against the character table shipped with this dataset."
+  },
+  {
+   "char": "᷑",
+   "display": "᷑",
+   "name": "the ur-sign",
+   "mechanism": "suspension",
+   "status": "verified",
+   "short": "᷑ = -ur",
+   "note": "A small hook above the line at a word's end: <code>seruat᷑</code> is <em>seruatur</em>. This one matters for reading sense, because <b>-ur</b> is what makes a Latin verb passive. Verified against this dataset's character table."
+  },
+  {
+   "char": "÷",
+   "display": "÷",
+   "name": "the est-sign",
+   "mechanism": "word-sign",
+   "status": "verified",
+   "short": "÷ = est",
+   "note": "A whole word in one mark. Its dataset character table names it outright, and Thompson gives the same. When a sentence seems to have no verb, look for this."
+  },
+  {
+   "char": "⁊",
+   "display": "⁊",
+   "name": "the Tironian et",
+   "mechanism": "word-sign",
+   "status": "verified",
+   "short": "⁊ = et",
+   "note": "Not a letter at all: a surviving sign from the ancient Roman shorthand attributed to Cicero's secretary Tiro. It outlived the rest of that system by a thousand years, and is still written in Irish today."
+  },
+  {
+   "char": "ł",
+   "display": "ł",
+   "name": "l with a stroke",
+   "mechanism": "contraction",
+   "status": "proposed",
+   "short": "ł = vel",
+   "note": "‘or’ — extremely common in a grammar book, which spends its time saying that a form may be this <em>or</em> that."
+  },
+  {
+   "char": "đ",
+   "display": "đ",
+   "name": "d with a stroke",
+   "mechanism": "contraction",
+   "status": "proposed",
+   "short": "đ = a d-word, most often quod as qđ",
+   "note": "Rarely alone. You will nearly always meet it as <code>qđ</code> = <em>quod</em>."
+  },
+  {
+   "char": "ę",
+   "display": "ę",
+   "name": "e caudata, the e with a tail",
+   "mechanism": "spelling",
+   "status": "proposed",
+   "short": "ę = ae",
+   "note": "Not an abbreviation at all but a spelling: the little tail is how the Middle Ages wrote the diphthong <b>ae</b>. <code>ecclesię</code> is <em>ecclesiae</em>. If you read it as a plain e, the case ending will mislead you."
+  },
+  {
+   "char": "(",
+   "display": "( )",
+   "name": "round brackets — the editors' supply",
+   "mechanism": "editorial, not scribal",
+   "status": "verified",
+   "short": "( ) = letters supplied because the ink cannot be read",
+   "note": "<b>These letters are not on the page.</b> Where the ink is lost the editors restored what the word must have been and put it in brackets. Verified by reading the manuscript itself at four places: purple mould stains sitting over the words; ink simply worn away; a gloss too faint to make out; and, in one case, a tear that has taken the parchment clean away. <b>Do not hunt for them in the ink — there is nothing there.</b> Damage of this kind is ordinary; a thousand-year-old book has been rained on, handled, and eaten by mould, and part of reading manuscripts is knowing what your edition is quietly doing for you."
+  }
+ ]
 }
