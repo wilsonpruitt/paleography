@@ -29,11 +29,10 @@ build.
 
 ## Open items
 
-- ⬜ **`corrections@paleography.app` does not exist yet.** The footer's *Report this line* link
-  writes to it, carrying shelfmark, folio, line id, the transcription shown and which glosses
-  fired. **Set up Cloudflare Email Routing to forward it**, or change `CONTACT` at the top of
-  the trainer's script — one line. ⚠ A feedback channel that bounces is worse than none, and
-  this is the address a scholar will use.
+- ✅ **Contact is `wilson.pruitt@gmail.com`** (Wilson's call: *"if this becomes an issue, that
+  would be a good sign"*). Set in one place — `CONTACT` at the top of the trainer's script, and
+  the mailto on the landing page. Left as plain text rather than assembled in JS: a mailto that
+  breaks when a script fails is worse than a scraped address.
 - ⬜ **No `www` CNAME.** The apex works; `www.paleography.app` does not resolve. Add
   `CNAME www → cname.vercel-dns.com`, DNS-only, if wanted.
 - ⚠ **The page is 10.9 MB in one request** — every line image is inlined as base64, which is

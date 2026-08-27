@@ -213,6 +213,8 @@ footer .fnote{font-family:var(--serif);font-size:15.5px;font-style:italic;color:
 footer .fnote b{font-style:normal;color:var(--text)}
 footer .fcta{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
 footer .fcta a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+footer .fpress{margin-top:12px;font-family:var(--serif);font-size:15px;font-style:italic}
+footer .fpress a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
 @media (max-width:620px){
   h1{font-size:26px} .wrap{padding:0 16px 60px} .printed{font-size:22px}
   .diffrow{flex-direction:column;gap:3px} .diffrow .k{padding-top:0}
@@ -324,6 +326,9 @@ footer .fcta a{color:var(--accent);text-decoration:underline;text-underline-offs
   <a id="fb-line" href="#">Report this line</a> — sends the line's shelfmark and folio, and
   whichever gloss it showed you, so it can be checked against the plate.
   <a id="fb-general" href="#">Or write about the tool</a>.</p>
+
+  <p class="fpress">Made alongside <a href="https://wrootpress.com">Wroot Press</a>, which
+  publishes translations from the manuscripts these hands were written in.</p>
 </footer>
 </div>
 
@@ -687,7 +692,7 @@ function wireBeta(){
 /* ---------- reporting a bad line ----------
    One address, set once here. A correction that reaches nobody is the same as no correction,
    and a scholar will not hunt for a way to tell you the expansion is wrong.                */
-var CONTACT = "corrections@paleography.app";
+var CONTACT = "wilson.pruitt@gmail.com";
 function mailto(subject, body){
   return "mailto:" + CONTACT + "?subject=" + encodeURIComponent(subject) +
          "&body=" + encodeURIComponent(body);
