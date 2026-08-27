@@ -202,9 +202,13 @@ details.data .body{padding:2px 18px 18px}
 textarea.export{margin-top:11px;font-size:11.5px;height:110px;color:var(--muted);display:none}
 textarea.export.show{display:block}
 
-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
-  font-size:12.5px;color:var(--dim);line-height:1.7}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--dim);line-height:1.75;max-width:74ch}
 footer a{color:var(--muted)}
+footer p{margin:0 0 10px}
+footer b{color:var(--muted);font-weight:500}
+footer .fnote{font-family:var(--serif);font-size:15.5px;font-style:italic;color:var(--muted)}
+footer .fnote b{font-style:normal;color:var(--text)}
 @media (max-width:620px){
   h1{font-size:26px} .wrap{padding:0 16px 60px} .printed{font-size:22px}
   .diffrow{flex-direction:column;gap:3px} .diffrow .k{padding-top:0}
@@ -288,10 +292,28 @@ footer a{color:var(--muted)}
 </details>
 
 <footer>
-  Ground truth CC&nbsp;BY&nbsp;4.0 — Leiden Voss. Lat. O. 41 via
-  <a href="https://github.com/malamatenia/Eutyches">Eutyches</a>;
-  Heidelberg Pal. gr. 23 via <a href="https://gitlab.huma-num.fr/ecrinum/anthologia/htr_cpgr23">ecrinum/anthologia</a>.
-  Lines cut along the ground-truth baselines. Progress is kept in this browser only.
+  <p class="fnote"><b>A prototype.</b> Three witnesses, a few dozen lines each, and a
+  transcription apparatus still being checked: where a sign's expansion has not been verified
+  against a source it says so on its face. Corrections and objections are wanted.</p>
+
+  <p><b>Manuscript images.</b>
+  Wien, Österreichische Nationalbibliothek, Cod. 940 — images courtesy of the
+  <a href="https://www.onb.ac.at/">Österreichische Nationalbibliothek</a>, by IIIF.
+  Heidelberg, Universitätsbibliothek, Cod. Pal. graec. 23 —
+  <a href="https://doi.org/10.11588/diglit.3449">digitised by Heidelberg University Library</a>.
+  Leiden, Universiteitsbibliotheek, Voss. Lat. O. 41.</p>
+
+  <p><b>Ground truth</b> CC&nbsp;BY&nbsp;4.0 —
+  <a href="https://github.com/malamatenia/Eutyches">Eutyches</a> (Pandelidis);
+  <a href="https://gitlab.huma-num.fr/ecrinum/anthologia/htr_cpgr23">ecrinum/anthologia</a>;
+  <a href="https://github.com/HTR-School-Vienna/-2024--carolingian-latin">HTR Winter School Vienna 2024</a>.
+  Catalogued by <a href="https://htr-united.github.io/">HTR-United</a>.
+  Abbreviations checked against Cappelli, <i>Lexicon Abbreviaturarum</i> (1929) and
+  Thompson, <i>Introduction to Greek and Latin Palaeography</i> (1912).</p>
+
+  <p>Lines are cut from the page facsimiles along the ground-truth baselines; material outside
+  the line in hand is blurred, not removed. Your progress and reading data stay in this
+  browser.</p>
 </footer>
 </div>
 
