@@ -87,3 +87,34 @@ the data is simply lost. This is the failure georgia.wrootlabs.com hit in July 2
 **Off unless the reader turns it on**, in the *What you are getting wrong* panel, and the
 footer says so. The endpoint validates by **allowlist rather than blocklist** — verified by
 test: a body carrying extra `text`/`typed` fields has them dropped rather than stored.
+
+## The raw corpus is not kept locally (2026-08-27)
+
+`corpus/raw/` — 2.2 GB of upstream clones and ÖNB page images — **was deleted.** The repo went
+from 2.4 GB to 133 MB.
+
+⚑ **Nothing about the live site depends on it.** Verified by rebuilding with it gone: the
+exercise payload came back **byte-identical** (`b46b770305ed`). `build_exercises.py` reads
+`corpus/crops/*/manifest.jsonl`, and the crops (64 MB) are kept.
+
+**What still needs it, and how to get it back:**
+
+| task | needs `corpus/raw` |
+|---|---|
+| rebuild the bank / redeploy the site | no |
+| re-crop at different parameters, or add lines | **yes** |
+| plate reads (`tools/plate.py`) | **yes** |
+| PAGE XML export with true image dimensions | yes (falls back to polygon extents without) |
+
+```sh
+./tools/fetch-seeds.sh              # the four upstream GT repos, ~2.1 GB
+python3 tools/fetch_iiif.py corpus/normalized/wien940.jsonl \
+  "https://api.onb.ac.at/iiif/presentation/v3/manifest/10047947" \
+  corpus/raw/wien940-images --tei corpus/raw/wien940/ONB_940.xml --offset -2 \
+  --out-jsonl corpus/normalized/wien940-iiif.jsonl      # ÖNB images, ~92 MB
+```
+
+⚠ **iCloud was tried first and is the wrong tool here.** Moving files into iCloud Drive does
+**not** free disk: they stay local until uploaded and then evicted, and after the move there
+were *zero* dataless placeholders and ~1 GB of the payload was git packfiles that would never
+be read. It reclaimed nothing while queueing 2.2 GB against the iCloud quota.
