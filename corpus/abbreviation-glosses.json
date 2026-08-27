@@ -16,36 +16,40 @@
    "display": "ũ",
    "name": "u with a stroke",
    "mechanism": "suspension",
-   "status": "proposed",
-   "short": "ũ = um or un",
-   "note": "A vowel carrying the stroke has lost a following <b>m</b> or <b>n</b>. <code>locũ</code> is <em>locum</em>. This is the single most frequent abbreviation in the whole corpus — worth knowing cold before anything else."
+   "status": "verified",
+   "short": "ũ = un or um",
+   "note": "A vowel carrying the stroke has lost a following <b>m</b> or <b>n</b>. Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV lists the mark first of all — <i>I. — = m, n</i> — and notes that with the value of <b>m</b> it was used constantly in the Middle Ages for the endings <b>am, em, um</b>. His own examples include <code>actū</code> = <em>actum</em>. This is the commonest abbreviation in the corpus; learn it before anything else.",
+   "source": "Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV"
   },
   {
    "char": "ã",
    "display": "ã",
    "name": "a with a stroke",
    "mechanism": "suspension",
-   "status": "proposed",
-   "short": "ã = am or an",
-   "note": "The same stroke on an <b>a</b>: an omitted <b>m</b> or <b>n</b> follows."
+   "status": "verified",
+   "short": "ã = an or am",
+   "note": "A vowel carrying the stroke has lost a following <b>m</b> or <b>n</b>. Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV lists the mark first of all — <i>I. — = m, n</i> — and notes that with the value of <b>m</b> it was used constantly in the Middle Ages for the endings <b>am, em, um</b>. His own examples include <code>aliā</code> = <em>aliam</em>. This is the commonest abbreviation in the corpus; learn it before anything else.",
+   "source": "Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV"
   },
   {
    "char": "õ",
    "display": "õ",
    "name": "o with a stroke",
    "mechanism": "suspension",
-   "status": "proposed",
-   "short": "õ = om or on",
-   "note": "The same stroke on an <b>o</b>. <code>cõmouere</code> is <em>commouere</em> — note the doubled m is not written twice."
+   "status": "verified",
+   "short": "õ = on or om",
+   "note": "A vowel carrying the stroke has lost a following <b>m</b> or <b>n</b>. Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV lists the mark first of all — <i>I. — = m, n</i> — and notes that with the value of <b>m</b> it was used constantly in the Middle Ages for the endings <b>am, em, um</b>. His own examples include <code>cōmūe</code> = <em>commune</em> — note the doubled m is not written twice. This is the commonest abbreviation in the corpus; learn it before anything else.",
+   "source": "Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV"
   },
   {
    "char": "ĩ",
    "display": "ĩ",
    "name": "i with a stroke",
    "mechanism": "suspension",
-   "status": "proposed",
+   "status": "verified",
    "short": "ĩ = in or im",
-   "note": "The same stroke on an <b>i</b>. Very often the whole word <em>in</em>."
+   "note": "A vowel carrying the stroke has lost a following <b>m</b> or <b>n</b>. Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV lists the mark first of all — <i>I. — = m, n</i> — and notes that with the value of <b>m</b> it was used constantly in the Middle Ages for the endings <b>am, em, um</b>. His own examples include <code>ī</code> = <em>in</em>, often the whole word. This is the commonest abbreviation in the corpus; learn it before anything else.",
+   "source": "Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV"
   },
   {
    "char": "ꝑ",
@@ -72,9 +76,10 @@
    "display": "ͣ (over a letter)",
    "name": "a written above the line",
    "mechanism": "superscript vowel",
-   "status": "proposed",
+   "status": "verified",
    "short": "a small a above a letter supplies that vowel — qͣ = qua",
-   "note": "A vowel written small and high belongs immediately after the letter it sits on. Over a <b>q</b> it gives <b>qua</b>: <code>aliqͣ</code> is <em>aliqua</em>, and <code>qͣsi</code> is <em>quasi</em>. The same trick with a small <b>i</b> gives <em>qui</em>, with a small <b>o</b>, <em>quo</em>. Once you see it as a letter that has simply climbed above the line, it stops being strange."
+   "note": "A vowel written small and high belongs immediately after the letter it sits on. Over a <b>q</b> it gives <b>qua</b>: <code>aliqͣ</code> is <em>aliqua</em>, <code>qͣsi</code> is <em>quasi</em>. Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV groups these under <i>IV. = r, re, ra, ar, a</i> — the same family of superscript strokes also supplies an <em>r</em>, so read what follows before deciding. Once you see it as a letter that has simply climbed above the line it stops being strange.",
+   "source": "Cappelli, <i>Lexicon Abbreviaturarum</i> (1929), p. XXIV"
   },
   {
    "char": "ꝰ",
@@ -138,7 +143,7 @@
    "mechanism": "spelling",
    "status": "proposed",
    "short": "ę = ae",
-   "note": "Not an abbreviation at all but a spelling: the little tail is how the Middle Ages wrote the diphthong <b>ae</b>. <code>ecclesię</code> is <em>ecclesiae</em>. If you read it as a plain e, the case ending will mislead you."
+   "note": "Not an abbreviation at all but a spelling: the little tail is how the Middle Ages wrote the diphthong <b>ae</b>. <code>ecclesię</code> is <em>ecclesiae</em>. If you read it as a plain e, the case ending will mislead you. ⚠ <b>Deliberately not verified against Cappelli</b>: his <i>Lexicon</i> catalogues abbreviation signs, and this is not one — it is a way of spelling <em>ae</em>. Its absence there is a confirmation, not a gap."
   },
   {
    "char": "(",
