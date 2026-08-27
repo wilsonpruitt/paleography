@@ -42,7 +42,34 @@ afterwards adds the baseline's own vertical run to the band height — that turn
 46 px line into a 133 px crop carrying its neighbours with it. Rotate about the
 baseline midpoint, then take the horizontal band: same line, 77 px, clean.
 
-**3. Line height comes from the page, not the line.** Robust estimate = median gap
+**3. Sizing the band: the polygon is unusable whole and indispensable in part.**
+Wilson caught display capitals being decapitated — `INCIPIT LIBER EVTI` opens the book in
+letters ~260 px tall on a page whose median line gap is 46 px, so a `1.25 × line-height`
+ascender cut the tops off the N and C.
+
+Three fixes were tried; the two failures are the useful part.
+
+- *Raise the multiple globally* — drags neighbouring lines into every ordinary crop.
+- *Find blank rows above the ink* — fails outright. This parchment is mottled and densely
+  written; the row-ink count never approaches zero, so a display line and a small one both
+  came back 195 px.
+- ✅ *Median per-column polygon extent.* The bounding box is unusable (one spur inflates a
+  46 px line to 189 px) but the polygon is the only thing that knows a display line really
+  is tall. Take the vertical extent **column by column**, then the median: a spur occupies
+  a few columns and is voted out, a genuinely tall line is tall in nearly every column.
+  Measured — spurred line: bbox 189 → median band **77** (true); display line: bbox 263 →
+  median band **177** (true).
+
+⚑ An ink-profile fallback survives for lines with no usable polygon, and it looks for a
+**local minimum that then rises**, never for darkness in absolute terms: between two lines
+the count dips (77) and jumps again as the next line begins (231). The shape of the
+profile is the signal, not its level.
+
+⚠ On a page written 46 px apart with 77 px-tall letters the GT polygons themselves overlap
+their neighbours, so a correct crop still shows slivers above and below. That is the page,
+not the tool.
+
+**4. Line height comes from the page, not the line.** Robust estimate = median gap
 between consecutive baselines on that page (46.5 px on VLO41 f02r, over 75 lines).
 
 ## Images: one witness is unusable

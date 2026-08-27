@@ -40,16 +40,118 @@ def page_line_height(rows):
     return statistics.median(hs) if hs else 40.0
 
 
-def crop_baseline(img, baseline, lh, asc=1.25, desc=0.40, pad=4, deskew=True):
-    """Crop a band around the baseline: asc*lh above it, desc*lh below.
+def polygon_band(poly, samples=41):
+    """Robust vertical extent of a line polygon: the MEDIAN per-column extent.
 
-    Rotates FIRST, then bands. Doing it the other way adds the baseline's own tilt to
-    the band height -- on a tilted line that turned a 46px line into a 133px crop
-    carrying the neighbouring lines with it.
+    The bounding box cannot be used directly -- some source polygons are
+    self-intersecting (an eScriptorium artifact), and one stray spur turned a 46 px
+    line into a 189 px box. But the polygon is not worthless either: it is the only
+    thing that knows a display-capital line really is 260 px tall.
+
+    Taking the extent column by column and then the median of those extents keeps both
+    truths: a spur occupies a few columns and is voted out, while a genuinely tall line
+    is tall in almost every column. Returns (top_y, bottom_y) or None.
+    """
+    if not poly or len(poly) < 3:
+        return None
+    xs = [p[0] for p in poly]
+    x0, x1 = min(xs), max(xs)
+    if x1 <= x0:
+        return None
+    tops, bots = [], []
+    edges = list(zip(poly, poly[1:] + poly[:1]))
+    for i in range(samples):
+        x = x0 + (x1 - x0) * (i + 0.5) / samples
+        hits = []
+        for (ax, ay), (bx, by) in edges:
+            if (ax <= x < bx) or (bx <= x < ax):
+                t = (x - ax) / (bx - ax)
+                hits.append(ay + t * (by - ay))
+        if len(hits) >= 2:
+            tops.append(min(hits)); bots.append(max(hits))
+    if len(tops) < 5:
+        return None
+    tops.sort(); bots.sort()
+    return tops[len(tops) // 2], bots[len(bots) // 2]
+
+
+def _ink_profile(win, thresh, step=2):
+    """Per-row count of ink pixels, lightly smoothed."""
+    g = win.convert("L"); W, H = g.size; px = g.load()
+    raw = [sum(1 for x in range(0, W, step) if px[x, y] < thresh) for y in range(H)]
+    out = []
+    for i in range(H):
+        lo, hi = max(0, i - 1), min(H, i + 2)
+        out.append(sum(raw[lo:hi]) / (hi - lo))
+    return out
+
+
+def _ink_extent(win, my, lh, max_up, max_dn):
+    """Distance from the baseline to the inter-line GUTTER, above and below.
+
+    Three attempts were needed here, and the two failures are the instructive part.
+
+    A fixed multiple of the page line height clips DISPLAY CAPITALS: on Voss. Lat. O. 41
+    f02r the page median line gap is 46 px but INCIPIT LIBER EVTI stands ~260 px tall, so
+    a 1.25*lh ascender lopped the tops off the N and C. Raising the multiple globally
+    drags neighbours into every ordinary crop instead.
+
+    Looking for BLANK rows fails too: this parchment is mottled and densely written, and
+    the row-ink count never approaches zero -- that attempt returned an identical 195 px
+    for a display line and a small one.
+
+    What actually marks the gutter is a LOCAL MINIMUM that then rises again as the next
+    line up begins. Measured on the line above: ink runs 115-145 through the x-height,
+    dips to 77, then jumps to 231. So: walk out, track the running minimum, and call the
+    gutter as soon as the profile climbs back above 1.6x that minimum. Absolute darkness
+    is never the test; the shape of the profile is.
+    """
+    g = win.convert("L"); W, H = g.size; px = g.load()
+    samples = sorted(px[x, y] for y in range(0, H, max(1, H // 40))
+                     for x in range(0, W, max(1, W // 40)))
+    if not samples:
+        return int(1.25 * lh), int(0.4 * lh)
+    bg = samples[int(len(samples) * 0.85)]
+    prof = _ink_profile(win, bg - 30)
+    if not prof:
+        return int(1.25 * lh), int(0.4 * lh)
+    my = int(my)
+
+    def scan(direction, limit, min_off):
+        limit = int(limit); min_off = int(max(2, min_off))
+        vals = []
+        for d in range(0, limit + 1):
+            y = my + direction * d
+            vals.append(prof[y] if 0 <= y < H else 0.0)
+        peak = max(vals) if vals else 0.0
+        if peak <= 0:
+            return min_off
+        run_min, run_at = None, min_off
+        for d in range(min_off, limit + 1):
+            v = vals[d]
+            # blank space (edge of the written area) -- gutter reached outright
+            if v <= peak * 0.12:
+                return d
+            if run_min is None or v < run_min:
+                run_min, run_at = v, d
+            elif run_min is not None and v > max(run_min * 1.6, peak * 0.28):
+                return run_at            # profile climbing again: next line beginning
+        return limit
+
+    up = scan(-1, max_up, max(6, 0.62 * lh))
+    dn = scan(+1, max_dn, max(4, 0.22 * lh))
+    return up, dn
+
+
+def crop_baseline(img, baseline, lh, poly=None, asc=1.25, desc=0.40, pad=4, deskew=True):
+    """Crop a band around the baseline, sized to the ink rather than to a fixed multiple.
+
+    Rotates FIRST, then bands. Doing it the other way adds the baseline's own tilt to the
+    band height -- on a tilted line that turned a 46 px line into a 133 px crop carrying
+    its neighbours with it.
 
     Robust to malformed polygons (self-intersecting spurs are a real eScriptorium
-    artifact here), and gives every line a consistent visual scale, which matters for
-    a card deck where varying x-height reads as a difference in the hand.
+    artifact here): the polygon is used only as a loose ceiling, never as the box.
     """
     xs = [x for x, y in baseline]; ys = [y for x, y in baseline]
     x0, x1 = min(xs), max(xs)
@@ -61,25 +163,37 @@ def crop_baseline(img, baseline, lh, asc=1.25, desc=0.40, pad=4, deskew=True):
             if abs(a_) < 20:
                 ang = a_
     cx, cy = (x0 + x1) / 2.0, sum(ys) / len(ys)
-    # generous window so rotation has material to work with
+    band = polygon_band(poly) if poly else None
+    poly_h = (band[1] - band[0]) if band else None
+    ceil_up = max((poly_h * 1.3 + lh) if poly_h else 2.8 * lh, 1.6 * lh)
+    ceil_dn = max(0.9 * lh, min(1.4 * lh, (poly_h * 0.45) if poly_h else 0.9 * lh))
+
     half_w = (x1 - x0) / 2.0 + pad
-    half_h = max(asc, desc) * lh + abs(math.sin(math.radians(ang))) * half_w + lh
+    half_h = ceil_up + abs(math.sin(math.radians(ang))) * half_w + lh
     wx0, wy0 = int(cx - half_w - lh), int(cy - half_h)
-    wx1, wy1 = int(cx + half_w + lh), int(cy + half_h)
+    wx1, wy1 = int(cx + half_w + lh), int(cy + ceil_dn + lh)
     wx0, wy0 = max(wx0, 0), max(wy0, 0)
     wx1, wy1 = min(wx1, img.width), min(wy1, img.height)
     if wx1 <= wx0 or wy1 <= wy0:
         return None
     win = img.crop((wx0, wy0, wx1, wy1))
-    # baseline midpoint inside the window
     mx, my = cx - wx0, cy - wy0
     if ang:
         win = win.rotate(ang, resample=Image.BICUBIC, center=(mx, my),
                          expand=False, fillcolor=(255, 255, 255))
+    if band:
+        # trust the robust polygon extent, measured from the baseline, plus a little air
+        up = int(max(cy - band[0], 0.95 * lh) + 0.16 * lh + 4)
+        dn = int(max(band[1] - cy, desc * lh) + 0.10 * lh + 3)
+        up = min(up, int(3.4 * lh) if poly_h is None else int(poly_h * 1.3 + lh))
+    else:
+        up, dn = _ink_extent(win, my, lh, int(ceil_up), int(ceil_dn))
+        up = int(min(max(up + 6, 0.95 * lh), ceil_up))
+        dn = int(min(max(dn + 4, desc * lh), ceil_dn))
     bx0 = max(int(mx - half_w), 0)
     bx1 = min(int(mx + half_w), win.width)
-    by0 = max(int(my - asc * lh), 0)
-    by1 = min(int(my + desc * lh), win.height)
+    by0 = max(int(my - up), 0)
+    by1 = min(int(my + dn), win.height)
     if bx1 <= bx0 or by1 <= by0:
         return None
     return win.crop((bx0, by0, bx1, by1))
@@ -139,7 +253,8 @@ def main():
         if a.mode == "baseline" and r.get("baseline"):
             if p not in lh_cache:
                 lh_cache[p] = page_line_height([x for x in rows if x["page"] == r["page"]])
-            box = crop_baseline(cache[p], r["baseline"], lh_cache[p], deskew=not a.no_deskew)
+            box = crop_baseline(cache[p], r["baseline"], lh_cache[p],
+                                poly=r.get("polygon"), deskew=not a.no_deskew)
         else:
             box = crop_line(cache[p], r["polygon"], mask=not a.no_mask)
         if box is None: skipped_filter += 1; continue
