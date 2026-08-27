@@ -83,6 +83,18 @@ button[disabled]{opacity:.4;cursor:not-allowed}
 .printed .filled{color:var(--ok)}
 .printed .wrongfill{color:var(--err);text-decoration:line-through}
 
+/* working area: glosses beside the input once there is something to type */
+.work{display:block}
+.workmain{min-width:0}
+.work.side{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:26px;align-items:start}
+.work.side #glosshost{position:sticky;top:14px}
+.work.side .gloss{padding:11px 13px}
+.work.side .gloss .sign{font-size:24px;min-width:1.2em}
+.work.side .gloss .nm{font-size:12.5px}
+.work.side .gloss p{font-size:15px;line-height:1.55}
+.work.side .glosshdr{margin-top:0}
+@media (max-width:900px){.work.side{display:block}.work.side #glosshost{position:static}}
+
 /* abbreviation glosses */
 .glosses{margin-top:14px;display:flex;flex-direction:column;gap:0;
   border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
@@ -214,18 +226,18 @@ footer a{color:var(--muted)}
   <div class="plate"><img id="plate-img" alt="One line cut from the manuscript page"></div>
   <div class="platebar"><span id="pb-left">—</span><span id="pb-right">—</span></div>
 
-  <div class="printedwrap" id="printedwrap">
-    <span class="lbl" id="printed-lbl">The same line, in print</span>
-    <div class="printed" id="printed"></div>
-  </div>
+  <div class="work" id="work">
+   <div class="workmain">
+    <div class="printedwrap" id="printedwrap">
+      <span class="lbl" id="printed-lbl">The same line, in print</span>
+      <div class="printed" id="printed"></div>
+    </div>
 
-  <div id="glosshost"></div>
-
-  <div class="inputrow" id="inputrow">
+    <div class="inputrow" id="inputrow">
     <label class="lbl" for="entry" id="entry-lbl">Your reading</label>
     <textarea id="entry" rows="2" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
     <div class="palette" id="palette"></div>
-    <div class="actions">
+      <div class="actions">
       <button class="primary" id="check">Check</button>
       <button id="reveal">Show me</button>
       <button id="next">Next line →</button>
@@ -235,9 +247,12 @@ footer a{color:var(--muted)}
     </div>
   </div>
 
-  <div class="actions" id="readrow" style="display:none">
-    <button class="primary" id="readnext">I've read it →</button>
-    <span style="font-size:13px;color:var(--muted)" id="readcount"></span>
+    <div class="actions" id="readrow" style="display:none">
+      <button class="primary" id="readnext">I've read it →</button>
+      <span style="font-size:13px;color:var(--muted)" id="readcount"></span>
+    </div>
+   </div>
+   <div id="glosshost"></div>
   </div>
 
   <div class="result" id="result">
@@ -518,6 +533,10 @@ function renderItem(){
     state.stage===1 ? "The same line, in print" : "The line, with the gap to fill";
 
   renderGlosses(it);
+  // Stage 1 is pure reading, so the gloss belongs under the line at full width. From stage 2
+  // on there is a box to type in, and a gloss between the image and that box pushes the two
+  // apart -- the reader loses sight of the ink exactly when they need it.
+  document.getElementById("work").className = "work" + (state.stage>=2 ? " side" : "");
   var reading = state.stage===1;
   document.getElementById("inputrow").style.display = reading?"none":"";
   document.getElementById("readrow").style.display = reading?"":"none";

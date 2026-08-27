@@ -366,3 +366,21 @@ Greek letterform triggers are common by nature: omega fires on 23 of 44 lines, k
 explanations under one line is a wall of prose, not help. Glosses are now capped at **three per
 line, keeping the rarest** — the ones a reader has least chance of having met already. Latin
 averages 0.5 per line, Greek 1.8.
+
+## Glosses move to a sidebar once there is something to type (2026-08-27)
+
+Wilson, on reaching stage 2: *"could we move the gloss to the side bar so i can input the word
+and still see the image."*
+
+The gloss sat between the printed line and the typing box, which is right for **stage 1** — pure
+reading, full width, nothing competing — and wrong for every stage after it. With a box to type
+in, a block of prose in the middle pushes the image and the input apart, so **the reader loses
+sight of the ink at exactly the moment they need it.**
+
+From stage 2 the working area becomes a two-column grid: plate and printed line and input on the
+left, glosses in a **sticky** right-hand column that stays put as the page scrolls. Below 900 px
+it falls back to stacked, since a 330 px sidebar beside a manuscript line is worse than nothing.
+
+⚑ The general rule this is an instance of: **an explanation belongs beside the work when the
+reader is producing, and beneath it when the reader is only looking.** The same content in the
+same order can be a help or an obstruction depending on what the stage asks for.
