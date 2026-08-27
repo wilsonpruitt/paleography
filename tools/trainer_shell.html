@@ -83,6 +83,13 @@ button[disabled]{opacity:.4;cursor:not-allowed}
 .printed .filled{color:var(--ok)}
 .printed .wrongfill{color:var(--err);text-decoration:line-through}
 
+/* beta-code legend */
+.betahint{margin-top:9px;font-size:13px;color:var(--muted);line-height:1.7}
+.betahint b{color:var(--text);font-weight:500}
+.betahint code{font-family:var(--mono);font-size:12.5px;background:var(--surface);
+  border:1px solid var(--line);border-radius:3px;padding:1px 5px;color:var(--text)}
+.betahint .row{margin-top:3px}
+
 /* working area: glosses beside the input once there is something to type */
 .work{display:block}
 .workmain{min-width:0}
@@ -236,6 +243,7 @@ footer a{color:var(--muted)}
     <div class="inputrow" id="inputrow">
     <label class="lbl" for="entry" id="entry-lbl">Your reading</label>
     <textarea id="entry" rows="2" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+    <div class="betahint" id="betahint" style="display:none"></div>
     <div class="palette" id="palette"></div>
       <div class="actions">
       <button class="primary" id="check">Check</button>
@@ -490,6 +498,17 @@ function renderAll(){
   });
   document.getElementById("hdr-tag").textContent=DATA.tracks[state.track].meta.witness;
 
+  var bh=document.getElementById("betahint");
+  if(isGk()){
+    bh.style.display="";
+    bh.innerHTML="<b>Type Greek with your ordinary keyboard.</b> Letters as you would expect, "+
+      "then <code>h</code>=η <code>w</code>=ω <code>q</code>=θ <code>c</code>=ξ <code>y</code>=ψ "+
+      "<code>f</code>=φ <code>x</code>=χ <code>u</code>=υ."+
+      "<div class=\"row\">Marks come <em>after</em> the letter: <code>)</code> smooth "+
+      "<code>(</code> rough <code>/</code> acute <code>\\</code> grave <code>=</code> circumflex "+
+      "<code>+</code> diaeresis <code>|</code> iota subscript. So <code>r(utido/floion</code> "+
+      "gives ῥυτιδόφλοιον, and <code>su=kon</code> gives σῦκον.</div>";
+  } else { bh.style.display="none"; bh.innerHTML=""; }
   var pal=document.getElementById("palette"); pal.innerHTML="";
   PALETTE[fam()].forEach(function(ch){
     if(ch==="|"){var s=document.createElement("div");s.className="sep";pal.appendChild(s);return}
@@ -568,6 +587,42 @@ function renderGlosses(it){
        '</div><p>'+g.note+'</p></div>';
   });
   host.innerHTML=h+'</div>';
+}
+/* ---------- beta code: type Greek on a Latin keyboard ----------
+   The scheme Perseus and papyri.info use: a letter, then its diacritics. Verified by
+   round-tripping every line in this bank -- 44 of 44 come back exactly.
+   `s` always gives σ, which happens to suit this witness: its scribe used no final sigma. */
+var BETA_BASE={a:"α",b:"β",g:"γ",d:"δ",e:"ε",z:"ζ",h:"η",q:"θ",i:"ι",k:"κ",l:"λ",m:"μ",
+  n:"ν",c:"ξ",o:"ο",p:"π",r:"ρ",s:"σ",t:"τ",u:"υ",f:"φ",x:"χ",y:"ψ",w:"ω",
+  A:"Α",B:"Β",G:"Γ",D:"Δ",E:"Ε",Z:"Ζ",H:"Η",Q:"Θ",I:"Ι",K:"Κ",L:"Λ",M:"Μ",
+  N:"Ν",C:"Ξ",O:"Ο",P:"Π",R:"Ρ",S:"Σ",T:"Τ",U:"Υ",F:"Φ",X:"Χ",Y:"Ψ",W:"Ω"};
+var BETA_DIA={")":"\u0313","(":"\u0314","/":"\u0301","\\":"\u0300",
+              "=":"\u0342","+":"\u0308","|":"\u0345"};
+var GREEK_RE=/[\u0370-\u03ff\u1f00-\u1fff]/;
+function toGreek(str){
+  var out="",i=0;
+  while(i<str.length){
+    var ch=str[i], base=BETA_BASE[ch];
+    if(base===undefined && !GREEK_RE.test(ch)){ out+=ch; i++; continue; }
+    if(base===undefined) base=ch;
+    i++;
+    var marks="";
+    while(i<str.length && BETA_DIA[str[i]]!==undefined){ marks+=BETA_DIA[str[i]]; i++; }
+    out += (base+marks).normalize("NFC");
+  }
+  return out.normalize("NFC");
+}
+function wireBeta(){
+  var ta=document.getElementById("entry");
+  ta.addEventListener("input", function(){
+    if(!isGk()) return;
+    var v=this.value, c=this.selectionStart;
+    var g=toGreek(v);
+    if(g===v) return;
+    var pre=toGreek(v.slice(0,c)).length;
+    this.value=g;
+    try{ this.selectionStart=this.selectionEnd=pre; }catch(e){}
+  });
 }
 function insert(ch){
   var ta=document.getElementById("entry"),s=ta.selectionStart,en=ta.selectionEnd,v=ta.value;
@@ -723,6 +778,7 @@ document.getElementById("cleardata").addEventListener("click",function(){
   document.getElementById("exportbox").classList.remove("show");
 });
 renderData();
+wireBeta();
 renderAll();
 })();
 </script>

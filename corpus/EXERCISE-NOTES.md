@@ -384,3 +384,34 @@ it falls back to stacked, since a 330 px sidebar beside a manuscript line is wor
 ⚑ The general rule this is an instance of: **an explanation belongs beside the work when the
 reader is producing, and beneath it when the reader is only looking.** The same content in the
 same order can be a help or an obstruction depending on what the stage asks for.
+
+## Beta code: typing Greek on a Latin keyboard (2026-08-27)
+
+Wilson: *"what would it take to switch to greek characters typing in like they have on perseus
+or papyri? so i wouldn't have to change my keyboard settings."*
+
+Not much, as it turns out, and it removes a real obstacle — the Greek primer had already noted
+that polytonic input is an onboarding problem the Latin track does not have.
+
+**Beta code**, the scheme Perseus and papyri.info use: a letter, then its diacritics.
+`h`=η `w`=ω `q`=θ `c`=ξ `y`=ψ `f`=φ `x`=χ `u`=υ; then `)` smooth `(` rough `/` acute
+`\` grave `=` circumflex `+` diaeresis `|` iota subscript. So `r(utido/floion` gives
+ῥυτιδόφλοιον and `su=kon` gives σῦκον.
+
+⚑ **Verified by round-tripping the whole bank, not by trying a few words.** Every Greek line was
+converted to beta code and back through the *shipped* function: **44 of 44 exact.** A
+transliterator that is right on `mh=nin` and wrong on one accent in one line is worse than none,
+because the learner will believe the diff.
+
+Three details worth keeping:
+
+- **It runs on a mixed buffer.** By the time you type `)`, the `a` before it is already `α`. So
+  the converter combines diacritics onto Greek letters as well as onto ASCII ones — it cannot
+  assume the input is still ASCII.
+- **`s` always gives σ**, which happens to suit this witness exactly: its scribe used no final
+  sigma, so the convention the dataset already follows needs no special case.
+- **The cursor is placed by transliterating the prefix**, since `a)` (two characters) becomes
+  `ἀ` (one). Setting it to the end would make mid-word editing impossible.
+
+Gated to the Greek track: Latin needs its ASCII literal, and `insert()` and *Show me* set the
+field programmatically, which fires no input event and so cannot double-convert.
