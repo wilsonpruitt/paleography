@@ -124,9 +124,23 @@ ingest** — the catalogue was wrong about wien940's format and layer, and it wi
 | **Middle English** | **None in HTR-United.** Same shape as OE; more digitised witnesses (Auchinleck, Ellesmere are restrictive). | — | — | — | ⭐ **GREEN-LIT, self-produced.** Do this one first of the two: later Gothic hands read easier and Kraken's medieval Latin models give a usable draft. |
 | **Dead Sea Scrolls** | Leon Levy DSS Digital Library (IAA): images "contact for licensing"; DJD transcriptions © OUP. Groningen (Popović) HTR work is research, not open GT. | — | **closed** | closed | ⛔ ⭐ **RULED: link page, never crops** (§8.2). A "Qumran" page under Hebrew teaching the hand from Wilson's description + links into the IAA viewer. Hosting a plate is not legal here. |
 
-**Ordering that follows** (⭐ ruled 2026-08-28): Old French → **Hungarian** → Syriac →
-Hebrew/Aramaic → Coptic (after a rights fetch) → Sanskrit (early print) → Middle English →
-Old English (both self-produced) → DSS (link page only).
+**Ordering** (⭐ re-ruled 2026-08-28 after the licence check). Two bands, and the rule is
+**every track whose ground truth already exists ships before any track whose GT we must
+make**:
+
+1. **Found GT** — Old French → Syriac → Hebrew/Aramaic → Coptic (after a rights fetch) →
+   Sanskrit (early print).
+2. **Self-produced GT** — **Hungarian first**, then Middle English, then Old English.
+3. DSS: link page only, never a track.
+
+⭐ **Hungarian leads band 2** rather than the whole queue. It was fast-tracked to second on
+the belief that its GT was a licensing formality — the Ómagyar Korpusz has the text of all 47
+codices. The licence check killed that: no licence stated, and keyed from in-copyright printed
+editions (§4). So it is a keying job like the English tracks. It still leads them, because it
+is the only one of the three with a **published answer key we may read to check our own work**,
+and because its images are the cleanest in the whole plan — Public Domain Mark, IIIF level 2.
+That makes it the right place to build the keying-and-verification workflow that ME and OE
+will then reuse.
 
 ⛔ **Rovásírás is NOT a track, and the primer must say why.** Székely-Hungarian runes have
 genuine medieval attestation (Transylvanian inscriptions, the Nikolsburg alphabet of 1483) but
@@ -193,16 +207,6 @@ who sees it says so publicly.
   — now generated. Revisit at 4+ languages, which is where the flat list stops scanning.
 - **Phase B — Old French.** One CIHAM witness, `latin-gothic` profile, Gothic scorer, OE/ME
   palette additions. Proves "new language = registry + content". **Sonnet** once A exists.
-- **Phase B2 — Hungarian.** ⭐ Fast-tracked to ride B's `latin-gothic` profile while it is warm.
-  **Two gates first, both Wilson's:** (a) Ómagyar Korpusz licence, (b) OSZK image rights —
-  neither could be read on 2026-08-28 (404 / bad cert), so this phase does not start until both
-  are known. The new build step is a **text↔image aligner** (published transcription → line
-  polygons on a facsimile): that tool does not exist yet and is the real cost here, but it is
-  reusable for every later self-produced track, which is why it is worth building on the
-  language where the answer key is already published. Start with the Jókai-kódex or the
-  Ómagyar Mária-siralom. Primer carries the rovás paragraph (§4). **Opus** for the aligner,
-  Sonnet for the content. ⭐ **Expert seat: Alina** — verifying a reading against an
-  already-published corpus text needs a Hungarian reader, not a paleographer.
 - **Phase C — Syriac (RTL pilot).** §5a + §5b keymap engine. ÖNB IIIF route reused. Two
   tracks (Serto 1545, Estrangela s. XII). **Opus** for the RTL/keymap engine, Sonnet for the
   second track.
@@ -212,11 +216,19 @@ who sees it says so publicly.
   Sanskrit is **settled as early print** (§8.3) — content plus the Devanagari transliterator,
   which is the one Opus item here (virama/conjunct handling; use `sanscript`, don't write it).
   The Sanskrit space must state it is teaching type.
-- **Phase F — Middle English, then Old English.** ⭐ Green-lit. ~110 lines each: pick a CC BY-NC
-  witness, Kraken draft, expert correction. This is Phase 3 contribution mode arriving early,
-  so build it as the real thing rather than a one-off script. **ME first** (easier hands, better
-  Kraken priors). ⚠ Gate: an expert in the `expert:` seat before any gloss ships; until then the
-  primer says the seat is empty.
+- **Phase F — the self-produced-GT band: Hungarian, then Middle English, then Old English.**
+  ⭐ All three green-lit; ~110 lines each; Kraken draft → expert correction. This is Phase 3
+  contribution mode arriving early, so build it as the real thing rather than a one-off script.
+  ⭐ **Hungarian goes first** and is where the workflow gets built, for three reasons: its
+  images are Public Domain Mark over IIIF level 2 (BSB Cod.hung. 1 — no rights question at
+  all), it rides the `latin-gothic` profile Old French already built, and the Ómagyar Korpusz
+  gives a published key we may *read* to verify our keying even though we may not ship it.
+  ME follows (easier hands, better Kraken priors than OE), then OE.
+  The text↔image aligner belongs here rather than in its own phase: build it once, on the
+  language that can check its output against print, and ME and OE inherit it. **Opus** for the
+  aligner, Sonnet for the content.
+  ⚠ Gate, all three: an expert in the `expert:` seat before any gloss ships; until then the
+  primer says the seat is empty. ⭐ Hungarian's seat: **Alina**.
 - **DSS** — one page under Hebrew, no crops (§8.2), when Hebrew lands.
 
 Estimated burn: Phase A is the only large one (the shell is 50 KB of hand-wired JS); B–D are
@@ -244,10 +256,13 @@ each a fraction. No agent fleet; one session per phase.
    makes us the first open GT for OE/ME reading exercises, which is itself why scholars would
    look. ⚠ **Two expert seats must be filled before any gloss ships** — the primer says the
    seat is empty until then.
-6. ⭐ **Hungarian is fast-tracked to second, right behind Old French** (added 2026-08-28 after
-   Wilson asked; it is his wife's heritage language). It rides Old French's `latin-gothic`
-   profile, and its GT job is **alignment rather than keying** because the Ómagyar Korpusz
-   already publishes the transcriptions of all 47 codices.
+6. ⭐ **Hungarian leads the SELF-PRODUCED band, behind everything with findable GT**
+   (re-ruled 2026-08-28 after the licence check; it is Wilson's wife's heritage language).
+   The rule: every track whose GT already exists ships before any track whose GT we must make.
+   It was briefly second overall, on the belief its GT was a licensing formality — the licence
+   check killed that, so it is a keying job. It still leads Middle and Old English, because its
+   images are the cleanest in the plan and it alone has a published key we may read to verify
+   our own work, which makes it the right place to build the workflow the English tracks reuse.
    ✅ **Both licence checks DONE 2026-08-28.** Images are clean and excellent (BSB Cod.hung. 1,
    Public Domain Mark, IIIF level 2). The transcription is NOT reusable: the Ómagyar Korpusz
    states no licence and is keyed from in-copyright printed editions. Hungarian therefore
