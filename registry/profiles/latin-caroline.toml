@@ -11,6 +11,8 @@
 id = "latin-caroline"
 name = "Caroline minuscule"
 direction = "ltr"
+# No extra font class: this script is the page default.
+css_class = ""
 
 # --- exercise selection (tools/build_exercises.py) ---
 # Abbreviation density dominates; length and word count trim the ordering. A line of
@@ -33,6 +35,7 @@ strip_combining_when_forgiving = false
 # No transliteration keymap: a Latin keyboard already types this script. The palette
 # supplies the signs it cannot.
 keymap = ""
+keymap_hint = ""
 palette = [
   "ã", "ẽ", "ĩ", "õ", "ũ", "ū", "ę", "đ", "ł",
   "ꝑ", "ꝓ", "ꝗ", "ꝵ", "ꝰ", "⁊", "÷", "¬", "|", "ſ",

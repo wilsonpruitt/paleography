@@ -235,10 +235,7 @@ footer .fpress a{color:var(--accent);text-decoration:underline;text-underline-of
   <div class="tag" id="hdr-tag">learning to read the hand</div>
   <div class="spacer"></div>
   <a class="home" href="/about">about</a>
-  <div class="tabs" role="tablist">
-    <button role="tab" id="tab-latin" aria-selected="true">Latin I</button>
-    <button role="tab" id="tab-latin2" aria-selected="false">Latin II</button>
-    <button role="tab" id="tab-greek" aria-selected="false">Greek</button>
+  <div class="tabs" role="tablist" id="tabs">
   </div>
 </header>
 
@@ -445,19 +442,33 @@ var ORIENT_TAIL = {
   "single letters you are sure of, then the ones on either side of them.</p>"+
   "<p>Go to <b>Stage one</b>. It shows a dozen lines with their text and asks nothing of you but to look.</p>"
 };
-var PALETTE = {
-  latin:["ã","ẽ","ĩ","õ","ũ","ū","ę","đ","ł","ꝑ","ꝓ","ꝗ","ꝵ","ꝰ","⁊","÷","¬","|","ſ"],
-  greek:["ά","έ","ή","ί","ό","ύ","ώ","|","ἀ","ἁ","ἐ","ἑ","ἠ","ἡ","ὀ","ὁ","ὐ","ὑ","|",
-         "ᾶ","ῆ","ῖ","ῦ","ῶ","|","ὰ","ὲ","ὴ","ὶ","ὸ","ὺ","|","·","᾽"]
-};
 
-var state={track:"latin",stage:0,i:0,revealed:false};
+/* Tracks in registry order -- this drives the tab strip, the default track and every
+   loop that used to be a literal ["latin","latin2","greek"]. Adding a language adds a
+   TOML file; nothing in this shell needs to learn its name. */
+var TRACK_IDS=[];
+var TRACK_NAV={};
+for(var _lid in DATA.languages) DATA.languages[_lid].tracks.forEach(function(x){
+  TRACK_IDS.push(x.id); TRACK_NAV[x.id]=x;
+});
+(function(){
+  var strip=document.getElementById("tabs");
+  TRACK_IDS.forEach(function(id,i){
+    var b=document.createElement("button");
+    b.setAttribute("role","tab"); b.id="tab-"+id;
+    b.setAttribute("aria-selected",String(i===0));
+    b.textContent=TRACK_NAV[id].tab;
+    strip.appendChild(b);
+  });
+})();
+var state={track:TRACK_IDS[0],stage:0,i:0,revealed:false};
 (function(){
   // The landing page links to /latin, /latin-ii, /greek. Those are Vercel REWRITES, so the
   // browser's URL stays as typed and `location.search` is empty -- the ?track= the rewrite
   // adds is only ever visible server-side. Read the PATH; keep the query as a fallback for
   // anyone linking straight to /read/?track=…
-  var PATH={"/latin":"latin","/latin-ii":"latin2","/greek":"greek"};
+  // Routes come from the registry, via TRACK_NAV: path -> track id.
+  var PATH={}; for(var k in TRACK_NAV) PATH[TRACK_NAV[k].route]=k;
   try{
     var p=location.pathname.replace(/\/+$/,"");
     var t=PATH[p] || new URLSearchParams(location.search).get("track");
@@ -499,18 +510,23 @@ function band(){
   return plain.concat(dmg);
 }
 function cur(){var b=band();return b[state.i % b.length]}
-function isGk(){return state.track==="greek"}
-function fam(){return state.track==="greek"?"greek":"latin"}
+/* The script profile for the current track -- what used to be isGk()/fam(). Those asked
+   "is this the Greek track?", which is a question about one witness; every caller really
+   wanted "what script am I rendering?", which is a question about the profile. */
+function prof(t){ return DATA.profiles[DATA.languages[DATA.trackLang[t||state.track]].profile]; }
+function cls(){ var c=prof().cssClass; return c?" "+c:""; }
 
 /* ---------- normalisation ---------- */
 function stripCombining(s){return s.normalize("NFD").replace(/[̀-ͯ᷀-᷿]/g,"").normalize("NFC")}
-function norm(s,track,forg){
+function norm(s,pr,forg){
   s=s.normalize("NFC").trim().replace(/\s+/g," ");
-  if(track==="greek") s=s.replace(/ς/g,"σ");
-  if(track==="latin") s=s.replace(/ſ/g,"s");
+  // Folds are declared per PROFILE, so both Latin tracks get the long-s fold. Keyed to
+  // the track id, it reached only "latin" -- and the diplomatic track is the one that
+  // could actually contain a ſ.
+  for(var from in pr.fold) s=s.split(from).join(pr.fold[from]);
   if(!forg) return s;
   s=s.toLowerCase();
-  if(track==="greek") s=stripCombining(s);
+  if(pr.stripCombining) s=stripCombining(s);
   s=s.replace(/[·.,:;!?‧⁛⋇∻※~\-¬\/]/g,"");
   return s.replace(/\s+/g,"");
 }
@@ -573,24 +589,16 @@ function renderAll(){
   renderStages();
   var st=STAGES[state.stage];
   document.getElementById("stagenote").textContent=st.note;
-  ["latin","latin2","greek"].forEach(function(t){
+  TRACK_IDS.forEach(function(t){
     document.getElementById("tab-"+t).setAttribute("aria-selected",String(state.track===t));
   });
   document.getElementById("hdr-tag").textContent=DATA.tracks[state.track].meta.witness;
 
-  var bh=document.getElementById("betahint");
-  if(isGk()){
-    bh.style.display="";
-    bh.innerHTML="<b>Type Greek with your ordinary keyboard.</b> Letters as you would expect, "+
-      "then <code>h</code>=η <code>w</code>=ω <code>q</code>=θ <code>c</code>=ξ <code>y</code>=ψ "+
-      "<code>f</code>=φ <code>x</code>=χ <code>u</code>=υ."+
-      "<div class=\"row\">Marks come <em>after</em> the letter: <code>)</code> smooth "+
-      "<code>(</code> rough <code>/</code> acute <code>\\</code> grave <code>=</code> circumflex "+
-      "<code>+</code> diaeresis <code>|</code> iota subscript. So <code>r(utido/floion</code> "+
-      "gives ῥυτιδόφλοιον, and <code>su=kon</code> gives σῦκον.</div>";
-  } else { bh.style.display="none"; bh.innerHTML=""; }
+  var bh=document.getElementById("betahint"), hint=prof().keymapHint;
+  if(hint){ bh.style.display=""; bh.innerHTML=hint; }
+  else { bh.style.display="none"; bh.innerHTML=""; }
   var pal=document.getElementById("palette"); pal.innerHTML="";
-  PALETTE[fam()].forEach(function(ch){
+  prof().palette.forEach(function(ch){
     if(ch==="|"){var s=document.createElement("div");s.className="sep";pal.appendChild(s);return}
     var b=document.createElement("button");b.type="button";b.textContent=ch;b.title="Insert "+ch;
     b.addEventListener("click",function(){insert(ch)});pal.appendChild(b);
@@ -607,7 +615,7 @@ function renderOrient(){
   document.getElementById("glosshost").innerHTML="";
   var o=document.getElementById("orient"); o.style.display="";
   var it=allItems()[0];
-  var gk=isGk()?" gk":"";
+  var gk=cls();
   o.innerHTML = ORIENT[state.track]+
     '<div class="compare">'+
       '<div class="row dark"><div class="cap">The manuscript — '+esc(it.page)+'</div>'+
@@ -626,7 +634,7 @@ function renderItem(){
 
   var pw=document.getElementById("printedwrap");
   var pr=document.getElementById("printed");
-  pr.className="printed"+(isGk()?" gk":"");
+  pr.className="printed"+cls();
   if(state.stage===4){ pw.style.display="none"; }
   else { pw.style.display=""; pr.innerHTML=printedHTML(it,null); }
   document.getElementById("printed-lbl").textContent =
@@ -697,7 +705,7 @@ function toGreek(str){
 function wireBeta(){
   var ta=document.getElementById("entry");
   ta.addEventListener("input", function(){
-    if(!isGk()) return;
+    if(prof().keymap!=="beta-code") return;
     var v=this.value, c=this.selectionStart;
     var g=toGreek(v);
     if(g===v) return;
@@ -742,7 +750,7 @@ function check(){
   var it=cur(), forg=document.getElementById("forgiving").checked;
   var raw=document.getElementById("entry").value;
   if(!raw.trim()){document.getElementById("entry").focus();return}
-  var you=norm(raw,fam(),forg), truth=norm(target(it),fam(),forg);
+  var you=norm(raw,prof(),forg), truth=norm(target(it),prof(),forg);
   var pairs=align(Array.from(you),Array.from(truth));
   var hit=0,yh="",th="";
   pairs.forEach(function(p){
@@ -875,7 +883,7 @@ function hintFor(p,wrong,forg,key){
   return lead+tail;
 }
 
-["latin","latin2","greek"].forEach(function(t){
+TRACK_IDS.forEach(function(t){
   document.getElementById("tab-"+t).addEventListener("click",function(){state.track=t;state.i=0;renderAll()});
 });
 document.getElementById("check").addEventListener("click",check);

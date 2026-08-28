@@ -14,6 +14,7 @@ expert = "wilson"
 
 [[tracks]]
 id = "greek"
+tab = "Greek"                  # short label for the trainer tab strip
 route = "/greek"
 name = "Greek — Byzantine minuscule"
 witness = "Heidelberg, Pal. gr. 23 (s. X)"

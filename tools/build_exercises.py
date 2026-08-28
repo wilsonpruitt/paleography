@@ -172,10 +172,39 @@ if __name__ == "__main__":
     # Adding a language is a TOML file plus its crops -- no edit here. See
     # tools/registry.py and EXPANSION-PLAN.md §3.
     languages, profiles, tracks = registry.load()
-    data = {"tracks": {}, "built": "2026-08-27"}
+
+    # The trainer used to hardcode its tab list, its /latin -> latin route map, its
+    # palettes and its normalisation rules, keyed by a literal track id. All of that is
+    # registry data, so it ships in the payload and the shell reads it. Only what the
+    # runtime actually needs goes across -- not the whole TOML.
+    envelope_langs, envelope_profs = {}, {}
+    for lang in sorted(languages.values(), key=lambda l: (l.get("order", 999), l["id"])):
+        envelope_langs[lang["id"]] = {
+            "name": lang["name"],
+            "profile": lang["profile"],
+            "tracks": [{"id": x["id"], "tab": x["tab"], "route": x["route"]}
+                       for x in lang.get("tracks", [])],
+        }
+    for prof in profiles.values():
+        envelope_profs[prof["id"]] = {
+            "name": prof["name"],
+            "direction": prof["direction"],
+            "keymap": prof.get("keymap", ""),
+            "keymapHint": prof.get("keymap_hint", "").strip(),
+            "cssClass": prof.get("css_class", ""),
+            "palette": prof["palette"],
+            "fold": prof.get("fold", {}),
+            "strip_combining": prof.get("strip_combining_when_forgiving", False),
+            "fonts": prof["fonts"],
+        }
+
+    data = {"tracks": {}, "built": "2026-08-27",
+            "languages": envelope_langs, "profiles": envelope_profs}
+    lang_of = {}
     for t in registry.ordered_tracks(languages, tracks):
         meta = {"name": t["name"], "witness": t["witness"], "layer": t["layer"],
                 "printed": t["printed"]}
+        lang_of[t["id"]] = t["language"]
         if t.get("attribution"):
             meta["attribution"] = t["attribution"]
         items = pack(ROOT / t["crops"], a.n, a.max_w, a.quality, t["id"], t["profile"])
@@ -183,5 +212,6 @@ if __name__ == "__main__":
         kb = sum(len(i["img"]) for i in items) / 1024 / 1024
         print(f"  {t['id']:6} {len(items):3} lines  {kb:.2f} MB  "
               f"difficulty {items[0]['diff']:.0f} \u2192 {items[-1]['diff']:.0f}")
+    data["trackLang"] = lang_of      # which language space a track belongs to
     Path(a.out).write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
     print(f"-> {a.out}  {Path(a.out).stat().st_size/1024/1024:.2f} MB")

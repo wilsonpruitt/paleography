@@ -3,6 +3,8 @@
 id = "greek-minuscule"
 name = "Byzantine minuscule"
 direction = "ltr"
+# Class the trainer puts on printed Greek so it picks up the Greek font stack.
+css_class = "gk"
 
 # --- exercise selection (tools/build_exercises.py) ---
 # Diacritic density dominates. The Latin scorer counts non-ASCII characters as a proxy
@@ -27,6 +29,18 @@ strip_combining_when_forgiving = true
 # --- input ---
 # Beta code: type Greek on a Latin keyboard. Verified by round-tripping all 110 lines.
 keymap = "beta-code"
+# Shown under the input whenever this keymap is active. Prose about HOW TO TYPE a script
+# belongs with the script, not in the trainer -- the shell used to gate this on
+# `track === "greek"`, which would have hidden it from a second Greek witness.
+keymap_hint = """
+<b>Type Greek with your ordinary keyboard.</b> Letters as you would expect, then
+<code>h</code>=η <code>w</code>=ω <code>q</code>=θ <code>c</code>=ξ <code>y</code>=ψ
+<code>f</code>=φ <code>x</code>=χ <code>u</code>=υ.
+<div class="row">Marks come <em>after</em> the letter: <code>)</code> smooth
+<code>(</code> rough <code>/</code> acute <code>\\</code> grave <code>=</code> circumflex
+<code>+</code> diaeresis <code>|</code> iota subscript. So <code>r(utido/floion</code>
+gives ῥυτιδόφλοιον, and <code>su=kon</code> gives σῦκον.</div>
+"""
 palette = [
   "ά", "έ", "ή", "ί", "ό", "ύ", "ώ", "|",
   "ἀ", "ἁ", "ἐ", "ἑ", "ἠ", "ἡ", "ὀ", "ὁ", "ὐ", "ὑ", "|",

@@ -59,6 +59,11 @@ def load():
                     f"({tracks[t['id']]['language']} and {lang['id']}) -- "
                     "track ids are payload and progress keys and must be globally unique"
                 )
+            missing = [k for k in ("id", "tab", "route", "name", "witness",
+                                  "crops", "layer", "printed") if k not in t]
+            if missing:
+                raise RegistryError(
+                    f"track {t.get('id', '?')!r} in {lang['id']}: missing {', '.join(missing)}")
             t = dict(t)
             t["language"] = lang["id"]
             t["profile"] = profiles[pid]
