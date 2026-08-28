@@ -23,15 +23,21 @@ set -e
 cd "$(dirname "$0")/.."
 
 EXPECT=b1f6db854df98d1fe9bb3a37379257977a5f0208322c360a7c4b63f619eeb016
-OUT=$(mktemp -t paleography-acceptance)
-trap 'rm -f "$OUT"' EXIT
+OUT=$(mktemp -d -t paleography-acceptance)
+trap 'rm -rf "$OUT"' EXIT
 
 python3 tools/build_exercises.py --out "$OUT" --n 110 --max-w 1700 --quality 80 >/dev/null
+# The payload is split one file per track (the single blob went with the Artifact build),
+# so reassemble the bank in registry order before hashing. Same bytes, same order, same
+# invariant as when it was one file.
 GOT=$(python3 -c '
 import json, hashlib, sys
-d = json.load(open(sys.argv[1], encoding="utf-8"))
-b = json.dumps(d["tracks"], ensure_ascii=False).encode()
-print(hashlib.sha256(b).hexdigest())
+from pathlib import Path
+d = Path(sys.argv[1])
+idx = json.loads((d / "index.json").read_text(encoding="utf-8"))
+order = [x["id"] for l in idx["languages"].values() for x in l["tracks"]]
+bank = {t: json.loads((d / f"t-{t}.json").read_text(encoding="utf-8")) for t in order}
+print(hashlib.sha256(json.dumps(bank, ensure_ascii=False).encode()).hexdigest())
 ' "$OUT")
 
 if [ "$GOT" = "$EXPECT" ]; then

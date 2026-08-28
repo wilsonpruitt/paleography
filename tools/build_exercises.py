@@ -162,7 +162,8 @@ def pack(manifest_dir, n, max_w, quality, track, prof):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", required=True)
+    ap.add_argument("--out", required=True,
+                    help="directory for the split payload: index.json + t-<track>.json")
     ap.add_argument("--n", type=int, default=48)
     ap.add_argument("--max-w", type=int, default=2200)
     ap.add_argument("--quality", type=int, default=87)
@@ -212,6 +213,25 @@ if __name__ == "__main__":
         kb = sum(len(i["img"]) for i in items) / 1024 / 1024
         print(f"  {t['id']:6} {len(items):3} lines  {kb:.2f} MB  "
               f"difficulty {items[0]['diff']:.0f} \u2192 {items[-1]['diff']:.0f}")
+
     data["trackLang"] = lang_of      # which language space a track belongs to
-    Path(a.out).write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
-    print(f"-> {a.out}  {Path(a.out).stat().st_size/1024/1024:.2f} MB")
+
+    # Split, one file per track plus a small index.
+    #
+    # The bank was a single inlined blob because the trainer was ALSO built as a
+    # self-contained Artifact, which can fetch nothing. That build is retired
+    # (2026-08-28), and one file does not survive the expansion: three tracks are
+    # 10.9 MB, and a reader who opens /greek should not pay for Latin at all.
+    #
+    # The INDEX stays inline in the page -- it is ~2 KB of languages, profiles and
+    # routes, and the tab strip and track resolution need it before first paint or the
+    # header flashes. Only the heavy part, the images, is fetched.
+    outdir = Path(a.out)
+    outdir.mkdir(parents=True, exist_ok=True)
+    for tid, blob in data.pop("tracks").items():
+        f = outdir / f"t-{tid}.json"
+        f.write_text(json.dumps(blob, ensure_ascii=False), encoding="utf-8")
+        print(f"  {tid:6} -> {f.name}  {f.stat().st_size/1024/1024:.2f} MB")
+    index = outdir / "index.json"
+    index.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    print(f"-> {index}  {index.stat().st_size/1024:.1f} KB index")

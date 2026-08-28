@@ -26,7 +26,7 @@ learner side.
    **Codex Palatinus graecus 23** (Heidelberg), the *Palatine Anthology*, 10th
    century — 3,374 lines, CC-BY 4.0, sourced from the ecrinum/anthologia project
    (Huma-Num). This is currently the *only* Greek witness in the corpus.
-2. **A working static prototype** (`build/scriptorium.html`) — a self-contained page
+2. **The live trainer** at **https://paleography.app/greek** — a page
    that drills reading through five graded stages (see it whole → read along →
    supply one word → finish the line → transcribe the whole line cold), with a
    Levenshtein-aligned diff showing exactly which letters were missed.
@@ -88,6 +88,6 @@ or correct:
 - `scripts/greek-minuscule.md` — the full primer, written for a Greek reader,
   includes real transcribed lines from the manuscript and the reasoning above in
   more depth.
-- `build/scriptorium.html` — open it in a browser to actually try the exercises.
+- **https://paleography.app/greek** — the Greek track; try the exercises there.
 - `PLAN.md` — the whole project's first-principles plan, including the Latin track,
   the data model, and the model-training rationale (§1–§4 especially).

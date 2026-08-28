@@ -193,7 +193,8 @@ Not to be built now. What is decided now so the corpus is ready:
   cards (SRS) → expand → line with diff. Caroline + Greek minuscule. No accounts
   beyond magic-link; progress + Attempts stored. *Opus for pilot screens, Sonnet for
   the rest once the pattern exists.*
-  - **◐ Phase 2a — static prototype, DONE and in use.** `build/scriptorium.html`, a
+  - **◐ Phase 2a — static prototype, DONE; superseded by the live site 2026-08-27
+    and by the split build 2026-08-28.** Formerly `build/scriptorium.html`, a
     self-contained page: five stages (orientation → read along → one word → finish the
     line → whole line), difficulty graded per track, abbreviation glosses, character
     palette, Levenshtein-aligned diff. Deliberately ahead of the real Phase 2 because it

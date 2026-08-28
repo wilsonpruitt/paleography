@@ -351,6 +351,34 @@ footer .fpress a{color:var(--accent);text-decoration:underline;text-underline-of
 (function(){
 "use strict";
 var DATA = JSON.parse(document.getElementById("payload").textContent);
+/* The index is inlined (~2 KB: languages, profiles, routes) because the tab strip and
+   track resolution are needed before first paint. The bank is not: each track's lines
+   and images are a separate file, fetched when that track is first opened, so a reader
+   who comes for Greek never downloads Latin. DATA.tracks is the cache those fetches
+   fill, which is why every reference to DATA.tracks[id] below is unchanged. */
+DATA.tracks = {};
+var TRACK_URL = function(id){ return "t-" + id + ".json"; };
+function ensureTrack(id, cb){
+  if(DATA.tracks[id]) return cb();
+  var host=document.getElementById("orient");
+  if(host && !DATA.tracks[id]) host.setAttribute("aria-busy","true");
+  fetch(TRACK_URL(id)).then(function(r){
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    return r.json();
+  }).then(function(blob){
+    DATA.tracks[id]=blob;
+    if(host) host.removeAttribute("aria-busy");
+    cb();
+  }).catch(function(e){
+    if(host) host.removeAttribute("aria-busy");
+    /* A track that will not load must say so. Silently showing an empty trainer is the
+       worse failure -- the reader cannot tell a broken deploy from an empty bank. */
+    var o=document.getElementById("orient");
+    if(o){ o.style.display=""; o.innerHTML='<p class="lede">This track did not load '+
+      '(<code>'+esc(TRACK_URL(id))+'</code> — '+esc(String(e.message||e))+').<br>'+
+      'Reload the page; if it keeps happening the build is incomplete.</p>'; }
+  });
+}
 
 var STAGES = [
   {id:0, n:"Start here", t:"What you are looking at",
@@ -472,7 +500,10 @@ var state={track:TRACK_IDS[0],stage:0,i:0,revealed:false};
   try{
     var p=location.pathname.replace(/\/+$/,"");
     var t=PATH[p] || new URLSearchParams(location.search).get("track");
-    if(t && DATA.tracks[t]) state.track=t;
+    /* Validate against the registry, NOT against DATA.tracks -- that is now an empty
+       cache the fetches fill, so testing it here silently rejected every valid track
+       and fell back to the default. */
+    if(t && TRACK_NAV[t]) state.track=t;
   }catch(e){}
 })();
 var LS="paleography.v2", LS_OLD="scriptorium.v2";
@@ -586,6 +617,9 @@ function renderStages(){
   });
 }
 function renderAll(){
+  ensureTrack(state.track, renderAllNow);
+}
+function renderAllNow(){
   renderStages();
   var st=STAGES[state.stage];
   document.getElementById("stagenote").textContent=st.note;

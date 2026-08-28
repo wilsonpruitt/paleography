@@ -93,8 +93,12 @@ elsewhere; it happens not to bite here.)
 
 ## The trainer
 
-`tools/build_exercises.py` → `build/exercises.json` → `tools/make_trainer.py` →
-`build/scriptorium.html`, a self-contained page (3.0 MB, images inlined as data URIs).
+`tools/build_exercises.py` → `build/payload/` (one `t-<track>.json` per track plus a
+small `index.json`) → `tools/make_site.py` → `site/read/index.html`, a ~53 KB page that
+inlines only the index and fetches a track's images when that track is opened.
+⚑ Superseded 2026-08-28: this was one self-contained 10.9 MB page while the trainer was
+also built for the claude.ai Artifact runtime, which can fetch nothing. That build is
+retired.
 
 Design decisions that are pedagogy, not styling:
 
