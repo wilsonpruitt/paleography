@@ -357,7 +357,11 @@ var DATA = JSON.parse(document.getElementById("payload").textContent);
    who comes for Greek never downloads Latin. DATA.tracks is the cache those fetches
    fill, which is why every reference to DATA.tracks[id] below is unchanged. */
 DATA.tracks = {};
-var TRACK_URL = function(id){ return "t-" + id + ".json"; };
+/* ⛔ ABSOLUTE, and it must stay absolute. The trainer is served at /read/ but is REACHED
+   at /greek, /latin, /latin-ii, which are Vercel rewrites -- the browser's URL stays as
+   typed. A relative "t-greek.json" therefore resolves against /greek and 404s at the
+   apex. This shipped once, on 2026-08-28, and every clean URL broke while /read/ worked. */
+var TRACK_URL = function(id){ return "/read/t-" + id + ".json"; };
 function ensureTrack(id, cb){
   if(DATA.tracks[id]) return cb();
   var host=document.getElementById("orient");

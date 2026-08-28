@@ -34,6 +34,15 @@ fetched when that track is first opened — so a reader who comes for Greek fetc
 not the 10.9 MB of everything. `make_site.py` deletes stale `t-*.json` before copying:
 a retired track that kept serving its old bank would be invisible.
 
+⛔ **Anything the trainer fetches must use an ABSOLUTE path.** The page lives at `/read/`
+but is *reached* at `/greek`, `/latin`, `/latin-ii` — Vercel rewrites, so the browser's URL
+stays as typed. A relative `t-greek.json` therefore resolves against `/greek` and 404s at the
+apex. This shipped on 2026-08-28: `/read/` worked perfectly while every clean URL — i.e. every
+link on the landing page — was broken, which is the worst shape a bug can take because the
+obvious test passes. ⚑ It is also untestable locally: `python3 -m http.server` has no rewrites,
+so `?track=` is the only form that works there. **Check a clean URL on the real domain after
+any deploy that touches loading.**
+
 ⛔ **Never hand-edit `site/vercel.json` rewrites or the `TRACKS` allowlist in
 `site/api/attempts.js`.** Both are generated from `registry/` by `tools/make_routes.py`;
 `--check` fails if they have drifted. The allowlist is the one that fails silently — that
