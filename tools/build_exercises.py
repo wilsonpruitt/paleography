@@ -54,11 +54,34 @@ def diacritic_density(t, prof):
     return round(dia / len(letters) * 40 + len(t) * 0.55 + len(t.split()) * 1.5, 1)
 
 
+def point_density(t, prof):
+    """Syriac, and every unpointed abjad after it.
+
+    The two existing scorers both fail on this script for the same reason from opposite
+    ends. `abbreviation_density` counts non-ASCII characters, and every Syriac character
+    is non-ASCII, so it would rank the bank by length alone. `diacritic_density` asks what
+    fraction of the letters carry a mark -- the right question, on the wrong scale: this
+    transcription excludes vowel points by rule, so only about 4% of characters carry a
+    mark, against 40%+ in Greek, and the term would vanish under the length term.
+
+    What survives is grammatical and is precisely what makes a line hard to read: seyame
+    (the two dots that mark a plural), the dot that separates a participle from a perfect,
+    the dots that tell two homographs apart, and the abbreviation mark. So weight them
+    heavily, and let length and word count break the many ties.
+    """
+    letters = [c for c in t if c.isalpha()]
+    if not letters:
+        return 999.0
+    marks = sum(1 for c in t if unicodedata.combining(c) or c == "\u070f")
+    return round(marks / len(letters) * 260 + len(t) * 0.5 + len(t.split()) * 1.4, 1)
+
+
 # A profile names its scorer; adding a script means adding a function here and one
 # line of TOML, not editing a hardcoded list of tracks.
 SCORERS = {
     "abbreviation_density": abbreviation_density,
     "diacritic_density": diacritic_density,
+    "point_density": point_density,
 }
 
 
@@ -103,6 +126,18 @@ def cloze_index(words):
 GLOSS_FREQ = {}          # filled per track in pack(): how many lines each gloss fires on
 
 
+def in_scope(g, prof):
+    """A gloss with no `profiles` applies everywhere; one with them applies only there.
+
+    Needed the moment a second script arrived. A CHARACTER gloss is self-scoping -- a
+    Tironian et cannot turn up in Syriac -- but a TRIGGER gloss is a regex, and the
+    word-division one matches "three short words in a row", which is true of every script
+    on earth. It fired on 37 of the first 110 Syriac lines, over a note about Carolingian
+    Latin spacing. See corpus/abbreviation-glosses.json `_note`.
+    """
+    return prof["id"] in g["profiles"] if g.get("profiles") else True
+
+
 def pack(manifest_dir, n, max_w, quality, track, prof):
     scorer = SCORERS[prof["scorer"]]
     rows = [json.loads(l) for l in open(Path(manifest_dir) / "manifest.jsonl", encoding="utf-8")]
@@ -124,10 +159,10 @@ def pack(manifest_dir, n, max_w, quality, track, prof):
         if r.get("initial"):
             seen.add("INITIAL")
         for ch in r["text"]:
-            if ch in GLOSS:
+            if ch in GLOSS and in_scope(GLOSS[ch], prof):
                 seen.add(ch)
         for g in GLOSS.values():
-            if g.get("trigger") and re.search(g["trigger"], r["text"]):
+            if g.get("trigger") and in_scope(g, prof) and re.search(g["trigger"], r["text"]):
                 seen.add(g["char"])
         for k in seen:
             GLOSS_FREQ[k] = GLOSS_FREQ.get(k, 0) + 1
@@ -143,14 +178,14 @@ def pack(manifest_dir, n, max_w, quality, track, prof):
         if r.get("initial") and "INITIAL" in GLOSS:
             gl.append(GLOSS["INITIAL"])
         for ch in r["text"]:
-            if ch in GLOSS and ch not in seen:
+            if ch in GLOSS and ch not in seen and in_scope(GLOSS[ch], prof):
                 seen.add(ch); gl.append(GLOSS[ch])
         # Regex triggers exist because an EXPANDED transcription has, by definition, edited
         # out the very signs a learner needs explained: Cod. 940 has 0 literal "&" in 7,641
         # lines, though the scribe writes it constantly. A character trigger can never fire
         # on a sign the editors resolved, so those glosses key on the expanded spelling.
         for g in GLOSS.values():
-            if g.get("trigger") and g["char"] not in seen:
+            if g.get("trigger") and g["char"] not in seen and in_scope(g, prof):
                 if re.search(g["trigger"], r["text"]):
                     seen.add(g["char"]); gl.append(g)
         # Which characters mean "the editors supplied this, the ink does not have it".
@@ -161,7 +196,10 @@ def pack(manifest_dir, n, max_w, quality, track, prof):
         # wall of prose, not help. Keep the rarest, which are the ones a reader has least
         # chance of having met already.
         gl.sort(key=lambda g: GLOSS_FREQ.get(g["char"], 0))
-        gl = gl[:3]
+        # `profiles` is a BUILD-time scope, not something the trainer needs. Stripping it
+        # keeps the shipped item identical to what it was before scoping existed, which is
+        # what lets tools/acceptance.sh still assert byte-identity on the older tracks.
+        gl = [{k: v for k, v in g.items() if k != "profiles"} for g in gl[:3]]
         out.append(dict(id=r["image"].rsplit(".", 1)[0][-12:], track=track, damaged=damaged,
                         text=r["text"], words=words, cloze=cloze_index(words),
                         diff=r["diff"], glosses=gl, layer=r["layer"], witness=r["witness"],
@@ -213,6 +251,15 @@ if __name__ == "__main__":
             "fold": prof.get("fold", {}),
             "strip_combining": prof.get("strip_combining_when_forgiving", False),
             "fonts": prof["fonts"],
+            # Optional, and only declared by a profile whose script the input's monospace
+            # font cannot draw at all: IBM Plex Mono has Greek and Latin, and no Syriac.
+            # Absent -> the input and the diff keep the monospace they have always had.
+            "inputFonts": prof.get("input_fonts", []),
+            "printSize": prof.get("print_size", 0),
+            # The Google Fonts family spec for the script's face, assembled into one
+            # <link> by make_site.py. Registry data, so a new script cannot ship with its
+            # font left out of a hand-edited stylesheet tag.
+            "webfont": prof.get("webfont", ""),
         }
 
     data = {"tracks": {}, "built": "2026-08-27",

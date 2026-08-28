@@ -56,6 +56,16 @@ def parse_alto(path):
     return image, out
 
 
+_CUSTOM_TYPE = re.compile(r"structure\s*\{[^}]*type:\s*([^;}\s]+)")
+
+
+def _custom_type(custom):
+    if not custom:
+        return None
+    m = _CUSTOM_TYPE.search(custom)
+    return m.group(1) if m else None
+
+
 def parse_page(path):
     root = ET.parse(path).getroot()
     ns = PAGE_RE.match(root.tag).group(0) if PAGE_RE.match(root.tag) else ""
@@ -63,7 +73,9 @@ def parse_page(path):
     image = pg.get("imageFilename") if pg is not None else path.stem
     out, order = [], 0
     for reg in root.iter(f"{ns}TextRegion"):
-        rtype = reg.get("type")
+        # Transkribus/eScriptorium put SegmOnto types in custom="structure {type:MainZone;}",
+        # not in @type. Fall back to it, or every region reads as untyped.
+        rtype = reg.get("type") or _custom_type(reg.get("custom"))
         for tl in reg.iter(f"{ns}TextLine"):
             # last TextEquiv/Unicode on the line is the line-level text
             te = tl.findall(f"{ns}TextEquiv/{ns}Unicode")
@@ -160,7 +172,12 @@ def ingest(root, witness, layer, out_fh, limit=None, include=None, exclude=()):
         for r in lines:
             r["witness"] = witness
             r["layer"] = layer
-            r["text"] = unicodedata.normalize("NFC", r["text"])
+            # STRIP: 45 lines of ÖNB Cod. Syr. 1 carry a trailing newline inside the
+            # line's own <Unicode>, and one carries a leading space. Whitespace at the
+            # edge of a line is never data -- it is an artefact of the export -- and it
+            # reaches the learner as a leading gap in the printed row. No pre-existing
+            # witness has any, so this is a no-op on all four live tracks.
+            r["text"] = unicodedata.normalize("NFC", r["text"]).strip()
             out_fh.write(json.dumps(r, ensure_ascii=False) + "\n")
             n_lines += 1
         if limit and n_lines >= limit:

@@ -1,5 +1,5 @@
 {
- "_note": "Plain-English glosses for the abbreviation signs that actually occur in the exercise bank. `status` is load-bearing: `verified` = the expansion comes from a source AND the source page was read as an image (the chocomufin table shipped with the Eutyches dataset; Thompson 1912; Cappelli 1929 -- see research/cappelli-index.md for the leaf of every sign); `proposed` = standard palaeographic convention, mine, AWAITING WILSON'S RATIFICATION. Never silently promote one to the other. `mechanism` follows Thompson 1912 ch. VII: a CONTRACTION keeps the word's ending so the inflection survives; a SUSPENSION cuts the end off and destroys it.",
+ "_note": "Plain-English glosses for the abbreviation signs that actually occur in the exercise bank. `status` is load-bearing: `verified` = the expansion comes from a source AND the source page was read as an image (the chocomufin table shipped with the Eutyches dataset; Thompson 1912; Cappelli 1929 -- see research/cappelli-index.md for the leaf of every sign); `proposed` = standard palaeographic convention, mine, AWAITING WILSON'S RATIFICATION. Never silently promote one to the other. `mechanism` follows Thompson 1912 ch. VII: a CONTRACTION keeps the word's ending so the inflection survives; a SUSPENSION cuts the end off and destroys it.\n\n⭐ SCOPE, added 2026-08-28 with the Syriac track. A gloss keyed to a CHARACTER is self-scoping — a Tironian et cannot occur in Syriac. A gloss keyed to a TRIGGER regex is not: the word-division gloss matches ‘three short words in a row’, which is true of every script on earth, and it fired on 37 of 110 Syriac lines with a note about `quarequomodolongitudinem`. Every trigger gloss now names the `profiles` it belongs to. Absent `profiles` still means ‘everywhere’, which is right for a character.",
  "signs": [
   {
    "char": "̃",
@@ -171,7 +171,12 @@
    "status": "verified",
    "trigger": "\\b\\w{3,}et\\b",
    "short": "& is e and t written as one — and it works INSIDE a word",
-   "note": "Our ampersand began life as a <b>ligature of <em>e</em> and <em>t</em></b>, and in a manuscript it has not yet settled into meaning only the word <em>et</em>. The scribe uses it for <b>the letters e-t wherever they fall</b>, including in the middle or at the end of a word: this line's ink reads <code>ſupl&amp;</code> and the word is <em>suplet</em>. Likewise <code>hab&amp;</code> for <em>habet</em>, <code>man&amp;</code> for <em>manet</em>. ⚠ Do not confuse it with the Tironian <code>⁊</code>, which is a shorthand sign for the <em>word</em> <em>et</em> and never supplies a syllable. Verified on the page (Cod. 940 f. 41)."
+   "note": "Our ampersand began life as a <b>ligature of <em>e</em> and <em>t</em></b>, and in a manuscript it has not yet settled into meaning only the word <em>et</em>. The scribe uses it for <b>the letters e-t wherever they fall</b>, including in the middle or at the end of a word: this line's ink reads <code>ſupl&amp;</code> and the word is <em>suplet</em>. Likewise <code>hab&amp;</code> for <em>habet</em>, <code>man&amp;</code> for <em>manet</em>. ⚠ Do not confuse it with the Tironian <code>⁊</code>, which is a shorthand sign for the <em>word</em> <em>et</em> and never supplies a syllable. Verified on the page (Cod. 940 f. 41).",
+   "profiles": [
+    "latin-caroline",
+    "latin-gothic",
+    "greek-minuscule"
+   ]
   },
   {
    "char": "SPACING",
@@ -181,7 +186,12 @@
    "status": "verified",
    "trigger": "(?:^|\\s)[^\\W\\d_]{1,4}\\s+[^\\W\\d_]{1,4}\\s+[^\\W\\d_]{1,4}(?:\\s|$)",
    "short": "the gaps between words are not where you expect them",
-   "note": "Ancient books were written in <i>scriptio continua</i> — <b>no spaces at all</b>. Word division was introduced gradually, and in the ninth century the job is only half done. Short words cling to their neighbours, and a gap can open in the middle of a long one. On this page the ink reads <code>quarequomodolongitudinem</code> where the print gives <em>Quare quomodo longitudinem</em>. ⚑ <b>So do not trust the gaps.</b> Read a run of letters, find a word you know inside it, and let the rest fall out — the Latin divides the line, not the spacing. This is the single thing that most often defeats a reader who can already name every letter."
+   "note": "Ancient books were written in <i>scriptio continua</i> — <b>no spaces at all</b>. Word division was introduced gradually, and in the ninth century the job is only half done. Short words cling to their neighbours, and a gap can open in the middle of a long one. On this page the ink reads <code>quarequomodolongitudinem</code> where the print gives <em>Quare quomodo longitudinem</em>. ⚑ <b>So do not trust the gaps.</b> Read a run of letters, find a word you know inside it, and let the rest fall out — the Latin divides the line, not the spacing. This is the single thing that most often defeats a reader who can already name every letter.",
+   "profiles": [
+    "latin-caroline",
+    "latin-gothic",
+    "greek-minuscule"
+   ]
   },
   {
    "char": "¬",
@@ -200,7 +210,10 @@
    "status": "verified",
    "trigger": "(?:^|\\s)κ",
    "short": "κ is made of two separate marks that often do not touch",
-   "note": "In print the arms of a <b>kappa</b> spring from its upright. This scribe writes it in <b>two pen-strokes — an upright, and a small detached arc for the arms — and the two commonly do not meet.</b> Magnified on this manuscript the gap is plain. Until you expect it, a κ reads as two unrelated marks, or as a stray stroke beside a letter you cannot name. Verified on the page (Pal. gr. 23, f. 174)."
+   "note": "In print the arms of a <b>kappa</b> spring from its upright. This scribe writes it in <b>two pen-strokes — an upright, and a small detached arc for the arms — and the two commonly do not meet.</b> Magnified on this manuscript the gap is plain. Until you expect it, a κ reads as two unrelated marks, or as a stray stroke beside a letter you cannot name. Verified on the page (Pal. gr. 23, f. 174).",
+   "profiles": [
+    "greek-minuscule"
+   ]
   },
   {
    "char": "LIGATURE",
@@ -210,7 +223,10 @@
    "status": "proposed",
    "trigger": "(στ|ου|ει)",
    "short": "pairs of letters fused into one shape",
-   "note": "This is the difficulty the Greek track exists for. Writing at speed, the scribe runs letters together into a <b>single compound shape that may resemble neither of its parts</b> — <code>ει</code>, <code>ου</code>, <code>στ</code>, <code>σθ</code> are the commonest. ⚑ <b>Do not try to find the letters inside the shape.</b> Learn the shape whole, as its own sign, the way you learned <code>&amp;</code>. That is why this track asks you to look before it asks you to type."
+   "note": "This is the difficulty the Greek track exists for. Writing at speed, the scribe runs letters together into a <b>single compound shape that may resemble neither of its parts</b> — <code>ει</code>, <code>ου</code>, <code>στ</code>, <code>σθ</code> are the commonest. ⚑ <b>Do not try to find the letters inside the shape.</b> Learn the shape whole, as its own sign, the way you learned <code>&amp;</code>. That is why this track asks you to look before it asks you to type.",
+   "profiles": [
+    "greek-minuscule"
+   ]
   },
   {
    "char": "RHOALPHA",
@@ -220,7 +236,10 @@
    "status": "proposed",
    "trigger": "ῥ[αά]|ρ[αά]",
    "short": "the alpha rides high on the rho, not beside it",
-   "note": "Where <b>rho</b> is followed by <b>alpha</b>, the alpha is often written small and high, tucked against the rho's shoulder rather than set beside it on the line. The pair reads as one mark with a tail. ⚠ <b>Proposed, not yet verified</b> — this manuscript's images are not sharp enough at letter scale for me to confirm it, so treat it as a hint to test with your own eye rather than a settled fact."
+   "note": "Where <b>rho</b> is followed by <b>alpha</b>, the alpha is often written small and high, tucked against the rho's shoulder rather than set beside it on the line. The pair reads as one mark with a tail. ⚠ <b>Proposed, not yet verified</b> — this manuscript's images are not sharp enough at letter scale for me to confirm it, so treat it as a hint to test with your own eye rather than a settled fact.",
+   "profiles": [
+    "greek-minuscule"
+   ]
   },
   {
    "char": "OMEGA",
@@ -230,7 +249,58 @@
    "status": "proposed",
    "trigger": "[ωώῶὼ]",
    "short": "ω can look like an 8 lying on its side",
-   "note": "The printed <b>omega</b> is a cup with two humps. In this hand the pen frequently closes both curves, giving a shape much closer to <b>a figure eight on its side</b> — and in the common ending <code>-ῶν</code> it carries a circumflex on top, which closes it further. ⚠ <b>Proposed, not yet verified</b> at letter scale on this witness."
+   "note": "The printed <b>omega</b> is a cup with two humps. In this hand the pen frequently closes both curves, giving a shape much closer to <b>a figure eight on its side</b> — and in the common ending <code>-ῶν</code> it carries a circumflex on top, which closes it further. ⚠ <b>Proposed, not yet verified</b> at letter scale on this witness.",
+   "profiles": [
+    "greek-minuscule"
+   ]
+  },
+  {
+   "char": "̈",
+   "display": "◌̈",
+   "name": "seyame, the two dots of the plural",
+   "mechanism": "grammar, not abbreviation",
+   "status": "proposed",
+   "profiles": [
+    "syriac"
+   ],
+   "short": "two dots over a word: it is plural",
+   "note": "Two dots set over a letter of the word — <b>seyame</b> — mark it as a <b>plural</b>. They are not tied to a fixed letter: in this manuscript they sit over a <code>ܪ</code> 455 times, a <code>ܝ</code> 286 times, and so on down. <b>ܟܗ̈ܢܐ</b> is <i>kāhnē</i>, priests; without the dots the same four letters are a singular. They fall on <b>1,182 of the 2,475 lines</b> of this witness, so you will meet them at once. ⚑ Miss them and you have not made a small error — you have read a different word."
+  },
+  {
+   "char": "̇",
+   "display": "◌̇",
+   "name": "the dot above",
+   "mechanism": "grammar, not abbreviation",
+   "status": "proposed",
+   "profiles": [
+    "syriac"
+   ],
+   "short": "a single dot ABOVE: which of two words this is",
+   "note": "With no vowels written, a single dot does the work. <b>Above</b> a verb it marks the <b>participle</b>: <code>ܐܡ̇ܪ</code> <i>āmar</i>, ‘he says’, 167 times here — against <code>ܐܡ̣ܪ</code> with the dot <b>below</b>, <i>emar</i>, ‘he said’, 79 times. Above a <code>ܡܢ</code> it gives <i>man</i>, ‘who’. Over a final <code>ܗ</code> it makes the suffix feminine: <code>ܠܗ̇</code> ‘to her’ (40×) against <code>ܠܗ</code> ‘to him’ (232×)."
+  },
+  {
+   "char": "̣",
+   "display": "◌̣",
+   "name": "the dot below",
+   "mechanism": "grammar, not abbreviation",
+   "status": "proposed",
+   "profiles": [
+    "syriac"
+   ],
+   "short": "a single dot BELOW: the other of the two",
+   "note": "The counterpart of the dot above, and the pair is the lesson of this track. Below a verb it marks the <b>perfect</b>: <code>ܐܡ̣ܪ</code> <i>emar</i>, ‘he said’. Below <code>ܡܢ</code> it gives <i>men</i>, ‘from’ (179×), where the dot above gives <i>man</i>, ‘who’ (49×) — and 217 times this scribe writes it bare and lets the sentence decide. ⚑ In this bank <b>675 word-forms out of 7,035 exist in more than one pointing</b>. The dots are not ornament."
+  },
+  {
+   "char": "܏",
+   "display": "܏",
+   "name": "the abbreviation mark",
+   "mechanism": "suspension",
+   "status": "proposed",
+   "profiles": [
+    "syriac"
+   ],
+   "short": "a suspended word, cut short",
+   "note": "Syriac's one abbreviation sign, and after the Latin tracks it is a holiday: it occurs on <b>140 lines out of 2,475</b> and there is essentially nothing else. It marks a word written short, most often <code>ܬܠܡܝ̈ܕ܏ܘܗܝ</code> for <i>talmīdaw(hy)</i>, ‘his disciples’. A 16th-century Gospel book copied for a patron is written out, not squeezed."
   }
  ]
 }

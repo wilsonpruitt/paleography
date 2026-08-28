@@ -105,7 +105,7 @@ PAGE = """<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif:wght@400&display=swap">
-<title>{title} — Paleography</title>
+{scriptfont}<title>{title} — Paleography</title>
 <style>
 :root{{--ink:#14120F;--surface:#1E1B17;--raised:#2A2621;--line:#3A342D;
  --text:#EAE4DA;--muted:#A0958A;--dim:#7B7168;--accent:#5B82BE;--accent-soft:#2F415E;
@@ -135,7 +135,11 @@ h4{{font-size:15px;margin:20px 0 6px;color:var(--muted)}}
 p{{margin:0 0 14px}}
 em{{color:var(--muted)}}
 strong{{font-weight:600}}
-code{{font-family:var(--mono);font-size:14.5px;background:var(--surface);
+/* The script's own face, appended to the monospace stack rather than replacing it: a
+   browser falls back PER CHARACTER, so roman keys stay mono and the Syriac in the same
+   code span is drawn by a font that has Syriac. `unicode-bidi:isolate` keeps a
+   right-to-left word from dragging the English punctuation around it. */
+code{{font-family:var(--mono){scriptstack};unicode-bidi:isolate;font-size:{codesize};background:var(--surface);
  border:1px solid var(--line);border-radius:var(--r);padding:1px 5px}}
 pre{{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
  padding:14px;overflow-x:auto}}
@@ -200,8 +204,22 @@ def main():
                 f"like, and the abbreviation system, counted over real ground truth.")
         dest = ROOT / "site/hand" / pid / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
+        # A primer for a script the UI fonts cannot draw must load that script's face,
+        # or every example on the page is tofu. Registry data, like everything else here.
+        wf = prof.get("webfont", "")
+        scriptfont = (f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
+                      f'family={wf}&display=swap">\n') if wf else ""
+        stack = "".join("," + (f'"{f}"' if not f.isalnum() else f)
+                        for f in prof.get("fonts", []) if f not in ("serif", "sans-serif"))
+        # A non-Latin word set at the mono size is a smudge -- Syriac dots at 14.5px are
+        # the thing the primer is about, and they were invisible. The pages that load a
+        # script face get a larger code size; the Latin and Greek primers keep theirs.
+        codesize = "17px" if wf else "14.5px"
         dest.write_text(PAGE.format(title=html.escape(title), desc=html.escape(desc),
-                                    pid=pid, body=body, back=back), encoding="utf-8")
+                                    pid=pid, body=body, back=back,
+                                    scriptfont=scriptfont, scriptstack=stack,
+                                    codesize=codesize),
+                        encoding="utf-8")
         made.append((pid, dest.stat().st_size))
         print(f"  {pid:18} -> site/hand/{pid}/index.html  {dest.stat().st_size/1024:.0f} KB")
     if not made:

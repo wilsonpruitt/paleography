@@ -33,8 +33,14 @@ phases and Wilson's rulings.
 ./tools/fetch-seeds.sh      # ~2.1 GB of clones, gitignored; writes corpus/normalized/*.jsonl
 ```
 
-**Phase 1 state:** 24,017 lines of ground truth across 7 witnesses —
-20,203 diplomatic, 3,374 expanded, 440 normalised. All CC-BY 4.0.
+**Corpus state:** 27,183 lines of ground truth across 9 witnesses —
+15,480 diplomatic, 11,263 expanded, 440 normalised.
+
+⚠ **Not all CC-BY 4.0**, as this line used to claim. Eutyches, ecrinum/anthologia and the
+CIHAM *Fabliaux* are CC BY 4.0. The two HTR Winter School Vienna datasets — Cod. 940
+(Latin I) and Cod. Syr. 1 (Syriac) — ship a **CC BY-SA 4.0** licence file alongside a
+catalogue entry that says CC BY 4.0, and the site states the stricter reading until the
+school resolves it. See `corpus/sources.yml` → `license_conflict`.
 
 ## The one rule
 

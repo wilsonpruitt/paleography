@@ -2,6 +2,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif:wght@400;500&display=swap">
+__SCRIPTFONTS__
 <style>
 :root{
   --ink:#14120F; --surface:#1E1B17; --raised:#2A2621; --line:#3A342D;
@@ -171,6 +172,14 @@ textarea:focus,input.one:focus{outline:0;border-color:var(--accent)}
   min-width:58px;padding-top:5px;flex-shrink:0}
 .diffrow .v{font-family:var(--mono);font-size:16.5px;line-height:1.75;
   overflow-x:auto;white-space:pre-wrap;word-break:break-word;flex:1}
+/* right-to-left.
+   The Levenshtein alignment is direction-free; only the RENDERING is not. A diff is a run
+   of one-character <span>s, and the bidi algorithm orders that run correctly on its own
+   PROVIDED the container declares the direction -- so direction is set on the container
+   from the profile, and no span has to carry anything. Alignment of the box's own text is
+   the part CSS still has to be told. */
+[dir="rtl"]{text-align:right}
+.diffrow [dir="rtl"]{text-align:right}
 .c-ok{color:var(--text)}
 .c-bad{background:var(--err-soft);color:var(--err);border-radius:2px}
 .c-miss{background:var(--ok-soft);color:var(--ok);border-radius:2px}
@@ -329,21 +338,30 @@ footer .fpress a{color:var(--accent);text-decoration:underline;text-underline-of
 </details>
 
 <footer>
-  <p class="fnote"><b>A prototype.</b> Three witnesses, a few dozen lines each, and a
-  transcription apparatus still being checked: where a sign's expansion has not been verified
-  against a source it says so on its face. Corrections and objections are wanted.</p>
+  <p class="fnote"><b>A prototype.</b> Five tracks in four languages, a hundred and ten lines
+  each, and a transcription apparatus still being checked: where a sign's expansion has not been
+  verified against a source it says so on its face. Corrections and objections are wanted.</p>
 
   <p><b>Manuscript images.</b>
-  Wien, Österreichische Nationalbibliothek, Cod. 940 — images courtesy of the
+  Wien, Österreichische Nationalbibliothek, Cod. 940 and Cod. Syr. 1 — images courtesy of the
   <a href="https://www.onb.ac.at/">Österreichische Nationalbibliothek</a>, by IIIF.
   Heidelberg, Universitätsbibliothek, Cod. Pal. graec. 23 —
   <a href="https://doi.org/10.11588/diglit.3449">digitised by Heidelberg University Library</a>.
-  Leiden, Universiteitsbibliotheek, Voss. Lat. O. 41.</p>
+  Leiden, Universiteitsbibliotheek, Voss. Lat. O. 41.
+  Bern, Burgerbibliothek, Cod. 354 —
+  <a href="https://www.e-codices.unifr.ch/en/list/one/bbb/0354">e-codices</a>,
+  Public&nbsp;Domain&nbsp;Mark.</p>
 
   <p><b>Ground truth</b> CC&nbsp;BY&nbsp;4.0 —
   <a href="https://github.com/malamatenia/Eutyches">Eutyches</a> (Pandelidis);
   <a href="https://gitlab.huma-num.fr/ecrinum/anthologia/htr_cpgr23">ecrinum/anthologia</a>;
-  <a href="https://github.com/HTR-School-Vienna/-2024--carolingian-latin">HTR Winter School Vienna 2024</a>.
+  <a href="https://github.com/CIHAM-HTR/Fabliaux">CIHAM-HTR <i>Fabliaux</i></a>
+  (Pierreville and Pinche, Biblissima+).
+  CC&nbsp;BY-SA&nbsp;4.0 — the two
+  <a href="https://github.com/HTR-School-Vienna">HTR Winter School Vienna</a> datasets,
+  Cod. 940 and Cod. Syr. 1 (the latter led by Ephrem Aboud Ishac and Christine Roughan);
+  each ships a BY-SA licence file beside a catalogue entry saying BY, and we state the
+  stricter reading.
   Catalogued by <a href="https://htr-united.github.io/">HTR-United</a>.
   Abbreviations checked against Cappelli, <i>Lexicon Abbreviaturarum</i> (1929) and
   Thompson, <i>Introduction to Greek and Latin Palaeography</i> (1912).</p>
@@ -543,9 +561,34 @@ function cur(){var b=band();return b[state.i % b.length]}
    wanted "what script am I rendering?", which is a question about the profile. */
 function prof(t){ return DATA.profiles[DATA.languages[DATA.trackLang[t||state.track]].profile]; }
 function cls(){ var c=prof().cssClass; return c?" "+c:""; }
+/* ---------- script rendering, from the profile ----------
+   Direction, font stack and printed size are PROFILE data. They used to be a `.gk` class
+   in the stylesheet, which is a hardcoded list of scripts by another name -- the same
+   shape as the `isGk()` the refactor removed. `fonts` was already shipping in the
+   envelope and going unread. */
+function fontStack(list){
+  /* SINGLE quotes, and it matters: this stack is also written into a style="" attribute
+     in the orientation markup, and double quotes there close the attribute early -- which
+     is exactly how the first RTL build shipped Syriac drawn in EB Garamond. */
+  return (list||[]).map(function(f){ return /[^A-Za-z0-9-]/.test(f) ? "'"+f+"'" : f; }).join(",");
+}
+function scriptify(el, opts){
+  if(!el) return el;
+  var p=prof();
+  el.setAttribute("dir", p.direction || "ltr");
+  var f = (opts && opts.input) ? p.inputFonts : p.fonts;
+  if(f && f.length) el.style.fontFamily = fontStack(f);
+  if(!(opts && opts.input) && p.printSize) el.style.fontSize = p.printSize + "px";
+  return el;
+}
 
 /* ---------- normalisation ---------- */
-function stripCombining(s){return s.normalize("NFD").replace(/[̀-ͯ᷀-᷿]/g,"").normalize("NFC")}
+/* Every Unicode MARK, not two hand-picked ranges. The old regex covered U+0300-036F and
+   U+1DC0-1DFF, which is the whole of Greek's and Latin's combining repertoire and none of
+   Syriac's own block (U+0730-074A, and U+0740 the feminine dot). \p{M} is the general
+   statement of what was always meant. Latin and Greek are unaffected: after NFD their
+   marks all lie in the ranges the old regex already matched. */
+function stripCombining(s){return s.normalize("NFD").replace(/\p{M}/gu,"").normalize("NFC")}
 function norm(s,pr,forg){
   s=s.normalize("NFC").trim().replace(/\s+/g," ");
   // Folds are declared per PROFILE, so both Latin tracks get the long-s fold. Keyed to
@@ -629,7 +672,15 @@ function renderAllNow(){
   var pal=document.getElementById("palette"); pal.innerHTML="";
   prof().palette.forEach(function(ch){
     if(ch==="|"){var s=document.createElement("div");s.className="sep";pal.appendChild(s);return}
-    var b=document.createElement("button");b.type="button";b.textContent=ch;b.title="Insert "+ch;
+    var b=document.createElement("button");b.type="button";
+    /* A COMBINING mark alone on a button draws as a speck floating over nothing -- the
+       Syriac palette is all marks, and so is half the Gothic one. U+25CC DOTTED CIRCLE is
+       the character Unicode provides for exactly this: show the mark on its carrier,
+       insert the mark by itself. */
+    var comb=/\p{M}/u.test(ch);
+    b.textContent = comb ? "\u25CC"+ch : ch;
+    b.title = "Insert "+(comb ? "the mark" : ch);
+    if(prof().inputFonts) b.style.fontFamily=fontStack(prof().inputFonts);
     b.addEventListener("click",function(){insert(ch)});pal.appendChild(b);
   });
 
@@ -650,7 +701,10 @@ function renderOrient(){
       '<div class="row dark"><div class="cap">The manuscript — '+esc(it.page)+'</div>'+
         '<img src="data:image/jpeg;base64,'+it.img+'" alt="A line of the manuscript"></div>'+
       '<div class="row"><div class="cap">The same words, in print</div>'+
-        '<div class="big'+gk+'">'+esc(it.text)+'</div></div>'+
+        '<div class="big'+gk+'" dir="'+(prof().direction||"ltr")+'"'+
+          ' style="font-family:'+fontStack(prof().fonts)+
+          (prof().printSize?(";font-size:"+prof().printSize+"px"):"")+'">'+
+          esc(it.text)+'</div></div>'+
     '</div>'+ TRACK_NAV[state.track].orientTail + helpLinks();
 }
 function renderItem(){
@@ -663,7 +717,7 @@ function renderItem(){
 
   var pw=document.getElementById("printedwrap");
   var pr=document.getElementById("printed");
-  pr.className="printed"+cls();
+  pr.className="printed"+cls(); scriptify(pr);
   if(state.stage===4){ pw.style.display="none"; }
   else { pw.style.display=""; pr.innerHTML=printedHTML(it,null); }
   document.getElementById("printed-lbl").textContent =
@@ -686,6 +740,7 @@ function renderItem(){
     state.stage===2 ? "The missing word" :
     state.stage===3 ? "The rest of the line" : "Your reading";
   var e=document.getElementById("entry");
+  scriptify(e,{input:true});
   e.value=""; e.rows = state.stage===2?1:2;
   document.getElementById("result").classList.remove("show");
   state.revealed=false;
@@ -707,38 +762,64 @@ function renderGlosses(it){
   });
   host.innerHTML=h+'</div>';
 }
-/* ---------- beta code: type Greek on a Latin keyboard ----------
-   The scheme Perseus and papyri.info use: a letter, then its diacritics. Verified by
-   round-tripping every line in this bank -- 44 of 44 come back exactly.
-   `s` always gives σ, which happens to suit this witness: its scribe used no final sigma. */
-var BETA_BASE={a:"α",b:"β",g:"γ",d:"δ",e:"ε",z:"ζ",h:"η",q:"θ",i:"ι",k:"κ",l:"λ",m:"μ",
-  n:"ν",c:"ξ",o:"ο",p:"π",r:"ρ",s:"σ",t:"τ",u:"υ",f:"φ",x:"χ",y:"ψ",w:"ω",
-  A:"Α",B:"Β",G:"Γ",D:"Δ",E:"Ε",Z:"Ζ",H:"Η",Q:"Θ",I:"Ι",K:"Κ",L:"Λ",M:"Μ",
-  N:"Ν",C:"Ξ",O:"Ο",P:"Π",R:"Ρ",S:"Σ",T:"Τ",U:"Υ",F:"Φ",X:"Χ",Y:"Ψ",W:"Ω"};
-var BETA_DIA={")":"\u0313","(":"\u0314","/":"\u0301","\\":"\u0300",
-              "=":"\u0342","+":"\u0308","|":"\u0345"};
-var GREEK_RE=/[\u0370-\u03ff\u1f00-\u1fff]/;
-function toGreek(str){
+/* ---------- transliteration input: type a script on a Latin keyboard ----------
+   Beta code was the Greek instance of a general mechanism, so it is now one entry in a
+   table and the profile names which entry it wants. The grammar is the same in every
+   keymap: a BASE key, then zero or more MARK keys that attach to it. Marks come after
+   the letter, as they do in beta code and as they are spoken.
+
+   ⚠ The caret arithmetic below was the thing this expansion was most afraid of, and the
+   fear was misplaced. `selectionStart` is a LOGICAL offset into the value -- it counts
+   characters from the start of the string, not pixels from the left of the box -- so it
+   is unaffected by direction. The browser maps a logical caret to its visual position
+   under the bidi algorithm, and does it correctly. RTL needed no new arithmetic here.  */
+var KEYMAPS = {
+  "beta-code": {
+    /* The scheme Perseus and papyri.info use. Verified by round-tripping every line in
+       the Greek bank -- 44 of 44 came back exactly. `s` always gives σ, which suits this
+       witness: its scribe used no final sigma. */
+    native: /[\u0370-\u03ff\u1f00-\u1fff]/,
+    base: {a:"α",b:"β",g:"γ",d:"δ",e:"ε",z:"ζ",h:"η",q:"θ",i:"ι",k:"κ",l:"λ",m:"μ",
+      n:"ν",c:"ξ",o:"ο",p:"π",r:"ρ",s:"σ",t:"τ",u:"υ",f:"φ",x:"χ",y:"ψ",w:"ω",
+      A:"Α",B:"Β",G:"Γ",D:"Δ",E:"Ε",Z:"Ζ",H:"Η",Q:"Θ",I:"Ι",K:"Κ",L:"Λ",M:"Μ",
+      N:"Ν",C:"Ξ",O:"Ο",P:"Π",R:"Ρ",S:"Σ",T:"Τ",U:"Υ",F:"Φ",X:"Χ",Y:"Ψ",W:"Ω"},
+    dia: {")":"\u0313","(":"\u0314","/":"\u0301","\\":"\u0300",
+          "=":"\u0342","+":"\u0308","|":"\u0345"}
+  },
+  "syriac-roman": {
+    /* A romanised consonantal keymap in the same grammar. 22 letters, no vowels -- this
+       manuscript is written without them and the transcription has none to type.
+       ⛔ The mark keys are ^ _ " and NOT . , : -- the obvious choices are impossible,
+       because a full stop follows a letter constantly in this text (3,307 times in the
+       bank) and would have been eaten as a dot-above every time. */
+    native: /[\u0700-\u074f]/,
+    base: {a:"ܐ",b:"ܒ",g:"ܓ",d:"ܕ",h:"ܗ",w:"ܘ",z:"ܙ",H:"ܚ",T:"ܛ",y:"ܝ",k:"ܟ",l:"ܠ",
+           m:"ܡ",n:"ܢ",s:"ܣ",e:"ܥ",p:"ܦ",c:"ܨ",q:"ܩ",r:"ܪ",x:"ܫ",t:"ܬ"},
+    dia: {'"':"\u0308","^":"\u0307","_":"\u0323"}
+  }
+};
+function transliterate(str, km){
   var out="",i=0;
   while(i<str.length){
-    var ch=str[i], base=BETA_BASE[ch];
-    if(base===undefined && !GREEK_RE.test(ch)){ out+=ch; i++; continue; }
+    var ch=str[i], base=km.base[ch];
+    if(base===undefined && !km.native.test(ch)){ out+=ch; i++; continue; }
     if(base===undefined) base=ch;
     i++;
     var marks="";
-    while(i<str.length && BETA_DIA[str[i]]!==undefined){ marks+=BETA_DIA[str[i]]; i++; }
+    while(i<str.length && km.dia[str[i]]!==undefined){ marks+=km.dia[str[i]]; i++; }
     out += (base+marks).normalize("NFC");
   }
   return out.normalize("NFC");
 }
-function wireBeta(){
+function wireKeymap(){
   var ta=document.getElementById("entry");
   ta.addEventListener("input", function(){
-    if(prof().keymap!=="beta-code") return;
+    var km=KEYMAPS[prof().keymap];
+    if(!km) return;
     var v=this.value, c=this.selectionStart;
-    var g=toGreek(v);
+    var g=transliterate(v, km);
     if(g===v) return;
-    var pre=toGreek(v.slice(0,c)).length;
+    var pre=transliterate(v.slice(0,c), km).length;
     this.value=g;
     try{ this.selectionStart=this.selectionEnd=pre; }catch(e){}
   });
@@ -793,8 +874,9 @@ function check(){
   el.textContent=pct+"%"; el.className="big "+(pct>=90?"good":(pct<60?"bad":""));
   document.getElementById("score-detail").textContent=
     hit+" right, "+(pairs.length-hit)+" adrift"+(forg?" — accents and punctuation ignored":" — strict");
-  document.getElementById("d-you").innerHTML=yh||'<span class="c-bad">—</span>';
-  document.getElementById("d-truth").innerHTML=th;
+  scriptify(document.getElementById("d-you"),{input:true}).innerHTML =
+      yh||'<span class="c-bad">—</span>';
+  scriptify(document.getElementById("d-truth"),{input:true}).innerHTML = th;
   if(state.stage===2||state.stage===3)
     document.getElementById("printed").innerHTML=printedHTML(it,pct>=90);
   var key=state.track+".s"+state.stage;
@@ -972,7 +1054,7 @@ document.getElementById("cleardata").addEventListener("click",function(){
   document.getElementById("exportbox").classList.remove("show");
 });
 renderData();
-wireBeta();
+wireKeymap();
 renderAll();
 })();
 </script>

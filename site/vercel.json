@@ -17,6 +17,10 @@
       "destination": "/read/index.html?track=fabliaux"
     },
     {
+      "source": "/syriac",
+      "destination": "/read/index.html?track=syriac1"
+    },
+    {
       "source": "/hand/greek-minuscule",
       "destination": "/hand/greek-minuscule/index.html"
     },
@@ -27,6 +31,10 @@
     {
       "source": "/hand/latin-gothic",
       "destination": "/hand/latin-gothic/index.html"
+    },
+    {
+      "source": "/hand/syriac",
+      "destination": "/hand/syriac/index.html"
     },
     {
       "source": "/read",

@@ -68,6 +68,21 @@ _phrase = (", ".join(_names[:-1]) + " and " + _names[-1]) if len(_names) > 1 els
 doc = doc.replace("__LANGS__", _phrase)
 doc = doc.replace("__PAYLOAD__", index)
 
+# Script webfonts are registry data too. A profile that needs a face the UI does not
+# already load declares `webfont`; hand-editing the <link> in the shell is how a new
+# language ships with its script drawn as tofu.
+# ⚠ A family name that does not exist fails SILENTLY -- Google Fonts answers 200 with an
+# HTML error page and the browser falls back. Check a new name against the API before
+# putting it here (see registry/profiles/syriac.toml).
+_wf = []
+for _pr in _json.loads(index)["profiles"].values():
+    w = _pr.get("webfont")
+    if w and w not in _wf:
+        _wf.append(w)
+_link = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
+         + "".join("family=" + w + "&" for w in _wf) + 'display=swap">') if _wf else ""
+doc = doc.replace("__SCRIPTFONTS__", _link)
+
 dest = out_dir / "index.html"
 dest.write_text(doc, encoding="utf-8")
 print(f"{dest} — {dest.stat().st_size/1024:.1f} KB  (index inlined)")

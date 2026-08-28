@@ -1,0 +1,103 @@
+# Script profile: Syriac. ⭐ The first right-to-left profile, and the pilot for every
+# RTL script that follows (Hebrew, Aramaic, Arabic if it ever comes).
+#
+# ONE profile, three hands. Estrangela, Serto and East Syriac share their letters, their
+# points and their punctuation; what differs is letterform. So the hand is a VARIANT
+# recorded on the track, not a profile of its own — the same reason latin-caroline and
+# latin-gothic ARE separate is the reason these three are not (there the abbreviation
+# repertoire and the learner differ too, here only the shapes do).
+#
+# ⭐ Syriac was chosen to go first among the RTL scripts because it isolates DIRECTION
+# from NORMALISATION. This witness is unpointed: no vowel marks, no finals to fold. A
+# Hebrew track meets both problems in one track; this one meets exactly one.
+
+id = "syriac"
+primer = "scripts/syriac-serto.md"
+name = "Syriac"
+direction = "rtl"
+# ⛔ EMPTY, and that is the point. `.gk` in the stylesheet is a hardcoded list of scripts
+# by another name. Direction, font stack and printed size now come from THIS file and are
+# applied at render; a new script needs no CSS rule written for it by hand.
+css_class = ""
+
+# --- exercise selection (tools/build_exercises.py) ---
+# Neither Latin's measure nor Greek's works here.
+#   · abbreviation_density counts non-ASCII, and EVERY Syriac character is non-ASCII.
+#   · diacritic_density asks what fraction of letters carry a mark — but this is an
+#     abjad whose transcription excludes vowel points by rule, so the marks that remain
+#     are FEW and grammatical (seyame for the plural, dots that separate a participle
+#     from a perfect, dots that tell two homographs apart). They are exactly what makes
+#     a line hard, so density is right; the scale is not — 4% of characters carry a mark
+#     here against 40%+ of Greek's.
+# point_density therefore weights the marks that exist heavily and lets length break ties.
+scorer = "point_density"
+min_words = 3
+letter_ratio = 0.72
+
+# ⭐ TRUE, and not for the reason it is true on latin-gothic. There it recovers lines the
+# filter was wrongly discarding. Here it is simply what a point IS: seyame over a noun is
+# the plural, not punctuation, and a dot under a verb is its tense. Counting them as
+# non-letters would score a grammatically marked line as apparatus. This is a new track,
+# so nothing pre-existing changes — the ruling still owed on latin-caroline is untouched.
+count_marks_as_letters = true
+
+# ⛔ EMPTY on purpose. In Greek the structural marks are an EDITOR'S apparatus (epigram
+# start, scholion) and a line carrying one is not a sentence. Syriac's ܀ ܆ ܇ ܉ are the
+# SCRIBE'S punctuation, on the page, in the ink — as much the text as a full stop is.
+structural = []
+
+# --- learner-side normalisation ---
+# One fold, and it is the exact counterpart of Greek's ς→σ: a positional variant that
+# means the same letter. Final semkath appears once in 2,475 lines, so this fold will
+# almost never fire — it is here so that the one line carrying it is not a trap.
+fold = { "ܤ" = "ܣ" }
+
+# TRUE, like Greek and unlike the Latin tracks. The forgiving compare is where a beginner
+# is told "get the letters right, we will not fail you on the points"; strict keeps every
+# one. ⚠ This required the JS stripper to be generalised: it matched U+0300–036F only,
+# which covers the seyame and the two dots (they are ordinary combining marks) but not
+# U+0740 SYRIAC FEMININE DOT or anything else in U+0730–074A.
+strip_combining_when_forgiving = true
+
+# --- input ---
+# A romanised keymap in the beta-code grammar: a letter, then its marks. See the
+# `keymaps` table below and tools/trainer_shell.html.
+keymap = "syriac-roman"
+keymap_hint = """
+<b>Type Syriac with your ordinary keyboard.</b> One key per consonant, and the text runs
+right to left as you type. <code>a</code>=ܐ <code>b</code>=ܒ <code>g</code>=ܓ
+<code>d</code>=ܕ <code>h</code>=ܗ <code>w</code>=ܘ <code>z</code>=ܙ <code>H</code>=ܚ
+<code>T</code>=ܛ <code>y</code>=ܝ <code>k</code>=ܟ <code>l</code>=ܠ <code>m</code>=ܡ
+<code>n</code>=ܢ <code>s</code>=ܣ <code>e</code>=ܥ <code>p</code>=ܦ <code>c</code>=ܨ
+<code>q</code>=ܩ <code>r</code>=ܪ <code>x</code>=ܫ <code>t</code>=ܬ.
+<div class="row">Points come <em>after</em> the letter, as accents do in Greek:
+<code>"</code> seyame (the two dots that mark a plural) <code>^</code> a dot above
+<code>_</code> a dot below. So <code>mlk"a</code> gives ܡܠܟ̈ܐ.</div>
+<div class="row"><b>No vowels.</b> This manuscript is written without them, and the
+transcription has none to type.</div>
+"""
+
+# Punctuation and points, which no Latin keyboard carries. The letters are all on the
+# keymap above, so they are not repeated here.
+palette = [
+  "̈", "̇", "̣", "|",
+  "܀", "܆", "܇", "܉", "|",
+  "܏",
+]
+
+# ⭐ Serto is "Western" in Noto's naming, and the plain family is Estrangela — checked
+# against the Google Fonts API rather than assumed, because a family that does not exist
+# fails SILENTLY (the request 200s with an HTML error page and the browser falls back to
+# a serif that has no Syriac at all, which draws tofu, which draws). Verified present:
+# Noto Sans Syriac Western, Noto Sans Syriac Eastern, Noto Sans Syriac. Verified ABSENT:
+# Noto Serif Syriac, Noto Sans Syriac Estrangela.
+# So the second Syriac track, St Mark's 36, will want "Noto Sans Syriac" — Estrangela —
+# which is a per-TRACK font override this profile does not yet have. One hand, for now.
+fonts = ["Noto Sans Syriac Western", "Noto Sans Syriac", "serif"]
+# The input box and the character diff are monospace everywhere else, deliberately -- the
+# diff lines up. IBM Plex Mono has no Syriac at all, so here they must take the script's
+# own face or the learner types into a row of tofu.
+input_fonts = ["Noto Sans Syriac Western", "Noto Sans Syriac", "serif"]
+# Syriac's letters sit small on the line next to a Latin serif of the same size.
+print_size = 30
+webfont = "Noto+Sans+Syriac+Western:wght@400;500"

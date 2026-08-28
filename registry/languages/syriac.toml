@@ -1,0 +1,104 @@
+# Language space: Syriac. The fourth language, the first written right to left, and the
+# first that is not an alphabet — an abjad, whose vowels are not on the page at all.
+#
+# ⭐ Chosen to go first among the RTL scripts because it isolates ONE new problem. The
+# direction is new; the normalisation is not — this witness carries no vowel points and
+# has no final forms to fold. Hebrew meets both at once, and now meets them second.
+
+id = "syriac"
+order = 4
+name = "Syriac"
+profile = "syriac"
+
+# ⬜ EMPTY SEAT, and the primer says so on its face. Wilson reads Latin and Greek. Every
+# grammatical claim in the Syriac primer — which dot makes a participle, which makes a
+# perfect, what an unpointed ܡܢ is doing — is drawn from the counted data plus standard
+# reference grammar, and none of it has been ruled on by a Syriacist. That is the first
+# thing to hand to a reader who offers.
+expert = ""
+
+# Almost nobody arrives reading Syriac, so this language points outward, as Old French
+# does. ⛔ Note that EIEOL cannot serve here: it is Indo-European by definition, and
+# Syriac is Semitic. These are the openly available routes in.
+[[resources]]
+label = "Beth Mardutho — the Syriac Institute"
+url = "https://sedra.bethmardutho.org/"
+note = "SEDRA, the lexical database behind most modern Syriac tools; free, and the place to look a word up."
+
+[[resources]]
+label = "Dukhrana Biblical Research — the Peshitta, word by word"
+url = "https://dukhrana.com/"
+note = "The Gospels in Syriac with a lexical analysis under every word. This track IS the Gospels, so a line you cannot crack can be looked up in the text it came from."
+
+# ⛔ Said plainly because it is true and a learner should not waste an evening looking:
+# there is no free ten-lesson online course for Syriac of the kind Old French has at the
+# Texas LRC. The way in is a printed grammar (Thackston, Robinson, Muraoka) plus the two
+# tools above. ⬜ If a Syriacist takes the empty seat, ask them what they would send a
+# beginner to, and replace this note with it.
+
+[[tracks]]
+id = "syriac1"
+tab = "Gospels"
+route = "/syriac"
+name = "Syriac — the printer's copy of the first Syriac book"
+witness = "Vienna, ÖNB Cod. Syr. 1 (Vienna, 1554, Moses of Mardin)"
+crops = "corpus/crops/onb-syr1"
+layer = "diplomatic"
+attribution = "Österreichische Nationalbibliothek"
+hand = "Serto"          # ⚑ the HAND is a track field, not a profile: Estrangela and East
+                        # Syriac share this profile's letters, points and punctuation.
+printed = "Right to left, and without vowels: twenty-two consonants, joined into word-shapes, and dots that do the work vowels do not. A pocket Gospel book written at Vienna in 1554 by Moses of Mardin — and the very copy from which the first book ever printed in Syriac was set the following year."
+
+card_chip = "syriac"
+card_witness = "Vienna, ÖNB Cod. Syr. 1<br>Vienna, 1554, written by Moses of Mardin"
+card_blurb = """The first track that runs right to left, and the first with no vowels on
+      the page. A pocket Gospel book — the actual copy the compositors of the first Syriac
+      printed book worked from in 1555. The lesson is the dots: 675 word-forms here appear
+      in more than one pointing."""
+
+# Stage-0 orientation. ⭐ Lead with the two things that are different BEFORE the alphabet:
+# the direction and the missing vowels. A reader arriving from Latin or Greek has never
+# met either, and both are habits rather than knowledge.
+orient = """
+<p>You are looking at a very small book — <b>91 by 75 millimetres</b>, the size of a hand —
+containing the four Gospels in <b>Syriac</b>, written at Vienna in <b>1554</b> by
+<b>Moses of Mardin</b>, a priest of the Syriac Orthodox Church who had travelled west from
+Mesopotamia, and dedicated to the Emperor Ferdinand I.</p>
+<p><b>It is the printer's copy.</b> The Austrian National Library's record says so
+plainly: this manuscript was the <i>Vorlage</i> for the Syriac New Testament printed at
+Vienna in 1555 — the first book ever printed in the Syriac script. A compositor read these
+pages, letter by letter, to cut and set the type that every Syriac typeface since descends
+from. You are being asked to do exactly what he did.</p>
+<p><b>Two things are different before the alphabet is, and both are habits rather than
+knowledge:</b></p>
+<p>· <b>It runs right to left.</b> The line, the printed row beneath it, the box you type
+into, the comparison at the end — all of it. Reading does not change; the direction of your
+eye does.<br>
+· <b>The vowels are not there.</b> Syriac is an <b>abjad</b>: twenty-two letters, all
+consonants. There is a full system of vowel points, and this scribe does not use it. You
+supply the vowels from the word — which is to say, you read Syriac rather than decode
+it.</p>
+<p><b>Then two things about the shapes:</b></p>
+<p>· <b>Letters join.</b> Most letters connect to the one after them, so a word is a single
+running shape. But <b>eight of them never join to the left</b> — ܐ ܕ ܗ ܘ ܙ ܨ ܪ ܬ — so a word
+containing one arrives in pieces. <b>A gap inside a word is normal and is not a word
+break.</b> This is the commonest early misreading, and knowing it in advance saves you an
+hour.<br>
+· <b>There are no capitals and no final forms.</b> One shape per letter, in up to four
+joined positions. Final semkath appears exactly once in the whole bank.</p>
+<p><b>And then the dots, which are the actual lesson.</b> With no vowels written, the dots
+carry the grammar. Two dots over a word — <b>seyame</b> — make it plural, and they are on
+nearly half the lines here. A single dot above or below tells <i>he says</i> from <i>he
+said</i>, and <i>from</i> from <i>who</i>. In this bank <b>675 word-forms out of 7,035
+appear in more than one pointing</b>: same consonants, different dots, different word. Miss
+a dot and you have not made a small error, you have read another word.</p>
+<p>The hand is <b>Serto</b> — cursive, rounded, sloping, the West Syriac book hand. Two
+sister hands, Estrangela and East Syriac, use the same letters in different shapes; learn
+this one and they cost you a week, not a new alphabet.</p>
+"""
+orient_tail = """
+<p>The printed row under the plate is a modern typeface. It tells you what the words are; it
+never tells you what the strokes look like. Read the shapes from the ink only. Go to
+<b>Stage one</b>, which shows you lines beside their text and asks nothing of you but to
+read along — and start by finding the two dots.</p>
+"""

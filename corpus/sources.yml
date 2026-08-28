@@ -120,6 +120,99 @@ greek_minuscule:
       - "all punctuation collapsed to interpunct ·"
       - "structural marks: ⁛ U+205B epigram start, ⋇ U+22C7 epigram end, ∻ margin scholion, ※ main-text scholion"
 
+syriac_serto:
+  - id: onb-syr1
+    title: "Wien ÖNB Cod. Syr. 1 (HTR Winter School 2024)"
+    witness: "Vienna, 1554; the four Gospels, written by Moses of Mardin for Ferdinand I"
+    date: 1554
+    script: Serto (West Syriac)
+    format: Page-XML          # eScriptorium/Transkribus flavour, catalogue agrees
+    lines: 2868               # htr-united says 2869; 2,475 of them are MainZone
+    pages: 140
+    layer: diplomatic
+    layer_evidence: >
+      PROBE, 2,475 MainZone lines / 121,503 characters. Diacritics ARE present and
+      unresolved: seyame (U+0308) x1870 on 1,182 lines, dot above (U+0307) x1506, dot
+      below (U+0323) x1567, feminine dot (U+0740) x51, and the abbreviation mark
+      (U+070F) x140 -- one per line on 140 lines, unexpanded. VOWEL points are absent by
+      the transcribers' declared rule and all but absent in fact (5 strays: 3 hbasa-esasa,
+      1 zqapha, 1 pthaha), and so are qushshaya/rukkakha (7+7). ⭐ The decisive evidence
+      that the pointing is the SCRIBE'S and not an editor's: 675 of the 7,035 word-forms
+      occur in more than one pointing -- ܡܢ appears bare 217x, dot-below 179x, dot-above
+      49x. An editor normalising would not leave that distribution.
+      ⚑ Contamination found and left in the raw data: NBSP U+00A0 x785 (folds to a space
+      in both Python's split and the trainer's \s+ normalisation), ARABIC TATWEEL x2,
+      ZWNJ x1, and a trailing newline on 45 lines -- the last now stripped at ingest.
+    license: ⚠ CONTESTED -- see license_conflict
+    license_conflict: >
+      ⛔ The repository says two different things and this is NOT resolved.
+      LICENSE.md is the full text of **CC BY-SA 4.0** (and GitHub's own licence detection
+      agrees: spdx CC-BY-SA-4.0). htr-united.yml declares **CC-BY 4.0** with the BY 4.0
+      URL. The conservative reading is the LICENSE file: BY-SA.
+      ⚠ THIS IS NOT ONLY A SYRIAC PROBLEM. The identical conflict is in
+      HTR-School-Vienna/-2024--carolingian-latin, which is Latin I -- a LIVE track whose
+      entry above claims flat CC-BY-4.0. README.md says "All CC-BY 4.0" of the whole
+      corpus.
+      What turns on it: BY-SA permits everything we do (use, crop, redistribute with
+      attribution) but requires ADAPTATIONS to be licensed BY-SA, and BY-SA is
+      incompatible with adding a non-commercial term. So if the derived exercise banks are
+      adaptations, they cannot ship under CC BY-NC -- the Wroot Press default.
+      ⬜ Wilson's ruling owed: (a) write to the Winter School and ask which they meant --
+      one sentence settles it for both tracks; (b) meanwhile, state BY-SA on the site for
+      both ÖNB Winter School witnesses, which is true under either reading.
+    url: https://github.com/HTR-School-Vienna/2024--Syriac
+    images_in_repo: false      # ⛔ nominally yes, actually NO -- see images_note
+    images_note: >
+      The repo tracks its 140 JPEGs in Git LFS, and **LFS is disabled on the repository**:
+      the batch API answers `{"message":"Git LFS is disabled for this repository","status":
+      "403"}` and every other route (raw.githubusercontent, github.com/.../raw,
+      media.githubusercontent) returns the 130-byte POINTER, not an image. A clone without
+      git-lfs installed fails checkout entirely. So the in-repo images are unavailable to
+      anyone, and the plates come from ÖNB over IIIF instead.
+    iiif:
+      manifest: https://api.onb.ac.at/iiif/presentation/v3/manifest/DTL_2933415
+      # ⭐ The DTL id from the old RepViewer URL works DIRECTLY as a manifest id. The bare
+      # number (2933415) 404s; `DTL_2933415` is a 200. That saves the whole onb.digital
+      # search dance research/onb-cod940-iiif.md had to do (and that search API is still
+      # broken -- it now 500s on a missing `api_query` field).
+      object_id: 100025DA        # the image-service prefix, from the manifest
+      canvases: 344
+      page_to_canvas: "PAGE file is <sequence>_<canvas>; the SECOND number indexes the manifest"
+      offset: -1                 # canvas_index = canvas_number - 1
+      calibration: >
+        DECISIVE, unlike Cod. 940's. Every one of the 140 GT pages states 1969x2365 or
+        similar, and the matching canvas is EXACTLY half: scale 0.500 on 140/140 pages,
+        x and y identical, 0 pages skewed. Offsets 0 and -2 give a plausible ~0.5 with
+        jitter on 19-20 pages -- the same near-miss that made offset 0 look right for
+        Cod. 940. Take the exact-and-uniform reading, not the plausible one.
+      full_resolution: 985x1183   # the real maximum; info.json lists no larger size
+      attribution: "Österreichische Nationalbibliothek"
+      rights: >
+        No rights IRI; a requiredStatement asks for attribution, exactly as Cod. 940.
+        Treat as attribution-required and keep the statement with any published crop.
+    catalogue_correction: >
+      ⛔ THE DATE IN THE GT REPO IS WRONG. Its README and htr-united.yml say **1545**;
+      ÖNB's own record for Cod. Syr. 1 HAN MAG (IDNR AC14003369) says **1554**, Vienna,
+      scribe "Moses <von Mardaia>", dedicatee Ferdinand I, 91x75 mm, 160 leaves. 1545
+      looks like a digit transposition, and EXPANSION-PLAN.md copied it.
+      ⭐ And the fact the repo does not mention at all: ÖNB records this manuscript as the
+      **Vorlage** for the first book ever printed in Syriac (Widmanstetter's New Testament,
+      Vienna 1555, printers Caspar Kraft and Michael Zimmermann). This is the printer's
+      copy. It is the best orientation fact on the site.
+    build: >
+      git clone https://github.com/HTR-School-Vienna/2024--Syriac corpus/raw/syr1   # LFS fails; XML is fine
+      python3 tools/ingest.py corpus/raw/syr1 onb-syr1 --layer diplomatic --out corpus/normalized/onb-syr1.jsonl
+      python3 tools/fetch_iiif.py corpus/normalized/onb-syr1.jsonl \
+        https://api.onb.ac.at/iiif/presentation/v3/manifest/DTL_2933415 corpus/raw/onb-syr1-images \
+        --page-dir "corpus/raw/syr1/ÖNB_Syr_1/page" --page-re '\d+_0*(\d+)' --offset -1 \
+        --out-jsonl corpus/normalized/onb-syr1-iiif.jsonl
+      python3 tools/crop.py corpus/normalized/onb-syr1-iiif.jsonl corpus/raw/onb-syr1-images \
+        corpus/crops/onb-syr1 --region MainZone
+    note: >
+      MainZone-gold (13 lines) is EXCLUDED by the --region filter: gold block capitals are
+      a different letterform and a reading exercise of their own. MarginTextZone (193) and
+      NumberingZone (136) likewise.
+
 # NOT ingested, deliberately:
 excluded:
   - path: eutyches/kraken-YALTAi/test/Bodl_Auct.F.4.32

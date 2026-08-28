@@ -18,11 +18,18 @@ Writes images to <outdir> and a rescaled JSONL whose coordinates refer to the im
 actually have, so every downstream tool works unchanged.
 """
 import json, re, argparse, sys, time, urllib.request, urllib.error
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 
-def leaf_of(page):
-    m = re.match(r"(\d+)", page)
+def leaf_of(page, pat=re.compile(r"(\d+)")):
+    """Page name -> the number that indexes the manifest, BEFORE the offset.
+
+    Cod. 940's TEI names pages by leaf (`0159_p159.jpg`), so the leading number is the
+    leaf. ÖNB Cod. Syr. 1's PAGE files are named `<sequence>_<canvas>.xml`, where it is
+    the SECOND number that indexes the manifest -- hence --page-re.
+    """
+    m = pat.match(page)
     return int(m.group(1)) if m else None
 
 
@@ -43,18 +50,51 @@ def tei_dims(tei_path):
             re.findall(r"<graphic url='([^']+)' width='(\d+)px' height='(\d+)px'", s)}
 
 
+PAGE_NS = re.compile(r"\{http://schema\.primaresearch\.org/PAGE/gts/pagecontent/[^}]+\}")
+
+
+def page_dims(page_dir):
+    """PAGE XML states the size of the image the transcriber actually saw, per file.
+
+    The equivalent of tei_dims for a PAGE-XML witness. ⚠ Like the TEI's, these numbers
+    are a CLAIM by the producing software and are calibrated against the canvas, never
+    trusted: see the scale check in main().
+    """
+    out = {}
+    for p in sorted(Path(page_dir).rglob("*.xml")):
+        try:
+            root = ET.parse(p).getroot()
+        except ET.ParseError:
+            continue
+        m = PAGE_NS.match(root.tag)
+        if not m:
+            continue
+        pg = root.find(m.group(0) + "Page")
+        if pg is None or not pg.get("imageWidth"):
+            continue
+        out[pg.get("imageFilename") or p.stem] = (int(pg.get("imageWidth")),
+                                                  int(pg.get("imageHeight")))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("jsonl"); ap.add_argument("manifest"); ap.add_argument("outdir")
-    ap.add_argument("--tei", required=True, help="source TEI, for its stated image sizes")
+    ap.add_argument("--tei", help="source TEI, for its stated image sizes")
+    ap.add_argument("--page-dir", help="directory of PAGE XML, for its stated image sizes")
+    ap.add_argument("--page-re", default=r"(\d+)",
+                    help="regex on the page name whose group 1 indexes the manifest")
     ap.add_argument("--offset", type=int, required=True, help="canvas_index = leaf + offset")
     ap.add_argument("--out-jsonl", required=True)
     ap.add_argument("--limit-pages", type=int, default=None)
     ap.add_argument("--sleep", type=float, default=0.4, help="be polite to the server")
     a = ap.parse_args()
 
+    if bool(a.tei) == bool(a.page_dir):
+        raise SystemExit("give exactly one of --tei / --page-dir")
     rows = [json.loads(l) for l in open(a.jsonl, encoding="utf-8")]
-    dims = tei_dims(a.tei)
+    dims = tei_dims(a.tei) if a.tei else page_dims(a.page_dir)
+    page_re = re.compile(a.page_re)
     man = load_manifest(a.manifest)
     cv = man["items"]
     out = Path(a.outdir); out.mkdir(parents=True, exist_ok=True)
@@ -69,7 +109,7 @@ def main():
 
     scale, got, failed = {}, 0, []
     for n, page in enumerate(pages, 1):
-        i = leaf_of(page) + a.offset
+        i = leaf_of(page, page_re) + a.offset
         if not (0 <= i < len(cv)):
             failed.append((page, "canvas out of range")); continue
         svc, cw, ch = canvas_info(cv[i])
@@ -105,6 +145,14 @@ def main():
                 q["baseline"] = [[int(x * sx), int(y * sy)] for x, y in r["baseline"]]
             fh.write(json.dumps(q, ensure_ascii=False) + "\n")
             kept += 1
+    # Calibration report. A witness whose x and y scales agree page after page was
+    # uploaded at a true multiple of the canvas; disagreement is the Cod. 940 signature
+    # (a Transkribus PLACEHOLDER size, stretched, scaling independently). Either is
+    # workable -- but you must SEE which one you have before trusting a crop.
+    skew = [(pg, sx, sy) for pg, (sx, sy, _, _) in scale.items() if abs(sx - sy) > 0.01]
+    uniq = sorted({round(sx, 3) for sx, _, _, _ in scale.values()})
+    print(f"  scale x: {len(uniq)} distinct value(s) {uniq[:5]}"
+          f"{' …' if len(uniq) > 5 else ''}; {len(skew)}/{len(scale)} pages scale x≠y")
     print(f"{got}/{len(pages)} page images -> {out}")
     print(f"{kept} lines rescaled -> {a.out_jsonl}")
     if failed:
