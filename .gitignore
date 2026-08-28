@@ -9,3 +9,7 @@ build/
 corpus/crops/
 site/read/
 site/.vercel
+.vercel
+# @vercel/analytics install; the site loads analytics from /_vercel/insights/script.js
+# (the static-site route), so nothing here is served -- npm i to restore
+node_modules/
