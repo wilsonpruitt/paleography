@@ -1,0 +1,22 @@
+# Language space: Greek. One track for now.
+#
+# ⬜ OPEN, and worth opening WITH rather than hiding: no available Greek ground truth
+# preserves abbreviations, so this track cannot teach the signs (Level 2). A Byzantinist
+# settles it in a sentence -- see handoff.md.
+
+id = "greek"
+order = 2          # tab / landing order; explicit, never alphabetical
+name = "Greek"
+profile = "greek-minuscule"
+primer = "scripts/greek-minuscule.md"
+# Wilson runs the Greek expert queue; a friend holds the reviewer seat (handoff.md).
+expert = "wilson"
+
+[[tracks]]
+id = "greek"
+route = "/greek"
+name = "Greek — Byzantine minuscule"
+witness = "Heidelberg, Pal. gr. 23 (s. X)"
+crops = "corpus/crops/cpgr23"
+layer = "expanded"
+printed = "An anthology of epigrams. Abbreviations are already written out, so this hand asks you to recognise letters and ligatures, nothing more."

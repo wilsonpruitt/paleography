@@ -16,23 +16,27 @@ steps to get there"):
 Fragments are filtered out: a line carrying a structural mark, or fewer than three
 words, or less than ~72% letters, is a scrap of apparatus, not a sentence to read.
 """
-import json, base64, argparse, statistics, unicodedata, re
+import json, base64, argparse, statistics, unicodedata, re, sys
 from pathlib import Path
 from io import BytesIO
 from PIL import Image
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import registry
+
 Image.MAX_IMAGE_PIXELS = None
+ROOT = Path(__file__).resolve().parent.parent
 
 GLOSS = {g["char"]: g for g in
          json.loads(Path(__file__).resolve().parent.parent
                     .joinpath("corpus/abbreviation-glosses.json").read_text(encoding="utf-8"))["signs"]}
 
-GREEK_PLAIN = set("αβγδεζηθικλμνξοπρστυφχψωςΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ ")
-STRUCT = set("~⁛⋇∻※")
+def abbreviation_density(t, prof):
+    """Abbreviation density dominates; length and word count trim the ordering.
 
-
-def latin_difficulty(t):
-    """Abbreviation density dominates; length and word count trim the ordering."""
+    Counts non-ASCII characters as a proxy for abbreviation signs. That proxy is only
+    valid for a script whose ordinary letters ARE ascii -- see diacritic_density.
+    """
     n = len(t)
     if not n:
         return 999.0
@@ -40,30 +44,39 @@ def latin_difficulty(t):
     return round(abbr / n * 100 + n * 0.35 + len(t.split()) * 1.2, 1)
 
 
-def greek_difficulty(t):
+def diacritic_density(t, prof):
     """Diacritic density dominates. 'Non-ASCII' would score every Greek line alike."""
+    plain = set(prof["plain_letters"])
     letters = [c for c in t if c.isalpha()]
     if not letters:
         return 999.0
-    dia = sum(1 for c in letters if c not in GREEK_PLAIN)
+    dia = sum(1 for c in letters if c not in plain)
     return round(dia / len(letters) * 40 + len(t) * 0.55 + len(t.split()) * 1.5, 1)
 
 
-def is_sentence(t):
-    if any(c in STRUCT for c in t):
+# A profile names its scorer; adding a script means adding a function here and one
+# line of TOML, not editing a hardcoded list of tracks.
+SCORERS = {
+    "abbreviation_density": abbreviation_density,
+    "diacritic_density": diacritic_density,
+}
+
+
+def is_sentence(t, prof):
+    if any(c in set(prof["structural"]) for c in t):
         return False
     # Bracketed lines are ADMITTED (see manual-review/eutyches-parentheses-plate-read.md:
     # the brackets are the editors' supply where the ink is unreadable) but flagged, so the
     # trainer can show them for reading and withhold them from every stage that asks the
     # learner to type -- you cannot type letters that are not on the page.
-    if len(t.split()) < 3:
+    if len(t.split()) < prof["min_words"]:
         return False
     # Transkribus editorial marks typed as literal text and then escaped into the TEI:
     # `di<del>f</del>ficile`, `<add>no</add>`. 59 lines in Cod. 940. They are notes ABOUT
     # the text rather than the text, and a learner cannot type them.
     if "<" in t or ">" in t:
         return False
-    return sum(1 for c in t if c.isalpha()) / max(len(t), 1) > 0.72
+    return sum(1 for c in t if c.isalpha()) / max(len(t), 1) > prof["letter_ratio"]
 
 
 def cloze_index(words):
@@ -82,11 +95,12 @@ def cloze_index(words):
 GLOSS_FREQ = {}          # filled per track in pack(): how many lines each gloss fires on
 
 
-def pack(manifest_dir, n, max_w, quality, track, scorer):
+def pack(manifest_dir, n, max_w, quality, track, prof):
+    scorer = SCORERS[prof["scorer"]]
     rows = [json.loads(l) for l in open(Path(manifest_dir) / "manifest.jsonl", encoding="utf-8")]
-    rows = [r for r in rows if is_sentence(r["text"])]
+    rows = [r for r in rows if is_sentence(r["text"], prof)]
     for r in rows:
-        r["diff"] = scorer(r["text"])
+        r["diff"] = scorer(r["text"], prof)
     rows.sort(key=lambda r: r["diff"])
     # Sample evenly across the easiest 55% of the pool. Taking a flat top-n gives a
     # bank with no gradient at all (every line as easy as the first); taking the whole
@@ -153,30 +167,21 @@ if __name__ == "__main__":
     ap.add_argument("--max-w", type=int, default=2200)
     ap.add_argument("--quality", type=int, default=87)
     a = ap.parse_args()
-    specs = [
-        ("latin", "corpus/crops/wien940", latin_difficulty,
-         dict(name="Latin — Caroline minuscule",
-              witness="Wien, ÖNB Cod. 940 (Saint-Amand, s. IX in.)",
-              layer="expanded",
-              printed="A commentary on Matthew in a clear, roomy hand, and the gentlest start available: the transcribers wrote every abbreviation out in full, so here you learn the LETTERS and nothing else. The signs come next door, in the grammar.",
-              attribution="Österreichische Nationalbibliothek")),
-        ("latin2", "corpus/crops/eutyches-VLO41", latin_difficulty,
-         dict(name="Latin — a glossed grammar",
-              witness="Leiden, Voss. Lat. O. 41 (s. IX)",
-              layer="diplomatic",
-              printed="The same script, much harder going: a school grammar buried under commentary, and the transcription keeps every abbreviation sign the scribe used. Come here once Cod. 940 reads easily.")),
-        ("greek", "corpus/crops/cpgr23", greek_difficulty,
-         dict(name="Greek — Byzantine minuscule",
-              witness="Heidelberg, Pal. gr. 23 (s. X)",
-              layer="expanded",
-              printed="An anthology of epigrams. Abbreviations are already written out, so this hand asks you to recognise letters and ligatures, nothing more.")),
-    ]
+
+    # Tracks, their metadata and their script profiles all come from registry/.
+    # Adding a language is a TOML file plus its crops -- no edit here. See
+    # tools/registry.py and EXPANSION-PLAN.md §3.
+    languages, profiles, tracks = registry.load()
     data = {"tracks": {}, "built": "2026-08-27"}
-    for track, d, scorer, meta in specs:
-        items = pack(d, a.n, a.max_w, a.quality, track, scorer)
-        data["tracks"][track] = dict(meta=meta, items=items)
+    for t in registry.ordered_tracks(languages, tracks):
+        meta = {"name": t["name"], "witness": t["witness"], "layer": t["layer"],
+                "printed": t["printed"]}
+        if t.get("attribution"):
+            meta["attribution"] = t["attribution"]
+        items = pack(ROOT / t["crops"], a.n, a.max_w, a.quality, t["id"], t["profile"])
+        data["tracks"][t["id"]] = dict(meta=meta, items=items)
         kb = sum(len(i["img"]) for i in items) / 1024 / 1024
-        print(f"  {track:6} {len(items):3} lines  {kb:.2f} MB  "
-              f"difficulty {items[0]['diff']:.0f} → {items[-1]['diff']:.0f}")
+        print(f"  {t['id']:6} {len(items):3} lines  {kb:.2f} MB  "
+              f"difficulty {items[0]['diff']:.0f} \u2192 {items[-1]['diff']:.0f}")
     Path(a.out).write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
     print(f"-> {a.out}  {Path(a.out).stat().st_size/1024/1024:.2f} MB")

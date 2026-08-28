@@ -1,0 +1,41 @@
+# Script profile: Latin, Caroline minuscule.
+#
+# A PROFILE is the machinery a script needs; a LANGUAGE is the door a learner comes
+# through; a TRACK is one witness bound to one profile. See EXPANSION-PLAN.md §1.
+#
+# Both Latin tracks share this profile. That is the point of the split: Cod. 940
+# (expanded) and Eutyches (diplomatic) are the same script and want the same
+# letterforms, palette and folding, and differ only in which transcription LAYER
+# they present.
+
+id = "latin-caroline"
+name = "Caroline minuscule"
+direction = "ltr"
+
+# --- exercise selection (tools/build_exercises.py) ---
+# Abbreviation density dominates; length and word count trim the ordering. A line of
+# plain glossary words is a far gentler start than one bristling with suspension signs.
+scorer = "abbreviation_density"
+min_words = 3
+letter_ratio = 0.72
+# Structural marks are apparatus, not a sentence to read.
+structural = ["~", "⁛", "⋇", "∻", "※"]
+
+# --- learner-side normalisation (the trainer's norm()) ---
+# ⚑ This fold used to be keyed to the track id "latin", so the DIPLOMATIC track
+# (latin2) -- the only one that could actually contain a long s -- never got it.
+# Latent rather than live: there are 0 occurrences of ſ in the present bank. Declaring
+# it on the profile fixes it for both tracks at once.
+fold = { "ſ" = "s" }
+strip_combining_when_forgiving = false
+
+# --- input ---
+# No transliteration keymap: a Latin keyboard already types this script. The palette
+# supplies the signs it cannot.
+keymap = ""
+palette = [
+  "ã", "ẽ", "ĩ", "õ", "ũ", "ū", "ę", "đ", "ł",
+  "ꝑ", "ꝓ", "ꝗ", "ꝵ", "ꝰ", "⁊", "÷", "¬", "|", "ſ",
+]
+
+fonts = ["EB Garamond", "Georgia", "serif"]

@@ -1,0 +1,38 @@
+# Script profile: Greek, Byzantine minuscule (s. X–XII bookhands).
+
+id = "greek-minuscule"
+name = "Byzantine minuscule"
+direction = "ltr"
+
+# --- exercise selection (tools/build_exercises.py) ---
+# Diacritic density dominates. The Latin scorer counts non-ASCII characters as a proxy
+# for abbreviation signs, which is meaningless here: EVERY Greek character is non-ASCII,
+# so that measure would score every line alike.
+scorer = "diacritic_density"
+min_words = 3
+letter_ratio = 0.72
+structural = ["~", "⁛", "⋇", "∻", "※"]
+
+# Letters that carry no diacritic, for the scorer above. Note there is no ς: the
+# ecrinum/anthologia transcription of Pal. gr. 23 uses σ throughout, and the bank
+# contains 0 final sigmas.
+plain_letters = "αβγδεζηθικλμνξοπρστυφχψωςΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ "
+
+# --- learner-side normalisation ---
+# Final sigma folds to medial for comparison; accents and breathings are stripped only
+# in the FORGIVING compare, never the strict one.
+fold = { "ς" = "σ" }
+strip_combining_when_forgiving = true
+
+# --- input ---
+# Beta code: type Greek on a Latin keyboard. Verified by round-tripping all 110 lines.
+keymap = "beta-code"
+palette = [
+  "ά", "έ", "ή", "ί", "ό", "ύ", "ώ", "|",
+  "ἀ", "ἁ", "ἐ", "ἑ", "ἠ", "ἡ", "ὀ", "ὁ", "ὐ", "ὑ", "|",
+  "ᾶ", "ῆ", "ῖ", "ῦ", "ῶ", "|",
+  "ὰ", "ὲ", "ὴ", "ὶ", "ὸ", "ὺ", "|",
+  "·", "᾽",
+]
+
+fonts = ["Noto Serif", "EB Garamond", "Georgia", "serif"]

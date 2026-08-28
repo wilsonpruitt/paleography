@@ -1,0 +1,28 @@
+# Language space: Latin. Two tracks, one profile, two transcription layers.
+
+id = "latin"
+order = 1          # tab / landing order; explicit, never alphabetical
+name = "Latin"
+profile = "latin-caroline"
+primer = "scripts/caroline-minuscule.md"
+# Wilson reads Latin; no outside seat needed to ratify these glosses.
+expert = "wilson"
+
+[[tracks]]
+id = "latin"                      # ⚑ payload key -- do not rename without a migration
+route = "/latin"
+name = "Latin — Caroline minuscule"
+witness = "Wien, ÖNB Cod. 940 (Saint-Amand, s. IX in.)"
+crops = "corpus/crops/wien940"
+layer = "expanded"
+attribution = "Österreichische Nationalbibliothek"
+printed = "A commentary on Matthew in a clear, roomy hand, and the gentlest start available: the transcribers wrote every abbreviation out in full, so here you learn the LETTERS and nothing else. The signs come next door, in the grammar."
+
+[[tracks]]
+id = "latin2"
+route = "/latin-ii"
+name = "Latin — a glossed grammar"
+witness = "Leiden, Voss. Lat. O. 41 (s. IX)"
+crops = "corpus/crops/eutyches-VLO41"
+layer = "diplomatic"
+printed = "The same script, much harder going: a school grammar buried under commentary, and the transcription keeps every abbreviation sign the scribe used. Come here once Cod. 940 reads easily."
