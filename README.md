@@ -1,6 +1,8 @@
 # Paleography
 
-Teaching readers of Greek and Latin to read the manuscripts — and, later, training
+⛔ **Starting a session? Read [`NEXT-SESSION.md`](NEXT-SESSION.md) first** — current state, the front, and the rules this project paid for.
+
+Teaching readers of Greek, Latin and Old French to read the manuscripts — and, later, training
 script-specific HTR models on the same corpus.
 
 **Start with [`PLAN.md`](PLAN.md).** It carries the first principles, the schema, the
