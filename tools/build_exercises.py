@@ -76,7 +76,15 @@ def is_sentence(t, prof):
     # the text rather than the text, and a learner cannot type them.
     if "<" in t or ">" in t:
         return False
-    return sum(1 for c in t if c.isalpha()) / max(len(t), 1) > prof["letter_ratio"]
+    # A combining mark is part of a letter, not a non-letter. Counting it as junk made
+    # this filter throw away the most heavily abbreviated lines -- the ones a diplomatic
+    # track exists to teach. Off by default so the Caroline tracks are untouched; see
+    # registry/profiles/latin-gothic.toml for the evidence.
+    if prof.get("count_marks_as_letters"):
+        n = sum(1 for c in t if c.isalpha() or unicodedata.combining(c))
+    else:
+        n = sum(1 for c in t if c.isalpha())
+    return n / max(len(t), 1) > prof["letter_ratio"]
 
 
 def cloze_index(words):
@@ -145,7 +153,9 @@ def pack(manifest_dir, n, max_w, quality, track, prof):
             if g.get("trigger") and g["char"] not in seen:
                 if re.search(g["trigger"], r["text"]):
                     seen.add(g["char"]); gl.append(g)
-        damaged = any(c in "()[]" for c in r["text"])
+        # Which characters mean "the editors supplied this, the ink does not have it".
+        # CREMMA uses white square brackets where Eutyches used round ones.
+        damaged = any(c in prof.get("damaged_marks", "()[]") for c in r["text"])
         # Cap the glosses per line. Greek letterform triggers are common by nature -- omega
         # fires on 23 of 44 lines, kappa on 21 -- and four explanations under one line is a
         # wall of prose, not help. Keep the rarest, which are the ones a reader has least
@@ -183,7 +193,9 @@ if __name__ == "__main__":
         envelope_langs[lang["id"]] = {
             "name": lang["name"],
             "profile": lang["profile"],
-            "tracks": [{"id": x["id"], "tab": x["tab"], "route": x["route"]}
+            "tracks": [{"id": x["id"], "tab": x["tab"], "route": x["route"],
+                        "orient": x.get("orient", "").strip(),
+                        "orientTail": x.get("orient_tail", "").strip()}
                        for x in lang.get("tracks", [])],
         }
     for prof in profiles.values():

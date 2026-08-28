@@ -1,53 +1,65 @@
 #!/bin/sh
-# Phase A acceptance test: the registry refactor must not change a single byte of the
-# exercise bank for the three tracks that existed before it.
+# Acceptance test: adding or changing a language must not disturb any OTHER language's
+# exercise bank.
 #
-# The refactor moves what used to be a hardcoded `specs` list in build_exercises.py into
-# registry/*.toml, and then teaches the trainer to read languages, profiles and routes
-# from the same place. That is a pure restructuring: same witnesses, same scorers, same
-# thresholds, so the same 330 lines must come out in the same order with the same JPEGs.
+# Originally this hashed the whole bank, which was right while the question was "did the
+# Phase A refactor move anything?" It is wrong now: adding Old French changed the
+# whole-bank hash and failed the test while every pre-existing track was byte-identical.
+# A test that cries wolf on the project's normal event gets switched off, so it hashes
+# each track SEPARATELY:
 #
-# ⚑ What is hashed is the `tracks` OBJECT, not the whole file. The envelope around it
-# grows during Phase A -- it gains `languages` and `profiles` so the trainer can stop
-# hardcoding them -- and hashing the file would fail on every such addition while saying
-# nothing about whether the bank moved. The bank is the invariant; the envelope is not.
+#   - a track listed below whose hash moved  -> FAIL, something changed that should not have
+#   - a track not listed below               -> NEW, reported and not failed
+#   - a listed track that has vanished       -> FAIL, it was removed or renamed
 #
-# If this hash moves, something about SELECTION, GRADING or track METADATA changed, and
-# the diff is not the refactor you thought you were making.
+# When you deliberately change a track (new witness, retuned scorer, different --n or
+# --quality), update its line here in the same commit and say why in the message.
 #
-# The build is deterministic (verified 2026-08-28: two clean runs, identical sha256), so
-# this is a real test and not a flaky one.
+# The build is deterministic (verified 2026-08-28: two clean runs, identical sha256).
 #
 # Usage:  sh tools/acceptance.sh
 set -e
 cd "$(dirname "$0")/.."
 
-EXPECT=b1f6db854df98d1fe9bb3a37379257977a5f0208322c360a7c4b63f619eeb016
+# track  sha256-of-t-<track>.json
+KNOWN="
+latin     6c6672f00b763b1e6b42e599c6d599976b35912d796c58ea03da087fd5b0d637
+latin2    536d301cae8ba837a789407bb57a52b6554fd901a6143651e8524cce408f3cfa
+greek     0ab1d7a1cec738774e1f6e4e54382c654a95d131956e74ee5300e1d44d50e089
+fabliaux  81a99a03bf7cd267bd875c139b369f4ac6d488ed6ffcec599de51b3f9f5bb091
+"
+
 OUT=$(mktemp -d -t paleography-acceptance)
 trap 'rm -rf "$OUT"' EXIT
-
 python3 tools/build_exercises.py --out "$OUT" --n 110 --max-w 1700 --quality 80 >/dev/null
-# The payload is split one file per track (the single blob went with the Artifact build),
-# so reassemble the bank in registry order before hashing. Same bytes, same order, same
-# invariant as when it was one file.
-GOT=$(python3 -c '
-import json, hashlib, sys
-from pathlib import Path
-d = Path(sys.argv[1])
-idx = json.loads((d / "index.json").read_text(encoding="utf-8"))
-order = [x["id"] for l in idx["languages"].values() for x in l["tracks"]]
-bank = {t: json.loads((d / f"t-{t}.json").read_text(encoding="utf-8")) for t in order}
-print(hashlib.sha256(json.dumps(bank, ensure_ascii=False).encode()).hexdigest())
-' "$OUT")
 
-if [ "$GOT" = "$EXPECT" ]; then
-  echo "PASS  exercise bank byte-identical  ($GOT)"
-else
-  echo "FAIL  exercise bank CHANGED"
-  echo "  expected $EXPECT"
-  echo "  got      $GOT"
-  echo
-  echo "If the change is deliberate (new witness, retuned scorer, different --n/--quality),"
-  echo "update EXPECT above in the same commit that causes it, and say why in the message."
-  exit 1
-fi
+python3 - "$OUT" <<'PY'
+import hashlib, subprocess, sys
+from pathlib import Path
+
+d = Path(sys.argv[1])
+known = {}
+for line in subprocess.run(["sh", "-c", 'sed -n "/^KNOWN=/,/^\\"$/p" tools/acceptance.sh'],
+                           capture_output=True, text=True).stdout.splitlines():
+    parts = line.split()
+    if len(parts) == 2 and len(parts[1]) == 64:
+        known[parts[0]] = parts[1]
+
+found = {p.stem[2:]: hashlib.sha256(p.read_text(encoding="utf-8").encode()).hexdigest()
+         for p in sorted(d.glob("t-*.json"))}
+
+fail = False
+for t, want in known.items():
+    if t not in found:
+        print(f"FAIL  {t}: track is GONE (removed or renamed)"); fail = True
+    elif found[t] != want:
+        print(f"FAIL  {t}: bank CHANGED\n        expected {want}\n        got      {found[t]}")
+        fail = True
+    else:
+        print(f"PASS  {t}: byte-identical")
+for t in found:
+    if t not in known:
+        print(f"NEW   {t}: {found[t]}\n        -> add this line to KNOWN in tools/acceptance.sh "
+              f"once the track is settled")
+sys.exit(1 if fail else 0)
+PY

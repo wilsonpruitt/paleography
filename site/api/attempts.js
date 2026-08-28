@@ -11,7 +11,7 @@
 const MAX_BATCH = 60;
 
 // --- BEGIN GENERATED TRACKS (tools/make_routes.py; do not edit by hand) ---
-const TRACKS = new Set(["latin", "latin2", "greek"]);
+const TRACKS = new Set(["latin", "latin2", "greek", "fabliaux"]);
 // --- END GENERATED TRACKS ---
 //
 // Generated from registry/ rather than typed, because a hand-kept copy here is the

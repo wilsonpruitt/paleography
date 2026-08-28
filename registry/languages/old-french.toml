@@ -1,0 +1,71 @@
+# Language space: Old French. The first language added after the Phase A refactor, and
+# the test of its claim that a new language is a TOML file plus crops.
+
+id = "old-french"
+order = 3
+name = "Old French"
+profile = "latin-gothic"
+primer = ""            # ⬜ owed: scripts/gothic-textualis.md
+# ⬜ EMPTY SEAT. Wilson reads Latin and Greek, not Old French. Until a medievalist takes
+# this, the track ships the transcribers' work unaltered and adds no glosses of its own.
+expert = ""
+
+[[tracks]]
+id = "fabliaux"
+tab = "Old French"
+route = "/old-french"
+name = "Old French — a book of fabliaux"
+witness = "Bern, Burgerbibliothek, Cod. 354 (NE France, s. XIII med.)"
+crops = "corpus/crops/fabliaux-bern354"
+layer = "diplomatic"
+attribution = "Burgerbibliothek Bern"
+printed = "A different script from the Latin tracks, and that is the point: this is what Caroline minuscule became. Compressed, angular, with curved letters fusing into one another and i, u, n and m all reduced to identical strokes you must count. Comic tales in octosyllabic verse, with every abbreviation the scribe used left standing."
+
+card_chip = "old french"
+card_witness = "Bern, Burgerbibliothek, Cod. 354<br>Northeastern France, mid-13th century"
+card_blurb = """Not Caroline any more. This is the Gothic bookhand it turned into —
+      compressed, angular, letters fusing into their neighbours, and i/u/n/m collapsed
+      into strokes you have to count. Comic tales in verse, thick with abbreviation."""
+
+# Stage-0 orientation. ⭐ Wilson's steer, 2026-08-28: LEAD WITH THE SCRIPT. A reader
+# arriving from Latin I or II has learned Caroline minuscule; this hand is its descendant
+# and a different reading problem, and saying so is the point of a third Latin-script
+# track. The abbreviations come second.
+orient = """
+<p>You are looking at a book of <b>fabliaux</b> — short comic tales in verse — copied in
+northeastern France about the middle of the thirteenth century. Many of them survive here
+and nowhere else.</p>
+<p><b>Start with the hand, because it is not the one you have been reading.</b> The Latin
+tracks teach <b>Caroline minuscule</b>: round, roomy, every letter sitting apart from its
+neighbours. This is what Caroline turned into. Over the twelfth and thirteenth centuries the
+script was squeezed laterally and pulled upright, the curves were broken into angles, and the
+result is the <b>Gothic bookhand</b> — on its way to the dense black textura of the fourteenth
+and fifteenth centuries, though not yet so extreme. It is a page you can still read letter by
+letter, which is exactly why it is the right place to meet the change.</p>
+<p><b>What actually changed, and what it costs you:</b></p>
+<p>· <b>Compression.</b> Letters are narrow and packed tight, so a word occupies far less
+width than in Caroline and the eye has fewer gaps to steer by.<br>
+· <b>Fusion — often called biting.</b> When two curved letters meet, their bowls merge and
+share a stroke: look for <i>de</i>, <i>do</i>, <i>po</i>, <i>bo</i> run together as one
+shape.<br>
+· <b>Minims, and this is the real difficulty.</b> A minim is a single short vertical stroke.
+In this hand <b>i, u, n</b> and <b>m</b> are all built from identical minims, so a word like
+<i>nulli</i> or <i>muer</i> arrives as a picket fence and you must count strokes and let the
+word decide what they are. Caroline never asks this of you. Gothic asks it constantly.</p>
+<p><b>Then the abbreviations</b>, and there are a great many. Three do most of the work:</p>
+<p>· <b>⁊</b> is <i>et</i> — the Tironian note, a shorthand mark far older than the manuscript.
+On the page it looks rather like a <i>z</i> with a bar.<br>
+· <b>ꝑ</b> is <i>per</i> or <i>par</i> — a <i>p</i> with a stroke through its descender.<br>
+· <b>A bar over a vowel</b> stands for a missing <i>n</i> or <i>m</i>: <i>õ</i> is <i>on</i>,
+<i>ĩ</i> is <i>in</i>, <i>q̃</i> is <i>que</i>.</p>
+<p>The language is <b>Old French</b>, and if you read French at all it is closer than you
+expect once the spelling settles. The verse helps too: every line is an octosyllable and the
+lines rhyme in couplets, so when a word is half-hidden the metre and the rhyme often tell you
+what it has to be. That is a real paleographic technique, not a crutch — you are meant to use
+everything the page gives you.</p>
+"""
+orient_tail = """
+<p>Look again at the line above: the scribe writes the same word twice, once abbreviated and
+once in full. That is the whole lesson in a single line. Go to <b>Stage one</b>, which shows
+you lines with their text and asks nothing of you but to read along.</p>
+"""

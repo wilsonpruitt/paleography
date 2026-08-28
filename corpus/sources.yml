@@ -134,3 +134,39 @@ queue:
   - {id: eparchos, lines: 2272, date: 1500-1530, license: CC-BY-4.0}
   - {id: zenon-papyri, lines: 321, date: -250--230, layer: diplomatic, license: CC-BY-4.0, note: "PAPYRI -- Phase 3 per Wilson's ruling"}
   - {id: cremma-medii-aevi, lines: 7274, date: 1100-1599, license: CC-BY-4.0, note: "POST-Caroline; Gothic-era. Wrong track for the MVP."}
+
+old_french_gothic:
+  - id: fabliaux-bern354
+    title: "Fabliaux — Bern, Burgerbibliothek, Cod. 354 (CIHAM-HTR, Biblissima+)"
+    witness: "Northeastern France, s. XIII med.; a composite codex whose fabliaux survive in large part only here"
+    date: 1240-1270
+    script: Gothic bookhand (textualis)
+    format: ALTO-v4
+    lines: 298
+    pages: 5
+    layer: diplomatic
+    layer_evidence: >
+      PROBE, 298 lines: Tironian ⁊ x79, ꝑ (per/par) x24, ꝯ (con) x7, ꝰ (us) x3, đ x1,
+      combining vertical tilde x87 and combining tilde x60, plus superscript i/a/e/m.
+      Abbreviation signs are present and unresolved, so the layer is diplomatic and NOT
+      expanded. Confirmed on the plate: a crop reads `Qi ait ꝑdu si ait perdu` -- the same
+      word abbreviated and then written out, in one line.
+      ⚑ 0 MUFI private-use codepoints: the .mufichecker.xml files were checked AGAINST
+      MUFI but resolve to standard Unicode, so nothing needs a font hack.
+    license: CC-BY-4.0        # the GROUND TRUTH; the plates are separate, see below
+    url: https://github.com/CIHAM-HTR/Fabliaux
+    images_in_repo: true       # 5 pages, 43 MB, e-codices max resolution
+    plates:
+      repository: e-codices (Burgerbibliothek Bern)
+      rights: >
+        ⭐ Public Domain Mark on the images -- e-codices states "Images: [Public Domain
+        Mark]" for Cod. 354. Copy, modify, redistribute, commercial: all permitted, no
+        permission needed. ⚠ This is a PROPERTY OF THIS WITNESS, not of the dataset: the
+        Fabliaux repo's other witnesses draw plates from BnF Gallica, whose terms are
+        non-commercial. Read the plate's rights, never the dataset's.
+      attribution: "Burgerbibliothek Bern"
+    note: >
+      Verse, not prose: octosyllabic couplets, median 6 words / ~25 characters a line.
+      Short lines are a gift here -- a learner meets one abbreviation at a time -- but they
+      broke an assumption in build_exercises.py; see registry/profiles/latin-gothic.toml
+      on count_marks_as_letters.

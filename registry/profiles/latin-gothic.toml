@@ -1,0 +1,60 @@
+# Script profile: Latin script, Gothic bookhand (textualis), 13th–15th c.
+#
+# Serves the medieval VERNACULARS — Old French now, Hungarian and Middle/Old English
+# later. It is deliberately separate from latin-caroline: a reader of Old French does not
+# read Latin, and a 13th-c. Gothic hand is not Caroline. Same alphabet, different letter-
+# forms, a different abbreviation repertoire, and a different learner.
+
+id = "latin-gothic"
+name = "Gothic bookhand"
+direction = "ltr"
+css_class = ""
+
+# --- exercise selection (tools/build_exercises.py) ---
+scorer = "abbreviation_density"
+min_words = 3
+letter_ratio = 0.72
+
+# ⭐ THE ONE THING THIS PROFILE CHANGED IN THE ENGINE, and it is a real bug this language
+# exposed. `letter_ratio` measures how much of a line is letters, to throw out scraps of
+# apparatus. It counted a COMBINING MARK as a non-letter — so on a heavily abbreviated
+# diplomatic line the nasal bars and superscript vowels all scored as junk, and the filter
+# discarded precisely the lines a diplomatic track exists to teach:
+#
+#     D un ch̾r . qͥ ot pͥs fame          ratio 0.58 -> rejected
+#     .i. bois ml̾t grant ⁊ ml̾t plen̾.   ratio 0.61 -> rejected
+#
+# A combining tilde is not a non-letter; it is part of a letter. Counting marks with their
+# base recovers 37 of Bern 354's 296 lines (236 -> 273 usable).
+#
+# ⚠ Left FALSE by default because latin-caroline's diplomatic track (Latin II, Eutyches)
+# has the same latent problem — 105 combining marks, 3 lines that would flip — and fixing
+# it there changes live exercise content, which is Wilson's call and not this track's.
+count_marks_as_letters = true
+
+structural = ["~", "⁛", "⋇", "∻", "※"]
+
+# Editorial supply, flagged so the trainer can show the line but never ask a learner to
+# TYPE it — you cannot type letters that are not on the page. CREMMA uses white square
+# brackets where Eutyches used round ones; same meaning, different convention.
+damaged_marks = "()[]⟦⟧"
+
+# --- learner-side normalisation ---
+# ⛔ NO fold, and combining marks are NOT stripped even in the forgiving compare. This
+# profile's tracks are diplomatic: the marks ARE the lesson. Stripping them would mark a
+# learner correct for ignoring the abbreviation they were asked to read.
+fold = {}
+strip_combining_when_forgiving = false
+
+# --- input ---
+# A Latin keyboard types the base letters; the palette supplies what it cannot. Ordered
+# as the learner meets them: nasal-barred vowels, then the brevigraphs.
+keymap = ""
+keymap_hint = ""
+palette = [
+  "ã", "ẽ", "ĩ", "õ", "ũ", "|",
+  "⁊", "ꝑ", "ꝯ", "ꝰ", "đ", "|",
+  "̃", "̾", "ͥ", "ͣ", "ͤ", "ͫ",
+]
+
+fonts = ["EB Garamond", "Georgia", "serif"]
