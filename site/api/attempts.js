@@ -9,7 +9,17 @@
 // carries on recording locally. A missing backend must never break the tool.
 
 const MAX_BATCH = 60;
+
+// --- BEGIN GENERATED TRACKS (tools/make_routes.py; do not edit by hand) ---
 const TRACKS = new Set(["latin", "latin2", "greek"]);
+// --- END GENERATED TRACKS ---
+//
+// Generated from registry/ rather than typed, because a hand-kept copy here is the
+// third copy of the track list and the worst one to let drift: attempts from a new
+// language would be dropped in silence, since discarding unrecognised input is
+// precisely this endpoint's job. Written as a literal rather than imported from JSON
+// so it carries no dependency on the runtime's JSON-module support -- this function is
+// the only path the reading data has, and it degrades to 503, never to a stack trace.
 
 function bad(res, code, msg) {
   res.status(code).json({ ok: false, error: msg });

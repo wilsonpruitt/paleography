@@ -26,6 +26,9 @@ import registry
 
 ROOT = Path(__file__).resolve().parent.parent
 DEST = ROOT / "site/vercel.json"
+ATTEMPTS = ROOT / "site/api/attempts.js"
+BEGIN = "// --- BEGIN GENERATED TRACKS (tools/make_routes.py; do not edit by hand) ---"
+END = "// --- END GENERATED TRACKS ---"
 
 
 def build():
@@ -46,16 +49,40 @@ def build():
     return cfg
 
 
+def build_tracks():
+    """The track allowlist the /api/attempts validator checks against.
+
+    That endpoint is public and treats every body as hostile, so it needs to know which
+    track ids are real. It ran on a hardcoded Set -- a third copy of the track list, and
+    the one whose drift is worst: a new language's attempts are silently dropped, and
+    nothing logs it, because dropping unknown fields is the endpoint's whole job.
+    """
+    languages, profiles, tracks = registry.load()
+    ids = [t["id"] for t in registry.ordered_tracks(languages, tracks)]
+    src = ATTEMPTS.read_text(encoding="utf-8")
+    i, j = src.index(BEGIN), src.index(END)
+    listing = ", ".join(json.dumps(x) for x in ids)
+    block = f"{BEGIN}\nconst TRACKS = new Set([{listing}]);\n"
+    return ids, src[:i] + block + src[j:]
+
+
 if __name__ == "__main__":
     cfg = build()
     new = json.dumps(cfg, indent=2, ensure_ascii=False) + "\n"
     old = DEST.read_text(encoding="utf-8")
+    ids, new_attempts = build_tracks()
+    old_attempts = ATTEMPTS.read_text(encoding="utf-8")
     if "--check" in sys.argv:
+        if new_attempts != old_attempts:
+            print(f"STALE  {ATTEMPTS} track allowlist does not match the registry")
+            sys.exit(1)
         if new != old:
             print(f"STALE  {DEST} does not match the registry; run: python3 tools/make_routes.py")
             sys.exit(1)
         print(f"ok     {DEST} matches the registry")
     else:
+        ATTEMPTS.write_text(new_attempts, encoding="utf-8")
+        print(f"{ATTEMPTS} — allowlist {', '.join(ids)}")
         DEST.write_text(new, encoding="utf-8")
         n = len(cfg["rewrites"])
         print(f"{DEST} — {n} rewrites")
