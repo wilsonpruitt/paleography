@@ -27,7 +27,8 @@ HEAD = """<!doctype html>
 <meta property="og:url" content="https://paleography.app/read/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='.9em' font-size='56'>%E2%9C%92%EF%B8%8F</text></svg>">
 """
-FOOT = "\n</body>\n</html>\n"
+# Vercel Web Analytics (static-site install); the Artifact build never sees this footer
+FOOT = '\n<script defer src="/_vercel/insights/script.js"></script>\n</body>\n</html>\n'
 
 # the shell opens with <title> and its font links; those belong in <head>, the rest in <body>
 marker = '<div class="wrap">'
