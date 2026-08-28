@@ -94,7 +94,10 @@ def build_landing():
         name = t.get("card_name_html") or t["name"]
         rows.append(
             f'  <a class="track" href="{t["route"]}">\n'
-            f'    <div class="chip">{t["card_chip"]}</div>\n'
+            f'    <div class="chips"><span class="chip">{t["card_chip"]}</span>'
+            + (f'<span class="chip step">{t["card_step"]}</span>'
+               if t.get("card_step") else "")
+            + '</div>\n'
             f'    <div class="n">{name}</div>\n'
             f'    <div class="w">{t["card_witness"]}</div>\n'
             f'    <div class="d">{t["card_blurb"]}</div>\n'

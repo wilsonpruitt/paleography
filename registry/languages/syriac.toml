@@ -50,6 +50,7 @@ hand = "Serto"          # ⚑ the HAND is a track field, not a profile: Estrange
 printed = "Right to left, and without vowels: twenty-two consonants, joined into word-shapes, and dots that do the work vowels do not. A pocket Gospel book written at Vienna in 1554 by Moses of Mardin — and the very copy from which the first book ever printed in Syriac was set the following year."
 
 card_chip = "syriac"
+card_name_html = "The printer's copy of the first Syriac book"
 card_witness = "Vienna, ÖNB Cod. Syr. 1<br>Vienna, 1554, written by Moses of Mardin"
 card_blurb = """The first track that runs right to left, and the first with no vowels on
       the page. A pocket Gospel book — the actual copy the compositors of the first Syriac

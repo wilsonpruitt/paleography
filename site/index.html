@@ -74,9 +74,12 @@ h2{font-family:var(--sans);font-size:11.5px;letter-spacing:.13em;text-transform:
 .track .w{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px}
 .track .d{font-family:var(--serif);font-size:16.5px;color:var(--muted);line-height:1.5}
 .track .go{margin-top:14px;font-size:13px;color:var(--accent);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 .chip{display:inline-block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;
-  border:1px solid var(--line);border-radius:20px;padding:2px 8px;color:var(--dim);
-  margin-bottom:10px}
+  border:1px solid var(--line);border-radius:20px;padding:2px 8px;color:var(--dim)}
+/* The language chip names WHAT this is; the step chip names WHERE IT COMES in a language
+   that has an order. Two different kinds of label, so they must not look alike. */
+.chip.step{border-color:var(--accent-soft);background:var(--accent-soft);color:var(--text)}
 
 /* stages */
 .stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
@@ -136,8 +139,8 @@ anything down.</p>
 <div class="tracks">
 <!-- BEGIN GENERATED TRACK CARDS (tools/make_routes.py; do not edit by hand) -->
   <a class="track" href="/latin">
-    <div class="chip">start here</div>
-    <div class="n">Latin — Caroline minuscule</div>
+    <div class="chips"><span class="chip">latin</span><span class="chip step">start here</span></div>
+    <div class="n">Caroline minuscule</div>
     <div class="w">Wien, Österreichische Nationalbibliothek, Cod. 940<br>Saint-Amand, early 9th century</div>
     <div class="d">A commentary on Matthew in a clear, roomy hand. The editors wrote every
       abbreviation out in full, so here you learn the letters and nothing else.</div>
@@ -145,8 +148,8 @@ anything down.</p>
   </a>
 
   <a class="track" href="/latin-ii">
-    <div class="chip">then</div>
-    <div class="n">Latin — a glossed grammar</div>
+    <div class="chips"><span class="chip">latin</span><span class="chip step">then</span></div>
+    <div class="n">A glossed grammar</div>
     <div class="w">Leiden, Universiteitsbibliotheek, Voss. Lat. O. 41<br>9th century</div>
     <div class="d">The same script, much harder going: a school grammar buried under commentary,
       with every abbreviation sign left as the scribe wrote it. Some pages carry three hundred
@@ -155,8 +158,8 @@ anything down.</p>
   </a>
 
   <a class="track" href="/greek">
-    <div class="chip">greek</div>
-    <div class="n"><span class="gk">Greek</span> — Byzantine minuscule</div>
+    <div class="chips"><span class="chip">greek</span></div>
+    <div class="n">Byzantine minuscule</div>
     <div class="w">Heidelberg, Cod. Pal. graec. 23 — the Palatine Anthology<br>10th century</div>
     <div class="d">Printed Greek gives one shape per letter. This hand does not: it fuses letters
       into ligatures, and one letter takes several forms depending on its neighbours. Type with
@@ -165,8 +168,8 @@ anything down.</p>
   </a>
 
   <a class="track" href="/old-french">
-    <div class="chip">old french</div>
-    <div class="n">Old French — a book of fabliaux</div>
+    <div class="chips"><span class="chip">old french</span></div>
+    <div class="n">A book of fabliaux</div>
     <div class="w">Bern, Burgerbibliothek, Cod. 354<br>Northeastern France, mid-13th century</div>
     <div class="d">Not Caroline any more. This is the Gothic bookhand it turned into —
       compressed, angular, letters fusing into their neighbours, and i/u/n/m collapsed
@@ -175,8 +178,8 @@ anything down.</p>
   </a>
 
   <a class="track" href="/syriac">
-    <div class="chip">syriac</div>
-    <div class="n">Syriac — the printer's copy of the first Syriac book</div>
+    <div class="chips"><span class="chip">syriac</span></div>
+    <div class="n">The printer's copy of the first Syriac book</div>
     <div class="w">Vienna, ÖNB Cod. Syr. 1<br>Vienna, 1554, written by Moses of Mardin</div>
     <div class="d">The first track that runs right to left, and the first with no vowels on
       the page. A pocket Gospel book — the actual copy the compositors of the first Syriac

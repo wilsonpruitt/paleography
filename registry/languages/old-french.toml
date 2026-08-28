@@ -31,6 +31,7 @@ attribution = "Burgerbibliothek Bern"
 printed = "A different script from the Latin tracks, and that is the point: this is what Caroline minuscule became. Compressed, angular, with curved letters fusing into one another and i, u, n and m all reduced to identical strokes you must count. Comic tales in octosyllabic verse, with every abbreviation the scribe used left standing."
 
 card_chip = "old french"
+card_name_html = "A book of fabliaux"
 card_witness = "Bern, Burgerbibliothek, Cod. 354<br>Northeastern France, mid-13th century"
 card_blurb = """Not Caroline any more. This is the Gothic bookhand it turned into —
       compressed, angular, letters fusing into their neighbours, and i/u/n/m collapsed
@@ -74,7 +75,7 @@ what it has to be. That is a real paleographic technique, not a crutch — you a
 everything the page gives you.</p>
 """
 orient_tail = """
-<p>Look again at the line above: the scribe writes the same word twice, once abbreviated and
+<p>Look again at the line at the top of this page: the scribe writes the same word twice, once abbreviated and
 once in full. That is the whole lesson in a single line. Go to <b>Stage one</b>, which shows
 you lines with their text and asks nothing of you but to read along.</p>
 """

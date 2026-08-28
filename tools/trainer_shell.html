@@ -696,7 +696,11 @@ function renderOrient(){
   var o=document.getElementById("orient"); o.style.display="";
   var it=allItems()[0];
   var gk=cls();
-  o.innerHTML = TRACK_NAV[state.track].orient+
+  /* ⭐ THE PLATE COMES FIRST. It used to sit after the whole orientation essay, so the
+     first sentence — "You are looking at a very small book" — was read with nothing on
+     screen to look at, the image a scroll and a half below. Stage 0 exists to show you the
+     page; show it, then explain it. Wilson, 2026-08-28. */
+  o.innerHTML =
     '<div class="compare">'+
       '<div class="row dark"><div class="cap">The manuscript — '+esc(it.page)+'</div>'+
         '<img src="data:image/jpeg;base64,'+it.img+'" alt="A line of the manuscript"></div>'+
@@ -705,7 +709,8 @@ function renderOrient(){
           ' style="font-family:'+fontStack(prof().fonts)+
           (prof().printSize?(";font-size:"+prof().printSize+"px"):"")+'">'+
           esc(it.text)+'</div></div>'+
-    '</div>'+ TRACK_NAV[state.track].orientTail + helpLinks();
+    '</div>'+
+    TRACK_NAV[state.track].orient + TRACK_NAV[state.track].orientTail + helpLinks();
 }
 function renderItem(){
   var it=cur(), b=band();

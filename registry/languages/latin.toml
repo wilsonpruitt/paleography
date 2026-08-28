@@ -25,11 +25,19 @@ orient = """
 <p>You already read Latin. What you have never done is read it in a <b>ninth-century hand</b> — and that is a separate skill, closer to learning someone's handwriting than to learning a language.</p><p>This is <b>Caroline minuscule</b>, the script Charlemagne's schools standardised around the year 800, and the easiest medieval hand there is. You have a head start: the humanists of the fifteenth century mistook it for Roman writing and copied it, and their copy became roman type. <b>The letters on your screen now are its descendants.</b></p><p><b>This track asks you to learn the letters and nothing else.</b> The manuscript is full of abbreviations, but the editors wrote every one of them out, so what you read here is plain Latin in an old hand. The signs themselves wait for you in <b>Latin II</b>.</p><p>⚠ <b>That has one consequence worth knowing before it puzzles you.</b> Because the editors resolved everything, <b>the ink contains marks you will not find anywhere in the printed line.</b> You are not missing something and the transcription is not wrong — the two simply do not correspond letter for letter. The commonest are:</p><ul><li><code>&amp;</code> — <em>e</em> and <em>t</em> written as one, and <b>it works inside a word</b>: the ink reads <code>ſupl&amp;</code> where the print says <em>suplet</em>.</li><li><b>a stroke over a vowel</b> for a missing <em>m</em> or <em>n</em> — <code>nō</code> is <em>non</em>, and the print simply says <em>non</em>.</li><li><code>ſca</code>, <code>ē</code> and their kind — contracted words written out in full in the print (<em>sancta</em>, <em>est</em>).</li><li><code>ę</code>, the <em>e</em> with a little tail, which is how the Middle Ages wrote <b>ae</b>.</li><li><code>¬</code> at a line's end, where a word breaks and continues on the next line.</li></ul><p>When a line contains one of these, it is explained underneath.</p><p>⚑ <b>And one thing that will trip you more than any letterform: the spaces.</b> Ancient books had none at all, and by the ninth century word division is still only half done. Short words cling to their neighbours and gaps open inside long ones — the ink on one of these very lines reads <code>quarequomodolongitudinem</code> for <em>Quare quomodo longitudinem</em>. <b>Do not trust the gaps.</b> Find a word you know inside the run of letters and let the rest fall out; it is the Latin that divides the line, not the spacing.</p><p><b>One thing about these pictures.</b> Every line here is cut from a real page, and a real page is crowded — lines above and below crowd in, and a decorated capital may loom beside them. So <b>the line you are working on is left in focus and everything else is softened.</b> The soft material is really there on the parchment; it is not a bad scan, and it is not being hidden from you. It is out of focus so your eye knows where to sit.</p><h3>The same line, twice</h3>
 """
 orient_tail = """
-<p>Look back and forth. The ink is doing what the printed line says, with a scribe's habits: <b>a tall <code>ſ</code></b> like an <em>f</em> without its crossbar, <b>no <em>j</em> and no <em>w</em></b>, and <b><code>u</code> and <code>v</code> as one letter</b> — so <em>uerbum</em>, never <em>verbum</em>.</p><p>Go to <b>Stage one</b> and just look at a dozen lines. Do not try to type anything yet.</p>
+<p>Go back to the plate at the top of this page. The ink is doing what the printed line says, with a scribe's habits: <b>a tall <code>ſ</code></b> like an <em>f</em> without its crossbar, <b>no <em>j</em> and no <em>w</em></b>, and <b><code>u</code> and <code>v</code> as one letter</b> — so <em>uerbum</em>, never <em>verbum</em>.</p><p>Go to <b>Stage one</b> and just look at a dozen lines. Do not try to type anything yet.</p>
 """
 # Landing-page card. Separate copy from `printed` on purpose: that paragraph orients a
 # reader who has already chosen this track, this one has to make them choose it.
-card_chip = "start here"
+# ⭐ Redone 2026-08-28. The chip is the LANGUAGE, on every card, because there are now
+# four of them and a taxonomy that reads "start here / then / greek / old french / syriac"
+# is three different kinds of label wearing one badge. Latin's internal order — the thing
+# "start here" and "then" were really saying — moves to `card_step`, a second chip that
+# only a language with a sequence carries.
+card_chip = "latin"
+card_step = "start here"
+# The chip says Latin, so the title need not. Was "Latin — Caroline minuscule".
+card_name_html = "Caroline minuscule"
 card_witness = "Wien, Österreichische Nationalbibliothek, Cod. 940<br>Saint-Amand, early 9th century"
 card_blurb = """A commentary on Matthew in a clear, roomy hand. The editors wrote every
       abbreviation out in full, so here you learn the letters and nothing else."""
@@ -53,7 +61,9 @@ orient = """
 orient_tail = """
 <p>Beyond the letterforms, watch for <b>abbreviation signs</b>: a stroke over a vowel (<code>ũ ẽ ã õ ĩ</code>) for a missing <em>m</em> or <em>n</em>; <code>ę</code> as the medieval way of writing <em>ae</em>; <code>ꝑ</code> for <em>per</em>. The buttons under the typing box enter them for you, and every line explains its own signs.</p><p>Go to <b>Stage one</b> and read a dozen lines before typing a word.</p>
 """
-card_chip = "then"
+card_chip = "latin"
+card_step = "then"
+card_name_html = "A glossed grammar"
 card_witness = "Leiden, Universiteitsbibliotheek, Voss. Lat. O. 41<br>9th century"
 card_blurb = """The same script, much harder going: a school grammar buried under commentary,
       with every abbreviation sign left as the scribe wrote it. Some pages carry three hundred

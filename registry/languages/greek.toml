@@ -28,7 +28,7 @@ orient = """
 <p>You already read polytonic Greek in print. The gap between that and a tenth-century Byzantine hand is wider than it looks, and worth naming before you start.</p><p><b>Printed Greek gives you one shape per letter. This hand does not.</b> A scribe writing quickly fuses letters into <b>ligatures</b> — two or three run together into a single compound shape that shares little with its parts. And one letter takes several forms in a line depending on what stands beside it. That, not the alphabet, is what you are learning.</p><p>Two conventions here will look wrong and are not: <b>there is no final sigma</b> (this scribe used only <code>σ</code>, so the transcription does too — but typing <code>ς</code> is always accepted), and <b>every punctuation mark is a single raised dot</b> <code>·</code>.</p><p><b>One thing about these pictures.</b> Every line here is cut from a real page, and a real page is crowded — lines above and below crowd in, and a decorated capital may loom beside them. So <b>the line you are working on is left in focus and everything else is softened.</b> The soft material is really there on the parchment; it is not a bad scan, and it is not being hidden from you. It is out of focus so your eye knows where to sit.</p><h3>The same line, twice</h3>
 """
 orient_tail = """
-<p>Look back and forth until the shapes settle. Do not try to read the line as a sentence yet — find single letters you are sure of, then the ones on either side of them.</p><p>Go to <b>Stage one</b>. It shows a dozen lines with their text and asks nothing of you but to look.</p>
+<p>Go back to the plate at the top of this page and look back and forth until the shapes settle. Do not try to read the line as a sentence yet — find single letters you are sure of, then the ones on either side of them.</p><p>Go to <b>Stage one</b>. It shows a dozen lines with their text and asks nothing of you but to look.</p>
 """
 card_chip = "greek"
 card_witness = "Heidelberg, Cod. Pal. graec. 23 — the Palatine Anthology<br>10th century"
@@ -36,4 +36,7 @@ card_blurb = """Printed Greek gives one shape per letter. This hand does not: it
       into ligatures, and one letter takes several forms depending on its neighbours. Type with
       your ordinary keyboard."""
 # The language name is set in Greek type on the card.
-card_name_html = '<span class="gk">Greek</span> — Byzantine minuscule'
+# The chip carries the language now, so the title is the hand alone. This dropped a
+# flourish -- the word "Greek" was set in the Greek font -- and that is the right trade:
+# the flourish only worked because the title repeated a word the chip already says.
+card_name_html = "Byzantine minuscule"
