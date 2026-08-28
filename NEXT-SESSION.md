@@ -7,8 +7,11 @@
 
 ## State
 
-- **5 tracks, 4 languages, 4 script profiles.** Syriac is built, verified in a browser, and
-  **committed but NOT yet pushed or deployed** — Wilson's OK is owed on both (see below).
+- **5 tracks, 4 languages, 4 script profiles.** Syriac shipped 2026-08-28: pushed, deployed
+  from `site/`, and `/syriac` verified on the real domain by a clean URL, not `?track=`.
+  The landing chips were reworked the same day — the chip is the LANGUAGE on every card,
+  with Latin's order moved to a second `card_step` chip — and stage 0 now opens with the
+  plate instead of burying it under the orientation essay.
 - `sh tools/acceptance.sh` → all five PASS, including `syriac1`, whose hash is now baselined.
 - ⚠ Any statement about what is LIVE expires. Never restate it from this note — curl it.
 
@@ -21,9 +24,7 @@ python3 tools/make_routes.py --check   # vercel.json + landing cards + TRACKS al
 
 ## ⛔ Owed by Wilson, in the order they block things
 
-1. **Push `master` and deploy.** The Syriac work is committed locally only. Deploy from
-   `site/`, never the repo root.
-2. **⚠ THE LICENCE, and it touches a live track.** Both HTR Winter School Vienna
+1. **⚠ THE LICENCE, and it touches a live track.** Both HTR Winter School Vienna
    repositories — Cod. 940 (**Latin I, live since day one**) and Cod. Syr. 1 (Syriac) —
    ship a **CC BY-SA 4.0** `LICENSE.md` beside an `htr-united.yml` that declares **CC BY
    4.0**. GitHub's own detection says BY-SA. The site and README claimed flat CC BY 4.0
@@ -32,16 +33,16 @@ python3 tools/make_routes.py --check   # vercel.json + landing cards + TRACKS al
    non-commercial term — so if the exercise banks are adaptations they cannot ship under
    Wroot Press's usual CC BY-NC. One email to the Winter School settles it for both tracks.
    Full detail: `corpus/sources.yml` → `onb-syr1.license_conflict`.
-3. **Ruling: the word-division gloss fires on Greek.** `SPACING`'s note is Latin end to
+2. **Ruling: the word-division gloss fires on Greek.** `SPACING`'s note is Latin end to
    end (`quarequomodolongitudinem`, "the Latin divides the line") and has been appearing
    under Greek lines since the Greek track shipped. Glosses are now scoped by profile, and
    `greek-minuscule` was left in the scope **only to keep a live bank byte-identical** —
    the same shape as the latin-caroline letter-ratio ruling. Drop it there, or write a
    Greek one?
-4. Still open from before: an **Old French expert seat**; the **latin-caroline
+3. Still open from before: an **Old French expert seat**; the **latin-caroline
    `count_marks_as_letters`** ruling; **5 Greek glosses** at `proposed`; the Greek Level-2
    question to open the scholar outreach with.
-5. **⬜ NEW: a Syriacist.** `registry/languages/syriac.toml` has `expert = ""`, and four
+4. **⬜ NEW: a Syriacist.** `registry/languages/syriac.toml` has `expert = ""`, and four
    new glosses are `proposed` — every claim about what a dot does is from counted data
    plus standard grammar, ruled on by nobody. ⏸ UT Austin LRC is still unanswered from
    2026-08-28 and **cannot serve Syriac anyway** (EIEOL is Indo-European). The people to
