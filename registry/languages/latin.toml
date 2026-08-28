@@ -18,6 +18,12 @@ crops = "corpus/crops/wien940"
 layer = "expanded"
 attribution = "Österreichische Nationalbibliothek"
 printed = "A commentary on Matthew in a clear, roomy hand, and the gentlest start available: the transcribers wrote every abbreviation out in full, so here you learn the LETTERS and nothing else. The signs come next door, in the grammar."
+# Landing-page card. Separate copy from `printed` on purpose: that paragraph orients a
+# reader who has already chosen this track, this one has to make them choose it.
+card_chip = "start here"
+card_witness = "Wien, Österreichische Nationalbibliothek, Cod. 940<br>Saint-Amand, early 9th century"
+card_blurb = """A commentary on Matthew in a clear, roomy hand. The editors wrote every
+      abbreviation out in full, so here you learn the letters and nothing else."""
 
 [[tracks]]
 id = "latin2"
@@ -28,3 +34,8 @@ witness = "Leiden, Voss. Lat. O. 41 (s. IX)"
 crops = "corpus/crops/eutyches-VLO41"
 layer = "diplomatic"
 printed = "The same script, much harder going: a school grammar buried under commentary, and the transcription keeps every abbreviation sign the scribe used. Come here once Cod. 940 reads easily."
+card_chip = "then"
+card_witness = "Leiden, Universiteitsbibliotheek, Voss. Lat. O. 41<br>9th century"
+card_blurb = """The same script, much harder going: a school grammar buried under commentary,
+      with every abbreviation sign left as the scribe wrote it. Some pages carry three hundred
+      lines."""

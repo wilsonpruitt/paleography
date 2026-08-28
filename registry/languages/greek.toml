@@ -21,3 +21,10 @@ witness = "Heidelberg, Pal. gr. 23 (s. X)"
 crops = "corpus/crops/cpgr23"
 layer = "expanded"
 printed = "An anthology of epigrams. Abbreviations are already written out, so this hand asks you to recognise letters and ligatures, nothing more."
+card_chip = "greek"
+card_witness = "Heidelberg, Cod. Pal. graec. 23 — the Palatine Anthology<br>10th century"
+card_blurb = """Printed Greek gives one shape per letter. This hand does not: it fuses letters
+      into ligatures, and one letter takes several forms depending on its neighbours. Type with
+      your ordinary keyboard."""
+# The language name is set in Greek type on the card.
+card_name_html = '<span class="gk">Greek</span> — Byzantine minuscule'

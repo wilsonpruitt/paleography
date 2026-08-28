@@ -27,6 +27,9 @@ import registry
 ROOT = Path(__file__).resolve().parent.parent
 DEST = ROOT / "site/vercel.json"
 ATTEMPTS = ROOT / "site/api/attempts.js"
+LANDING = ROOT / "site/index.html"
+L_BEGIN = "<!-- BEGIN GENERATED TRACK CARDS (tools/make_routes.py; do not edit by hand) -->"
+L_END = "<!-- END GENERATED TRACK CARDS -->"
 BEGIN = "// --- BEGIN GENERATED TRACKS (tools/make_routes.py; do not edit by hand) ---"
 END = "// --- END GENERATED TRACKS ---"
 
@@ -66,13 +69,48 @@ def build_tracks():
     return ids, src[:i] + block + src[j:]
 
 
+def build_landing():
+    """The 'Choose a hand' cards on the apex, generated from the registry.
+
+    ⛔ ONLY the cards, between the markers. Everything else on that page -- the lede, the
+    stage list, the attributions, the licence note -- is hand-written prose and is left
+    exactly as it is.
+
+    The card copy lives in registry/languages/*.toml (card_chip, card_witness,
+    card_blurb) and is deliberately NOT the same text as `printed`: that paragraph
+    orients a reader who has already chosen a track, this one has to make them choose.
+    """
+    languages, profiles, tracks = registry.load()
+    rows = []
+    for t in registry.ordered_tracks(languages, tracks):
+        name = t.get("card_name_html") or t["name"]
+        rows.append(
+            f'  <a class="track" href="{t["route"]}">\n'
+            f'    <div class="chip">{t["card_chip"]}</div>\n'
+            f'    <div class="n">{name}</div>\n'
+            f'    <div class="w">{t["card_witness"]}</div>\n'
+            f'    <div class="d">{t["card_blurb"]}</div>\n'
+            f'    <div class="go">Begin →</div>\n'
+            f'  </a>'
+        )
+    block = L_BEGIN + "\n" + "\n\n".join(rows) + "\n" + L_END
+    src = LANDING.read_text(encoding="utf-8")
+    i, j = src.index(L_BEGIN), src.index(L_END) + len(L_END)
+    return src[:i] + block + src[j:]
+
+
 if __name__ == "__main__":
     cfg = build()
     new = json.dumps(cfg, indent=2, ensure_ascii=False) + "\n"
     old = DEST.read_text(encoding="utf-8")
     ids, new_attempts = build_tracks()
     old_attempts = ATTEMPTS.read_text(encoding="utf-8")
+    new_landing = build_landing()
+    old_landing = LANDING.read_text(encoding="utf-8")
     if "--check" in sys.argv:
+        if new_landing != old_landing:
+            print(f"STALE  {LANDING} track cards do not match the registry")
+            sys.exit(1)
         if new_attempts != old_attempts:
             print(f"STALE  {ATTEMPTS} track allowlist does not match the registry")
             sys.exit(1)
@@ -81,6 +119,8 @@ if __name__ == "__main__":
             sys.exit(1)
         print(f"ok     {DEST} matches the registry")
     else:
+        LANDING.write_text(new_landing, encoding="utf-8")
+        print(f"{LANDING} — {len(ids)} track cards")
         ATTEMPTS.write_text(new_attempts, encoding="utf-8")
         print(f"{ATTEMPTS} — allowlist {', '.join(ids)}")
         DEST.write_text(new, encoding="utf-8")
