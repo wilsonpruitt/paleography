@@ -12,7 +12,7 @@ expert = ""
 
 [[tracks]]
 id = "fabliaux"
-tab = "Old French"
+tab = "Fabliaux"  # track label; the LANGUAGE is named on the row above
 route = "/old-french"
 name = "Old French — a book of fabliaux"
 witness = "Bern, Burgerbibliothek, Cod. 354 (NE France, s. XIII med.)"

@@ -53,6 +53,16 @@ button[disabled]{opacity:.4;cursor:not-allowed}
 .tabs{display:flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .tabs button{border:0;border-radius:0;background:transparent;padding:8px 16px;color:var(--muted)}
 .tabs button[aria-selected="true"]{background:var(--accent-soft);color:var(--text)}
+/* Two tiers: the LANGUAGE is the loud choice, the HAND within it the quiet one. The
+   second row is hidden entirely for a language with a single track, so Greek and Old
+   French show one row and Latin shows two. */
+.navstack{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.langs{max-width:100%;overflow-x:auto}
+.subtabs{display:flex;gap:14px;padding-right:2px}
+.subtabs button{border:0;background:transparent;padding:0;font-size:13px;
+  color:var(--muted);border-bottom:1px solid transparent}
+.subtabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--text)}
+@media (max-width:640px){.navstack{align-items:stretch}.subtabs{justify-content:flex-end}}
 
 /* stage rail */
 .stages{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
@@ -235,7 +245,9 @@ footer .fpress a{color:var(--accent);text-decoration:underline;text-underline-of
   <div class="tag" id="hdr-tag">learning to read the hand</div>
   <div class="spacer"></div>
   <a class="home" href="/about">about</a>
-  <div class="tabs" role="tablist" id="tabs">
+  <div class="navstack">
+    <div class="tabs langs" role="tablist" aria-label="Language" id="langs"></div>
+    <div class="subtabs" role="tablist" aria-label="Hand" id="tabs"></div>
   </div>
 </header>
 
@@ -414,16 +426,46 @@ var TRACK_NAV={};
 for(var _lid in DATA.languages) DATA.languages[_lid].tracks.forEach(function(x){
   TRACK_IDS.push(x.id); TRACK_NAV[x.id]=x;
 });
+var LANG_IDS=[]; for(var _l2 in DATA.languages) LANG_IDS.push(_l2);
+function langOf(t){ return DATA.trackLang[t]; }
+/* The language row is built once; the hand row is rebuilt on every render because its
+   contents depend on which language is selected. */
 (function(){
-  var strip=document.getElementById("tabs");
-  TRACK_IDS.forEach(function(id,i){
+  var row=document.getElementById("langs");
+  LANG_IDS.forEach(function(lid){
     var b=document.createElement("button");
-    b.setAttribute("role","tab"); b.id="tab-"+id;
-    b.setAttribute("aria-selected",String(i===0));
-    b.textContent=TRACK_NAV[id].tab;
-    strip.appendChild(b);
+    b.setAttribute("role","tab"); b.id="lang-"+lid;
+    b.setAttribute("aria-selected","false");
+    b.textContent=DATA.languages[lid].name;
+    b.addEventListener("click",function(){
+      if(langOf(state.track)===lid) return;          // already here; do not reset progress
+      state.track=DATA.languages[lid].tracks[0].id; state.i=0; renderAll();
+    });
+    row.appendChild(b);
   });
 })();
+function renderNav(){
+  var cur=langOf(state.track);
+  LANG_IDS.forEach(function(lid){
+    document.getElementById("lang-"+lid).setAttribute("aria-selected",String(lid===cur));
+  });
+  var row=document.getElementById("tabs"), tracks=DATA.languages[cur].tracks;
+  row.innerHTML="";
+  // One hand is no choice at all -- do not show a row of one.
+  row.style.display = tracks.length>1 ? "" : "none";
+  if(tracks.length<2) return;
+  tracks.forEach(function(x){
+    var b=document.createElement("button");
+    b.setAttribute("role","tab"); b.id="tab-"+x.id;
+    b.setAttribute("aria-selected",String(x.id===state.track));
+    b.textContent=x.tab;
+    b.addEventListener("click",function(){
+      if(state.track===x.id) return;
+      state.track=x.id; state.i=0; renderAll();
+    });
+    row.appendChild(b);
+  });
+}
 var state={track:TRACK_IDS[0],stage:0,i:0,revealed:false};
 (function(){
   // The landing page links to /latin, /latin-ii, /greek. Those are Vercel REWRITES, so the
@@ -558,9 +600,7 @@ function renderAllNow(){
   renderStages();
   var st=STAGES[state.stage];
   document.getElementById("stagenote").textContent=st.note;
-  TRACK_IDS.forEach(function(t){
-    document.getElementById("tab-"+t).setAttribute("aria-selected",String(state.track===t));
-  });
+  renderNav();
   document.getElementById("hdr-tag").textContent=DATA.tracks[state.track].meta.witness;
 
   var bh=document.getElementById("betahint"), hint=prof().keymapHint;
@@ -852,9 +892,6 @@ function hintFor(p,wrong,forg,key){
   return lead+tail;
 }
 
-TRACK_IDS.forEach(function(t){
-  document.getElementById("tab-"+t).addEventListener("click",function(){state.track=t;state.i=0;renderAll()});
-});
 document.getElementById("check").addEventListener("click",check);
 document.getElementById("next").addEventListener("click",function(){state.i++;renderItem();document.getElementById("entry").focus()});
 document.getElementById("readnext").addEventListener("click",function(){

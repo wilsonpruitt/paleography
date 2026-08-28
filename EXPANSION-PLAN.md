@@ -201,10 +201,15 @@ who sees it says so publicly.
   ⚑ Two real bugs found: `norm()` folded long-s only for track `latin`, so the DIPLOMATIC
   track never got it (latent — 0 ſ in the bank); and after the split `?track=greek` silently
   loaded Latin, because the guard tested `DATA.tracks`, which had become an empty cache.
-  ⬜ **Deferred, and it needs a ruling when Old French lands:** per-LANGUAGE landing pages.
-  The plan called for `/` to list languages and each language to list its tracks. With two
-  languages that adds a click and buys nothing, so the apex still shows a flat card per track
-  — now generated. Revisit at 4+ languages, which is where the flat list stops scanning.
+  ✅ **Nav settled 2026-08-28 (Wilson), and it is NOT per-language pages.** The trainer
+  carries a **two-tier bar**: languages on a loud top row, that language's hands on a quiet
+  second row which is hidden entirely when a language has one track. Reasons it beat the
+  landing-page option: switching stays ONE click, and cheap switching is pedagogy here — the
+  Old French orientation asks the reader to compare this hand against Caroline, so a page load
+  between them is a real cost. Track labels shed their language ("Latin I" → "Caroline"),
+  since the row above now names it. Verified at 11 languages (no page overflow; the row has
+  `overflow-x:auto` in reserve) and at 390 px. Revisit past ~12 languages, where even the top
+  row needs scrolling.
 - **Phase B — Old French.** One CIHAM witness, `latin-gothic` profile, Gothic scorer, OE/ME
   palette additions. Proves "new language = registry + content". **Sonnet** once A exists.
 - **Phase C — Syriac (RTL pilot).** §5a + §5b keymap engine. ÖNB IIIF route reused. Two

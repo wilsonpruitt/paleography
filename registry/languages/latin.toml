@@ -10,7 +10,7 @@ expert = "wilson"
 
 [[tracks]]
 id = "latin"                      # ⚑ payload key -- do not rename without a migration
-tab = "Latin I"                  # short label for the trainer tab strip
+tab = "Caroline"  # track label; the LANGUAGE is named on the row above
 route = "/latin"
 name = "Latin — Caroline minuscule"
 witness = "Wien, ÖNB Cod. 940 (Saint-Amand, s. IX in.)"
@@ -37,7 +37,7 @@ card_blurb = """A commentary on Matthew in a clear, roomy hand. The editors wrot
 
 [[tracks]]
 id = "latin2"
-tab = "Latin II"                  # short label for the trainer tab strip
+tab = "Glossed grammar"  # track label; the LANGUAGE is named on the row above
 route = "/latin-ii"
 name = "Latin — a glossed grammar"
 witness = "Leiden, Voss. Lat. O. 41 (s. IX)"

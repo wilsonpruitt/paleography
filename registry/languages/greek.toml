@@ -14,7 +14,7 @@ expert = "wilson"
 
 [[tracks]]
 id = "greek"
-tab = "Greek"                  # short label for the trainer tab strip
+tab = "Minuscule"  # track label; the LANGUAGE is named on the row above
 route = "/greek"
 name = "Greek — Byzantine minuscule"
 witness = "Heidelberg, Pal. gr. 23 (s. X)"
