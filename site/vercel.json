@@ -17,6 +17,18 @@
       "destination": "/read/index.html?track=fabliaux"
     },
     {
+      "source": "/hand/greek-minuscule",
+      "destination": "/hand/greek-minuscule/index.html"
+    },
+    {
+      "source": "/hand/latin-caroline",
+      "destination": "/hand/latin-caroline/index.html"
+    },
+    {
+      "source": "/hand/latin-gothic",
+      "destination": "/hand/latin-gothic/index.html"
+    },
+    {
       "source": "/read",
       "destination": "/read/index.html"
     },

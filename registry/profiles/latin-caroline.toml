@@ -9,6 +9,7 @@
 # they present.
 
 id = "latin-caroline"
+primer = "scripts/caroline-minuscule.md"
 name = "Caroline minuscule"
 direction = "ltr"
 # No extra font class: this script is the page default.

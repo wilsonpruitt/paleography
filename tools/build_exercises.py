@@ -193,6 +193,8 @@ if __name__ == "__main__":
         envelope_langs[lang["id"]] = {
             "name": lang["name"],
             "profile": lang["profile"],
+            "resources": [{"label": r["label"], "url": r["url"], "note": r.get("note", "")}
+                          for r in lang.get("resources", [])],
             "tracks": [{"id": x["id"], "tab": x["tab"], "route": x["route"],
                         "orient": x.get("orient", "").strip(),
                         "orientTail": x.get("orient_tail", "").strip()}
@@ -205,6 +207,8 @@ if __name__ == "__main__":
             "keymap": prof.get("keymap", ""),
             "keymapHint": prof.get("keymap_hint", "").strip(),
             "cssClass": prof.get("css_class", ""),
+            "primer": f"/hand/{prof['id']}" if prof.get("primer") else "",
+            "primerName": prof["name"],
             "palette": prof["palette"],
             "fold": prof.get("fold", {}),
             "strip_combining": prof.get("strip_combining_when_forgiving", False),

@@ -6,6 +6,7 @@
 # forms, a different abbreviation repertoire, and a different learner.
 
 id = "latin-gothic"
+primer = "scripts/gothic-textualis.md"
 name = "Gothic bookhand"
 direction = "ltr"
 css_class = ""

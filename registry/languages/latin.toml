@@ -4,7 +4,6 @@ id = "latin"
 order = 1          # tab / landing order; explicit, never alphabetical
 name = "Latin"
 profile = "latin-caroline"
-primer = "scripts/caroline-minuscule.md"
 # Wilson reads Latin; no outside seat needed to ratify these glosses.
 expert = "wilson"
 

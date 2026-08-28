@@ -5,7 +5,16 @@ id = "old-french"
 order = 3
 name = "Old French"
 profile = "latin-gothic"
-primer = ""            # ⬜ owed: scripts/gothic-textualis.md
+
+# ⭐ Old French is the FIRST track where PLAN.md's premise fails. That premise -- "they know
+# the language; we never teach Latin, we teach ink" -- holds for Latin and Greek, whose
+# readers arrive fluent. Almost nobody arrives reading Old French, and minims in particular
+# cannot be resolved without knowing which word is possible. So this language points outward
+# at a way to learn it. Latin and Greek carry no such list, and should not.
+[[resources]]
+label = "Old French Online — ten lessons, free"
+url = "https://lrc.la.utexas.edu/eieol/ofrol"
+note = "University of Texas Linguistics Research Center. Built on real texts — Roland, Tristan, Yvain — with grammar and glossaries."
 # ⬜ EMPTY SEAT. Wilson reads Latin and Greek, not Old French. Until a medievalist takes
 # this, the track ships the transcribers' work unaltered and adds no glosses of its own.
 expert = ""

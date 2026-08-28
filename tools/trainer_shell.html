@@ -98,6 +98,12 @@ button[disabled]{opacity:.4;cursor:not-allowed}
 .printed .wrongfill{color:var(--err);text-decoration:line-through}
 
 /* beta-code legend */
+.helplinks{margin-top:26px;padding-top:16px;border-top:1px solid var(--line)}
+.hl-h{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);margin-bottom:8px}
+.hl{margin:6px 0;font-size:15px}
+.hl a{color:var(--accent);text-decoration:none}
+.hl a:hover{text-decoration:underline}
+.rnote{display:block;color:var(--muted);font-size:13.5px;line-height:1.55;margin-top:2px}
 .betahint{margin-top:9px;font-size:13px;color:var(--muted);line-height:1.7}
 .betahint b{color:var(--text);font-weight:500}
 .betahint code{font-family:var(--mono);font-size:12.5px;background:var(--surface);
@@ -444,6 +450,20 @@ function langOf(t){ return DATA.trackLang[t]; }
     row.appendChild(b);
   });
 })();
+/* Under the orientation: the primer for this hand, and -- only where a language declares
+   them -- places to learn the language itself. Old French is the first track where a reader
+   may not have the language, which is why this is language data and not a global footer. */
+function helpLinks(){
+  var p=prof(), lang=DATA.languages[langOf(state.track)], bits=[];
+  if(p.primer) bits.push('<a href="'+p.primer+'">A primer on '+esc(p.primerName)+' \u2192</a>');
+  (lang.resources||[]).forEach(function(r){
+    bits.push('<a href="'+esc(r.url)+'" rel="noopener">'+esc(r.label)+' \u2192</a>'+
+              (r.note?'<span class="rnote">'+esc(r.note)+'</span>':''));
+  });
+  if(!bits.length) return "";
+  return '<div class="helplinks"><div class="hl-h">Going further</div>'+
+         bits.map(function(b){return '<div class="hl">'+b+'</div>'}).join('')+'</div>';
+}
 function renderNav(){
   var cur=langOf(state.track);
   LANG_IDS.forEach(function(lid){
@@ -631,7 +651,7 @@ function renderOrient(){
         '<img src="data:image/jpeg;base64,'+it.img+'" alt="A line of the manuscript"></div>'+
       '<div class="row"><div class="cap">The same words, in print</div>'+
         '<div class="big'+gk+'">'+esc(it.text)+'</div></div>'+
-    '</div>'+ TRACK_NAV[state.track].orientTail;
+    '</div>'+ TRACK_NAV[state.track].orientTail + helpLinks();
 }
 function renderItem(){
   var it=cur(), b=band();

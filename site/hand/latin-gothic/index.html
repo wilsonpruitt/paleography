@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A reader&#x27;s primer on gothic bookhand — what trips you, what the page looks like, and the abbreviation system, counted over real ground truth.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Gothic bookhand — Paleography">
+<meta property="og:description" content="A reader&#x27;s primer on gothic bookhand — what trips you, what the page looks like, and the abbreviation system, counted over real ground truth.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paleography.app/hand/latin-gothic">
+<meta property="og:image" content="https://paleography.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='.9em' font-size='56'>%E2%9C%92%EF%B8%8F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif:wght@400&display=swap">
+<title>Gothic bookhand — Paleography</title>
+<style>
+:root{--ink:#14120F;--surface:#1E1B17;--raised:#2A2621;--line:#3A342D;
+ --text:#EAE4DA;--muted:#A0958A;--dim:#7B7168;--accent:#5B82BE;--accent-soft:#2F415E;
+ --serif:"EB Garamond",Georgia,serif;--sans:"IBM Plex Sans",-apple-system,sans-serif;
+ --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--r:3px}
+:root[data-theme="light"]{--ink:#F2EEE7;--surface:#FBF9F5;--raised:#FFF;--line:#DED7CB;
+ --text:#211E19;--muted:#5F574C;--dim:#857C70;--accent:#2E4B7A;--accent-soft:#DDE5F1}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+ --ink:#F2EEE7;--surface:#FBF9F5;--raised:#FFF;--line:#DED7CB;
+ --text:#211E19;--muted:#5F574C;--dim:#857C70;--accent:#2E4B7A;--accent-soft:#DDE5F1}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);
+ font-size:17px;line-height:1.66;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:28px 22px 80px}
+header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+ padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:30px}
+h1.wm{font-family:var(--serif);font-size:27px;font-weight:400;margin:0}
+h1.wm a{color:var(--text);text-decoration:none}
+.spacer{flex:1}
+header a.nav{color:var(--muted);text-decoration:none;font-size:15px}
+header a.nav:hover{color:var(--text)}
+h1{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.2;margin:0 0 6px}
+h2{font-family:var(--serif);font-weight:400;font-size:25px;margin:38px 0 10px;
+ padding-top:16px;border-top:1px solid var(--line)}
+h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:26px 0 8px;color:var(--text)}
+h4{font-size:15px;margin:20px 0 6px;color:var(--muted)}
+p{margin:0 0 14px}
+em{color:var(--muted)}
+strong{font-weight:600}
+code{font-family:var(--mono);font-size:14.5px;background:var(--surface);
+ border:1px solid var(--line);border-radius:var(--r);padding:1px 5px}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+ padding:14px;overflow-x:auto}
+pre code{border:0;background:none;padding:0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:5px 0}
+.tablewrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{text-align:left;padding:7px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:13px;text-transform:uppercase;
+ letter-spacing:.05em}
+tbody tr:last-child td{border-bottom:0}
+.backline{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+ font-size:15px;color:var(--muted)}
+.backline a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1 class="wm"><a href="/">Paleography</a></h1>
+  <div class="spacer"></div>
+  <a class="nav" href="/about">about</a>
+</header>
+<h1>Gothic bookhand — a reader&#x27;s primer</h1>
+<p><em>Track 3 of the MVP, and the first vernacular one. Written for someone who has read the Caroline tracks here, or who reads printed Old French and has never read a manuscript. Frequencies are real, counted over <strong>2,070 lines / 54,099 characters</strong> of ground truth from the five 13th–14th-century witnesses of the CIHAM-HTR</em> Fabliaux <em>corpus (see <code>corpus/sources.yml</code>). Nothing here is invented for illustration.</em></p>
+<hr>
+<h2>1. Why this script, and what changed</h2>
+<p>Caroline minuscule was made to be legible. Over the twelfth and thirteenth centuries it was squeezed: parchment was expensive, universities and a growing lay readership wanted more text per leaf, and scribes obliged by narrowing every letter, breaking curves into angles, and abbreviating relentlessly. What came out is the <strong>Gothic bookhand</strong> — <em>textualis</em> — and by the fourteenth and fifteenth centuries it hardens further into the dense black <em>textura</em> of the printed Bibles that imitated it.</p>
+<p>The hand in this track sits comfortably before that extreme. It is compressed and angular but still separates most letters, which is exactly why it is the right place to meet the change.</p>
+<p><strong>If you have done the Latin tracks, unlearn one habit: the gaps.</strong> Caroline gives you white space between letters and words, and your eye uses it without being asked. Gothic takes much of it away.</p>
+<h2>2. What will actually trip you</h2>
+<p>Not the alphabet. Three things, in order of how often they bite:</p>
+<p><strong>(a) Minims — far and away the worst.</strong> A <em>minim</em> is one short vertical stroke. In this hand <strong>i, u, n, m</strong> are built from identical minims, and so are parts of <strong>r</strong>. Five minims in a row can be <em>inui</em>, <em>muu</em>, <em>nui</em>, <em>unn</em>… The scribe will not help you: there is no dot on the <em>i</em> by default. You resolve it by knowing the word, which is why the language matters here more than in the Latin tracks (§6). A worked case: <code>ml̾t</code> (36×) is <em>mult</em>, and the <em>ul</em> is two minims and a stroke that you will misread as <em>ul</em>, <em>nl</em> or <em>ill</em> until you have met the word a few times.</p>
+<p>**(b) Fusion, or <em>biting</em>.** When two curved letters meet, their bowls merge and share a single stroke — <em>de</em>, <em>do</em>, <em>po</em>, <em>bo</em>, <em>pp</em>. The pair reads as one shape. Caroline never does this; Gothic does it constantly, and it is the main reason a word looks shorter than it is.</p>
+<p><strong>(c) <code>u</code> and <code>v</code> are the same letter, and so are <code>i</code> and <code>j</code>.</strong> The scribe writes one form. <code>uꝰ</code> is <em>vous</em>; <code>ura</code> may be <em>vra</em>. Expect to supply the distinction yourself — modern editions add it, the manuscript does not.</p>
+<p>A fourth, milder: <strong>word division is unreliable.</strong> Short words lean on their neighbours, and a preposition may sit tight against its noun. Trust the sense, not the gaps.</p>
+<h2>3. What the page looks like</h2>
+<p>The <em>Fabliaux</em> witnesses are <strong>verse</strong>, and the layout follows: two columns, one octosyllabic line per ruled line, the couplets rhyming in pairs. Three consequences worth having in mind:</p>
+<ul><li><strong>The line is a unit of sense</strong>, not an arbitrary cut. That is a real advantage over prose.</li><li><strong>Metre and rhyme are evidence.</strong> Eight syllables, and a rhyme you already know from the line</li></ul>
+<p>above, will often settle a word the ink leaves ambiguous. Using them is technique, not cheating.</p>
+<ul><li><strong>Line-initial capitals often sit in their own narrow column</strong>, set off from the verse. Do not</li></ul>
+<p>read them as separate words.</p>
+<p>Ruling is usually visible as faint lines. Rubrics and initials are in red; a <code>·</code> is the ordinary point.</p>
+<h2>4. The abbreviation system — the actual work</h2>
+<p>Counted over the 2,070 lines. This is where the reading time goes.</p>
+<h3>(i) The nasal bar — a plain horizontal or wavy stroke</h3>
+<p>A bar over a vowel stands for a <strong>missing n or m</strong>. Roughly 1,036 instances (569 written as precomposed vowels, 467 as a combining mark on another letter).</p>
+<div class="tablewrap"><table><thead><tr><th>sign</th><th>count</th><th>reads as</th><th>real example</th></tr></thead><tbody><tr><td><code>õ</code></td><td>183</td><td><em>on</em> / <em>om</em></td><td><code>mõ</code> = mon, <code>sõ</code> = son, <code>nõ</code> = non</td></tr><tr><td><code>ẽ</code></td><td>158</td><td><em>en</em> / <em>em</em></td><td><code>biẽ</code> = bien, <code>nẽ</code> = nen</td></tr><tr><td><code>ĩ</code></td><td>112</td><td><em>in</em></td><td><code>bĩe</code> = bien</td></tr><tr><td><code>ã</code></td><td>100</td><td><em>an</em> / <em>am</em></td><td><code>tãt</code> = tant, <code>grãt</code> = grant</td></tr><tr><td><code>ũ</code></td><td>16</td><td><em>un</em> / <em>um</em></td><td></td></tr></tbody></table></div>
+<h3>(ii) The one you will meet most: <code>q̃</code> = <em>que</em></h3>
+<p><strong>118 times</strong> (<code>q̃</code> 100, capital <code>Q̃</code> 18) — the single most abbreviated word in the corpus, which figures in a language this full of subordinate clauses. Its neighbour <code>qͥ</code> (<strong>42</strong>, plus <code>qͥl</code> 18) is <em>qui</em> / <em>qu&#x27;il</em>: a <strong>superscript i</strong> after <code>q</code> gives <em>-ui</em>.</p>
+<h3>(iii) Brevigraphs — letters carrying a stroke</h3>
+<div class="tablewrap"><table><thead><tr><th>sign</th><th>count</th><th>reads as</th><th>real example</th></tr></thead><tbody><tr><td><code>⁊</code></td><td>380</td><td><em>et</em></td><td>the Tironian note; looks like a <code>z</code> with a bar</td></tr><tr><td><code>ꝑ</code></td><td>139</td><td><em>par</em> / <em>per</em></td><td>bare <code>ꝑ</code> (75×) is the preposition <em>par</em>; <code>ꝑdu</code> = perdu, <code>ꝑole</code> = parole</td></tr><tr><td><code>ꝰ</code></td><td>78</td><td><em>-us</em> / <em>-ous</em></td><td><code>uꝰ</code> (59×) is <strong>vous</strong> — by itself most of this sign&#x27;s work</td></tr><tr><td><code>ꝯ</code></td><td>64</td><td><em>con-</em> / <em>com-</em></td><td><code>ꝯme</code> = come, <code>ꝯte</code> = conte, <code>ꝯter</code> = conter</td></tr><tr><td><code>ẜ</code></td><td>8</td><td><em>ser</em></td><td></td></tr><tr><td><code>ł</code></td><td>8</td><td><em>l</em> with stroke</td><td></td></tr><tr><td><code>ꝓ</code></td><td>1</td><td><em>pro</em></td><td>rare in the vernacular; common in Latin</td></tr></tbody></table></div>
+<p><code>⁊</code> at 380 is more frequent than every brevigraph after it combined. Learn it first.</p>
+<h3>(iv) The vertical tilde is NOT the nasal bar — and this is the distinction to hold</h3>
+<p>The corpus distinguishes two marks that look similar and mean different things:</p>
+<ul><li><strong>plain tilde</strong> (U+0303) — the nasal bar of §4(i): letters <em>n</em> or <em>m</em> omitted.</li><li><strong>vertical tilde</strong> (U+033E, 246×) — a <strong>general suspension</strong>: something else has been left</li></ul>
+<p>out, and what it is depends on the word.</p>
+<p>The vertical-tilde words are worth memorising as shapes, because they are frequent and opaque:</p>
+<div class="tablewrap"><table><thead><tr><th>form</th><th>count</th><th>reads as</th></tr></thead><tbody><tr><td><code>ml̾t</code></td><td>36 (+ <code>mlt̾</code> 6, <code>Ml̾t</code> 4)</td><td><em>mult</em> / <em>molt</em> — &quot;very, much&quot;</td></tr><tr><td><code>ch̾r</code>, <code>ch̾rs</code></td><td>34 together</td><td><em>chevalier</em>, <em>chevaliers</em></td></tr><tr><td><code>ap̾s</code></td><td>5</td><td><em>après</em></td></tr></tbody></table></div>
+<h3>(v) Superscript letters</h3>
+<p>A small letter written above stands for itself plus what surrounds it: superscript <strong>i</strong> (86), <strong>a</strong> (33), <strong>e</strong> (5), <strong>o</strong> (3), <strong>m</strong> (2), and a dedicated <strong>ur</strong> mark (U+1DD1, 7).</p>
+<h2>5. ⚠ What is NOT yet settled</h2>
+<p>This primer has <strong>no expert reviewer</strong> (<code>registry/languages/old-french.toml</code>, <code>expert = &quot;&quot;</code>). It was written from counted evidence plus the transcribers&#x27; own conventions, by a reader of Latin and Greek and not of Old French. Specifically:</p>
+<ul><li>The readings in §4 that are <strong>certain</strong> are those the corpus itself demonstrates — <code>ꝑdu</code> =</li></ul>
+<p>perdu, <code>uꝰ</code> = vous, <code>q̃</code> = que, <code>mõ</code> = mon — because the same words appear elsewhere in full.</p>
+<ul><li><code>st̾</code> occurs <strong>14×</strong> and is deliberately <strong>not</strong> expanded here. I could not settle it from the</li></ul>
+<p>evidence, and a confident wrong expansion is worse than an admitted gap.</p>
+<ul><li>The distinction in §4(iv) is drawn from the CREMMALAB transcription convention and the</li></ul>
+<p>distribution of the two marks. A medievalist should confirm it means what I have said.</p>
+<ul><li>Frequencies are from five witnesses of one genre. Fabliaux are not a neutral sample of</li></ul>
+<p>thirteenth-century French, and a psalter or a charter would count differently.</p>
+<h2>6. You may need the language, and that is new here</h2>
+<p>The Latin and Greek tracks assume you read the language and teach you only the ink. <strong>Old French is the first track where that assumption fails for most readers.</strong> Minims especially cannot be resolved without knowing what word is possible, so the ink and the language are not cleanly separable in practice.</p>
+<p>If you need the language, the best free course is the University of Texas Linguistics Research Center&#x27;s <strong>Old French Online</strong> — ten lessons built on real texts (<em>Roland</em>, <em>Tristan</em>, <em>Yvain</em>), with grammar and glossaries: <a href="https://lrc.la.utexas.edu/eieol/ofrol" rel="noopener">https://lrc.la.utexas.edu/eieol/ofrol</a></p>
+<h2>7. Practice order for this track</h2>
+<ol><li>Read §2(a) again and accept that minims are the whole difficulty.</li><li>Learn three signs before anything else: <code>⁊</code> = et, <code>q̃</code> = que, <code>ꝑ</code> = par. That is 637</li></ol>
+<p>instances, over a third of all abbreviation in the corpus.</p>
+<ol><li>Then the nasal bar, which is one rule covering ~1,000 instances.</li><li>Then <code>uꝰ</code> = vous and <code>ꝯ</code> = con-, which are two words and a prefix.</li><li>Leave the vertical-tilde forms (§4 iv) until last. They are memorised, not derived.</li></ol>
+<h2>Sources</h2>
+<ul><li>Ground truth: <strong>CIHAM-HTR,</strong> <em>Fabliaux</em> (Corinne Pierreville, Ariane Pinche; funded by</li></ul>
+<p>Biblissima+), CC BY 4.0 — <a href="https://github.com/CIHAM-HTR/Fabliaux" rel="noopener">https://github.com/CIHAM-HTR/Fabliaux</a></p>
+<ul><li>Transcription convention: Ariane Pinche, *Transcription Guide for 10th to 15th Century</li></ul>
+<p>Manuscripts*, CREMMALAB, 2022 (hal-03697382)</p>
+<ul><li>Plates for this track: <strong>Bern, Burgerbibliothek, Cod. 354</strong>, e-codices, Public Domain Mark</li><li>Language: UT Austin LRC, <em>Old French Online</em> — <a href="https://lrc.la.utexas.edu/eieol/ofrol" rel="noopener">https://lrc.la.utexas.edu/eieol/ofrol</a></li></ul>
+<p class="backline">Practise this hand: <a href="/old-french">Old French — a book of fabliaux</a></p>
+</div>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

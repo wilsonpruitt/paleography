@@ -1,6 +1,7 @@
 # Script profile: Greek, Byzantine minuscule (s. X–XII bookhands).
 
 id = "greek-minuscule"
+primer = "scripts/greek-minuscule.md"
 name = "Byzantine minuscule"
 direction = "ltr"
 # Class the trainer puts on printed Greek so it picks up the Greek font stack.

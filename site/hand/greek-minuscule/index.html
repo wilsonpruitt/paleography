@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A reader&#x27;s primer on byzantine minuscule — what trips you, what the page looks like, and the abbreviation system, counted over real ground truth.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Byzantine minuscule — Paleography">
+<meta property="og:description" content="A reader&#x27;s primer on byzantine minuscule — what trips you, what the page looks like, and the abbreviation system, counted over real ground truth.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paleography.app/hand/greek-minuscule">
+<meta property="og:image" content="https://paleography.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='.9em' font-size='56'>%E2%9C%92%EF%B8%8F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif:wght@400&display=swap">
+<title>Byzantine minuscule — Paleography</title>
+<style>
+:root{--ink:#14120F;--surface:#1E1B17;--raised:#2A2621;--line:#3A342D;
+ --text:#EAE4DA;--muted:#A0958A;--dim:#7B7168;--accent:#5B82BE;--accent-soft:#2F415E;
+ --serif:"EB Garamond",Georgia,serif;--sans:"IBM Plex Sans",-apple-system,sans-serif;
+ --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--r:3px}
+:root[data-theme="light"]{--ink:#F2EEE7;--surface:#FBF9F5;--raised:#FFF;--line:#DED7CB;
+ --text:#211E19;--muted:#5F574C;--dim:#857C70;--accent:#2E4B7A;--accent-soft:#DDE5F1}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+ --ink:#F2EEE7;--surface:#FBF9F5;--raised:#FFF;--line:#DED7CB;
+ --text:#211E19;--muted:#5F574C;--dim:#857C70;--accent:#2E4B7A;--accent-soft:#DDE5F1}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);
+ font-size:17px;line-height:1.66;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:28px 22px 80px}
+header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+ padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:30px}
+h1.wm{font-family:var(--serif);font-size:27px;font-weight:400;margin:0}
+h1.wm a{color:var(--text);text-decoration:none}
+.spacer{flex:1}
+header a.nav{color:var(--muted);text-decoration:none;font-size:15px}
+header a.nav:hover{color:var(--text)}
+h1{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.2;margin:0 0 6px}
+h2{font-family:var(--serif);font-weight:400;font-size:25px;margin:38px 0 10px;
+ padding-top:16px;border-top:1px solid var(--line)}
+h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:26px 0 8px;color:var(--text)}
+h4{font-size:15px;margin:20px 0 6px;color:var(--muted)}
+p{margin:0 0 14px}
+em{color:var(--muted)}
+strong{font-weight:600}
+code{font-family:var(--mono);font-size:14.5px;background:var(--surface);
+ border:1px solid var(--line);border-radius:var(--r);padding:1px 5px}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+ padding:14px;overflow-x:auto}
+pre code{border:0;background:none;padding:0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:5px 0}
+.tablewrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{text-align:left;padding:7px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:13px;text-transform:uppercase;
+ letter-spacing:.05em}
+tbody tr:last-child td{border-bottom:0}
+.backline{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+ font-size:15px;color:var(--muted)}
+.backline a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1 class="wm"><a href="/">Paleography</a></h1>
+  <div class="spacer"></div>
+  <a class="nav" href="/about">about</a>
+</header>
+<h1>Greek minuscule — a reader&#x27;s primer</h1>
+<p><em>Track 2 of the MVP. For someone who reads Greek and has never read a manuscript. Grounded in 3,374 lines of ground truth from Heidelberg, Codex Palatinus graecus 23 (the Palatine Anthology), s. X — see <code>corpus/sources.yml</code>.</em></p>
+<hr>
+<h2>1. The one historical fact that organises everything</h2>
+<p>Until about <strong>AD 800, Greek books were written in majuscule</strong> — capitals only, no word division, no accents: <em>biblical uncial</em>, the hand of Sinaiticus and Vaticanus. Then, within a couple of generations, Byzantine scribes adopted <strong>minuscule</strong>, a small connected book hand derived from cursive documentary writing.</p>
+<p>The change was radical and it is the reason this track is tractable: minuscule brought <strong>word division, accents and breathings written as a matter of course, and punctuation</strong>. A 10th-century Greek page is far closer to a printed page than a 5th-century one.</p>
+<p>⚠ So &quot;Greek paleography&quot; is really two disciplines. This track is <strong>minuscule bookhand, s. X–XII</strong> — the hand in which nearly all of classical and patristic Greek actually reaches us, because it is what the Byzantine scriptoria copied. Majuscule and papyri are different problems, deferred (papyri to Phase 3 by Wilson&#x27;s ruling).</p>
+<h2>2. Why minuscule is harder than Caroline despite being more legible</h2>
+<p>Caroline separates letters; <strong>minuscule connects them.</strong> The difficulty is not the individual letter but the <strong>ligature</strong> — two or three letters fused into a single compound shape that must be learned as its own sign. A scribe writing quickly runs <code>ει</code>, <code>ου</code>, <code>σθ</code>, <code>ταν</code> together into forms that share little with their components.</p>
+<p>Second difficulty: <strong>the same letter has several forms in one hand</strong>, chosen by position and by what precedes. Beta, kappa, and above all <strong>tau</strong> vary a lot.</p>
+<p>Third: <strong>abbreviation by suspension at line-end</strong>, plus a set of conventional tachygraphic (shorthand) signs for the commonest words and endings.</p>
+<h2>3. What our witness looks like</h2>
+<p>Real lines from Pal. gr. 23 (s. X), an anthology of epigrams:</p>
+<pre><code>    εἵλετο δὲ στεφάνουσ· καὶ πηκτίδα· καὶ μετὰ κώμων·
+    ⁛ ὦξυρὸν οὐράνιον· ξυρὸν ὄλβιον· ὧι πλοκαμῖδασ
+    ἐξ ἁλόσ· ὧι δὲ νέμοισ· ἠέροσ ὠφελίην: ⋇ ⋇</code></pre>
+<p>⚠⚠ <strong>Read <code>στεφάνουσ</code> and <code>ἁλόσ</code> again.</strong> Those are not typos and not my errors.</p>
+<h2>4. Three conventions of this transcription you must know before you type anything</h2>
+<p>These are decisions the editors made, verified in the data. <strong>Get them wrong and every exercise marks you wrong for being right.</strong></p>
+<h3>(a) Final sigma does not exist</h3>
+<p><strong><code>ς</code> occurs 0 times in 3,374 lines. <code>σ</code> occurs 6,036 times, and 3,203 words end in it.</strong> The editors state why: <em>&quot;Sigma is always transcribed σ and never ς. This decision reflects the scribe&#x27;s practice of using exclusively σ.&quot;</em></p>
+<p>⚑ So <code>κάλλοσ</code>, <code>χρόνοσ</code>, <code>πολιῆσ</code>. <strong>The scribe did not distinguish final sigma, so the transcription does not either.</strong> The medial/final distinction is a printing convention of the Renaissance, not a fact about this manuscript.</p>
+<p>⚑ For the app this is load-bearing: the diff engine must normalise <code>ς</code>→<code>σ</code> for this witness, or every learner is penalised for correct modern Greek habits.</p>
+<h3>(b) All punctuation is one sign</h3>
+<p><strong>0 commas, 0 full stops, 0 semicolons; 3,437 interpuncts (<code>·</code>).</strong> Every punctuation mark in the manuscript has been collapsed to a single raised dot. You cannot learn Byzantine punctuation from this witness — it has been normalised away.</p>
+<h3>(c) Abbreviations are already expanded</h3>
+<p>⛔ <strong>This is the most important fact about this dataset, and the HTR-United catalogue gets it wrong.</strong> The catalogue says abbreviations are <em>not</em> resolved. The dataset&#x27;s own README says <em>&quot;All abbreviations have been transcribed in expanded form&quot;</em> — e.g. <code>ϗ</code> is written out as <code>καί</code>, <code>ȣ</code> as <code>ου</code>.</p>
+<p>Verified in the data: <strong><code>ϗ</code> occurs 0 times. <code>ȣ</code> occurs 0 times.</strong></p>
+<p>⚑ <strong>Consequence: Pal. gr. 23 cannot teach Level 2 (abbreviation) at all.</strong> It is an excellent Level-1 and Level-3 witness (letterforms, line reading) and useless for learning what the abbreviation signs look like, because they are not in it.</p>
+<p>⚑ <strong>Therefore the Greek track needs a second, diplomatic witness before Level 2 can be built.</strong> This is the single biggest gap Phase 1 found, and it is a genuine Phase-1b task, not a nicety. The Stavronikita manuscripts in the queue resolve abbreviations too — so they do not fix it either. <strong>Finding a diplomatic Greek witness is an open problem.</strong></p>
+<h2>5. What the marks in the margins mean</h2>
+<p>Pal. gr. 23 uses a small set of structural signs, all documented by its editors:</p>
+<div class="tablewrap"><table><thead><tr><th>sign</th><th>Unicode</th><th>count</th><th>meaning</th></tr></thead><tbody><tr><td><code>⁛</code></td><td>U+205B</td><td>379</td><td>beginning of an epigram</td></tr><tr><td><code>⋇</code></td><td>U+22C7</td><td>407</td><td>end of an epigram</td></tr><tr><td><code>∻</code></td><td>U+223B</td><td>28</td><td>a scholion begins, in the margin</td></tr><tr><td><code>※</code></td><td>U+203B</td><td>61</td><td>a scholion begins, in the main text</td></tr></tbody></table></div>
+<p>The page is not a block of prose. <strong>725 of 3,374 lines (21%) are <code>MarginTextZone</code></strong> — scholia, variant readings, the epigram-ascriptions. Reading a Byzantine anthology page means reading a main text <em>and</em> a commentary apparatus laid around it.</p>
+<h2>6. Accents, breathings, and what is actually there</h2>
+<p>Unlike the Latin corpus, the Greek GT uses <strong>no private-use codepoints and no combining marks at all</strong> — everything is precomposed polytonic Unicode. Practically: <code>ἐπεὶ</code>, <code>ὑμετέροιο</code>, <code>θῆκεν</code> arrive as single codepoints per letter.</p>
+<p>⚑ Two consequences. Rendering needs no special font (unlike the Latin, which needs a MUFI font). And a learner typing polytonic Greek needs a <strong>polytonic input method</strong> — which is a real onboarding obstacle the Latin track does not have, and the app must solve it (an on-screen accent palette; the editors themselves built an eScriptorium virtual keyboard for exactly this reason).</p>
+<h2>7. Practice order for this track</h2>
+<ol><li><strong>Script ID</strong> — minuscule vs majuscule; s. X bookhand vs later cursive.</li><li><strong>Glyph cards</strong> — the position-variant letters first: <code>τ</code>, <code>β</code>, <code>κ</code>, <code>θ</code>; then the</li></ol>
+<p>letters that collide (<code>ν</code>/<code>υ</code>, <code>γ</code>/<code>τ</code> in ligature).</p>
+<ol><li><strong>Ligature cards</strong> — <code>ει</code>, <code>ου</code>, <code>σθ</code>, <code>ταν</code>, <code>εν</code>. *This is the step Latin does not</li></ol>
+<p>have, and it is the heart of the Greek track.*</p>
+<ol><li><strong>Line</strong> — Pal. gr. 23 <code>MainZone</code>, with <code>ς</code>→<code>σ</code> normalisation in the diff.</li><li><strong>Level 2 (abbreviation) — BLOCKED.</strong> Needs a diplomatic witness we do not yet have.</li></ol>
+<h2>8. Wilson&#x27;s queue starts here</h2>
+<p>Per PLAN.md ruling 3, Greek expert review is Wilson&#x27;s. Because Greek GT is thin and this witness is already expanded, <strong>the Greek track needs his judgement earlier than the Latin one</strong> — specifically on:</p>
+<ul><li>whether an expanded-only witness is acceptable for the MVP Greek track (my read: yes</li></ul>
+<p>for Levels 1 and 3, and the track ships honestly saying Level 2 is not yet available);</p>
+<ul><li>where to find a diplomatic Greek witness, which may mean transcribing one ourselves</li></ul>
+<p>from a IIIF facsimile rather than finding a dataset.</p>
+<h2>Sources</h2>
+<p>Ground truth CC-BY 4.0, Codex Palatinus graecus 23, ecrinum/anthologia (Huma-Num). Manuscript digitised by Heidelberg: https://doi.org/10.11588/diglit.3449 Conventions quoted from the dataset&#x27;s own README; all counts computed over <code>corpus/normalized/cpgr23.jsonl</code>.</p>
+<p class="backline">Practise this hand: <a href="/greek">Greek — Byzantine minuscule</a></p>
+</div>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

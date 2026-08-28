@@ -8,7 +8,6 @@ id = "greek"
 order = 2          # tab / landing order; explicit, never alphabetical
 name = "Greek"
 profile = "greek-minuscule"
-primer = "scripts/greek-minuscule.md"
 # Wilson runs the Greek expert queue; a friend holds the reviewer seat (handoff.md).
 expert = "wilson"
 

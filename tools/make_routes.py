@@ -30,6 +30,8 @@ ATTEMPTS = ROOT / "site/api/attempts.js"
 LANDING = ROOT / "site/index.html"
 L_BEGIN = "<!-- BEGIN GENERATED TRACK CARDS (tools/make_routes.py; do not edit by hand) -->"
 L_END = "<!-- END GENERATED TRACK CARDS -->"
+P_BEGIN = "<!-- BEGIN GENERATED PRIMERS -->"
+P_END = "<!-- END GENERATED PRIMERS -->"
 BEGIN = "// --- BEGIN GENERATED TRACKS (tools/make_routes.py; do not edit by hand) ---"
 END = "// --- END GENERATED TRACKS ---"
 
@@ -37,6 +39,10 @@ END = "// --- END GENERATED TRACKS ---"
 def build():
     languages, profiles, tracks = registry.load()
     cfg = json.loads(DEST.read_text(encoding="utf-8"))
+
+    # Primer pages: /hand/<profile> -> site/hand/<profile>/index.html
+    primer_routes = [{"source": f"/hand/{pid}", "destination": f"/hand/{pid}/index.html"}
+                     for pid, prof in sorted(profiles.items()) if prof.get("primer")]
 
     track_routes = []
     for t in registry.ordered_tracks(languages, tracks):
@@ -48,7 +54,9 @@ def build():
     # Keep every rewrite this script does not own, in its original order.
     owned = {t["route"] for t in registry.ordered_tracks(languages, tracks)}
     kept = [r for r in cfg.get("rewrites", []) if r["source"] not in owned]
-    cfg["rewrites"] = track_routes + kept
+    owned_primers = {r["source"] for r in primer_routes}
+    kept = [r for r in kept if r["source"] not in owned_primers]
+    cfg["rewrites"] = track_routes + primer_routes + kept
     return cfg
 
 
@@ -96,7 +104,21 @@ def build_landing():
     block = L_BEGIN + "\n" + "\n\n".join(rows) + "\n" + L_END
     src = LANDING.read_text(encoding="utf-8")
     i, j = src.index(L_BEGIN), src.index(L_END) + len(L_END)
-    return src[:i] + block + src[j:]
+    src = src[:i] + block + src[j:]
+
+    # Primer links. Generated for the same reason as the cards: a hand-kept list is one a
+    # new script silently misses. Ordered as the languages are, so the page reads top-down.
+    seen, plinks = set(), []
+    for t in registry.ordered_tracks(languages, tracks):
+        pid = t["profile"]["id"]
+        if pid in seen or not t["profile"].get("primer"):
+            continue
+        seen.add(pid)
+        plinks.append(f'  <p class="navline"><a href="/hand/{pid}">'
+                      f'A reader\'s primer on {t["profile"]["name"].lower()} →</a></p>')
+    pblock = P_BEGIN + "\n" + "\n".join(plinks) + "\n" + P_END
+    i, j = src.index(P_BEGIN), src.index(P_END) + len(P_END)
+    return src[:i] + pblock + src[j:]
 
 
 if __name__ == "__main__":
