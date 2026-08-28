@@ -16,8 +16,8 @@
 python3 tools/crop.py …            # line crops per witness
 python3 tools/build_exercises.py --out build/exercises.json --n 110 --max-w 1700 --quality 80
 python3 tools/make_trainer.py      # -> build/scriptorium.html   (Artifact: no doctype)
-python3 tools/make_site.py         # -> site/index.html          (web: full document)
-cd site && npx vercel deploy --prod --yes
+python3 tools/make_site.py         # -> site/read/index.html     (web: full document)
+cd site && npx vercel deploy --prod --yes   # ⚑ from site/ -- NEVER from the repo root
 ```
 
 ⚑ **Two outputs, and the difference is not cosmetic.** The Artifact runtime supplies
@@ -26,6 +26,25 @@ none. Served raw by a web host that same file falls into **quirks mode** — a d
 model — and has **no viewport meta**, so it renders at desktop width on a phone. The first
 deploy went out that way. `make_site.py` wraps it properly; never point Vercel at the artifact
 build.
+
+⛔ **Deploy from `site/`, never from the repo root.** On 2026-08-27 a `--prod` deploy went
+out from `~/paleography` and took the whole site down for 13 hours. Nothing errored: the
+deploy reported Ready and kept the `paleography.app` alias, but every file landed one level
+deep, so `/` returned 404 while `/site/index.html` returned 200. `site/vercel.json` went with
+it, so the `/greek` `/latin` `/latin-ii` `/about` rewrites **and the keepalive cron** were dead
+too — and the cron dying is the expensive part, because free-tier Supabase pauses after ~a week
+idle. Two tells that a root deploy is under way: the build takes ~30s instead of 2–8s (Vercel
+finds a root `package.json`, decides this is a Node project and runs an install), and a
+`.vercel/` appears at the repo root. If you see either, stop. ⚑ The root was deliberately
+*unlinked* afterwards so a stray `vercel` there prompts instead of silently deploying.
+
+⛔ **`@vercel/analytics` is the wrong install for this site and does nothing.** Vercel's
+Analytics tab shows only the React/Next path (`npm i` + an `<Analytics/>` component); there is
+no React and no build step here, so it has nothing to hook into. The correct static install is
+the `<script defer src="/_vercel/insights/script.js">` tag that `make_site.py` appends and that
+`site/index.html` and `site/about/index.html` carry by hand. If the Analytics tab still shows
+the "Get Started" onboarding, the question is whether Web Analytics is *enabled* on the
+project — not whether the package is installed.
 
 ## Open items
 
