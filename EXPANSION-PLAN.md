@@ -176,10 +176,21 @@ who sees it says so publicly.
 
 ## 7. Phases, and who does them
 
-- **Phase A — refactor to registry (code, no new content).** Registry + profiles for the three
-  existing tracks; tabs/routes/orientation/palette/norm driven from them; per-track JSON
-  payload; language landing pages; 301s for the old URLs; Supabase validator takes a charset.
-  *Byte-identical behaviour for Latin I/II/Greek is the acceptance test.* **Opus.**
+- **Phase A — ✅ DONE 2026-08-28** (6 commits, `b025085`..`2f516c3`). Registry is
+  `registry/languages/*.toml` + `registry/profiles/*.toml`, TOML via stdlib `tomllib` (no
+  dependency). Four consumers read it and none names a track: the packer, the trainer shell
+  (tabs, routes, palette, folds, keymap, font class), the Vercel rewrites, and the
+  `/api/attempts` allowlist — the last two generated with `--check` to catch drift.
+  `tools/acceptance.sh` held the bank byte-identical at `b1f6db85` throughout.
+  ⭐ **The Artifact build is retired** (Wilson), which removed the two-build trap AND let the
+  payload split: the page went 11.4 MB → 53 KB, with each track fetched on open.
+  ⚑ Two real bugs found: `norm()` folded long-s only for track `latin`, so the DIPLOMATIC
+  track never got it (latent — 0 ſ in the bank); and after the split `?track=greek` silently
+  loaded Latin, because the guard tested `DATA.tracks`, which had become an empty cache.
+  ⬜ **Deferred, and it needs a ruling when Old French lands:** per-LANGUAGE landing pages.
+  The plan called for `/` to list languages and each language to list its tracks. With two
+  languages that adds a click and buys nothing, so the apex still shows a flat card per track
+  — now generated. Revisit at 4+ languages, which is where the flat list stops scanning.
 - **Phase B — Old French.** One CIHAM witness, `latin-gothic` profile, Gothic scorer, OE/ME
   palette additions. Proves "new language = registry + content". **Sonnet** once A exists.
 - **Phase B2 — Hungarian.** ⭐ Fast-tracked to ride B's `latin-gothic` profile while it is warm.
