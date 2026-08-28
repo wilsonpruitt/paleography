@@ -34,12 +34,17 @@ HEAD = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Learn to read Caroline minuscule and Byzantine Greek minuscule from the manuscripts themselves — staged from orientation to full transcription.">
+<meta name="description" content="Learn to read __LANGS__ manuscripts from the images themselves — staged from orientation to full transcription.">
 <meta name="color-scheme" content="light dark">
 <meta property="og:title" content="Paleography">
-<meta property="og:description" content="A staged introduction to reading Greek and Latin manuscripts, built on open ground truth.">
+<meta property="og:description" content="A staged introduction to reading medieval and ancient manuscripts, built on open ground truth.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://paleography.app/read/">
+<meta property="og:image" content="https://paleography.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A line of a 13th-century French manuscript above its transcription: Qi ait per-du si ait perdu, the same word written once abbreviated and once in full.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='.9em' font-size='56'>%E2%9C%92%EF%B8%8F</text></svg>">
 """
 # Vercel Web Analytics, static-site install. NOT the npm package: there is no build step
@@ -54,6 +59,13 @@ marker = '<div class="wrap">'
 i = shell.index(marker)
 head_part, body_part = shell[:i], shell[i:]
 doc = HEAD + head_part + "</head>\n<body>\n" + body_part + FOOT
+# The language list is registry data; naming it by hand here is how the old description
+# came to say "Greek and Latin" on the day Old French shipped.
+import json as _json
+_langs = _json.loads(index)["languages"]
+_names = [l["name"] for l in _langs.values()]
+_phrase = (", ".join(_names[:-1]) + " and " + _names[-1]) if len(_names) > 1 else _names[0]
+doc = doc.replace("__LANGS__", _phrase)
 doc = doc.replace("__PAYLOAD__", index)
 
 dest = out_dir / "index.html"

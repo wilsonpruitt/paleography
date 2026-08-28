@@ -16,6 +16,7 @@
 python3 tools/crop.py …            # line crops per witness
 python3 tools/build_exercises.py --out build/payload --n 110 --max-w 1700 --quality 80
 python3 tools/make_routes.py       # -> site/vercel.json + the API's track allowlist
+python3 tools/make_og.py           # -> site/og.png (link-preview card)
 python3 tools/make_site.py         # -> site/read/index.html + t-<track>.json
 sh tools/acceptance.sh             # the bank must not have moved
 cd site && npx vercel deploy --prod --yes   # ⚑ from site/ -- NEVER from the repo root
