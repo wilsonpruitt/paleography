@@ -97,6 +97,12 @@ Phase B took Old French from nothing to live with **two TOML files plus crops**.
   preserves abbreviations, so that track cannot teach the signs. ⭐ Better as the question you
   open with than a defect to hide; a Byzantinist settles it in a sentence. `handoff.md` is the
   pattern, one per language.
+- ⏸ **UT Austin LRC contacted 2026-08-28 about expert partners — awaiting a response. Do not
+  chase it, and do not draft outreach unprompted.** ⚠ EIEOL is Indo-European by definition, so
+  it can serve Old French, Old English, Sanskrit, Latin and Greek but **not** Syriac, Hebrew,
+  Aramaic, Coptic or Hungarian. ⭐ And most open questions here need a **paleographer**, not a
+  linguist. Warm lead if it goes quiet: **Ariane Pinche**, who made the Fabliaux GT and wrote
+  the CREMMALAB guide this project's Gothic primer follows.
 - ⬜ **An Old French expert seat** (`registry/languages/old-french.toml`, `expert = ""`). The
   primer says on its face it has no reviewer, and `st̾` (14×) is deliberately unexpanded.
 - ⬜ **Ruling: Latin II's letter-ratio fix.** `count_marks_as_letters` is on for `latin-gothic`
