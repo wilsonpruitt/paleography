@@ -1,0 +1,29 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g159-yima-swear"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܡܐ", voc = "ܝܺܡܳܐ", translit = "īmā" }
+pos = "verb"
+gloss_en = "swear"
+gloss_de = "schwören"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§ 48 e"
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Nestle's only BIBLIOGRAPHY in the shard so far: the oath-noun's odd number (one form doing for singular and plural) is defended with de Lagarde, Orientalia 2, 9 and Hoffmann, ZDMG 32, 572. His scholarship, not our uncertainty. ⭐ Homograph with ܝܰܡܳܐ 'sea' directly above — separate entries, so two records (convention 3)."
+
+[[sub_lemmas]]
+voc = "ܡܰܘܡܳܬܳܐ"
+gloss_en = "f. oath (sg. et pl.)"
+gloss_de = "Eid"
+raw = "ܡܰܘܡܳܬܳܐ f. (sg. et pl., cf. de Lagarde, Orientalia 2, 9; Hoffmann, ZDMG. 32, 572) Eid | oath"
+
+[source]
+primer = "nestle-1889-en"
+page = 159
+leaf = "n248"

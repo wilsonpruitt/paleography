@@ -1,0 +1,29 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g160-yarha-month"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܪܚܐ", voc = "ܝܰܪܚܳܐ", translit = "yarḥā" }
+pos = "m."
+gloss_en = "month"
+gloss_de = "Monat"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܝܰܪܚ"
+uncertain = true
+uncertain_note = "A bracketed form is printed between the two head forms, ܐ-initial and four glyphs; not resolved."
+
+[[sub_lemmas]]
+voc = "ܝܰܪ̈ܚܶܐ"
+gloss_en = "pl."
+raw = "Pl. ܝܰܪ̈ܚܶܐ."
+
+[source]
+primer = "nestle-1889-en"
+page = 160
+leaf = "n249"

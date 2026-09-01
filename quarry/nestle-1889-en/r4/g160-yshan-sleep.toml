@@ -1,0 +1,27 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g160-yshan-sleep"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܫܢ", voc = "", translit = "yšan" }
+pos = "noun entry under a bracketed root"
+gloss_en = "sleep"
+gloss_de = "Schlaf"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Bracketed root ܝܫܢ with every printed form beginning ܫ — the same trap as ܫܰܘܙܶܒ on p. 158, but here Nestle marks it, by giving the root that nothing on the page spells."
+
+[[sub_lemmas]]
+voc = "ܫܶܢܬܳܐ, ܫܶܢܳܬܳܐ"
+gloss_en = "f., st. cstr. ܫܢܰܬ"
+raw = "ܫܶܢܬܳܐ, ܫܶܢܳܬܳܐ f., st. cstr. ܫܢܰܬ Schlaf | sleep"
+
+[source]
+primer = "nestle-1889-en"
+page = 160
+leaf = "n249"

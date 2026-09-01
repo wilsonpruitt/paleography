@@ -1,0 +1,33 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g159-yqed-burn"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܩܕ", voc = "ܝܺܩܶܕ", translit = "īqed" }
+pos = "verb, impf. a"
+gloss_en = "catch fire"
+gloss_de = "anbrennen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "Aph. kindle"
+gloss_de = "anzünden"
+raw = "Aph. anzünden | kindle"
+
+[[sub_lemmas]]
+voc = "ܝܰܩܕܳܢܳܐ"
+gloss_en = "fire, conflagration"
+gloss_de = "Feuersbrunst"
+raw = "ܝܰܩܕܳܢܳܐ Feuersbrunst | fire"
+
+[source]
+primer = "nestle-1889-en"
+page = 159
+leaf = "n248"

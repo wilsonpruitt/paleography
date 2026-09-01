@@ -1,0 +1,40 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g160-ytar-remain"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܬܪ", voc = "ܝܺܬܰܪ", translit = "ītar" }
+pos = "verb"
+gloss_en = "be left over, be better"
+gloss_de = "übrig, besser sein"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Settles the open question at ܚܰܣܺܝܪ on p. 154: the idiom's partner is ܝܰܬܺܝܪ, printed here in its own entry with ܡܶܢ. Last entry of the ܝ section."
+
+[[sub_lemmas]]
+voc = "ܝܰܬܺܝܪ"
+gloss_en = "left, remaining"
+gloss_de = "übrig"
+raw = "ܝܰܬܺܝܪ übrig | left"
+
+[[sub_lemmas]]
+voc = "ܝܰܬܺܝܪ ܡܶܢ"
+gloss_en = "more than"
+gloss_de = "mehr als"
+raw = "ܝܰܬܺܝܪ ܡܶܢ mehr als | more than"
+
+[[sub_lemmas]]
+voc = "ܡܝܰܬܪܳܐ"
+gloss_en = "excellent, distinguished"
+gloss_de = "vorzüglich, ausgezeichnet"
+raw = "ܡܝܰܬܪܳܐ vorzüglich, ausgezeichnet | excellent, distinguished"
+
+[source]
+primer = "nestle-1889-en"
+page = 160
+leaf = "n249"

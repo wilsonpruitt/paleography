@@ -14,12 +14,55 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-continues_from = "runs onto p. 159 (n248)"
+primer_note = "⭐ The entry's tail carries the shard's first CREEDAL term: ܝܳܠܕܰܬ ܐܰܠܳܗܳܐ, glossed with the bare Greek θεοτόκος and nothing else — Nestle leaves 'Mother of God' untranslated in both his languages. ⭐ It also separates ܝܰܠܽܘܕܳܐ '(pass.) infant' from ܝܳܠܽܘܕܳܐ '(act) genitor' — the eighth homograph pair of the shard, and the only one whose two members are labelled by VOICE. And the last form is glossed by a Hebrew word alone: h. תולדות, the title of the Genesis genealogies."
+continues_from = "runs onto p. 159 (n248) — ✅ the tail was read 2026-09-01; seven sub-lemmas folded in below"
 
 [[sub_lemmas]]
 voc = ""
 gloss_en = "Ethpe. pass."
 raw = "Ethpe. pass."
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "Aph. beget, bring forth"
+gloss_de = "erzeugen, hervorbringen"
+raw = "Aph. erzeugen, hervorbringen | beget, bring forth."
+
+[[sub_lemmas]]
+voc = "ܝܰܠܕ, ܝܰܠܕܳܐ"
+gloss_en = "child"
+gloss_de = "Kind"
+raw = "ܝܰܠܕ, ܝܰܠܕܳܐ Kind | child."
+
+[[sub_lemmas]]
+voc = "ܝܳܠܕܰܬ ܐܰܠܳܗܳܐ"
+gloss_en = "Mother of God (θεοτόκος)"
+gloss_de = ""
+raw = "ܝܳܠܕܰܬ ܐܰܠܳܗܳܐ, θεοτόκος."
+
+[[sub_lemmas]]
+voc = "ܝܰܠܽܘܕܳܐ"
+gloss_en = "(pass.) infant"
+gloss_de = "Kind"
+raw = "ܝܰܠܽܘܕܳܐ (pass.) Kind | infant."
+
+[[sub_lemmas]]
+voc = "ܝܳܠܽܘܕܳܐ"
+gloss_en = "(act.) genitor"
+gloss_de = ""
+raw = "ܝܳܠܽܘܕܳܐ (act) genitor."
+
+[[sub_lemmas]]
+voc = "ܡܰܘܠܳܕܳܐ"
+gloss_en = "m. begetting"
+gloss_de = "Erzeugung"
+raw = "ܡܰܘܠܳܕܳܐ m. Erzeugung | begetting."
+
+[[sub_lemmas]]
+voc = "ܬܰܘܠܕܺܝܬܳܐ"
+gloss_en = "f., pl. ܬܰܘ̈ܠܕܳܬܳܐ; Hebrew תולדות"
+gloss_de = ""
+raw = "ܬܰܘܠܕܺܝܬܳܐ pl. ܬܰܘ̈ܠܕܳܬܳܐ f., h. תולדות."
 
 [source]
 primer = "nestle-1889-en"

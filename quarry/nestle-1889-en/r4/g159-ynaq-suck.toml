@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g159-ynaq-suck"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܢܩ", voc = "ܝܺܢܶܩ", translit = "īneq" }
+pos = "verb"
+gloss_en = "suck"
+gloss_de = "saugen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§ 44"
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = "ܐܰܘܢܶܩ"
+gloss_en = "Af. (etiam this form) suckle"
+gloss_de = "säugen"
+raw = "Af. (etiam ܐܰܘܢܶܩ) säugen | suckle"
+
+[source]
+primer = "nestle-1889-en"
+page = 159
+leaf = "n248"

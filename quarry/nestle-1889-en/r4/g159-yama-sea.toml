@@ -1,0 +1,51 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g159-yama-sea"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܡܐ", voc = "ܝܰܡܳܐ", translit = "yammā" }
+pos = "m."
+gloss_en = "sea"
+gloss_de = "Meer"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ 'Sea', 'right hand' and 'south' in one entry. The chain is the Semitic compass: you face east, so the right hand IS the south — and Nestle files ܝܡܝܢ and the ܬ-preformative ܬܰܝܡܢܳܐ under the same head as ܝܰܡܳܐ without a word of explanation."
+
+[[sub_lemmas]]
+voc = "ܝܰܡ̈ܡܶܐ"
+gloss_en = "pl."
+raw = "Pl. ܝܰܡ̈ܡܶܐ"
+
+[[sub_lemmas]]
+voc = "ܝܰܡܬܳܐ"
+gloss_en = "f. lake; pl. ܝܰܡ̈ܳܬܳܐ"
+gloss_de = "Teich"
+raw = "ܝܰܡܬܳܐ f. Teich | lake. Pl. ܝܰܡ̈ܳܬܳܐ."
+
+[[sub_lemmas]]
+voc = "ܝܰܡܺܝܢܳܐ"
+gloss_en = "f. the right hand"
+gloss_de = "die rechte Seite"
+raw = "ܝܰܡܺܝܢܳܐ f. die rechte Seite | the right hand"
+
+[[sub_lemmas]]
+voc = "ܬܰܝܡܢܳܐ"
+gloss_en = "f. the south country; etiam ܬܰܝܡܰܢ"
+gloss_de = "die südliche Gegend"
+raw = "ܬܰܝܡܢܳܐ f. die südliche Gegend | the south country. Etiam ܬܰܝܡܰܢ."
+
+[[sub_lemmas]]
+voc = "ܬܰܝܡܢܳܝܳܐ"
+gloss_en = "southern"
+gloss_de = "südlich"
+raw = "ܬܰܝܡܢܳܝܳܐ südlich | southern"
+
+[source]
+primer = "nestle-1889-en"
+page = 159
+leaf = "n248"
