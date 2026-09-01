@@ -1,0 +1,29 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g174-sam-poison"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܡ", voc = "ܣܰܡ", translit = "sam" }
+pos = "m."
+gloss_en = "poison"
+gloss_de = "Gift"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܣܰܡܳܐ"
+primer_note = "⭐ The PLURAL does not mean the plural of the singular: ܣܰܡ is 'poison', ܣܰܡ̈ܡܳܢܶܐ is 'medicines, colours, especially red'. Nestle prints the two side by side and says nothing about the shift. The same word for a drug and for a pigment."
+
+[[sub_lemmas]]
+voc = "ܣܰܡ̈ܡܳܢܶܐ"
+gloss_en = "pl. medicines, colours, especially red"
+gloss_de = "Heilmittel, Farben, bes. rote"
+raw = "Pl. ܣܰܡ̈ܡܳܢܶܐ Heilmittel, Farben, bes. rote | medicines, colours, especially red"
+
+[source]
+primer = "nestle-1889-en"
+page = 174
+leaf = "n263"

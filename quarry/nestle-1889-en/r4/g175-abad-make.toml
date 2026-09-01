@@ -1,0 +1,60 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g175-abad-make"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܒܕ", voc = "ܥܒܰܕ", translit = "ʿbad" }
+pos = "verb, impf. e"
+gloss_en = "make, do"
+gloss_de = "machen, thun"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ The ܥ section opens with the biggest word-family in the shard so far — six sub-lemmas from one root, running 'servant', 'work', 'servitude', 'creator', 'efficacy', 'submission'. The last is a SHAPHEL derivative, ܫܽܘܥܒܳܕܳܐ, filed under ܥܒܕ with its verb in brackets: the ܫܰܚܠܶܦ/ܚܠܦ shape, and the first time the shard sees the Shaphel noun rather than the verb."
+uncertain = true
+uncertain_note = "Six sub-lemmas, eight forms, and the ܥܒܕ- skeletons differ largely in points; the vocalisations are read at 1.75× and are the least certain part of the record. The senses and the order are certain."
+
+[[sub_lemmas]]
+voc = "ܥܒܶܕ, ܥܰܒܕܳܐ"
+gloss_en = "m. servant"
+gloss_de = "Knecht"
+raw = "ܥܒܶܕ, ܥܰܒܕܳܐ m. Knecht | servant"
+
+[[sub_lemmas]]
+voc = "ܥܒܳܕ, ܥܒܳܕܳܐ"
+gloss_en = "m. labour, work"
+gloss_de = "Arbeit, Werk"
+raw = "ܥܒܳܕ, ܥܒܳܕܳܐ m. Arbeit, Werk | labour, work"
+
+[[sub_lemmas]]
+voc = "ܥܰܒܕܽܘܬܳܐ"
+gloss_en = "f. servitude"
+gloss_de = "Knechtschaft"
+raw = "ܥܰܒܕܽܘܬܳܐ f. Knechtschaft | servitude"
+
+[[sub_lemmas]]
+voc = "ܥܳܒܽܘܕܳܐ"
+gloss_en = "m. creator, artist"
+gloss_de = "Schöpfer, Künstler"
+raw = "ܥܳܒܽܘܕܳܐ m. Schöpfer, Künstler | creator, artist"
+
+[[sub_lemmas]]
+voc = "ܡܥܰܒܕܳܢܽܘܬܳܐ"
+gloss_en = "f. efficacy"
+gloss_de = "Wirksamkeit"
+raw = "ܡܥܰܒܕܳܢܽܘܬܳܐ f. Wirksamkeit | efficacy"
+
+[[sub_lemmas]]
+voc = "ܫܽܘܥܒܳܕܳܐ (ܐܶܫܬܰܥܒܰܕ)"
+gloss_en = "m. submission"
+gloss_de = "Unterwerfung"
+raw = "ܫܽܘܥܒܳܕܳܐ (ܐܶܫܬܰܥܒܰܕ) m. Unterwerfung | submission"
+
+[source]
+primer = "nestle-1889-en"
+page = 175
+leaf = "n264"

@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g176-awiruta-blindness"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܘܝܪܘܬܐ", voc = "ܥܘܺܝܪܽܘܬܳܐ", translit = "ʿwīrūtā" }
+pos = "f."
+gloss_en = "blindness"
+gloss_de = "Blindheit"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ 'Blindheit | blindness' is glossed twice in the shard — ܣܰܡܝܽܘܬܳܐ on p. 174 and this, two pages apart, from unrelated roots and with no pointer between them. The fifth such duplicate gloss in this run, after 'Leuchter', 'Haar', 'Schrift' and 'dicht'. ⬜ Worth a decision at some point: whether the finished glossary should link them."
+
+[source]
+primer = "nestle-1889-en"
+page = 176
+leaf = "n265"

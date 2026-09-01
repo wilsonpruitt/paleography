@@ -1,0 +1,46 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g176-al-enter"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܠ", voc = "ܥܰܠ", translit = "ʿal" }
+pos = "verb, impf. u"
+gloss_en = "enter"
+gloss_de = "eintreten"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Convention 10, and the second pointer from p. 167 to land: that page printed ܡܰܥܰܠܬܳܐ v. ܥܠ into a root the shard had not reached, and here the sub-lemma is, with three more ܡ-preformatives beside it. Both p. 167 cross-references (ܡܰܣܰܩܬܳܐ v. ܣܠܩ and this) are now closed."
+
+[[sub_lemmas]]
+voc = "ܥܶܠܬܳܐ"
+gloss_en = "f. cause, reason"
+gloss_de = "Sache, Ursache"
+raw = "ܥܶܠܬܳܐ f. Sache, Ursache | cause, reason"
+
+[[sub_lemmas]]
+voc = "ܡܰܥܰܠܬܳܐ"
+gloss_en = "f. entering"
+gloss_de = "Eintreten"
+raw = "ܡܰܥܰܠܬܳܐ f. Eintreten | entering"
+
+[[sub_lemmas]]
+voc = "ܡܰܥܠܳܢ, ܡܰܥܠܳܢܳܐ et ܡܰܥܰܠܬܳܢܳܐ"
+gloss_en = "m. entrance"
+gloss_de = "Eingang"
+raw = "ܡܰܥܠܳܢ, ܡܰܥܠܳܢܳܐ et ܡܰܥܰܠܬܳܢܳܐ m. Eingang | entrance"
+
+[[sub_lemmas]]
+voc = "ܡܰܥܰܠܬܳܢܳܝܳܐ"
+gloss_en = "belonging to the entrance"
+gloss_de = "zum Eingang gehörig"
+raw = "ܡܰܥܰܠܬܳܢܳܝܳܐ zum Eingang gehörig | belonging to the entrance"
+
+[source]
+primer = "nestle-1889-en"
+page = 176
+leaf = "n265"

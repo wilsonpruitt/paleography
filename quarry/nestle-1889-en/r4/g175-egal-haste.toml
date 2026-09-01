@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g175-egal-haste"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܓܠ", voc = "ܥܓܰܠ", translit = "ʿgal" }
+pos = "m."
+gloss_en = "haste"
+gloss_de = "Eile"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "A ܒ-preformative adverb filed under the root, as at ܒܶܣܬܰܪ (p. 174) and ܒܰܠܚܽܘܕ under ܝܚܕ."
+
+[[sub_lemmas]]
+voc = "ܒܰܥܓܰܠ"
+gloss_en = "adv. in haste"
+gloss_de = "eilends"
+raw = "Adv. ܒܰܥܓܰܠ eilends | in haste"
+
+[source]
+primer = "nestle-1889-en"
+page = 175
+leaf = "n264"

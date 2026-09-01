@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g176-az-be-strong"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܙ", voc = "ܥܰܙ", translit = "ʿaz" }
+pos = "verb, Ethpa."
+gloss_en = "be strong"
+gloss_de = "sich kräftig zeigen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ German 'gewaltig' against English 'valid' — the two columns do not translate each other here, and only the Syriac decides which is meant. Recorded as printed, not harmonised."
+
+[[sub_lemmas]]
+voc = "ܥܰܙܺܝܙ"
+gloss_en = "valid"
+gloss_de = "gewaltig"
+raw = "ܥܰܙܺܝܙ gewaltig | valid"
+
+[source]
+primer = "nestle-1889-en"
+page = 176
+leaf = "n265"

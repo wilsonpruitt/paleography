@@ -1,0 +1,41 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g175-abar-transgress"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܒܪ", voc = "ܥܒܰܪ", translit = "ʿbar" }
+pos = "verb, impf. a"
+gloss_en = "transgress, pass over"
+gloss_de = "überschreiten"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Aph. 'remove' | entfernen; Ethpe. 'transgress (the law)' | (Gesetz) übertreten"
+primer_note = "The object of the Ethpe. is supplied in a PARENTHESIS rather than by a case label — '(Gesetz) übertreten | transgress (the law)'. Nestle's usual device here would be Latin ('cum Acc.'); this entry does it in German."
+
+[[sub_lemmas]]
+voc = "ܥܒܳܪ, ܥܶܒܪܳܐ"
+gloss_en = "m. bank, shore"
+gloss_de = "Übergang, Ufer"
+raw = "ܥܒܳܪ, ܥܶܒܪܳܐ m. Übergang, Ufer | bank, shore"
+
+[[sub_lemmas]]
+voc = "ܠܥܶܒܪܳܐ"
+gloss_en = "across"
+gloss_de = "hinüber"
+raw = "ܠܥܶܒܪܳܐ hinüber | across"
+
+[[sub_lemmas]]
+voc = "ܡܶܢ ܥܶܒܪܳܐ"
+gloss_en = "from the other side"
+gloss_de = "von drüben"
+raw = "ܡܶܢ ܥܶܒܪܳܐ von drüben | from the other side"
+
+[source]
+primer = "nestle-1889-en"
+page = 175
+leaf = "n264"

@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g175-abit-thick"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܒܝܛ", voc = "ܥܰܒܺܝܛ", translit = "ʿabbīṭ" }
+pos = "adj."
+gloss_en = "dense, thick"
+gloss_de = "dicht, dick"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ 'dicht' again — ܣܒܺܝܣ on p. 172 is 'dicht, häufig'. Third German word in four pages reached from two roots without a pointer."
+
+[source]
+primer = "nestle-1889-en"
+page = 175
+leaf = "n264"

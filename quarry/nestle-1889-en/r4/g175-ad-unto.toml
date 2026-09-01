@@ -1,0 +1,40 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g175-ad-unto"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܕ", voc = "ܥܰܕ", translit = "ʿad" }
+pos = "preposition"
+gloss_en = "unto, until"
+gloss_de = "bis"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ ܥܰܕܠܳܐ is a compound of this head-word with ܠܳܐ, the negative particle of p. 163 — the fourth different way the shard has seen ܠܳܐ set (bare, prefixed, 'Cum ܠܳܐ', and now fused into a conjunction)."
+
+[[sub_lemmas]]
+voc = "ܥܰܕܠܳܐ"
+gloss_en = "before"
+gloss_de = "solang nicht, ehe"
+raw = "ܥܰܕܠܳܐ solang nicht, ehe | before"
+
+[[sub_lemmas]]
+voc = "ܥܰܕܟܶܝܠ"
+gloss_en = "hitherto"
+gloss_de = "bisher"
+raw = "ܥܰܕܟܶܝܠ bisher | hitherto"
+
+[[sub_lemmas]]
+voc = "ܥܕܰܡܳܐ"
+gloss_en = "to such a degree"
+gloss_de = "bis dahin, so sehr"
+raw = "ܥܕܰܡܳܐ bis dahin, so sehr | to such a degree"
+
+[source]
+primer = "nestle-1889-en"
+page = 175
+leaf = "n264"

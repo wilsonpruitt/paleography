@@ -1,0 +1,35 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g174-sepra-book"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܦܪ", voc = "ܣܦܰܪ", translit = "spar" }
+pos = "m."
+gloss_en = "writing, book"
+gloss_de = "Schrift, Buch"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܣܶܦܪܳܐ"
+primer_note = "⚑ 'Schrift' is glossed here for ܣܶܦܪܳܐ and again three entries later for ܣܶܪܛܳܐ — the third German word in this run (after 'Leuchter' and 'Haar') to be reached from two roots without a cross-reference. And the English capitalises 'Scribe' where the German does not distinguish; that is Nestle's, and it makes the Gospel figure of the word."
+
+[[sub_lemmas]]
+voc = "ܣܳܦܪܳܐ"
+gloss_en = "m. writer, Scribe"
+gloss_de = "Schreiber, Schriftgelehrter"
+raw = "ܣܳܦܪܳܐ m. Schreiber, Schriftgelehrter | writer, Scribe"
+
+[[sub_lemmas]]
+voc = "ܣܳܦܽܘܪܳܐ"
+gloss_en = "m. a scholar, grammatician"
+gloss_de = "Gelehrter, Grammatiker"
+raw = "ܣܳܦܽܘܪܳܐ m. Gelehrter, Grammatiker | a scholar, grammatician"
+
+[source]
+primer = "nestle-1889-en"
+page = 174
+leaf = "n263"

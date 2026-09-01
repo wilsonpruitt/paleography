@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g174-saqura-enemy"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܩܘܪܐ", voc = "ܣܳܩܽܘܪܳܐ", translit = "sāqūrā" }
+pos = "m."
+gloss_en = "foe, enemy"
+gloss_de = "Feind, Gegner"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ 'Gegner | enemy' is also the gloss of ܣܳܢܳܐܐ six entries earlier on this same page. Two roots, one page, the same two words in both languages."
+
+[source]
+primer = "nestle-1889-en"
+page = 174
+leaf = "n263"

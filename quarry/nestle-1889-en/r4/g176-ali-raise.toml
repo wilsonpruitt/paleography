@@ -1,0 +1,44 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g176-ali-raise"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܠܐ", voc = "ܐܰܥܠܺܝ", translit = "aʿlī" }
+pos = "verb, Aph."
+gloss_en = "raise; (cum ܒ) revolt, rise against"
+gloss_de = "in die Höhe heben; (cum ܒ) abfallen von"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+latin = "cum ܒ"
+stems = "Ethpe. 'be prominent' | hervorragen"
+primer_note = "⭐ A sixteenth homograph, and the most consequential yet: ܥܰܠ the VERB 'enter' is the previous entry's head-word, and ܥܰܠ the PREPOSITION 'over' is a sub-lemma here, under a different root (ܥܠܐ). Two adjacent entries, the same two letters, and the only signal is which entry you are in. ⚑ 'weil | because' also glosses ܡܶܛܽܘܠ ܕ on p. 166 — eighth duplicate gloss."
+uncertain = true
+uncertain_note = "Head printed as the bracketed root (ܥܠܐ) with the stem named and no Aph. form given; ܐܰܥܠܺܝ is the extractor's citation form. The two forms in 'at the side of' are read ܓܶܢܒ and ܝܰܕ and are recorded in the printed order, which the crop does not fully settle."
+
+[[sub_lemmas]]
+voc = "ܥܰܠ"
+gloss_en = "Praep. over"
+gloss_de = "über"
+raw = "ܥܰܠ Praep. über | over"
+
+[[sub_lemmas]]
+voc = "ܥܰܠ ܓܶܢܒ, ܥܰܠ ܝܰܕ"
+gloss_en = "at the side of"
+gloss_de = "zur Seite"
+raw = "ܥܰܠ ܓܶܢܒ, ܥܰܠ ܝܰܕ zur Seite | at the side of"
+
+[[sub_lemmas]]
+voc = "ܥܰܠ ܕ"
+gloss_en = "because"
+gloss_de = "weil"
+raw = "ܥܰܠ ܕ weil | because"
+
+[source]
+primer = "nestle-1889-en"
+page = 176
+leaf = "n265"

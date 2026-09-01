@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g174-speq-suffice"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܦܩ", voc = "ܣܦܶܩ", translit = "speq" }
+pos = "verb"
+gloss_en = "it suffices"
+gloss_de = "es genügt"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "part. ܣܳܦܶܩ et ܣܰܦܳܩܳܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 174
+leaf = "n263"
