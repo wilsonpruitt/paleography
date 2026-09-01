@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g188-rqia-firmament"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܩܝܥܐ", voc = "ܪܩܺܝܥܳܐ", translit = "rqīʿā" }
+pos = "m."
+gloss_en = "firmament"
+gloss_de = "Firmament"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܐܰܪܩܺܝܥܳܐ"
+primer_note = "Two forms, one with a prosthetic ܐ — the ܐܪܳܙܳܐ shape of p. 186, and here the plain form is printed FIRST, so the pair shows the prosthesis as an option rather than the citation form."
+
+[source]
+primer = "nestle-1889-en"
+page = 188
+leaf = "n277"

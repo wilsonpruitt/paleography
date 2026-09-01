@@ -1,0 +1,27 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g188-rakik-tender"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܟܝܟ", voc = "ܪܰܟܺܝܟ", translit = "rakkīk" }
+pos = "adj."
+gloss_en = "smooth, tender"
+gloss_de = "sanft, weich"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = "ܪܰܟܺܝܟܳܐܺܝܬ"
+gloss_en = "adv. by degrees"
+gloss_de = "allmählich"
+raw = "ܪܰܟܺܝܟܳܐܺܝܬ adv. allmählich | by degrees"
+
+[source]
+primer = "nestle-1889-en"
+page = 188
+leaf = "n277"

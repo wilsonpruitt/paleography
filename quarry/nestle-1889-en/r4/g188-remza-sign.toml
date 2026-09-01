@@ -1,0 +1,27 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g188-remza-sign"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܡܙܐ", voc = "ܪܶܡܙܳܐ", translit = "remzā" }
+pos = "m."
+gloss_en = "hint, sign"
+gloss_de = "Wink, Anzeichen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = "ܪܳܡܽܘܙܳܢܳܐ"
+gloss_en = "signifying"
+gloss_de = "anzeigend"
+raw = "ܪܳܡܽܘܙܳܢܳܐ anzeigend | signifying"
+
+[source]
+primer = "nestle-1889-en"
+page = 188
+leaf = "n277"

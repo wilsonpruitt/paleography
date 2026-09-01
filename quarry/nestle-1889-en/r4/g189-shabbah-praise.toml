@@ -1,0 +1,53 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g189-shabbah-praise"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܒܚ", voc = "ܫܰܒܰܚ", translit = "šabbaḥ" }
+pos = "verb, Pa."
+gloss_en = "praise"
+gloss_de = "loben"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "δόξα"
+stems = "Ethpa. pass."
+primer_note = "⭐ A SIXTH de Lagarde work and the longest citation in the shard, printed in full rather than abbreviated: '(v. de Lagarde, novae psalterii graeci editionis specimen, p. 35, ult.)'. The de Lagarde list is now Orientalia, Mittheilungen, Semitica, Agathangelus, the bare citations, and this. ⚑ Note also the internal cross-reference '(v. ܬܶܫܒܽܘܚܬܳܐ)' pointing from one sub-lemma to the NEXT one but one — Nestle cross-refers inside a single entry — and 'do.' for the third time, closing the entry on a form with no gloss at all."
+
+[[sub_lemmas]]
+voc = "ܡܫܰܒܰܚ"
+gloss_en = "worthy of praise"
+gloss_de = "rühmenswert"
+raw = "ܡܫܰܒܰܚ rühmenswert | worthy of praise"
+
+[[sub_lemmas]]
+voc = "ܫܽܘܒܚܳܐ"
+gloss_en = "m. praise, glory (δόξα)"
+gloss_de = "Lob, Ehre"
+raw = "ܫܽܘܒܚܳܐ m. Lob, Ehre | praise, glory; δόξα. (v. ܬܶܫܒܽܘܚܬܳܐ)"
+
+[[sub_lemmas]]
+voc = "ܬܶܫܒܽܘܚܬܳܐ"
+gloss_en = "f. praise, glory, hymn"
+gloss_de = "Lob, Ehre, Hymnus"
+raw = "ܬܶܫܒܽܘܚܬܳܐ f. Lob, Ehre, Hymnus | praise, glory, hymn"
+
+[[sub_lemmas]]
+voc = "ܡܫܰܒܚܳܐܺܝܬ"
+gloss_en = "adv. gloriously"
+gloss_de = "herrlich"
+raw = "ܡܫܰܒܚܳܐܺܝܬ adv. herrlich | gloriously"
+
+[[sub_lemmas]]
+voc = "ܡܫܰܒܚܳܢܳܐܺܝܬ"
+gloss_en = "do. (gloriously)"
+raw = "ܡܫܰܒܚܳܢܳܐܺܝܬ do."
+
+[source]
+primer = "nestle-1889-en"
+page = 189
+leaf = "n278"

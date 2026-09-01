@@ -1,0 +1,38 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g189-rta-exhort"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܬܐ", voc = "ܪܬܳܐ", translit = "rtā" }
+pos = "verb, Aph."
+gloss_en = "show the way, exhort"
+gloss_de = "den Weg zeigen, ermahnen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "κατηχήτης"
+primer_note = "⭐⭐ Three sub-lemmas in a row, each glossed by GREEK ALONE, and the three Greek words are one family: κατηχήτης, κατήχησις, κατηχούμενος — catechist, catechesis, catechumen. Nestle maps a Syriac derivational series onto a Greek one and translates none of it. The densest Greek-only run in the shard, and the closing entry of the ܪ section's teaching vocabulary."
+
+[[sub_lemmas]]
+voc = "ܡܰܪܬܝܳܢܳܐ"
+gloss_en = "catechist (κατηχήτης)"
+raw = "ܡܰܪܬܝܳܢܳܐ κατηχήτης"
+
+[[sub_lemmas]]
+voc = "ܡܰܪܬܝܳܢܽܘܬܳܐ"
+gloss_en = "f. catechesis (κατήχησις)"
+raw = "ܡܰܪܬܝܳܢܽܘܬܳܐ f. κατήχησις"
+
+[[sub_lemmas]]
+voc = "ܡܶܬܬܰܪܬܝܳܢܳܐ"
+gloss_en = "catechumen (κατηχούμενος)"
+raw = "ܡܶܬܬܰܪܬܝܳܢܳܐ κατηχούμενος"
+
+[source]
+primer = "nestle-1889-en"
+page = 189
+leaf = "n278"

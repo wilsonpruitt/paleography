@@ -1,0 +1,21 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g189-sheda-devil"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܐܕܐ", voc = "ܫܺܐܕܳܐ", translit = "šīdā" }
+pos = "m."
+gloss_en = "demon, devil"
+gloss_de = "Teufel"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[source]
+primer = "nestle-1889-en"
+page = 189
+leaf = "n278"

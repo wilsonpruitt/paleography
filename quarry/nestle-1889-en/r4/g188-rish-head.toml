@@ -1,0 +1,58 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g188-rish-head"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܝܫ", voc = "ܪܺܝܫ", translit = "rīš" }
+pos = "m."
+gloss_en = "head, chapter"
+gloss_de = "Kopf, Kapitel"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܪܺܫܳܐ"
+primer_note = "⭐⭐ TWO firsts in one entry. (1) The shard's first explicit SCRIPTURE CITATIONS — '(Ge. 1, 1. Joh. 1, 1)' beside ܪܺܫܺܝܬ. Nestle has cited grammars, lexica and journals for 55 pages and has never once cited the Bible; here he does it for the word both Testaments open with, and gives the Nestorian pointing beside it. (2) Convention 10, closing a pointer that ran the other way: ܡܰܣܳܡ ܒܪܺܝܫܳܐ 'punishment' is a SUB-LEMMA of ܣܳܡ on p. 173, and here it reappears as a sub-lemma of the other word it is built from, cross-referred back to ܣܘܡ. The idiom is filed twice, under each of its nouns, with a pointer only on the second."
+
+[[sub_lemmas]]
+voc = "ܡܰܣܳܡ ܒܪܺܝܫܳܐ"
+gloss_en = "punishment — see ܣܘܡ"
+raw = "ܡܰܣܳܡ ܒܪܺܝܫܳܐ v. ܣܘܡ"
+
+[[sub_lemmas]]
+voc = "ܪܺܫܳܝܳܐ"
+gloss_en = "first, best"
+gloss_de = "erst, best"
+raw = "ܪܺܫܳܝܳܐ erst, best | first, best"
+
+[[sub_lemmas]]
+voc = "ܪܺܝܫܳܢܳܐ"
+gloss_en = "m. head of an institution"
+gloss_de = "Vorsteher"
+raw = "ܪܺܝܫܳܢܳܐ m. Vorsteher | head of an institution"
+
+[[sub_lemmas]]
+voc = "ܪܺܫܳܢܽܘܬܳܐ"
+gloss_en = "f. leadership"
+gloss_de = "Führerschaft"
+raw = "ܪܺܫܳܢܽܘܬܳܐ f. Führerschaft | leadership"
+
+[[sub_lemmas]]
+voc = "ܪܺܫܺܝܬ"
+gloss_en = "beginning (Ge. 1, 1; Joh. 1, 1)"
+gloss_de = "Anfang"
+raw = "ܪܺܫܺܝܬ, Nestor. ܪܺܫܺܝܬ (Ge. 1, 1. Joh. 1, 1) Anfang | beginning"
+
+[[sub_lemmas]]
+voc = "ܡܶܢ ܒܪܺܫܺܝܬ"
+gloss_en = "from the beginning (of the world)"
+gloss_de = "von Anfang (der Welt) an"
+raw = "ܡܶܢ ܒܪܺܫܺܝܬ von Anfang (der Welt) an | from the beginning (of the world)"
+
+[source]
+primer = "nestle-1889-en"
+page = 188
+leaf = "n277"
