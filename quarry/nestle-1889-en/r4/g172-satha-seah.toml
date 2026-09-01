@@ -1,0 +1,26 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g172-satha-seah"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܐܐ", voc = "ܣܳܐܐ", translit = "sāʾā" }
+pos = "f."
+gloss_en = "seah, a dry measure (glossed only by the Hebrew)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+hebrew = "סְאָה"
+plural_voc = "dualis ܣܳܐܬܶܝܢ, pl. ܣܳܐܘܳܢ"
+variant_voc = "ܣܳܐܬܳܐ"
+primer_note = "⭐ The ܣ section opens on the shard's only entry with a DUAL. Four forms — absolute, emphatic, dual, plural — and then Hebrew alone for the sense. 'seah' is ours, from סְאָה."
+uncertain = true
+uncertain_note = "The dual and plural endings are read ܣܳܐܬܶܝܢ and ܣܳܐܘܳܢ; both are word-final and both carry points the crop does not fully resolve. The four-form structure and the labels 'dualis' and 'pl.' are certain."
+
+[source]
+primer = "nestle-1889-en"
+page = 172
+leaf = "n261"

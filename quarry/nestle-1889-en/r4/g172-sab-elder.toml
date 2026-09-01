@@ -1,0 +1,29 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g172-sab-elder"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܒ", voc = "ܣܳܒ", translit = "sāb" }
+pos = "m."
+gloss_en = "elder, old man"
+gloss_de = "Ältester, Greis"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܣܳܒܳܐ"
+primer_note = "'Rarius ܣܳܐܶܒ part.' — a new apparatus word ('more rarely'), and it does the job 'melius' did on p. 166: Nestle ranking two forms by frequency inside the entry. Latin for the judgment, Syriac for the form."
+
+[[sub_lemmas]]
+voc = "ܣܰܝܒܽܘܬܳܐ"
+gloss_en = "f. old age"
+gloss_de = "das Alter"
+raw = "ܣܰܝܒܽܘܬܳܐ f. das Alter | old age"
+
+[source]
+primer = "nestle-1889-en"
+page = 172
+leaf = "n261"

@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g173-skar-close"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܟܪ", voc = "ܣܟܰܪ", translit = "skar" }
+pos = "verb, impf. u"
+gloss_en = "close, hinder"
+gloss_de = "schliessen, hemmen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. pass., 'be silent' | verstummen"
+primer_note = "The Ethpe. is glossed 'pass., verstummen' — passive AND a distinct sense in one breath, so 'be closed' and 'fall silent' are the same word."
+
+[source]
+primer = "nestle-1889-en"
+page = 173
+leaf = "n262"

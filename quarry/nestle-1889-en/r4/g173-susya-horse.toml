@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g173-susya-horse"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܘܣܝܐ", voc = "ܣܽܘܣܝܳܐ", translit = "sūsyā" }
+pos = "m."
+gloss_en = "horse"
+gloss_de = "Pferd"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+plural_voc = "ܣܽܘ̈ܣܰܝܳܐ et ܣܽܘ̈ܣܘܳܬܳܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 173
+leaf = "n262"

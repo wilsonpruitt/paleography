@@ -1,0 +1,29 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g172-shed-witness"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܗܕ", voc = "ܣܗܶܕ", translit = "shed" }
+pos = "verb, impf. a"
+gloss_en = "witness, bear witness"
+gloss_de = "zeugen, be[zeugen]"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Aph. do. (idem)"
+primer_note = "⭐ Two space-saving devices in one line, both new. The German gloss is printed 'zeugen, be-' — the prefix left hanging for the reader to complete as 'bezeugen'. And the Aph. is glossed 'do.', ditto, rather than repeated. Recorded expanded, with the printed forms noted here."
+
+[[sub_lemmas]]
+voc = "ܣܳܗܕܽܘܬܳܐ"
+gloss_en = "f. witness, testimony"
+gloss_de = "Zeugnis"
+raw = "ܣܳܗܕܽܘܬܳܐ f. Zeugnis | witness"
+
+[source]
+primer = "nestle-1889-en"
+page = 172
+leaf = "n261"

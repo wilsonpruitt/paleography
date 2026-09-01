@@ -1,0 +1,30 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g173-sleq-ascend"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܠܩ", voc = "ܣܠܶܩ", translit = "sleq" }
+pos = "verb"
+gloss_en = "mount, ascend"
+gloss_de = "hinaufsteigen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§ 48, g, 2"
+noldeke = []
+layer = "vocalized Serto"
+stems = "Aph. 'bring out' | herausführen"
+primer_note = "⭐ Convention 10, and the target arrives on schedule: p. 167 printed the cross-reference ܡܰܣܰܩܬܳܐ v. ܣܠܩ into a root the shard had not yet reached. Here it is. Note too that the German restricts the sub-lemma — 'Auferstehung (Christi)' — where the English does not; the parenthesis is Nestle's, and it is doctrine, not grammar."
+
+[[sub_lemmas]]
+voc = "ܣܽܘܠܳܩܳܐ"
+gloss_en = "resurrection (of Christ)"
+gloss_de = "Auferstehung (Christi)"
+raw = "ܣܽܘܠܳܩܳܐ Auferstehung (Christi) | resurrection"
+
+[source]
+primer = "nestle-1889-en"
+page = 173
+leaf = "n262"

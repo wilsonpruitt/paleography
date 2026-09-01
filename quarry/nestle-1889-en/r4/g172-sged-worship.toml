@@ -1,0 +1,43 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g172-sged-worship"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܓܕ", voc = "ܣܓܶܕ", translit = "sged" }
+pos = "verb, impf. u"
+gloss_en = "worship, greet, revere"
+gloss_de = "anbeten, grüssen, verehren"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "προσκυνεῖν"
+primer_note = "Greek INFINITIVE before the modern glosses — the ܟܳܗܢܳܐ/ἱερατεύειν shape of p. 161 and the ܐܰܟܪܶܙ/κηρύσσειν shape of p. 162. Nestle matches a Syriac citation form to a Greek citation form and only then translates."
+uncertain = true
+uncertain_note = "⚑ ܣܓܺܝܕ 'worthy of adoration' here and ܣܓܺܝ 'many' in the previous entry are one letter apart, and the two entries are adjacent. Read from the slot and the gloss, not from the points alone."
+
+[[sub_lemmas]]
+voc = "ܣܳܓܽܘܕܳܐ"
+gloss_en = "he who reveres God"
+gloss_de = "Gottesverehrer"
+raw = "ܣܳܓܽܘܕܳܐ Gottesverehrer | he who reveres God"
+
+[[sub_lemmas]]
+voc = "ܣܓܺܝܕ"
+gloss_en = "worthy of adoration"
+gloss_de = "verehrenswert"
+raw = "ܣܓܺܝܕ verehrenswert | worthy of adoration"
+
+[[sub_lemmas]]
+voc = "ܣܓܶܕܬܳܐ"
+gloss_en = "f. worship, adoration"
+gloss_de = "Anbetung, Verehrung"
+raw = "ܣܓܶܕܬܳܐ f. Anbetung, Verehrung | worship, adoration"
+
+[source]
+primer = "nestle-1889-en"
+page = 172
+leaf = "n261"

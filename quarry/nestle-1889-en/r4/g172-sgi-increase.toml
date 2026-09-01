@@ -1,0 +1,54 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g172-sgi-increase"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܓܝ", voc = "ܣܓܺܝ", translit = "sgī" }
+pos = "verb"
+gloss_en = "grow, increase in number"
+gloss_de = "wachsen, viel sein"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Aph. 'increase, multiply' | wachsen machen, vermehren"
+primer_note = "⭐ ܣܰܓܺܝ is entered TWICE inside one entry, identical to the point, once 'adj.' and once 'adv.' — the ܡܳܢܰܘ case (p. 165/167) compressed into a single paragraph. And 'Menge | multitude' is glossed twice over, for ܣܰܓܺܝܐܘܬܳܐ and ܣܽܘܓܳܐܐ."
+uncertain = true
+uncertain_note = "The five sub-lemmas carry eleven forms between them and the run of ܣܓܝ- skeletons differs largely in points. The second sub-lemma is recorded with NO gloss because Nestle prints none — it is a string of inflections between two glossed items, and inventing 'many' for it would put words in his mouth."
+
+[[sub_lemmas]]
+voc = "ܣܰܓܺܝ"
+gloss_en = "adj. much, many, frequent"
+gloss_de = "viel, häufig"
+raw = "ܣܰܓܺܝ adj. viel, häufig | much, many, frequent"
+
+[[sub_lemmas]]
+voc = "ܣܰܓܺܝܳܐܐ, f. st. cstr. ܣܰܓܺܝܰܐܬ, ܣܰܓܺܝܰܐܬܳܐ"
+gloss_en = "(inflected forms, no gloss printed)"
+raw = "ܣܰܓܺܝܳܐܐ; f. st. cstr. ܣܰܓܺܝܰܐܬ, ܣܰܓܺܝܰܐܬܳܐ"
+
+[[sub_lemmas]]
+voc = "ܣܰܓܺܝ"
+gloss_en = "adv. very"
+gloss_de = "sehr"
+raw = "ܣܰܓܺܝ adv. sehr | very"
+
+[[sub_lemmas]]
+voc = "ܣܰܓܺܝܐܘܬܳܐ"
+gloss_en = "f. multitude"
+gloss_de = "Menge"
+raw = "ܣܰܓܺܝܐܘܬܳܐ f. Menge | multitude"
+
+[[sub_lemmas]]
+voc = "ܣܽܘܓܳܐܐ, st. cstr. ܣܽܘܓܰܐܬ"
+gloss_en = "multitude"
+gloss_de = "Menge"
+raw = "ܣܽܘܓܳܐܐ, st. cstr. ܣܽܘܓܰܐܬ Menge | multitude"
+
+[source]
+primer = "nestle-1889-en"
+page = 172
+leaf = "n261"

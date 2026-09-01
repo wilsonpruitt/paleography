@@ -1,0 +1,31 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g173-sak-finish"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܟ", voc = "ܣܳܟ", translit = "sāk" }
+pos = "verb"
+gloss_en = "finish"
+gloss_de = "beendigen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpa. 'be bounded, finished, contained' | begrenzt, beendigt, enthalten sein"
+primer_note = "⭐ The ܣܰܓܺܝ case of p. 172 repeated one page later: the head-word is entered again as its own sub-lemma, identical to the point, under a different part of speech. Twice in two pages makes it a habit, not an accident."
+uncertain = true
+uncertain_note = "Both forms are two glyphs. The second is read as a final kaph (a hook curving left below the line) rather than a final pe; the root ܣܘܟ is what puts the entry between ܣܘܓ and ܣܘܡ, and that slot is what decides the reading."
+
+[[sub_lemmas]]
+voc = "ܣܳܟ"
+gloss_en = "adv. totally, in general"
+gloss_de = "gänzlich, überhaupt"
+raw = "ܣܳܟ adv. gänzlich, überhaupt | totally, in general"
+
+[source]
+primer = "nestle-1889-en"
+page = 173
+leaf = "n262"

@@ -1,0 +1,40 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g173-skal-understand"
+record_type = "R4"
+
+lemma = { unvoc = "ܣܟܠ", voc = "ܣܟܰܠ", translit = "skal" }
+pos = "verb, Ethpa."
+gloss_en = "become wise, understand"
+gloss_de = "vernünftig werden, einsehen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ One root carrying 'understand' and 'fool' at once, with ܣܽܘܟܳܠܳܐ 'intelligence' and ܣܰܟܠܽܘܬܳܐ 'foolishness' as sub-lemmas of the same entry — and 'Thorheit, Sünde' quietly makes folly a SIN. ⚑ Also the word p. 164's unreadable ܠܟ 'thöricht' was tested against and rejected: ܣܰܟܠܳܐ is the ordinary Syriac for 'fool' but it is a ܣܟܠ word and cannot stand in the ܠ section. That rejection still holds."
+
+[[sub_lemmas]]
+voc = "ܣܰܟܠ, ܣܰܟܠܳܐ"
+gloss_en = "m. fool"
+gloss_de = "Thor"
+raw = "ܣܰܟܠ, ܣܰܟܠܳܐ m. Thor | fool"
+
+[[sub_lemmas]]
+voc = "ܣܰܟܠܽܘܬܳܐ"
+gloss_en = "f. foolishness, offence"
+gloss_de = "Thorheit, Sünde"
+raw = "ܣܰܟܠܽܘܬܳܐ f. Thorheit, Sünde | foolishness, offence"
+
+[[sub_lemmas]]
+voc = "ܣܽܘܟܳܠܳܐ"
+gloss_en = "m. intelligence, sense, understanding"
+gloss_de = "Einsicht, Sinn, Verständnis"
+raw = "ܣܽܘܟܳܠܳܐ m. Einsicht, Sinn, Verständnis | intelligence, sense, understanding"
+
+[source]
+primer = "nestle-1889-en"
+page = 173
+leaf = "n262"
