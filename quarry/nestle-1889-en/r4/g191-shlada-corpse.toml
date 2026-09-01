@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g191-shlada-corpse"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܠܕܐ", voc = "ܫܠܰܕܳܐ", translit = "šladā" }
+pos = "noun"
+gloss_en = "dead body, corpse"
+gloss_de = "Leichnam"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "σκελετόν"
+primer_note = "The Greek carries Nestle's own '?' — '(σκελετόν?)' — a proposed etymology, not an identification, exactly as at ܡܶܨܥܬܳܐ/μεσσότης (p. 167). Convention 6: his doubt, not ours."
+
+[source]
+primer = "nestle-1889-en"
+page = 191
+leaf = "n280"

@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g190-shua-rock"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܘܥܐ", voc = "ܫܽܘܥܳܐ", translit = "šūʿā" }
+pos = "m."
+gloss_en = "rock"
+gloss_de = "Fels"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ 'rock' also glosses ܟܺܐܦܳܐ on p. 161 — the name Peter is built on that one, and this is a separate word for the same thing. Twenty-seventh duplicate."
+
+[source]
+primer = "nestle-1889-en"
+page = 190
+leaf = "n279"

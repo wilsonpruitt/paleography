@@ -1,0 +1,40 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g191-shla-cease"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܠܐ", voc = "ܫܠܳܐ", translit = "šlā" }
+pos = "verb"
+gloss_en = "cease, rest"
+gloss_de = "aufhören, ausruhen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ A SEVENTH de Lagarde work — Symmicta 2, 100 — and the three sub-lemmas show a phrase hardening into a word: ܡܶܢ ܫܶܠܝ, then ܡܶܢ ܫܶܠܝܳܐ, then ܡܶܢܫܶܠܝܳܐܺܝܬ written solid with an adverbial ending. Nestle prints the three stages in order and says nothing."
+
+[[sub_lemmas]]
+voc = "ܫܶܠܝ, ܫܶܠܝܳܐ"
+gloss_en = "rest"
+gloss_de = "Ruhe"
+raw = "ܫܶܠܝ, ܫܶܠܝܳܐ Ruhe | rest"
+
+[[sub_lemmas]]
+voc = "ܡܶܢ ܫܶܠܝ, ܡܶܢ ܫܶܠܝܳܐ et ܡܶܢܫܶܠܝܳܐܺܝܬ"
+gloss_en = "suddenly"
+gloss_de = "plötzlich"
+raw = "ܡܶܢ ܫܶܠܝ, ܡܶܢ ܫܶܠܝܳܐ et ܡܶܢܫܶܠܝܳܐܺܝܬ plötzlich | suddenly"
+
+[[sub_lemmas]]
+voc = "ܕܠܳܐ ܫܶܠܝܳܐ"
+gloss_en = "without ceasing"
+gloss_de = "ohne Aufhören"
+raw = "ܕܠܳܐ ܫܶܠܝܳܐ ohne Aufhören | without ceasing"
+
+[source]
+primer = "nestle-1889-en"
+page = 191
+leaf = "n280"

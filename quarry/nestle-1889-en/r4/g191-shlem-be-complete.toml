@@ -1,0 +1,48 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g191-shlem-be-complete"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܠܡ", voc = "ܫܠܶܡ", translit = "šlem" }
+pos = "verb, impf. a"
+gloss_en = "be complete, agree"
+gloss_de = "vollständig sein, zusammenstimmen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+latin = "explicit"
+stems = "Ethpe. 'be delivered' | überliefert werden; Pa. 'finish, fulfill' | vollenden, erfüllen; Aph. 'deliver, hand down' | überliefern"
+primer_note = "⭐⭐ The richest entry in the ܫ section and two firsts in it. (1) A new Latin word, and a SCRIBAL one: 'explicit', the word that ends a manuscript — Nestle glosses the verb partly by the colophon formula it produces. (2) ܡܰܫܠܡܳܢܽܘܬܳܐ glossed 'Verrat, Überlieferung | treachery, tradition': the handing-over of Judas and the handing-down of tradition are the same noun, and the entry prints them in one breath. ⚑ ܫܠܳܡܳܐ 'peace' also completes the idiom ܫܐܶܠ ܫܠܳܡܳܐ 'greet' from p. 189, and duplicates ܫܰܝܢܳܐ 'Friede' from the same page."
+
+[[sub_lemmas]]
+voc = "ܫܠܳܡܳܐ"
+gloss_en = "m. peace"
+gloss_de = "Friede"
+raw = "ܫܠܳܡܳܐ m. Friede | peace"
+
+[[sub_lemmas]]
+voc = "ܫܽܘܠܳܡܳܐ"
+gloss_en = "m. completion, end"
+gloss_de = "Vollendung, Ende"
+raw = "ܫܽܘܠܳܡܳܐ m. Vollendung, Ende | completion, end"
+
+[[sub_lemmas]]
+voc = "ܠܫܽܘܠܳܡܳܐ"
+gloss_en = "for ever"
+gloss_de = "für immer"
+raw = "ܠܫܽܘܠܳܡܳܐ für immer | for ever"
+
+[[sub_lemmas]]
+voc = "ܡܰܫܠܡܳܢܽܘܬܳܐ"
+gloss_en = "f. treachery, tradition"
+gloss_de = "Verrat, Überlieferung"
+raw = "ܡܰܫܠܡܳܢܽܘܬܳܐ f. Verrat, Überlieferung | treachery, tradition"
+
+[source]
+primer = "nestle-1889-en"
+page = 191
+leaf = "n280"
