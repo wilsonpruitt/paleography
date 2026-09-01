@@ -1,0 +1,29 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g180-pra-be-fruitful"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܪܐ", voc = "ܦܪܳܐ", translit = "prā" }
+pos = "verb"
+gloss_en = "be fruitful"
+gloss_de = "fruchtbar sein"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Aph. 'bring forth' | hervorbringen"
+primer_note = "⚑ The sub-lemma is spelled with an ܐ the head-word does not have — ܦܺܐܪܳܐ under ܦܪܳܐ. Filed by root, so the ܐ is silent for ordering; a reader looking up ܦܐܪܐ by spelling would land in the wrong place."
+
+[[sub_lemmas]]
+voc = "ܦܺܐܪܳܐ, pl. ܦܺܐܪ̈ܶܐ"
+gloss_en = "m. fruit"
+gloss_de = "Frucht"
+raw = "ܦܺܐܪܳܐ m. Frucht | fruit. Pl. ܦܺܐܪ̈ܶܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 180
+leaf = "n269"

@@ -1,0 +1,44 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g180-pna-turn"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܢܐ", voc = "ܦܢܳܐ", translit = "pnā" }
+pos = "verb"
+gloss_en = "turn, return"
+gloss_de = "sich wenden, zurückkehren"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+latin = "cum vel sine ܦܶܬܓܳܡܳܐ"
+stems = "Ethpe. do.; Pa. 'give back, answer' | zurückgeben, antworten; Aph. 'turn towards' | zuwenden"
+primer_note = "⭐ A new Latin formula, and the most useful kind: 'cum vel sine ܦܶܬܓܳܡܳܐ' — the Pa. means 'answer' with OR WITHOUT the word ܦܶܬܓܳܡܳܐ 'word' beside it. Nestle is telling the reader that a two-word idiom has collapsed into one, which is the sort of fact a gloss cannot carry."
+uncertain = true
+uncertain_note = "The second sub-lemma is four glyphs and is read ܦܶܢܝܳܐ; ܦܽܘܢܳܝܳܐ, the form a reader would expect for 'conversion', has five and is what the sense suggests. Recorded as read."
+
+[[sub_lemmas]]
+voc = "ܦܢܺܝܬܳܐ, st. c. ܦܢܺܝܰܬ"
+gloss_en = "f. country"
+gloss_de = "Gegend"
+raw = "ܦܢܺܝܬܳܐ f., st. c. ܦܢܺܝܰܬ Gegend | country"
+
+[[sub_lemmas]]
+voc = "ܦܶܢܝܳܐ"
+gloss_en = "conversion, inclination"
+gloss_de = "Bekehrung, Neigung"
+raw = "ܦܶܢܝܳܐ Bekehrung, Neigung | conversion, inclination"
+
+[[sub_lemmas]]
+voc = "ܦܶܢܝܳܢܳܐ"
+gloss_en = "return, answer"
+gloss_de = "Rückkehr, Antwort"
+raw = "ܦܶܢܝܳܢܳܐ Rückkehr, Antwort | return, answer"
+
+[source]
+primer = "nestle-1889-en"
+page = 180
+leaf = "n269"

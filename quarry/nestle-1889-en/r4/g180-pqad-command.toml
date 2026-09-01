@@ -1,0 +1,33 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g180-pqad-command"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܩܕ", voc = "ܦܩܰܕ", translit = "pqad" }
+pos = "verb, impf. u et Pa."
+gloss_en = "command"
+gloss_de = "befehlen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = "ܦܳܩܽܘܕܳܐ"
+gloss_en = "m. commander"
+gloss_de = "Anordner"
+raw = "ܦܳܩܽܘܕܳܐ m. Anordner | commander"
+
+[[sub_lemmas]]
+voc = "ܦܽܘܩܕܳܢܳܐ"
+gloss_en = "m. command"
+gloss_de = "Befehl"
+raw = "ܦܽܘܩܕܳܢܳܐ m. Befehl | command"
+
+[source]
+primer = "nestle-1889-en"
+page = 180
+leaf = "n269"

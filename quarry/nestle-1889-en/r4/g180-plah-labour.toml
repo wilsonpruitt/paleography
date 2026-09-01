@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g180-plah-labour"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܠܚ", voc = "ܦܠܰܚ", translit = "plaḥ" }
+pos = "verb, impf. u"
+gloss_en = "labor"
+gloss_de = "arbeiten"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ 'labor' for the third time in six pages — ܥܒܳܕܳܐ (p. 175, 'labour, work'), ܥܰܡܠܳܐ (p. 177, 'labour'), and this. Fourteenth duplicate gloss."
+
+[source]
+primer = "nestle-1889-en"
+page = 180
+leaf = "n269"

@@ -16,11 +16,31 @@ noldeke = []
 layer = "vocalized Serto"
 stems = "Ethpe. 'be divided' | sich teilen"
 
+continues_from = "runs onto p. 180 (n269) — ✅ the tail was read 2026-09-01 and its three sub-lemmas are folded in below"
+
 [[sub_lemmas]]
 voc = "ܦܶܠܓ, ܦܶܠܓܳܐ"
 gloss_en = "m. half, middle"
 gloss_de = "Hälfte"
 raw = "ܦܶܠܓ, ܦܶܠܓܳܐ m. Hälfte | half, middle"
+
+[[sub_lemmas]]
+voc = "ܦܶܠܓܶܗ ܕܠܺܠܝܳܐ"
+gloss_en = "midnight"
+gloss_de = "Mitternacht"
+raw = "ܦܶܠܓܶܗ ܕܠܺܠܝܳܐ Mitternacht | midnight"
+
+[[sub_lemmas]]
+voc = "ܦܶܠܓܽܘܬ ܝܰܪܚܳܐ"
+gloss_en = "middle of the month"
+gloss_de = "Mitte des Monats"
+raw = "ܦܶܠܓܽܘܬ ܝܰܪܚܳܐ Mitte des Monats | middle of the month"
+
+[[sub_lemmas]]
+voc = "ܦܠܺܝܓ ܥܰܠ"
+gloss_en = "doubtful as to"
+gloss_de = "zweifelnd an"
+raw = "ܦܠܺܝܓ ܥܰܠ zweifelnd an | doubtful as to"
 
 [source]
 primer = "nestle-1889-en"
