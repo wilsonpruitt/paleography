@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g150-zag"
+record_type = "R4"
+
+lemma = { unvoc = "ܙܓ", voc = "ܙܰܓ", translit = "zag" }
+pos = "verb"
+gloss_en = "ring the bell"
+gloss_de = "klingeln"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Two letters, one line, no derived forms — the shortest entry of the ܙ section."
+
+[source]
+primer = "nestle-1889-en"
+page = 150
+leaf = "n239"

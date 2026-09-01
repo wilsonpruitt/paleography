@@ -1,0 +1,53 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g150-zdeq"
+record_type = "R4"
+
+lemma = { unvoc = "ܙܕܩ", voc = "", translit = "zdeq" }
+pos = "verb (root bracketed), impersonal"
+gloss_en = "it is becoming, it is right"
+gloss_de = "es geziemt sich"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+uncertain = true
+uncertain_note = "Head is a bracketed unpointed root, so `voc` is empty by the page. The last sub-lemma 'just' is printed without a final ܐ at this resolution; the pointing of ܙܰܕܺܝܩ is read against the standard form, not off the plate."
+
+[[sub_lemmas]]
+voc = "ܙܳܕܶܩ"
+gloss_en = "Part., et f. ܙܳܕܩܳܐ, it is becoming"
+gloss_de = "es geziemt sich"
+raw = "Part. ܙܳܕܶܩ et f. ܙܳܕܩܳܐ es geziemt sich | it is becoming"
+
+[[sub_lemmas]]
+voc = "ܙܳܕܩܳܐ ܗܘܳܐ"
+gloss_en = "it would have been becoming"
+gloss_de = "es hätte sich geziemt"
+raw = "ܙܳܕܩܳܐ ܗܘܳܐ es hätte sich geziemt | it would have been becoming"
+
+[[sub_lemmas]]
+voc = "ܙܶܕܩܳܐ"
+gloss_en = "m. justice"
+gloss_de = "Gerechtigkeit"
+raw = "ܙܶܕܩܳܐ m. Gerechtigkeit | justice"
+
+[[sub_lemmas]]
+voc = "ܙܶܕܩܬܳܐ"
+gloss_en = "f. alms"
+gloss_de = "Almosen"
+raw = "ܙܶܕܩܬܳܐ f. Almosen | alms"
+
+[[sub_lemmas]]
+voc = "ܙܰܕܺܝܩ"
+gloss_en = "just"
+gloss_de = "gerecht"
+raw = "ܙܰܕܺܝܩ gerecht | just"
+
+[source]
+primer = "nestle-1889-en"
+page = 150
+leaf = "n239"

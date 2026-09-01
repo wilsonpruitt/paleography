@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g150-zura-fist"
+record_type = "R4"
+
+lemma = { unvoc = "ܙܘܪܐ", voc = "", translit = "" }
+pos = "m."
+gloss_en = "fist"
+gloss_de = "Faust"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+uncertain = true
+uncertain_note = "Consonants read as ܙܘܪܐ from the letter-shapes and confirmed by position (between ܙܘܦ and ܙܝܢ); pointing not resolved even at 3× zoom, and the reading is not corroborated by a lexicon here — flagged for the Syriacist."
+
+[[sub_lemmas]]
+voc = "ܙܘܪ̈ܐ"
+gloss_en = "pl., et rarius ܙܘܪ̈ܬܐ"
+raw = "Pl. ܙܘܪ̈ܐ et rarius ܙܘܪ̈ܬܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 150
+leaf = "n239"

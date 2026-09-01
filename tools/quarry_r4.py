@@ -70,6 +70,21 @@ def parse_sub_lemmas(s):
     return out
 
 
+def _sub_items(v):
+    """Normalise whatever `sub_lemmas` was passed as into a list of dicts.
+
+    ⛔ Added 2026-09-01, after `emit` was found to DROP `sub_lemmas` silently. The ruling
+    that made it a structured array converted the 88 legacy records but never taught the
+    writer the new shape, so p. 150 — the first page emitted after the ruling — came out
+    with 15 sub-lemmas missing and every other field intact. A schema change has two ends.
+    """
+    if not v:
+        return []
+    if isinstance(v, str):
+        return parse_sub_lemmas(v)
+    return [parse_sub_lemmas(x)[0] if isinstance(x, str) else x for x in v]
+
+
 def q(s):
     return '"' + str(s).replace("\\", "\\\\").replace('"', '\\"') + '"'
 
@@ -100,10 +115,19 @@ def emit(page, leaf, entries):
                 L.append(f'{k} = {q(e[k])}')
         if e.get("uncertain_note"):
             L += ['uncertain = true', f'uncertain_note = {q(e["uncertain_note"])}']
+        for item in _sub_items(e.get("sub_lemmas")):
+            L += ['', '[[sub_lemmas]]', f'voc = {q(item.get("voc", ""))}']
+            for k in ("gloss_en", "gloss_de", "gloss"):
+                if item.get(k):
+                    L.append(f'{k} = {q(item[k])}')
+            L.append(f'raw = {q(item.get("raw", ""))}')
         L += ['', '[source]', 'primer = "nestle-1889-en"', f'page = {page}', f'leaf = {q(leaf)}']
         p = OUT / name
         p.write_text("\n".join(L) + "\n", encoding="utf-8")
-        tomllib.load(open(p, "rb"))          # never leave an unparseable record behind
+        back = tomllib.load(open(p, "rb"))   # never leave an unparseable record behind
+        n_in, n_out = len(_sub_items(e.get("sub_lemmas"))), len(back.get("sub_lemmas", []))
+        if n_in != n_out:                    # the p.150 defect, made loud
+            raise ValueError(f"{name}: {n_in} sub-lemmas passed, {n_out} written")
         written.append(name)
     return written
 

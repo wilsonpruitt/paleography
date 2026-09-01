@@ -16,7 +16,7 @@ noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܙܒܰܢ"
 
-continues_from = "runs onto p. 150 (n239)"
+continues_from = "runs onto p. 150 (n239) — ✅ the tail was read 2026-09-01 and its three sub-lemmas are folded in below"
 primer_note = "⭐ First entry of the ܙ section."
 uncertain = true
 uncertain_note = "The two idioms' opening words are not fully resolved."
@@ -31,6 +31,24 @@ voc = "ܙܒܰܢ"
 gloss_en = "… ܙܒܰܢ sometimes … sometimes"
 gloss_de = "bald … bald"
 raw = "ܙܒܰܢ … ܙܒܰܢ sometimes … sometimes | bald … bald"
+
+[[sub_lemmas]]
+voc = "ܙܰܒܢ̈ܺܝܢ"
+gloss_en = "pl. cases, times"
+gloss_de = "Fälle"
+raw = "ܙܰܒܢ̈ܺܝܢ Fälle | cases."
+
+[[sub_lemmas]]
+voc = "ܙܒܰܢܬܳܐ"
+gloss_en = "f. time (a second pointed variant is printed beside it, not resolved)"
+gloss_de = "Zeit"
+raw = "F. ܙܒܰܢܬܳܐ, [second variant] Zeit | time."
+
+[[sub_lemmas]]
+voc = "ܙܰܒܢ̈ܳܬܳܐ"
+gloss_en = "pl. of the f."
+gloss_de = ""
+raw = "Pl. ܙܰܒܢ̈ܳܬܳܐ."
 
 [source]
 primer = "nestle-1889-en"
