@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g194-teshmeshta-service-xref"
+record_type = "R4"
+
+lemma = { unvoc = "ܬܫܡܫܬܐ", voc = "ܬܶܫܡܶܫܬܳܐ", translit = "tešmeštā" }
+pos = "cross-reference"
+gloss_en = "service — see ܫܡܫ"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+see = "v. ܫܡܫ"
+primer_note = "⭐ Convention 10, two pages on: ܬܶܫܡܶܫܬܳܐ is a sub-lemma of ܫܰܡܶܫ on p. 192, and here in the ܬ section, where its spelling puts it, is the pointer back. The ܬ-preformative rule getting the same treatment Nestle gives the Shaphels."
+
+[source]
+primer = "nestle-1889-en"
+page = 194
+leaf = "n283"

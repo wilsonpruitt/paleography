@@ -1,0 +1,26 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g194-tera-green-herbs"
+record_type = "R4"
+
+lemma = { unvoc = "ܬܪܐܐ", voc = "ܬܰܪܐܳܐ", translit = "tarʾā" }
+pos = "m."
+gloss_en = "green herbs"
+gloss_de = "Kraut"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+hebrew = "דֶּשֶׁא"
+variant_voc = "ܬܶܐܪܳܐ"
+primer_note = "⚑ 'Kraut | herb' also glosses ܥܶܣܒܳܐ on p. 177 — where the plural came 'sec. BA.', from Bar Ali. Thirty-sixth duplicate. The Hebrew here is given in a parenthesis after the modern glosses, the ܠܦܽܘܬ position."
+uncertain = true
+uncertain_note = "Two forms of four glyphs each, differing in the placement of an ܐ; read ܬܰܪܐܳܐ and ܬܶܐܪܳܐ at 1.75×, and neither is separable from the other with confidence. The Hebrew דֶּשֶׁא is legible."
+
+[source]
+primer = "nestle-1889-en"
+page = 194
+leaf = "n283"

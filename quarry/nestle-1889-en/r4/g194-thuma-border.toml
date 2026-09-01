@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g194-thuma-border"
+record_type = "R4"
+
+lemma = { unvoc = "ܬܚܘܡܐ", voc = "ܬܚܽܘܡܳܐ", translit = "tḥūmā" }
+pos = "m."
+gloss_en = "border, frontier"
+gloss_de = "Grenze"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ A twenty-second homograph in near-neighbours: ܬܗܽܘܡܳܐ 'depth' four entries above and ܬܚܽܘܡܳܐ 'border' here differ by one letter, both are ܬ-preformative abstracts, and the two German glosses ('Tiefe', 'Grenze') are the reader's only handhold."
+
+[source]
+primer = "nestle-1889-en"
+page = 194
+leaf = "n283"

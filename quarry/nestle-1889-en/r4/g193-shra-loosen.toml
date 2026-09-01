@@ -1,0 +1,55 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g193-shra-loosen"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܪܐ", voc = "ܫܪܳܐ", translit = "šrā" }
+pos = "verb"
+gloss_en = "loosen, dismiss, abide, stay"
+gloss_de = "auflösen, entlassen, weilen, wohnen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. 'be delivered' | befreit werden; Pa. 'begin' | anfangen"
+primer_note = "⭐ One root reaching 'loosen', 'dwell', 'begin', 'meal' and 'camp' — untying a knot and untying a pack-animal at the end of a day's march are the same act, and Nestle prints the whole family without a word of it. ⚑ 'Anfang | beginning' also glosses ܪܺܫܺܝܬ on p. 188, the entry that carries the shard's only Bible citations."
+uncertain = true
+uncertain_note = "The last sub-lemma is read ܫܺܝܦܽܘܪ̈ܶܐ 'trumpets' — a real Syriac word, but one whose root is ܫܦܪ, not ܫܪܐ, so its presence in this entry is unexplained. Either the reading is wrong or the filing is Nestle's own oddity. Convention 10: recorded, not corrected."
+
+[[sub_lemmas]]
+voc = "ܫܶܪܝܳܐ"
+gloss_en = "m. solution"
+gloss_de = "Auflösung"
+raw = "ܫܶܪܝܳܐ m. Auflösung | solution"
+
+[[sub_lemmas]]
+voc = "ܫܽܘܪܳܝܳܐ"
+gloss_en = "m. beginning"
+gloss_de = "Anfang"
+raw = "ܫܽܘܪܳܝܳܐ m. Anfang | beginning"
+
+[[sub_lemmas]]
+voc = "ܫܳܪܽܘܬܳܐ"
+gloss_en = "f. meal"
+gloss_de = "Essen"
+raw = "ܫܳܪܽܘܬܳܐ f. Essen | meal"
+
+[[sub_lemmas]]
+voc = "ܡܰܫܪܺܝܬܳܐ"
+gloss_en = "camp"
+gloss_de = "Lager"
+raw = "ܡܰܫܪܺܝܬܳܐ Lager | camp"
+
+[[sub_lemmas]]
+voc = "ܫܺܝܦܽܘܪ̈ܶܐ"
+gloss_en = "trumpets"
+gloss_de = "Trompeten"
+raw = "ܫܺܝܦܽܘܪ̈ܶܐ Trompeten | trumpets"
+
+[source]
+primer = "nestle-1889-en"
+page = 193
+leaf = "n282"

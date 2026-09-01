@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g194-shteq-be-silent"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܬܩ", voc = "ܫܬܶܩ", translit = "šteq" }
+pos = "verb, impf. u"
+gloss_en = "be silent"
+gloss_de = "schweigen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ 'be silent' also glosses the Ethpe. of ܣܟܰܪ on p. 173 ('pass., verstummen'). Thirty-fourth duplicate. Last entry of the ܫ section."
+
+[source]
+primer = "nestle-1889-en"
+page = 194
+leaf = "n283"

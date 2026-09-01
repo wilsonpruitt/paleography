@@ -1,7 +1,21 @@
-# Glossary shard — run it straight through
+# Glossary shard — ✅ COMPLETE
 
-*The R4 shard of Phase 1. 51 of 63 pages done (2026-09-01), 710 records. This file is written
-so the next session starts extracting inside five minutes and never re-derives anything.*
+*The R4 shard of Phase 1. **63 of 63 pages, 874 records, 1,608 lemmas — finished 2026-09-01.***
+*Extraction is DONE. This file is now a record of how it was done and what it left open; the
+sections below are kept because the blind control, the Syriacist and the curriculum work all
+need them. ⛔ **Do not re-run extraction.** `python3 tools/quarry_r4.py --remaining` says so too.*
+
+## What it came to
+
+- **874 head-lemmas + 734 sub-lemmas = 1,608 lemmas** over pp. 133-195, against §2's original
+  estimate of "low hundreds" and the halfway projection of ~1,680. The final rate — 13.9 heads
+  and 25.5 lemmas per page — held steady from p. 136 to the last page.
+- **19% of records carry `uncertain = true`**, stable across the whole run.
+- **16 ⛔ NOT READ records** (`--unread` lists them). Every one is a deliberate refusal: in each,
+  either no reading survived a 3× zoom, or a plausible reading was available and was rejected
+  because the SLOT and the glyph count disagreed. None was filled with a guess.
+- **⬜ Nothing here has been ruled on by anyone qualified.** That is the standing condition of
+  the shard, and it is now a condition on 1,608 lemmas rather than on 407.
 
 ---
 
@@ -14,8 +28,9 @@ python3 tools/quarry_r4.py --audit         # per-page counts, uncertainty rate, 
 python3 tools/quarry_r4.py --unread        # the head-words that could not be read
 ```
 
-**12 pages left:** pp. 184–195 (n273–n284). Everything before that is done, including p. 171,
-which was in the calibration batch. `--remaining` knows. The run is now contiguous to the end.
+**0 pages left.** pp. 133–195 are all extracted. `--remaining` prints a completion notice;
+`--audit` is the live count; `--unread` lists the 16 open readings. The loop below is kept for
+the record and for anyone re-reading a page to settle one of those 16.
 
 ## The loop
 
@@ -130,6 +145,79 @@ prints both counts. A page coming in at 9 or at 20 is not necessarily an error �
   English words are now reached from two unrelated roots with no pointer between them. Linking
   them would be a curriculum decision about what a learner should see, not an extraction one, and
   the extraction has deliberately only RECORDED them (each is flagged ⚑ in a `primer_note`).
+
+## Patterns worth carrying forward (pp. 150-161)
+
+None of these is a rule to apply; each is a shape to RECOGNISE, so a page is not read as though
+it were the first one.
+
+- **Gloss by cognate instead of translation.** Greek alone (ἦχος, ἅλωσις, θεοτόκος, τύραννος),
+  Greek WITH ITS ARTICLE for a loan (ὁ τύπος, ἡ τάξις), Latin alone for a particle or a letter
+  name (ܝܽܘܕ, ܟܺܝ), Hebrew alone (h. תולדות), and once Aramaic + Hebrew with no modern language
+  at all (ܝܳܬ). Record the cognate; do not invent an English gloss and pass it off as Nestle's.
+- **Preformative words filed under the root.** ܡ- (ܡܙܰܡܪܳܢܳܐ under ܙܡܪ), ܬ-/ܡܬ- (under ܚܘܝ),
+  ܫ- Shaphel (ܫܰܚܠܶܦ under ܚܠܦ; ܫܰܘܙܶܒ as a HEAD-WORD in the ܝ section), ܐ- (ܐܺܝܕܳܐ, ܐܺܝܡܳܡܳܐ,
+  ܐܺܝܩܳܪܳܐ all under ܝ), ܒ- (ܒܰܠܚܽܘܕ under ܝܚܕ). A head-word's first letter predicts nothing.
+- **Numbered sense-splits** (ܙܩܺܝܦܳܐ, ܚܰܝܽܘܬܳܐ, ܚܶܫܽܘܟ): one word, two senses, ONE record.
+- **Homographs**: eight pairs so far, every one separated by pointing alone. Two records when
+  Nestle separates them; a sub-lemma when he brackets the second inside the first (ܚܶܣܕܳܐ
+  'grace' inside ܚܣܳܕܳܐ 'disgrace').
+- **Glosses that end in a dash** (ܛܽܘܒܰܝܗܽܘܢ 'blessed are —', ܛܥܶܢ 'see to it that —'): the word
+  needs its clause, and the dash is Nestle's, not damage.
+- **Nestle's own apparatus, which is never our uncertainty** (convention 6): 'deest apud PSm',
+  'rarius scribitur', 'ohne Plural', 'Cum ܒ', a '?' he prints himself, back-references into his
+  own grammar ('p. 32, n. 1'), and once a real bibliography (de Lagarde; Hoffmann, ZDMG 32).
+- **Bracket shapes may differ.** Unattested roots come in round brackets throughout, except
+  [ܝܠܠ] on p. 158, which is square. ⬜ Nobody has ruled on whether that is a distinction.
+
+## ⬜ What is owed, now that extraction is done
+
+Three rulings, and they belong to three different people.
+
+1. ⬜ **The Syriacist.** Every Syriac string in these 874 records is extractor output. The cost
+   of the empty seat is now nameable: **twenty-two homograph pairs** whose members are separated
+   by a single point or by nothing but a part-of-speech label, and 162 records flagged uncertain.
+   The people to ask are the same two as for the licence — **Ephrem Aboud Ishac** and
+   **Christine Roughan**.
+2. ⬜ **Wilson, and it is a CURRICULUM ruling, not a reading one: the DUPLICATE GLOSSES.**
+   **Forty-two** German or English words are reached from two or more unrelated roots with no
+   pointer between them ('labour' from four roots, 'Gegner', 'tadeln' and 'light' from three).
+   Extraction has only RECORDED them, each flagged ⚑ in a `primer_note`. ⭐ **Nestle answered the
+   question once himself**: at ܩܥܳܐ (p. 185) he prints 'Cf.' to the ܨܘܬ entry whose glosses it
+   duplicates — the only such pointer in forty-two chances. Linking them in the finished glossary
+   would follow his own practice while extending a habit he indulged once.
+   ⭐ The sharpest cases are not glosses but WORDS: **the Passover twice** (ܦܶܣܚܳܐ τὸ πάσχα vs
+   ܦܶܨܚܳܐ under the root ܦܨܚ, p. 180), **the crocodile three times** (pp. 168, 184, 188, three
+   etymologies), **the lyre twice** (ܟܶܢܳܪܳܐ / ܩܺܝܬܳܪܳܐ) and **two words for the Resurrection**
+   (ܣܽܘܠܳܩܳܐ / ܩܝܳܡܬܳܐ). Each is two correct alphabetical slots and one thing.
+3. ⬜ **The 16 ⛔ NOT READ records.** `--unread` lists them. They need a reader with the plate,
+   not another extraction pass; each record's `uncertain_note` says exactly what was tried.
+
+## Hand the blind control these first
+
+Not a random sample. Two classes concentrate the damage: PARTICLE CLUSTERS, and pages where two
+entries of the same skeleton stand next to each other.
+
+- `r4/g148-ha-demonstrative.toml` — the whole demonstrative system in one entry, ten two-letter
+  sub-forms. **A sixth of p. 149 is cross-references into it**, so if it is wrong, p. 149 is
+  wrong with it and nothing on p. 149 would show that. ⚑ And p. 192 cross-refers into it AGAIN,
+  from ܗܳܫܳܐ under 'hour' — forty-four pages later.
+- `r4/g165-ma-interrogative.toml` and `r4/g167-man-who.toml` — the ܡܳܐ/ܡܰܢ system, the same shape
+  as ܗܳܐ and the same hazard. ܡܳܢܰܘ is entered in BOTH with different senses (convention 4), and
+  one sub-lemma of ܡܳܐ is ⛔ NOT READ.
+- `r4/g184-qaddem-anticipate.toml` — the largest entry in the shard, eight sub-lemmas and
+  fourteen forms, nearly all ܩܕܡ- with a prefix. `r4/g183-qbal-receive.toml` and
+  `r4/g187-rhem-love.toml` are the same problem one size down.
+- `r4/g134-ahr.toml`, `g135-ayk.toml`, `g136-ela.toml`, `g137-en-if.toml` — smaller, same shape.
+- **The twenty-two homograph pairs.** The ones no control could check without the plate:
+  `g162-kap-bend` / `g162-kap-hand` (identical to the point, told apart only by the part of
+  speech that follows), `g167-men-from` / `g167-men-men-particle` (separated by LANGUAGE —
+  Syriac preposition against borrowed Greek μέν), `g176-al-enter` / the ܥܰܠ sub-lemma of
+  `g176-ali-raise` (verb and preposition, adjacent entries, different roots),
+  `g186-rab-great` / `g186-rab-make-noise`.
+- `g191-shlih-apostle` — one form, ܫܠܺܝܚ/ܫܠܺܝܚܳܐ, glossed 'naked' as an adjective and 'apostle'
+  as a substantive. If the control disputes anything doctrinal it will dispute this, and the
+  record is right: Nestle prints both and does not choose.
 
 ## Patterns worth carrying forward (pp. 150-161)
 

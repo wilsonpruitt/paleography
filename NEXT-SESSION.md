@@ -23,37 +23,42 @@
 - ✅ **Phase 1 Step 0 + Step 1 done 2026-09-01.** Structure map =
   `quarry/nestle-1889-en/MAP.md`; measurement + hard stop =
   `research/syriac-pilot-phase1-calibration.md`. 34 calibration records from 8 pages.
-- ▶ **RUNNING. Wilson said 'opus go' 2026-09-01; Step 2 is under way, single-threaded.**
-  ▶▶ **The glossary shard is the live work — read `quarry/nestle-1889-en/GLOSSARY-SHARD.md`
-  and run it straight through.** ✅ **51 of 63 pages, 710 records (2026-09-01).**
-  pp. 162–170 and 172–183 done this session — 21 pages, +303 records, the ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ
-  sections entire, ܩ open at ܩܒܰܪ. The run is now CONTIGUOUS to the end: 12 pages left,
-  pp. 184–195 (n273–n284). `python3 tools/quarry_r4.py --remaining` tells you exactly where to
-  resume. ⚑ No fan-out: this Mac has ~100 MB free and 4.9 GB of swap in use.
-- Approved estimate, for reference: **4.7k vision + 1.5k output tokens per page**; 201-page
-  extraction set ⇒ **~1.43M tokens irreducible, ~2.5-3.0M end to end on Opus**. ⚑ **Recalibrated
-  again at 51/63:** the head rate is stable at 13.9/page, but the SUB rate has come back DOWN as
-  the later sections filled with one-line cross-references — 589 subs against 710 heads, 25.5
-  lemmas/page, projecting **~1,600 lemmas for the glossary entire**, not the ~1,680 the halfway
-  point suggested. Uncertainty is steady at 19–21%. Zooms now run about one per page.
-- ⛔ **A defect worth remembering: `emit` silently dropped every `sub_lemmas` it was handed**,
-  from the 2026-09-01 ruling until it was caught on p. 150 — the ruling converted the existing
-  records and left the WRITER behind. Fixed, and `emit` now raises on a mismatch. No earlier
-  page lost data. The general lesson is in the shard doc as convention 7.
-- ⛔ **A second defect of the same family, and --validate does NOT catch it.** In TOML a bare key
-  written after a `[[sub_lemmas]]` table belongs to THAT TABLE. A hand fold-back that inserted
-  `continues_from` just before `[source]` buried it inside the last sub-lemma and the file still
-  parsed. Caught by inspection, fixed, and written into convention 9: **every root-level key added
-  by hand goes BEFORE the first `[[sub_lemmas]]` line**, and it is checked with `tomllib`, not
-  with --validate.
-- ⬜ **NEW and it is Wilson's ruling, not the Syriacist's — the DUPLICATE GLOSSES.** Seventeen
-  German or English words are now reached from two unrelated roots with no pointer between them
-  ('Leuchter', 'Haar', 'Schrift', 'Blindheit', 'labour' three times, 'Gegner' three times,
-  'schmähen' one page apart in the same section, …). Extraction has only RECORDED them, each
-  flagged ⚑ in a `primer_note`. Linking them is a curriculum decision about what a learner should
-  see. ⭐ The sharpest instance is not a gloss but a WORD: p. 180 prints the Passover twice —
-  ܦܶܣܚܳܐ glossed 'τὸ πάσχα' as a Greek loan, and ܦܶܨܚܳܐ glossed 'Passover' under the Syriac root
-  ܦܨܚ 'be cheerful' — in two correct alphabetical slots, with no cross-reference either way.
+- ✅ **STEP 2 IS DONE. The R4 glossary shard is COMPLETE, 2026-09-01.**
+  **63 of 63 pages (pp. 133–195), 874 head-lemmas + 734 sub-lemmas = 1,608 lemmas, 19% flagged
+  uncertain, 16 ⛔ NOT READ.** 42 pages and +467 records were done in the closing session; the
+  final rate (13.9 heads, 25.5 lemmas/page) held from p. 136 to the last page, and the total
+  landed on the projection almost exactly. `python3 tools/quarry_r4.py --remaining` now prints a
+  completion notice; `--audit` is the live count and `--unread` lists the 16 open readings.
+  ⛔ **Do not re-run extraction.** Score + full record: `quarry/nestle-1889-en/GLOSSARY-SHARD.md`.
+- ▶▶ **The next gate is the STEP-3 BLIND CONTROL, not more extraction.** The shard doc names the
+  records to hand it first, and why: the particle clusters (ܗܳܐ, ܡܳܐ/ܡܰܢ), the four largest
+  entries, and the twenty-two homograph pairs whose members are separated by a single point.
+- ⬜ **THREE rulings are now owed, and they belong to three different people.**
+  1. ⬜ **The Syriacist** — still empty, and the cost is now nameable: 1,608 unadjudicated lemmas,
+     162 flagged uncertain, twenty-two homograph pairs. Same two people as the licence email:
+     **Ephrem Aboud Ishac** + **Christine Roughan**. One message still covers both.
+  2. ⬜ **Wilson — the DUPLICATE GLOSSES, and it is a CURRICULUM ruling, not a reading one.**
+     Forty-two German or English words are reached from two or more unrelated roots with no
+     pointer between them ('labour' from four, 'Gegner'/'tadeln'/'light' from three). Extraction
+     only RECORDED them. ⭐ Nestle answered it once himself — at ܩܥܳܐ (p. 185) he prints 'Cf.' to
+     the entry whose glosses it duplicates, the only such pointer in forty-two chances.
+     ⭐ The sharp cases are WORDS, not glosses: the **Passover twice** (ܦܶܣܚܳܐ glossed τὸ πάσχα
+     against ܦܶܨܚܳܐ under the Syriac root, p. 180), the **crocodile three times** (pp. 168, 184,
+     188, three etymologies), the **lyre twice**, and **two words for the Resurrection**. Each is
+     two correct alphabetical slots and one thing.
+  3. ⬜ **The 16 ⛔ NOT READ records** need a reader with the plate. Each `uncertain_note` says
+     exactly what was tried; several are refusals where a plausible lemma WAS available and was
+     rejected because the slot and the glyph count disagreed.
+- Approved estimate, for the record: **4.7k vision + 1.5k output tokens per page** was the
+  forecast; the run came in at roughly one 3× zoom per page on top of the two half-crops, which
+  is the one line of the estimate worth revising for the next primer.
+- ⛔ **Two defects of one family, both now fixed and both in the shard doc's conventions.**
+  (1) `emit` silently DROPPED every `sub_lemmas` it was handed until it was caught on p. 150; it
+  now raises on a mismatch. (2) **`--validate` cannot catch the second one:** in TOML a bare key
+  written after a `[[sub_lemmas]]` table belongs to THAT TABLE, so a hand fold-back that inserted
+  `continues_from` before `[source]` buried it inside a sub-lemma and the file still parsed.
+  Every root-level key added by hand goes BEFORE the first `[[sub_lemmas]]` line, checked with
+  `tomllib`. The general lesson both times: **a schema change has two ends.**
 - ⬜ **Still owed by Wilson — none of these blocks the glossary, all of them block what follows:**
   1. ⬜ **R5 / `word_notes`**: Nestle's "Aids to Translation" are per-word notes keyed to a
      passage — a ready-made gloss layer with no home in §4. Changes WHAT the run extracts.

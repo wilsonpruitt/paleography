@@ -1,0 +1,27 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g195-temha-admiration"
+record_type = "R4"
+
+lemma = { unvoc = "ܬܡܗܐ", voc = "ܬܶܡܗܳܐ", translit = "temhā" }
+pos = "m."
+gloss_en = "admiration"
+gloss_de = "Bewunderung"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = "ܬܡܺܝܗ"
+gloss_en = "admirable"
+gloss_de = "bewundernswert"
+raw = "ܬܡܺܝܗ bewundernswert | admirable"
+
+[source]
+primer = "nestle-1889-en"
+page = 195
+leaf = "n284"

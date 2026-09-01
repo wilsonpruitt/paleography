@@ -1,0 +1,40 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g194-shawtep-communicate"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܬܦ", voc = "ܫܰܘܬܶܦ", translit = "šawtep" }
+pos = "verb, Pa."
+gloss_en = "communicate"
+gloss_de = "mitteilen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Convention 10 closing the last of the four Shaphel pointers: p. 190 printed ܫܽܘܬܳܦܳܐ v. ܫܬܦ, and here is the root, four pages on. ⚑ And ܫܰܘܬܳܦܽܘܬܳܐ 'communion, fellowship' — the κοινωνία word — is glossed as plainly as ܡܫܺܝܚܳܐ and ܩܽܘܪܒܳܢܳܐ were."
+
+[[sub_lemmas]]
+voc = "ܐܶܫܬܰܘܬܰܦ"
+gloss_en = "participate"
+gloss_de = "teilhaben"
+raw = "ܐܶܫܬܰܘܬܰܦ teilhaben | participate"
+
+[[sub_lemmas]]
+voc = "ܫܰܘܬܳܦܳܐ"
+gloss_en = "m. companion"
+gloss_de = "Genosse"
+raw = "ܫܰܘܬܳܦܳܐ m. Genosse | companion"
+
+[[sub_lemmas]]
+voc = "ܫܰܘܬܳܦܽܘܬܳܐ"
+gloss_en = "communion, fellowship"
+gloss_de = "Gemeinschaft"
+raw = "ܫܰܘܬܳܦܽܘܬܳܐ Gemeinschaft | communion, fellowship"
+
+[source]
+primer = "nestle-1889-en"
+page = 194
+leaf = "n283"

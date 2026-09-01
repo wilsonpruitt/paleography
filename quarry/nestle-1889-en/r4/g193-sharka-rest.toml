@@ -1,0 +1,27 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g193-sharka-rest"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܪܟܐ", voc = "ܫܰܪܟܳܐ", translit = "šarkā" }
+pos = "m."
+gloss_en = "rest, remainder"
+gloss_de = "Rest"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ A NEW TYPOGRAPHIC DEVICE, and the shard's last: a DITTO MARK inside the Syriac. Nestle prints ܘ followed by \" for ܘܫܰܪܟܳܐ, the Syriac 'and so on', and uses the same mark again in the next entry. He has abbreviated in German ('zeugen, be-') and in Latin ('do.'); this abbreviates the SYRIAC itself."
+
+[[sub_lemmas]]
+voc = "ܘܫܰܪܟܳܐ"
+gloss_en = "etc. (and the rest)"
+raw = "ܘ\" etc. — the \" is a DITTO mark standing for ܫܰܪܟܳܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 193
+leaf = "n282"

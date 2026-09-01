@@ -169,6 +169,14 @@ def main():
     if a.remaining:
         done = {r["source"]["page"] for r in recs}
         todo = [p for p in range(133, 196) if p not in done]
+        if not todo:
+            # ✅ The shard finished 2026-09-01. Every page pp. 133-195 is extracted;
+            # `--audit` is the live number from here on, and the next gate is the
+            # Step-3 blind control, not more extraction.
+            print("✅ 0 pages left of 63 — the R4 shard is COMPLETE (pp. 133-195).")
+            print("   Next: `--audit` for the counts, `--unread` for the 16 open readings,")
+            print("   and the Step-3 blind control. Do NOT re-run extraction.")
+            return
         print(f"{len(todo)} pages left of 63.  leaf = page + 89")
         runs, start = [], todo[0]
         for i, p in enumerate(todo):

@@ -1,0 +1,34 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g195-tris-upright"
+record_type = "R4"
+
+lemma = { unvoc = "ܬܪܝܨ", voc = "ܬܪܺܝܨ", translit = "trīṣ" }
+pos = "adj."
+gloss_en = "upright, straight"
+gloss_de = "gerade, recht"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ὀρθόδοξος"
+primer_note = "⭐⭐ THE LAST SUBSTANTIVE ENTRY IN THE GLOSSARY, and it is a CALQUE laid bare. ܬܪܺܝܨ ܫܽܘܒܚܳܐ, 'straight of glory', is glossed by ὀρθόδοξος and nothing else — and its second word ܫܽܘܒܚܳܐ is a sub-lemma of ܫܰܒܰܚ six pages back (p. 189), where Nestle glossed it 'praise, glory; δόξα'. The Syriac word for orthodoxy is Greek reassembled in Syriac, and the glossary has given the reader both halves without once saying so. It is the whole method of the book in one line."
+
+[[sub_lemmas]]
+voc = "ܬܪܺܝܨܳܐܺܝܬ"
+gloss_en = "adv. right"
+gloss_de = "recht"
+raw = "ܬܪܺܝܨܳܐܺܝܬ adv. recht | right"
+
+[[sub_lemmas]]
+voc = "ܬܪܺܝܨ ܫܽܘܒܚܳܐ"
+gloss_en = "orthodox (ὀρθόδοξος)"
+raw = "ܬܪܺܝܨ ܫܽܘܒܚܳܐ ὀρθόδοξος"
+
+[source]
+primer = "nestle-1889-en"
+page = 195
+leaf = "n284"
