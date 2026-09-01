@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g158-ylel-howl"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܠܠ", voc = "", translit = "ylal" }
+pos = "verb (root in SQUARE brackets), Af."
+gloss_en = "howl, moan"
+gloss_de = "heulen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§ 44"
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ First SQUARE-bracketed root of the shard — [ܝܠܠ]. Every other unattested root so far has been in round brackets (ܙܕܩ, ܙܠܓ, ܚܡܣܢ), so the two bracket shapes are probably doing different work; what work is a question for the Syriacist."
+
+[[sub_lemmas]]
+voc = "ܐܰܝܠܶܠ"
+gloss_en = "Af."
+raw = "Af. ܐܰܝܠܶܠ § 44"
+
+[source]
+primer = "nestle-1889-en"
+page = 158
+leaf = "n247"

@@ -1,0 +1,46 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g158-yawma-day"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܘܡܐ", voc = "ܝܰܘܡܳܐ", translit = "yawmā" }
+pos = "m."
+gloss_en = "day"
+gloss_de = "Tag"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܝܰܘܡ"
+primer_note = "⭐ Two words for 'day' in one entry, distinguished by what they are OPPOSED to: ܝܰܘܡܳܐ the calendar day, ܐܺܝܡܳܡܳܐ the daylight against the night. And ܐܺܝܡܳܡܳܐ is a second ܐ-spelled word filed under ܝ, like ܐܺܝܕܳܐ on p. 157."
+
+[[sub_lemmas]]
+voc = "ܝܰܘ̈ܡܶܐ, ܝܰܘ̈ܡܳܬܳܐ"
+gloss_en = "pl."
+raw = "Pl. ܝܰܘ̈ܡܶܐ et ܝܰܘ̈ܡܳܬܳܐ."
+
+[[sub_lemmas]]
+voc = "ܝܰܘܡܳܢ"
+gloss_en = "of to-day"
+gloss_de = "heutig"
+raw = "ܝܰܘܡܳܢ heutig | of to-day"
+
+[[sub_lemmas]]
+voc = "ܥܕܰܡܳܐ ܠܝܰܘܡܳܢܳܐ"
+gloss_en = "till this day"
+gloss_de = "bis auf diesen Tag"
+raw = "ܥܕܰܡܳܐ ܠܝܰܘܡܳܢܳܐ bis auf diesen Tag | till this day"
+
+[[sub_lemmas]]
+voc = "ܐܺܝܡܳܡ, ܐܺܝܡܳܡܳܐ"
+gloss_en = "m. day, in opposition to night"
+gloss_de = "Tag, im Gegensatz zur Nacht"
+raw = "ܐܺܝܡܳܡ, ܐܺܝܡܳܡܳܐ m. Tag, im Gegensatz zur Nacht | day, in opp. to night"
+
+[source]
+primer = "nestle-1889-en"
+page = 158
+leaf = "n247"

@@ -1,0 +1,72 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g158-yda-know"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܕܥ", voc = "ܝܺܕܰܥ", translit = "īdaʿ" }
+pos = "verb"
+gloss_en = "know"
+gloss_de = "wissen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§ 44 d"
+noldeke = []
+layer = "vocalized Serto"
+greek = "οἱ δῆλοι; νοητός"
+primer_note = "⭐ The plural of 'known' is glossed 'οἱ δῆλοι = Orakel | oracle' — the plural of an adjective, in Greek, meaning the oracle (the Urim of the LXX). Nestle gives the sense in Greek and then translates the GREEK, not the Syriac. ⭐ Seven derived forms, three of them preformative (ܡܰܕܥܳܐ, ܡܶܬܝܰܕܥܳܢܳܐ, ܡܫܰܘܕܥܳܢܳܐ), all under ܝܕܥ."
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "Ethpe. become known"
+gloss_de = "bekannt werden"
+raw = "Ethpe. bekannt werden | become known"
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "Aph. make known"
+gloss_de = "kund thun"
+raw = "Aph. kund thun | make known"
+
+[[sub_lemmas]]
+voc = "ܝܺܕܺܝܥ"
+gloss_en = "known; pl. οἱ δῆλοι = oracle"
+gloss_de = "bekannt; Pl. Orakel"
+raw = "ܝܺܕܺܝܥ bekannt | known. Pl. οἱ δῆλοι = Orakel | oracle."
+
+[[sub_lemmas]]
+voc = "ܝܺܕܰܥܬܳܐ"
+gloss_en = "f. knowledge"
+gloss_de = "Kenntnis"
+raw = "ܝܺܕܰܥܬܳܐ f. Kenntnis | knowledge"
+
+[[sub_lemmas]]
+voc = "ܡܰܕܥܳܐ"
+gloss_en = "m. mind"
+gloss_de = "Verstand"
+raw = "ܡܰܕܥܳܐ m. Verstand | mind"
+
+[[sub_lemmas]]
+voc = "ܝܳܕܽܘܥܳܐ"
+gloss_en = "connoisseur"
+gloss_de = "Kenner"
+raw = "ܝܳܕܽܘܥܳܐ Kenner | connoisseur"
+
+[[sub_lemmas]]
+voc = "ܡܶܬܝܰܕܥܳܢܳܐ"
+gloss_en = "νοητός, intelligent"
+gloss_de = "geistig"
+raw = "ܡܶܬܝܰܕܥܳܢܳܐ νοητός, geistig | intelligent"
+
+[[sub_lemmas]]
+voc = "ܡܫܰܘܕܥܳܢܳܐ"
+gloss_en = "marking, denoting"
+gloss_de = "bezeichnend"
+raw = "ܡܫܰܘܕܥܳܢܳܐ bezeichnend | marking, denoting"
+
+[source]
+primer = "nestle-1889-en"
+page = 158
+leaf = "n247"

@@ -15,10 +15,10 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܐܺܝܕܳܐ"
-continues_from = "runs onto p. 158 (n247) — the page breaks inside the ܥܠ ܝܕ idiom, mid-gloss ('zur Seite,')"
+continues_from = "runs onto p. 158 (n247) — ✅ the tail was read 2026-09-01; four more sub-lemmas folded in below"
 primer_note = "⭐ Filed at ܝܕ but SPELLED ܐܺܝܕܳܐ everywhere it is used — so a reader who meets the word on the page looks under ܐ and is in the wrong section. Nestle's root ordering at its least forgiving (convention 2)."
 uncertain = true
-uncertain_note = "The 'trop.' form is not resolved."
+uncertain_note = "The 'trop.' form is not resolved, nor is the form on p. 150-style ⛔ the last sub-lemma, which Nestle glosses with nothing but '§ 12 protasis'. ⭐ The tail also shows the entry is really root ܝܕܐ as much as ܝܕ: ܐܰܘܕܺܝ 'confess' and ܬܰܘܕܺܝܬܳܐ 'thanksgiving' are filed here, so 'hand' and 'give thanks' share a head."
 
 [[sub_lemmas]]
 voc = "ܐܺܝ̈ܕܰܝܢ, ܐܺܝ̈ܕܶܐ"
@@ -35,6 +35,30 @@ voc = "ܐܺܝܕܳܐ ܐܺܝܕܳܐ"
 gloss_en = "by degrees"
 gloss_de = "allmählich"
 raw = "ܐܺܝܕܳܐ ܐܺܝܕܳܐ allmählich | by degrees"
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "the idiom the page breaks on: at hand, beside"
+gloss_de = "zur Seite, neben"
+raw = "ܥܰܠ ܝܰܕ zur Seite, neben | at hand, beside."
+
+[[sub_lemmas]]
+voc = "ܐܰܘܕܺܝ"
+gloss_en = "Af. (§ 48 d) confess, praise"
+gloss_de = "bekennen, preisen"
+raw = "ܐܰܘܕܺܝ § 48 d. Af. bekennen, preisen | confess, praise."
+
+[[sub_lemmas]]
+voc = "ܬܰܘܕܺܝܬܳܐ"
+gloss_en = "f. confession, thanksgiving"
+gloss_de = "Bekenntnis, Danksagung"
+raw = "ܬܰܘܕܺܝܬܳܐ f. Bekenntnis, Danksagung | confession, thanksgiving."
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "a further form, glossed by a § reference and the single word 'protasis'"
+gloss_de = ""
+raw = "[form] § 12 protasis."
 
 [source]
 primer = "nestle-1889-en"

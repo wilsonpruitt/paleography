@@ -1,0 +1,34 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g158-ihidai-unique"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܚܝܕܝ", voc = "ܝܺܚܺܝܕܰܝ", translit = "īḥīday" }
+pos = "adj."
+gloss_en = "unique"
+gloss_de = "einzig"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ 'Only-begotten' and 'hermit' are the same word under two pointings, and the ܒ-form ܒܰܠܚܽܘܕ 'alone' is filed here too — a third spelling a reader would never look up under ܝ."
+
+[[sub_lemmas]]
+voc = "ܝܺܚܺܝܕܳܝܳܐ"
+gloss_en = "hermit"
+gloss_de = "Einsiedler"
+raw = "ܝܺܚܺܝܕܳܝܳܐ Einsiedler | hermit"
+
+[[sub_lemmas]]
+voc = "ܒܰܠܚܽܘܕ, ܒܰܠܚܽܘܕܰܘܗܝ"
+gloss_en = "alone, only; cum suff. pl."
+gloss_de = "allein, einzig"
+raw = "ܒܰܠܚܽܘܕ, ܒܰܠܚܽܘܕܰܘܗܝ allein, einzig | alone, only. Cum suff. pl."
+
+[source]
+primer = "nestle-1889-en"
+page = 158
+leaf = "n247"
