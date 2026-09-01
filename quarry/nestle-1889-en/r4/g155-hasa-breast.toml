@@ -1,0 +1,30 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g155-hasa-breast"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܨܐ", voc = "ܚܰܨܳܐ", translit = "ḥaṣṣā" }
+pos = "m."
+gloss_en = "breast"
+gloss_de = "Brust"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܚܰܨ"
+primer_note = "Nestle prints a three-letter Hebrew cognate in parentheses."
+uncertain = true
+uncertain_note = "⚠ The Hebrew is read off the plate as three letters that scan as הרץ, which is not a word for 'breast'; חלץ 'loins' fits both the shapes and the Syriac sense and is the likely reading. Left OUT of the `hebrew` field rather than guessed — a mis-set cognate is the kind of error nothing downstream would catch."
+
+[[sub_lemmas]]
+voc = "ܚܰܨ̈ܝܢ"
+gloss_en = "pl."
+raw = "pl. ܚܰܨ̈ܝܢ"
+
+[source]
+primer = "nestle-1889-en"
+page = 155
+leaf = "n244"

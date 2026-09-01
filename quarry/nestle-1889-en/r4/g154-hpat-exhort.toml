@@ -1,0 +1,40 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g154-hpat-exhort"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܦܛ", voc = "ܚܰܦܶܛ", translit = "ḥappeṭ" }
+pos = "verb, Pa."
+gloss_en = "exhort, admonish"
+gloss_de = "den Eifer locken, ermahnen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+continues_from = "runs onto p. 155 (n244) — ✅ the tail was read 2026-09-01 and its three sub-lemmas are folded in below"
+
+[[sub_lemmas]]
+voc = "ܚܦܺܝܛܳܐ"
+gloss_en = "diligent; adv. ܚܦܺܝܛܳܐܝܺܬ"
+gloss_de = "eifrig"
+raw = "ܚܦܺܝܛܳܐ eifrig | diligent. Adv. ܚܦܺܝܛܳܐܝܺܬ."
+
+[[sub_lemmas]]
+voc = "ܚܦܺܝܛܽܘܬܳܐ"
+gloss_en = "f. zeal"
+gloss_de = "Eifer"
+raw = "ܚܦܺܝܛܽܘܬܳܐ f. Eifer | zeal."
+
+[[sub_lemmas]]
+voc = "ܡܚܰܦܛܳܢܽܘܬܳܐ"
+gloss_en = "f. advice"
+gloss_de = "Ermahnung"
+raw = "ܡܚܰܦܛܳܢܽܘܬܳܐ f. Ermahnung | advice."
+
+[source]
+primer = "nestle-1889-en"
+page = 154
+leaf = "n243"

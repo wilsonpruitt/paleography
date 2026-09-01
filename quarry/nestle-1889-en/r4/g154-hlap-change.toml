@@ -1,0 +1,48 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g154-hlap-change"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܠܦ", voc = "ܚܠܰܦ", translit = "ḥlap" }
+pos = "verb, impf. u"
+gloss_en = "change"
+gloss_de = "verändern"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἀλλοίωσις"
+primer_note = "⭐ A ܫ-preformative (Shaphel) family — ܫܰܚܠܶܦ, ܡܫܰܚܠܰܦ, ܫܽܘܚܠܳܦܽܘܬܳܐ — filed under ܚܠܦ, so three words a reader would hunt under ܫ live here. Third preformative pattern in three pages, after ܡ- (p. 151) and ܬ-/ܡܬ- (p. 152). ⭐ And a third Greek-only gloss: the abstract noun gets ἀλλοίωσις and nothing else."
+uncertain = true
+uncertain_note = "The Greek-only abstract is seven glyphs ending ...ܘܬܐ; the reading follows the Shaphel pattern of the entry, not a resolved plate."
+
+[[sub_lemmas]]
+voc = "ܚܠܳܦ"
+gloss_en = "praep. instead of"
+gloss_de = "anstatt"
+raw = "ܚܠܳܦ praep. anstatt | instead"
+
+[[sub_lemmas]]
+voc = "ܫܰܚܠܶܦ"
+gloss_en = "Shaph. change"
+gloss_de = "verändern"
+raw = "ܫܰܚܠܶܦ verändern | change"
+
+[[sub_lemmas]]
+voc = "ܡܫܰܚܠܰܦ"
+gloss_en = "part. pass. various"
+gloss_de = "verschieden"
+raw = "Part. pass. ܡܫܰܚܠܰܦ verschieden | various"
+
+[[sub_lemmas]]
+voc = "ܫܽܘܚܠܳܦܽܘܬܳܐ"
+gloss_en = "f., glossed only by the Greek ἀλλοίωσις"
+raw = "ܫܽܘܚܠܳܦܽܘܬܳܐ f. ἀλλοίωσις."
+
+[source]
+primer = "nestle-1889-en"
+page = 154
+leaf = "n243"

@@ -1,0 +1,33 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g154-hapi-conceal"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܦܝ", voc = "ܚܰܦܺܝ", translit = "ḥappī" }
+pos = "verb, Pa."
+gloss_en = "conceal, cover"
+gloss_de = "verbergen, bedecken"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = "ܬܰܚܦܺܝܬܳܐ"
+gloss_en = "f. veil"
+gloss_de = "Bedeckung"
+raw = "ܬܰܚܦܺܝܬܳܐ f. Bedeckung | veil"
+
+[[sub_lemmas]]
+voc = "ܕܠܳܐ ܬܰܚܦܺܝܬܳܐ"
+gloss_en = "openly, lit. without a veil"
+gloss_de = "offen"
+raw = "ܕܠܳܐ ܬܰܚܦܺܝܬܳܐ offen | openly"
+
+[source]
+primer = "nestle-1889-en"
+page = 154
+leaf = "n243"

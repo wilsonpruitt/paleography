@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g154-hnan-xref"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܢܢ", voc = "", translit = "ḥnan" }
+pos = "cross-reference"
+gloss_en = "we (referred to the pronoun entry)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§ 19"
+noldeke = []
+layer = "vocalized Serto"
+see = "v. ܐܢܐ"
+uncertain = true
+uncertain_note = "Head read as the pronoun ܚܢܰܢ 'we' from the § 19 target (Nestle's pronoun section) and the glyph count; pointing not resolved."
+
+[source]
+primer = "nestle-1889-en"
+page = 154
+leaf = "n243"

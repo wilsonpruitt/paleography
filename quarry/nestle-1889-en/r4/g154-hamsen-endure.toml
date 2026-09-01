@@ -1,0 +1,30 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g154-hamsen-endure"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܡܣܢ", voc = "ܚܰܡܣܶܢ", translit = "ḥamsen" }
+pos = "verb (quadriliteral)"
+gloss_en = "strengthen, endure"
+gloss_de = "stark machen, aushalten"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Nestle prints the derivation inside the entry — 'a ܚܣܶܢ' — so the quadriliteral is filed at ܚܡܣܢ, not under the root it comes from."
+uncertain = true
+uncertain_note = "The bracketed simple root is read as ܚܣܶܢ from the derivation Nestle states and the glyph count; its pointing is not resolved."
+
+[[sub_lemmas]]
+voc = "ܚܣܶܢ"
+gloss_en = "be strong — the simple root Nestle derives it from ('a ...')"
+gloss_de = "stark sein"
+raw = "(a ܚܣܶܢ stark sein | be strong)"
+
+[source]
+primer = "nestle-1889-en"
+page = 154
+leaf = "n243"

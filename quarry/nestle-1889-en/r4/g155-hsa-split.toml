@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g155-hsa-split"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܨܐ", voc = "ܚܨܳܐ", translit = "ḥṣā" }
+pos = "verb"
+gloss_en = "split, cut off, pluck out"
+gloss_de = "spalten, abhauen, herausreissen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Homograph pair, and this time Nestle DOES separate them: this verb and ܚܰܨܳܐ 'breast' below are two entries with one skeleton, kept apart by pointing (convention 3)."
+uncertain = true
+uncertain_note = "Three glyphs; the reading follows the alphabetical slot (between ܚܦܪ and ܚܨܕ) and the pair with the next entry. Pointing not resolved."
+
+[source]
+primer = "nestle-1889-en"
+page = 155
+leaf = "n244"
