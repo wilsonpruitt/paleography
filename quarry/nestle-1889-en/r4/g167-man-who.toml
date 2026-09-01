@@ -16,6 +16,8 @@ noldeke = []
 layer = "vocalized Serto"
 primer_note = "⭐ THIRD ܡܢ head-word in three consecutive entries — praep., μέν, and this interrogative — and inside it the ܡܳܢ/ܡܳܢܳܐ 'what' pair, which differs from the head by pointing only. ⚑ ܡܳܢܰܘ is ALSO a sub-lemma of ܡܳܐ on p. 165, glossed there 'wozu das? warum?' and here 'was ist?' — the same form entered twice with different senses, exactly the ܗܽܘ case of p. 148 (convention 4). Both stand."
 
+see_also = "tier 2 — ܐܰܝܢܳܐ (p. 135, g135-ayna): synonyms: both interrogatives, 'wer? | who?'"
+
 [[sub_lemmas]]
 voc = "ܡܰܢܽܘ"
 gloss_en = "who is?"

@@ -16,6 +16,8 @@ noldeke = []
 layer = "vocalized Serto"
 primer_note = "⚑ 'rock' also glosses ܟܺܐܦܳܐ on p. 161 — the name Peter is built on that one, and this is a separate word for the same thing. Twenty-seventh duplicate."
 
+see_also = "tier 2 — ܟܺܐܦܳܐ (p. 161, g161-kepa-rock): synonyms: 'Fels | rock'"
+
 [source]
 primer = "nestle-1889-en"
 page = 190

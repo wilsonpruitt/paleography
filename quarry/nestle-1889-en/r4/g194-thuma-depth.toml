@@ -16,6 +16,8 @@ noldeke = []
 layer = "vocalized Serto"
 primer_note = "⚑ 'Tiefe | depth' also glosses ܥܽܘܡܩܳܐ on p. 177. Thirty-seventh duplicate."
 
+see_also = "tier 2 — ܥܽܘܡܩܳܐ (p. 177, g177-umqa-depth): synonyms: 'Tiefe | depth'"
+
 [source]
 primer = "nestle-1889-en"
 page = 194

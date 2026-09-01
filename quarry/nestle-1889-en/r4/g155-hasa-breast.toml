@@ -15,9 +15,10 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܚܰܨ"
-primer_note = "Nestle prints a three-letter Hebrew cognate in parentheses."
+hebrew = "חרץ"
+primer_note = "Nestle prints a three-letter Hebrew cognate in parentheses, and it is the whole problem with this entry: ⭐ the cognate he chose contradicts the gloss he wrote."
 uncertain = true
-uncertain_note = "⚠ The Hebrew is read off the plate as three letters that scan as הרץ, which is not a word for 'breast'; חלץ 'loins' fits both the shapes and the Syriac sense and is the likely reading. Left OUT of the `hebrew` field rather than guessed — a mis-set cognate is the kind of error nothing downstream would catch."
+uncertain_note = "✅ THE READING IS SETTLED (3× re-read, 2026-09-01) and the doubt has moved off us and onto Nestle. The Hebrew is חרץ — ח, then ר with no ascender, so not ל — which is Aramaic חַרְצָא / Hebrew חֲלָצַיִם, 'LOINS' (Dan. 5:6). ܚܰܨܳܐ is 'back, loins' in the lexica. But Nestle prints 'm. Brust | breast', and the record reproduces him faithfully. ⚠ So this is not an extraction error to fix; it is a probable defect IN THE SOURCE, and the duplicate it forms with ܚܰܕܝܳܐ 'breast' (p. 152) is an artefact of that defect. Per the 2026-09-01 ruling it is therefore NOT linked as a synonym — see CONVENTIONS-duplicate-glosses.md, tier 3b. For the Syriacist."
 
 [[sub_lemmas]]
 voc = "ܚܰܨ̈ܝܢ"

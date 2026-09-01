@@ -17,6 +17,8 @@ layer = "vocalized Serto"
 variant_voc = "ܫܶܢܰܬܳܐ, st. cstr. ܫܶܢܰܬ"
 primer_note = "⭐ A NEW NOTATION, and the last new device the shard finds: the RADICAL SIGN. '(√ ܝܫܢ.)' — Nestle gives the root in a parenthesis marked with √ rather than in the round brackets he has used for unattested roots all through the glossary. One occurrence, and it does the job the bracket convention has been doing for sixty pages."
 
+see_also = "tier 1 — ܝܫܢ (p. 160, g160-yshan-sleep): one root: p. 192 prints the radical sign '(√ ܝܫܢ.)' over ܫܶܢܬܳܐ, which is this entry."
+
 [source]
 primer = "nestle-1889-en"
 page = 192

@@ -92,10 +92,22 @@ def q(s):
 def emit(page, leaf, entries):
     OUT.mkdir(parents=True, exist_ok=True)
     written = []
+    # ⛔ THE ROOT CAUSE of three defects (sub_lemmas dropped, p. 150; continues_from
+    # buried in a sub-table, p. 177; `root` silently discarded on all 874 records,
+    # found 2026-09-01). In every case a key was handed to `emit` and went nowhere,
+    # quietly. An unknown key is now FATAL — the writer must know every field it is
+    # given, or say so. A schema change has two ends; this is the second one.
+    KNOWN = {"slug", "unvoc", "voc", "translit", "pos", "en", "de", "sec", "root",
+             "sub_lemmas", "uncertain_note", *EXTRA}
     for e in entries:
         for k in ("slug", "unvoc", "voc", "translit", "pos", "en"):
             if k not in e:
                 raise KeyError(f"p.{page} entry {e.get('slug', '?')}: missing {k!r}")
+        unknown = set(e) - KNOWN
+        if unknown:
+            raise KeyError(f"p.{page} entry {e['slug']}: unknown key(s) {sorted(unknown)} "
+                           f"— `emit` would have dropped these silently. Add them to EXTRA "
+                           f"and to the writer, or remove them.")
         name = f"g{page:03d}-{e['slug']}.toml"
         L = [HEADER,
              f'id = "nestle-1889-en/r4/g{page:03d}-{e["slug"]}"',
@@ -106,7 +118,7 @@ def emit(page, leaf, entries):
              f'gloss_en = {q(e["en"])}']
         if e.get("de"):
             L.append(f'gloss_de = {q(e["de"])}')
-        L += ['root = ""', 'payne_smith = ""', 'frequency_rank = ""']
+        L += [f'root = {q(e.get("root", ""))}', 'payne_smith = ""', 'frequency_rank = ""']
         if e.get("sec"):
             L.append(f'nestle_section = {q(e["sec"])}')
         L += ['noldeke = []', 'layer = "vocalized Serto"']

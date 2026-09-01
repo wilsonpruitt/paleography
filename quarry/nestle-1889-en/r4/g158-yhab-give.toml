@@ -17,6 +17,8 @@ noldeke = []
 layer = "vocalized Serto"
 primer_note = "⭐ 'To bless' is 'to GIVE ܛܽܘܒܳܐ' — the noun from p. 156's ܛܒ entry, used here as the object of this verb. The two entries only make sense together."
 
+see_also = "tier 1 — ܢܬܰܠ (p. 171, g171-netal): one verb, two roots: ܝܗܒ supplies the perfect, ܢܬܠ the imperfect. A learner cannot conjugate 'give' without both."
+
 [[sub_lemmas]]
 voc = "ܛܽܘܒܳܐ ܝܰܗܒ"
 gloss_en = "bless, lit. give blessedness"
