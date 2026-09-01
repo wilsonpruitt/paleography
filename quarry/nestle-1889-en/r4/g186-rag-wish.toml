@@ -1,0 +1,47 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g186-rag-wish"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܓ", voc = "ܪܰܓ", translit = "rag" }
+pos = "verb"
+gloss_en = "wish"
+gloss_de = "wünschen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpa. ܐܶܬܪܰܓܪܰܓ 'be confounded' | bestürzt sein"
+primer_note = "⭐ An IMPERSONAL construction lemmatised whole — ܪܓܺܝܓܳܐ ܠܺܝ 'it is desirable to me' — labelled 'impers.' and glossed as an idiom, the ܡܶܨܶܝܢܰܢ 'we can' shape of p. 167. And the Ethpa. of a root meaning 'desire' is glossed 'be confounded', which Nestle records without joining up."
+
+[[sub_lemmas]]
+voc = "ܪܓܺܝܓܳܐ ܠܺܝ"
+gloss_en = "impers. it is my wish"
+gloss_de = "mir ist erwünscht"
+raw = "impers. ܪܓܺܝܓܳܐ ܠܺܝ mir ist erwünscht | it is my wish"
+
+[[sub_lemmas]]
+voc = "ܪܓܺܝܓ"
+gloss_en = "desired, desirable"
+gloss_de = "erwünscht, wünschenswert"
+raw = "ܪܓܺܝܓ erwünscht, wünschenswert | desired, desirable"
+
+[[sub_lemmas]]
+voc = "ܪ̈ܓܺܝܓܳܬܳܐ"
+gloss_en = "f. pl. pleasures"
+gloss_de = "Vergnügungen"
+raw = "ܪ̈ܓܺܝܓܳܬܳܐ f. pl. Vergnügungen | pleasures"
+
+[[sub_lemmas]]
+voc = "ܪܶܓܬܳܐ"
+gloss_en = "f. desire"
+gloss_de = "Begierde"
+raw = "ܪܶܓܬܳܐ f. Begierde | desire"
+
+[source]
+primer = "nestle-1889-en"
+page = 186
+leaf = "n275"

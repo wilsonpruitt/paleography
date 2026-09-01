@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g187-rdap-pursue"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܕܦ", voc = "ܪܕܰܦ", translit = "rdap" }
+pos = "verb, impf. u"
+gloss_en = "pursue"
+gloss_de = "verfolgen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. pass."
+
+[[sub_lemmas]]
+voc = "ܪܕܽܘܦܝܳܐ"
+gloss_en = "m. pursuit, persecution"
+gloss_de = "Verfolgung"
+raw = "ܪܕܽܘܦܝܳܐ m. Verfolgung | pursuit, persecution"
+
+[source]
+primer = "nestle-1889-en"
+page = 187
+leaf = "n276"

@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g186-qurtaa-interruption"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܘܪܛܥܐ", voc = "ܩܽܘܪܛܳܥܳܐ", translit = "qūrṭāʿā" }
+pos = "noun"
+gloss_en = "interruption of the speech"
+gloss_de = "Unterbrechung der Rede"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+uncertain = true
+uncertain_note = "Six glyphs at 1.75×, read ܩ + ܘ + ܪ + ܛ + ܥ + ܐ; the fourth and fifth are the least certain. The gloss is a rhetorical term, so no root order helps."
+
+[source]
+primer = "nestle-1889-en"
+page = 186
+leaf = "n275"

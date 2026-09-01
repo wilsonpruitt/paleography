@@ -1,0 +1,70 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g187-rhem-love"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܚܡ", voc = "ܪܚܶܡ", translit = "rḥem" }
+pos = "verb"
+gloss_en = "love"
+gloss_de = "lieben"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Eight sub-lemmas, and the entry ends on the emptiest gloss in the shard: a PAIR of forms labelled only 'act.; pass.' — the label-only device (ܡܰܟܺܝܟܳܐܺܝܬ 'adv.') doubled, with the reader left to build both senses. It also uses 'do.' (ditto) for a second time, here to make ܡܪܰܚܡܳܢܽܘܬܳܐ repeat 'mercy'. ⚑ And ܪܚܽܘܡܬܳܐ appears TWICE inside the entry, once glossed 'love, kindness' and once labelled 'act.' — the ܣܰܓܺܝ shape inside a single paragraph."
+uncertain = true
+uncertain_note = "Eight sub-lemmas over ten forms, most of them ܪܚܡ- derivatives differing in points and in a ܡ- prefix. Read at 1.75×; the senses and the order are certain, the vocalisations are the weakest part of the record."
+
+[[sub_lemmas]]
+voc = "ܪܳܚܶܡ ܐܰܠܳܗܳܐ"
+gloss_en = "loving God"
+gloss_de = "gottliebend"
+raw = "ܪܳܚܶܡ ܐܰܠܳܗܳܐ gottliebend | loving God"
+
+[[sub_lemmas]]
+voc = "ܪܳܚܡܳܐ"
+gloss_en = "m. friend"
+gloss_de = "Freund"
+raw = "ܪܳܚܡܳܐ m. Freund | friend"
+
+[[sub_lemmas]]
+voc = "ܪ̈ܰܚܡܶܐ"
+gloss_en = "pl. mercy"
+gloss_de = "Barmherzigkeit"
+raw = "ܪ̈ܰܚܡܶܐ pl. Barmherzigkeit | mercy"
+
+[[sub_lemmas]]
+voc = "ܡܪܰܚܡܳܢܽܘܬܳܐ"
+gloss_en = "do. (mercy)"
+raw = "ܡܪܰܚܡܳܢܽܘܬܳܐ do."
+
+[[sub_lemmas]]
+voc = "ܡܪܰܚܡܳܢܳܐ"
+gloss_en = "merciful"
+gloss_de = "barmherzig"
+raw = "ܡܪܰܚܡܳܢܳܐ barmherzig | merciful"
+
+[[sub_lemmas]]
+voc = "ܪܚܽܘܡܬܳܐ"
+gloss_en = "f. love, kindness"
+gloss_de = "Liebe, Wohlwollen"
+raw = "ܪܚܽܘܡܬܳܐ f. Liebe, Wohlwollen | love, kindness"
+
+[[sub_lemmas]]
+voc = "ܪܚܽܘܡܳܐܺܝܬ"
+gloss_en = "friendly"
+gloss_de = "freundlich"
+raw = "ܪܚܽܘܡܳܐܺܝܬ freundlich | friendly"
+
+[[sub_lemmas]]
+voc = "ܪܚܽܘܡܬܳܐ, ܪܚܺܝܡܬܳܐ"
+gloss_en = "act.; pass. (NO gloss printed)"
+raw = "ܪܚܽܘܡܬܳܐ act.; ܪܚܺܝܡܬܳܐ pass."
+
+[source]
+primer = "nestle-1889-en"
+page = 187
+leaf = "n276"

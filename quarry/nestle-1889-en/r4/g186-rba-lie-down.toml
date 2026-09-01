@@ -1,0 +1,39 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g186-rba-lie-down"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܒܥ", voc = "ܪܒܰܥ", translit = "rbaʿ" }
+pos = "verb"
+gloss_en = "lie down"
+gloss_de = "sich hinlegen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ 'Lie down' and the number FOUR from one root, with 'a quarter' between them — Nestle prints the numeral-only gloss ('4 § 33', the ܡܳܐܐ and ܥܶܣܰܪ device, third instance) as a sub-lemma of a verb, and leaves the four-legged animal lying down for the reader to see."
+
+[[sub_lemmas]]
+voc = "ܡܰܪܒܥܺܝܬܳܐ"
+gloss_en = "f. place"
+gloss_de = "Platz"
+raw = "ܡܰܪܒܥܺܝܬܳܐ f. Platz | place"
+
+[[sub_lemmas]]
+voc = "ܐܰܪܒܰܥ"
+gloss_en = "4 (§ 33)"
+raw = "ܐܰܪܒܰܥ 4 § 33"
+
+[[sub_lemmas]]
+voc = "ܪܽܘܒܥܳܐ"
+gloss_en = "a quarter"
+gloss_de = "ein Viertel"
+raw = "ܪܽܘܒܥܳܐ ein Viertel | a quarter"
+
+[source]
+primer = "nestle-1889-en"
+page = 186
+leaf = "n275"
