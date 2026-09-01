@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g135-ayka"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܝܟܐ", voc = "ܐܰܝܟܳܐ", translit = "'aykā" }
+pos = "interrog. adv."
+gloss_en = "where?"
+gloss_de = "wo?"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+sub_lemmas = "ܐܰܝܟܰܘ = ܐܰܝܟܳܐ ܗܽܘ where is (he)? | wo ist (er)? ‖ ܡܶܢ ܐܰܝܟܳܐ whence? | woher? ‖ ܐܰܝܟܰܢ, ܐܰܝܟܰܢܳܐ in what way? | auf welche Weise?"
+primer_note = "With ܕ, relative."
+
+[source]
+primer = "nestle-1889-en"
+page = 135
+leaf = "n224"

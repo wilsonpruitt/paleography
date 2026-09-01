@@ -1,0 +1,26 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g134-ahr"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܚܪ", voc = "", translit = "'ḥr" }
+pos = "verb (root, bracketed by Nestle)"
+gloss_en = "be left, remain; (derivatives) last, another"
+gloss_de = "zurückgelassen, übrig sein"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+continues_from = "runs onto p. 135 (n224): three further lines, ending ܐ̱ܚܪܳܢܝܳܐܝܺܬ on the contrary, ܚܰܪܬܳܐ f. st. cstr. ܚܪܰܬ the end, ܥܕܰܡܳܐ ܠܚܰܪܬܳܐ up to the last moment"
+sub_lemmas = "ܐܶܬܬܰܚܰܪ remain | verweilen ‖ ܐ̱ܚܪܳܝ, ܐ̱ܚܪܳܝܳܐ, f. ܐ̱ܚܪܳܝܬܳܐ; pl. ܐ̱ܚܪ̈ܳܝܶܐ, ܐ̱ܚܪ̈ܳܝܳܬܳܐ the last | der letzte ‖ ܐ̱ܚܪܳܝܰܬ st. const. (sc. ܙܰܒܢܬܳܐ) = adverb ‖ ܐ̱ܚܪܺܝܢ, ܐ̱ܚܪܺܢܳܐ, f. ܐ̱ܚܪܺܬܳܐ; pl. ܐ̱ܚܪ̈ܳܢܝܢ, ܐ̱ܚܪ̈ܳܢܶܐ, ܐ̱ܚܪ̈ܳܢܝܳܬܳܐ another | ein anderer"
+primer_note = "Nestle notes the forms are also written without ܝ, and that in the singular ܚܪܢܐ is written without it; an adverb in ܐ̱ܚܪܳܝܰܬ follows."
+uncertain = true
+uncertain_note = "⛔ The densest entry on the page — some dozen derived forms, several differing only in pointing. Captured for its shape and its glosses; the pointing of the individual derivatives is NOT reliable and this entry should head the blind-control sample."
+
+[source]
+primer = "nestle-1889-en"
+page = 134
+leaf = "n223"
