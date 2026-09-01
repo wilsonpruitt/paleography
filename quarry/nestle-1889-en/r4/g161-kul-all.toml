@@ -1,0 +1,32 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g161-kul-all"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܠ", voc = "ܟܽܠ", translit = "kul" }
+pos = "adj., pronoun"
+gloss_en = "whole, all, every"
+gloss_de = "ganz, all, jeder"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܟܽܠܳܐ"
+dialect_variant = "rarius ܟܽܘܠ"
+primer_note = "⭐ The two 'everyone' forms differ by a LINEA OCCULTANS — the stroke that marks a letter as written but not pronounced — so the pair shows the same phrase written as one word and as two. The first Syriac diacritic in the shard that is neither a vowel nor seyame."
+uncertain = true
+uncertain_note = "Whether the mark over the second form is a linea occultans is read from its shape and position over ܐ; nobody qualified has ruled on it."
+
+[[sub_lemmas]]
+voc = "ܟܽܠܢܳܫ, ܟܽܠ ܐ̱ܢܳܫ"
+gloss_en = "everyone"
+gloss_de = "jedermann"
+raw = "ܟܽܠܢܳܫ, ܟܽܠ ܐ̱ܢܳܫ jedermann | everyone"
+
+[source]
+primer = "nestle-1889-en"
+page = 161
+leaf = "n250"

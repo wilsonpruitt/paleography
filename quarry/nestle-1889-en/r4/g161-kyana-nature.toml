@@ -1,0 +1,30 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g161-kyana-nature"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܝܢܐ", voc = "ܟܝܳܢܳܐ", translit = "kyānā" }
+pos = "m."
+gloss_en = "nature"
+gloss_de = "Natur"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܟܝܳܢ"
+uncertain = true
+uncertain_note = "The derived form ends ...ܝܬ, which reads as an adverb, but the gloss ('natürlich | natural') is adjectival. Either ܟܝܳܢܳܝܳܐ or ܟܝܳܢܳܐܝܺܬ would fit half the evidence; neither is resolved."
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "natural"
+gloss_de = "natürlich"
+raw = "[derived form, five glyphs, ...ܝܬ ending] natürlich | natural"
+
+[source]
+primer = "nestle-1889-en"
+page = 161
+leaf = "n250"

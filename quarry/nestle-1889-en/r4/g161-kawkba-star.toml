@@ -1,0 +1,27 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g161-kawkba-star"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܘܟܒܐ", voc = "ܟܰܘܟܒܳܐ", translit = "kawkbā" }
+pos = "m. et f."
+gloss_en = "star"
+gloss_de = "Stern"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܟܰܘܟܰܒ"
+
+[[sub_lemmas]]
+voc = "ܟܰܘܟܰܒܬܳܐ"
+gloss_en = "f."
+raw = "et f. ܟܰܘܟܰܒܬܳܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 161
+leaf = "n250"

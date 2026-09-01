@@ -1,0 +1,39 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g161-kbash-subdue"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܒܫ", voc = "ܟܒܰܫ", translit = "kbaš" }
+pos = "verb, impf. u"
+gloss_en = "oppress, subdue"
+gloss_de = "unterdrücken"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ὑποπόδιον; ἅλωσις"
+primer_note = "⭐ Both derived nouns are glossed through Greek, but differently: the footstool gets ὑποπόδιον AND German AND English, the abstract gets ἅλωσις and nothing else. The Greek-only device is for the word Nestle expects a reader to meet in a Greek text, not for the household object."
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "Ethpe. pass."
+raw = "Ethpe. pass."
+
+[[sub_lemmas]]
+voc = "ܟܽܘܒܫܳܐ"
+gloss_en = "m. footstool (ὑποπόδιον)"
+gloss_de = "Schemel"
+raw = "ܟܽܘܒܫܳܐ m., ὑποπόδιον, Schemel | footstool"
+
+[[sub_lemmas]]
+voc = "ܡܶܬܟܰܒܫܳܢܽܘܬܳܐ"
+gloss_en = "f., glossed only by the Greek ἅλωσις 'capture'"
+raw = "ܡܶܬܟܰܒܫܳܢܽܘܬܳܐ f. ἅλωσις."
+
+[source]
+primer = "nestle-1889-en"
+page = 161
+leaf = "n250"

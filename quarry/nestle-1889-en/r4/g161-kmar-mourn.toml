@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g161-kmar-mourn"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܡܪ", voc = "ܟܡܰܪ", translit = "kmar" }
+pos = "verb, Ethpe."
+gloss_en = "mourn"
+gloss_de = "traurig sein"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ The page's SECOND word glossed 'Priester | priest' — ܟܳܗܢܳܐ above and ܟܽܘܡܪܳܐ here — and Nestle distinguishes them by nothing at all. (ܟܽܘܡܪܳܐ is the pagan priest; the entry does not say so.) ⚑ Last entry of p. 161; the printed page carries the running foot 'Nestle.' and the signature mark L."
+
+[[sub_lemmas]]
+voc = "ܟܽܘܡܪܳܐ"
+gloss_en = "m. priest"
+gloss_de = "Priester"
+raw = "ܟܽܘܡܪܳܐ m. Priester | priest"
+
+[source]
+primer = "nestle-1889-en"
+page = 161
+leaf = "n250"

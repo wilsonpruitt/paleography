@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g161-ki-enclitic"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܝ", voc = "ܟܺܝ", translit = "kī" }
+pos = "enclitic particle"
+gloss_en = "an enclitic of wishing, questioning and doubting"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+latin = "particula enclitica optandi, interrogandi, dubitandi"
+primer_note = "⭐ Second LATIN-ONLY gloss of the shard, after ܝܽܘܕ on p. 158 — and this one is not a letter name but a working particle. Nestle reaches for Latin exactly where a word has no translation, only a use."
+
+[source]
+primer = "nestle-1889-en"
+page = 161
+leaf = "n250"
