@@ -23,10 +23,15 @@
 - ✅ **Phase 1 Step 0 + Step 1 done 2026-09-01.** Structure map =
   `quarry/nestle-1889-en/MAP.md`; measurement + hard stop =
   `research/syriac-pilot-phase1-calibration.md`. 34 calibration records from 8 pages.
-- ⛔ **STOPPED AT THE HARD STOP. Step 2 has NOT dispatched and must not, until Wilson answers.**
-  Measured: **4.7k vision + 1.5k output tokens per page**; 201-page extraction set ⇒
-  **~1.43M tokens irreducible, ~2.5-3.0M end to end on Opus**. Put to Wilson:
-  *which model, and go?* — plus two rulings and one blocker that ride on the same answer:
+- ▶ **RUNNING. Wilson said 'opus go' 2026-09-01; Step 2 is under way, single-threaded.**
+  ▶▶ **The glossary shard is the live work — read `quarry/nestle-1889-en/GLOSSARY-SHARD.md`
+  and run it straight through.** 18 of 63 pages, 253 records; `python3 tools/quarry_r4.py
+  --remaining` tells you exactly where to resume. ⚑ No fan-out: this Mac has ~100 MB free and
+  4.9 GB of swap in use.
+- Approved estimate, for reference: **4.7k vision + 1.5k output tokens per page**; 201-page
+  extraction set ⇒ **~1.43M tokens irreducible, ~2.5-3.0M end to end on Opus**. The glossary is
+  running ~14 records/page at ~19% uncertain, both stable since p. 136.
+- ⬜ **Still owed by Wilson — none of these blocks the glossary, all of them block what follows:**
   1. ⬜ **R5 / `word_notes`**: Nestle's "Aids to Translation" are per-word notes keyed to a
      passage — a ready-made gloss layer with no home in §4. Changes WHAT the run extracts.
   2. ⬜ **Does R3 run FIRST?** ⭐ Corrected 2026-09-01: the **Peshitta NT text is PUBLIC DOMAIN**

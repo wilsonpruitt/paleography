@@ -88,6 +88,7 @@ def main():
     ap.add_argument("--validate", action="store_true")
     ap.add_argument("--audit", action="store_true")
     ap.add_argument("--unread", action="store_true", help="list records whose head-word was NOT resolved")
+    ap.add_argument("--remaining", action="store_true", help="print the pages still to do, and their leaves")
     a = ap.parse_args()
     recs = _load_all()
     if a.validate or not (a.audit):
@@ -104,6 +105,18 @@ def main():
         print(f"pages done: {len(pages)} of 63   records: {len(recs)}   "
               f"uncertain: {unc} ({100*unc/n:.0f}%)   unread: {len(unread)}   "
               f"mean/page: {len(recs)/len(pages):.1f}")
+    if a.remaining:
+        done = {r["source"]["page"] for r in recs}
+        todo = [p for p in range(133, 196) if p not in done]
+        print(f"{len(todo)} pages left of 63.  leaf = page + 89")
+        runs, start = [], todo[0]
+        for i, p in enumerate(todo):
+            if i + 1 == len(todo) or todo[i+1] != p + 1:
+                runs.append((start, p)); start = todo[i+1] if i + 1 < len(todo) else None
+        for lo, hi in runs:
+            print(f"  pp. {lo}-{hi}   leaves n{lo+89}-n{hi+89}   ({hi-lo+1} pages)")
+        nxt = todo[:6]
+        print("  next batch:  sh tools/quarry_fetch.sh " + " ".join(str(p+89) for p in nxt))
     if a.unread:
         # ⛔ A head-word we could not read is a FINDING, not an absence. These placeholders
         # keep the page counts honest and name what has to be re-read at higher magnification.
