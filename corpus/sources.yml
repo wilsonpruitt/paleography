@@ -2,7 +2,10 @@
 #
 # `layer` is DECLARED here, never inferred from the file, and every entry carries
 # `layer_evidence` -- the catalogue was wrong about this once already (see INGEST-NOTES §1).
-# All entries CC-BY 4.0: attribution required, redistribution and training permitted.
+# ⛔ Licences are PER ENTRY and are NOT all CC-BY 4.0. This header used to say they were;
+# that blanket claim is what hid two wrong licences for months. Every entry carries `license`
+# plus `license_evidence` naming WHERE the claim comes from, and the catalogue is never the
+# source of it. Run `python3 tools/licence_check.py` — see INGEST-NOTES §12.
 
 latin_caroline:
   - id: wien940
@@ -21,7 +24,13 @@ latin_caroline:
       ⛔ My earlier evidence -- "line-break hyphen ¬ preserved (1790x)" -- was about
       LINEATION and said nothing about abbreviation. It is the exact error INGEST-NOTES §1
       documents, committed by the person who wrote that note.
-    license: CC-BY-4.0
+    license: ⚠ CONTESTED -- same conflict as onb-syr1, see its license_conflict
+    license_evidence: >
+      ⛔ CORRECTED 2026-09-01 by tools/licence_check.py. This said flat CC-BY-4.0 while the
+      onb-syr1 entry already documented that BOTH Winter School repositories carry a BY-SA
+      LICENSE.md beside a BY 4.0 htr-united.yml. The conflict was written down once and not
+      propagated to the other entry it applies to -- which is why the check is now mechanical
+      and not a note. The site states BY-SA for both, which is true under either reading.
     url: https://github.com/HTR-School-Vienna/-2024--carolingian-latin
     images_in_repo: false        # 3.4 MB, XML only
     # Images fetched from the Austrian National Library over IIIF, 2026-08-27.
@@ -58,7 +67,24 @@ latin_caroline:
     pages: 63
     layer: diplomatic
     layer_evidence: "repo README: graphematic, abbreviations preserved; chocomufin table.csv controls charset"
-    license: CC-BY-4.0
+    license_evidence: >
+      ⛔ CORRECTED 2026-09-01 by tools/licence_check.py. This entry said CC-BY-4.0, which is
+      the HTR-United CATALOGUE's claim, not the depositor's. The repository's only licence file
+      is the Apache License 2.0, there is no htr-united.yml in it, the README makes no licence
+      statement, and the Zenodo deposit (DOI 10.5281/zenodo.15646103, "Eutyches 'de uerbo'
+      glossed") also declares Apache-2.0 and types the record as SOFTWARE. Three places, one
+      answer, and it is not CC BY.
+      ⚠ This is not the two-licences trap — it is an ABSENCE. A software licence applied to a
+      text corpus says nothing about the data, so the GT for a LIVE track (Latin II) had no
+      data licence declared anywhere and we were asserting one on the landing page.
+      What turns on it: Apache-2.0 is permissive — use, modification and redistribution are all
+      allowed provided copyright and licence notices are preserved — and, unlike the Vienna
+      BY-SA, it carries NO share-alike and NO non-commercial term, so it does not collide with
+      the Wroot Press CC BY-NC default. The problem was never permission; it was that the site
+      credited the depositor under a licence they never chose.
+      ⬜ Owed: ask Malamatenia Papadopoulou whether Apache-2.0 was meant to cover the GT as well
+      as the code. Same class of question as the Winter School email, and equally one sentence.
+    license: Apache-2.0        # ⛔ NOT CC-BY — see license_evidence
     url: https://github.com/malamatenia/Eutyches
     note: "richly glossed; MainZone + MarginTextZone both present"
 
@@ -70,7 +96,9 @@ latin_caroline:
     pages: 39
     layer: diplomatic
     layer_evidence: same as eutyches-VLO41
-    license: CC-BY-4.0
+    license: Apache-2.0        # ⛔ NOT CC-BY — same repository as eutyches-VLO41
+    license_evidence: "same repository as eutyches-VLO41; see its license_evidence"
+    url: https://github.com/malamatenia/Eutyches
     note: "DENSE: median 191 lines/page, max 313 (181 marginal + 132 main on f74v). Not a bug."
 
   - id: eutyches-BambergMsc30
@@ -80,7 +108,9 @@ latin_caroline:
     lines: 3385
     pages: 30
     layer: diplomatic
-    license: CC-BY-4.0
+    license: Apache-2.0        # ⛔ NOT CC-BY — same repository as eutyches-VLO41
+    license_evidence: "same repository as eutyches-VLO41; see its license_evidence"
+    url: https://github.com/malamatenia/Eutyches
 
   - id: eutyches-Lat14087
     title: "Eutyches, De uerbo -- BnF lat. 14087"
@@ -88,7 +118,9 @@ latin_caroline:
     lines: 82
     pages: 3
     layer: diplomatic
-    license: CC-BY-4.0
+    license: Apache-2.0        # ⛔ NOT CC-BY — same repository as eutyches-VLO41
+    license_evidence: "same repository as eutyches-VLO41; see its license_evidence"
+    url: https://github.com/malamatenia/Eutyches
 
   - id: rescribe-caroline
     title: "Caroline Minuscule ground truth (Rescribe)"

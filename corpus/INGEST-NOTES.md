@@ -199,3 +199,64 @@ against well-formed text, and only the plate settles it.
 *right* first Latin track — the learner meets letterforms alone — with the diplomatic,
 abbreviation-rich grammar as the second. The ramp now mirrors the layer field: **expanded
 before diplomatic**, in Latin as in Greek.
+
+## ⛔⛔ 12. A repository can declare TWO licences — and a catalogue can invent a third
+
+Four for four, across three unrelated depositors. This is not bad luck; it is what open GT
+looks like, and **§1's rule generalises one field over: never take the licence from the
+catalogue either.**
+
+| source | what the repo actually says | what we had recorded |
+|---|---|---|
+| Cod. 940 (**Latin I, live**) | `LICENSE.md` = CC BY-SA 4.0; `htr-united.yml` = CC BY 4.0 | CC BY 4.0 |
+| Cod. Syr. 1 (**Syriac, live**) | same split | ⚠ contested (caught by hand, 2026-08-28) |
+| Eutyches VLO41 (**Latin II, live**) | Apache-2.0 and nothing else — repo, and Zenodo deposit typed *Software* | CC BY 4.0 |
+| ETCBC/peshitta (considered, rejected) | repo = MIT; `docs/about.md` = CC BY-NC, over an **in-copyright** Leiden 1987 text | — |
+
+### The two failure shapes are different, and the second is worse
+
+- **CONFLICT** — two declarations that disagree (the Vienna pair). Visible once you look. The
+  conservative reading is the `LICENSE` file, because that is the instrument; the catalogue
+  entry is a description of it.
+- ⛔ **ABSENCE dressed as a licence** — Eutyches. The repository's only licence is **Apache-2.0,
+  a software licence**, which says nothing about a text corpus. So the ground truth for a live
+  track had *no data licence declared anywhere*, and CC BY 4.0 had reached `sources.yml` from
+  the HTR-United catalogue. Nothing disagreed with anything; there was simply nothing there,
+  and a plausible value had filled the hole. **A licence that parses is not a licence that
+  applies.** Ask what the file governs, not just what it says.
+
+### Three more things this cost
+
+1. **The blanket header lied.** `sources.yml` opened with "All entries CC-BY 4.0". That single
+   sentence is what let two wrong licences sit unread — a summary at the top of a file is
+   asserted once and then never re-checked against the rows beneath it. It is gone; every entry
+   now carries `license` **and** `license_evidence`, naming where the claim comes from.
+2. **A conflict recorded on one entry does not propagate to its twin.** The Vienna split was
+   written up in full under `onb-syr1` and the `wien940` entry three sections above still said
+   flat CC BY 4.0 — same conflict, same repo family, different row.
+3. **Silence is not absence.** Three Eutyches siblings shared the wrong licence and had no
+   `url:`, so nothing ever looked at them. `licence_check.py` now reports a source with no URL
+   as ⚠ UNCHECKED and counts it against the gate — cf. [[feedback_empty-grep-is-not-absence]].
+
+### The check, which is mechanical now
+
+```sh
+python3 tools/licence_check.py            # every source, all claims side by side
+python3 tools/licence_check.py --id ID    # one source
+python3 tools/licence_check.py --check    # exit 1 on any disagreement — run before ANY ingest
+```
+
+It asks three independent questions of every repository — the host's own licence detection, the
+`LICENSE`/`COPYING` file, and the dataset's `htr-united.yml` — and prints them side by side
+rather than picking a winner. GitHub and self-hosted GitLab both handled. stdlib only.
+
+⚑ **Two parsing traps it was taught, because both silently downgrade a finding:**
+`htr-united.yml` usually declares the licence as a **nested block** (`license:` / `  name: …`),
+so reading only the key's own line finds nothing and turns a CONFLICT into a mere STALE; and
+SPDX matching must be **longest-first**, or `CC-BY-SA-4.0` and `CC-BY-NC-4.0` are both swallowed
+by a bare `CC-BY` pattern — which would have reported the Vienna repositories as agreeing.
+
+⚑ **What the tool cannot do:** it reads declarations, not entitlements. It cannot tell you that
+a CC BY-NC file sits over an in-copyright critical edition (ETCBC), or that an Apache licence on
+a data repository governs the code and not the transcriptions. Those need a human asking *what
+does this instrument actually cover* — and, twice now, an email to the depositor.
