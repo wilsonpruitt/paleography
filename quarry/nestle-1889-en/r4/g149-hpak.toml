@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g149-hpak"
+record_type = "R4"
+
+lemma = { unvoc = "ܗܦܟ", voc = "ܗܦܰܟ", translit = "hpak" }
+pos = "verb, impf. u"
+gloss_en = "turn — more frequently intransitive, turn oneself"
+gloss_de = "wenden, häufiger intrans. sich wenden"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. be turned | gewendet werden; Ethpa. be driven about, be agitated | umhergetrieben sein"
+
+[source]
+primer = "nestle-1889-en"
+page = 149
+leaf = "n238"

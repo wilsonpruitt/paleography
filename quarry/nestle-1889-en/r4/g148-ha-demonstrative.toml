@@ -1,0 +1,26 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g148-ha-demonstrative"
+record_type = "R4"
+
+lemma = { unvoc = "ܗܐ", voc = "ܗܳܐ", translit = "hā" }
+pos = "particula demonstrativa"
+gloss_en = "lo, here"
+gloss_de = "siehe, hier"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§20"
+noldeke = []
+layer = "vocalized Serto"
+sub_lemmas = "ܗܽܘ m., ܗܺܝ f., pl. ܗܶܢܽܘܢ, ܗܶܢܶܝܢ pron. § 20 ‖ ܗܳܝܕܶܝܢ then | damals ‖ ܗܳܟܘܳܬ likewise, similarly | ebenso, ähnlich ‖ ܗܳܟܺܝܠ therefore | daher, nun ‖ ܗܳܟܰܢ, ܗܳܟܰܢܳܐ in this way, thus | auf diese Weise ‖ ܗܳܢ, ܗܳܢܳܐ m. this | dieser; ܗܳܕܶܐ f., pl. ܗܳܠܶܝܢ § 20 ‖ ܗܳܪܟܳܐ here | hier ‖ ܗܳܫܳܐ (v. ܫܳܥܬܳܐ) at this time | zu dieser Zeit"
+primer_note = "⭐ First entry of the ܗ section, and the largest particle cluster in the glossary so far: one head-word carrying the entire demonstrative and deictic system — pronouns, 'then', 'therefore', 'thus', 'this', 'here', 'now'."
+uncertain = true
+uncertain_note = "Ten sub-forms, most of them two- or three-letter particles differing only in pointing. Read from their glosses and from § 20; individual pointings not certified. Should join g134-ahr at the head of the blind-control sample."
+
+[source]
+primer = "nestle-1889-en"
+page = 148
+leaf = "n237"
