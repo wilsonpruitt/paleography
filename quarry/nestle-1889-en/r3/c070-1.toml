@@ -57,14 +57,33 @@ the run — it changes what the run extracts, not just how it files it.
 """
 
 [alignment]
-status = "not attempted in calibration"
-candidate_source = "Digital Syriac Corpus (CC BY 4.0) — but it is a patristic corpus and does not hold the Peshitta NT"
-blocker = """
-⚠ The obvious digital Peshitta NT is SEDRA / Beth Mardutho, which Phase 0 verdicted
-COMPUTE-ONLY: it may check this reading, it may never become the shipped text. So the single
-most-quoted text in the whole pilot has no shippable digital source yet, and the §5 fallback
-(key it ourselves from a PD printed Peshitta) is on the critical path, not in reserve.
-Chrestomathy pieces I and II are Peshitta too — Genesis and Matt. 5.
+status = "not attempted in calibration; now unblocked in principle — see below"
+shippable_text = """
+⭐ CORRECTED 2026-09-01 (Wilson). The Peshitta NT text is PUBLIC DOMAIN: SEDRA carries the
+BFBS/UBS 1905 edition (Pusey-Gwilliam gospels 1901, Gwilliam Acts, Gwilliam-Pinkerton Paul,
+Gwynn Catholic Epp. + Rev.), all published 1905, and a faithful transcription of a PD text
+carries no new copyright. So the earlier verdict here was too broad: SEDRA's LEMMATIZATION and
+MORPHOLOGY stay compute-only, but the TEXT does not. Their terms are a contract on their files,
+so carry the text from a PD edition rather than re-exporting theirs.
+"""
+carriers_checked = """
+No clean fetchable carrier of the 1905 text was found (2026-09-01):
+· ETCBC/peshitta (Text-Fabric) is the OLD Testament, OCR'd from the LEIDEN 1987 edition, which
+  is in copyright — and the repo says MIT while its own about.md says CC BY-NC. ⛔ Third
+  occurrence of the two-licences-in-one-repository trap (cf. Cod. 940, Cod. Syr. 1). Not usable.
+· STEPBible-Data (CC BY 4.0) surfaced no Syriac module.
+· syri.ac 403s to automated fetch; best browsed by hand.
+· Candidate PD SCAN, not yet probed: archive.org `newtestamentinsy00unse`. ⚠ Verify the edition
+  at the title page, never by the ID digits (Phase 0 protocol).
+· The Peshitta OT has no clean digital carrier at all now that Leiden is out; it wants a PD
+  printed edition — Lee 1823, Urmia 1852 or Mosul 1887-92.
+"""
+method = """
+⭐ So the method inverts: we PRODUCE the digital text rather than consume one. Nestle's
+chrestomathy is itself a printed Peshitta, PD since 1889. Key from Nestle, then CHECK against
+SEDRA and the 1905 scan and ship neither — which is exactly what a compute-only source permits,
+and it recovers the accuracy alignment was for. Alignment was never about saving keystrokes; it
+was about having something to diff against.
 """
 
 [source]

@@ -51,6 +51,20 @@ marked as ours, per schema.
 | **SEDRA / Beth Mardutho** (lemmatized Peshitta NT) | Site: "© Beth Mardutho, All Rights Reserved." SEDRA III data terms (as carried in `peshitta/sedrajs`): personal + academic use; **no redistribution of altered files, no redistribution for profit**. No public data licence for SEDRA IV found | ⚠ **COMPUTE-ONLY** — the Ómagyar pattern: may *check* and be *counted over*, never *become* our shipped text. Derived frequency ranks are defensible for a free product but redistribution of lemma/text data is not. Confirm with Beth Mardutho before any deeper dependency; fallback (hand-lemmatize the pilot's own passages) stands |
 | **Meltho fonts** (Beth Mardutho) | Freeware; licence permits **redistribution, prohibits modification** (so packaged by X.Org/FreeBSD as `font-misc-meltho`). Licence text ships in the font package (Meltho guide PDF) | ✅ **USABLE** — serve the *unmodified* TTF/OTF via @font-face. ⚠ Format conversion (WOFF2) is arguably modification — don't, without reading the packaged licence text first. Fallback: Noto Sans Syriac family (OFL) if a converted webfont is ever required |
 
+## ⚠ Corrections to this record (later evidence)
+
+*This file is the dated record of the Phase 0 run and its verdicts are left as they were written.
+What later evidence changed is listed here.*
+
+- **2026-09-01, the SEDRA verdict was too broad (Wilson).** "COMPUTE-ONLY" is right about the
+  database and wrong about the text in it: SEDRA carries the **BFBS/UBS 1905 Peshitta NT**, which
+  is **public domain**. The text is shippable; the lemmatization and morphology are not. Corrected
+  in `SYRIAC-LANGUAGE-PILOT.md` §5; consequences in
+  `research/syriac-pilot-phase1-calibration.md`.
+- **2026-09-01, the chrestomathy layer note below is wrong for Nestle.** p. 67 opens in fully
+  vocalized Serto and has ramped to unvocalized Estrangela by p. 71, inside one passage. The n180
+  probe saw only the second half of that ramp. See `quarry/nestle-1889-en/MAP.md`.
+
 ## Layer observations (for Phase 1 planning — declared layer can still be wrong)
 
 - Nestle grammar + glossary: **vocalized Serto** (West Syriac Greek-letter vowels). Nestle

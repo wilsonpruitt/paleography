@@ -23,11 +23,17 @@ page_number_form = "Syriac numeral letter, centred at head"
 [extraction]
 status = "identified and layer-declared; text not keyed"
 reason = """
-No digital text exists for the Syriac Vitae Prophetarum in any licence-checked source. Every
-page of this piece (pp. 86-107, 22 pages, ~350 lines) is full plate transcription, unvocalized
-— so it is CHEAPER per line than the vocalized pages, but it is 100% transcription with no
-alignment shortcut and nothing to diff against. It is also the piece a Syriacist would most
-need to check, since there is no external text to fall back on.
+No digital text exists for the Syriac Vitae Prophetarum in any licence-checked source, and
+unlike the Peshitta pieces there is nothing PD to fall back on either — no printed critical
+edition to check against, no compute-only database that knows this text. Every page of the piece
+(pp. 86-107, 22 pages, ~350 lines) is full plate transcription, unvocalized, with NO diff target
+of any kind.
+
+⭐ This is the real division inside R3, and it is not the licence line:
+· Peshitta pieces (Genesis pp. 67-78, Matthew 5 pp. 79-85, 22 pages) — keyed by us, but
+  CHECKABLE against SEDRA and a PD 1905 scan.
+· Vitae Prophetarum + Historia inventionis (pp. 86-131, 44 pages) — keyed by us and checkable by
+  NOBODY but a Syriacist. These are the pages the empty expert seat actually blocks.
 """
 
 [source]

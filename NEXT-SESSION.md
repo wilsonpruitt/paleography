@@ -29,9 +29,16 @@
   *which model, and go?* — plus two rulings and one blocker that ride on the same answer:
   1. ⬜ **R5 / `word_notes`**: Nestle's "Aids to Translation" are per-word notes keyed to a
      passage — a ready-made gloss layer with no home in §4. Changes WHAT the run extracts.
-  2. ⬜ **Does R3 go at all this phase?** There is **no alignable digital Peshitta** (Digital
-     Syriac Corpus is patristic; SEDRA is compute-only), so all 66 chrestomathy pages are full
-     keying with nothing to diff against — a third of the run, and its least checkable third.
+  2. ⬜ **Does R3 run FIRST?** ⭐ Corrected 2026-09-01: the **Peshitta NT text is PUBLIC DOMAIN**
+     (SEDRA carries the BFBS/UBS 1905 edition; only its lemmatization/morphology are
+     compute-only). No clean digital *carrier* was found — ⛔ ETCBC/peshitta is the OT, OCR'd
+     from the in-copyright Leiden 1987 and declares MIT *and* CC BY-NC (third such repo, after
+     Cod. 940 and Cod. Syr. 1) — so we **produce** the text instead: key from Nestle (itself a
+     PD printed Peshitta), check against SEDRA + a PD 1905 scan, ship neither. That splits R3:
+     **23 Peshitta pages are keyable and checkable NOW**; the 44 pages of Vitae Prophetarum /
+     Historia inventionis have no check but a Syriacist. ⬜ Unprobed: archive.org
+     `newtestamentinsy00unse` (verify at the title page); a PD Peshitta **OT** (Lee 1823 /
+     Urmia 1852 / Mosul 1887-92); syri.ac by hand (403s to fetch).
   3. ⚠ **The Syriacist seat is still empty and that is what this batch cost.** 200 more pages
      before it is filled multiplies unadjudicated Syriac by 25×. Same two people as the licence
      email: **Ephrem Aboud Ishac** + **Christine Roughan**. One message covers both.

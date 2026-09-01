@@ -23,11 +23,16 @@ page_number_form = "Syriac numeral letter, centred at head — no arabic number 
 [extraction]
 status = "identified and layer-declared; text not keyed"
 reason = """
-The runbook's R3 method is identify → align → diff, keying only what cannot be matched. There
-is at present NO shippable digital Peshitta to align against: the Digital Syriac Corpus
-(CC BY 4.0) is patristic and does not hold it, and SEDRA is COMPUTE-ONLY by Phase 0's verdict.
-Keying this page under the pretence of 'align, don't transcribe' would have hidden that. It is
-reported instead — it is the batch's second headline finding and it changes the run's size.
+⭐ REVISED 2026-09-01 (Wilson's correction). The blocker is not that the Peshitta is encumbered
+— the BFBS/UBS 1905 NT text is PUBLIC DOMAIN, and only SEDRA's lemmatization and morphology are
+compute-only. The blocker is that no clean *carrier* of a digital Peshitta was found, and for
+the OLD Testament (this page) the position is worse: ETCBC/peshitta is OCR'd from the in-copyright
+Leiden 1987 edition and declares two different licences, so it is out; a PD printed OT edition
+(Lee 1823, Urmia 1852, Mosul 1887-92) has not been pinned.
+
+So this page is keyed, not aligned — but that is a FEATURE of the phase, not a defect: Nestle
+1889 is itself a printed Peshitta, so keying it produces PD Syriac digital text nobody has
+released cleanly, and SEDRA plus a PD scan can CHECK the result without ever entering it.
 """
 
 [source]

@@ -25,13 +25,44 @@ flagged-ambiguous (p. 132).
 volume's one apparent exercise is the Lord's Prayer in the Peshitta. R2 comes from Robinson or
 from nowhere.
 
-**2. R3 has nothing to align against, so "align, don't transcribe" does not hold for this
-volume.** §5 of the pilot makes alignment the method and full transcription the exception. In
-fact: the Digital Syriac Corpus (the one CC BY 4.0 source) is patristic and does not hold the
-Peshitta; SEDRA is COMPUTE-ONLY by Phase 0's own verdict; and the Vitae Prophetarum (22 of the
-66 chrestomathy pages) has no digital text under any licence. **Every chrestomathy page is a
-full plate transcription.** Phase 0's fallback — key a PD printed Peshitta ourselves — is on
-the critical path, not in reserve. This is the single biggest driver of the estimate below.
+**2. "Align, don't transcribe" does not hold for this volume — but the reason is a missing
+*carrier*, not a missing right.** §5 makes alignment the method and full transcription the
+exception. In fact every chrestomathy page is a full plate transcription, because:
+
+- The Digital Syriac Corpus (the one CC BY 4.0 source) is patristic and does not hold the Bible.
+- ⭐ **SEDRA's verdict was too broad and is corrected** (Wilson, 2026-09-01): SEDRA carries the
+  **BFBS/UBS 1905 Peshitta NT — Pusey-Gwilliam gospels (1901), Gwilliam Acts, Gwilliam-Pinkerton
+  Paul, Gwynn Catholic Epp. + Rev. — all published 1905 and therefore PUBLIC DOMAIN.** A faithful
+  transcription of a PD text carries no new copyright. So **the text is shippable; SEDRA's
+  lemmatization and morphology are not.** Their terms remain a contract on their own files, so
+  carry the text from a PD edition rather than re-exporting theirs.
+- But no clean fetchable carrier of that text was found. **ETCBC/peshitta** (Text-Fabric) looked
+  ideal and is not: it is the OLD Testament, OCR'd from the **in-copyright Leiden 1987 edition**,
+  and the repository declares **MIT while its own `about.md` declares CC BY-NC**. ⛔ That is the
+  **third** two-licences-in-one-repository trap this project has hit — Cod. 940, Cod. Syr. 1, now
+  this. STEPBible-Data (CC BY 4.0) surfaced no Syriac module; syri.ac 403s to automated fetch and
+  wants a human. Candidate PD scan, **not yet probed**: archive.org `newtestamentinsy00unse`
+  (⚠ verify the edition at the title page, never by the ID digits). The Peshitta **OT** has no
+  clean carrier at all now that Leiden is out, and wants a PD printed edition — Lee 1823, Urmia
+  1852, or Mosul 1887-92.
+- The *Vitae Prophetarum* and *Historia inventionis* (44 of the 66 pages) have no digital text
+  anywhere under any licence, and no printed critical edition to check against either.
+
+⭐ **The reframe this opens: we produce the digital text rather than consume one.** Nestle's
+chrestomathy is itself a printed Peshitta, PD since 1889. Keying Genesis 1-4 and Matthew 5 out of
+it yields PD Syriac digital text nobody has released cleanly — an asset, not a cost. And it
+recovers most of what alignment was for: **key from Nestle, check against SEDRA and the 1905
+scan, ship neither**, which is exactly what a compute-only source permits. Alignment was never
+about saving keystrokes; it was about having something to diff against.
+
+⛔ **The real division inside R3 is therefore not the licence line:**
+
+| | pages | keyed by | checkable by |
+|---|---|---|---|
+| Peshitta (Gen. 1-4, Matt. 5, Lord's Prayer) | 23 | us | SEDRA + a PD 1905 scan |
+| Vitae Prophetarum, Historia inventionis | 44 | us | **nobody but a Syriacist** |
+
+The 44 are what the empty expert seat actually blocks. The 23 are not blocked at all.
 
 **3. The glossary, not the grammar, is the volume.** 63 dense pages at ~18-20 head-lemmas each
 ≈ **1,150-1,300 R4 records**, plus roughly 400 `||` sub-lemmas if those become records of their
@@ -109,10 +140,12 @@ Three things ride on the same answer, and the third may be the real one:
 
 1. **The R5 / `word_notes` ruling** (finding 5). It changes what the run extracts. Cheap to
    answer, expensive to retrofit.
-2. **Whether R3 goes at all in this phase.** With no alignable digital Peshitta, 66 chrestomathy
-   pages (462k tokens, a third of the run) are full keying of pointed Syriac with nothing to
-   diff against. Deferring R3 to a phase that has a PD Peshitta keyed, or a Syriacist, cuts the
-   run by a third and removes its least checkable third.
+2. **Not "does R3 run" any more — "does R3 run FIRST".** The Peshitta text is PD, so the 23
+   Peshitta pages are keyable now and checkable against SEDRA and a PD scan. Doing them first
+   produces the diff target the rest of the pilot has been assuming it could fetch, and proves
+   the keying workflow on the one text where a wrong reading is catchable. The other 44 pages
+   (*Vitae Prophetarum*, *Historia inventionis*) have no check but a Syriacist and are the
+   natural thing to hold. Splitting R3 that way is a different shard plan, not a smaller one.
 3. ⚠ **The Syriacist seat is still empty, and this batch is what that costs.** Every Syriac
    string in these 34 records is extractor output that nobody qualified has ruled on; the ones
    I could not resolve carry `uncertain = true`, but that flag is my judgement too. The Step-3
@@ -129,6 +162,9 @@ Three things ride on the same answer, and the third may be the real one:
 - **pp. 67 and 87 were identified and layer-declared but not keyed.** Keying them under a method
   that had just been shown not to apply would have buried finding 2. The records say so on their
   face (`extraction.status`).
+- **The PD carriers were searched, not exhausted.** syri.ac is the best index and refuses
+  automated fetch; `newtestamentinsy00unse` is unprobed. Both are cheap, and both are worth doing
+  before the shard plan is fixed.
 - The weekday list on p. 132 was read at page magnification only and is flagged `uncertain` as a
   whole (`r1/p132-2.toml`).
 - Step 3 (blind control + ratio checks) is not started; it belongs after the run.
