@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g138-unread-138-1"
+record_type = "R4"
+
+lemma = { unvoc = "", voc = "", translit = "" }
+pos = "cross-reference"
+gloss_en = "(unread)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+uncertain = true
+uncertain_note = "⛔ NOT READ. A short cross-reference line between ܐܦܩܪܣܐ and ܐܪܙ; four letters, and neither the head-word nor its target resolved at this scale. Recorded so the page's entry count stays honest — see [[feedback_empty-grep-is-not-absence]]. Re-read at higher magnification before this page is signed off."
+
+[source]
+primer = "nestle-1889-en"
+page = 138
+leaf = "n227"

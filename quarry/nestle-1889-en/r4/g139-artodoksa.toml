@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g139-artodoksa"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܪܬܘܕܘܟܣܐ", voc = "ܐܳܪܬܳܘܕܽܘܟܣܳܐ", translit = "'ārtōdūksā" }
+pos = "adj."
+gloss_en = "orthodox"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ὀρθόδοξος"
+sub_lemmas = "f. ܐܳܪܬܳܘܕܽܘܟܣܺܝܬܳܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 139
+leaf = "n228"

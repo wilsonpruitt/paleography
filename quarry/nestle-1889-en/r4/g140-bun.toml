@@ -1,0 +1,25 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g140-bun"
+record_type = "R4"
+
+lemma = { unvoc = "ܒܘܢ", voc = "ܒܽܘܢ", translit = "būn" }
+pos = "verb (root)"
+gloss_en = "explain; (Ethpa.) understand"
+gloss_de = "erklären; verstehen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܒܝܢ"
+stems = "Pa. ܒܰܝܶܢ explain | erklären; Ethpa. understand | verstehen"
+sub_lemmas = "ܒܽܘܝܳܢܳܐ explanation | Erklärung"
+primer_note = "Nestle prints the root in parentheses with an alternative: (ܒܘܢ vel ܒܝܢ)."
+
+[source]
+primer = "nestle-1889-en"
+page = 140
+leaf = "n229"

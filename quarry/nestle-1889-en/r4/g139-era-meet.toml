@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g139-era-meet"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܪܥ", voc = "ܐܶܪܰܥ", translit = "'era'" }
+pos = "verb, impf. u"
+gloss_en = "meet"
+gloss_de = "begegnen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+sub_lemmas = "ܐܽܘܪܥܳܐ, cum ܠ et suff., to meet | entgegen"
+primer_note = "Nestle cites Lagarde, Semitica 1, 26."
+
+[source]
+primer = "nestle-1889-en"
+page = 139
+leaf = "n228"

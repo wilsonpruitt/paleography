@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g139-eta-come"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܬܐ", voc = "ܐܶܬܳܐ", translit = "'etā" }
+pos = "verb"
+gloss_en = "come, arrive"
+gloss_de = "kommen, ankommen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§48 d 2"
+noldeke = []
+layer = "vocalized Serto"
+stems = "Aph. bring, lead | bringen, führen"
+sub_lemmas = "ܡܶܐܬܺܝܬܳܐ, ܡܰܬܺܝܬܳܐ arrival | Ankunft"
+
+[source]
+primer = "nestle-1889-en"
+page = 139
+leaf = "n228"

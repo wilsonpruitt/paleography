@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g138-episqupa"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܦܝܣܩܘܦܐ", voc = "ܐܶܦܺܝܣܩܽܘܦܳܐ", translit = "'epīsqōpā" }
+pos = "m."
+gloss_en = "bishop"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ὁ ἐπίσκοπος"
+variant_voc = "ܐܶܦܣܩܽܘܦܳܐ"
+sub_lemmas = "ܐܶܦܺܝܣܩܽܘܦܽܘܬܳܐ bishopric | Bischofswürde"
+
+[source]
+primer = "nestle-1889-en"
+page = 138
+leaf = "n227"

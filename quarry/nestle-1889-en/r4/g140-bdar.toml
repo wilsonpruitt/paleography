@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g140-bdar"
+record_type = "R4"
+
+lemma = { unvoc = "ܒܕܪ", voc = "ܒܕܰܪ", translit = "bdar" }
+pos = "verb, impf. u"
+gloss_en = "disperse"
+gloss_de = "zerstreuen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Pa. disperse; Ethpa. be dispersed | zerstreut werden"
+
+[source]
+primer = "nestle-1889-en"
+page = 140
+leaf = "n229"

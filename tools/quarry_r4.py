@@ -87,6 +87,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--validate", action="store_true")
     ap.add_argument("--audit", action="store_true")
+    ap.add_argument("--unread", action="store_true", help="list records whose head-word was NOT resolved")
     a = ap.parse_args()
     recs = _load_all()
     if a.validate or not (a.audit):
@@ -99,8 +100,15 @@ def main():
         for p in sorted(pages):
             print(f"  p.{p}: {pages[p]}")
         n = len(recs) or 1
+        unread = [r for r in recs if not r["lemma"]["unvoc"]]
         print(f"pages done: {len(pages)} of 63   records: {len(recs)}   "
-              f"uncertain: {unc} ({100*unc/n:.0f}%)   mean/page: {len(recs)/len(pages):.1f}")
+              f"uncertain: {unc} ({100*unc/n:.0f}%)   unread: {len(unread)}   "
+              f"mean/page: {len(recs)/len(pages):.1f}")
+    if a.unread:
+        # ⛔ A head-word we could not read is a FINDING, not an absence. These placeholders
+        # keep the page counts honest and name what has to be re-read at higher magnification.
+        for r in (x for x in recs if not x["lemma"]["unvoc"]):
+            print(f'  {r["_file"]:26s} p.{r["source"]["page"]} {r["source"]["leaf"]}')
 
 
 if __name__ == "__main__":

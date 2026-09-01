@@ -1,0 +1,25 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g139-besh"
+record_type = "R4"
+
+lemma = { unvoc = "ܒܐܫ", voc = "ܒܶܐܫ", translit = "be'š" }
+pos = "verb, impf. ܢܶܒܐܰܫ"
+gloss_en = "be bad"
+gloss_de = "schlecht sein"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. ܐܶܬܒܐܶܫ (nestor. a second form printed in parentheses), cum ܠ: it displeased him | es missfiel ihm"
+sub_lemmas = "ܒܺܝܫ bad, wrong | böse ‖ (a reduplicated form) something wrong | etwas Schlechtes ‖ ܒܺܝܫܬܳܐ crime, mischief | Verbrechen, Unheil ‖ ܒܺܝܫܽܘܬܳܐ f. wickedness | Schlechtigkeit ‖ § 6 poor | arm"
+uncertain = true
+uncertain_note = "Two sub-forms unresolved: a reduplicated ܒܝܫ-form glossed 'something wrong', and the final § 6 'poor', which may be a separate head-lemma (ܒܨܺܝܪ?) rather than a sub-lemma of this root — the sense does not obviously belong here."
+
+[source]
+primer = "nestle-1889-en"
+page = 139
+leaf = "n228"
