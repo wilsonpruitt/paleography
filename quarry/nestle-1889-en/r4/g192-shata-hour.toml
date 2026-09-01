@@ -1,0 +1,31 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g192-shata-hour"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܥܬܐ", voc = "ܫܳܥܬܳܐ", translit = "šāʿtā" }
+pos = "f."
+gloss_en = "hour"
+gloss_de = "Stunde"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+plural_voc = "ܫܳܥ̈ܶܐ"
+variant_voc = "ܫܳܥܰܬܳܐ"
+primer_note = "⭐ Convention 10 pointing at the shard's OWN flagged record. The sub-lemma ܗܳܫܳܐ 'now' is sent to ܗܳܐ — i.e. to r4/g148-ha-demonstrative.toml, the entry the shard doc names first for the blind control because a sixth of p. 149 cross-refers into it. This is a fifty-page-later pointer into the same place, and it is filed under 'hour', which is not where a reader would look."
+uncertain = true
+uncertain_note = "The sub-lemma is read ܗܳܫܳܐ v. ܗܳܐ at 1.75×; three glyphs to two. The identification rests on ܗܳܫܳܐ 'now' being the obvious ܫܥ-adjacent form and on ܗܳܐ being a known head-word, not on the letters alone."
+
+[[sub_lemmas]]
+voc = "ܗܳܫܳܐ"
+gloss_en = "now — see ܗܐ"
+raw = "ܗܳܫܳܐ v. ܗܳܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 192
+leaf = "n281"

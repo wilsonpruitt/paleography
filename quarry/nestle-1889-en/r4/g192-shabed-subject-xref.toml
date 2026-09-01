@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g192-shabed-subject-xref"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܥܒܕ", voc = "ܫܰܥܒܶܕ", translit = "šaʿbed" }
+pos = "cross-reference"
+gloss_en = "subject, enslave (Shaphel) — see ܥܒܕ"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+see = "v. ܥܒܕ"
+primer_note = "⭐ Closes the p. 175 pointer from the other end: ܫܽܘܥܒܳܕܳܐ 'submission' is a sub-lemma of ܥܒܰܕ there, filed under the root; here in the ܫ section, where a reader would look for it, is the pointer back. Together with ܫܰܘܗܶܒ v. ܝܗܒ, ܫܽܘܬܳܦܳܐ v. ܫܬܦ and ܫܽܘܚܠܳܦܳܐ v. ܚܠܦ (all p. 190), that is FOUR Shaphel cross-references in three pages — Nestle is systematic about this one class."
+
+[source]
+primer = "nestle-1889-en"
+page = 192
+leaf = "n281"

@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g192-shanneq-torture"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܢܩ", voc = "ܫܰܢܶܩ", translit = "šanneq" }
+pos = "verb, Pa."
+gloss_en = "torture"
+gloss_de = "foltern"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ ܫܽܘܢܳܩܳܐ is a HEAD-WORD on p. 190, glossed 'pressure, torment, torture', and a sub-lemma here two pages later. The same form entered twice at different levels — the ܡܳܢܰܘ case (pp. 165/167) with the levels swapped. And 'torture' now glosses two consecutive entries, ܫܢܕ and ܫܢܩ, which is the shard's thirtieth duplicate and its most literal."
+
+[[sub_lemmas]]
+voc = "ܫܽܘܢܳܩܳܐ et ܬܰܫܢܺܝܩܳܐ"
+gloss_en = "strangling, torture"
+gloss_de = "Würgen, Erdrosseln, Foltern"
+raw = "ܫܽܘܢܳܩܳܐ et ܬܰܫܢܺܝܩܳܐ Würgen, Erdrosseln, Foltern | strangling, torture"
+
+[source]
+primer = "nestle-1889-en"
+page = 192
+leaf = "n281"

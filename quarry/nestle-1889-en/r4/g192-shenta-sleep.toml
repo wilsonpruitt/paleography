@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g192-shenta-sleep"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܢܬܐ", voc = "ܫܶܢܬܳܐ", translit = "šentā" }
+pos = "f."
+gloss_en = "sleep"
+gloss_de = "Schlaf"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܫܶܢܰܬܳܐ, st. cstr. ܫܶܢܰܬ"
+primer_note = "⭐ A NEW NOTATION, and the last new device the shard finds: the RADICAL SIGN. '(√ ܝܫܢ.)' — Nestle gives the root in a parenthesis marked with √ rather than in the round brackets he has used for unattested roots all through the glossary. One occurrence, and it does the job the bracket convention has been doing for sixty pages."
+
+[source]
+primer = "nestle-1889-en"
+page = 192
+leaf = "n281"

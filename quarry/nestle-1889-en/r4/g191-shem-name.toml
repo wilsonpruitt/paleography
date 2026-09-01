@@ -16,7 +16,19 @@ noldeke = []
 layer = "vocalized Serto"
 plural_voc = "ܫܡܳܗ̈ܶܐ"
 variant_voc = "ܫܡܳܐ"
-continues_from = "runs onto p. 192 (n281): the entry breaks at the sub-lemma ܫܰܡܰܗ 'nennen' — fold the tail back when p. 192 is read"
+continues_from = "runs onto p. 192 (n281) — ✅ the tail was read 2026-09-01 and its two sub-lemmas are folded in below"
+
+[[sub_lemmas]]
+voc = "ܫܰܡܰܗ"
+gloss_en = "call, name"
+gloss_de = "nennen"
+raw = "ܫܰܡܰܗ nennen | call. Ethpe. genannt werden | be called"
+
+[[sub_lemmas]]
+voc = "ܡܫܰܡܰܗ"
+gloss_en = "famous"
+gloss_de = "berühmt"
+raw = "ܡܫܰܡܰܗ berühmt | famous"
 
 [source]
 primer = "nestle-1889-en"

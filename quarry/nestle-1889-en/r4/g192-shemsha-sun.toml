@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g192-shemsha-sun"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܡܫܐ", voc = "ܫܶܡܫܳܐ", translit = "šemšā" }
+pos = "noun"
+gloss_en = "sun"
+gloss_de = "Sonne"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ A twenty-first homograph pair with the entry above: ܫܰܡܶܫ 'serve' and ܫܶܡܫܳܐ 'sun', consecutive, one root apart in appearance and unrelated in fact."
+
+[source]
+primer = "nestle-1889-en"
+page = 192
+leaf = "n281"
