@@ -1,0 +1,74 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g184-qaddem-anticipate"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܕܡ", voc = "ܩܰܕܶܡ", translit = "qaddem" }
+pos = "verb, Pa."
+gloss_en = "place at the head, prevent, anticipate"
+gloss_de = "vorsetzen, zuvorkommen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "πρό"
+latin = "reddit πρό Graecorum"
+primer_note = "⭐ The largest entry in the shard — eight sub-lemmas, and every one of them a particle or an adverbial phrase built on the root. It carries a NEW Latin device too: 'reddit πρό Graecorum', a Latin sentence saying which GREEK WORD the Syriac renders. Nestle's Latin has labelled, governed, judged and taught a rule; this is the first time it does translation-history. ⚑ And the parenthetical '(cf. ܠܩܽܘܒܠܳܐ)' points at ܩܒܠ (p. 183), the entry that closed the shard's longest-range cross-reference."
+uncertain = true
+uncertain_note = "Eight sub-lemmas over fourteen forms, most of them ܩܕܡ- with a prefix (ܡܢ-, ܠ-, ܕ-) and differing from one another chiefly in points. The prefixes and the glosses are certain; the internal vocalisation is read at 1.75× and the third sub-lemma's two variants are not fully separable."
+
+[[sub_lemmas]]
+voc = "ܡܶܢ ܩܕܺܝܡ"
+gloss_en = "from before, long ago"
+gloss_de = "von vorn, längst"
+raw = "ܡܶܢ ܩܕܺܝܡ von vorn, längst | from before, long ago"
+
+[[sub_lemmas]]
+voc = "ܩܕܳܡ"
+gloss_en = "Praep. before"
+gloss_de = "vor"
+raw = "ܩܕܳܡ Praep. vor | before"
+
+[[sub_lemmas]]
+voc = "ܡܶܢ ܩܕܳܡ ܕ"
+gloss_en = "before (conj.)"
+gloss_de = "ehe"
+raw = "ܡܶܢ ܩܕܳܡ ܕ; ܩܕܳܡ ܕ ehe | before (conj.)"
+
+[[sub_lemmas]]
+voc = "ܩܰܕܡܳܝܳܐ"
+gloss_en = "former, first"
+gloss_de = "der frühere, erste"
+raw = "ܩܰܕܡܳܝܳܐ der frühere, erste | former, first"
+
+[[sub_lemmas]]
+voc = "ܩܰܕܡܳܝܬܳܐ"
+gloss_en = "the first; pl. those anterior and superior to us"
+gloss_de = "der erste; Pl. die Früheren und Oberen"
+raw = "ܩܰܕܡܳܝܬܳܐ der erste | the first. Pl. die Früheren und Oberen | those anterior and superior to us"
+
+[[sub_lemmas]]
+voc = "ܩܰܕܡܳܝܰܬ"
+gloss_en = "at first, for the first time"
+gloss_de = "zuerst, zum erstenmal"
+raw = "ܩܰܕܡܳܝܰܬ zuerst, zum erstenmal | at first, for the first time"
+
+[[sub_lemmas]]
+voc = "ܠܩܽܘܕܡܶܐ"
+gloss_en = "at first"
+gloss_de = "zuerst"
+raw = "(ܩܕܽܘܡܬܳܐ) cum ܠ adverb. ܠܩܽܘܕܡܶܐ (cf. ܠܩܽܘܒܠܳܐ) zuerst | at first"
+
+[[sub_lemmas]]
+voc = "ܡܶܢ ܠܩܽܘܕܡܶܐ"
+gloss_en = "long ago"
+gloss_de = "vor langer Zeit"
+raw = "ܡܶܢ ܠܩܽܘܕܡܶܐ vor langer Zeit | long ago"
+
+[source]
+primer = "nestle-1889-en"
+page = 184
+leaf = "n273"

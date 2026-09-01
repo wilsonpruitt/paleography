@@ -1,0 +1,27 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g185-qtira-force"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܛܝܪܐ", voc = "ܩܛܺܝܪܳܐ", translit = "qṭīrā" }
+pos = "m. subst."
+gloss_en = "force"
+gloss_de = "Gewalt"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = "ܒܩܛܺܝܪܳܐ, ܥܰܠ ܩܛܺܝܪ"
+gloss_en = "forcibly"
+gloss_de = "mit Gewalt"
+raw = "ܒܩܛܺܝܪܳܐ, ܥܰܠ ܩܛܺܝܪ mit Gewalt | forcibly"
+
+[source]
+primer = "nestle-1889-en"
+page = 185
+leaf = "n274"

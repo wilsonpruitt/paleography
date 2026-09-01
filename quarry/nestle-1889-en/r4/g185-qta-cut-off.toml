@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g185-qta-cut-off"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܛܥ", voc = "ܩܛܰܥ", translit = "qṭaʿ" }
+pos = "verb, impf. u et Pa."
+gloss_en = "cut off"
+gloss_de = "abhauen, abschneiden"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ 'abschneiden' also glosses ܦܣܰܩ on p. 180. Nineteenth duplicate gloss."
+
+[source]
+primer = "nestle-1889-en"
+page = 185
+leaf = "n274"

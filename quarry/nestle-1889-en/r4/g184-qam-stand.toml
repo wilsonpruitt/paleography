@@ -1,0 +1,47 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g184-qam-stand"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܡ", voc = "ܩܳܡ", translit = "qām" }
+pos = "verb"
+gloss_en = "stand up"
+gloss_de = "aufstehen, bestehen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Aph. 'set up, appoint' | aufrichten, bestimmen"
+primer_note = "⚑ 'Auferstehung | resurrection' also glosses ܣܽܘܠܳܩܳܐ on p. 173 — where the German added '(Christi)' and the English did not. Eighteenth duplicate gloss, and the two are the two Syriac words for the Resurrection, unlinked."
+
+[[sub_lemmas]]
+voc = "ܩܰܘܡܬܳܐ"
+gloss_en = "f. stature, degree, cubit"
+gloss_de = "Statur, Stufe, Elle"
+raw = "ܩܰܘܡܬܳܐ f. Statur, Stufe, Elle | stature, degree, cubit"
+
+[[sub_lemmas]]
+voc = "ܩܰܝܽܘܡܳܐ"
+gloss_en = "m. prefect"
+gloss_de = "Vorstand"
+raw = "ܩܰܝܽܘܡܳܐ m. Vorstand | prefect"
+
+[[sub_lemmas]]
+voc = "ܩܝܳܡܬܳܐ"
+gloss_en = "f. resurrection"
+gloss_de = "Auferstehung"
+raw = "ܩܝܳܡܬܳܐ f. Auferstehung | resurrection"
+
+[[sub_lemmas]]
+voc = "ܡܩܳܡܬܳܐ"
+gloss_en = "m. stand, station"
+gloss_de = "Standort"
+raw = "ܡܩܳܡܬܳܐ m., Standort | stand, station"
+
+[source]
+primer = "nestle-1889-en"
+page = 184
+leaf = "n273"

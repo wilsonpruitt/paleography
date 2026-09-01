@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g185-qustruma-porch"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܘܣܛܪܘܡܐ", voc = "ܩܽܘܣܛܪܽܘܡܳܐ", translit = "qusṭrūmā" }
+pos = "noun"
+gloss_en = "porch, vestibule (glossed only by an equation to the Greek)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "αἰλάμ"
+primer_note = "The bare EQUATION device once more — '= αἰλάμ' and nothing else — and the term equated is itself a Greek transliteration of a Hebrew word, so the entry is a loan explained by a loan."
+uncertain = true
+uncertain_note = "Eight glyphs at 3×, read ܩ + ܘ + ܣ + ܛ + ܪ + ܘ + ܡ + ܐ; the fourth could be ܢ and the fifth carries the dot that makes it ܪ. No identification is being claimed, only the transcription."
+
+[source]
+primer = "nestle-1889-en"
+page = 185
+leaf = "n274"

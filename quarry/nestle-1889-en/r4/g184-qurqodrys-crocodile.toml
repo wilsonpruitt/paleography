@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g184-qurqodrys-crocodile"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܘܪܩܘܕܪܝܣ", voc = "ܩܽܘܪܩܽܘܕܪܺܝܣ", translit = "qūrqūdrīs" }
+pos = "noun"
+gloss_en = "crocodile (glossed only by the Greek)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "κορκόδειλος"
+primer_note = "⭐⭐ THE CROCODILE, TWICE, SIXTEEN PAGES APART, AND NEVER LINKED. p. 168 opens the ܢ section with 'ܢܐܦܘܬ = äg. νεφώθ = gr. κροκόδειλος' — a three-language chain tracing an Egyptian word. Here the SAME animal is a straight transliteration of the Greek, glossed by the Greek alone. Note also that Nestle spells the Greek differently in the two places, κροκόδειλος there and κορκόδειλος here. The ܦܶܣܚܳܐ/ܦܶܨܚܳܐ shape (p. 180) again: two words, two etymologies, two correct slots, one animal."
+uncertain = true
+uncertain_note = "Nine glyphs read against κορκόδειλος at 1.75×; the vowel points are not resolved and the transliteration is reconstructed from the Greek."
+
+[source]
+primer = "nestle-1889-en"
+page = 184
+leaf = "n273"
