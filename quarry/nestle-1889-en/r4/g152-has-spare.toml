@@ -1,0 +1,27 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g152-has-spare"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܣ", voc = "ܚܳܣ", translit = "ḥās" }
+pos = "verb"
+gloss_en = "have pity, spare"
+gloss_de = "sich erbarmen, schonen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = "ܚܳܣ ܠܺܝ"
+gloss_en = "far be it from me"
+gloss_de = "ferne sei es von mir"
+raw = "ܚܳܣ ܠܺܝ ferne sei es von mir | far be it from me"
+
+[source]
+primer = "nestle-1889-en"
+page = 152
+leaf = "n241"

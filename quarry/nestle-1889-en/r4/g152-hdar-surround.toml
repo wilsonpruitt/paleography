@@ -1,0 +1,34 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g152-hdar-surround"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܕܪ", voc = "ܚܕܰܪ", translit = "ḥdar" }
+pos = "verb, impf. u et a"
+gloss_en = "surround"
+gloss_de = "umgeben"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ A construct-state plural doing duty as a preposition — Nestle labels the grammar ('st. cstr. pl. praep.') rather than glossing it twice."
+
+[[sub_lemmas]]
+voc = "ܚܕܳܪ̈ܰܝ"
+gloss_en = "st. cstr. pl., as prep., round about"
+gloss_de = "ringsum"
+raw = "ܚܕܳܪ̈ܰܝ st. cstr. pl. praep. ringsum | round about"
+
+[[sub_lemmas]]
+voc = "ܚܽܘܕܪܳܐ"
+gloss_en = "circuit, circle"
+gloss_de = "Umkreis, Zirkel"
+raw = "ܚܽܘܕܪܳܐ Umkreis, Zirkel | circuit, circle"
+
+[source]
+primer = "nestle-1889-en"
+page = 152
+leaf = "n241"

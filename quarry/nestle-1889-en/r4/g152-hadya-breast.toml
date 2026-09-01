@@ -1,0 +1,27 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g152-hadya-breast"
+record_type = "R4"
+
+lemma = { unvoc = "ܚܕܝܐ", voc = "ܚܰܕܝܳܐ", translit = "ḥadyā" }
+pos = "m."
+gloss_en = "breast"
+gloss_de = "Brust"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Homograph pressure: 'breast' ܚܰܕܝܳܐ and the verb 'be glad' ܚܕܺܝ share a skeleton and sit next to each other, separated by pointing alone (convention 3)."
+
+[[sub_lemmas]]
+voc = "ܚܰܕ̈ܘܳܬܳܐ, ܚܰܕ̈ܝܶܐ"
+gloss_en = "pl."
+raw = "Pl. ܚܰܕ̈ܘܳܬܳܐ et ܚܰܕ̈ܝܶܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 152
+leaf = "n241"
