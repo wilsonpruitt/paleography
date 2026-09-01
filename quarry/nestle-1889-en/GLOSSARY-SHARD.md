@@ -1,6 +1,6 @@
 # Glossary shard — run it straight through
 
-*The R4 shard of Phase 1. 18 of 63 pages done (2026-09-01), 253 records. This file is written
+*The R4 shard of Phase 1. 30 of 63 pages done (2026-09-01), 407 records. This file is written
 so the next session starts extracting inside five minutes and never re-derives anything.*
 
 ---
@@ -14,7 +14,7 @@ python3 tools/quarry_r4.py --audit         # per-page counts, uncertainty rate, 
 python3 tools/quarry_r4.py --unread        # the head-words that could not be read
 ```
 
-**45 pages left:** pp. 150–170 (n239–n259) and pp. 172–195 (n261–n284). p. 171 is done — it was
+**33 pages left:** pp. 162–170 (n251–n259) and pp. 172–195 (n261–n284). p. 171 is done — it was
 in the calibration batch, so the run has a hole in the middle. `--remaining` knows.
 
 ## The loop
@@ -38,12 +38,19 @@ Field list is in `tools/quarry_r4.py`'s docstring. Model record: `r4/g171-neshab
 pointed Serto; two halves at 1.75× are. This is measured — ~6.5k vision tokens per page against
 ~2k for a read you cannot trust.
 
+⚑ **A third crop, when a head-word would otherwise be lost.** `sh tools/quarry_zoom.sh <leaf>
+<top> <bot>` cuts one horizontal band of the leaf at 3×, by fractions of the WHOLE page. Added
+2026-09-01 and used six times over pp. 150–161. It is what turns a ⛔ NOT READ into a record —
+but it costs a third image, so spend it on head-words, not on sub-lemmas.
+
 ⚑ **Commit every 2–3 pages.** Cheap, and it keeps the diff reviewable.
 
 ## Rate, so you can tell if something is wrong
 
-**~14 head-lemmas per page (~23.6 LEMMAS/page counting sub-lemmas), ~19% of records carrying
-`uncertain = true`.** `--audit` prints both counts. Both have been stable
+**~14 head-lemmas per page (~26.7 LEMMAS/page counting sub-lemmas), ~21% of records carrying
+`uncertain = true`.** ⚑ Recalibrated 2026-09-01 at the halfway mark: the head rate held exactly
+(13.6/page over 30 pages), but sub-lemmas ran well above §2's estimate — 394 of them against 407
+heads. Expect ~1,680 lemmas for the glossary entire, not the ~1,480 the first 18 pages projected. `--audit` prints both counts. Both have been stable
 since p. 136. A page coming in at 6 or at 25 is not necessarily an error — pp. 139 and 142 are
 genuinely short (letter transitions), p. 138 genuinely long — but a *run* of pages off the rate
 means something has drifted. Expect ~630 records for the shard, ~880 for the glossary entire.
@@ -71,12 +78,28 @@ means something has drifted. Expect ~630 records for the shard, ~880 for the glo
    ('ob zum vorhergehenden ܒܰܪ?'), prints textual conjectures ('Pro … leg. vid. …') and cites
    Lagarde and Payne Smith against his own text. None of that is our uncertainty and it must
    not be filed as if it were — the blind control would chase the wrong thing.
-7. ✅ **`sub_lemmas` is a STRUCTURED ARRAY on the parent** — ruled 2026-09-01. Pass a list of
+7. ⛔ **`emit` DROPPED `sub_lemmas` silently until 2026-09-01.** The ruling below converted the
+   88 legacy records but never taught the writer the new shape, so p. 150 — the first page
+   emitted after it — came out with 16 sub-lemmas missing and every other field intact. `emit`
+   now writes them and RAISES if what it reads back does not match what it was handed. The
+   lesson generalises: **a schema change has two ends**, and `--audit`'s per-page sub count is
+   the thing that shows the second one.
+8. ✅ **`sub_lemmas` is a STRUCTURED ARRAY on the parent** — ruled 2026-09-01. Pass a list of
    `{voc, gloss_en, gloss_de, raw}`, or a legacy `‖`-separated string, which `emit` parses on
    the way in. Convention inside the string: leading Syriac is the form, then **English first,
    German second**, split on ` | `. ⚑ Keep `raw` — the parse is a convenience, not the record.
    The 88 legacy records were converted; there are none left to convert.
-8. **Capture every point faithfully.** Curriculum questions — what a learner sees first —
+9. **An entry that runs onto the next page gets FOLDED BACK when you reach that page.** Five
+   done so far (ܙܒܢ, ܚܦܛ, ܝܕ, ܝܠܕ, ܝܩܪ). This is a HAND EDIT of a written record, not an
+   `emit` call — so run `python3 tools/quarry_r4.py --validate` after every fold. One such edit
+   put a stray backslash into a TOML string this session; --validate is what caught it.
+10. **The next page adjudicates the previous one.** Nestle's root order is strict, and three
+   times over pp. 150–161 the following page settled a reading the current page could not:
+   ܙܘܪܐ 'fist' (p. 151 cross-refers to it), ܛܡܐܘܬܐ against ܛܢܦܘܬܐ (p. 157 gives ܛܢܦ its own
+   entry), and the ܚ-order anomaly on p. 152 (p. 153 shows the order holds, so the anomaly is
+   ours). ⚑ Therefore: when a slot and a sense disagree, WRITE THE DOUBT DOWN and read on —
+   do not zoom twice and do not guess.
+11. **Capture every point faithfully.** Curriculum questions — what a learner sees first —
    leak nowhere into extraction.
 
 ## What is owed, and is NOT yours to decide
@@ -86,6 +109,30 @@ means something has drifted. Expect ~630 records for the shard, ~880 for the glo
   notes read off pp. 70-72 into `r3/c070-1.toml`.
 - ⬜ The **Syriacist seat**. Every Syriac string here is extractor output that nobody qualified
   has ruled on. That is the standing condition of this shard, not a reason to stop.
+
+## Patterns worth carrying forward (pp. 150-161)
+
+None of these is a rule to apply; each is a shape to RECOGNISE, so a page is not read as though
+it were the first one.
+
+- **Gloss by cognate instead of translation.** Greek alone (ἦχος, ἅλωσις, θεοτόκος, τύραννος),
+  Greek WITH ITS ARTICLE for a loan (ὁ τύπος, ἡ τάξις), Latin alone for a particle or a letter
+  name (ܝܽܘܕ, ܟܺܝ), Hebrew alone (h. תולדות), and once Aramaic + Hebrew with no modern language
+  at all (ܝܳܬ). Record the cognate; do not invent an English gloss and pass it off as Nestle's.
+- **Preformative words filed under the root.** ܡ- (ܡܙܰܡܪܳܢܳܐ under ܙܡܪ), ܬ-/ܡܬ- (under ܚܘܝ),
+  ܫ- Shaphel (ܫܰܚܠܶܦ under ܚܠܦ; ܫܰܘܙܶܒ as a HEAD-WORD in the ܝ section), ܐ- (ܐܺܝܕܳܐ, ܐܺܝܡܳܡܳܐ,
+  ܐܺܝܩܳܪܳܐ all under ܝ), ܒ- (ܒܰܠܚܽܘܕ under ܝܚܕ). A head-word's first letter predicts nothing.
+- **Numbered sense-splits** (ܙܩܺܝܦܳܐ, ܚܰܝܽܘܬܳܐ, ܚܶܫܽܘܟ): one word, two senses, ONE record.
+- **Homographs**: eight pairs so far, every one separated by pointing alone. Two records when
+  Nestle separates them; a sub-lemma when he brackets the second inside the first (ܚܶܣܕܳܐ
+  'grace' inside ܚܣܳܕܳܐ 'disgrace').
+- **Glosses that end in a dash** (ܛܽܘܒܰܝܗܽܘܢ 'blessed are —', ܛܥܶܢ 'see to it that —'): the word
+  needs its clause, and the dash is Nestle's, not damage.
+- **Nestle's own apparatus, which is never our uncertainty** (convention 6): 'deest apud PSm',
+  'rarius scribitur', 'ohne Plural', 'Cum ܒ', a '?' he prints himself, back-references into his
+  own grammar ('p. 32, n. 1'), and once a real bibliography (de Lagarde; Hoffmann, ZDMG 32).
+- **Bracket shapes may differ.** Unattested roots come in round brackets throughout, except
+  [ܝܠܠ] on p. 158, which is square. ⬜ Nobody has ruled on whether that is a distinction.
 
 ## Hand the blind control these first
 
