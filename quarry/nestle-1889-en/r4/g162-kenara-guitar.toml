@@ -1,0 +1,21 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g162-kenara-guitar"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܢܪܐ", voc = "ܟܶܢܳܪܳܐ", translit = "kennārā" }
+pos = "m."
+gloss_en = "guitar, zither"
+gloss_de = "Zither"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[source]
+primer = "nestle-1889-en"
+page = 162
+leaf = "n251"

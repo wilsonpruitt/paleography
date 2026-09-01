@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g163-kursya-throne-xref"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܘܪܣܝܐ", voc = "ܟܽܘܪܣܝܳܐ", translit = "kursyā" }
+pos = "cross-reference"
+gloss_en = "throne — see ܟܣܐ"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+see = "v. ܟܣܐ"
+primer_note = "⭐ CONVENTION 10, paid off in one page. p. 162 printed ܟܽܘܪܣܝܳܐ 'throne' with ‖ inside the (ܟܣܐ) entry, out of root order for a head-word; the doubt was written down rather than guessed. Here, in the slot where a ܟܪܣܝ head-word WOULD stand (right after ܟܪܶܣ), Nestle prints not the entry but a cross-reference back to ܟܣܐ. The p. 162 filing as a sub-lemma is Nestle's own, and its uncertain flag is cleared by this line."
+
+[source]
+primer = "nestle-1889-en"
+page = 163
+leaf = "n252"

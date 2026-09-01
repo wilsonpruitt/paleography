@@ -1,0 +1,40 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g163-ktab-write"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܬܒ", voc = "ܟܬܰܒ", translit = "ktab" }
+pos = "verb, impf. u"
+gloss_en = "write"
+gloss_de = "schreiben"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. pass.; Aph. 'compose' | verfassen"
+
+[[sub_lemmas]]
+voc = "ܟܬܳܒܳܐ"
+gloss_en = "m. book, writing"
+gloss_de = "Buch, Schrift"
+raw = "ܟܬܳܒܳܐ m. Buch, Schrift | book, writing"
+
+[[sub_lemmas]]
+voc = "ܟܬܺܝܒܬܳܐ"
+gloss_en = "f. letter (something written)"
+gloss_de = "Geschriebenes, Buchstabe"
+raw = "ܟܬܺܝܒܬܳܐ f. Geschriebenes, Buchstabe | letter"
+
+[[sub_lemmas]]
+voc = "ܡܰܟܬܒܳܢܽܘܬܳܐ"
+gloss_en = "book"
+gloss_de = "Schrift"
+raw = "ܡܰܟܬܒܳܢܽܘܬܳܐ Schrift | book"
+
+[source]
+primer = "nestle-1889-en"
+page = 163
+leaf = "n252"

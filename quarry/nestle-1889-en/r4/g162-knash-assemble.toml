@@ -1,0 +1,41 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g162-knash-assemble"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܢܫ", voc = "ܟܢܰܫ", translit = "knaš" }
+pos = "verb, impf. u"
+gloss_en = "assemble"
+gloss_de = "versammeln"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Pa. 'assemble'; Ethpa. 'be assembled' | versammelt werden"
+primer_note = "⭐ The gloss 'versammeln' is printed after 'impf. u, Pa.', so the sense is carried by the Pa. and the Ethpa. is given its own gloss — the base stem is named but never glossed."
+
+[[sub_lemmas]]
+voc = "ܟܶܢܫܳܐ"
+gloss_en = "m. assembly, troop"
+gloss_de = "Versammlung, Haufe"
+raw = "ܟܶܢܫܳܐ m. Versammlung, Haufe | assembly, troop"
+
+[[sub_lemmas]]
+voc = "ܟܽܘܢܳܫܳܐ"
+gloss_en = "m. assembly"
+gloss_de = "Versammlung"
+raw = "ܟܽܘܢܳܫܳܐ m. Versammlung | assembly"
+
+[[sub_lemmas]]
+voc = "ܟܢܽܘܫܬܳܐ, pl. ܟܢܽܘܫܳܬܳܐ"
+gloss_en = "f. synagogue"
+gloss_de = "Synagoge"
+raw = "ܟܢܽܘܫܬܳܐ, pl. ܟܢܽܘܫܳܬܳܐ f. Synagoge | synagogue"
+
+[source]
+primer = "nestle-1889-en"
+page = 162
+leaf = "n251"

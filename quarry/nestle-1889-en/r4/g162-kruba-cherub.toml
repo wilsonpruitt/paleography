@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g162-kruba-cherub"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܪܘܒܐ", voc = "ܟܪܽܘܒܳܐ", translit = "krūbā" }
+pos = "m."
+gloss_en = "cherub (glossed only by the Hebrew cognate)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+hebrew = "כְּרוּב"
+plural_voc = "ܟܪܽܘܒܶܐ"
+primer_note = "⭐ Glossed in NO modern language: 'm. h. כְּרוּב' and nothing else — the ܝܳܬ shape (p. 160) again, here with Hebrew alone. The English 'cherub' is ours."
+
+[source]
+primer = "nestle-1889-en"
+page = 162
+leaf = "n251"

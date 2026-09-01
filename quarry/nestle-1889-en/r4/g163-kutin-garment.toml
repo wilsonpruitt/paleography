@@ -1,0 +1,25 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g163-kutin-garment"
+record_type = "R4"
+
+lemma = { unvoc = "ܟܘܬܝܢ", voc = "ܟܽܘܬܺܝܢ", translit = "kutīn" }
+pos = "noun"
+gloss_en = "dress, garment (χιτών)"
+gloss_de = "Kleid"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "χιτών"
+plural_voc = "ܟܽܘܬܺܝ̈ܢܶܐ et ܟܽܘܬܺܝ̈ܢܳܬܳܐ"
+variant_voc = "ܟܽܘܬܺܝܢܬܳܐ"
+primer_note = "Four forms and a Greek cognate before any modern gloss — the loan is identified by χιτών and only then translated."
+
+[source]
+primer = "nestle-1889-en"
+page = 163
+leaf = "n252"

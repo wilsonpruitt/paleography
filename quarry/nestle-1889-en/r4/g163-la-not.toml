@@ -1,0 +1,31 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g163-la-not"
+record_type = "R4"
+
+lemma = { unvoc = "ܠܐ", voc = "ܠܳܐ", translit = "lā" }
+pos = "particle"
+gloss_en = "not"
+gloss_de = "nicht"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+latin = "particula negationis"
+primer_note = "The Latin label ('particula negationis') and the modern gloss stand together — unlike ܠ, where the Latin is alone."
+uncertain = true
+uncertain_note = "The sub-lemma's first form is read ܒܠܳܐ: the prefix letter shows no dot below at 3×, so ܒ not ܕ. ⚠ ܕܠܳܐ is the form a reader would expect for 'without', and the two differ by a single dot at this scan's resolution. Flagged for the Syriacist rather than silently normalised."
+
+[[sub_lemmas]]
+voc = "ܒܠܳܐ, ܠܳܐ"
+gloss_en = "without"
+gloss_de = "ohne"
+raw = "ܒܠܳܐ, ܠܳܐ, ohne | without"
+
+[source]
+primer = "nestle-1889-en"
+page = 163
+leaf = "n252"

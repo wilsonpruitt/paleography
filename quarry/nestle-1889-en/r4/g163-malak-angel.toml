@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g163-malak-angel"
+record_type = "R4"
+
+lemma = { unvoc = "ܡܠܐܟܐ", voc = "ܡܰܠܰܐܟ", translit = "malʾak" }
+pos = "m."
+gloss_en = "angel (glossed only by the Hebrew and Greek cognates)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἄγγελος"
+hebrew = "מַלְאָךְ"
+variant_voc = "ܡܰܠܰܐܟܳܐ"
+primer_note = "⭐ Two catalogued shapes in one line. (1) A ܡ-preformative word filed under its ROOT: ܡܰܠܰܐܟܳܐ sits in the ܠ section between ܠܐܝ and ܠܒܒ, under ܠܐܟ. (2) Glossed in NO modern language — Hebrew AND Greek together, the ܟܪܽܘܒܳܐ device of p. 162 with a second cognate added. 'angel' is ours."
+
+[source]
+primer = "nestle-1889-en"
+page = 163
+leaf = "n252"
