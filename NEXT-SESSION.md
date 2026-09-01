@@ -25,12 +25,20 @@
   `research/syriac-pilot-phase1-calibration.md`. 34 calibration records from 8 pages.
 - ▶ **RUNNING. Wilson said 'opus go' 2026-09-01; Step 2 is under way, single-threaded.**
   ▶▶ **The glossary shard is the live work — read `quarry/nestle-1889-en/GLOSSARY-SHARD.md`
-  and run it straight through.** 18 of 63 pages, 253 records; `python3 tools/quarry_r4.py
-  --remaining` tells you exactly where to resume. ⚑ No fan-out: this Mac has ~100 MB free and
-  4.9 GB of swap in use.
+  and run it straight through.** ✅ **30 of 63 pages, 407 records (halfway, 2026-09-01).**
+  pp. 150–161 done this session: the ܙ, ܚ, ܛ and ܝ sections entire, ܟ open at ܟܡܪ.
+  `python3 tools/quarry_r4.py --remaining` tells you exactly where to resume (next: p. 162,
+  leaf n251). ⚑ No fan-out: this Mac has ~100 MB free and 4.9 GB of swap in use.
 - Approved estimate, for reference: **4.7k vision + 1.5k output tokens per page**; 201-page
   extraction set ⇒ **~1.43M tokens irreducible, ~2.5-3.0M end to end on Opus**. The glossary is
-  running ~14 records/page at ~19% uncertain, both stable since p. 136.
+  running ~13.6 records/page at ~21% uncertain, both stable since p. 136. ⚠ **Recalibrated at
+  halfway: the SUB-lemma rate was underestimated** — 394 sub-lemmas against 407 heads, so the
+  glossary projects to ~1,680 lemmas, not ~1,480. Output tokens per page run above the estimate
+  in proportion; vision does not.
+- ⛔ **A defect worth remembering: `emit` silently dropped every `sub_lemmas` it was handed**,
+  from the 2026-09-01 ruling until it was caught on p. 150 — the ruling converted the existing
+  records and left the WRITER behind. Fixed, and `emit` now raises on a mismatch. No earlier
+  page lost data. The general lesson is in the shard doc as convention 7.
 - ⬜ **Still owed by Wilson — none of these blocks the glossary, all of them block what follows:**
   1. ⬜ **R5 / `word_notes`**: Nestle's "Aids to Translation" are per-word notes keyed to a
      passage — a ready-made gloss layer with no home in §4. Changes WHAT the run extracts.
