@@ -57,12 +57,24 @@ about saving keystrokes; it was about having something to diff against.
 
 ⛔ **The real division inside R3 is therefore not the licence line:**
 
-| | pages | keyed by | checkable by |
+| Piece | pp. | control (all PD) | strength |
 |---|---|---|---|
-| Peshitta (Gen. 1-4, Matt. 5, Lord's Prayer) | 23 | us | SEDRA + a PD 1905 scan |
-| Vitae Prophetarum, Historia inventionis | 44 | us | **nobody but a Syriacist** |
+| I Genesis 1-4 | 67-78 | Barnes, *Pentateuchus Syriace*, BFBS 1914 | Syriac ↔ Syriac, independent |
+| II Matthew 5 (+ Lord's Prayer p. 70) | 79-85 | BFBS *NT in Syriac* 1905-1920; Pusey-Gwilliam 1901 | Syriac ↔ Syriac, independent |
+| III *Vitae Prophetarum* | 86-107 | Schermann 1907 — **Latin of the Syriac** Sinai Syr. 10, + name index | sense only, **but in Latin** |
+| IV *Historia inventionis* | 108-131 | **Nestle's own *De sancta cruce*, 1889** | Syriac ↔ Syriac, **not independent** |
 
-The 44 are what the empty expert seat actually blocks. The 23 are not blocked at all.
+⭐ **Revised 2026-09-01, twice, on Wilson's pointers.** The claim that 44 pages were "checkable
+by nobody but a Syriacist" was wrong. Every page of the chrestomathy has a PD control; the two
+weak spots are opposite and neither is fatal. III has an independent witness in a language we
+can read but no Syriac. IV has the Syriac but no independence — Nestle lifted the piece out of
+his own book the same year, so agreement proves we keyed *Nestle* right, not that Nestle keyed
+the manuscript right. Details and the evidence for the *De sancta cruce* identification:
+`research/syriac-peshitta-editions.md`.
+
+⭐ **The consequence for the expert seat:** the Syriacist is no longer a precondition for R3.
+Piece IV self-checks, pieces I and II diff against independent PD editions, and piece III is
+checkable in Latin by Wilson.
 
 **3. The glossary, not the grammar, is the volume.** 63 dense pages at ~18-20 head-lemmas each
 ≈ **1,150-1,300 R4 records**, plus roughly 400 `||` sub-lemmas if those become records of their

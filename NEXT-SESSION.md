@@ -36,7 +36,14 @@
      Cod. 940 and Cod. Syr. 1) — so we **produce** the text instead: key from Nestle (itself a
      PD printed Peshitta), check against SEDRA + a PD 1905 scan, ship neither. That splits R3:
      **23 Peshitta pages are keyable and checkable NOW**; the 44 pages of Vitae Prophetarum /
-     Historia inventionis have no check but a Syriacist. ✅ **Diff targets PINNED 2026-09-01**
+     Historia inventionis ⭐ ALSO have controls now (2026-09-01): **Schermann, *Prophetarum
+     vitae fabulosae*, Teubner 1907** = `prophetarumvita00schegoog`, which prints a **Latin
+     version of the Syriac** (Sinai Syr. 10) at p. 105 + a proper-name index — sense-level, but
+     in Latin, so Wilson can run it; and ⭐ **Nestle's own *De sancta cruce*, 1889** =
+     `desanctacruceein0000nest`, from which he lifted chrestomathy IV verbatim (same heads, same
+     three codices, same `(b, col. 1)` folio markers) — a character-level Syriac diff, though
+     NOT an independent witness. **No chrestomathy page is now without a control, and the
+     Syriacist is no longer a precondition for R3.** ✅ **Diff targets PINNED 2026-09-01**
      from Brock's bibliography (`syri.ac/brock/bible` — Cloudflare-blocks curl and WebFetch,
      renders in Playwright): **Barnes, *Pentateuchus Syriace*, BFBS 1914** =
      `ktavadeauritaauk00lees` for Genesis, and **BFBS *New Testament in Syriac* 1905-1920** =

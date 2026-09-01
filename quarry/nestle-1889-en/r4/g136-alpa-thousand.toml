@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g136-alpa-thousand"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܠܦܐ", voc = "ܐܰܠܦܳܐ", translit = "'alpā" }
+pos = "numeral"
+gloss_en = "thousand"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§33 d"
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "Nestle notes Nöldeke writes the st. emph. sg. differently (marked k.), and that the editio americana prints the plural at Apoc. 6, 11; 7, 1-4; 14, 1 (19, 18)."
+uncertain = true
+uncertain_note = "⭐ A minimal pair with ܐܶܠܦܳܐ 'ship' below: same consonants, different pointing, different word. Exactly the case where vocalisation outranks the sense — and where a scan at this resolution is at its limit."
+
+[source]
+primer = "nestle-1889-en"
+page = 136
+leaf = "n225"

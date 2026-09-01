@@ -13,6 +13,7 @@ lines 20-35.
 """
 
 layer = "unvocalized Estrangela"
+diff_target = "⭐ Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Greek recensions A-E pp. 1-104, plus (Capitula, Appendix) a LATIN VERSION OF THE SYRIAC of cod. Sinait. syro 10 (saec. IX) at p. 105, and an Index nominum propriorum at p. 240. SENSE-level control only — a different Syriac witness, rendered in Latin, so it catches a mis-keyed proper name or a meaningless sentence but never adjudicates pointing. ⭐ It is in Latin, so this check does not wait on the Syriacist seat. See research/syriac-peshitta-editions.md"
 layer_source = "read from the plate"
 seyame = true
 diacritics = "consonant-distinguishing points present; no vowel signs"
@@ -32,8 +33,12 @@ of any kind.
 ⭐ This is the real division inside R3, and it is not the licence line:
 · Peshitta pieces (Genesis pp. 67-78, Matthew 5 pp. 79-85, 22 pages) — keyed by us, but
   CHECKABLE against SEDRA and a PD 1905 scan.
-· Vitae Prophetarum + Historia inventionis (pp. 86-131, 44 pages) — keyed by us and checkable by
-  NOBODY but a Syriacist. These are the pages the empty expert seat actually blocks.
+· Vitae Prophetarum (pp. 86-107, 22 pages) — keyed by us, SENSE-checkable against Schermann's
+  Latin of the Syriac Sinai witness, in a language Wilson reads.
+· Historia inventionis (pp. 108-131, 24 pages) — keyed by us and diffable CHARACTER BY CHARACTER
+  against Nestle's own De sancta cruce (1889), from which he lifted the piece. Strong as a
+  transcription check, worthless as a textual one: same editor, same year, not independent.
+⭐ REVISED 2026-09-01 — no page of the chrestomathy is now without a control.
 """
 
 [source]

@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g137-emar"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܡܪ", voc = "ܐܶܡܰܪ", translit = "'emar" }
+pos = "verb, impf. a"
+gloss_en = "speak, say"
+gloss_de = "sprechen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+sub_lemmas = "ܡܺܐܡܰܪ, ܡܺܐܡܪܳܐ m. word, sermon, treatise | Wort, Predigt, Abhandlung"
+
+[source]
+primer = "nestle-1889-en"
+page = 137
+leaf = "n226"

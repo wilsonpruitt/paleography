@@ -1,0 +1,25 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g137-amin"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܡܝܢ", voc = "ܐܰܡܺܝܢ", translit = "'amīn" }
+pos = "adj."
+gloss_en = "constant"
+gloss_de = "beständig"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἀμήν"
+hebrew = "הֶאֱמִין"
+sub_lemmas = "ܐܽܘܡܳܢܳܐ artisan | Handwerker ‖ ܐܽܘܡܳܢܽܘܬܳܐ trade, art | Handwerk, Kunst ‖ Aph. ܗܰܝܡܶܢ (h. הֶאֱמִין) believe | glauben ‖ ܗܰܝܡܳܢܽܘܬܳܐ faith | Glaube ‖ ܡܗܰܝܡܢܳܐ, f. ܡܗܰܝܡܢܺܝܬܳܐ faithful, true | gläubig, treu"
+primer_note = "Nestle notes the same form also = ἀμήν. Adverb ܐܰܡܺܝܢܳܐܝܺܬ. He files the whole ܐܡܢ family here."
+
+[source]
+primer = "nestle-1889-en"
+page = 137
+leaf = "n226"
