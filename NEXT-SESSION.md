@@ -49,6 +49,16 @@
   3. ⬜ **The 16 ⛔ NOT READ records** need a reader with the plate. Each `uncertain_note` says
      exactly what was tried; several are refusals where a plausible lemma WAS available and was
      rejected because the slot and the glyph count disagreed.
+- ⏸ **DEFERRED by Wilson 2026-09-01, tracked not fixed: the `root` field is empty on all 874
+  records.** `emit` hard-coded `root = ""` and silently discarded every `root=` it was handed —
+  the third defect of one family (sub_lemmas p. 150, continues_from p. 177, this). The cause is
+  fixed: unknown keys are now FATAL in `emit`, and `root` is a real passthrough field, so it
+  cannot recur. The DATA is not recovered: only 41 of 874 records name their root in their own
+  notes; the rest would need plate re-reads. ⛔ **`root = ""` therefore means NOT CAPTURED, never
+  "no root"** (shard doc, convention 12) — and **do not part-fill it**, because a partial backfill
+  makes the empty string ambiguous and destroys the one thing it currently tells you.
+  `--audit` prints the coverage on every run so the gap stays in view.
+
 - Approved estimate, for the record: **4.7k vision + 1.5k output tokens per page** was the
   forecast; the run came in at roughly one 3× zoom per page on top of the two half-crops, which
   is the one line of the estimate worth revising for the next primer.

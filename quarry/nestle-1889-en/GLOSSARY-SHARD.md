@@ -128,6 +128,14 @@ prints both counts. A page coming in at 9 or at 20 is not necessarily an error �
    entry), and the ܚ-order anomaly on p. 152 (p. 153 shows the order holds, so the anomaly is
    ours). ⚑ Therefore: when a slot and a sense disagree, WRITE THE DOUBT DOWN and read on —
    do not zoom twice and do not guess.
+12. ⛔ **`root = ""` MEANS "NOT CAPTURED", NEVER "no root".** All 874 records carry an empty
+   `root`, because `emit` hard-coded it and silently discarded every `root=` it was handed until
+   2026-09-01 — the third defect of the family in convention 7's note. Wilson deferred the
+   backfill; `--audit` now prints the coverage so the gap stays visible. ⚑ **Do not part-fill it.**
+   A partial backfill makes the empty string ambiguous between the two meanings and destroys the
+   only thing the field currently tells you, which is that nothing has been captured yet. If it is
+   ever filled, fill it in one pass and flip this convention in the same commit.
+
 11. **Capture every point faithfully.** Curriculum questions — what a learner sees first —
    leak nowhere into extraction.
 

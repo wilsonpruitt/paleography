@@ -176,6 +176,11 @@ def main():
         print(f"pages done: {len(pages)} of 63   records: {len(recs)}   "
               f"uncertain: {unc} ({100*unc/n:.0f}%)   unread: {len(unread)}   "
               f"mean/page: {len(recs)/len(pages):.1f}")
+        rooted = sum(1 for r in recs if r.get("root"))
+        print(f"root captured: {rooted} of {len(recs)}"
+              + ("   ⛔ `root = \"\"` means NOT CAPTURED, never 'no root' — emit discarded every"
+                 " root= until 2026-09-01; deferred by Wilson, see NEXT-SESSION.md"
+                 if rooted < len(recs) else "   ✅"))
         print(f"lemmas: {len(recs)} head + {subs} sub = {len(recs)+subs}   "
               f"({(len(recs)+subs)/len(pages):.1f}/page  \u2192 ~{round((len(recs)+subs)/len(pages)*63/10)*10} for the glossary)")
     if a.remaining:
