@@ -14,9 +14,24 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "f. ܒܰܟܺܝܪܬܳܐ ‖ (an adverbial form) what ripens first | zuerst reif ‖ ܒܽܘܟܪܳܐ, pl. ܒܽܘܟܪ̈ܶܐ firstling | Erstling"
+
 uncertain = true
 uncertain_note = "The middle sub-form ('what ripens first') is a two-word phrase whose pointing is not resolved."
+
+[[sub_lemmas]]
+gloss = "f. ܒܰܟܺܝܪܬܳܐ"
+raw = "f. ܒܰܟܺܝܪܬܳܐ"
+
+[[sub_lemmas]]
+gloss_en = "(an adverbial form) what ripens first"
+gloss_de = "zuerst reif"
+raw = "(an adverbial form) what ripens first | zuerst reif"
+
+[[sub_lemmas]]
+voc = "ܒܽܘܟܪܳܐ"
+gloss_en = "pl. ܒܽܘܟܪ̈ܶܐ firstling"
+gloss_de = "Erstling"
+raw = "ܒܽܘܟܪܳܐ, pl. ܒܽܘܟܪ̈ܶܐ firstling | Erstling"
 
 [source]
 primer = "nestle-1889-en"

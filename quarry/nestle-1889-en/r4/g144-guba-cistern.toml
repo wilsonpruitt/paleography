@@ -14,8 +14,13 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܓܽܘܒܬܳܐ f. (same sense)"
+
 primer_note = "Cf. de Lagarde, Mittheilungen 2, 354 A. 2."
+
+[[sub_lemmas]]
+voc = "ܓܽܘܒܬܳܐ"
+gloss = "f. (same sense)"
+raw = "ܓܽܘܒܬܳܐ f. (same sense)"
 
 [source]
 primer = "nestle-1889-en"

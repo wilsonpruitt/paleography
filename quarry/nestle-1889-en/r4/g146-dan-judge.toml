@@ -14,8 +14,26 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܕܺܝܢܳܐ court, judgement | Gericht ‖ ܕܰܝܳܢܳܐ judge | Richter ‖ ܡܕܺܝܢܬܳܐ, pl. ܡܕܺܝ̈ܢܳܬܳܐ, st. cstr. ܡܕܺܝܢܰܬ town | Stadt"
+
 primer_note = "⭐ 'Town' filed under 'judge' — ܡܕܺܝܢܬܳܐ is the place where judgement is given. Root-ordering again putting a common noun where a reader would never look for it."
+
+[[sub_lemmas]]
+voc = "ܕܺܝܢܳܐ"
+gloss_en = "court, judgement"
+gloss_de = "Gericht"
+raw = "ܕܺܝܢܳܐ court, judgement | Gericht"
+
+[[sub_lemmas]]
+voc = "ܕܰܝܳܢܳܐ"
+gloss_en = "judge"
+gloss_de = "Richter"
+raw = "ܕܰܝܳܢܳܐ judge | Richter"
+
+[[sub_lemmas]]
+voc = "ܡܕܺܝܢܬܳܐ"
+gloss_en = "pl. ܡܕܺܝ̈ܢܳܬܳܐ, st. cstr. ܡܕܺܝܢܰܬ town"
+gloss_de = "Stadt"
+raw = "ܡܕܺܝܢܬܳܐ, pl. ܡܕܺܝ̈ܢܳܬܳܐ, st. cstr. ܡܕܺܝܢܰܬ town | Stadt"
 
 [source]
 primer = "nestle-1889-en"

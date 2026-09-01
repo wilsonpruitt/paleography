@@ -16,7 +16,30 @@ noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܐܰܠܶܦ"
 stems = "Pael teach | lehren"
-sub_lemmas = "ܐܰܠܺܝܦ learned | gelehrt ‖ ܡܰܠܦܳܢܳܐ teacher | Lehrer ‖ ܡܰܠܦܳܢܽܘܬܳܐ learning | Gelehrsamkeit ‖ ܝܽܘܠܦܳܢܳܐ § 25, 4, b 1 doctrine | Lehre"
+
+[[sub_lemmas]]
+voc = "ܐܰܠܺܝܦ"
+gloss_en = "learned"
+gloss_de = "gelehrt"
+raw = "ܐܰܠܺܝܦ learned | gelehrt"
+
+[[sub_lemmas]]
+voc = "ܡܰܠܦܳܢܳܐ"
+gloss_en = "teacher"
+gloss_de = "Lehrer"
+raw = "ܡܰܠܦܳܢܳܐ teacher | Lehrer"
+
+[[sub_lemmas]]
+voc = "ܡܰܠܦܳܢܽܘܬܳܐ"
+gloss_en = "learning"
+gloss_de = "Gelehrsamkeit"
+raw = "ܡܰܠܦܳܢܽܘܬܳܐ learning | Gelehrsamkeit"
+
+[[sub_lemmas]]
+voc = "ܝܽܘܠܦܳܢܳܐ"
+gloss_en = "§ 25, 4, b 1 doctrine"
+gloss_de = "Lehre"
+raw = "ܝܽܘܠܦܳܢܳܐ § 25, 4, b 1 doctrine | Lehre"
 
 [source]
 primer = "nestle-1889-en"

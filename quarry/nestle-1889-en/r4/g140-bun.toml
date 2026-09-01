@@ -16,8 +16,14 @@ noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܒܝܢ"
 stems = "Pa. ܒܰܝܶܢ explain | erklären; Ethpa. understand | verstehen"
-sub_lemmas = "ܒܽܘܝܳܢܳܐ explanation | Erklärung"
+
 primer_note = "Nestle prints the root in parentheses with an alternative: (ܒܘܢ vel ܒܝܢ)."
+
+[[sub_lemmas]]
+voc = "ܒܽܘܝܳܢܳܐ"
+gloss_en = "explanation"
+gloss_de = "Erklärung"
+raw = "ܒܽܘܝܳܢܳܐ explanation | Erklärung"
 
 [source]
 primer = "nestle-1889-en"

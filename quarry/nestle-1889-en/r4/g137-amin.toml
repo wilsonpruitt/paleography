@@ -16,8 +16,37 @@ noldeke = []
 layer = "vocalized Serto"
 greek = "ἀμήν"
 hebrew = "הֶאֱמִין"
-sub_lemmas = "ܐܽܘܡܳܢܳܐ artisan | Handwerker ‖ ܐܽܘܡܳܢܽܘܬܳܐ trade, art | Handwerk, Kunst ‖ Aph. ܗܰܝܡܶܢ (h. הֶאֱמִין) believe | glauben ‖ ܗܰܝܡܳܢܽܘܬܳܐ faith | Glaube ‖ ܡܗܰܝܡܢܳܐ, f. ܡܗܰܝܡܢܺܝܬܳܐ faithful, true | gläubig, treu"
+
 primer_note = "Nestle notes the same form also = ἀμήν. Adverb ܐܰܡܺܝܢܳܐܝܺܬ. He files the whole ܐܡܢ family here."
+
+[[sub_lemmas]]
+voc = "ܐܽܘܡܳܢܳܐ"
+gloss_en = "artisan"
+gloss_de = "Handwerker"
+raw = "ܐܽܘܡܳܢܳܐ artisan | Handwerker"
+
+[[sub_lemmas]]
+voc = "ܐܽܘܡܳܢܽܘܬܳܐ"
+gloss_en = "trade, art"
+gloss_de = "Handwerk, Kunst"
+raw = "ܐܽܘܡܳܢܽܘܬܳܐ trade, art | Handwerk, Kunst"
+
+[[sub_lemmas]]
+gloss_en = "Aph. ܗܰܝܡܶܢ (h. הֶאֱמִין) believe"
+gloss_de = "glauben"
+raw = "Aph. ܗܰܝܡܶܢ (h. הֶאֱמִין) believe | glauben"
+
+[[sub_lemmas]]
+voc = "ܗܰܝܡܳܢܽܘܬܳܐ"
+gloss_en = "faith"
+gloss_de = "Glaube"
+raw = "ܗܰܝܡܳܢܽܘܬܳܐ faith | Glaube"
+
+[[sub_lemmas]]
+voc = "ܡܗܰܝܡܢܳܐ"
+gloss_en = "f. ܡܗܰܝܡܢܺܝܬܳܐ faithful, true"
+gloss_de = "gläubig, treu"
+raw = "ܡܗܰܝܡܢܳܐ, f. ܡܗܰܝܡܢܺܝܬܳܐ faithful, true | gläubig, treu"
 
 [source]
 primer = "nestle-1889-en"

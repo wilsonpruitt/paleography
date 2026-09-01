@@ -16,9 +16,19 @@ noldeke = []
 layer = "vocalized Serto"
 greek = "ἀργία"
 stems = "Ethpe. cum ܠ be busy | eifrig sein; Pa. stop, abolish | aufhören machen, abschaffen"
-sub_lemmas = "(a noun) idleness | Trägheit, ἀργία ‖ (a participle) being a hindrance | verhindernd"
+
 uncertain = true
 uncertain_note = "The two sub-lemmas' pointing is not resolved; recorded by their glosses."
+
+[[sub_lemmas]]
+gloss_en = "(a noun) idleness"
+gloss_de = "Trägheit, ἀργία"
+raw = "(a noun) idleness | Trägheit, ἀργία"
+
+[[sub_lemmas]]
+gloss_en = "(a participle) being a hindrance"
+gloss_de = "verhindernd"
+raw = "(a participle) being a hindrance | verhindernd"
 
 [source]
 primer = "nestle-1889-en"

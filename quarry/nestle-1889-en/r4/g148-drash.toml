@@ -14,7 +14,11 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "Part. pass. Pa. ܡܕܰܪܰܫ practised, experienced | geübt, erfahren"
+
+[[sub_lemmas]]
+gloss_en = "Part. pass. Pa. ܡܕܰܪܰܫ practised, experienced"
+gloss_de = "geübt, erfahren"
+raw = "Part. pass. Pa. ܡܕܰܪܰܫ practised, experienced | geübt, erfahren"
 
 [source]
 primer = "nestle-1889-en"

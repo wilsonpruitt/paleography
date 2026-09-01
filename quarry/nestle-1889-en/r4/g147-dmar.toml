@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܬܶܕܡܽܘܪܬܳܐ f., pl. ܬܶܕܡܪ̈ܳܬܳܐ miracle | Wunder"
+
+[[sub_lemmas]]
+voc = "ܬܶܕܡܽܘܪܬܳܐ"
+gloss_en = "f., pl. ܬܶܕܡܪ̈ܳܬܳܐ miracle"
+gloss_de = "Wunder"
+raw = "ܬܶܕܡܽܘܪܬܳܐ f., pl. ܬܶܕܡܪ̈ܳܬܳܐ miracle | Wunder"
 
 [source]
 primer = "nestle-1889-en"

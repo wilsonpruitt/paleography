@@ -15,10 +15,57 @@ frequency_rank = ""
 nestle_section = "§20"
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܗܽܘ m., ܗܺܝ f., pl. ܗܶܢܽܘܢ, ܗܶܢܶܝܢ pron. § 20 ‖ ܗܳܝܕܶܝܢ then | damals ‖ ܗܳܟܘܳܬ likewise, similarly | ebenso, ähnlich ‖ ܗܳܟܺܝܠ therefore | daher, nun ‖ ܗܳܟܰܢ, ܗܳܟܰܢܳܐ in this way, thus | auf diese Weise ‖ ܗܳܢ, ܗܳܢܳܐ m. this | dieser; ܗܳܕܶܐ f., pl. ܗܳܠܶܝܢ § 20 ‖ ܗܳܪܟܳܐ here | hier ‖ ܗܳܫܳܐ (v. ܫܳܥܬܳܐ) at this time | zu dieser Zeit"
+
 primer_note = "⭐ First entry of the ܗ section, and the largest particle cluster in the glossary so far: one head-word carrying the entire demonstrative and deictic system — pronouns, 'then', 'therefore', 'thus', 'this', 'here', 'now'."
 uncertain = true
 uncertain_note = "Ten sub-forms, most of them two- or three-letter particles differing only in pointing. Read from their glosses and from § 20; individual pointings not certified. Should join g134-ahr at the head of the blind-control sample."
+
+[[sub_lemmas]]
+voc = "ܗܽܘ"
+gloss = "m., ܗܺܝ f., pl. ܗܶܢܽܘܢ, ܗܶܢܶܝܢ pron. § 20"
+raw = "ܗܽܘ m., ܗܺܝ f., pl. ܗܶܢܽܘܢ, ܗܶܢܶܝܢ pron. § 20"
+
+[[sub_lemmas]]
+voc = "ܗܳܝܕܶܝܢ"
+gloss_en = "then"
+gloss_de = "damals"
+raw = "ܗܳܝܕܶܝܢ then | damals"
+
+[[sub_lemmas]]
+voc = "ܗܳܟܘܳܬ"
+gloss_en = "likewise, similarly"
+gloss_de = "ebenso, ähnlich"
+raw = "ܗܳܟܘܳܬ likewise, similarly | ebenso, ähnlich"
+
+[[sub_lemmas]]
+voc = "ܗܳܟܺܝܠ"
+gloss_en = "therefore"
+gloss_de = "daher, nun"
+raw = "ܗܳܟܺܝܠ therefore | daher, nun"
+
+[[sub_lemmas]]
+voc = "ܗܳܟܰܢ, ܗܳܟܰܢܳܐ"
+gloss_en = "in this way, thus"
+gloss_de = "auf diese Weise"
+raw = "ܗܳܟܰܢ, ܗܳܟܰܢܳܐ in this way, thus | auf diese Weise"
+
+[[sub_lemmas]]
+voc = "ܗܳܢ, ܗܳܢܳܐ"
+gloss_en = "m. this"
+gloss_de = "dieser; ܗܳܕܶܐ f., pl. ܗܳܠܶܝܢ § 20"
+raw = "ܗܳܢ, ܗܳܢܳܐ m. this | dieser; ܗܳܕܶܐ f., pl. ܗܳܠܶܝܢ § 20"
+
+[[sub_lemmas]]
+voc = "ܗܳܪܟܳܐ"
+gloss_en = "here"
+gloss_de = "hier"
+raw = "ܗܳܪܟܳܐ here | hier"
+
+[[sub_lemmas]]
+voc = "ܗܳܫܳܐ"
+gloss_en = "(v. ܫܳܥܬܳܐ) at this time"
+gloss_de = "zu dieser Zeit"
+raw = "ܗܳܫܳܐ (v. ܫܳܥܬܳܐ) at this time | zu dieser Zeit"
 
 [source]
 primer = "nestle-1889-en"

@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܓܠܺܝܙܽܘܬܳܐ robbery | Beraubung"
+
+[[sub_lemmas]]
+voc = "ܓܠܺܝܙܽܘܬܳܐ"
+gloss_en = "robbery"
+gloss_de = "Beraubung"
+raw = "ܓܠܺܝܙܽܘܬܳܐ robbery | Beraubung"
 
 [source]
 primer = "nestle-1889-en"

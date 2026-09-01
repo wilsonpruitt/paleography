@@ -14,7 +14,18 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܒܳܥܽܘ, ܒܳܥܽܘܬܳܐ f. request | Bitte ‖ ܒܥܳܬܳܐ f. petition, question | das Suchen, die Frage"
+
+[[sub_lemmas]]
+voc = "ܒܳܥܽܘ, ܒܳܥܽܘܬܳܐ"
+gloss_en = "f. request"
+gloss_de = "Bitte"
+raw = "ܒܳܥܽܘ, ܒܳܥܽܘܬܳܐ f. request | Bitte"
+
+[[sub_lemmas]]
+voc = "ܒܥܳܬܳܐ"
+gloss_en = "f. petition, question"
+gloss_de = "das Suchen, die Frage"
+raw = "ܒܥܳܬܳܐ f. petition, question | das Suchen, die Frage"
 
 [source]
 primer = "nestle-1889-en"

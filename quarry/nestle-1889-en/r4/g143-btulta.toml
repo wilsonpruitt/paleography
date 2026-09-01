@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܒܬܽܘܠܽܘܬܳܐ virginity | Jungfräulichkeit"
+
+[[sub_lemmas]]
+voc = "ܒܬܽܘܠܽܘܬܳܐ"
+gloss_en = "virginity"
+gloss_de = "Jungfräulichkeit"
+raw = "ܒܬܽܘܠܽܘܬܳܐ virginity | Jungfräulichkeit"
 
 [source]
 primer = "nestle-1889-en"

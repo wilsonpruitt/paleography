@@ -12,7 +12,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܢܶܨܒܬܳܐ f., pl. ܢܶܨ̈ܒܳܬܳܐ plant | Pflanze"
+
+[[sub_lemmas]]
+voc = "ܢܶܨܒܬܳܐ"
+gloss_en = "f., pl. ܢܶܨ̈ܒܳܬܳܐ plant"
+gloss_de = "Pflanze"
+raw = "ܢܶܨܒܬܳܐ f., pl. ܢܶܨ̈ܒܳܬܳܐ plant | Pflanze"
 
 [source]
 primer = "nestle-1889-en"

@@ -108,11 +108,32 @@ by translation *marked as ours, never as the primer's*) · `vocab_lemmas` (list,
 `work` (canonical: e.g. `peshitta:matt:5:1-12`, `ephrem:carmina-nisibena:…`) · `text_syr` as
 printed (layer-declared: vocalized? seyame? punctuation?) · `alignment` (§5: which digital
 text it was matched to, and the diff) · `primer_notes` (the author's philological footnotes,
-kept — they are gloss fodder) · `source`.
+kept — they are gloss fodder) · `source`
+· ⭐ **`word_notes` (ruled 2026-09-01)** — a list of `{index, form_voc, note, nestle_sections,
+noldeke}`, one per word the primer comments on. Nestle's "Aids to Translation" are a
+ready-made per-word gloss layer keyed to a passage, of exactly the kind the hand-trainer
+already ships per line; flattening them into `primer_notes` loses the keying, which is the
+part the curriculum wants. A field on R3, **not** a record type of its own — it belongs to the
+passage, and promoting an array to its own type later is mechanical.
+⛔ **`nestle_sections` is not `noldeke`.** The §§ in a primer's own apparatus are its own
+section numbers. Nöldeke is the shared coordinate system precisely because every primer
+numbers itself differently; merging the two namespaces destroys the thing that makes the
+spine work.
 
 ### R4 — Glossary entry
 `lemma` (unvoc + voc) · `gloss_en` · `pos` · `root` · `payne_smith` (page ref) ·
-`frequency_rank` (filled in Phase 2 from the corpus, **not** from the primer) · `source`.
+`frequency_rank` (filled in Phase 2 from the corpus, **not** from the primer) · `source`
+· `gloss_de`, `nestle_section`, `greek`, `hebrew`, `arabic`, `latin`, `plural_voc`,
+`variant_voc`, `construct_voc`, `dialect_variant`, `stems`, `see`, `continues_from` — all
+added on contact with Nestle, who glosses German | English and carries a comparative
+apparatus as a matter of course.
+· ⭐ **`sub_lemmas` (ruled 2026-09-01)** — a STRUCTURED ARRAY on the parent, each item
+`{voc, gloss_en, gloss_de | gloss, raw}`. Nestle's `‖` sub-lemmas are **not** separate
+records: his ordering is by root, so the parent-child link is a claim he is actually making,
+and keeping it costs nothing that Phase 2 needs. Measured on the first 18 pages: **253 head
++ 171 sub = 424 lemmas, ~23.6/page**, so the glossary is ~880 records carrying ~1,480 lemmas.
+⚑ Every item keeps `raw`, the printed piece verbatim — the parse is a convenience, never the
+record.
 
 **What is NOT extracted:** the comparative-philology digressions, the Hebrew/Arabic cognate
 apparatus, the bibliography chapters, prefaces. That is the filler; naming it here is what

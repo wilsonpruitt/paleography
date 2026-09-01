@@ -14,8 +14,26 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܰܝܟܰܘ = ܐܰܝܟܳܐ ܗܽܘ where is (he)? | wo ist (er)? ‖ ܡܶܢ ܐܰܝܟܳܐ whence? | woher? ‖ ܐܰܝܟܰܢ, ܐܰܝܟܰܢܳܐ in what way? | auf welche Weise?"
+
 primer_note = "With ܕ, relative."
+
+[[sub_lemmas]]
+voc = "ܐܰܝܟܰܘ"
+gloss_en = "= ܐܰܝܟܳܐ ܗܽܘ where is (he)?"
+gloss_de = "wo ist (er)?"
+raw = "ܐܰܝܟܰܘ = ܐܰܝܟܳܐ ܗܽܘ where is (he)? | wo ist (er)?"
+
+[[sub_lemmas]]
+voc = "ܡܶܢ ܐܰܝܟܳܐ"
+gloss_en = "whence?"
+gloss_de = "woher?"
+raw = "ܡܶܢ ܐܰܝܟܳܐ whence? | woher?"
+
+[[sub_lemmas]]
+voc = "ܐܰܝܟܰܢ, ܐܰܝܟܰܢܳܐ"
+gloss_en = "in what way?"
+gloss_de = "auf welche Weise?"
+raw = "ܐܰܝܟܰܢ, ܐܰܝܟܰܢܳܐ in what way? | auf welche Weise?"
 
 [source]
 primer = "nestle-1889-en"

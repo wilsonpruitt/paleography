@@ -13,7 +13,12 @@ frequency_rank = ""   # Phase 2, never from the primer
 nestle_section = "§41"   # ⚑ schema gap: the primer's OWN § cross-reference has no field
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܰܓܪܳܐ m. wages | Lohn"
+
+[[sub_lemmas]]
+voc = "ܐܰܓܪܳܐ"
+gloss_en = "m. wages"
+gloss_de = "Lohn"
+raw = "ܐܰܓܪܳܐ m. wages | Lohn"
 
 [source]
 primer = "nestle-1889-en"

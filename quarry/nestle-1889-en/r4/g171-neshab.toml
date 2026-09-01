@@ -12,7 +12,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܢܶܫܒܳܐ m. rope, net | Strick, Netz"
+
+[[sub_lemmas]]
+voc = "ܢܶܫܒܳܐ"
+gloss_en = "m. rope, net"
+gloss_de = "Strick, Netz"
+raw = "ܢܶܫܒܳܐ m. rope, net | Strick, Netz"
 
 [source]
 primer = "nestle-1889-en"

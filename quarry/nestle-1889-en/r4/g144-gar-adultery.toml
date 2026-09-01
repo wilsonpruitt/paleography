@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܓܰܘܪܳܐ adultery | Ehebruch"
+
+[[sub_lemmas]]
+voc = "ܓܰܘܪܳܐ"
+gloss_en = "adultery"
+gloss_de = "Ehebruch"
+raw = "ܓܰܘܪܳܐ adultery | Ehebruch"
 
 [source]
 primer = "nestle-1889-en"

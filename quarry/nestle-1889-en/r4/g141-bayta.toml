@@ -15,9 +15,21 @@ frequency_rank = ""
 nestle_section = "cf. §32"
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܒܶܝܬ ܦܰܚܳܪܳܐ pottery | Töpferwerkstätte ‖ ܒܶܝܬ ܩܒܽܘܪܳܐ (and a second form) cemetery | Grabstätte"
+
 uncertain = true
 uncertain_note = "The two ܒܶܝܬ compounds are read from their glosses; the second cemetery form's pointing is not resolved."
+
+[[sub_lemmas]]
+voc = "ܒܶܝܬ ܦܰܚܳܪܳܐ"
+gloss_en = "pottery"
+gloss_de = "Töpferwerkstätte"
+raw = "ܒܶܝܬ ܦܰܚܳܪܳܐ pottery | Töpferwerkstätte"
+
+[[sub_lemmas]]
+voc = "ܒܶܝܬ ܩܒܽܘܪܳܐ"
+gloss_en = "(and a second form) cemetery"
+gloss_de = "Grabstätte"
+raw = "ܒܶܝܬ ܩܒܽܘܪܳܐ (and a second form) cemetery | Grabstätte"
 
 [source]
 primer = "nestle-1889-en"

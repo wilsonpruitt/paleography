@@ -14,7 +14,18 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܒܨܺܝܪ adj. et adv. diminishing, less | abnehmend, weniger ‖ ܒܨܺܝܪ ܩܰܠܺܝܠ about, nearly | beinahe"
+
+[[sub_lemmas]]
+voc = "ܒܨܺܝܪ"
+gloss_en = "adj. et adv. diminishing, less"
+gloss_de = "abnehmend, weniger"
+raw = "ܒܨܺܝܪ adj. et adv. diminishing, less | abnehmend, weniger"
+
+[[sub_lemmas]]
+voc = "ܒܨܺܝܪ ܩܰܠܺܝܠ"
+gloss_en = "about, nearly"
+gloss_de = "beinahe"
+raw = "ܒܨܺܝܪ ܩܰܠܺܝܠ about, nearly | beinahe"
 
 [source]
 primer = "nestle-1889-en"

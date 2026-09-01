@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܗܶܓܳܓܳܝܳܐ fantastical | phantastisch"
+
+[[sub_lemmas]]
+voc = "ܗܶܓܳܓܳܝܳܐ"
+gloss_en = "fantastical"
+gloss_de = "phantastisch"
+raw = "ܗܶܓܳܓܳܝܳܐ fantastical | phantastisch"
 
 [source]
 primer = "nestle-1889-en"

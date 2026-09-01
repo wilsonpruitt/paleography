@@ -14,7 +14,10 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 greek = "ὀρθόδοξος"
-sub_lemmas = "f. ܐܳܪܬܳܘܕܽܘܟܣܺܝܬܳܐ"
+
+[[sub_lemmas]]
+gloss = "f. ܐܳܪܬܳܘܕܽܘܟܣܺܝܬܳܐ"
+raw = "f. ܐܳܪܬܳܘܕܽܘܟܣܺܝܬܳܐ"
 
 [source]
 primer = "nestle-1889-en"

@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܰܘܟܺܝܬ (cf. ܟܺܝܬ) or, that is | oder, das heisst"
+
+[[sub_lemmas]]
+voc = "ܐܰܘܟܺܝܬ"
+gloss_en = "(cf. ܟܺܝܬ) or, that is"
+gloss_de = "oder, das heisst"
+raw = "ܐܰܘܟܺܝܬ (cf. ܟܺܝܬ) or, that is | oder, das heisst"
 
 [source]
 primer = "nestle-1889-en"

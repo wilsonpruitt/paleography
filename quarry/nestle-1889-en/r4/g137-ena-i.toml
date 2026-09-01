@@ -15,8 +15,13 @@ frequency_rank = ""
 nestle_section = "§19"
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "Pl. ܚܢܰܢ we | wir"
+
 primer_note = "Also treated as R1 at r1/p023-1 (§19, the independent personal pronoun)."
+
+[[sub_lemmas]]
+gloss_en = "Pl. ܚܢܰܢ we"
+gloss_de = "wir"
+raw = "Pl. ܚܢܰܢ we | wir"
 
 [source]
 primer = "nestle-1889-en"

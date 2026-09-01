@@ -15,7 +15,33 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܐ̱ܢܳܫ"
-sub_lemmas = "ܒܰܪܢܳܫܳܐ, ܒܰܪܢܳܫ, pl. ܒܢܰܝ̈ܢܳܫܳܐ ‖ pl. ܐ̱ܢܳܫܺܝܢ some | einige ‖ ܐ̱ܢܳܫܳܝܳܐ human | menschlich ‖ ܐ̱ܢܳܫܽܘܬܳܐ human nature | Menschennatur ‖ ܢܶܫ̈ܶܐ v. ܐܰܢ̱ܬܬܳܐ"
+
+[[sub_lemmas]]
+voc = "ܒܰܪܢܳܫܳܐ, ܒܰܪܢܳܫ"
+gloss = "pl. ܒܢܰܝ̈ܢܳܫܳܐ"
+raw = "ܒܰܪܢܳܫܳܐ, ܒܰܪܢܳܫ, pl. ܒܢܰܝ̈ܢܳܫܳܐ"
+
+[[sub_lemmas]]
+gloss_en = "pl. ܐ̱ܢܳܫܺܝܢ some"
+gloss_de = "einige"
+raw = "pl. ܐ̱ܢܳܫܺܝܢ some | einige"
+
+[[sub_lemmas]]
+voc = "ܐ"
+gloss_en = "̱ܢܳܫܳܝܳܐ human"
+gloss_de = "menschlich"
+raw = "ܐ̱ܢܳܫܳܝܳܐ human | menschlich"
+
+[[sub_lemmas]]
+voc = "ܐ"
+gloss_en = "̱ܢܳܫܽܘܬܳܐ human nature"
+gloss_de = "Menschennatur"
+raw = "ܐ̱ܢܳܫܽܘܬܳܐ human nature | Menschennatur"
+
+[[sub_lemmas]]
+voc = "ܢܶܫ"
+gloss = "̈ܶܐ v. ܐܰܢ̱ܬܬܳܐ"
+raw = "ܢܶܫ̈ܶܐ v. ܐܰܢ̱ܬܬܳܐ"
 
 [source]
 primer = "nestle-1889-en"

@@ -14,7 +14,18 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܰܟܚܕܳܐ together | zugleich ‖ ܐܰܟܡܳܐ according to, corresponding to | nachdem, entsprechend"
+
+[[sub_lemmas]]
+voc = "ܐܰܟܚܕܳܐ"
+gloss_en = "together"
+gloss_de = "zugleich"
+raw = "ܐܰܟܚܕܳܐ together | zugleich"
+
+[[sub_lemmas]]
+voc = "ܐܰܟܡܳܐ"
+gloss_en = "according to, corresponding to"
+gloss_de = "nachdem, entsprechend"
+raw = "ܐܰܟܡܳܐ according to, corresponding to | nachdem, entsprechend"
 
 [source]
 primer = "nestle-1889-en"

@@ -14,7 +14,10 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "part. ܕܳܐܶܨ, f. ܕܳܝܨܳܐ"
+
+[[sub_lemmas]]
+gloss = "part. ܕܳܐܶܨ, f. ܕܳܝܨܳܐ"
+raw = "part. ܕܳܐܶܨ, f. ܕܳܝܨܳܐ"
 
 [source]
 primer = "nestle-1889-en"

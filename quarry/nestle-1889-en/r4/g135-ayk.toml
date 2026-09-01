@@ -14,10 +14,34 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܰܝܟ ܕ conj. as | wie ‖ ܐܰܝܟ ܗܳܢܳܐ such | wie dieser, ein solcher ‖ ܐܰܝܟ ܗܳܟܶܝܢ in such a way | auf solche Weise ‖ ܐܰܟܘܳܬ cum Suff., like | wie"
+
 primer_note = "Nestle gives the pronunciation as āχ and cites G. Hoffmann, ZDMG 32, 753."
 uncertain = true
 uncertain_note = "Several sub-forms are two- and three-letter particles whose pointing is not separable at this scale."
+
+[[sub_lemmas]]
+voc = "ܐܰܝܟ ܕ"
+gloss_en = "conj. as"
+gloss_de = "wie"
+raw = "ܐܰܝܟ ܕ conj. as | wie"
+
+[[sub_lemmas]]
+voc = "ܐܰܝܟ ܗܳܢܳܐ"
+gloss_en = "such"
+gloss_de = "wie dieser, ein solcher"
+raw = "ܐܰܝܟ ܗܳܢܳܐ such | wie dieser, ein solcher"
+
+[[sub_lemmas]]
+voc = "ܐܰܝܟ ܗܳܟܶܝܢ"
+gloss_en = "in such a way"
+gloss_de = "auf solche Weise"
+raw = "ܐܰܝܟ ܗܳܟܶܝܢ in such a way | auf solche Weise"
+
+[[sub_lemmas]]
+voc = "ܐܰܟܘܳܬ"
+gloss_en = "cum Suff., like"
+gloss_de = "wie"
+raw = "ܐܰܟܘܳܬ cum Suff., like | wie"
 
 [source]
 primer = "nestle-1889-en"

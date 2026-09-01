@@ -95,9 +95,10 @@ Glossary and grammar are vocalized Serto as recorded. p. 132 (Menses) is vocaliz
    in its ToC list of works. Not a passage (R3) and not a paradigm of forms (R1) as the schema
    means it. **Taken as R1 with a `kind = "lexical-table"` qualifier**, and used as the
    calibration batch's flagged-ambiguous page so the shape gets ruled on before the run.
-2. ⚑ **Glossary sub-lemmas after `||`.** One entry frequently carries derived nouns and other
-   stems. Own record, or a repeated field on the parent? Decided at calibration; whichever way,
-   it moves the R4 count by a factor of ~2.
+2. ✅ **Glossary sub-lemmas after `‖` — RULED 2026-09-01 (Wilson): a structured array on the
+   parent**, `{voc, gloss_en, gloss_de, raw}`, not separate records. The record count is
+   unchanged; the LEMMA count roughly doubles. Measured over the first 18 pages: 253 head
+   + 171 sub = 424, i.e. ~1,480 lemmas for the glossary against ~880 records.
 3. ⚑ **Grammar pp. 1–22 (§§1–18)** are prose about script and sound with only three real tables.
    Kept in the read set (the tables are R1 and the § numbers are the glossary's cross-reference
    targets), but expect a low record yield per page — this is not a shard to judge the rate by.

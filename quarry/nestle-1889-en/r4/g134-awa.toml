@@ -14,9 +14,15 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܳܬܳܐ f., pl. ܐܳܬܘܳܬܳܐ sign, token, miracle, letter | Zeichen, Wunderzeichen, Buchstabe"
+
 uncertain = true
 uncertain_note = "Head-lemma printed unpointed as a root; the Ethpa. form itself is not printed."
+
+[[sub_lemmas]]
+voc = "ܐܳܬܳܐ"
+gloss_en = "f., pl. ܐܳܬܘܳܬܳܐ sign, token, miracle, letter"
+gloss_de = "Zeichen, Wunderzeichen, Buchstabe"
+raw = "ܐܳܬܳܐ f., pl. ܐܳܬܘܳܬܳܐ sign, token, miracle, letter | Zeichen, Wunderzeichen, Buchstabe"
 
 [source]
 primer = "nestle-1889-en"

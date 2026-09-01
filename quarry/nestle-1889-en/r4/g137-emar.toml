@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܡܺܐܡܰܪ, ܡܺܐܡܪܳܐ m. word, sermon, treatise | Wort, Predigt, Abhandlung"
+
+[[sub_lemmas]]
+voc = "ܡܺܐܡܰܪ, ܡܺܐܡܪܳܐ"
+gloss_en = "m. word, sermon, treatise"
+gloss_de = "Wort, Predigt, Abhandlung"
+raw = "ܡܺܐܡܰܪ, ܡܺܐܡܪܳܐ m. word, sermon, treatise | Wort, Predigt, Abhandlung"
 
 [source]
 primer = "nestle-1889-en"

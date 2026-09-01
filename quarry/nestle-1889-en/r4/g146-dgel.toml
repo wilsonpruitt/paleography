@@ -14,7 +14,18 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܕܰܓܳܠ lying, false | lügnerisch ‖ ܕܰܓܳܠܽܘܬܳܐ falsehood | Lüge"
+
+[[sub_lemmas]]
+voc = "ܕܰܓܳܠ"
+gloss_en = "lying, false"
+gloss_de = "lügnerisch"
+raw = "ܕܰܓܳܠ lying, false | lügnerisch"
+
+[[sub_lemmas]]
+voc = "ܕܰܓܳܠܽܘܬܳܐ"
+gloss_en = "falsehood"
+gloss_de = "Lüge"
+raw = "ܕܰܓܳܠܽܘܬܳܐ falsehood | Lüge"
 
 [source]
 primer = "nestle-1889-en"

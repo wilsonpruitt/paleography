@@ -16,7 +16,12 @@ nestle_section = "§48 d 2"
 noldeke = []
 layer = "vocalized Serto"
 stems = "Aph. bring, lead | bringen, führen"
-sub_lemmas = "ܡܶܐܬܺܝܬܳܐ, ܡܰܬܺܝܬܳܐ arrival | Ankunft"
+
+[[sub_lemmas]]
+voc = "ܡܶܐܬܺܝܬܳܐ, ܡܰܬܺܝܬܳܐ"
+gloss_en = "arrival"
+gloss_de = "Ankunft"
+raw = "ܡܶܐܬܺܝܬܳܐ, ܡܰܬܺܝܬܳܐ arrival | Ankunft"
 
 [source]
 primer = "nestle-1889-en"

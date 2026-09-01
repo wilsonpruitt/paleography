@@ -15,11 +15,22 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܙܒܰܢ"
-sub_lemmas = "a phrase with ܙܒܰܢ: once | einmal ‖ ܙܒܰܢ … ܙܒܰܢ sometimes … sometimes | bald … bald"
+
 continues_from = "runs onto p. 150 (n239)"
 primer_note = "⭐ First entry of the ܙ section."
 uncertain = true
 uncertain_note = "The two idioms' opening words are not fully resolved."
+
+[[sub_lemmas]]
+gloss_en = "a phrase with ܙܒܰܢ: once"
+gloss_de = "einmal"
+raw = "a phrase with ܙܒܰܢ: once | einmal"
+
+[[sub_lemmas]]
+voc = "ܙܒܰܢ"
+gloss_en = "… ܙܒܰܢ sometimes … sometimes"
+gloss_de = "bald … bald"
+raw = "ܙܒܰܢ … ܙܒܰܢ sometimes … sometimes | bald … bald"
 
 [source]
 primer = "nestle-1889-en"

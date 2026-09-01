@@ -15,10 +15,21 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 greek = "ἀλλά"
-sub_lemmas = "ܐܶܢ ܐܶܠܳܐ if not, after a negation | wenn nicht, nach einer Negation ‖ ܐܶܠܽܘ v. ܐܶܢ"
+
 primer_note = "Nestle analyses it as ܐܶܢ ܠܳܐ ('if not'), and compares Greek ἀλλά."
 uncertain = true
 uncertain_note = "The particle cluster is short and heavily pointed; the sub-forms are not separable with confidence."
+
+[[sub_lemmas]]
+voc = "ܐܶܢ ܐܶܠܳܐ"
+gloss_en = "if not, after a negation"
+gloss_de = "wenn nicht, nach einer Negation"
+raw = "ܐܶܢ ܐܶܠܳܐ if not, after a negation | wenn nicht, nach einer Negation"
+
+[[sub_lemmas]]
+voc = "ܐܶܠܽܘ"
+gloss = "v. ܐܶܢ"
+raw = "ܐܶܠܽܘ v. ܐܶܢ"
 
 [source]
 primer = "nestle-1889-en"

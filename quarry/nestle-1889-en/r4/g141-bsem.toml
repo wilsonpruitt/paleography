@@ -14,8 +14,26 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܒܶܣܡܳܐ perfume, ointment | Wohlgeruch, Salbe ‖ ܒܰܣܺܝܡ sweet, benevolent | süss, wohlwollend ‖ ܒܰܣܺܝܡܽܘܬܳܐ agreeableness | Annehmlichkeit"
+
 primer_note = "Nestle notes the st. abs. and cstr. appear twice in Payne Smith (PSm.)."
+
+[[sub_lemmas]]
+voc = "ܒܶܣܡܳܐ"
+gloss_en = "perfume, ointment"
+gloss_de = "Wohlgeruch, Salbe"
+raw = "ܒܶܣܡܳܐ perfume, ointment | Wohlgeruch, Salbe"
+
+[[sub_lemmas]]
+voc = "ܒܰܣܺܝܡ"
+gloss_en = "sweet, benevolent"
+gloss_de = "süss, wohlwollend"
+raw = "ܒܰܣܺܝܡ sweet, benevolent | süss, wohlwollend"
+
+[[sub_lemmas]]
+voc = "ܒܰܣܺܝܡܽܘܬܳܐ"
+gloss_en = "agreeableness"
+gloss_de = "Annehmlichkeit"
+raw = "ܒܰܣܺܝܡܽܘܬܳܐ agreeableness | Annehmlichkeit"
 
 [source]
 primer = "nestle-1889-en"

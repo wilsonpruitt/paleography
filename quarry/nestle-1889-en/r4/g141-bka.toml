@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܒܶܟܝܳܐ weeping | das Weinen"
+
+[[sub_lemmas]]
+voc = "ܒܶܟܝܳܐ"
+gloss_en = "weeping"
+gloss_de = "das Weinen"
+raw = "ܒܶܟܝܳܐ weeping | das Weinen"
 
 [source]
 primer = "nestle-1889-en"

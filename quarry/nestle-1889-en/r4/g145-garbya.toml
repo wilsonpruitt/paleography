@@ -15,10 +15,16 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܓܰܪܒܰܝ"
-sub_lemmas = "ܓܰܪܒܝܳܝܳܐ northern | nördlich"
+
 primer_note = "⭐ Nestle adds a TEXTUAL CONJECTURE here — 'Pro … leg. vid. …', i.e. for one printed reading he thinks another should be read. An editorial emendation inside a glossary entry."
 uncertain = true
 uncertain_note = "The two Syriac phrases of the conjecture are not resolved at this scale."
+
+[[sub_lemmas]]
+voc = "ܓܰܪܒܝܳܝܳܐ"
+gloss_en = "northern"
+gloss_de = "nördlich"
+raw = "ܓܰܪܒܝܳܝܳܐ northern | nördlich"
 
 [source]
 primer = "nestle-1889-en"

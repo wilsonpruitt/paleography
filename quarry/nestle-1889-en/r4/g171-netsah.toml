@@ -12,7 +12,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܢܰܨܺܝܚܳܐ triumphant, splendid, glorious | Triumphator, glänzend, herrlich"
+
+[[sub_lemmas]]
+voc = "ܢܰܨܺܝܚܳܐ"
+gloss_en = "triumphant, splendid, glorious"
+gloss_de = "Triumphator, glänzend, herrlich"
+raw = "ܢܰܨܺܝܚܳܐ triumphant, splendid, glorious | Triumphator, glänzend, herrlich"
 
 [source]
 primer = "nestle-1889-en"

@@ -15,7 +15,18 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܐܰܠܳܗ"
-sub_lemmas = "ܐܰܠܳܗܳܝ divine | göttlich ‖ ܐܰܠܳܗܽܘܬܳܐ f. divinity | Gottheit"
+
+[[sub_lemmas]]
+voc = "ܐܰܠܳܗܳܝ"
+gloss_en = "divine"
+gloss_de = "göttlich"
+raw = "ܐܰܠܳܗܳܝ divine | göttlich"
+
+[[sub_lemmas]]
+voc = "ܐܰܠܳܗܽܘܬܳܐ"
+gloss_en = "f. divinity"
+gloss_de = "Gottheit"
+raw = "ܐܰܠܳܗܽܘܬܳܐ f. divinity | Gottheit"
 
 [source]
 primer = "nestle-1889-en"

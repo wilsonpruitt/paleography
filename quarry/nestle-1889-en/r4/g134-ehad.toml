@@ -15,7 +15,17 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Ethp. be retained | festgehalten werden; Aph. cause to seize | ergreifen lassen"
-sub_lemmas = "ܐܰܚܺܝܕ pass. et act. ‖ ܐܰܚܺܝܕܽܘܬܳܐ possession, power | Besitz, Gewalt"
+
+[[sub_lemmas]]
+voc = "ܐܰܚܺܝܕ"
+gloss = "pass. et act."
+raw = "ܐܰܚܺܝܕ pass. et act."
+
+[[sub_lemmas]]
+voc = "ܐܰܚܺܝܕܽܘܬܳܐ"
+gloss_en = "possession, power"
+gloss_de = "Besitz, Gewalt"
+raw = "ܐܰܚܺܝܕܽܘܬܳܐ possession, power | Besitz, Gewalt"
 
 [source]
 primer = "nestle-1889-en"

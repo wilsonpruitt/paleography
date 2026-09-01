@@ -14,7 +14,18 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܕܶܒܚܳܐ m. a sacrifice | Opfer ‖ ܡܰܕܒܚܳܐ m. altar | Altar"
+
+[[sub_lemmas]]
+voc = "ܕܶܒܚܳܐ"
+gloss_en = "m. a sacrifice"
+gloss_de = "Opfer"
+raw = "ܕܶܒܚܳܐ m. a sacrifice | Opfer"
+
+[[sub_lemmas]]
+voc = "ܡܰܕܒܚܳܐ"
+gloss_en = "m. altar"
+gloss_de = "Altar"
+raw = "ܡܰܕܒܚܳܐ m. altar | Altar"
 
 [source]
 primer = "nestle-1889-en"

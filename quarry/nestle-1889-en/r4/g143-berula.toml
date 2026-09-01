@@ -15,9 +15,15 @@ noldeke = []
 layer = "vocalized Serto"
 latin = "beryllus"
 hebrew = "בְּדֹלַח"
-sub_lemmas = "ܒܶܕܽܘܠܚܳܐ (h. בְּדֹלַח) pearl | Perle"
+
 uncertain = true
 uncertain_note = "The second form's third letter (dalath vs resh) is not certain; the Hebrew cognate argues for dalath."
+
+[[sub_lemmas]]
+voc = "ܒܶܕܽܘܠܚܳܐ"
+gloss_en = "(h. בְּדֹלַח) pearl"
+gloss_de = "Perle"
+raw = "ܒܶܕܽܘܠܚܳܐ (h. בְּדֹלַח) pearl | Perle"
 
 [source]
 primer = "nestle-1889-en"

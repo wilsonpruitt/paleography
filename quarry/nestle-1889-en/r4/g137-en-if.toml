@@ -14,9 +14,21 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܶܢ ܕܶܝܢ but if | wenn aber ‖ ܐܶܠܽܘ often in conditions not likely to be fulfilled | häufig in nicht erfüllten Bedingungssätzen"
+
 uncertain = true
 uncertain_note = "Two-letter particle with several pointed compounds; the compounds are not separable with confidence at this scale."
+
+[[sub_lemmas]]
+voc = "ܐܶܢ ܕܶܝܢ"
+gloss_en = "but if"
+gloss_de = "wenn aber"
+raw = "ܐܶܢ ܕܶܝܢ but if | wenn aber"
+
+[[sub_lemmas]]
+voc = "ܐܶܠܽܘ"
+gloss_en = "often in conditions not likely to be fulfilled"
+gloss_de = "häufig in nicht erfüllten Bedingungssätzen"
+raw = "ܐܶܠܽܘ often in conditions not likely to be fulfilled | häufig in nicht erfüllten Bedingungssätzen"
 
 [source]
 primer = "nestle-1889-en"

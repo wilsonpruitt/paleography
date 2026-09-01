@@ -15,7 +15,11 @@ frequency_rank = ""
 nestle_section = "§21"
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܰܝܢܳܐ ܕ § 22"
+
+[[sub_lemmas]]
+voc = "ܐܰܝܢܳܐ ܕ"
+gloss = "§ 22"
+raw = "ܐܰܝܢܳܐ ܕ § 22"
 
 [source]
 primer = "nestle-1889-en"

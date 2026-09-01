@@ -15,7 +15,12 @@ noldeke = []
 layer = "vocalized Serto"
 greek = "ὁ ἐπίσκοπος"
 variant_voc = "ܐܶܦܣܩܽܘܦܳܐ"
-sub_lemmas = "ܐܶܦܺܝܣܩܽܘܦܽܘܬܳܐ bishopric | Bischofswürde"
+
+[[sub_lemmas]]
+voc = "ܐܶܦܺܝܣܩܽܘܦܽܘܬܳܐ"
+gloss_en = "bishopric"
+gloss_de = "Bischofswürde"
+raw = "ܐܶܦܺܝܣܩܽܘܦܽܘܬܳܐ bishopric | Bischofswürde"
 
 [source]
 primer = "nestle-1889-en"

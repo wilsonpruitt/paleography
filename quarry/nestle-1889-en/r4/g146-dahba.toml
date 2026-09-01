@@ -15,7 +15,12 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܕܗܰܒ"
-sub_lemmas = "ܡܕܰܗܒ (vel a second pointing) part. pass. Pa. or Aph., gilt | vergoldet"
+
+[[sub_lemmas]]
+voc = "ܡܕܰܗܒ"
+gloss_en = "(vel a second pointing) part. pass. Pa. or Aph., gilt"
+gloss_de = "vergoldet"
+raw = "ܡܕܰܗܒ (vel a second pointing) part. pass. Pa. or Aph., gilt | vergoldet"
 
 [source]
 primer = "nestle-1889-en"

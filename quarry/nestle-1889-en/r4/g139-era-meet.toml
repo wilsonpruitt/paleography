@@ -14,8 +14,14 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܽܘܪܥܳܐ, cum ܠ et suff., to meet | entgegen"
+
 primer_note = "Nestle cites Lagarde, Semitica 1, 26."
+
+[[sub_lemmas]]
+voc = "ܐܽܘܪܥܳܐ"
+gloss_en = "cum ܠ et suff., to meet"
+gloss_de = "entgegen"
+raw = "ܐܽܘܪܥܳܐ, cum ܠ et suff., to meet | entgegen"
 
 [source]
 primer = "nestle-1889-en"

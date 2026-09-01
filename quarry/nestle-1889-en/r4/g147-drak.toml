@@ -15,7 +15,17 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 greek = "παλλακή"
-sub_lemmas = "ܡܶܬܕܰܪܟܳܢܽܘܬܳܐ comprehension | Begreifbarkeit ‖ ܕܪܽܘܟܬܳܐ f. concubine, παλλακή"
+
+[[sub_lemmas]]
+voc = "ܡܶܬܕܰܪܟܳܢܽܘܬܳܐ"
+gloss_en = "comprehension"
+gloss_de = "Begreifbarkeit"
+raw = "ܡܶܬܕܰܪܟܳܢܽܘܬܳܐ comprehension | Begreifbarkeit"
+
+[[sub_lemmas]]
+voc = "ܕܪܽܘܟܬܳܐ"
+gloss = "f. concubine, παλλακή"
+raw = "ܕܪܽܘܟܬܳܐ f. concubine, παλλακή"
 
 [source]
 primer = "nestle-1889-en"

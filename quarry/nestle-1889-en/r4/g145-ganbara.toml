@@ -15,7 +15,10 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 hebrew = "גִּבּוֹר"
-sub_lemmas = "an adverbial/abstract form in -ܐܝܬ, same sense"
+
+[[sub_lemmas]]
+gloss = "an adverbial/abstract form in -ܐܝܬ, same sense"
+raw = "an adverbial/abstract form in -ܐܝܬ, same sense"
 
 [source]
 primer = "nestle-1889-en"

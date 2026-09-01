@@ -15,7 +15,18 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܒܰܪ"
-sub_lemmas = "ܠܒܰܪ out of doors | draussen ‖ ܠܒܰܪ ܡܶܢ without | ausser"
+
+[[sub_lemmas]]
+voc = "ܠܒܰܪ"
+gloss_en = "out of doors"
+gloss_de = "draussen"
+raw = "ܠܒܰܪ out of doors | draussen"
+
+[[sub_lemmas]]
+voc = "ܠܒܰܪ ܡܶܢ"
+gloss_en = "without"
+gloss_de = "ausser"
+raw = "ܠܒܰܪ ܡܶܢ without | ausser"
 
 [source]
 primer = "nestle-1889-en"

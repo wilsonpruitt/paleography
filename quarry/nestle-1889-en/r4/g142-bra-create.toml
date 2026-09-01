@@ -15,8 +15,20 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Ethpe. be created | geschaffen werden"
-sub_lemmas = "ܒܪܺܝܬܳܐ f. creation | Schöpfung; pl. ܒܶܪ̈ܝܳܬܳܐ creatures | Creaturen ‖ ܒܳܪܽܘܝܳܐ § 25 creator | Schöpfer"
+
 primer_note = "Third distinct ܒܪܐ on this page, after the cross-reference and ܒܰܪܳܐ 'field' — Nestle separates the homographs rather than merging them."
+
+[[sub_lemmas]]
+voc = "ܒܪܺܝܬܳܐ"
+gloss_en = "f. creation"
+gloss_de = "Schöpfung; pl. ܒܶܪ̈ܝܳܬܳܐ creatures | Creaturen"
+raw = "ܒܪܺܝܬܳܐ f. creation | Schöpfung; pl. ܒܶܪ̈ܝܳܬܳܐ creatures | Creaturen"
+
+[[sub_lemmas]]
+voc = "ܒܳܪܽܘܝܳܐ"
+gloss_en = "§ 25 creator"
+gloss_de = "Schöpfer"
+raw = "ܒܳܪܽܘܝܳܐ § 25 creator | Schöpfer"
 
 [source]
 primer = "nestle-1889-en"

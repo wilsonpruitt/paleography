@@ -16,7 +16,12 @@ noldeke = []
 layer = "vocalized Serto"
 plural_voc = "ܐܰܪ̈ܥܳܬܳܐ"
 variant_voc = "ܐܰܪܥ"
-sub_lemmas = "ܐܰܪܥܳܢܳܝܳܐ earthly | irdisch"
+
+[[sub_lemmas]]
+voc = "ܐܰܪܥܳܢܳܝܳܐ"
+gloss_en = "earthly"
+gloss_de = "irdisch"
+raw = "ܐܰܪܥܳܢܳܝܳܐ earthly | irdisch"
 
 [source]
 primer = "nestle-1889-en"

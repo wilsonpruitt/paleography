@@ -15,8 +15,13 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܓܒܰܪ"
-sub_lemmas = "ܐܶܬܓܰܒܰܪ § 38"
+
 primer_note = "Nestle cites Bar Hebraeus, Grammar 1, 48."
+
+[[sub_lemmas]]
+voc = "ܐܶܬܓܰܒܰܪ"
+gloss = "§ 38"
+raw = "ܐܶܬܓܰܒܰܪ § 38"
 
 [source]
 primer = "nestle-1889-en"

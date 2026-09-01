@@ -15,9 +15,37 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Ethpe. ܐܶܬܒܐܶܫ (nestor. a second form printed in parentheses), cum ܠ: it displeased him | es missfiel ihm"
-sub_lemmas = "ܒܺܝܫ bad, wrong | böse ‖ (a reduplicated form) something wrong | etwas Schlechtes ‖ ܒܺܝܫܬܳܐ crime, mischief | Verbrechen, Unheil ‖ ܒܺܝܫܽܘܬܳܐ f. wickedness | Schlechtigkeit ‖ § 6 poor | arm"
+
 uncertain = true
 uncertain_note = "Two sub-forms unresolved: a reduplicated ܒܝܫ-form glossed 'something wrong', and the final § 6 'poor', which may be a separate head-lemma (ܒܨܺܝܪ?) rather than a sub-lemma of this root — the sense does not obviously belong here."
+
+[[sub_lemmas]]
+voc = "ܒܺܝܫ"
+gloss_en = "bad, wrong"
+gloss_de = "böse"
+raw = "ܒܺܝܫ bad, wrong | böse"
+
+[[sub_lemmas]]
+gloss_en = "(a reduplicated form) something wrong"
+gloss_de = "etwas Schlechtes"
+raw = "(a reduplicated form) something wrong | etwas Schlechtes"
+
+[[sub_lemmas]]
+voc = "ܒܺܝܫܬܳܐ"
+gloss_en = "crime, mischief"
+gloss_de = "Verbrechen, Unheil"
+raw = "ܒܺܝܫܬܳܐ crime, mischief | Verbrechen, Unheil"
+
+[[sub_lemmas]]
+voc = "ܒܺܝܫܽܘܬܳܐ"
+gloss_en = "f. wickedness"
+gloss_de = "Schlechtigkeit"
+raw = "ܒܺܝܫܽܘܬܳܐ f. wickedness | Schlechtigkeit"
+
+[[sub_lemmas]]
+gloss_en = "§ 6 poor"
+gloss_de = "arm"
+raw = "§ 6 poor | arm"
 
 [source]
 primer = "nestle-1889-en"

@@ -14,8 +14,20 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܕܚܺܝܠ fearing, and to be feared | fürchtend u. zu fürchten ‖ ܕܶܚܠܳܐ, ܕܶܚܠܬܳܐ f., pl. ܕܶܚ̈ܠܳܬܳܐ fear, devotion, object of worship | Furcht, Verehrung, Gegenstand der Verehrung"
+
 primer_note = "Nestle's gloss for ܕܚܺܝܠ keeps both voices — 'fearing AND to be feared' — rather than choosing."
+
+[[sub_lemmas]]
+voc = "ܕܚܺܝܠ"
+gloss_en = "fearing, and to be feared"
+gloss_de = "fürchtend u. zu fürchten"
+raw = "ܕܚܺܝܠ fearing, and to be feared | fürchtend u. zu fürchten"
+
+[[sub_lemmas]]
+voc = "ܕܶܚܠܳܐ, ܕܶܚܠܬܳܐ"
+gloss_en = "f., pl. ܕܶܚ̈ܠܳܬܳܐ fear, devotion, object of worship"
+gloss_de = "Furcht, Verehrung, Gegenstand der Verehrung"
+raw = "ܕܶܚܠܳܐ, ܕܶܚܠܬܳܐ f., pl. ܕܶܚ̈ܠܳܬܳܐ fear, devotion, object of worship | Furcht, Verehrung, Gegenstand der Verehrung"
 
 [source]
 primer = "nestle-1889-en"

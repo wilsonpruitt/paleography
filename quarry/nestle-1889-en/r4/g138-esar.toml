@@ -14,7 +14,18 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܒܶܝܬ ܐܰܣܺܝܪ̈ܶܐ prison | Gefängnis ‖ ܐܶܣܳܪܳܐ m. § 25 bond | Band"
+
+[[sub_lemmas]]
+voc = "ܒܶܝܬ ܐܰܣܺܝܪ"
+gloss_en = "̈ܶܐ prison"
+gloss_de = "Gefängnis"
+raw = "ܒܶܝܬ ܐܰܣܺܝܪ̈ܶܐ prison | Gefängnis"
+
+[[sub_lemmas]]
+voc = "ܐܶܣܳܪܳܐ"
+gloss_en = "m. § 25 bond"
+gloss_de = "Band"
+raw = "ܐܶܣܳܪܳܐ m. § 25 bond | Band"
 
 [source]
 primer = "nestle-1889-en"

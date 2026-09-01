@@ -15,8 +15,17 @@ frequency_rank = ""
 nestle_section = "§19"
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "f. ܐܰܢ̱ܬܝ ‖ pl. m. ܐܰܢ̱ܬܽܘܢ, f. ܐܰܢ̱ܬܶܝܢ ye | ihr"
+
 primer_note = "Also treated as R1 at r1/p023-1."
+
+[[sub_lemmas]]
+gloss = "f. ܐܰܢ̱ܬܝ"
+raw = "f. ܐܰܢ̱ܬܝ"
+
+[[sub_lemmas]]
+gloss_en = "pl. m. ܐܰܢ̱ܬܽܘܢ, f. ܐܰܢ̱ܬܶܝܢ ye"
+gloss_de = "ihr"
+raw = "pl. m. ܐܰܢ̱ܬܽܘܢ, f. ܐܰܢ̱ܬܶܝܢ ye | ihr"
 
 [source]
 primer = "nestle-1889-en"

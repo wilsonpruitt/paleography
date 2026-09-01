@@ -18,9 +18,12 @@ optional: `de`, `sec` (Nestle's own § ref), `greek`, `hebrew`, `arabic`, `latin
 head-lemma STARTS and name the page it runs onto; a page-range shard therefore cannot begin
 mid-entry, which constrains how this section can be split between agents).
 
-⚑ `sub_lemmas` is captured as a STRING FIELD on the parent, not as its own record. That is
-deliberate and reversible: the `||` ruling (MAP.md flag 2) is unmade, and a superset that can
-be split later is safe where a discarded reading is not.
+⚑ `sub_lemmas` is a STRUCTURED ARRAY on the parent, not its own record — Wilson's ruling,
+2026-09-01. Each item is `{voc, gloss_en, gloss_de | gloss, raw}`. It stays on the parent
+because the parent-child link is a claim Nestle actually makes (his ordering is by root), and
+promoting an array to separate records later is mechanical where merging them back is not.
+Pass a list of dicts, or a legacy `‖`-separated string, which is parsed on the way in.
+⚑ Every item keeps `raw`, the piece verbatim: the parse is a convenience, not the record.
 """
 import argparse, glob, re, sys, tomllib
 from pathlib import Path
@@ -33,7 +36,38 @@ HEADER = ("# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model recor
           "# empty and the Step-3 blind control has not run.\n")
 
 EXTRA = ("greek", "latin", "hebrew", "arabic", "plural_voc", "variant_voc", "construct_voc",
-         "dialect_variant", "stems", "sub_lemmas", "see", "continues_from", "primer_note")
+         "dialect_variant", "stems", "see", "continues_from", "primer_note")
+
+SYR = "\u0700-\u074f\u0730-\u074a"   # Syriac block incl. the vowel points and seyame
+
+
+def parse_sub_lemmas(s):
+    """Split a legacy `‖`-separated sub-lemma string into structured items.
+
+    Convention, verified across all 88 legacy records before converting: the leading run of
+    Syriac is the form(s); the gloss that follows is ENGLISH first, GERMAN second, separated
+    by ' | '. Nestle himself prints German first; these records reverse him, consistently.
+    ⚑ `raw` keeps the piece verbatim, so a mis-parse costs nothing.
+    ⚠ Known and accepted: a leading grammatical abbreviation ('f.', 'pl.', 'impf. u') stays at
+    the head of `gloss_en` rather than being lifted into its own field, and an inflected form
+    printed mid-gloss stays inside the gloss. Both are recoverable from `raw`; neither is worth
+    a fragile regex now.
+    """
+    import re
+    out = []
+    for piece in (x.strip() for x in s.split("\u2016")):
+        if not piece:
+            continue
+        m = re.match(rf"^([{SYR}\s,;\u0323\u0307]+)(.*)$", piece, re.S)
+        voc, rest = (m.group(1).strip(" ,;"), m.group(2).strip()) if m else ("", piece)
+        item = {"voc": voc, "raw": piece}
+        if " | " in rest:
+            en, de = rest.split(" | ", 1)
+            item["gloss_en"], item["gloss_de"] = en.strip(), de.strip()
+        elif rest:
+            item["gloss"] = rest
+        out.append(item)
+    return out
 
 
 def q(s):
@@ -101,10 +135,13 @@ def main():
         for p in sorted(pages):
             print(f"  p.{p}: {pages[p]}")
         n = len(recs) or 1
+        subs = sum(len(r.get("sub_lemmas", [])) for r in recs)
         unread = [r for r in recs if not r["lemma"]["unvoc"]]
         print(f"pages done: {len(pages)} of 63   records: {len(recs)}   "
               f"uncertain: {unc} ({100*unc/n:.0f}%)   unread: {len(unread)}   "
               f"mean/page: {len(recs)/len(pages):.1f}")
+        print(f"lemmas: {len(recs)} head + {subs} sub = {len(recs)+subs}   "
+              f"({(len(recs)+subs)/len(pages):.1f}/page  \u2192 ~{round((len(recs)+subs)/len(pages)*63/10)*10} for the glossary)")
     if a.remaining:
         done = {r["source"]["page"] for r in recs}
         todo = [p for p in range(133, 196) if p not in done]

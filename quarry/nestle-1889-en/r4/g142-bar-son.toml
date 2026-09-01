@@ -17,8 +17,36 @@ noldeke = []
 layer = "vocalized Serto"
 hebrew = "בַּת קוֹל"
 variant_voc = "ܒܪܳܐ"
-sub_lemmas = "ܒܰܪܢܳܫܳܐ (v. ܐ̱ܢܳܫ) man | Mensch ‖ (a compound glossed 'Glacis', which Nestle queries as perhaps not belonging to this ܒܰܪ at all) ‖ ܒܰܪ ܫܳܥܬܳܐ at once | zur Stunde, sogleich ‖ ܒܰܪܬܳܐ daughter | Tochter (§ 32) ‖ ܒܰܪܬ ܩܳܠܳܐ (h. בַּת קוֹל) voice | Wort; pl. ܒܢ̈ܳܬ ܩ̈ܳܠܶܐ words, speech | Worte, Rede"
+
 primer_note = "⭐ Nestle explicitly queries one compound: 'ob zum vorhergehenden ܒܰܪ? / if it does not belong to the preceding ܒܰܪ' — i.e. he is unsure whether it belongs to 'son' or to 'open country'. His own uncertainty, not ours."
+
+[[sub_lemmas]]
+voc = "ܒܰܪܢܳܫܳܐ"
+gloss_en = "(v. ܐ̱ܢܳܫ) man"
+gloss_de = "Mensch"
+raw = "ܒܰܪܢܳܫܳܐ (v. ܐ̱ܢܳܫ) man | Mensch"
+
+[[sub_lemmas]]
+gloss = "(a compound glossed 'Glacis', which Nestle queries as perhaps not belonging to this ܒܰܪ at all)"
+raw = "(a compound glossed 'Glacis', which Nestle queries as perhaps not belonging to this ܒܰܪ at all)"
+
+[[sub_lemmas]]
+voc = "ܒܰܪ ܫܳܥܬܳܐ"
+gloss_en = "at once"
+gloss_de = "zur Stunde, sogleich"
+raw = "ܒܰܪ ܫܳܥܬܳܐ at once | zur Stunde, sogleich"
+
+[[sub_lemmas]]
+voc = "ܒܰܪܬܳܐ"
+gloss_en = "daughter"
+gloss_de = "Tochter (§ 32)"
+raw = "ܒܰܪܬܳܐ daughter | Tochter (§ 32)"
+
+[[sub_lemmas]]
+voc = "ܒܰܪܬ ܩܳܠܳܐ"
+gloss_en = "(h. בַּת קוֹל) voice"
+gloss_de = "Wort; pl. ܒܢ̈ܳܬ ܩ̈ܳܠܶܐ words, speech | Worte, Rede"
+raw = "ܒܰܪܬ ܩܳܠܳܐ (h. בַּת קוֹל) voice | Wort; pl. ܒܢ̈ܳܬ ܩ̈ܳܠܶܐ words, speech | Worte, Rede"
 
 [source]
 primer = "nestle-1889-en"

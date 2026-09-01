@@ -15,7 +15,12 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Ethpe. be constructed | errichtet werden"
-sub_lemmas = "ܒܶܢܝܳܢܳܐ m. building | Gebäude"
+
+[[sub_lemmas]]
+voc = "ܒܶܢܝܳܢܳܐ"
+gloss_en = "m. building"
+gloss_de = "Gebäude"
+raw = "ܒܶܢܝܳܢܳܐ m. building | Gebäude"
 
 [source]
 primer = "nestle-1889-en"

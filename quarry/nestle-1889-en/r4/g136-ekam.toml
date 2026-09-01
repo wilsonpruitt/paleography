@@ -15,7 +15,12 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Aph. make black | schwärzen; Part. pass. ܡܰܘܟܡܳܐ blackened | geschwärzt"
-sub_lemmas = "ܐܽܘܟܳܡܳܐ, ܐܽܘܟܳܡܬܳܐ black | schwarz"
+
+[[sub_lemmas]]
+voc = "ܐܽܘܟܳܡܳܐ, ܐܽܘܟܳܡܬܳܐ"
+gloss_en = "black"
+gloss_de = "schwarz"
+raw = "ܐܽܘܟܳܡܳܐ, ܐܽܘܟܳܡܬܳܐ black | schwarz"
 
 [source]
 primer = "nestle-1889-en"

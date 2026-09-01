@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܳܦܠܳܐ neither, and not | auch nicht, und nicht"
+
+[[sub_lemmas]]
+voc = "ܐܳܦܠܳܐ"
+gloss_en = "neither, and not"
+gloss_de = "auch nicht, und nicht"
+raw = "ܐܳܦܠܳܐ neither, and not | auch nicht, und nicht"
 
 [source]
 primer = "nestle-1889-en"

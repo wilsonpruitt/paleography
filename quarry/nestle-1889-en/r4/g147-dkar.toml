@@ -14,7 +14,18 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܕܽܘܟܪܳܢܳܐ memory, commemoration | Gedächtnis ‖ ܕܶܟܪܳܐ, ܕܶܟܪ male | Männchen"
+
+[[sub_lemmas]]
+voc = "ܕܽܘܟܪܳܢܳܐ"
+gloss_en = "memory, commemoration"
+gloss_de = "Gedächtnis"
+raw = "ܕܽܘܟܪܳܢܳܐ memory, commemoration | Gedächtnis"
+
+[[sub_lemmas]]
+voc = "ܕܶܟܪܳܐ, ܕܶܟܪ"
+gloss_en = "male"
+gloss_de = "Männchen"
+raw = "ܕܶܟܪܳܐ, ܕܶܟܪ male | Männchen"
 
 [source]
 primer = "nestle-1889-en"

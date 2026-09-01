@@ -14,8 +14,14 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܓܳܡܪ̈ܰܝ ܨܶܒܝܳܢܳܐ those who do the will | die den Willen thun"
+
 continues_from = "runs onto p. 145 (n234)"
+
+[[sub_lemmas]]
+voc = "ܓܳܡܪ"
+gloss_en = "̈ܰܝ ܨܶܒܝܳܢܳܐ those who do the will"
+gloss_de = "die den Willen thun"
+raw = "ܓܳܡܪ̈ܰܝ ܨܶܒܝܳܢܳܐ those who do the will | die den Willen thun"
 
 [source]
 primer = "nestle-1889-en"

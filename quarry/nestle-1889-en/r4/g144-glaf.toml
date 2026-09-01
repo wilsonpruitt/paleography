@@ -15,7 +15,17 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 greek = "γλυπτά"
-sub_lemmas = "ܓܠܺܝ̈ܦܶܐ γλυπτά (graven images) ‖ ܓܠܳܦܳܐ sculpture | Bildhauerkunst"
+
+[[sub_lemmas]]
+voc = "ܓܠܺܝ"
+gloss = "̈ܦܶܐ γλυπτά (graven images)"
+raw = "ܓܠܺܝ̈ܦܶܐ γλυπτά (graven images)"
+
+[[sub_lemmas]]
+voc = "ܓܠܳܦܳܐ"
+gloss_en = "sculpture"
+gloss_de = "Bildhauerkunst"
+raw = "ܓܠܳܦܳܐ sculpture | Bildhauerkunst"
 
 [source]
 primer = "nestle-1889-en"

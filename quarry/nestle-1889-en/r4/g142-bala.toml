@@ -15,7 +15,24 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܒܥܶܠ"
-sub_lemmas = "ܒܥܶܠܕܒܳܒܳܐ, pl. ܒܥܶܠܕ̈ܒܳܒܶܐ enemy | Feind ‖ ܒܥܶܠܕܒܳܒܽܘܬܳܐ enmity | Feindschaft ‖ ܒܥܶܠܕܺܝܢܳܐ opponent in court | Gegner vor Gericht"
+
+[[sub_lemmas]]
+voc = "ܒܥܶܠܕܒܳܒܳܐ"
+gloss_en = "pl. ܒܥܶܠܕ̈ܒܳܒܶܐ enemy"
+gloss_de = "Feind"
+raw = "ܒܥܶܠܕܒܳܒܳܐ, pl. ܒܥܶܠܕ̈ܒܳܒܶܐ enemy | Feind"
+
+[[sub_lemmas]]
+voc = "ܒܥܶܠܕܒܳܒܽܘܬܳܐ"
+gloss_en = "enmity"
+gloss_de = "Feindschaft"
+raw = "ܒܥܶܠܕܒܳܒܽܘܬܳܐ enmity | Feindschaft"
+
+[[sub_lemmas]]
+voc = "ܒܥܶܠܕܺܝܢܳܐ"
+gloss_en = "opponent in court"
+gloss_de = "Gegner vor Gericht"
+raw = "ܒܥܶܠܕܺܝܢܳܐ opponent in court | Gegner vor Gericht"
 
 [source]
 primer = "nestle-1889-en"

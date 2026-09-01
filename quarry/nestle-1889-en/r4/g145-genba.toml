@@ -16,7 +16,12 @@ noldeke = []
 layer = "vocalized Serto"
 plural_voc = "ܓܶܢ̈ܒܶܐ"
 variant_voc = "ܓܶܢܒ (st. abs. et cstr.)"
-sub_lemmas = "ܥܰܠ ܓܶܢܒ by the side of | neben"
+
+[[sub_lemmas]]
+voc = "ܥܰܠ ܓܶܢܒ"
+gloss_en = "by the side of"
+gloss_de = "neben"
+raw = "ܥܰܠ ܓܶܢܒ by the side of | neben"
 
 [source]
 primer = "nestle-1889-en"

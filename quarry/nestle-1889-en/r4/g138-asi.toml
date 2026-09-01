@@ -14,7 +14,12 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܳܣܝܽܘܬܳܐ medicine, the healing art | Heilkunst, Arzenei; pl. plerumque ܐܳܣ̈ܘܳܬܳܐ"
+
+[[sub_lemmas]]
+voc = "ܐܳܣܝܽܘܬܳܐ"
+gloss_en = "medicine, the healing art"
+gloss_de = "Heilkunst, Arzenei; pl. plerumque ܐܳܣ̈ܘܳܬܳܐ"
+raw = "ܐܳܣܝܽܘܬܳܐ medicine, the healing art | Heilkunst, Arzenei; pl. plerumque ܐܳܣ̈ܘܳܬܳܐ"
 
 [source]
 primer = "nestle-1889-en"

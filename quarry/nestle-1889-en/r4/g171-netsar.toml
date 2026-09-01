@@ -13,9 +13,15 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Pa. modulate the voice | die Stimme modulieren"
-sub_lemmas = "ܢܶܨܪܳܐ whispering, lisping, flattery | Lispeln, Lallen, Schmeicheln"
+
 uncertain = true
 uncertain_note = "Pointing of the || sub-lemma not fully resolvable."
+
+[[sub_lemmas]]
+voc = "ܢܶܨܪܳܐ"
+gloss_en = "whispering, lisping, flattery"
+gloss_de = "Lispeln, Lallen, Schmeicheln"
+raw = "ܢܶܨܪܳܐ whispering, lisping, flattery | Lispeln, Lallen, Schmeicheln"
 
 [source]
 primer = "nestle-1889-en"

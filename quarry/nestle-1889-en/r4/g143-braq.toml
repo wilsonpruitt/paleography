@@ -15,7 +15,12 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Aph. radiate | strahlen"
-sub_lemmas = "ܒܰܪܩܳܐ m. lightning | Blitz"
+
+[[sub_lemmas]]
+voc = "ܒܰܪܩܳܐ"
+gloss_en = "m. lightning"
+gloss_de = "Blitz"
+raw = "ܒܰܪܩܳܐ m. lightning | Blitz"
 
 [source]
 primer = "nestle-1889-en"

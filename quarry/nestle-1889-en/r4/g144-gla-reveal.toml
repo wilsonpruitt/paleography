@@ -15,7 +15,24 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Ethpe. passive; Pa. uncover | aufdecken"
-sub_lemmas = "ܓܶܠܝܳܢܳܐ (a second form, § 25) revelation | Offenbarung ‖ ܓܰܠܝܳܐܝܺܬ publicly | öffentlich ‖ ܡܓܰܠܝܳܢܽܘܬܳܐ revelation | Offenbarung"
+
+[[sub_lemmas]]
+voc = "ܓܶܠܝܳܢܳܐ"
+gloss_en = "(a second form, § 25) revelation"
+gloss_de = "Offenbarung"
+raw = "ܓܶܠܝܳܢܳܐ (a second form, § 25) revelation | Offenbarung"
+
+[[sub_lemmas]]
+voc = "ܓܰܠܝܳܐܝܺܬ"
+gloss_en = "publicly"
+gloss_de = "öffentlich"
+raw = "ܓܰܠܝܳܐܝܺܬ publicly | öffentlich"
+
+[[sub_lemmas]]
+voc = "ܡܓܰܠܝܳܢܽܘܬܳܐ"
+gloss_en = "revelation"
+gloss_de = "Offenbarung"
+raw = "ܡܓܰܠܝܳܢܽܘܬܳܐ revelation | Offenbarung"
 
 [source]
 primer = "nestle-1889-en"

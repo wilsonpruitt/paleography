@@ -15,7 +15,36 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 hebrew = "יֵשׁ"
-sub_lemmas = "ܐܺܝܬ ܗܘܳܐ there was | es war ‖ ܐܺܝܬ ܠܺܝ I have | ich habe ‖ ܐܺܝܬܰܝ etc. I am | ich bin ‖ ܠܰܝܬ = ܠܳܐ ܐܺܝܬ it is not | es ist nicht ‖ ܐܺܝܬܽܘܬܳܐ f. being, existence | das Wesen"
+
+[[sub_lemmas]]
+voc = "ܐܺܝܬ ܗܘܳܐ"
+gloss_en = "there was"
+gloss_de = "es war"
+raw = "ܐܺܝܬ ܗܘܳܐ there was | es war"
+
+[[sub_lemmas]]
+voc = "ܐܺܝܬ ܠܺܝ"
+gloss_en = "I have"
+gloss_de = "ich habe"
+raw = "ܐܺܝܬ ܠܺܝ I have | ich habe"
+
+[[sub_lemmas]]
+voc = "ܐܺܝܬܰܝ"
+gloss_en = "etc. I am"
+gloss_de = "ich bin"
+raw = "ܐܺܝܬܰܝ etc. I am | ich bin"
+
+[[sub_lemmas]]
+voc = "ܠܰܝܬ"
+gloss_en = "= ܠܳܐ ܐܺܝܬ it is not"
+gloss_de = "es ist nicht"
+raw = "ܠܰܝܬ = ܠܳܐ ܐܺܝܬ it is not | es ist nicht"
+
+[[sub_lemmas]]
+voc = "ܐܺܝܬܽܘܬܳܐ"
+gloss_en = "f. being, existence"
+gloss_de = "das Wesen"
+raw = "ܐܺܝܬܽܘܬܳܐ f. being, existence | das Wesen"
 
 [source]
 primer = "nestle-1889-en"

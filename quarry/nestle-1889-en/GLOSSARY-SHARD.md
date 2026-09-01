@@ -42,7 +42,8 @@ pointed Serto; two halves at 1.75× are. This is measured — ~6.5k vision token
 
 ## Rate, so you can tell if something is wrong
 
-**~14 head-lemmas per page, ~19% of records carrying `uncertain = true`.** Both have been stable
+**~14 head-lemmas per page (~23.6 LEMMAS/page counting sub-lemmas), ~19% of records carrying
+`uncertain = true`.** `--audit` prints both counts. Both have been stable
 since p. 136. A page coming in at 6 or at 25 is not necessarily an error — pp. 139 and 142 are
 genuinely short (letter transitions), p. 138 genuinely long — but a *run* of pages off the rate
 means something has drifted. Expect ~630 records for the shard, ~880 for the glossary entire.
@@ -70,16 +71,19 @@ means something has drifted. Expect ~630 records for the shard, ~880 for the glo
    ('ob zum vorhergehenden ܒܰܪ?'), prints textual conjectures ('Pro … leg. vid. …') and cites
    Lagarde and Payne Smith against his own text. None of that is our uncertainty and it must
    not be filed as if it were — the blind control would chase the wrong thing.
-7. **`sub_lemmas` is a string field on the parent, not its own record.** Deliberate and
-   reversible: the `‖` ruling (MAP.md flag 2) is unmade, and a superset can be split later
-   where a discarded reading cannot be recovered.
+7. ✅ **`sub_lemmas` is a STRUCTURED ARRAY on the parent** — ruled 2026-09-01. Pass a list of
+   `{voc, gloss_en, gloss_de, raw}`, or a legacy `‖`-separated string, which `emit` parses on
+   the way in. Convention inside the string: leading Syriac is the form, then **English first,
+   German second**, split on ` | `. ⚑ Keep `raw` — the parse is a convenience, not the record.
+   The 88 legacy records were converted; there are none left to convert.
 8. **Capture every point faithfully.** Curriculum questions — what a learner sees first —
    leak nowhere into extraction.
 
 ## What is owed, and is NOT yours to decide
 
-- ⬜ The **`‖` sub-lemma ruling** (own records, or a field?). Moves the R4 count by ~2×.
-- ⬜ The **R5 / `word_notes`** ruling from `r3/c070-1.toml`.
+- ✅ The **`‖` ruling** — answered: structured array on the parent. Convention 7 above.
+- ✅ The **`word_notes` ruling** — answered: a field on R3, not a record type R5. Done, 36
+  notes read off pp. 70-72 into `r3/c070-1.toml`.
 - ⬜ The **Syriacist seat**. Every Syriac string here is extractor output that nobody qualified
   has ruled on. That is the standing condition of this shard, not a reason to stop.
 

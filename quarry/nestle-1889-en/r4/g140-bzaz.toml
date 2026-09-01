@@ -15,7 +15,12 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Ethpe. be robbed, be led into captivity | geplündert, in die Gefangenschaft geführt werden"
-sub_lemmas = "ܒܶܙܬܳܐ f. prey, booty | Beute"
+
+[[sub_lemmas]]
+voc = "ܒܶܙܬܳܐ"
+gloss_en = "f. prey, booty"
+gloss_de = "Beute"
+raw = "ܒܶܙܬܳܐ f. prey, booty | Beute"
 
 [source]
 primer = "nestle-1889-en"

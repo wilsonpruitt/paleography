@@ -14,7 +14,18 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܰܠܨܳܐ ܗܘܳܐ it was necessary | es war nötig ‖ ܐܽܘܠܨܳܢܳܐ m. oppression, calamity | Bedrängnis, Not"
+
+[[sub_lemmas]]
+voc = "ܐܰܠܨܳܐ ܗܘܳܐ"
+gloss_en = "it was necessary"
+gloss_de = "es war nötig"
+raw = "ܐܰܠܨܳܐ ܗܘܳܐ it was necessary | es war nötig"
+
+[[sub_lemmas]]
+voc = "ܐܽܘܠܨܳܢܳܐ"
+gloss_en = "m. oppression, calamity"
+gloss_de = "Bedrängnis, Not"
+raw = "ܐܽܘܠܨܳܢܳܐ m. oppression, calamity | Bedrängnis, Not"
 
 [source]
 primer = "nestle-1889-en"

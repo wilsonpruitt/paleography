@@ -15,7 +15,18 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 variant_voc = "ܓܰܘ"
-sub_lemmas = "ܒܓܰܘ within | innerhalb ‖ ܠܓܰܘ in, inwards | hinein"
+
+[[sub_lemmas]]
+voc = "ܒܓܰܘ"
+gloss_en = "within"
+gloss_de = "innerhalb"
+raw = "ܒܓܰܘ within | innerhalb"
+
+[[sub_lemmas]]
+voc = "ܠܓܰܘ"
+gloss_en = "in, inwards"
+gloss_de = "hinein"
+raw = "ܠܓܰܘ in, inwards | hinein"
 
 [source]
 primer = "nestle-1889-en"

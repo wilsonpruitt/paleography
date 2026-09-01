@@ -15,7 +15,18 @@ frequency_rank = ""
 nestle_section = "§32"
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܚܳܬܳܐ f. sister | Schwester ‖ ܐܰܚܽܘܬܳܐ f. brotherly love, esp. as a form of address, 'brethren' | brüderliche Liebe, bes. als Anrede"
+
+[[sub_lemmas]]
+voc = "ܚܳܬܳܐ"
+gloss_en = "f. sister"
+gloss_de = "Schwester"
+raw = "ܚܳܬܳܐ f. sister | Schwester"
+
+[[sub_lemmas]]
+voc = "ܐܰܚܽܘܬܳܐ"
+gloss_en = "f. brotherly love, esp. as a form of address, 'brethren'"
+gloss_de = "brüderliche Liebe, bes. als Anrede"
+raw = "ܐܰܚܽܘܬܳܐ f. brotherly love, esp. as a form of address, 'brethren' | brüderliche Liebe, bes. als Anrede"
 
 [source]
 primer = "nestle-1889-en"

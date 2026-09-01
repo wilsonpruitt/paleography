@@ -15,7 +15,17 @@ frequency_rank = ""
 nestle_section = "§41"
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܐܳܟܶܠܩܰܪܨܳܐ § 19 a (the slanderer, devil) ‖ ܡܶܐܟܽܘܠܬܳܐ f. food, victuals | Speise, Lebensunterhalt"
+
+[[sub_lemmas]]
+voc = "ܐܳܟܶܠܩܰܪܨܳܐ"
+gloss = "§ 19 a (the slanderer, devil)"
+raw = "ܐܳܟܶܠܩܰܪܨܳܐ § 19 a (the slanderer, devil)"
+
+[[sub_lemmas]]
+voc = "ܡܶܐܟܽܘܠܬܳܐ"
+gloss_en = "f. food, victuals"
+gloss_de = "Speise, Lebensunterhalt"
+raw = "ܡܶܐܟܽܘܠܬܳܐ f. food, victuals | Speise, Lebensunterhalt"
 
 [source]
 primer = "nestle-1889-en"

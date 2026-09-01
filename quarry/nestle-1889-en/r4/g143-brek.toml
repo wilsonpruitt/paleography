@@ -15,7 +15,18 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Pa. bless | segnen; Part. pass. ܡܒܰܪܟ blessed | gesegnet"
-sub_lemmas = "ܒܪܺܝܟ blessed | gesegnet ‖ ܒܽܘܪܟܬܳܐ f. blessing | Segen"
+
+[[sub_lemmas]]
+voc = "ܒܪܺܝܟ"
+gloss_en = "blessed"
+gloss_de = "gesegnet"
+raw = "ܒܪܺܝܟ blessed | gesegnet"
+
+[[sub_lemmas]]
+voc = "ܒܽܘܪܟܬܳܐ"
+gloss_en = "f. blessing"
+gloss_de = "Segen"
+raw = "ܒܽܘܪܟܬܳܐ f. blessing | Segen"
 
 [source]
 primer = "nestle-1889-en"

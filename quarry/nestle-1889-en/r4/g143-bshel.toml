@@ -15,7 +15,12 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 greek = "ἔδεσμα"
-sub_lemmas = "ܒܫܺܝܠܬܳܐ cooked food | gekochte Speise, ἔδεσμα"
+
+[[sub_lemmas]]
+voc = "ܒܫܺܝܠܬܳܐ"
+gloss_en = "cooked food"
+gloss_de = "gekochte Speise, ἔδεσμα"
+raw = "ܒܫܺܝܠܬܳܐ cooked food | gekochte Speise, ἔδεσμα"
 
 [source]
 primer = "nestle-1889-en"

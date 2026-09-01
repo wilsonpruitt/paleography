@@ -15,10 +15,33 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 continues_from = "runs onto p. 135 (n224): three further lines, ending ܐ̱ܚܪܳܢܝܳܐܝܺܬ on the contrary, ܚܰܪܬܳܐ f. st. cstr. ܚܪܰܬ the end, ܥܕܰܡܳܐ ܠܚܰܪܬܳܐ up to the last moment"
-sub_lemmas = "ܐܶܬܬܰܚܰܪ remain | verweilen ‖ ܐ̱ܚܪܳܝ, ܐ̱ܚܪܳܝܳܐ, f. ܐ̱ܚܪܳܝܬܳܐ; pl. ܐ̱ܚܪ̈ܳܝܶܐ, ܐ̱ܚܪ̈ܳܝܳܬܳܐ the last | der letzte ‖ ܐ̱ܚܪܳܝܰܬ st. const. (sc. ܙܰܒܢܬܳܐ) = adverb ‖ ܐ̱ܚܪܺܝܢ, ܐ̱ܚܪܺܢܳܐ, f. ܐ̱ܚܪܺܬܳܐ; pl. ܐ̱ܚܪ̈ܳܢܝܢ, ܐ̱ܚܪ̈ܳܢܶܐ, ܐ̱ܚܪ̈ܳܢܝܳܬܳܐ another | ein anderer"
+
 primer_note = "Nestle notes the forms are also written without ܝ, and that in the singular ܚܪܢܐ is written without it; an adverb in ܐ̱ܚܪܳܝܰܬ follows."
 uncertain = true
 uncertain_note = "⛔ The densest entry on the page — some dozen derived forms, several differing only in pointing. Captured for its shape and its glosses; the pointing of the individual derivatives is NOT reliable and this entry should head the blind-control sample."
+
+[[sub_lemmas]]
+voc = "ܐܶܬܬܰܚܰܪ"
+gloss_en = "remain"
+gloss_de = "verweilen"
+raw = "ܐܶܬܬܰܚܰܪ remain | verweilen"
+
+[[sub_lemmas]]
+voc = "ܐ"
+gloss_en = "̱ܚܪܳܝ, ܐ̱ܚܪܳܝܳܐ, f. ܐ̱ܚܪܳܝܬܳܐ; pl. ܐ̱ܚܪ̈ܳܝܶܐ, ܐ̱ܚܪ̈ܳܝܳܬܳܐ the last"
+gloss_de = "der letzte"
+raw = "ܐ̱ܚܪܳܝ, ܐ̱ܚܪܳܝܳܐ, f. ܐ̱ܚܪܳܝܬܳܐ; pl. ܐ̱ܚܪ̈ܳܝܶܐ, ܐ̱ܚܪ̈ܳܝܳܬܳܐ the last | der letzte"
+
+[[sub_lemmas]]
+voc = "ܐ"
+gloss = "̱ܚܪܳܝܰܬ st. const. (sc. ܙܰܒܢܬܳܐ) = adverb"
+raw = "ܐ̱ܚܪܳܝܰܬ st. const. (sc. ܙܰܒܢܬܳܐ) = adverb"
+
+[[sub_lemmas]]
+voc = "ܐ"
+gloss_en = "̱ܚܪܺܝܢ, ܐ̱ܚܪܺܢܳܐ, f. ܐ̱ܚܪܺܬܳܐ; pl. ܐ̱ܚܪ̈ܳܢܝܢ, ܐ̱ܚܪ̈ܳܢܶܐ, ܐ̱ܚܪ̈ܳܢܝܳܬܳܐ another"
+gloss_de = "ein anderer"
+raw = "ܐ̱ܚܪܺܝܢ, ܐ̱ܚܪܺܢܳܐ, f. ܐ̱ܚܪܺܬܳܐ; pl. ܐ̱ܚܪ̈ܳܢܝܢ, ܐ̱ܚܪ̈ܳܢܶܐ, ܐ̱ܚܪ̈ܳܢܝܳܬܳܐ another | ein anderer"
 
 [source]
 primer = "nestle-1889-en"

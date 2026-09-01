@@ -16,8 +16,14 @@ nestle_section = "§44 a"
 noldeke = []
 layer = "vocalized Serto"
 hebrew = "עֵדָה"
-sub_lemmas = "ܥܺܕܬܳܐ, st. c. ܥܺܕܰܬ, pl. ܥܺܕ̈ܳܬܳܐ congregation, church | Versammlung, Kirche"
+
 primer_note = "⭐ 'Church' filed under 'assemble' — and under ܘ, not ܥ, so a reader looking up ܥܺܕܬܳܐ where its spelling puts it will not find it."
+
+[[sub_lemmas]]
+voc = "ܥܺܕܬܳܐ"
+gloss_en = "st. c. ܥܺܕܰܬ, pl. ܥܺܕ̈ܳܬܳܐ congregation, church"
+gloss_de = "Versammlung, Kirche"
+raw = "ܥܺܕܬܳܐ, st. c. ܥܺܕܰܬ, pl. ܥܺܕ̈ܳܬܳܐ congregation, church | Versammlung, Kirche"
 
 [source]
 primer = "nestle-1889-en"

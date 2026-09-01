@@ -15,8 +15,20 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Aph. cause to rise, raise | aufgehen lassen"
-sub_lemmas = "ܕܶܢܚܳܐ m. east, light, epiphany | Osten, Licht, Erscheinung ‖ ܡܰܕܢܰܚ, ܡܰܕܢܚܳܐ m. east | Osten"
+
 primer_note = "⭐ 'Epiphany' and 'east' from one root — the feast is named for the sunrise."
+
+[[sub_lemmas]]
+voc = "ܕܶܢܚܳܐ"
+gloss_en = "m. east, light, epiphany"
+gloss_de = "Osten, Licht, Erscheinung"
+raw = "ܕܶܢܚܳܐ m. east, light, epiphany | Osten, Licht, Erscheinung"
+
+[[sub_lemmas]]
+voc = "ܡܰܕܢܰܚ, ܡܰܕܢܚܳܐ"
+gloss_en = "m. east"
+gloss_de = "Osten"
+raw = "ܡܰܕܢܰܚ, ܡܰܕܢܚܳܐ m. east | Osten"
 
 [source]
 primer = "nestle-1889-en"

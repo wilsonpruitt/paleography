@@ -15,10 +15,21 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 stems = "Ethpe. be made alike | ähnlich gemacht werden; Pa. compare, rave | vergleichen, phantasiren"
-sub_lemmas = "ܕܡܽܘܬܳܐ likeness, image | Bild ‖ a phrase with ܕܡܽܘܬܳܐ: in the very same way | in eben dieser Weise"
+
 primer_note = "Homograph of ܕܶܡܳܐ 'blood' immediately above — the second ܕܡܐ pair on this page's letter, and again distinguished only by pointing."
 uncertain = true
 uncertain_note = "The final idiom's opening words are not resolved."
+
+[[sub_lemmas]]
+voc = "ܕܡܽܘܬܳܐ"
+gloss_en = "likeness, image"
+gloss_de = "Bild"
+raw = "ܕܡܽܘܬܳܐ likeness, image | Bild"
+
+[[sub_lemmas]]
+gloss_en = "a phrase with ܕܡܽܘܬܳܐ: in the very same way"
+gloss_de = "in eben dieser Weise"
+raw = "a phrase with ܕܡܽܘܬܳܐ: in the very same way | in eben dieser Weise"
 
 [source]
 primer = "nestle-1889-en"

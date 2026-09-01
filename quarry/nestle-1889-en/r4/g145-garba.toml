@@ -15,7 +15,12 @@ frequency_rank = ""
 nestle_section = "§8"
 noldeke = []
 layer = "vocalized Serto"
-sub_lemmas = "ܓܪܶܒ, ܓܰܪܒܳܢܳܐ leprous | aussätzig"
+
+[[sub_lemmas]]
+voc = "ܓܪܶܒ, ܓܰܪܒܳܢܳܐ"
+gloss_en = "leprous"
+gloss_de = "aussätzig"
+raw = "ܓܪܶܒ, ܓܰܪܒܳܢܳܐ leprous | aussätzig"
 
 [source]
 primer = "nestle-1889-en"

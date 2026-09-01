@@ -16,8 +16,50 @@ noldeke = []
 layer = "vocalized Serto"
 hebrew = "דְּבִיר"
 stems = "Ethpe. passive; Pa. guide, rule | leiten, regieren"
-sub_lemmas = "ܕܰܒܪܳܐ field | Feld ‖ ܡܰܕܒܪܳܐ desert | Wüste ‖ ܕܽܘܒܳܪܳܐ way of living | Lebensführung ‖ ܡܕܰܒܪܳܢܳܐ leader, ruler | Leiter, Vorsteher ‖ ܡܕܰܒܪܳܢܽܘܬܳܐ the (saving) economy, plan of salvation | die (Heils-)Ökonomie ‖ ܕܒܺܝܪ (= h. דְּבִיר) the holy of holies | Allerheiligstes ‖ ܕܶܒܽܘܪܺܝܬܳܐ f. bee | Biene"
+
 primer_note = "⭐ The largest root-cluster so far: eight derived forms under one head, running from 'desert' through 'the economy of salvation' to 'bee'. Nestle files by root, so semantic distance is no bar."
+
+[[sub_lemmas]]
+voc = "ܕܰܒܪܳܐ"
+gloss_en = "field"
+gloss_de = "Feld"
+raw = "ܕܰܒܪܳܐ field | Feld"
+
+[[sub_lemmas]]
+voc = "ܡܰܕܒܪܳܐ"
+gloss_en = "desert"
+gloss_de = "Wüste"
+raw = "ܡܰܕܒܪܳܐ desert | Wüste"
+
+[[sub_lemmas]]
+voc = "ܕܽܘܒܳܪܳܐ"
+gloss_en = "way of living"
+gloss_de = "Lebensführung"
+raw = "ܕܽܘܒܳܪܳܐ way of living | Lebensführung"
+
+[[sub_lemmas]]
+voc = "ܡܕܰܒܪܳܢܳܐ"
+gloss_en = "leader, ruler"
+gloss_de = "Leiter, Vorsteher"
+raw = "ܡܕܰܒܪܳܢܳܐ leader, ruler | Leiter, Vorsteher"
+
+[[sub_lemmas]]
+voc = "ܡܕܰܒܪܳܢܽܘܬܳܐ"
+gloss_en = "the (saving) economy, plan of salvation"
+gloss_de = "die (Heils-)Ökonomie"
+raw = "ܡܕܰܒܪܳܢܽܘܬܳܐ the (saving) economy, plan of salvation | die (Heils-)Ökonomie"
+
+[[sub_lemmas]]
+voc = "ܕܒܺܝܪ"
+gloss_en = "(= h. דְּבִיר) the holy of holies"
+gloss_de = "Allerheiligstes"
+raw = "ܕܒܺܝܪ (= h. דְּבִיר) the holy of holies | Allerheiligstes"
+
+[[sub_lemmas]]
+voc = "ܕܶܒܽܘܪܺܝܬܳܐ"
+gloss_en = "f. bee"
+gloss_de = "Biene"
+raw = "ܕܶܒܽܘܪܺܝܬܳܐ f. bee | Biene"
 
 [source]
 primer = "nestle-1889-en"

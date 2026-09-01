@@ -16,8 +16,25 @@ noldeke = []
 layer = "vocalized Serto"
 plural_voc = "ܐܰܬܪ̈ܰܘܳܬܳܐ"
 variant_voc = "ܐܰܬܰܪ"
-sub_lemmas = "ܒܳܬܰܪ praep. after | nach (§ 49 h) ‖ ܡܶܢ ܒܳܬܰܪ et ܒܳܬܰܪ ܡܶܢ ‖ ܒܳܬܰܪܟܶܢ later | später"
+
 primer_note = "Cf. de Lagarde, Mittheilungen 1, 77."
+
+[[sub_lemmas]]
+voc = "ܒܳܬܰܪ"
+gloss_en = "praep. after"
+gloss_de = "nach (§ 49 h)"
+raw = "ܒܳܬܰܪ praep. after | nach (§ 49 h)"
+
+[[sub_lemmas]]
+voc = "ܡܶܢ ܒܳܬܰܪ"
+gloss = "et ܒܳܬܰܪ ܡܶܢ"
+raw = "ܡܶܢ ܒܳܬܰܪ et ܒܳܬܰܪ ܡܶܢ"
+
+[[sub_lemmas]]
+voc = "ܒܳܬܰܪܟܶܢ"
+gloss_en = "later"
+gloss_de = "später"
+raw = "ܒܳܬܰܪܟܶܢ later | später"
 
 [source]
 primer = "nestle-1889-en"
