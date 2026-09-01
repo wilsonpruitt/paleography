@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g156-tura-distance"
+record_type = "R4"
+
+lemma = { unvoc = "ܛܘܪܐ", voc = "", translit = "" }
+pos = "m."
+gloss_en = "space of time, distance"
+gloss_de = "Zeitraum, Distanz"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Homograph pair with 'mountain' directly above, separated by Nestle into two entries and by pointing alone — the sixth such pair in the shard (convention 3)."
+uncertain = true
+uncertain_note = "The two heads are printed with the same consonants and different vowel marks; this one's pointing is not resolved, so only the skeleton is recorded."
+
+[source]
+primer = "nestle-1889-en"
+page = 156
+leaf = "n245"

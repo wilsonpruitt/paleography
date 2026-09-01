@@ -1,0 +1,33 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g157-ta-err"
+record_type = "R4"
+
+lemma = { unvoc = "ܛܥܐ", voc = "ܛܥܳܐ", translit = "ṭʿā" }
+pos = "verb"
+gloss_en = "err, forget"
+gloss_de = "irren, vergessen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "Aph. cause to forget"
+gloss_de = "vergessen machen"
+raw = "Aph. vergessen machen | cause to forget"
+
+[[sub_lemmas]]
+voc = "ܛܳܥܝܽܘܬܳܐ"
+gloss_en = "f. error"
+gloss_de = "Irrtum"
+raw = "ܛܳܥܝܽܘܬܳܐ f. Irrtum | error"
+
+[source]
+primer = "nestle-1889-en"
+page = 157
+leaf = "n246"

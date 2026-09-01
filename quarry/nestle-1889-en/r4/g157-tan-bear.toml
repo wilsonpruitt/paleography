@@ -1,0 +1,42 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g157-tan-bear"
+record_type = "R4"
+
+lemma = { unvoc = "ܛܥܢ", voc = "ܛܥܶܢ", translit = "ṭʿen" }
+pos = "verb, impf. a"
+gloss_en = "be laden, bear"
+gloss_de = "beladen sein, tragen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ ܛܥܺܝܢ is glossed as BOTH voices at once — 'tragend u. getragen | bearing and borne' — a passive participle that is also active, which German and English can only say twice. ⚑ And the idiom's gloss ends in a dash, like ܛܽܘܒܰܝܗܽܘܢ on p. 156: the word needs its clause."
+uncertain = true
+uncertain_note = "The two verbs the idiom is construed with ('Cum …') are not resolved."
+
+[[sub_lemmas]]
+voc = "ܛܥܺܝܢ"
+gloss_en = "bearing and borne"
+gloss_de = "tragend u. getragen"
+raw = "ܛܥܺܝܢ tragend u. getragen | bearing and borne"
+
+[[sub_lemmas]]
+voc = "ܛܰܥܢܳܐ"
+gloss_en = "load"
+gloss_de = "Last"
+raw = "ܛܥܶܢ, ܛܰܥܢܳܐ Last | load"
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "with two other verbs: take care, see to it that —"
+gloss_de = "Sorge (tragen)"
+raw = "Cum [two verbs] Sorge (tragen) | take care, see to it that —."
+
+[source]
+primer = "nestle-1889-en"
+page = 157
+leaf = "n246"

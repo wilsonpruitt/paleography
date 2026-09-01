@@ -1,0 +1,42 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g157-ida-hand"
+record_type = "R4"
+
+lemma = { unvoc = "ܝܕ", voc = "ܝܰܕ", translit = "yad" }
+pos = "f."
+gloss_en = "hand"
+gloss_de = "Hand"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܐܺܝܕܳܐ"
+continues_from = "runs onto p. 158 (n247) — the page breaks inside the ܥܠ ܝܕ idiom, mid-gloss ('zur Seite,')"
+primer_note = "⭐ Filed at ܝܕ but SPELLED ܐܺܝܕܳܐ everywhere it is used — so a reader who meets the word on the page looks under ܐ and is in the wrong section. Nestle's root ordering at its least forgiving (convention 2)."
+uncertain = true
+uncertain_note = "The 'trop.' form is not resolved."
+
+[[sub_lemmas]]
+voc = "ܐܺܝ̈ܕܰܝܢ, ܐܺܝ̈ܕܶܐ"
+gloss_en = "pl."
+raw = "pl. ܐܺܝ̈ܕܰܝܢ, ܐܺܝ̈ܕܶܐ"
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "trop., a further form: hand (figuratively)"
+raw = "trop. [form] Hand | hand"
+
+[[sub_lemmas]]
+voc = "ܐܺܝܕܳܐ ܐܺܝܕܳܐ"
+gloss_en = "by degrees"
+gloss_de = "allmählich"
+raw = "ܐܺܝܕܳܐ ܐܺܝܕܳܐ allmählich | by degrees"
+
+[source]
+primer = "nestle-1889-en"
+page = 157
+leaf = "n246"

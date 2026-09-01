@@ -1,0 +1,51 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g156-tab-good"
+record_type = "R4"
+
+lemma = { unvoc = "ܛܒ", voc = "ܛܳܒ", translit = "ṭāb" }
+pos = "adj. (root ܛܘܒ)"
+gloss_en = "good"
+gloss_de = "gut"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ ܛܽܘܒܰܝܗܽܘܢ is glossed with a dash on both sides of the language bar — 'selig die —' | 'blessed are —' — because the word is the opening of a beatitude and needs its clause. A gloss shaped like a slot."
+
+[[sub_lemmas]]
+voc = "ܛܳܒܬܳܐ"
+gloss_en = "f."
+raw = "F. ܛܳܒܬܳܐ"
+
+[[sub_lemmas]]
+voc = "ܛܳܒ"
+gloss_en = "adv. well"
+gloss_de = "wohl"
+raw = "ܛܳܒ adv. wohl | well"
+
+[[sub_lemmas]]
+voc = "ܛܽܘܒܳܐ"
+gloss_en = "m. blessedness"
+gloss_de = "Seligkeit"
+raw = "ܛܽܘܒܳܐ m. Seligkeit | blessedness"
+
+[[sub_lemmas]]
+voc = "ܛܽܘܒܰܝܗܽܘܢ"
+gloss_en = "blessed are —"
+gloss_de = "selig die —"
+raw = "ܛܽܘܒܰܝܗܽܘܢ selig die — | blessed are —"
+
+[[sub_lemmas]]
+voc = "ܛܽܘܒܳܢܳܐ, ܛܽܘܒܬܳܢܳܐ"
+gloss_en = "blessed"
+gloss_de = "selig"
+raw = "ܛܽܘܒܳܢܳܐ, ܛܽܘܒܬܳܢܳܐ selig | blessed"
+
+[source]
+primer = "nestle-1889-en"
+page = 156
+leaf = "n245"

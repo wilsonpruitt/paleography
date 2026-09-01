@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g156-tupsa-type"
+record_type = "R4"
+
+lemma = { unvoc = "ܛܘܦܣܐ", voc = "ܛܽܘܦܣܳܐ", translit = "ṭūpsā" }
+pos = "m."
+gloss_en = "type, form (Greek loan)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ὁ τύπος"
+primer_note = "⭐ Greek loan glossed by the Greek alone, WITH ITS ARTICLE — 'ὁ τύπος', not bare τύπος — and then a denominative Pa. built on it in Syriac. ܛܟܣܐ below has exactly the same shape ('ἡ τάξις' + Pa.), so this is a pattern of Nestle's, not a one-off."
+
+[[sub_lemmas]]
+voc = "ܛܰܦܶܣ"
+gloss_en = "Pa. form"
+gloss_de = "bilden"
+raw = "ܛܰܦܶܣ Pa. bilden | form"
+
+[source]
+primer = "nestle-1889-en"
+page = 156
+leaf = "n245"

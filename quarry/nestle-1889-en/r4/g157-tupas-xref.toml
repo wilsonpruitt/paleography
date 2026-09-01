@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g157-tupas-xref"
+record_type = "R4"
+
+lemma = { unvoc = "", voc = "", translit = "" }
+pos = "cross-reference"
+gloss_en = "a variant spelling of ܛܘܦܣܐ 'type' (p. 156)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+see = "v. ܛܘܦܣܐ"
+primer_note = "⭐ A cross-reference from one spelling of the Greek loan τύπος to another, five glyphs against six — the same word entered twice, as ὑπομνήματα was on pp. 134 and 149."
+uncertain = true
+uncertain_note = "⛔ NOT READ. Both the head and the target are ܛܘܦܣ-shaped and differ by one glyph, but which spelling is the head and which the target is not resolved."
+
+[source]
+primer = "nestle-1889-en"
+page = 157
+leaf = "n246"
