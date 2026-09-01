@@ -1,0 +1,40 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g170-nassi-tempt"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܣܐ", voc = "ܢܰܣܺܝ", translit = "nassī" }
+pos = "verb, Pa."
+gloss_en = "try, tempt"
+gloss_de = "versuchen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ The first and third sub-lemmas differ by a single ܘ — ܢܶܣܝܽܘܢܳܐ 'temptation' against ܢܶܣܝܳܢܳܐ 'trial' — and are separated by a third word. The same shape as ܢܽܘܗܪܳܐ/ܢܰܗܪܳܐ on p. 169: Nestle does not warn the reader when two sub-lemmas of one entry are a minimal pair."
+
+[[sub_lemmas]]
+voc = "ܢܶܣܝܽܘܢܳܐ"
+gloss_en = "m. temptation"
+gloss_de = "Versuchung"
+raw = "ܢܶܣܝܽܘܢܳܐ m. Versuchung | temptation"
+
+[[sub_lemmas]]
+voc = "ܡܢܰܣܝܳܢܳܐ"
+gloss_en = "m. tempter"
+gloss_de = "Versucher"
+raw = "ܡܢܰܣܝܳܢܳܐ m. Versucher | tempter"
+
+[[sub_lemmas]]
+voc = "ܢܶܣܝܳܢܳܐ"
+gloss_en = "m. trial, experience"
+gloss_de = "Probe, Erfahrung"
+raw = "ܢܶܣܝܳܢܳܐ m. Probe, Erfahrung | trial, experience"
+
+[source]
+primer = "nestle-1889-en"
+page = 170
+leaf = "n259"

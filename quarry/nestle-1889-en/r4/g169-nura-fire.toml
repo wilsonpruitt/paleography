@@ -1,0 +1,29 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g169-nura-fire"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܘܪܐ", voc = "ܢܽܘܪܳܐ", translit = "nūrā" }
+pos = "f."
+gloss_en = "fire"
+gloss_de = "Feuer"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+plural_voc = "ܢܽܘܪ̈ܘܳܬܳܐ"
+primer_note = "⚑ 'Leuchter | candlestick' is glossed twice on one page, at ܢܰܗܺܝܪ under ܢܗܪ and at ܡܢܳܪܬܳܐ here — two different roots reaching the same German word. Nestle does not cross-refer them."
+
+[[sub_lemmas]]
+voc = "ܡܢܳܪܬܳܐ"
+gloss_en = "f. candlestick"
+gloss_de = "Leuchter"
+raw = "ܡܢܳܪܬܳܐ f. Leuchter | candlestick"
+
+[source]
+primer = "nestle-1889-en"
+page = 169
+leaf = "n258"

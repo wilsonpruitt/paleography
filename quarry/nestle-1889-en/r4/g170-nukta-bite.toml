@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g170-nukta-bite"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܘܟܬܐ", voc = "ܢܽܘܟܬܳܐ", translit = "nūktā" }
+pos = "f."
+gloss_en = "bite"
+gloss_de = "Biss"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܢܽܘܟܬܬܳܐ"
+primer_note = "⭐ A new apparatus phrase, and Nestle at his most tentative: 'ܢܽܘܟܬܳܐ (m.? potius pro) ܢܽܘܟܬܬܳܐ f.' — a queried gender AND a Latin 'rather for', i.e. he thinks the first form is a mistake for the second and says so inside the entry. Convention 6: both the '?' and the 'potius pro' are his."
+
+[source]
+primer = "nestle-1889-en"
+page = 170
+leaf = "n259"

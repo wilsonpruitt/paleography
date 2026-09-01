@@ -1,0 +1,41 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g169-nah-have-rest"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܚ", voc = "ܢܳܚ", translit = "nāḥ" }
+pos = "verb"
+gloss_en = "have rest"
+gloss_de = "Ruhe haben"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. 'enjoy rest' | sich der Ruhe hingeben; Aph. 'rest (trans. and intr.)' | ausruhen u. ausruhen lassen"
+primer_note = "The Aph. is glossed as doing BOTH — 'ausruhen u. ausruhen lassen | rest (trans. and intr.)' — and its passive participle then means 'deceased'. A euphemism recorded without comment."
+
+[[sub_lemmas]]
+voc = "ܢܝܳܚܳܐ"
+gloss_en = "m. rest, recreation"
+gloss_de = "Ruhe, Erholung"
+raw = "ܢܝܳܚܳܐ m. Ruhe, Erholung | rest, recreation"
+
+[[sub_lemmas]]
+voc = "ܢܝܳܚܬܳܐ"
+gloss_en = "f. rest"
+gloss_de = "Ruhe"
+raw = "ܢܝܳܚܬܳܐ f. Ruhe | rest"
+
+[[sub_lemmas]]
+voc = "ܡܢܺܝܚ"
+gloss_en = "part. pass. Aph. at rest, deceased"
+gloss_de = "ausruhend, verstorben"
+raw = "ܡܢܺܝܚ part. pass. Aph. ausruhend, verstorben | at rest, deceased"
+
+[source]
+primer = "nestle-1889-en"
+page = 169
+leaf = "n258"

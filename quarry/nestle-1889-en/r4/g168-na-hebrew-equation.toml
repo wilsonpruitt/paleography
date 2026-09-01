@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g168-na-hebrew-equation"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܐ", voc = "ܢܳܐ", translit = "nā" }
+pos = "particle"
+gloss_en = "(the enclitic of entreaty — glossed only by the Hebrew equation)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§ 3"
+noldeke = []
+layer = "vocalized Serto"
+hebrew = "נָא"
+primer_note = "⭐ The ܢ section opens with a NEW gloss device: an EQUATION. '§ 3 = h. נָא' — not 'h. נָא' set beside a translation, as at ܟܪܽܘܒܳܐ and ܡܰܠܰܐܟܳܐ, but an equals sign doing the whole work. The English here is entirely ours and is flagged as such."
+
+[source]
+primer = "nestle-1889-en"
+page = 168
+leaf = "n257"

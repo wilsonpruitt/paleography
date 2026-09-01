@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g170-nkep-modest"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܟܦ", voc = "ܢܟܶܦ", translit = "nkep" }
+pos = "adj."
+gloss_en = "modest, pure, reverend"
+gloss_de = "züchtig, keusch, ehrwürdig"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܢܰܟܦܳܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 170
+leaf = "n259"

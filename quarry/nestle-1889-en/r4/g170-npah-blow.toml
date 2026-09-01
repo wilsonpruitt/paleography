@@ -1,0 +1,21 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g170-npah-blow"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܦܚ", voc = "ܢܦܰܚ", translit = "npaḥ" }
+pos = "verb, impf. u"
+gloss_en = "blow, breathe on"
+gloss_de = "blasen, anhauchen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[source]
+primer = "nestle-1889-en"
+page = 170
+leaf = "n259"
