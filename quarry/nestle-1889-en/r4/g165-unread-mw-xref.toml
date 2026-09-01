@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g165-unread-mw-xref"
+record_type = "R4"
+
+lemma = { unvoc = "", voc = "", translit = "" }
+pos = "cross-reference"
+gloss_en = "⛔ NOT READ"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+uncertain = true
+uncertain_note = "⛔ NOT READ. A one-line cross-reference standing between ܡܽܘܚܳܐ 'marrow' and ܡܽܘܪܳܐ 'myrrh', so a ܡܘ- word by spelling. Skeleton at 3×: six glyphs, ܡ + circle + two small angular letters + ܬ + ܐ, referred to a three-glyph target. ܡܰܘܗܰܒܬܳܐ v. ܝܗܒ fits the glyph count but not the slot (ܡܘܗ sorts before ܡܘܚ); ܡܽܘܟܳܟܳܐ v. ܡܟܟ fits the slot but not the count. Neither written. Convention 5 — the record exists so the page's count stays honest and --unread can find it."
+
+[source]
+primer = "nestle-1889-en"
+page = 165
+leaf = "n254"

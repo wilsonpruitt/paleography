@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g164-lbar-outside-xref"
+record_type = "R4"
+
+lemma = { unvoc = "ܠܒܪ", voc = "ܠܒܰܪ", translit = "lbar" }
+pos = "cross-reference"
+gloss_en = "outside — see ܒܪ"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+see = "v. ܒܰܪ"
+primer_note = "⭐ SQUARE brackets around the whole cross-reference: '[ܠܒܰܪ v. ܒܰܪ.]'. The shard's only previous square bracket was [ܝܠܠ] on p. 158, where it enclosed an unattested ROOT in the slot that normally takes round brackets. Two square-bracket sightings, two different jobs — so the open question ('is the bracket shape a distinction?') is now a question about THREE uses, not two. Still nobody's ruling."
+uncertain = true
+uncertain_note = "A sublinear dot sits under the last letter of both forms at 3×. Read as rukkakha on the ܒ would be wrong (it is under the wrong letter); read as a dalath would give ܠܒܕ/ܒܕ, but ܠܒܶܕ 'condense' is a separate head-word one page earlier and the slot here (between ܠܒܢ and ܠܒܫ) fits ܠܒܪ exactly. Filed as ܠܒܰܪ on the slot, with the dot recorded rather than explained."
+
+[source]
+primer = "nestle-1889-en"
+page = 164
+leaf = "n253"

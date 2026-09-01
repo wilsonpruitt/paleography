@@ -1,0 +1,54 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g165-ma-interrogative"
+record_type = "R4"
+
+lemma = { unvoc = "ܡܐ", voc = "ܡܳܐ", translit = "mā" }
+pos = "interrogative particle"
+gloss_en = "what? how?"
+gloss_de = "was? wie?"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§ 21"
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ The ܡ section opens on a five-member particle cluster — the ܗܳܐ shape of p. 148, and the same hazard: later pages will cross-refer INTO it. Note the typography, which is its own trap: the proclitic ܕ of ܡܳܐ ܕ and the ܕ- of ܕܠܡܳܐ are printed as detached comma-sized marks, and bidi puts them on the far side of the word from where a reader expects."
+uncertain = true
+uncertain_note = "⛔ NOT READ: the fourth sub-lemma, a compound ending in ܡܳܐ with a cross-reference to a two-glyph target ('… v. …;' between ܕܠܡܳܐ and ܡܳܢܰܘ). Read at 3× twice. ܟܡܳܐ v. ܟܡ fits the shape but there is NO ܟܡܐ head-word on p. 161 where one would stand, so that reading was rejected rather than written; ܡܶܛܽܠ ܡܳܐ v. ܡܛܠ fits the sense but not the glyph count. Left empty per convention 5."
+
+[[sub_lemmas]]
+voc = "ܡܳܐ ܕ"
+gloss_en = "that which, when"
+gloss_de = "das, was, als"
+raw = "ܡܳܐ ܕ das, was, als | that which, when"
+
+[[sub_lemmas]]
+voc = "ܠܡܳܐ"
+gloss_en = "whereto?"
+gloss_de = "wozu?"
+raw = "ܠܡܳܐ wozu? | whereto?"
+
+[[sub_lemmas]]
+voc = "ܕܠܡܳܐ"
+gloss_en = "why? might it be that?"
+gloss_de = "warum? sollte wohl?"
+raw = "ܕܠܡܳܐ warum? sollte wohl? | why? might it be that?"
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "⛔ NOT READ — a compound in -ܡܳܐ, cross-referred to a two-letter target"
+raw = "[⛔ NOT READ]ܡܳܐ v. [⛔ NOT READ]"
+
+[[sub_lemmas]]
+voc = "ܡܳܢܰܘ"
+gloss_en = "wherefore? why?"
+gloss_de = "wozu das? warum?"
+raw = "ܡܳܢܰܘ wozu das? warum? | wherefore? why?"
+
+[source]
+primer = "nestle-1889-en"
+page = 165
+leaf = "n254"

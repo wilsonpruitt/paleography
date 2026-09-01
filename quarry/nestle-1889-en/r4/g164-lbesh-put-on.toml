@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g164-lbesh-put-on"
+record_type = "R4"
+
+lemma = { unvoc = "ܠܒܫ", voc = "ܠܒܶܫ", translit = "lbeš" }
+pos = "verb, impf. a"
+gloss_en = "put on"
+gloss_de = "anziehen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+latin = "cum dupp. Acc."
+stems = "Aph. cum dupp. Acc. 'dress (act.), clothe someone with something' | einen mit etwas bekleiden"
+primer_note = "The Aph. is glossed by its SYNTAX first — 'cum dupp. Acc.' in Latin — and only then translated. Nestle's third gloss-side use of Latin, after the particle entries and the ܠ preposition."
+
+[source]
+primer = "nestle-1889-en"
+page = 164
+leaf = "n253"

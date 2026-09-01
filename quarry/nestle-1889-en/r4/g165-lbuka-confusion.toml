@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g165-lbuka-confusion"
+record_type = "R4"
+
+lemma = { unvoc = "ܠܒܘܟܐ", voc = "ܠܒܽܘܟܳܐ", translit = "lbūkā" }
+pos = "m."
+gloss_en = "confusion"
+gloss_de = "Verwirrung"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ THE BRACKET QUESTION, third sighting and the first that shows what the shape means: '[ܠܒܽܘܟܳܐ m. Verwirrung | confusion.?]' — square brackets with Nestle's own '?' INSIDE them, before the closing bracket. Read against [ܝܠܠ] (p. 158, an unattested root in the slot that normally takes round brackets) and [ܠܒܰܪ v. ܒܰܪ] (p. 164, a whole cross-reference), the common factor is not the CONTENT but the doubt: the square bracket appears to mark an entry Nestle is not prepared to stand behind. ⬜ Still nobody's ruling, but the question is now sharper than 'round vs square'."
+uncertain = true
+uncertain_note = "Two doubts, and they compound. (1) The reading: five glyphs, ܠ + angular + circle + angular + alaph, read ܠܒܽܘܟܳܐ; ܠܽܘܒܳܟܳܐ is the same skeleton under a different segmentation and is equally possible at 3×. (2) The SLOT: it stands between ܠܰܝܬ (p. 164) and ܠܰܡ, but a ܠܒܟ word belongs a page and a half earlier, beside ܠܒܶܟ 'seize hold'. Either the reading is wrong or the placement is — which is likely why the entry is bracketed and queried at all."
+
+[source]
+primer = "nestle-1889-en"
+page = 165
+leaf = "n254"

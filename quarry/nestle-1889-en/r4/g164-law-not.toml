@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g164-law-not"
+record_type = "R4"
+
+lemma = { unvoc = "ܠܘ", voc = "ܠܰܘ", translit = "law" }
+pos = "particle"
+gloss_en = "not, no"
+gloss_de = "nicht, nein"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+latin = "particula negationis"
+primer_note = "The second negative particle in two pages, labelled with the SAME Latin formula as ܠܳܐ ('particula negationis') and distinguished only by the German gloss adding 'nein'."
+
+[source]
+primer = "nestle-1889-en"
+page = 164
+leaf = "n253"

@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g165-mhiluta-weakness-xref"
+record_type = "R4"
+
+lemma = { unvoc = "ܡܚܝܠܘܬܐ", voc = "ܡܚܺܝܠܽܘܬܳܐ", translit = "mḥīlūtā" }
+pos = "cross-reference"
+gloss_en = "weakness — see ܚܝܠ"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+see = "v. ܚܝܠ"
+primer_note = "Second cross-reference pair set on one line (with ܡܚܰܝܕܳܐ), and this one IS in order: ܡܚܐ, ܡܚܝܕ, ܡܚܝܠ, ܡܛܐ."
+
+[source]
+primer = "nestle-1889-en"
+page = 165
+leaf = "n254"
