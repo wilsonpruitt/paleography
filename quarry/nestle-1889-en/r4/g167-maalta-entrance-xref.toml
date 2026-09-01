@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g167-maalta-entrance-xref"
+record_type = "R4"
+
+lemma = { unvoc = "ܡܥܠܬܐ", voc = "ܡܰܥܰܠܬܳܐ", translit = "maʿaltā" }
+pos = "cross-reference"
+gloss_en = "entrance — see ܥܠ"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+see = "v. ܥܠ"
+primer_note = "Third cross-reference PAIR set on one line (after p. 165's ܡܰܘܡܳܬܳܐ/ܡܶܐܟܠܳܐ and ܡܚܰܝܕܳܐ/ܡܚܺܝܠܽܘܬܳܐ). Nestle pairs ܡ-preformative pointers two to a line as a matter of course."
+
+[source]
+primer = "nestle-1889-en"
+page = 167
+leaf = "n256"

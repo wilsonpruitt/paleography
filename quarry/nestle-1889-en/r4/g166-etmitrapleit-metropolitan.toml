@@ -1,0 +1,25 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g166-etmitrapleit-metropolitan"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܬܡܝܛܪܘܦܠܝܛ", voc = "ܐܶܬܡܺܝܛܪܽܘܦܠܺܝܛ", translit = "etmiṭrupleiṭ" }
+pos = "verb, Ethpe. (denominative from a Greek loan)"
+gloss_en = "was made metropolitan (glossed only in Latin)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "μητροπολίτης"
+latin = "metropolitanus factus est"
+primer_note = "⭐ The longest head-word in the shard, eleven letters, and glossed in LATIN ALONE — not for a particle this time but for a VERB, and a whole clause of Latin at that. It is a Syriac verb built on a Greek noun, cited from Bar Hebraeus's grammar ('BH. Gr. 1, 48'): a new citation source, and the first author cited by a work of his own rather than by a lexicon column."
+uncertain = true
+uncertain_note = "Consonants certain at 3×; the vowel points on a word this long are not, and the Ethpe./Ettaph. analysis is the extractor's, not Nestle's — he prints the form and the Latin, nothing else."
+
+[source]
+primer = "nestle-1889-en"
+page = 166
+leaf = "n255"

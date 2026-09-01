@@ -1,0 +1,43 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g166-mallel-speak"
+record_type = "R4"
+
+lemma = { unvoc = "ܡܠܠ", voc = "ܡܰܠܶܠ", translit = "mallel" }
+pos = "verb, Pa."
+gloss_en = "speak"
+gloss_de = "sprechen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpa. 'be said' | gesagt werden"
+primer_note = "Four forms of 'word' in one sub-lemma — absolute, emphatic, construct and plural — then two technical terms of the grammarians. 'melius' is a new apparatus word: Nestle preferring one spelling over another in his own entry."
+uncertain = true
+uncertain_note = "⛔ NOT READ, three forms, all inside sub-lemmas and all after one 3× zoom: the Syriac term for 'diminutives', the Payne Smith form Nestle cites beside it, and the form he prefers under 'melius'. Each is six to eight letters and each sits where a technical term of Syriac grammar belongs, so a wrong guess would propagate into a glossary of grammatical vocabulary. The head-word and the four forms of ܡܶܠܬܳܐ are certain."
+
+[[sub_lemmas]]
+voc = "ܡܶܠܳܐ, ܡܶܠܬܳܐ, st. c. ܡܶܠܰܬ, pl. ܡ̈ܶܠܶܐ"
+gloss_en = "f. word"
+gloss_de = "Wort"
+raw = "ܡܶܠܳܐ, ܡܶܠܬܳܐ, st. c. ܡܶܠܰܬ f. Wort | word. Pl. ܡ̈ܶܠܶܐ"
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "diminutives — form ⛔ NOT READ"
+gloss_de = "Verkleinerungswörter"
+raw = "[⛔ NOT READ] Verkleinerungswörter | diminutives (PSm. [⛔ NOT READ])"
+
+[[sub_lemmas]]
+voc = "ܡܡܰܠܠܽܘܬ ܐܰܠܳܗܽܘܬܳܐ"
+gloss_en = "theology"
+gloss_de = "Theologie"
+raw = "ܡܡܰܠܠܽܘܬ ܐܰܠܳܗܽܘܬܳܐ (melius [⛔ NOT READ]) Theologie | theology"
+
+[source]
+primer = "nestle-1889-en"
+page = 166
+leaf = "n255"
