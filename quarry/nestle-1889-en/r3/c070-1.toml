@@ -15,6 +15,7 @@ The heading is off by one verse. Recorded as printed, cited as 6:9-13.
 """
 
 layer = "vocalized Serto"
+diff_target = "THE NEW TESTAMENT IN SYRIAC, BFBS London 1905-1920 — archive.org `newtestamentinsy00unse`, title page verified at n6. PD. Critical edition behind it: Pusey & Gwilliam, Tetraeuangelium sanctum, Clarendon 1901 (`tetraeuangeliums00puseuoft`). See research/syriac-peshitta-editions.md"
 layer_source = "read from the plate"
 seyame = false
 punctuation = "as printed"

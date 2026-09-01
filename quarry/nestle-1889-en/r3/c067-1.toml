@@ -8,6 +8,7 @@ work = "peshitta:gen:1:1-13"
 work_note = "Chrestomathia I, 'Quattuor prima capita Geneseos', opening page. Verse numbers 1-9 are printed superscript on this page; the piece runs to p. 78."
 
 layer = "vocalized Serto"
+diff_target = "Barnes, PENTATEUCHUS SYRIACE (post Samuelem Lee), BFBS London 1914 — archive.org `ktavadeauritaauk00lees`, title page verified at n6. PD. See research/syriac-peshitta-editions.md"
 layer_source = "read from the plate — ⭐ and it CONTRADICTS the Phase-0 section default"
 layer_finding = """
 Phase 0 recorded the chrestomathy as unvocalized Estrangela (from the n180 probe). p. 67 opens

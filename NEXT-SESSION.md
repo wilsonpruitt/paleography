@@ -36,9 +36,12 @@
      Cod. 940 and Cod. Syr. 1) — so we **produce** the text instead: key from Nestle (itself a
      PD printed Peshitta), check against SEDRA + a PD 1905 scan, ship neither. That splits R3:
      **23 Peshitta pages are keyable and checkable NOW**; the 44 pages of Vitae Prophetarum /
-     Historia inventionis have no check but a Syriacist. ⬜ Unprobed: archive.org
-     `newtestamentinsy00unse` (verify at the title page); a PD Peshitta **OT** (Lee 1823 /
-     Urmia 1852 / Mosul 1887-92); syri.ac by hand (403s to fetch).
+     Historia inventionis have no check but a Syriacist. ✅ **Diff targets PINNED 2026-09-01**
+     from Brock's bibliography (`syri.ac/brock/bible` — Cloudflare-blocks curl and WebFetch,
+     renders in Playwright): **Barnes, *Pentateuchus Syriace*, BFBS 1914** =
+     `ktavadeauritaauk00lees` for Genesis, and **BFBS *New Testament in Syriac* 1905-1920** =
+     `newtestamentinsy00unse` for Matthew and the Lord's Prayer. Both PD, both verified at the
+     title page. Full note: `research/syriac-peshitta-editions.md`.
   3. ⚠ **The Syriacist seat is still empty and that is what this batch cost.** 200 more pages
      before it is filled multiplies unadjudicated Syriac by 25×. Same two people as the licence
      email: **Ephrem Aboud Ishac** + **Christine Roughan**. One message covers both.
