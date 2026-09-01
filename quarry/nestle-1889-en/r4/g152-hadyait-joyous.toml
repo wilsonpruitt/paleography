@@ -15,7 +15,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "Read as an ...ܐܝܬ adverb built on ܚܕܝ 'be glad', whose ending is clear on the plate; the middle of the word is not resolved. ⚠ Its position is also wrong for that root — it stands after ܚܘܒ, not beside ܚܕܝ — so either the reading or the assumed root is off. The ܚ section on this page departs from strict root order in one other place (ܚܒ/ܚܘܒ printed after ܚܘܝ)."
+uncertain_note = "Read as an ...ܐܝܬ adverb built on ܚܕܝ 'be glad', whose ending is clear on the plate; the middle of the word is not resolved. ⚠ Its position is also wrong for that root — it stands after ܚܘܒ, not beside ܚܕܝ — so either the reading or the assumed root is off. The ܚ section departs from strict root order in one other place on this page (ܚܒ printed after ܚܘܝ). ⭐ p. 153 settles which way that cuts: it opens ܚܘܪ 'look/white' straight after p. 152's closing ܚܣ (= root ܚܘܣ), so ܚܘܒ < ܚܘܝ < ܚܘܣ < ܚܘܪ runs strictly. The order is Nestle's and it holds; the two anomalies are ours to explain, and a misread head is the likeliest explanation for both."
 
 [source]
 primer = "nestle-1889-en"

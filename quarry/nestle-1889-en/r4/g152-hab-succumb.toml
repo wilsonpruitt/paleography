@@ -14,6 +14,8 @@ payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
+uncertain = true
+uncertain_note = "Two glyphs, read as ܚܳܒ from the root ܚܘܒ 'be guilty'. ⚠ But it is printed AFTER ܚܘܝ, and p. 153 shows this section running in strict root order (ܚܘܣ then ܚܘܪ), so either the reading or the root is wrong — ܚܝܒ would give the same skeleton and a different slot. See g152-hadyait-joyous."
 
 [[sub_lemmas]]
 voc = ""
