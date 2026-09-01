@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g177-esba-grass"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܣܒܐ", voc = "ܥܶܣܒܳܐ", translit = "ʿesbā" }
+pos = "m."
+gloss_en = "herb, grass"
+gloss_de = "Kraut, Gras"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ A new siglum, and this one names a lexicographer: 'Pl. sec. BA. ܥܶܣ̈ܒܶܐ' — the plural according to BA., i.e. Bar Ali, whose lexicon Nestle is citing against his own text. After Payne Smith (PSm.), Bar Hebraeus (BH.), de Lagarde and Hoffmann, the fifth authority the glossary appeals to."
+
+[source]
+primer = "nestle-1889-en"
+page = 177
+leaf = "n266"

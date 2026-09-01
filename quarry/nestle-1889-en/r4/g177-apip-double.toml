@@ -1,0 +1,25 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g177-apip-double"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܦܝܦ", voc = "ܥܶܦܺܝܦ", translit = "ʿpīp" }
+pos = "adj."
+gloss_en = "double (glossed only by the Greek)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "δίπλοῦς"
+arabic = "ضعيف"
+primer_note = "⭐⭐ THE FIRST ARABIC IN THE SHARD, and it arrives inside an apparatus note rather than as a gloss: 'δίπλοῦς; varia lectio ܐܰܟܺܝܦ = ضعيف de Lagarde, Semitica 1, 25.' Four scripts on one line — Syriac, Greek, Arabic and Latin — and a new apparatus phrase, 'varia lectio'. It is also a fourth de Lagarde work (Semitica), after Orientalia, Mittheilungen and the bare 'de Lagarde' citations."
+uncertain = true
+uncertain_note = "The variant reading is transcribed ܐܰܟܺܝܦ from a 1.75× read; five glyphs, and the third could be ܟ or ܒ. The Arabic ضعيف is legible and is recorded as printed. The equation is Nestle's, not ours."
+
+[source]
+primer = "nestle-1889-en"
+page = 177
+leaf = "n266"

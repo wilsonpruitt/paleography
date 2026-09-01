@@ -20,6 +20,8 @@ primer_note = "⭐ A sixteenth homograph, and the most consequential yet: ܥܰܠ
 uncertain = true
 uncertain_note = "Head printed as the bracketed root (ܥܠܐ) with the stem named and no Aph. form given; ܐܰܥܠܺܝ is the extractor's citation form. The two forms in 'at the side of' are read ܓܶܢܒ and ܝܰܕ and are recorded in the printed order, which the crop does not fully settle."
 
+continues_from = "runs onto p. 177 (n266) — ✅ the tail was read 2026-09-01 and its two sub-lemmas are folded in below"
+
 [[sub_lemmas]]
 voc = "ܥܰܠ"
 gloss_en = "Praep. over"
@@ -37,6 +39,19 @@ voc = "ܥܰܠ ܕ"
 gloss_en = "because"
 gloss_de = "weil"
 raw = "ܥܰܠ ܕ weil | because"
+
+
+[[sub_lemmas]]
+voc = "ܥܶܠ, ܠܥܶܠ"
+gloss_en = "upwards"
+gloss_de = "in die Höhe"
+raw = "ܥܶܠ, ܠܥܶܠ in die Höhe | upwards"
+
+[[sub_lemmas]]
+voc = "ܥܶܠܳܝܳܐ"
+gloss_en = "the Most High"
+gloss_de = "der oberste"
+raw = "ܥܶܠܳܝܳܐ der oberste | the Most High"
 
 [source]
 primer = "nestle-1889-en"

@@ -1,0 +1,37 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g177-amad-baptise"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܡܕ", voc = "ܥܡܰܕ", translit = "ʿmad" }
+pos = "verb, impf. a"
+gloss_en = "be immersed, baptised"
+gloss_de = "eingetaucht, getauft werden"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+hebrew = "עַמּוּד"
+stems = "Aph. 'baptise' | taufen"
+primer_note = "⭐ 'Baptism' and 'pillar' in one entry, the second glossed by Hebrew alone — the ܟܪܽܘܒܳܐ device. Note also a NEW SIGLUM inside the first sub-lemma, '(K. ܕ)': a single-letter variant attributed to a source abbreviated K., which the shard has not met and which is not expanded here."
+uncertain = true
+uncertain_note = "The first sub-lemma's masculine form is read ܥܡܳܕܳܐ at 1.75×; four glyphs, and an initial ܐ (ܐܰܥܡܶܕ, the Aph. just named) is possible. The siglum 'K.' is transcribed, not identified."
+
+[[sub_lemmas]]
+voc = "ܥܡܳܕܳܐ et ܡܰܥܡܽܘܕܺܝܬܳܐ"
+gloss_en = "m./f. baptism"
+gloss_de = "Taufe"
+raw = "ܥܡܳܕܳܐ m. et ܡܰܥܡܽܘܕܺܝܬܳܐ (K. ܕ) f. Taufe | baptism"
+
+[[sub_lemmas]]
+voc = "ܥܰܡܽܘܕܳܐ"
+gloss_en = "pillar (glossed only by the Hebrew cognate)"
+raw = "ܥܰܡܽܘܕܳܐ h. עַמּוּד"
+
+[source]
+primer = "nestle-1889-en"
+page = 177
+leaf = "n266"
