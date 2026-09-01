@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g146-dan-judge"
+record_type = "R4"
+
+lemma = { unvoc = "ܕܝܢ", voc = "ܕܳܢ", translit = "dān" }
+pos = "verb, impf. ܢܕܽܘܢ"
+gloss_en = "judge"
+gloss_de = "richten"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+sub_lemmas = "ܕܺܝܢܳܐ court, judgement | Gericht ‖ ܕܰܝܳܢܳܐ judge | Richter ‖ ܡܕܺܝܢܬܳܐ, pl. ܡܕܺܝ̈ܢܳܬܳܐ, st. cstr. ܡܕܺܝܢܰܬ town | Stadt"
+primer_note = "⭐ 'Town' filed under 'judge' — ܡܕܺܝܢܬܳܐ is the place where judgement is given. Root-ordering again putting a common noun where a reader would never look for it."
+
+[source]
+primer = "nestle-1889-en"
+page = 146
+leaf = "n235"
