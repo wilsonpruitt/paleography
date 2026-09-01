@@ -1,0 +1,20 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g171-netsah"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܨܚ", voc = "ܢܨܰܚ", translit = "nṣaḥ" }
+pos = "verb, Ethpa."
+gloss_en = "triumph"
+gloss_de = "triumphieren"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+sub_lemmas = "ܢܰܨܺܝܚܳܐ triumphant, splendid, glorious | Triumphator, glänzend, herrlich"
+
+[source]
+primer = "nestle-1889-en"
+page = 171
+leaf = "n260"

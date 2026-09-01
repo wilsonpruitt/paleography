@@ -1,0 +1,23 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g171-netsar"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܨܪ", voc = "ܢܨܰܪ", translit = "nṣar" }
+pos = "verb, impf. a"
+gloss_en = "sing"
+gloss_de = "singen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Pa. modulate the voice | die Stimme modulieren"
+sub_lemmas = "ܢܶܨܪܳܐ whispering, lisping, flattery | Lispeln, Lallen, Schmeicheln"
+uncertain = true
+uncertain_note = "Pointing of the || sub-lemma not fully resolvable."
+
+[source]
+primer = "nestle-1889-en"
+page = 171
+leaf = "n260"

@@ -1,0 +1,20 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g133-aba"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܒܐ", voc = "ܐܰܒܳܐ", translit = "'abā" }
+pos = "m."
+gloss_en = "father"
+gloss_de = "Vater"   # ⚑ schema gap: §4 has gloss_en only; Nestle glosses German | English
+root = ""   # not filled in calibration
+payne_smith = ""   # not looked up in calibration
+frequency_rank = ""   # Phase 2, never from the primer
+nestle_section = "§33"   # ⚑ schema gap: the primer's OWN § cross-reference has no field
+noldeke = []
+layer = "vocalized Serto"
+
+[source]
+primer = "nestle-1889-en"
+page = 133
+leaf = "n222"

@@ -1,0 +1,23 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g133-agursa"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܓܘܪܣܐ", voc = "ܐܰܓܽܘܪܣܳܐ", translit = "'agūrsā" }
+pos = "m."
+gloss_en = "villages (pl.)"
+gloss_de = "Dörfer"   # ⚑ schema gap: §4 has gloss_en only; Nestle glosses German | English
+root = ""   # not filled in calibration
+payne_smith = ""   # not looked up in calibration
+frequency_rank = ""   # Phase 2, never from the primer
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἀγρός"
+plural_voc = "ܐܰܓܽܘܪ̈ܣܶܐ"
+uncertain = true
+uncertain_note = "Lemma and plural pointing uncertain at this scale; the gloss pair is given for the PLURAL only."
+
+[source]
+primer = "nestle-1889-en"
+page = 133
+leaf = "n222"

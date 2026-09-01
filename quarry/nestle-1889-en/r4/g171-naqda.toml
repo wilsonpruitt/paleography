@@ -1,0 +1,22 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g171-naqda"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܩܕܐ", voc = "ܢܰܩܕܳܐ", translit = "naqdā" }
+pos = "adj."
+gloss_en = "pure, fine, costly"
+gloss_de = "rein, fein, kostbar"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܢܩܶܐ"
+uncertain = true
+uncertain_note = "The first of the two printed forms is uncertain at this scale."
+
+[source]
+primer = "nestle-1889-en"
+page = 171
+leaf = "n260"

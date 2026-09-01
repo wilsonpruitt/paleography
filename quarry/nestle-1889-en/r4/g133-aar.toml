@@ -1,0 +1,24 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g133-aar"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܐܪ", voc = "ܐܳܐܰܪ", translit = "'āar" }
+pos = "c., plerumque m."
+gloss_en = "air"
+gloss_de = "Luft"   # ⚑ schema gap: §4 has gloss_en only; Nestle glosses German | English
+root = ""   # not filled in calibration
+payne_smith = ""   # not looked up in calibration
+frequency_rank = ""   # Phase 2, never from the primer
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἀήρ"
+latin = "aer"
+plural_voc = "ܐܳܐܰܪ̈ܰܣ"
+uncertain = true
+uncertain_note = "Plural form is a Greek-flexion borrowing (ἀέρας); its pointing is not fully resolvable."
+
+[source]
+primer = "nestle-1889-en"
+page = 133
+leaf = "n222"

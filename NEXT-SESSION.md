@@ -20,10 +20,26 @@
 - Score: `SYRIAC-LANGUAGE-PILOT.md` · ✅ **Phase 0 done, G0 passed 2026-08-31**
   (`research/syriac-pilot-phase0.md` — scans pinned, licences verdicted, Robinson 1915 is
   keyless).
-- ▶ **Next: Phase 1 — decompose Nestle. Execution score: `SYRIAC-PHASE1-RUNBOOK.md`. Opus.**
-  It opens with a cheap structure map + 8-page calibration batch, then ⛔ **hard-stops to
-  Wilson with the measured burn before the full run dispatches.** Records land in
-  `quarry/nestle-1889-en/`, not in `registry/`.
+- ✅ **Phase 1 Step 0 + Step 1 done 2026-09-01.** Structure map =
+  `quarry/nestle-1889-en/MAP.md`; measurement + hard stop =
+  `research/syriac-pilot-phase1-calibration.md`. 34 calibration records from 8 pages.
+- ⛔ **STOPPED AT THE HARD STOP. Step 2 has NOT dispatched and must not, until Wilson answers.**
+  Measured: **4.7k vision + 1.5k output tokens per page**; 201-page extraction set ⇒
+  **~1.43M tokens irreducible, ~2.5-3.0M end to end on Opus**. Put to Wilson:
+  *which model, and go?* — plus two rulings and one blocker that ride on the same answer:
+  1. ⬜ **R5 / `word_notes`**: Nestle's "Aids to Translation" are per-word notes keyed to a
+     passage — a ready-made gloss layer with no home in §4. Changes WHAT the run extracts.
+  2. ⬜ **Does R3 go at all this phase?** There is **no alignable digital Peshitta** (Digital
+     Syriac Corpus is patristic; SEDRA is compute-only), so all 66 chrestomathy pages are full
+     keying with nothing to diff against — a third of the run, and its least checkable third.
+  3. ⚠ **The Syriacist seat is still empty and that is what this batch cost.** 200 more pages
+     before it is filled multiplies unadjudicated Syriac by 25×. Same two people as the licence
+     email: **Ephrem Aboud Ishac** + **Christine Roughan**. One message covers both.
+- Two Phase-0 facts corrected by the plates: **Nestle has NO R2** (the "Reading Exercise" is the
+  Lord's Prayer in the Peshitta), and the chrestomathy is **not** uniformly Estrangela — p. 67
+  opens in vocalized Serto and ramps to unvocalized Estrangela by p. 71, inside one passage.
+- ⚠ The glossary is the volume: ~1,150-1,300 R4 records over 63 pages, where §2 expected "low
+  hundreds".
 
 ## The one command that matters
 

@@ -1,0 +1,22 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g171-narga"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܪܓܐ", voc = "ܢܰܪܓܳܐ", translit = "nargā" }
+pos = "m."
+gloss_en = "axe"
+gloss_de = "Beil"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+dialect_variant = "Nestle marks an East-Syriac vs West-Syriac spelling of the final letter (ostsyr. K., westsyr. R.)"
+uncertain = true
+uncertain_note = "The east/west variant letter is printed as a bare glyph; not read with confidence."
+
+[source]
+primer = "nestle-1889-en"
+page = 171
+leaf = "n260"

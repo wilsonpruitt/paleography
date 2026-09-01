@@ -1,0 +1,97 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+#
+# ⚑ THE BATCH'S FLAGGED-AMBIGUOUS PAGE (MAP.md flag 1). p. 132 sits inside the chrestomathy's
+# pagination but is not one of the works its Table of Contents lists. It is a bare lexical
+# table: 12 month names, then the days of the week. Not a passage (R3), and not a paradigm of
+# inflected forms (R1 as §4 means it). Filed R1 with `kind = "lexical-table"`.
+# ⛔ Wilson's ruling owed: keep this shape as R1, or give the schema a lexical-list type?
+id = "nestle-1889-en/r1/p132-1"
+record_type = "R1"
+kind = "lexical-table"
+
+category = "calendar: months of the Syriac year"
+printed_heading = "MENSES ANNI SYRIACI — INCIPIENTIS AB INTERLUNIO SEPTEMBRIS"
+layer = "vocalized Serto"
+layer_source = "read from the plate"
+layer_note = "⚠ Vocalized Serto, though the section default for the chrestomathy is unvocalized Estrangela — the per-record layer rule earns its keep here."
+noldeke = []
+noldeke_qualifier = "Nöldeke has no section for the calendar; no nearest § claimed rather than invent one."
+bracket_convention = "Square brackets are NESTLE'S OWN, marking letters optionally written (e.g. ܬܶܫܪܝ[ܢ]) — they are not an editor's supply for illegible ink. Cf. the Eutyches bracket ruling in the hand-trainer."
+
+[[cells]]
+gram_tags = { ordinal = "1" }
+form_voc = "ܬܶܫܪܝ[ܢ] ܩܕܺܝܡ[ܝܳܐ]"
+translit = "tešrīn qdīm(āyā)"
+gloss_en = "October"
+
+[[cells]]
+gram_tags = { ordinal = "2" }
+form_voc = "ܬܶܫܪܝ[ܢ] ܐܚܪܳܝ"
+translit = "tešrīn 'ḥrāy"
+gloss_en = "November"
+
+[[cells]]
+gram_tags = { ordinal = "3" }
+form_voc = "ܟܳܢܽܘܢ ܩܕܺܝܡ[ܝܳܐ]"
+translit = "kānōn qdīm(āyā)"
+gloss_en = "December"
+
+[[cells]]
+gram_tags = { ordinal = "4" }
+form_voc = "ܟܳܢܽܘܢ ܐܚܪܳܝ"
+translit = "kānōn 'ḥrāy"
+gloss_en = "January"
+
+[[cells]]
+gram_tags = { ordinal = "5" }
+form_voc = "ܫܒܳܛ"
+translit = "šbāṭ"
+gloss_en = "February"
+
+[[cells]]
+gram_tags = { ordinal = "6" }
+form_voc = "ܐܳܕܳܪ"
+translit = "'ādār"
+gloss_en = "March"
+
+[[cells]]
+gram_tags = { ordinal = "7" }
+form_voc = "ܢܺܝܣܳܢ"
+translit = "nīsān"
+gloss_en = "April"
+
+[[cells]]
+gram_tags = { ordinal = "8" }
+form_voc = "ܐܺܝܳܪ"
+translit = "'īyār"
+gloss_en = "May"
+
+[[cells]]
+gram_tags = { ordinal = "9" }
+form_voc = "ܚܙܺܝܪܳܢ"
+translit = "ḥzīrān"
+gloss_en = "June"
+
+[[cells]]
+gram_tags = { ordinal = "10" }
+form_voc = "ܬܰܡܽܘܙ"
+translit = "tammūz"
+gloss_en = "July"
+
+[[cells]]
+gram_tags = { ordinal = "11" }
+form_voc = "ܐܳܒ"
+translit = "'āb"
+gloss_en = "August"
+
+[[cells]]
+gram_tags = { ordinal = "12" }
+form_voc = "ܐܺܝܠܽܘܠ"
+translit = "'īlūl"
+gloss_en = "September"
+
+[source]
+primer = "nestle-1889-en"
+page = 132
+leaf = "n221"
+note = "Second half of the same page carries DIES SEPTIMANAE (the seven weekday names) — filed separately as p132-2, category 'calendar: days of the week', for the same split-on-category reason as p023-2."

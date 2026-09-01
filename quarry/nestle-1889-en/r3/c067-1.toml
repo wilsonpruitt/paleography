@@ -1,0 +1,36 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml.
+# ⛔ TEXT NOT EXTRACTED IN THIS PASS — see `extraction` below. The page was read; the decision
+# not to key it is deliberate and is the finding, not an omission of convenience.
+id = "nestle-1889-en/r3/c067-1"
+record_type = "R3"
+
+work = "peshitta:gen:1:1-13"
+work_note = "Chrestomathia I, 'Quattuor prima capita Geneseos', opening page. Verse numbers 1-9 are printed superscript on this page; the piece runs to p. 78."
+
+layer = "vocalized Serto"
+layer_source = "read from the plate — ⭐ and it CONTRADICTS the Phase-0 section default"
+layer_finding = """
+Phase 0 recorded the chrestomathy as unvocalized Estrangela (from the n180 probe). p. 67 opens
+in FULLY VOCALIZED SERTO. By p. 71 (n160) the same Genesis passage is running in unvocalized
+Estrangela. Nestle ramps the reader off the vowels and off Serto INSIDE one passage. The
+per-record layer declaration is not bookkeeping here; the section default is simply wrong for
+this section. Folded into MAP.md.
+"""
+seyame = true
+lines_per_page = 15
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+
+[extraction]
+status = "identified and layer-declared; text not keyed"
+reason = """
+The runbook's R3 method is identify → align → diff, keying only what cannot be matched. There
+is at present NO shippable digital Peshitta to align against: the Digital Syriac Corpus
+(CC BY 4.0) is patristic and does not hold it, and SEDRA is COMPUTE-ONLY by Phase 0's verdict.
+Keying this page under the pretence of 'align, don't transcribe' would have hidden that. It is
+reported instead — it is the batch's second headline finding and it changes the run's size.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 67
+leaf = "n156"

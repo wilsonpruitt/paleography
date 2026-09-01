@@ -1,0 +1,53 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+# ⭐ This file exists to exercise the runbook's "split on category, not typography" rule:
+# on the printed page the enclitic forms are NOT a table at all — they are scattered through
+# §19 a's prose. They are a different category from p023-1, so they are a different record.
+id = "nestle-1889-en/r1/p023-2"
+record_type = "R1"
+
+category = "pronoun: personal, enclitic (after participle/adjective)"
+layer = "vocalized Serto"
+layer_source = "read from the plate"
+typography = "prose, not a printed table"
+noldeke = ["§64"]
+noldeke_qualifier = "Nöldeke treats the enclitics with the copula; Nestle raises them under the pronoun."
+
+[[cells]]
+gram_tags = { person = "1", number = "sg", position = "enclitic" }
+form_voc = "ܐ̱ܢܳܐ"
+translit = "nā"
+example_voc = "ܐܳܡܰܪ ܐ̱ܢܳܐ"
+example_en = "I say"
+
+[[cells]]
+gram_tags = { person = "1", number = "pl", position = "enclitic" }
+form_voc = "ܚܢܰܢ"
+translit = "ḥnan"
+example_voc = "ܐܳܡܪܺܝܢܰܢ"
+example_en = "we say"
+primer_note = "Nestle: the Curetonian Gospels still frequently write ܐ̱ܢܰܚܢܰܢ where the usual form is ܐܳܡܪܺܝܢܰܢ (both = 'ām(e)rīnan), 'but can hardly have any longer read anachnan or enachnan'."
+
+[[cells]]
+gram_tags = { person = "3", gender = "m", number = "pl", position = "enclitic" }
+form_voc = "ܐܶܢܽܘܢ"
+translit = "'ennōn"
+primer_note = "Also used, instead of suffixes, to express the object."
+
+[[cells]]
+gram_tags = { person = "3", gender = "f", number = "pl", position = "enclitic" }
+form_voc = "ܐܶܢܶܝܢ"
+translit = "'ennēn"
+primer_note = "Also used, instead of suffixes, to express the object."
+
+[[cells]]
+gram_tags = { person = "1", number = "sg", position = "enclitic", dialect = "Nestorian" }
+form_voc = "ܐܶܢܰܘ"
+translit = "'enau"
+primer_note = "Before enclitic ܗܽܘ / ܗܺܝ the å becomes a: ܐܶܢܳܐ ܗܽܘ > 'enau, 'it is I', among the Nestorians."
+uncertain = true
+uncertain_note = "Nestle gives the sandhi form in transliteration only; the Syriac spelling here is the extractor's, not the primer's."
+
+[source]
+primer = "nestle-1889-en"
+page = 23
+leaf = "n40"

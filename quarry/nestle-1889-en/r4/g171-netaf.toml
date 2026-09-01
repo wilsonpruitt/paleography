@@ -1,0 +1,19 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g171-netaf"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܬܦ", voc = "ܢܬܰܦ", translit = "ntap" }
+pos = "verb, impf. u"
+gloss_en = "attract"
+gloss_de = "an sich ziehen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[source]
+primer = "nestle-1889-en"
+page = 171
+leaf = "n260"

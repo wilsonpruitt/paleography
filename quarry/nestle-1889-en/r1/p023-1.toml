@@ -1,0 +1,75 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+id = "nestle-1889-en/r1/p023-1"
+record_type = "R1"
+
+lexeme_note = "Pronoun paradigm — no single lexeme; the cells are the paradigm."
+category = "pronoun: personal, independent"
+layer = "vocalized Serto"
+layer_source = "read from the plate"
+noldeke = ["§63"]
+
+[[cells]]
+gram_tags = { person = "1", number = "sg" }
+form_voc = "ܐܶܢܳܐ"
+translit = "'enā"
+gloss_en = "I"
+
+[[cells]]
+gram_tags = { person = "1", number = "pl" }
+form_voc = "ܚܢܰܢ"
+form_voc_alt = "ܐܶܢܰܚܢܰܢ"
+translit = "ḥnan / 'enaḥnan"
+gloss_en = "we"
+
+[[cells]]
+gram_tags = { person = "2", gender = "m", number = "sg" }
+form_voc = "ܐܰܢ̱ܬ"
+translit = "'at(t)"
+gloss_en = "thou"
+
+[[cells]]
+gram_tags = { person = "2", gender = "f", number = "sg" }
+form_voc = "ܐܰܢ̱ܬܝ"
+translit = "'at(t)y"
+gloss_en = "thou (f.)"
+
+[[cells]]
+gram_tags = { person = "2", gender = "m", number = "pl" }
+form_voc = "ܐܰܢ̱ܬܽܘܢ"
+translit = "'at(t)ōn"
+gloss_en = "you"
+
+[[cells]]
+gram_tags = { person = "2", gender = "f", number = "pl" }
+form_voc = "ܐܰܢ̱ܬܶܝܢ"
+translit = "'at(t)ēn"
+gloss_en = "you (f.)"
+
+[[cells]]
+gram_tags = { person = "3", gender = "m", number = "sg" }
+form_voc = "ܗܽܘ"
+translit = "hū"
+gloss_en = "he"
+
+[[cells]]
+gram_tags = { person = "3", gender = "f", number = "sg" }
+form_voc = "ܗܺܝ"
+translit = "hī"
+gloss_en = "she"
+
+[[cells]]
+gram_tags = { person = "3", gender = "m", number = "pl" }
+form_voc = "ܗܶܢܽܘܢ"
+translit = "hennōn"
+gloss_en = "they"
+
+[[cells]]
+gram_tags = { person = "3", gender = "f", number = "pl" }
+form_voc = "ܗܶܢܶܝܢ"
+translit = "hennēn"
+gloss_en = "they (f.)"
+
+[source]
+primer = "nestle-1889-en"
+page = 23
+leaf = "n40"

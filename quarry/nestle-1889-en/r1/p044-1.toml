@@ -1,0 +1,82 @@
+# CALIBRATION RECORD — Step 1 of SYRIAC-PHASE1-RUNBOOK.md, 2026-09-01.
+# ⚠ Syriac readings are EXTRACTOR OUTPUT, not adjudicated. The Syriacist seat is empty
+# (NEXT-SESSION.md §4) and the Step-3 blind control has not run. Treat every `form_voc`
+# as `proposed` until both.
+
+id = "nestle-1889-en/r1/p044-1"
+record_type = "R1"
+
+lexeme = { unvoc = "ܩܛܠ", voc = "ܩܛܰܠ", translit = "qṭal", gloss_en = "kill" }
+category = "verb: Peal perfect with object suffixes"
+layer = "vocalized Serto"
+layer_source = "read from the plate (section default agrees)"
+noldeke = ["§184", "§185", "§188"]
+noldeke_qualifier = "Nestle prints one combined plate; Nöldeke splits the suffix forms across §§184-188."
+
+# Column = object suffix, in the printed left-to-right order.
+suffix_columns = ["1s", "2ms", "2fs", "3ms", "3fs", "1p", "2mp"]
+# "—" reproduces the printed em-dash: the combination is not formed.
+
+[[cells]]
+gram_tags = { subject = "3ms" }
+forms_voc  = ["ܩܰܛܠܰܢܝ", "ܩܰܛܠܳܟ", "ܩܰܛܠܶܟܝ", "ܩܰܛܠܶܗ", "ܩܰܛܠܳܗ̇", "ܩܰܛܠܰܢ", "ܩܰܛܠܟܽܘܢ"]
+translit   = ["qaṭlan(y)", "qaṭlāk", "qaṭlek(y)", "qaṭleh", "qaṭlāh", "qaṭlan", "qaṭlkōn"]
+
+[[cells]]
+gram_tags = { subject = "3fs" }
+forms_voc  = ["ܩܰܛܠܰܬܰܢܝ", "ܩܰܛܠܳܬܳܟ", "ܩܰܛܠܳܬܶܟܝ", "ܩܰܛܠܳܬܶܗ", "ܩܰܛܠܳܬܳܗ̇", "ܩܰܛܠܳܬܰܢ", "ܩܰܛܠܳܬܟܽܘܢ"]
+translit   = ["qaṭlatan(y)", "qaṭlātāk", "qaṭlātek(y)", "qaṭlāteh", "qaṭlātāh", "qaṭlātan", "qaṭlātkōn"]
+
+[[cells]]
+gram_tags = { subject = "2ms" }
+forms_voc  = ["ܩܛܰܠܬܳܢܝ", "—", "—", "ܩܛܰܠܬܳܝܗܝ", "ܩܛܰܠܬܳܗ̇", "ܩܛܰܠܬܳܢ", "—"]
+translit   = ["qṭaltān(y)", "—", "—", "qṭaltāy(hy)", "qṭaltāh", "qṭaltān", "—"]
+
+[[cells]]
+gram_tags = { subject = "2fs" }
+forms_voc  = ["ܩܛܰܠܬܺܝܢܝ", "—", "—", "ܩܛܰܠܬܺܝܘܗܝ", "ܩܛܰܠܬܺܝܗ̇", "ܩܛܰܠܬܺܝܢ", "—"]
+translit   = ["qṭaltīn(y)", "—", "—", "qṭaltīw(hy)", "qṭaltīh", "qṭaltīn", "—"]
+
+[[cells]]
+gram_tags = { subject = "1s" }
+forms_voc  = ["—", "ܩܛܰܠܬܳܟ", "ܩܛܰܠܬܶܟܝ", "ܩܛܰܠܬܶܗ", "ܩܛܰܠܬܳܗ̇", "—", "ܩܛܰܠܬܟܽܘܢ"]
+translit   = ["—", "qṭaltāk", "qṭaltek(y)", "qṭalteh", "qṭaltāh", "—", "qṭaltkōn"]
+
+[[cells]]
+gram_tags = { subject = "3mp" }
+forms_voc  = ["ܩܰܛܠܽܘܢܝ", "ܩܰܛܠܽܘܟ", "ܩܰܛܠܽܘܟܝ", "ܩܰܛܠܽܘܗܝ", "ܩܰܛܠܽܘܗ̇", "ܩܰܛܠܽܘܢ", "ܩܰܛܠܽܘܟܽܘܢ"]
+translit   = ["qaṭlūn(y)", "qaṭlūk", "qaṭlūk(y)", "qaṭlū(hy)", "qaṭlūh", "qaṭlūn", "qaṭlūkōn"]
+
+[[cells]]
+gram_tags = { subject = "3fp" }
+forms_voc  = ["ܩܰܛܠܳܢܝ", "ܩܰܛܠܳܟ", "ܩܰܛܠܳܟܝ", "ܩܰܛܠܳܝܗܝ", "ܩܰܛܠܳܗ̇", "ܩܰܛܠܳܢ", "ܩܰܛܠܳܟܽܘܢ"]
+translit   = ["qaṭlān(y)", "qaṭlāk", "qaṭlāk(y)", "qaṭlāy(hy)", "qaṭlāh", "qaṭlān", "qaṭlākōn"]
+uncertain = true
+uncertain_note = "Seyame on the 3fp subject form, and the 2ms/2fs columns, are hard to separate from the 3fs row at this scale; sent to the blind control."
+
+[[cells]]
+gram_tags = { subject = "2mp" }
+forms_voc  = ["ܩܛܰܠܬܽܘܢܳܢܝ", "—", "—", "ܩܛܰܠܬܽܘܢܳܝܗܝ", "ܩܛܰܠܬܽܘܢܳܗ̇", "ܩܛܰܠܬܽܘܢܳܢ", "—"]
+translit   = ["qṭaltūnān(y)", "—", "—", "qṭaltūnāy(hy)", "qṭaltūnāh", "qṭaltūnān", "—"]
+
+[[cells]]
+gram_tags = { subject = "2fp" }
+forms_voc  = ["ܩܛܰܠܬܶܝܢܳܢܝ", "—", "—", "ܩܛܰܠܬܶܝܢܳܝܗܝ", "ܩܛܰܠܬܶܝܢܳܗ̇", "ܩܛܰܠܬܶܝܢܳܢ", "—"]
+translit   = ["qṭaltēnān(y)", "—", "—", "qṭaltēnāy(hy)", "qṭaltēnāh", "qṭaltēnān", "—"]
+uncertain = true
+uncertain_note = "Row sits at the plate's outer edge; the pointing of the -ēn- syllable is not fully resolvable in the tile."
+
+[[cells]]
+gram_tags = { subject = "1p" }
+forms_voc  = ["—", "ܩܛܰܠܢܳܟ", "ܩܛܰܠܢܶܟܝ", "ܩܛܰܠܢܳܝܗܝ", "ܩܛܰܠܢܳܗ̇", "—", "ܩܛܰܠܢܳܟܽܘܢ"]
+translit   = ["—", "qṭalnāk", "qṭalnek(y)", "qṭalnāy(hy)", "qṭalnāh", "—", "qṭalnākōn"]
+
+[source]
+primer = "nestle-1889-en"
+page = 44
+leaf = "n61"
+plate_note = """
+Landscape plate: the page is printed rotated 90°. Read by rotating the fetched JPEG
+clockwise, then four overlapping tiles at 2× — one whole-page read is NOT legible at the
+scan's 1598×2604. See MAP.md 'measured cost'.
+"""

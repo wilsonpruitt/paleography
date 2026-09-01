@@ -1,0 +1,65 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+id = "nestle-1889-en/r1/p132-2"
+record_type = "R1"
+kind = "lexical-table"
+
+category = "calendar: days of the week"
+printed_heading = "DIES SEPTIMANAE"
+layer = "vocalized Serto"
+layer_source = "read from the plate"
+noldeke = []
+uncertain = true
+uncertain_note = """
+⚠ Read at page magnification only; the weekday list is printed as a running line, not a table,
+and was NOT re-read from a dedicated crop in this calibration pass. Every form below is
+therefore a first pass and must go to the blind control before it is used. Nestle also prints
+Latin equivalents (dies solis, dominica, …) which are captured here in gloss_la.
+"""
+
+[[cells]]
+gram_tags = { ordinal = "1" }
+form_voc = "ܚܰܕ ܒܫܰܒܳܐ"
+translit = "ḥad bšabbā"
+gloss_en = "Sunday"
+gloss_la = "dies solis, dominica"
+
+[[cells]]
+gram_tags = { ordinal = "2" }
+form_voc = "ܬܪܶܝܢ ܒܫܰܒܳܐ"
+translit = "trēn bšabbā"
+gloss_en = "Monday"
+
+[[cells]]
+gram_tags = { ordinal = "3" }
+form_voc = "ܬܠܳܬܳܐ ܒܫܰܒܳܐ"
+translit = "tlātā bšabbā"
+gloss_en = "Tuesday"
+
+[[cells]]
+gram_tags = { ordinal = "4" }
+form_voc = "ܐܰܪܒܥܳܐ ܒܫܰܒܳܐ"
+translit = "'arb'ā bšabbā"
+gloss_en = "Wednesday"
+
+[[cells]]
+gram_tags = { ordinal = "5" }
+form_voc = "ܚܰܡܫܳܐ ܒܫܰܒܳܐ"
+translit = "ḥamšā bšabbā"
+gloss_en = "Thursday"
+
+[[cells]]
+gram_tags = { ordinal = "6" }
+form_voc = "ܥܪܽܘܒܬܳܐ"
+translit = "'rūbtā"
+gloss_en = "Friday"
+
+[[cells]]
+gram_tags = { ordinal = "7" }
+form_voc = "ܫܰܒܬܳܐ"
+translit = "šabtā"
+gloss_en = "Saturday"
+
+[source]
+primer = "nestle-1889-en"
+page = 132
+leaf = "n221"

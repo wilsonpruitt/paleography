@@ -1,0 +1,21 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g133-agon"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܓܘܢ", voc = "ܐܰܓܽܘܢܳܐ", translit = "'agōnā" }
+pos = "m."
+gloss_en = "contest, struggle"
+root = ""   # not filled in calibration
+payne_smith = ""   # not looked up in calibration
+frequency_rank = ""   # Phase 2, never from the primer
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἀγών"
+variant_voc = "ܐܰܓܽܘܢ"
+primer_note_extra = "Nestle prints the gloss as the Greek etymon alone — there is no German|English pair for this entry."
+
+[source]
+primer = "nestle-1889-en"
+page = 133
+leaf = "n222"

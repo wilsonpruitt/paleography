@@ -1,0 +1,75 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+#
+# ⛔ FILED UNDER R3, NOT R2 — and this is the batch's most consequential finding.
+# The runbook expected p. 70 to be Nestle's one composed exercise. It is not. The
+# "READING EXERCISE" is **the Lord's Prayer in the Peshitta** — a canonical passage, so it is
+# an R3 record that ALIGNS, not an R2 record that must be plate-read. Nestle 1889 contains
+# **no R2 material whatsoever**. See MAP.md.
+id = "nestle-1889-en/r3/c070-1"
+record_type = "R3"
+
+work = "peshitta:matt:6:9-13"
+work_note = """
+Nestle's heading says 10-13; the text as printed BEGINS at ܐܰܒܽܘܢ ܕܒܰܫܡܰܝܳܐ, which is v. 9.
+The heading is off by one verse. Recorded as printed, cited as 6:9-13.
+"""
+
+layer = "vocalized Serto"
+layer_source = "read from the plate"
+seyame = false
+punctuation = "as printed"
+
+text_syr_voc = """
+ܐܰܒܽܘܢ ܕܒܰܫܡܰܝܳܐ ܢܶܬܩܰܕܰܫ ܫܡܳܟ ܬܺܐܬܶܐ ܡܰܠܟܽܘܬܳܟ ܢܶܗܘܶܐ ܨܶܒܝܳܢܳܟ
+ܐܰܝܟܰܢܳܐ ܕܒܰܫܡܰܝܳܐ ܐܳܦ ܒܰܐܪܥܳܐ ܗܰܒ ܠܰܢ ܠܰܚܡܳܐ ܕܣܽܘܢܩܳܢܰܢ ܝܰܘܡܳܢܳܐ
+ܘܰܫܒܽܘܩ ܠܰܢ ܚܰܘܒܰܝܢ ܐܰܝܟܰܢܳܐ ܕܳܐܦ ܚܢܰܢ ܫܒܰܩܢ ܠܚܰܝܳܒܰܝܢ
+ܘܠܳܐ ܬܰܥܠܰܢ ܠܢܶܣܝܽܘܢܳܐ ܐܶܠܳܐ ܦܰܨܳܢ ܡܶܢ ܒܺܝܫܳܐ
+ܡܶܛܽܠ ܕܕܺܝܠܳܟ ܗܺܝ ܡܰܠܟܽܘܬܳܐ ܘܚܰܝܠܳܐ ܘܬܶܫܒܽܘܚܬܳܐ ܠܥܳܠܰܡ ܥܳܠܡܺܝܢ ܐܰܡܺܝܢ
+"""
+
+# ⭐ Nestle prints his own scientific transliteration under the passage, using Greek letters
+# for the spirantized bgadkpat (β ϑ χ φ δ). This is a PRONUNCIATION LAYER the pilot gets for
+# free and did not plan for — reading-first wants exactly this.
+transliteration_primer = """
+Aβūn deβašmáyå, neϑqáddaš šemåχ. tiϑē malkuϑåχ; nehveh ṣeβyånåχ, aikánnå deβašmáyå aφ b'ár‛å.
+háβ-lan láḥmå desunqu̇nan yaumånå; vašeβóq-lan ḥaubain aikánnå d'aφ ḥnan šeβaqn leḥayyåβain.
+velå ϑálan lenesyónå, éllå φáṣṣån men bíšå; meṭṭul dedílåχ-hī malkuϑå veḥáilå veϑešbóḥtå
+le‛ålam ‛ålemín, amén.
+"""
+transliteration_note = "Diacritic detail of the Greek-letter transliteration is approximate in this calibration pass; it is a second plate-read problem in its own right."
+
+primer_notes = """
+Followed on pp. 70-72 by 'AIDS TO TRANSLATION': a running, WORD-BY-WORD grammatical commentary
+keyed to this passage (e.g. ܐܰܒܽܘܢ § 32 — ܕܒܰܫܡܰܝܳܐ = ܕ § 22 + ܒ § 49 b + ܫܡܰܝܳܐ, 'heaven,
+which though always plural in form is also construed as singular (§ 28 c); st. abs. ܫܡܶܝܢ,
+cstr. ܫܡܰܝ' …), with § cross-references into Nestle's own grammar throughout.
+"""
+
+# ⛔ SCHEMA GAP — for the G1 gate.
+schema_gap = """
+The Aids to Translation are a FIFTH shape the schema has no home for: a per-word note keyed to
+a position in a passage, carrying grammar cross-references. Dropped into primer_notes (as
+above) they become an unstructured blob and lose the per-word keying — which is precisely what
+the reading-first curriculum needs, since it is a ready-made gloss layer of exactly the kind
+the hand-trainer already ships per line. Proposal for SYRIAC-LANGUAGE-PILOT.md §4: R3 gains
+`word_notes = [{ index, form_voc, note, noldeke }]`, or a record type R5. Ruling owed BEFORE
+the run — it changes what the run extracts, not just how it files it.
+"""
+
+[alignment]
+status = "not attempted in calibration"
+candidate_source = "Digital Syriac Corpus (CC BY 4.0) — but it is a patristic corpus and does not hold the Peshitta NT"
+blocker = """
+⚠ The obvious digital Peshitta NT is SEDRA / Beth Mardutho, which Phase 0 verdicted
+COMPUTE-ONLY: it may check this reading, it may never become the shipped text. So the single
+most-quoted text in the whole pilot has no shippable digital source yet, and the §5 fallback
+(key it ourselves from a PD printed Peshitta) is on the critical path, not in reserve.
+Chrestomathy pieces I and II are Peshitta too — Genesis and Matt. 5.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 70
+leaf = "n87"
+printed_heading = "READING EXERCISE. Matt. 6, 10—13."
+note = "Sits at the end of the GRAMMAR's pagination (leaf = page + 17), not the chrestomathy's."

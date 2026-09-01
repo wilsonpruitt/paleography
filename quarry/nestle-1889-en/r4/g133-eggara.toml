@@ -1,0 +1,21 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g133-eggara"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܓܪܐ", voc = "ܐܶܓܳܪܳܐ", translit = "'eggārā" }
+pos = "m."
+gloss_en = "roof"
+gloss_de = "Dach"   # ⚑ schema gap: §4 has gloss_en only; Nestle glosses German | English
+root = ""   # not filled in calibration
+payne_smith = ""   # not looked up in calibration
+frequency_rank = ""   # Phase 2, never from the primer
+nestle_section = "§3"   # ⚑ schema gap: the primer's OWN § cross-reference has no field
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "Nestle marks it (sic, § 3, V ܐܓܪ) — the spelling is the printed one and he flags it."
+
+[source]
+primer = "nestle-1889-en"
+page = 133
+leaf = "n222"

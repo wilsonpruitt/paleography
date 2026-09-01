@@ -1,0 +1,36 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml.
+# ⛔ TEXT NOT EXTRACTED IN THIS PASS — same reason as r3/c067-1.toml, with one difference:
+# this piece is NOT biblical, so no digital text exists for it under any licence and it will
+# have to be keyed whatever Wilson rules about the Peshitta.
+id = "nestle-1889-en/r3/c087-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:syr"
+work_note = """
+Chrestomathia III, 'Vitae Prophetarum', printed by Nestle 'e tribus codicibus Musei
+Britannici' (pp. 86-107). Continuous line numbering across the piece; this page carries
+lines 20-35.
+"""
+
+layer = "unvocalized Estrangela"
+layer_source = "read from the plate"
+seyame = true
+diacritics = "consonant-distinguishing points present; no vowel signs"
+lines_per_page = 16
+line_numbers = "20-35 (marginal, every 5)"
+page_number_form = "Syriac numeral letter, centred at head"
+
+[extraction]
+status = "identified and layer-declared; text not keyed"
+reason = """
+No digital text exists for the Syriac Vitae Prophetarum in any licence-checked source. Every
+page of this piece (pp. 86-107, 22 pages, ~350 lines) is full plate transcription, unvocalized
+— so it is CHEAPER per line than the vocalized pages, but it is 100% transcription with no
+alignment shortcut and nothing to diff against. It is also the piece a Syriacist would most
+need to check, since there is no external text to fall back on.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 87
+leaf = "n176"

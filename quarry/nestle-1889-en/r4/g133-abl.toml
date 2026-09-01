@@ -1,0 +1,21 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g133-abl"
+record_type = "R4"
+
+lemma = { unvoc = "ܐܒܠ", voc = "", translit = "'bl" }
+pos = "verb (root, bracketed by Nestle: unattested in Peal)"
+gloss_en = "mourn, be sad"
+gloss_de = "trauern, betrübt sein"   # ⚑ schema gap: §4 has gloss_en only; Nestle glosses German | English
+root = ""   # not filled in calibration
+payne_smith = ""   # not looked up in calibration
+frequency_rank = ""   # Phase 2, never from the primer
+noldeke = []
+layer = "vocalized Serto"
+stems = "part. pass. ܐܰܒܺܝܠܳܐ mournful | traurig; Ethpe. mourn"
+primer_note_extra = "Nestle brackets the root [ܐܒܠ] — the bracket is his mark that the Peal is not attested, not an editorial supply."
+
+[source]
+primer = "nestle-1889-en"
+page = 133
+leaf = "n222"

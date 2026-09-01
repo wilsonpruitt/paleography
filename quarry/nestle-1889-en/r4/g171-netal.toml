@@ -1,0 +1,20 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+
+id = "nestle-1889-en/r4/g171-netal"
+record_type = "R4"
+
+lemma = { unvoc = "ܢܬܠ", voc = "ܢܬܰܠ", translit = "ntal" }
+pos = "verb, impf."
+gloss_en = "give"
+gloss_de = "geben"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§48 g 6"
+noldeke = []
+layer = "vocalized Serto"
+
+[source]
+primer = "nestle-1889-en"
+page = 171
+leaf = "n260"
