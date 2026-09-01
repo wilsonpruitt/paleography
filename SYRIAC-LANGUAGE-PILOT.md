@@ -48,19 +48,20 @@ survives contact with Syriac — same pattern as Hungarian leading the self-prod
 
 ## 3. The primer shelf (candidates — Phase 0 verifies)
 
-⚠ **No archive.org identifier below is asserted from memory** — the shelfmark ≠ text trap hit
-three times in one Bibliotheca Arabica session, and scan IDs are exactly as treacherous.
-Phase 0 finds and pins each ID. Editions and roles are the judgment; IDs are execution.
+✅ **Phase 0 ran 2026-08-31 — G0 PASS.** Every ID below is now pinned and probed (3-page
+vowel-point protocol); full record with probe leaves, offsets and copy defects →
+`research/syriac-pilot-phase0.md`. Editions and roles below were the judgment; the pinned IDs
+are the execution.
 
-| Work | Ed. to seek | Language | Role in the quarry |
+| Work | Pinned scan (probed ✅) | Language | Role in the quarry |
 |---|---|---|---|
-| **Nestle, *Syriac Grammar with Bibliography, Chrestomathy and Glossary*** | English tr. (Kennedy), Berlin 1889 | English | ⭐ **The pilot primer** — compact, purpose-built, all four record types in one volume |
-| **Brockelmann, *Syrische Grammatik*** (Porta Linguarum Orientalium) | 1899 or later PD ed. | German | Second chrestomathy + glossary; cross-check Nestle's grammar-point coverage |
-| **Rödiger, *Chrestomathia Syriaca*** | 2nd ed. 1868 | Latin apparatus | Deepest passage quarry — feeds lessons beyond the pilot ten |
-| **Robinson, *Paradigms and Exercises in Syriac Grammar*** | 1st ed., Oxford 1915 | English | The exercise book (Coakley's revisions are in copyright — **1915 original only**). ⚠ Verify whether 1915 includes keys |
-| **Nöldeke, *Compendious Syriac Grammar*** | tr. Crichton, London 1904 | English | **Reference grammar + the § taxonomy** (§4) — not a lesson source |
-| **Payne Smith, *A Compendious Syriac Dictionary*** | Oxford 1903 | English | The PD lexicon; glossary entries link to it |
-| Uhlemann (tr. Hutchinson, 1855) · Phillips, *Elements* (1837/1866) | as found | English | Reserve bench — mine only if the primary four leave gaps |
+| **Nestle, *Syriac Grammar with Bibliography, Chrestomathy and Glossary*** (Kennedy tr., 1889) | **`syriacgrammarwit00nestiala`** | English | ⭐ **The pilot primer** — compact, purpose-built, all four record types in one volume |
+| **Brockelmann, *Syrische Grammatik*** (PLO V, 2nd ed. 1912) | `syrischegrammati00brocuoft` | German | Second chrestomathy + glossary; cross-check Nestle's grammar-point coverage |
+| **Rödiger, *Chrestomathia Syriaca*** (2nd ed. 1868) | `chrestomathiasy00roed` | Latin apparatus | Deepest passage quarry — feeds lessons beyond the pilot ten |
+| **Robinson, *Paradigms and Exercises in Syriac Grammar*** (1st ed. 1915) | `bwb_KU-996-498` (⚠ pencil marginalia in this copy) | English | The exercise book (Coakley's revisions are in copyright — **1915 original only**). ✅ Verified: **1915 has NO keys** → every Robinson R2 gets `key = ""` |
+| **Nöldeke, *Compendious Syriac Grammar*** (tr. Crichton 1904) | `CompendiousSyriacGrammar` | English | **Reference grammar + the § taxonomy** (§4) — not a lesson source |
+| **Payne Smith, *A Compendious Syriac Dictionary*** (1903) | `compendioussyria00payn` | English | The PD lexicon; glossary entries link to it |
+| Uhlemann (tr. Hutchinson) · Phillips, *Elements* | `uhlemannssyriacg00uhleuoft` (1855) · `elementsofsyriac00phil` (1845) — unprobed | English | Reserve bench — mine only if the primary four leave gaps; run the 3-page protocol before use |
 
 **Scan acceptance bar (ruled 2026-08-31, prior session): vowel-point legibility, not overall
 dpi.** A scan where the West Syriac vowel letters or East Syriac dot patterns smear is
@@ -129,11 +130,11 @@ that cannot be matched.
 Digital text sources, each **licence-checked before a byte is stored** (HTR-United ingest
 discipline; fill this table in Phase 0):
 
-| Source | Holds | Licence | Verdict |
+| Source | Holds | Licence (verified 2026-08-31) | Verdict |
 |---|---|---|---|
-| Digital Syriac Corpus (syriaccorpus.org) | TEI texts, patristic + more | ⬜ verify per-text | ⬜ |
-| SEDRA / Beth Mardutho | lexical DB; **lemmatized Peshitta NT** | ⬜ verify (API terms) | ⬜ |
-| Meltho fonts (Beth Mardutho) | Estrangela/Serto/East Syriac fonts | ⬜ verify | ⬜ |
+| Digital Syriac Corpus (syriaccorpus.org) | TEI texts, patristic + more | **CC BY 4.0** on TEI editions, PD base texts (confirmed in per-text headers, GitHub `srophe/syriac-corpus`) | ✅ **SHIPPABLE with attribution** — still read each ingested text's `availability` header + credit its encoder at ingest |
+| SEDRA / Beth Mardutho | lexical DB; **lemmatized Peshitta NT** | "All Rights Reserved"; SEDRA III terms = personal/academic, no redistribution | ⚠ **COMPUTE-ONLY** (the Ómagyar pattern) — may be counted over for the frequency spine, never becomes shipped text; confirm w/ Beth Mardutho before deeper dependency |
+| Meltho fonts (Beth Mardutho) | Estrangela/Serto/East Syriac fonts | Freeware: redistribution OK, **modification prohibited** | ✅ serve unmodified TTF/OTF; ⚠ no WOFF2 conversion without reading the packaged licence; OFL fallback = Noto Sans Syriac |
 
 ⚠ The Ómagyar precedent governs: a corpus can be *readable but unshippable* (keyed from
 in-copyright editions, or licence-silent). Such a source may **check** our text, never
@@ -186,8 +187,9 @@ pedagogy, applied to type.
 
 ## 7. Exit gates
 
-- **G0 (inventory):** every shelf title has a pinned, vowel-point-legible scan or a recorded
-  fail + HathiTrust fallback; the licence table in §5 has verdicts; Nestle's scan chosen.
+- ✅ **G0 (inventory): PASSED 2026-08-31.** All six primary titles pinned + probed legible, no
+  HathiTrust fallback needed; §5 verdicts filled; Nestle = `syriacgrammarwit00nestiala`.
+  Record: `research/syriac-pilot-phase0.md`.
 - **G1 (schema survives):** Nestle fully decomposed into R1–R4 with counts reported
   (expect order-of-magnitude: dozens of R1, low hundreds of R2/R4, dozens of R3). Schema
   changes forced by contact are folded back into this document *before* a second primer.
@@ -213,8 +215,8 @@ Named because each has already cost a session somewhere in this house:
 
 ## 9. Execution (model tiers, per the prudence rubric)
 
-- **Phase 0 — inventory + licences (Sonnet):** find/pin scans, run the 3-page legibility
-  protocol, fill the §3 and §5 tables. Mechanical, protocol-driven.
+- ✅ **Phase 0 — inventory + licences: DONE 2026-08-31** (ran in a Fable session with the
+  model nudge given). Results → `research/syriac-pilot-phase0.md`.
 - **Phase 1 — decompose Nestle (Opus):** plate reads + R1–R4 extraction. Volume work with
   judgment at the margins; Opus per the Acta precedent for plate-heavy runs. ⚠ This is the
   token-heavy phase — estimate the burn from the runbook's own per-unit figure and put the
