@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g141-bka"
+record_type = "R4"
+
+lemma = { unvoc = "ܒܟܐ", voc = "ܒܟܳܐ", translit = "bkā" }
+pos = "verb"
+gloss_en = "weep"
+gloss_de = "weinen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+sub_lemmas = "ܒܶܟܝܳܐ weeping | das Weinen"
+
+[source]
+primer = "nestle-1889-en"
+page = 141
+leaf = "n230"

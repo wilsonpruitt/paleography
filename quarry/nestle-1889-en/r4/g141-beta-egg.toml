@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g141-beta-egg"
+record_type = "R4"
+
+lemma = { unvoc = "ܒܥܬܐ", voc = "ܒܶܥܬܳܐ", translit = "be'tā" }
+pos = "f."
+gloss_en = "egg, and what looks like an egg — e.g. the skull"
+gloss_de = "Ei u. Eiförmiges, z. B. (Hirn-)Schädel"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+plural_voc = "ܒܶܥ̈ܶܐ et ܒܶܥ̈ܳܬܳܐ"
+primer_note = "Nestle cites Bar Ali for a form with R."
+
+[source]
+primer = "nestle-1889-en"
+page = 141
+leaf = "n230"

@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g143-gabra"
+record_type = "R4"
+
+lemma = { unvoc = "ܓܒܪܐ", voc = "ܓܰܒܪܳܐ", translit = "gabrā" }
+pos = "m."
+gloss_en = "man"
+gloss_de = "Mann"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܓܒܰܪ"
+sub_lemmas = "ܐܶܬܓܰܒܰܪ § 38"
+primer_note = "Nestle cites Bar Hebraeus, Grammar 1, 48."
+
+[source]
+primer = "nestle-1889-en"
+page = 143
+leaf = "n232"

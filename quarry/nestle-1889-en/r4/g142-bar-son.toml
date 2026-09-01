@@ -1,0 +1,26 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g142-bar-son"
+record_type = "R4"
+
+lemma = { unvoc = "ܒܪ", voc = "ܒܰܪ", translit = "bar" }
+pos = "m."
+gloss_en = "son"
+gloss_de = "der Sohn"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+nestle_section = "§32"
+noldeke = []
+layer = "vocalized Serto"
+hebrew = "בַּת קוֹל"
+variant_voc = "ܒܪܳܐ"
+sub_lemmas = "ܒܰܪܢܳܫܳܐ (v. ܐ̱ܢܳܫ) man | Mensch ‖ (a compound glossed 'Glacis', which Nestle queries as perhaps not belonging to this ܒܰܪ at all) ‖ ܒܰܪ ܫܳܥܬܳܐ at once | zur Stunde, sogleich ‖ ܒܰܪܬܳܐ daughter | Tochter (§ 32) ‖ ܒܰܪܬ ܩܳܠܳܐ (h. בַּת קוֹל) voice | Wort; pl. ܒܢ̈ܳܬ ܩ̈ܳܠܶܐ words, speech | Worte, Rede"
+primer_note = "⭐ Nestle explicitly queries one compound: 'ob zum vorhergehenden ܒܰܪ? / if it does not belong to the preceding ܒܰܪ' — i.e. he is unsure whether it belongs to 'son' or to 'open country'. His own uncertainty, not ours."
+
+[source]
+primer = "nestle-1889-en"
+page = 142
+leaf = "n231"

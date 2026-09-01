@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g142-bra-create"
+record_type = "R4"
+
+lemma = { unvoc = "ܒܪܐ", voc = "ܒܪܳܐ", translit = "brā" }
+pos = "verb"
+gloss_en = "create, make"
+gloss_de = "schaffen, machen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. be created | geschaffen werden"
+sub_lemmas = "ܒܪܺܝܬܳܐ f. creation | Schöpfung; pl. ܒܶܪ̈ܝܳܬܳܐ creatures | Creaturen ‖ ܒܳܪܽܘܝܳܐ § 25 creator | Schöpfer"
+primer_note = "Third distinct ܒܪܐ on this page, after the cross-reference and ܒܰܪܳܐ 'field' — Nestle separates the homographs rather than merging them."
+
+[source]
+primer = "nestle-1889-en"
+page = 142
+leaf = "n231"

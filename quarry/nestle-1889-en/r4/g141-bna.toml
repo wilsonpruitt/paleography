@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g141-bna"
+record_type = "R4"
+
+lemma = { unvoc = "ܒܢܐ", voc = "ܒܢܳܐ", translit = "bnā" }
+pos = "verb"
+gloss_en = "build"
+gloss_de = "bauen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. be constructed | errichtet werden"
+sub_lemmas = "ܒܶܢܝܳܢܳܐ m. building | Gebäude"
+
+[source]
+primer = "nestle-1889-en"
+page = 141
+leaf = "n230"
