@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g182-tseba-finger"
+record_type = "R4"
+
+lemma = { unvoc = "ܨܒܥ", voc = "ܨܶܒܥ", translit = "ṣebaʿ" }
+pos = "f."
+gloss_en = "finger"
+gloss_de = "Finger"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+plural_voc = "ܨܶܒ̈ܥܶܐ et ܨܶܒ̈ܥܳܬܳܐ"
+variant_voc = "ܨܶܒܥܳܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 182
+leaf = "n271"

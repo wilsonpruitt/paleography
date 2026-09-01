@@ -1,0 +1,21 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g181-prisa-covering"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܪܣܐ", voc = "ܦܪܺܣܳܐ", translit = "prīsā" }
+pos = "noun"
+gloss_en = "a spread covering (glossed only by the Greek)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἅπλωμα"
+
+[source]
+primer = "nestle-1889-en"
+page = 181
+leaf = "n270"

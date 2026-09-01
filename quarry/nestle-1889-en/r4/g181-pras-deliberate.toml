@@ -1,0 +1,36 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g181-pras-deliberate"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܪܣ", voc = "ܦܪܰܣ", translit = "pras" }
+pos = "verb, Ethpa."
+gloss_en = "seek a way, deliberate"
+gloss_de = "einen Weg suchen, überlegen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ ܦܽܘܪܣܳܐ is a HEAD-WORD two pages back (p. 179), glossed by the Greek πόρος alone; ܦܽܘܪܣܳܢܳܐ here is filed under a Syriac root. Nestle keeps the loan and the root apart without saying that they look identical — the ܦܶܣܚܳܐ/ܦܶܨܚܳܐ situation of p. 180 in a milder form."
+uncertain = true
+uncertain_note = "Head printed as the bracketed root (ܦܪܣ) with the stem named; ܦܪܰܣ is the extractor's citation form. The first sub-lemma is read ܐܽܘܦܰܪܣܳܐ — six glyphs beginning with an alaph, unusual for a ܦܪܣ derivative."
+
+[[sub_lemmas]]
+voc = "ܐܽܘܦܰܪܣܳܐ"
+gloss_en = "counsel, device"
+gloss_de = "Rat, List"
+raw = "ܐܽܘܦܰܪܣܳܐ Rat, List | counsel, device"
+
+[[sub_lemmas]]
+voc = "ܦܽܘܪܣܳܢܳܐ"
+gloss_en = "management, provision"
+gloss_de = "Versorgung"
+raw = "ܦܽܘܪܣܳܢܳܐ Versorgung | management, provision"
+
+[source]
+primer = "nestle-1889-en"
+page = 181
+leaf = "n270"

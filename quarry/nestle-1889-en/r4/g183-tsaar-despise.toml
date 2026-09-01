@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g183-tsaar-despise"
+record_type = "R4"
+
+lemma = { unvoc = "ܨܥܪ", voc = "ܨܰܥܰܪ", translit = "ṣaʿʿar" }
+pos = "verb, Pa."
+gloss_en = "despise, injure"
+gloss_de = "schmähen, Unrecht thun"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ 'schmähen' also glosses ܨܰܚܶܢ on the facing page (p. 182) — two roots in the same section, one page apart, given the same German verb. Sixteenth duplicate gloss and the closest-spaced yet."
+
+[[sub_lemmas]]
+voc = "ܨܰܥܪܳܐ"
+gloss_en = "m. contempt"
+gloss_de = "Verachtung"
+raw = "ܨܰܥܪܳܐ m. Verachtung | contempt"
+
+[source]
+primer = "nestle-1889-en"
+page = 183
+leaf = "n272"

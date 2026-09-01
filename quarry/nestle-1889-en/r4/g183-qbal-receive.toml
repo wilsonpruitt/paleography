@@ -1,0 +1,49 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g183-qbal-receive"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܒܠ", voc = "ܩܒܰܠ", translit = "qbal" }
+pos = "verb, impf. u"
+gloss_en = "go to meet"
+gloss_de = "entgegengehen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Pa. 'receive, accept' | annehmen, empfangen"
+primer_note = "⭐ Convention 10 closes its longest-standing pointer: p. 164 printed the bare cross-reference ܠܽܘܩܒܰܠ v. ܩܒܠ, nineteen pages before the shard reached the root. Here the sub-lemma is, with ܕܠܽܘܩܒܰܠ and the ܣ-prefixed ܣܰܩܽܘܒܠܳܐ beside it. ⚑ 'Gegner' for the third time in the shard (ܣܳܢܳܐܐ and ܣܳܩܽܘܪܳܐ, both p. 174)."
+uncertain = true
+uncertain_note = "Four sub-lemmas carrying nine forms, several of them prefixed (ܠ-, ܕܠ-, ܣ-) and differing from one another only in the prefix and the points. Read at 1.75×; the prefixes are certain, the internal vocalisation is not."
+
+[[sub_lemmas]]
+voc = "ܩܽܘܒܠܳܐ, ܩܽܘܒܠ"
+gloss_en = "opposite side"
+gloss_de = "Gegenseite"
+raw = "(ܩܽܘܒܠܳܐ, ܩܽܘܒܠ Gegenseite | opposite side.)"
+
+[[sub_lemmas]]
+voc = "ܠܽܘܩܒܰܠ, st. c. ܠܽܘܩܒܰܠ"
+gloss_en = "over against"
+gloss_de = "gegenüber"
+raw = "ܠܽܘܩܒܰܠ, st. c. ܠܽܘܩܒܰܠ gegenüber | over against"
+
+[[sub_lemmas]]
+voc = "ܕܠܽܘܩܒܰܠ et ܣܰܩܽܘܒܠܳܐ, ܣܰܩܽܘܒܠܳܝܳܐ"
+gloss_en = "opposed, hostile, enemy"
+gloss_de = "Gegner"
+raw = "ܕܠܽܘܩܒܰܠ et ܣܰܩܽܘܒܠܳܐ, ܣܰܩܽܘܒܠܳܝܳܐ Gegner | opposed, hostile, enemy"
+
+[[sub_lemmas]]
+voc = "ܡܶܬܩܰܒܠܳܢܳܐ"
+gloss_en = "acceptable"
+gloss_de = "annehmbar"
+raw = "ܡܶܬܩܰܒܠܳܢܳܐ annehmbar | acceptable"
+
+[source]
+primer = "nestle-1889-en"
+page = 183
+leaf = "n272"

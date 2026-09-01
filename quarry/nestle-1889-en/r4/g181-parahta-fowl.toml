@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g181-parahta-fowl"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܪܚܬܐ", voc = "ܦܳܪܰܚܬܳܐ", translit = "pāraḥtā" }
+pos = "f."
+gloss_en = "fowl, bird"
+gloss_de = "Vogel"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+plural_voc = "ܦܳܪ̈ܚܳܬܳܐ"
+
+[source]
+primer = "nestle-1889-en"
+page = 181
+leaf = "n270"

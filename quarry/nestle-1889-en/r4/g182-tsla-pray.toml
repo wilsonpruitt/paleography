@@ -1,0 +1,29 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g182-tsla-pray"
+record_type = "R4"
+
+lemma = { unvoc = "ܨܠܐ", voc = "ܨܠܳܐ", translit = "ṣlā" }
+pos = "verb"
+gloss_en = "incline"
+gloss_de = "neigen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Pa. 'pray' | beten"
+primer_note = "⚑ 'prayer' also glosses ܬܶܟܫܶܦܬܳܐ on p. 163, where it carried Nestle's fullest apparatus. Fifteenth duplicate gloss — and here the root means 'incline', so the Pael's 'pray' is a bending, which the entry shows and does not say."
+
+[[sub_lemmas]]
+voc = "ܨܠܽܘܬܳܐ"
+gloss_en = "f. prayer"
+gloss_de = "Gebet"
+raw = "ܨܠܽܘܬܳܐ f. Gebet | prayer"
+
+[source]
+primer = "nestle-1889-en"
+page = 182
+leaf = "n271"

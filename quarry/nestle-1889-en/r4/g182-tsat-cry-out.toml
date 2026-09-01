@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g182-tsat-cry-out"
+record_type = "R4"
+
+lemma = { unvoc = "ܨܬ", voc = "ܨܳܬ", translit = "ṣāt" }
+pos = "verb"
+gloss_en = "cry out, attend"
+gloss_de = "ausrufen, aufmerken"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "'Cry out' and 'attend' in one head — shouting and listening from one root, unexplained."
+
+[[sub_lemmas]]
+voc = "ܨܘܳܬܳܐ"
+gloss_en = "m. cry"
+gloss_de = "Geschrei"
+raw = "ܨܘܳܬܳܐ m. Geschrei | cry"
+
+[source]
+primer = "nestle-1889-en"
+page = 182
+leaf = "n271"

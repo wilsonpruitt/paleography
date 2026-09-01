@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g183-qebuta-ark"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܒܘܬܐ", voc = "ܩܺܒܽܘܬܳܐ", translit = "qibūtā" }
+pos = "f."
+gloss_en = "ark, chest (glossed only by the Greek, with its article)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἡ κιβωτός"
+variant_voc = "ܩܒܽܘܬܳܐ"
+primer_note = "⭐ The ܩ section opens on the ὁ νόμος shape — Greek WITH its article, no modern language — and on Hoffmann, ZDMG 32 for the FIFTH time (748 n. 1). The Hoffmann references now run 748, 751, 752, 753, 757 across pp. 164-183: Nestle worked one article end to end and cited it wherever it touched a word."
+
+[source]
+primer = "nestle-1889-en"
+page = 183
+leaf = "n272"

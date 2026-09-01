@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g182-tsedaa-temple"
+record_type = "R4"
+
+lemma = { unvoc = "ܨܕܥܐ", voc = "ܨܶܕܥܳܐ", translit = "ṣedʿā" }
+pos = "noun"
+gloss_en = "temple (of the head)"
+gloss_de = "Schläfe"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "κρόταφος"
+primer_note = "Greek after the English again — 'Schläfe | temple; κρότᾰφος' — the ܦܫܰܪ/πέπτω position of p. 181, and on the facing page. Two sightings makes it a setting, not a slip."
+
+[source]
+primer = "nestle-1889-en"
+page = 182
+leaf = "n271"

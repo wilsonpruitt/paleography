@@ -1,0 +1,33 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g182-tsehi-be-thirsty"
+record_type = "R4"
+
+lemma = { unvoc = "ܨܗܝ", voc = "ܨܗܺܝ", translit = "ṣhī" }
+pos = "verb"
+gloss_en = "be thirsty"
+gloss_de = "dürsten"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[[sub_lemmas]]
+voc = "ܨܗܶܐ"
+gloss_en = "thirsty"
+gloss_de = "durstig"
+raw = "ܨܗܶܐ durstig | thirsty"
+
+[[sub_lemmas]]
+voc = "ܨܰܗܝܳܐ"
+gloss_en = "m. thirst"
+gloss_de = "Durst"
+raw = "ܨܰܗܝܳܐ m. Durst | thirst"
+
+[source]
+primer = "nestle-1889-en"
+page = 182
+leaf = "n271"

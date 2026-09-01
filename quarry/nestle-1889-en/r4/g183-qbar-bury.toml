@@ -1,0 +1,37 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g183-qbar-bury"
+record_type = "R4"
+
+lemma = { unvoc = "ܩܒܪ", voc = "ܩܒܰܪ", translit = "qbar" }
+pos = "verb, impf. u"
+gloss_en = "bury"
+gloss_de = "begraben"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+stems = "Ethpe. pass."
+primer_note = "The entry ends with a bare 'Cf.' and a Syriac word — a pointer with no gloss and no 'v.', which is a fourth kind of cross-reference after 'v. X', the bracketed [X v. Y] and the ⭐ 'cf.' in parentheses at ܦܽܘܡ (p. 179)."
+uncertain = true
+uncertain_note = "The word after 'Cf.' is three glyphs and is read ܩܒܰܥ — the entry immediately above. If that is right Nestle is pointing from 'bury' to 'fix, mount', which is not an obvious link; the alternative readings at 1.75× are ܩܒܺܝܛ and ܩܒܺܝܕ, neither of which is a head-word in the shard. Left as read, flagged."
+
+[[sub_lemmas]]
+voc = "ܩܰܒܪܳܐ, ܩܒܽܘܪܬܳܐ"
+gloss_en = "m./f. tomb"
+gloss_de = "Grab"
+raw = "ܩܰܒܪܳܐ m., ܩܒܽܘܪܬܳܐ f. Grab | tomb"
+
+[[sub_lemmas]]
+voc = "ܩܒܽܘܪܳܐ"
+gloss_en = "burial"
+gloss_de = "Begräbnis"
+raw = "ܩܒܽܘܪܳܐ Begräbnis | burial"
+
+[source]
+primer = "nestle-1889-en"
+page = 183
+leaf = "n272"
