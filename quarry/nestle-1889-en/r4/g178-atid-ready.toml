@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g178-atid-ready"
+record_type = "R4"
+
+lemma = { unvoc = "ܥܬܝܕ", voc = "ܥܬܺܝܕ", translit = "ʿtīd" }
+pos = "adj."
+gloss_en = "ready"
+gloss_de = "bereit"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+latin = "sequente ܠ vel ܕ futuro significando inservit"
+primer_note = "⭐ The longest piece of Latin in the shard, and it is pure GRAMMAR: 'sequente ܠ vel ܕ futuro significando inservit' — with a following ܠ or ܕ it serves to express the future. Nestle's other Latin has labelled a part of speech or a case; this sentence teaches a construction, and it is the one thing in the entry a reader could not get from the German."
+
+[source]
+primer = "nestle-1889-en"
+page = 178
+leaf = "n267"

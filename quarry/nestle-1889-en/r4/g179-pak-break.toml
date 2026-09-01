@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g179-pak-break"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܟ", voc = "ܦܰܟ", translit = "pak" }
+pos = "verb"
+gloss_en = "break"
+gloss_de = "zerbrechen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "'Break' and 'cheek' under one head, unexplained — the ܢܓܰܪ 'be long / carpenter' shape of p. 168."
+
+[[sub_lemmas]]
+voc = "ܦܰܟܳܐ"
+gloss_en = "m. cheek"
+gloss_de = "Backen"
+raw = "ܦܰܟܳܐ m. Backen | cheek"
+
+[source]
+primer = "nestle-1889-en"
+page = 179
+leaf = "n268"

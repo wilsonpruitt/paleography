@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g179-unread-p-piscinae"
+record_type = "R4"
+
+lemma = { unvoc = "", voc = "", translit = "" }
+pos = "noun"
+gloss_en = "⛔ NOT READ — glossed 'piscinae'"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+latin = "piscinae"
+uncertain = true
+uncertain_note = "⛔ NOT READ, after one 3× zoom, and unusual in that the GLOSS is certain and the head-word is not: the entry reads '[…] piscinae.', one Latin word, plural, and nothing else. Skeleton at 3×: eight or nine glyphs beginning ܦ + ܘ + a semkath-hump and ending in a final descender. A consonant-by-consonant transcription was drafted and discarded — the middle three letters are not separable at this resolution, and a lexicon entry with a wrong string in it is worse than an empty one. Convention 5."
+
+[source]
+primer = "nestle-1889-en"
+page = 179
+leaf = "n268"

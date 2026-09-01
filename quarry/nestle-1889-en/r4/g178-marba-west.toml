@@ -1,0 +1,29 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g178-marba-west"
+record_type = "R4"
+
+lemma = { unvoc = "ܡܥܪܒܐ", voc = "ܡܰܥܪܒܳܐ", translit = "maʿrbā" }
+pos = "noun"
+gloss_en = "west"
+gloss_de = "Westen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "The label-only gloss again ('adj.' and nothing else) — the ܡܰܟܺܝܟܳܐܺܝܬ device of p. 166, now on its fourth outing."
+uncertain = true
+uncertain_note = "Two head forms are printed with 'et' between them and they differ, at 1.75×, only in points; both are recorded as ܡܰܥܪܒܳܐ in unvoc and the distinction is not reconstructed."
+
+[[sub_lemmas]]
+voc = "ܡܰܥܪܒܳܝ"
+gloss_en = "adj. (NO gloss printed)"
+raw = "ܡܰܥܪܒܳܝ adj."
+
+[source]
+primer = "nestle-1889-en"
+page = 178
+leaf = "n267"

@@ -1,0 +1,24 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g179-purtin-judges"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܘܪܛܝܢ", voc = "ܦܽܘܪܛܺܝܢ", translit = "pūrṭīn" }
+pos = "noun"
+gloss_en = "(glossed only by the Hebrew equation)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+hebrew = "שֹׁפְטִים"
+primer_note = "⭐ The bare EQUATION device (ܢܳܐ = h. נָא, p. 168) used a second time, and here it is the whole entry: '= h. שֹׁפְטִים.' No German, no English, no part of speech. שֹׁפְטִים is 'judges'; whatever this word is, Nestle equates it and moves on."
+uncertain = true
+uncertain_note = "Six glyphs at 3×, read ܦ + ܘ + ܪ (dot above) + ܝ + ܛ + final ܢ. No Syriac word of that shape glossed 'judges' is known to the extractor, and the final descender could be ܠ. Recorded as the glyphs were read, not as a word anyone has identified — the reading and the identification are separate claims and only the first is being made."
+
+[source]
+primer = "nestle-1889-en"
+page = 179
+leaf = "n268"

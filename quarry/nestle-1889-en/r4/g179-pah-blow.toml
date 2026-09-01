@@ -1,0 +1,22 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g179-pah-blow"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܚ", voc = "ܦܰܚ", translit = "paḥ" }
+pos = "verb"
+gloss_en = "blow, breathe"
+gloss_de = "blasen, hauchen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⚑ 'blasen' also glosses ܢܦܰܚ on p. 170 — and that root is this one with a ܢ. Twelfth duplicate gloss, and the first where the two words are plainly related."
+
+[source]
+primer = "nestle-1889-en"
+page = 179
+leaf = "n268"

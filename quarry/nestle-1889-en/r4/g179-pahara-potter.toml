@@ -1,0 +1,28 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g179-pahara-potter"
+record_type = "R4"
+
+lemma = { unvoc = "ܦܚܪܐ", voc = "ܦܰܚܳܪܳܐ", translit = "paḥḥārā" }
+pos = "m."
+gloss_en = "potter"
+gloss_de = "Töpfer"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+uncertain = true
+uncertain_note = "The sub-lemma is two words glossed by a single Greek ADJECTIVE, ὀστρακίνη 'earthen' (2 Cor. 4:7). The reading ܡܳܐܢܳܐ ܕܦܰܚܳܪܳܐ, 'vessel of the potter', fits the shapes and the Greek, but whether the second word carries the ܕ is not settled at 1.75×."
+
+[[sub_lemmas]]
+voc = "ܡܳܐܢܳܐ ܕܦܰܚܳܪܳܐ"
+gloss_en = "earthen vessel (ὀστρακίνη)"
+raw = "ܡܳܐܢܳܐ ܕܦܰܚܳܪܳܐ ὀστρακίνη"
+
+[source]
+primer = "nestle-1889-en"
+page = 179
+leaf = "n268"
