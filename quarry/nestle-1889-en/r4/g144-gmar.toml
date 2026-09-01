@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g144-gmar"
+record_type = "R4"
+
+lemma = { unvoc = "ܓܡܪ", voc = "ܓܡܰܪ", translit = "gmar" }
+pos = "verb"
+gloss_en = "finish (impf. u); be complete (impf. a)"
+gloss_de = "vollenden; vollendet sein"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+sub_lemmas = "ܓܳܡܪ̈ܰܝ ܨܶܒܝܳܢܳܐ those who do the will | die den Willen thun"
+continues_from = "runs onto p. 145 (n234)"
+
+[source]
+primer = "nestle-1889-en"
+page = 144
+leaf = "n233"

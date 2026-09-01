@@ -1,0 +1,26 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g145-garbya"
+record_type = "R4"
+
+lemma = { unvoc = "ܓܪܒܝܐ", voc = "ܓܰܪܒܝܳܐ", translit = "garbyā" }
+pos = "noun"
+gloss_en = "the north (both the wind and the region)"
+gloss_de = "Nord (Wind u. Gegend)"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+variant_voc = "ܓܰܪܒܰܝ"
+sub_lemmas = "ܓܰܪܒܝܳܝܳܐ northern | nördlich"
+primer_note = "⭐ Nestle adds a TEXTUAL CONJECTURE here — 'Pro … leg. vid. …', i.e. for one printed reading he thinks another should be read. An editorial emendation inside a glossary entry."
+uncertain = true
+uncertain_note = "The two Syriac phrases of the conjecture are not resolved at this scale."
+
+[source]
+primer = "nestle-1889-en"
+page = 145
+leaf = "n234"

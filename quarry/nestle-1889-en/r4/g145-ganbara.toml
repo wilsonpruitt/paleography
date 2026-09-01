@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g145-ganbara"
+record_type = "R4"
+
+lemma = { unvoc = "ܓܢܒܪܐ", voc = "ܓܰܢܒܳܪܳܐ", translit = "ganbārā" }
+pos = "adj./noun"
+gloss_en = "strong, mighty one"
+gloss_de = "kräftig"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+hebrew = "גִּבּוֹר"
+sub_lemmas = "an adverbial/abstract form in -ܐܝܬ, same sense"
+
+[source]
+primer = "nestle-1889-en"
+page = 145
+leaf = "n234"

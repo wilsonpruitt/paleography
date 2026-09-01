@@ -11,7 +11,7 @@ schema of SYRIAC-LANGUAGE-PILOT.md §4, so a page's output is the READING, not t
     python3 tools/quarry_r4.py --audit        # per-page counts + uncertainty rate
 
 Entry keys — `slug`, `unvoc`, `voc`, `translit`, `pos`, `en` are required; everything else
-optional: `de`, `sec` (Nestle's own § ref), `greek`, `hebrew`, `latin`, `plural_voc`,
+optional: `de`, `sec` (Nestle's own § ref), `greek`, `hebrew`, `arabic`, `latin`, `plural_voc`,
 `variant_voc`, `construct_voc`, `dialect_variant`, `stems`, `sub_lemmas`, `primer_note`,
 `uncertain_note` (setting it sets `uncertain = true`), `see` (a bare `v. X` cross-reference),
 `continues_from` (⚑ entries CROSS PAGE BOUNDARIES — file the record under the page where the
@@ -32,7 +32,7 @@ HEADER = ("# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model recor
           "# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is\n"
           "# empty and the Step-3 blind control has not run.\n")
 
-EXTRA = ("greek", "latin", "hebrew", "plural_voc", "variant_voc", "construct_voc",
+EXTRA = ("greek", "latin", "hebrew", "arabic", "plural_voc", "variant_voc", "construct_voc",
          "dialect_variant", "stems", "sub_lemmas", "see", "continues_from", "primer_note")
 
 

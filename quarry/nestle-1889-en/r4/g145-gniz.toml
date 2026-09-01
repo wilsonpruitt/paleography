@@ -1,0 +1,21 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g145-gniz"
+record_type = "R4"
+
+lemma = { unvoc = "ܓܢܙ", voc = "ܓܢܺܝܙ", translit = "gnīz" }
+pos = "adj. (root bracketed by Nestle)"
+gloss_en = "hidden, secret"
+gloss_de = "verborgen, geheim"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+
+[source]
+primer = "nestle-1889-en"
+page = 145
+leaf = "n234"

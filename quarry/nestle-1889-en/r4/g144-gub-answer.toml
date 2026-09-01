@@ -1,0 +1,23 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g144-gub-answer"
+record_type = "R4"
+
+lemma = { unvoc = "ܓܘܒ", voc = "", translit = "gūb" }
+pos = "verb (root, bracketed), Aph."
+gloss_en = "answer"
+gloss_de = "antworten"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἀποκριθῆναι"
+primer_note = "Nestle prints the root in parentheses; only the Aphel is attested here."
+
+[source]
+primer = "nestle-1889-en"
+page = 144
+leaf = "n233"
