@@ -15,6 +15,16 @@
 - `sh tools/acceptance.sh` → all five PASS, including `syriac1`, whose hash is now baselined.
 - ⚠ Any statement about what is LIVE expires. Never restate it from this note — curl it.
 
+## Second path: the Syriac LANGUAGE pilot (separate from the hand-trainer work below)
+
+- Score: `SYRIAC-LANGUAGE-PILOT.md` · ✅ **Phase 0 done, G0 passed 2026-08-31**
+  (`research/syriac-pilot-phase0.md` — scans pinned, licences verdicted, Robinson 1915 is
+  keyless).
+- ▶ **Next: Phase 1 — decompose Nestle. Execution score: `SYRIAC-PHASE1-RUNBOOK.md`. Opus.**
+  It opens with a cheap structure map + 8-page calibration batch, then ⛔ **hard-stops to
+  Wilson with the measured burn before the full run dispatches.** Records land in
+  `quarry/nestle-1889-en/`, not in `registry/`.
+
 ## The one command that matters
 
 ```sh
