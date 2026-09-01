@@ -15,7 +15,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "Consonants read as ܙܘܪܐ from the letter-shapes and confirmed by position (between ܙܘܦ and ܙܝܢ); pointing not resolved even at 3× zoom, and the reading is not corroborated by a lexicon here — flagged for the Syriacist."
+uncertain_note = "Consonants read as ܙܘܪܐ from the letter-shapes and confirmed by position (between ܙܘܦ and ܙܝܢ); pointing not resolved even at 3× zoom, and the reading is not corroborated by a lexicon here — flagged for the Syriacist. ⭐ Corroborated one page later: p. 151's ܙܶܪܬܳܐ 'fist' ends 'cf.' with the same four glyphs, so Nestle himself treats this as a second word for the same thing."
 
 [[sub_lemmas]]
 voc = "ܙܘܪ̈ܐ"

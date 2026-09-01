@@ -1,0 +1,30 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g151-unread-ringing"
+record_type = "R4"
+
+lemma = { unvoc = "", voc = "", translit = "" }
+pos = "m."
+gloss_en = "noise, ringing"
+gloss_de = "Geräusch, Klingeln"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+greek = "ἦχος"
+primer_note = "Nestle notes of the second form 'deest apud PSm' — it is not in Payne Smith. His doubt about the lexicon, not ours."
+uncertain = true
+uncertain_note = "⛔ NOT READ. First entry of p. 151, immediately after ܙܠܓ on p. 150 and before ܙܡܢ, so the root falls in ܙܠ–ܙܡ. Five glyphs ending in ܐ, with two tall ascenders that read as lamadh — a reduplicated ܙܠܙܠ 'resound' would fit the sense and the slot, but that is a reconstruction from shape and position, NOT a reading, and it is not written into the lemma. Two further forms on the same line are likewise unread."
+
+[[sub_lemmas]]
+voc = ""
+gloss_en = "a second form, absent from Payne Smith"
+raw = "[form 2] (deest apud PSm) et [form 3] idem."
+
+[source]
+primer = "nestle-1889-en"
+page = 151
+leaf = "n240"

@@ -1,0 +1,34 @@
+# Nestle shard, R4. Schema: SYRIAC-LANGUAGE-PILOT.md §4; model record:
+# r4/g171-neshab.toml. ⚠ Readings are extractor output — the Syriacist seat is
+# empty and the Step-3 blind control has not run.
+
+id = "nestle-1889-en/r4/g151-zmar"
+record_type = "R4"
+
+lemma = { unvoc = "ܙܡܪ", voc = "ܙܡܰܪ", translit = "zmar" }
+pos = "verb, impf. a et Pa."
+gloss_en = "sing, play"
+gloss_de = "singen, spielen"
+root = ""
+payne_smith = ""
+frequency_rank = ""
+noldeke = []
+layer = "vocalized Serto"
+primer_note = "⭐ Both derived forms are ܡ-preformatives filed under ܙܡܪ — a reader looking either up under ܡ will not find it. Nestle's root ordering again (convention 2)."
+
+[[sub_lemmas]]
+voc = "ܡܙܰܡܪܳܢܳܐ"
+gloss_en = "psalmist"
+gloss_de = "Psalmist"
+raw = "ܡܙܰܡܪܳܢܳܐ Psalmist | psalmist"
+
+[[sub_lemmas]]
+voc = "ܡܰܙܡܽܘܪܳܐ"
+gloss_en = "psalm"
+gloss_de = "Psalm"
+raw = "ܡܰܙܡܽܘܪܳܐ Psalm | psalm"
+
+[source]
+primer = "nestle-1889-en"
+page = 151
+leaf = "n240"
