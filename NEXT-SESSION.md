@@ -215,8 +215,15 @@ R1's nine paradigm targets are all extracted and tier-1 collated against Nöldek
 vocabulary gap those lessons opened is now closed by the Payne Smith pull above. Per §6 a
 lesson is built backward from its R1/R3 material, so the material has to exist first — it does.
 
-This is a **sequencing/writing pass, not extraction** — Fable to set the pattern on one lesson,
-a cheaper model for the rest, per the model-prudence rubric. Two things to fold in as you write:
+This is a **sequencing/writing pass, not extraction** — but the pattern is already Fable-set:
+Lesson 0/1 (`SYRIAC-LANGUAGE-PILOT.md` §9) were themselves written in the Fable session that
+scored all ten lessons, and Wilson G2-passed them. Writing 2–10 is executing that already-
+designed, already-validated template against fully-extracted material — per the model-prudence
+rubric that's **Opus** ("Opus executes a Fable-written plan"), not a fresh Fable pilot and not
+Sonnet (each lesson still needs real synthesis of R1/R3/R4 material into the pedagogical voice
+Lesson 0/1 set, not mechanical templating). Ruled 2026-09-02, correcting this file's own
+earlier "Fable/Sonnet" guess, which predated Lesson 0/1 actually landing and passing G2.
+Two things to fold in as you write:
 - Each Payne Smith record names the lesson it serves in `fills_gap_for` — use that as the
   vocabulary checklist per lesson, and write the `word_notes` cross-links back the other way.
 - **Cain (Lesson 9) needs a `word_notes` gloss written by hand**, since no dictionary record

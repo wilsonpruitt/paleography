@@ -111,6 +111,7 @@ primer — same G1 gate Phase 1 already established.
 
 The Syriacist seat (still empty, still not chased per standing instruction) · resolving
 p132's R1-vs-lexical-type question · the syntax-note routing question above · any lesson 2–10
-document-writing (that's a Fable/Sonnet sequencing pass over `SYRIAC-LESSON-PLAN.md`'s scores,
-separate from extraction) · the SRS/Tabella-adjacent vocab engine idea (`paleography.md`,
-noted 2026-09-02, not started).
+document-writing (separate from extraction — ⚠ NOT a Fable/Sonnet pass, corrected 2026-09-02:
+Fable already wrote the template in Lesson 0/1, which Wilson G2-passed, so writing 2–10 is
+Opus executing an established plan, per `NEXT-SESSION.md`) · the SRS/Tabella-adjacent vocab
+engine idea (`paleography.md`, noted 2026-09-02, not started).
