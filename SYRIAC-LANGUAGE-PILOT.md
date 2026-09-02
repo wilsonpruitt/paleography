@@ -495,14 +495,14 @@ Named because each has already cost a session somewhere in this house:
 - **Phase 2 — frequency spine (Sonnet):** licence-gated computation over the digital
   Peshitta; a script, not a judgment.
 - ✅ **Phase 3 — ten lessons drafted 2026-09-02 (Fable).** Score → `SYRIAC-LESSON-PLAN.md`;
-  worked lesson 1 (Gen 1:1–5, the scored winner) → `LESSON-1.md`. Built entirely from the 20
+  worked lesson 1 (Gen 1:1–5, the scored winner) → `learn/syriac/LESSON-1.md`. Built entirely from the 20
   checked pages; Serto-printed passages are re-rendered per §3's script ruling (flagged, not
   silent).
   ⭐ **First real G2 feedback landed the same day.** Wilson read Lesson 1 and reported a design
   gap: it asked him to decode shapes and read for meaning simultaneously, with no prior pass
   on the alphabet itself. Per §7's own G2 rule ("if it is beyond him, revise the ramp, not the
   learner"), this is a defect report against the score, and it's now fixed: **Lesson 0**
-  (`LESSON-0.md`) precedes Lesson 1 — pure letter-shape recognition, the 22 names and sounds,
+  (`learn/syriac/LESSON-0.md`) precedes Lesson 1 — pure letter-shape recognition, the 22 names and sounds,
   the eight non-joining letters and the mid-word-gap trap, decoding drills built from
   invented/meaningless letter-strings only, no vocabulary or grammar anywhere in it. Its
   content is Nestle's own alphabet table (p.4), extracted on demand as `r1/p004-1.toml` — the
@@ -554,7 +554,7 @@ R1–R4 records are already structured data (lemma, forms, glosses, cross-refere
 prose — a multiple-choice question ("which cell is this form?" / "what does this lemma
 mean?" / "which letter is this?") is a near-mechanical transform of a record, and infinite
 variation comes from resampling distractors and forms rather than authoring new items by
-hand. Lesson 0's decoding drills (`LESSON-0.md` Part 3) are the paper prototype of exactly
+hand. Lesson 0's decoding drills (`learn/syriac/LESSON-0.md` Part 3) are the paper prototype of exactly
 this pattern — generate a nonsense string, ask for the reading, check it — and the same
 generator that wrote those by hand should eventually write them programmatically, at
 whatever volume a learner asks for.

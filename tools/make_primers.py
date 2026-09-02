@@ -70,6 +70,31 @@ def render(md):
             while i < len(lines) and re.match(r"^\d+\. ", lines[i]):
                 items.append(inline(re.sub(r"^\d+\. ", "", lines[i]))); i += 1
             out.append("<ol>" + "".join(f"<li>{x}</li>" for x in items) + "</ol>")
+        elif ln.startswith(">"):                        # blockquote
+            # Contiguous "> " lines form one blockquote. A blank "> " line, or a new
+            # numbered item ("> 1. ", "> 2. " ...) with no blank before it, starts a
+            # fresh <p> inside it -- otherwise lines merge (a verse wrapped across
+            # several source lines is one paragraph, not several).
+            raw = []
+            while i < len(lines) and lines[i].startswith(">"):
+                content = lines[i][1:]
+                if content.startswith(" "):
+                    content = content[1:]
+                raw.append(content); i += 1
+            paras, buf = [], []
+            for content in raw:
+                stripped = content.strip()
+                new_item = bool(re.match(r"^\d+\. ", stripped))
+                if stripped == "" or (new_item and buf):
+                    if buf:
+                        paras.append(" ".join(buf)); buf = []
+                    if stripped:
+                        buf.append(stripped)
+                else:
+                    buf.append(stripped)
+            if buf:
+                paras.append(" ".join(buf))
+            out.append("<blockquote>" + "".join(f"<p>{inline(p)}</p>" for p in paras) + "</blockquote>")
         elif ln.startswith("#"):
             n = len(ln) - len(ln.lstrip("#"))
             out.append(f"<h{min(n,4)}>{inline(ln[n:].strip())}</h{min(n,4)}>"); i += 1

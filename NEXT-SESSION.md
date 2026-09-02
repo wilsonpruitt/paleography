@@ -211,7 +211,7 @@ never actually blessed by Wilson. Worth a one-word ruling before anything else l
 
 ✅ **Lessons 2–10 WRITTEN 2026-09-02** (commit `42c6e14`, Opus-tier fork, all Syriac verbatim from
 the R3 records; two source flags carried forward unresolved — c068-1's v.11 conjunction in L2,
-c080-1's v.14 word order in L10). The course is complete on paper: `LESSON-0.md` … `LESSON-10.md`.
+c080-1's v.14 word order in L10). The course is complete on paper: `learn/syriac/LESSON-0.md` … `learn/syriac/LESSON-10.md`.
 
 **Now: `SYRIAC-WEB-PLAN.md`** (Fable, 2026-09-02) — the score for **syriac.paleography.app**:
 book + drill generated from one source, three surfaces (learner `/N`, scholar `/about` `/sources`
@@ -224,7 +224,7 @@ outreach (item 2 below) is gated on this build existing.
 ## ✅ DONE — write Lessons 2–10 out as documents (history)
 
 Everything upstream is now in place. `SYRIAC-LESSON-PLAN.md` has all ten lessons scored;
-`LESSON-0.md` and `LESSON-1.md` are fully worked and G2-passed; R3 has 20 solid keyed pages;
+`learn/syriac/LESSON-0.md` and `learn/syriac/LESSON-1.md` are fully worked and G2-passed; R3 has 20 solid keyed pages;
 R1's nine paradigm targets are all extracted and tier-1 collated against Nöldeke; and the R4
 vocabulary gap those lessons opened is now closed by the Payne Smith pull above. Per §6 a
 lesson is built backward from its R1/R3 material, so the material has to exist first — it does.
@@ -261,8 +261,8 @@ person-assignment, `p063-1`'s second bāṯar-shaped word) need a real reader, n
   wholly unkeyed — a different, open problem (needs a Syriacist seat or Serto HTR), not more
   of the same extraction. Full picture: `quarry/nestle-1889-en/MAP.md` "R3 — RUN COMPLETE".
 - **Phase 3 (lesson design) drafted 2026-09-02.** Ten lessons scored in `SYRIAC-LESSON-PLAN.md`
-  from the 20 solid R3(a) pages; `LESSON-0.md` (alphabet, added after Wilson's own G2 feedback)
-  and `LESSON-1.md` (Gen 1:1-5) are fully worked. Lessons 2-10 are scored but not yet written
+  from the 20 solid R3(a) pages; `learn/syriac/LESSON-0.md` (alphabet, added after Wilson's own G2 feedback)
+  and `learn/syriac/LESSON-1.md` (Gen 1:1-5) are fully worked. Lessons 2-10 are scored but not yet written
   out as documents — do that only after G2 passes on 0/1.
 - **Two future-idea notes recorded, both explicitly deferred, neither started:**
   1. The eventual web build = a generated multiple-choice drill engine over R1-R4 records, not

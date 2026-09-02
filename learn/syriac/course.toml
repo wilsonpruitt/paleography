@@ -1,0 +1,13 @@
+id = "syriac"
+title = "A Syriac Chrestomathy"
+hand_track = "https://paleography.app/syriac"
+lessons = ["L00", "L01", "L02", "L03", "L04", "L05", "L06", "L07", "L08", "L09", "L10"]
+
+[sources]
+nestle-1889-en   = { title = "Nestle, Syriac Grammar with Chrestomathy and Glossary (tr. R. S. Kennedy), 1889", rights = "public domain", scan = "archive.org syriacgrammarwit00nestiala" }
+payne-smith-1903 = { title = "Payne Smith, A Compendious Syriac Dictionary, 1903", rights = "public domain", scan = "archive.org compendioussyria00payn" }
+noldeke-1904     = { title = "Nöldeke, Compendious Syriac Grammar (tr. Crichton), 1904", rights = "public domain", scan = "archive.org noldeke-compendious-syriac-grammar" }
+barnes-1914      = { title = "Barnes, Pentateuchus Syriace (post Samuelem Lee), BFBS 1914", rights = "public domain", scan = "archive.org ktavadeauritaauk00lees" }
+
+[seats]
+syriacist = ""

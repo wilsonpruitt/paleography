@@ -3,7 +3,7 @@
 *Wroot Labs · Fable sequencing session 2026-09-02 · status: DRAFT toward G2.*
 *Method: `SYRIAC-LANGUAGE-PILOT.md` §6 — every lesson built BACKWARD from a destination
 passage; destination chosen by scored coverage, not eyeball; forms enter as cells, never as
-whole paradigms. Lesson 1 is fully worked in `LESSON-1.md` — Wilson runs it; if it is beyond
+whole paradigms. Lesson 1 is fully worked in `learn/syriac/LESSON-1.md` — Wilson runs it; if it is beyond
 him, that is a design defect report against THIS file, not against him (§7 G2).*
 
 ---
@@ -99,7 +99,7 @@ G2 feedback the pilot has actually received, and it's a real design defect again
 score, not against him: Lesson 1 asked him to decode AND read-for-meaning at once, with no
 prior pass on the shapes themselves. §6's ramp already has a "stage 0 orientation" *inside*
 each lesson, but nothing upstream of Lesson 1 taught the alphabet as pure shape-recognition.
-**Lesson 0 — `LESSON-0.md` — fixes this**: all 22 letters named and sounded (Nestle's own
+**Lesson 0 — `learn/syriac/LESSON-0.md` — fixes this**: all 22 letters named and sounded (Nestle's own
 table, p.4, newly extracted as `r1/p004-1.toml` — see §0a below), the eight non-joining
 letters and the mid-word-gap trap, and decoding drills built from **invented, meaningless
 letter-strings only** — no vocabulary, no grammar, nothing to guess from context, exactly
@@ -138,7 +138,7 @@ emphatic-state ־ܳܐ as the noun's default dress · proclitics ܘ/ܕ/ܒ/ܠ · s
 ܢܶܗܘܶܐ as a fixed phrase ("let there be" — the imperfect cell is L2's job).
 **Stages 2–4:** cloze the five recurring anchors (ܐܠܗܐ, ܢܘܗܪܐ, ܘܗܘܐ, ܐܪܥܐ, ܝܘܡܐ) one gap per
 pass · finish "ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ ܢܶܗܘܶܐ ܢܘܗܪܳܐ ⟨…⟩" and "ܘܰܗܘܳܐ ܪܰܡܫܳܐ ⟨…⟩" · whole line unaided =
-v. 3 (fiat lux). Fully worked in `LESSON-1.md`.
+v. 3 (fiat lux). Fully worked in `learn/syriac/LESSON-1.md`.
 
 ### Lesson 2 — Days two and three · Gen 1:6–13 (p. 67–68)
 **Why next:** the longest destination in the course, tolerable only because ~⅔ of its surface
@@ -287,5 +287,5 @@ confirmed), and Robinson's R2 extraction hasn't run. Until it does, drills are c
 in-house under one safety rule: **every word-form in a composed drill must be attested
 somewhere in the 20 checked pages** — recombination only, no invented morphology, and each
 drill block is marked *ours, not the primer's* (the R2 `key` discipline applied to
-pedagogy). `LESSON-1.md` §Drills shows the pattern. When Robinson's exercises are extracted,
+pedagogy). `learn/syriac/LESSON-1.md` §Drills shows the pattern. When Robinson's exercises are extracted,
 author-composed drills replace the in-house ones wherever they cover the same cells.
