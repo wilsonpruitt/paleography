@@ -269,14 +269,16 @@ work*, not house-wide:
    with paleography.app. Pure tool and proof of concept."** No login, no paywall, no
    beta-wall, ever — on either side of the twin path. Anything that would put a door in front
    of a page is out of scope by ruling, not by omission.
-6. ⬜ **Name — open, wordsmithing requested.** Wilson's instinct was "primer"; ⚠ it collides
-   twice — the hand site already labels `/hand/syriac` *"A reader's primer on syriac"*
-   (user-facing, same language, sibling address), and *The New Syriac Primer* (Kiraz, Gorgias)
-   is the standard in-print textbook a Syriacist thinks of first. Offered: **Reader** (*A
-   Syriac Reader* — the genre word for a graded book of real texts, carries the reading-first
-   thesis; recommended) · **Lessons** (*Syriac in Eleven Lessons* — plainest) · **Chrestomathy**
-   (exact, opaque to non-specialists). "First Light" stays the prototype's / Lesson 1's name.
-   `course.toml [title]` waits on this; nothing else does.
+6. ✅ **Name: Chrestomathy** — *A Syriac Chrestomathy*, ruled 2026-09-02. Wilson: "it fits a
+   lot of our sources as well" — it is the word Nestle prints at the head of the very pages the
+   lessons are cut from (*Chrestomathia I*, p. 67), and the genre every primer on the shelf
+   carries as its third part. "Primer" was rejected for two collisions: the hand site already
+   labels `/hand/syriac` *"A reader's primer on syriac"*, and *The New Syriac Primer* (Kiraz,
+   Gorgias) is the standard in-print textbook. "First Light" stays the prototype's / Lesson 1's
+   name. ⚠ **Explicitness rule** ([[feedback_explicitness-over-subtlety]]): the word is opaque
+   to non-specialists, so `/` and `/about` define it ONCE, in one line, on first use — *a
+   chrestomathy is a graded collection of real passages for learning a language; this one is
+   Syriac, read first* — and never again. `course.toml`: `title = "A Syriac Chrestomathy"`.
 7. ✅ **Scorecard = local + copy-to-clipboard. No Supabase in v1.**
 
 ---
