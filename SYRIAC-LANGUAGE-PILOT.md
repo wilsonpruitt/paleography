@@ -453,3 +453,36 @@ its own inventory — DSS is link-only by standing ruling) · deck export toward
 the Syriacist expert seat (⚠ the same Ishac/Roughan email already owed for the Vienna
 licence question is the natural opener — but outreach is Wilson's send, a hard stop) ·
 whether primer-author philological notes become learner-facing glosses or stay quarry.
+
+⭐ **The web build itself, ruled 2026-09-02 (Wilson), a separate future session — no code
+yet, this is the score for when one starts.** After running Lessons 0–1 on paper, Wilson's
+verdict on the *shape* of the eventual product, not just its content:
+
+**Not a static single-page HTML the way UT Austin's EIEOL is.** The comparison is exact and
+worth keeping: EIEOL's *Old French Online* (already linked from the site's Old French track)
+is prose + a fixed exercise set on one page — read it once, the practice is exhausted.
+
+**Instead: explanation + a procedurally-generated drill loop that builds up**, multiple-choice
+as the drill mechanic, over material assembled from the primer extraction (R1–R4) rather than
+hand-authored exercise-by-exercise. The governing complaint, from Wilson's own experience
+learning Greek and Latin: **every primer he used gave FEWER repetitions and examples than he
+personally needed**, and a fixed printed exercise set cannot fix that — you exhaust it and
+you're still short. A generated drill can: **as much practice, in as many varied forms, as
+the learner wants, before moving on** — the ceiling is the extracted corpus (R1 cells, R4
+lemmas, R3 word occurrences), not an author's patience for writing one more example.
+
+**Why this is a natural fit for what's already built, not a new architecture:** the pilot's
+R1–R4 records are already structured data (lemma, forms, glosses, cross-references), not
+prose — a multiple-choice question ("which cell is this form?" / "what does this lemma
+mean?" / "which letter is this?") is a near-mechanical transform of a record, and infinite
+variation comes from resampling distractors and forms rather than authoring new items by
+hand. Lesson 0's decoding drills (`LESSON-0.md` Part 3) are the paper prototype of exactly
+this pattern — generate a nonsense string, ask for the reading, check it — and the same
+generator that wrote those by hand should eventually write them programmatically, at
+whatever volume a learner asks for.
+
+**Scope note, so this doesn't grow silently:** this is a description of what the *eventual*
+web surface should feel like, not a spec — no framework, no data model, no page count decided
+here. It generalizes past Syriac (Hebrew, and the self-produced-GT band) once it exists, since
+the underlying move — turn structured extraction records into an unlimited drill generator —
+doesn't depend on which language's primer fed it.
