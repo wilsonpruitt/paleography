@@ -1,0 +1,111 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 19 of 22 (pp. 86-107).
+# Keyed from the plate (n193). ⛔ TEXT IS A PARTIAL, UNVERIFIED PLATE READING — see [extraction].
+id = "nestle-1889-en/r3/c104-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:azariah+elisha"
+work_note = """
+The page opens inside the Life of AZARIAH, whose one-word rubric `ܥܙܪܝܐ ܂` stands on p. 103
+line 17 (= piece line 354). One Life boundary falls on this page, marked by the same mechanical
+cue as p. 103 — a one-word name rubric alone on its own line, closed by a low point:
+· line 12 of the page (= piece line 369) `ܐܠܝܫܥ ܂` — ELISHA.
+  Read on the glyphs: alaph "≺" · lamadh (wedge + TALL ascender) · yudh · shin (wide, stemmed)
+  · 'e (the same wedge WITHOUT the ascender). The lamadh/'e contrast is the whole reading and
+  was checked against Nestle's own alphabet table at p. 4 = leaf n21.
+⚠ NO RUBRIC FOR ELIJAH occurs anywhere in this shard (pp. 103-107), although the Greek order has
+Elijah immediately before Elisha. Either Elijah's Life stands earlier (pp. 100-103, outside this
+shard) or this BM recension orders/omits differently. NOT resolved here — it is a question for
+whoever holds pp. 96-102, and it should be answered before the piece's section list is fixed.
+Line 1 of the page is a short line (two words) that stops well short of the left margin: on the
+cue established on p. 103 that is a paragraph break inside Azariah, not a boundary. Both its
+words resisted reading.
+Nestle names no individual codex; the piece is "e tribus codicibus Musei Britannici" (p. 86) and
+he never says which. No `witness` field exists in the schema — known gap.
+"""
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+Verified on this page: no vowel signs on any of the 20 lines; seyame present on plurals; the
+dalath/rish points present. Identical to pp. 103 and 105-107 and to p. 86 — the layer is CONSTANT
+across the whole of Chrest. III as far as this shard sees it, unlike Chrest. I where the script
+alternated by caput.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets with tribe, date and burial place), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 20
+line_numbers = "360, 365, 370, 375 — read off the plate in the LEFT (outer) margin of this verso, standing against printed lines 3, 8, 13 and 18. The page therefore carries piece lines 358-377. Numbering CONTINUOUS; it runs straight through the Azariah/Elisha boundary at line 369 without restarting."
+page_number_form = "Syriac numeral letter, centred at head, above the first text band"
+page_number_read = "ܩܕ = 100 + 4 = 104 — qoph (loop + bar) + dalath (hook with the dot BELOW). Agrees with leaf = page + 89."
+transcription_note = """
+Same conventions as c103-1: seyame → U+0308, linea occultans → U+0304, low point → ܂, two-dot
+pause → ܆, end mark → ܀. Qushshaya/rukkakha and participle points are on the plate and are NOT
+transcribed — a known gap, not a claim of absence. No square brackets occur on this page.
+Doubtful words → `⟨?…⟩`; an unread line is emitted in position as `⟨?LINE NOT READ⟩` so the line
+count stays right. Nothing was filled in from the Latin or Greek control.
+"""
+
+text_syr_voc = """
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+ܐܠܝܫܥ ܂
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+"""
+
+primer_notes = """
+NONE on this page. No rule and no smaller type at the foot; the twentieth text line runs to the
+bottom of the type area.
+"""
+
+[extraction]
+status = "keyed from the plate, PARTIAL and UNVERIFIED: 1 of 20 printed lines carries a reading (the Elisha rubric); 19 are emitted as ⟨?LINE NOT READ⟩"
+reason = """
+Same measured ceiling as c103-1: at the master resolution (1586x2512, ~5x on a quarter-page crop)
+an unvocalized Estrangela word is legible only where the reader already has a candidate. Isolated
+one-word rubrics are exactly that case, which is why the section structure came out cleanly and
+the running narrative did not. See c103-1's [extraction] for the calibration aids (Nestle's
+alphabet table at leaf n21; the labelled specimen at p. 86 lines 1-3) and for the confirmation
+that the archive.org item has NO OCR text (`_djvu.txt` is 0 bytes).
+"""
+
+[alignment]
+status = "structure and the one rubric keyed from Nestle; sense-checked against Schermann 1907 (Latin capitulum of Sinai Syr. 10)"
+diff = """
+WHAT THE CONTROL CONFIRMED: `X. Elisaeus fuit ex tribu Ruben, eratque discipulus Eliae.` —
+ELISHA is in the Sinai list, so the rubric I read at line 369 names a prophet the tradition
+actually carries. That is the whole of the confirmation available for this page.
+WHAT IT CANNOT DO: AZARIAH, whose Life occupies lines 358-368, is NOT in the Latin capitulum's 22
+at all, so eleven of this page's twenty lines have no control of any kind, in any language. The
+capitulum is in any case a summary list against a continuous narrative and never adjudicates
+letters, points or seyame. It also cannot help with the Elijah question raised in `work_note`:
+the Latin does have `VII. Elias…` and `X. Elisaeus… discipulus Eliae`, but in an order unrelated
+to Nestle's, so it cannot say where Elijah should fall in this recension.
+⛔ Nothing above was read off the control; `ܐܠܝܫܥ` was decided on the glyphs first.
+
+UNCERTAIN READINGS ON THIS PAGE:
+· line 1 (a short two-word paragraph-final line) — neither word resolved.
+· lines 2-11 and 13-20 — not read at all.
+· `ܐܠܝܫܥ` itself is recorded as a confident reading, not a flagged one: the five glyphs were
+  each matched against the alphabet table, and the lamadh-vs-'e ascender contrast (the only real
+  hazard in the word) was checked directly.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 104
+leaf = "n193"

@@ -1,0 +1,107 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 17 of 22 (printed p. 102).
+# Keyed from the plate (n191). Shard C of the r3(b) run.
+id = "nestle-1889-en/r3/c102-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:malachi+nathan"
+work_note = """
+· line 318       rubric `ܡܠܐܟܝ ܢܒܝܐ ܂` — MALACHI the prophet, standing as the FIRST line of
+                 the page (the Life of Zechariah having closed at p. 101 line 317)
+· lines 319-329  Life of MALACHI, complete on this page; line 329 is short
+                 (`ܐܒܗ̈ܘܗܝ ܒܐܘܪܫܠܡ ܂`)
+· line 330       rubric `ܢܬܢ ܂` — NATHAN (bare name)
+· lines 331-337  Life of NATHAN, running on to p. 103.
+⭐ THIS IS THE HINGE OF THE PIECE. Malachi is the last of the twelve; with Nathan at line 330
+the collection turns back to the non-writing prophets (Nathan, then presumably Ahijah, Joad,
+Elijah, Elisha … on pp. 103-107). Schermann's Sinai capitulum runs the other way round
+(Moses, Samuel, David, Nathan first, Malachi last), so the two recensions are in reverse
+relation to each other at this point — see [alignment].
+⛔ No individual codex named.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+No vowel signs. Seyame present (ܒܝܘ̈ܡܬܐ 324 and 326, ܐܒܗ̈ܘܗܝ 329). No `܀` on this page: both
+Life-endings here use the short-line-plus-pause pattern. Both ܂ and ܆ in use.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 20
+line_numbers = "320, 325, 330, 335 in the LEFT (outer) margin — p. 102 is a verso — standing against printed lines 3, 8, 13 and 18. The page carries lines 318-337."
+page_number_form = "Syriac numeral letter, centred at head"
+page_number_read = "ܩܒ = 100 + 2 = 102, confirming leaf = page + 89 (n191)"
+transcription_note = """
+Conventions and flag forms exactly as in c098-1.toml: `⟨?ܟܟܟ⟩` = letters read but doubtful;
+`⟨?…⟩` = one or more words NOT read, nothing asserted about their letters.
+"""
+
+text_syr_voc = """
+ܡܠܐܟܝ ܢܒܝܐ ܂
+ܡܠܐܟܝ ܗܘܐ ܒܬܪ ܦܘܢܝܐ ܐܬܝܠܕ ⟨?ܒܣܘܦܐ⟩ ܂
+ܘܟܕ ⟨?ܛܠܝܐ⟩ ܗܘܐ ⟨?…⟩ ܫܦܝܪܐ ܗܘܐ ܠܗ ⟨?…⟩
+ܗܘܐ ܟܠܗ ܥܡܐ ܡܒܪܟ ܗܘܐ ܠܗ ܐܝܟ ܚܣܝܐ
+⟨?ܘܡܟܝܟܐ⟩ ܂ ܐܦ ܡܠܐܟܝ ⟨?…⟩ ܂ ⟨?ܘܡܬܩܪܐ⟩ ܗܘܐ
+ܡܠܐܟܐ ܂ ܐܝܬܘܗܝ ܗܘܐ ܓܝܪ ܚܙܬܗ ܗܕܝܪܐ ܂
+ܐܠܐ ܘܡܛܠ ܕܐܡܪ ܗܘܐ ܢܒܝܘܬܐ ܒܗ ܒܝܘ̈ܡܬܐ
+ܡܬܚܙܝܐ ܗܘܐ ܡܠܐܟܗ ܕܐܠܗܐ ⟨?…⟩ ܐܝܟ
+ܕܗܘܐ ܒܝܘ̈ܡܬܐ ܕܡܝܬ ܗܘܐ ⟨?…⟩ ܐܝܟ ܕܐܬܟܬܒ
+ܒܣܦܪ ⟨?…⟩ ܆ ⟨?…⟩ ܕܝܢ ⟨?…⟩ ܂ ܘܟܕ
+ܗܘ ܛܠܝܐ ܗܘܐ ܡܝܬ ܘܐܬܩܒܪ ܘܐܬܬܣܝܡ ܠܘܬ
+ܐܒܗ̈ܘܗܝ ܒܐܘܪܫܠܡ ܂
+ܢܬܢ ܂
+ܢܬܢ ܢܒܝܐ ܕܕܘܝܕ ܐܝܬܘܗܝ ܗܘܐ ܡܢ ܓܒܥܘܢ ܂
+ܘܗܘ ܗܘܐ ܕܡܠܦ ܗܘܐ ܠܗ ܢܡܘܣܐ ܕܡܪܝܐ ܂
+ܘܚܙܐ ܕܕܘܝܕ ⟨?…⟩ ܂ ܘܟܕ ⟨?…⟩
+ܕܢܐܬܐ ⟨?…⟩ ܂ ⟨?…⟩ ܕܐܝܬܘܗܝ
+ܣܛܢܐ ܂ ܡܛܠ ܕܒܐܘܪܚܐ ܐܫܟܚ ܡܝܬܐ ܕܫܠܝܚ ܂
+⟨?…⟩ ܗܘ ܕܝܢ ⟨?…⟩ ܂ ܘܒܬܪ ⟨?…⟩ ܂ ⟨?…⟩
+⟨?…⟩ ܚܛܝܬܐ ܆ ⟨?…⟩ ܟܕ ⟨?…⟩ ܂ ܘܟܕ ⟨?…⟩
+"""
+
+primer_notes = """
+NONE. No rule, no small type, no signature; blank paper below line 337.
+No square brackets on the page.
+"""
+
+[extraction]
+status = "keyed from the plate, UNVERIFIED: of ~130 word-slots, roughly 71 keyed as confident, 5 keyed and flagged ⟨?word⟩, the rest inside ⟨?…⟩ gaps. No line wholly unread. No Syriac-reading control exists for this piece."
+reason = """
+Second-best page of the shard, for the same reason as p. 101: two rubrics, two opening
+formulas, and a Malachi Life built out of the vocabulary this pass reads well
+(ܡܠܐܟܐ / ܡܠܐܟܝ / ܗܘܐ / ܐܝܟ / ܒܝܘ̈ܡܬܐ / ܛܠܝܐ). Lines 321, 323, 324, 328, 331, 332 and 335
+came out complete. See c098-1.toml [extraction] for the method.
+"""
+
+[alignment]
+status = "keyed from the plate (partial); sense-checked against Schermann 1907 (Latin capitulum of Sinai Syr. 10)"
+diff = """
+⭐ CONFIRMED, and it is the strongest single hit of the shard: line 331,
+`ܢܬܢ ܢܒܝܐ ܕܕܘܝܕ ܐܝܬܘܗܝ ܗܘܐ ܡܢ ܓܒܥܘܢ ܂` — 'Nathan the prophet of David was from Gibeon' —
+against Schermann IV: 'Nathan ex Gabaon, et mortuus est ac sepultus in Gabaon in diebus
+Roboam regis.' Both the name and the place agree, and `ܓܒܥܘܢ` was read letter by letter from
+the plate before the capitulum was opened. A place-name agreement is worth more than a tribe
+agreement here, because tribes repeat (three Simeons in a row on pp. 99-100) and place-names
+do not.
+⭐ ORDER DIVERGENCE, recorded as a finding: in Nestle's Syriac, Nathan comes AFTER Malachi
+(line 330, i.e. the twelve first, then the non-writing prophets). In Schermann's Sinai
+capitulum, Nathan is IV — near the front, after Moses, Samuel and David — and Malachi is last.
+So the two recensions order the same material in opposite blocks. ⛔ The capitulum can register
+that and cannot explain it.
+⚠ NOT CONFIRMED: the capitulum has no counterpart for anything in Malachi's Life here beyond
+'Malachias autem ex eis, qui ascenderant a Babylone, natus est' — which is consistent with
+line 319 (`ܡܠܐܟܝ ܗܘܐ ܒܬܪ ܦܘܢܝܐ ܐܬܝܠܕ`, 'Malachi was born after the return'), and that is a
+genuine SENSE agreement, but it is one clause against eleven lines. The angelic-appearance
+material (lines 322-325, ܡܠܐܟܐ / ܡܠܐܟܗ ܕܐܠܗܐ) and the Nathan-and-Satan episode (334-337) have
+no parallel in the control at all.
+
+UNCERTAIN READINGS: ⟨?ܒܣܘܦܐ⟩ (319) · ⟨?ܛܠܝܐ⟩ (320) · ⟨?ܘܡܟܝܟܐ⟩, ⟨?ܘܡܬܩܪܐ⟩ (322).
+⚠ Line 322's first word was read twice at different crops and came out once as ⟨?ܘܡܟܝܟܐ⟩ and
+once as ⟨?ܘܡܟܬܒܬܐ⟩; the sense of line 321 (`ܐܝܟ ܚܣܝܐ`, 'as a holy man') favours the former,
+but that is inference from context, not a plate reading, so the word stays flagged.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 102
+leaf = "n191"

@@ -1,0 +1,134 @@
+# R3 - Chrestomathia IV, "Historia inventionis sanctae crucis", printed page 131 (leaf n220).
+# ⛔ Syriac text NOT keyed on this page - see `transcription_note`. Everything else is extracted.
+id = "nestle-1889-en/r3/c131-1"
+record_type = "R3"
+
+work = "georgius-arbelensis:expositio-officiorum:1.24:historia-inventionis-crucis:3-cod-vat-syr-148:lines-73-92"
+work_note = """
+**Codex: cod. Vat. syr. 148 (a. Chr. 1267)** - Nestle's sub-head is `3) e Cod. Vat. syr. 148
+(a. Chr. 1267).`, and under it a second bracketed line that changes what this sub-piece IS:
+`[ex explanatione officiorum ecclesiasticorum a Georgio Arbelensi conscripta.] (I, 24.)`.
+⭐ So IV.3 is **not a third recension of the legend**: it is an excerpt from George of Arbela's
+*Expositio officiorum ecclesiae*, book I ch. 24, which quotes the Finding of the Cross. Nestle
+changed WORKS here, not merely witnesses - a bigger version of Chrest. I's switch to cod.
+Ambrosianus, and the reason `work` for these five pages names George of Arbela.
+IV.3 = 92 lines over pp. 127-131. **No folio markers at all** - Nestle cites Vat. syr. 148 by
+neither folio nor column anywhere in the five pages; the only apparatus is his own footnotes and
+in-text parentheses, both of which IV.1 and IV.2 entirely lack.
+⭐ **IV.3, Chrestomathia IV, and the whole Chrestomathia end on this page**, at line 92. The last line is short and is followed by a centred rule and the gathering signature `I*`.
+⚑ De sancta cruce does NOT contain this sub-piece, so nothing here is affected by Nestle's
+corrigenda in that book (which in any case belong to a different manuscript altogether - see the
+IV.1/IV.2 records).
+"""
+
+layer = "unvocalized Serto, with seyame and the diacritic/enclitic points; no vowel sign anywhere"
+layer_source = "read from the plate (leaf n220), per page as ruled - not inherited from the section default"
+layer_note = """
+Declared from this plate, not from Phase 0's note and not from the neighbouring page. The whole of
+Chrestomathia IV - all 24 pages, all three codices - sits at the **unvocalized-Serto pole and never
+leaves it**: not one vowel point on any page. What the plates do carry is seyame on plurals, the
+letter points (dalath/rish, and the qushshaya/rukkakha and participle points), a linea occultans
+over elided letters, and the ܂ / ܆ / ❖ punctuation.
+⭐ So Chrest. IV settles the layer table's third case. Chrest. I alternates by caput (Serto /
+Estrangela / Serto / Estrangela) and puts two layers on three pages; Chrest. II is unvocalized
+Estrangela throughout; **Chrest. IV is unvocalized SERTO throughout** - the same vocalisation state
+as Chrest. II but the other script. Script and pointing are two independent axes and this piece is
+the proof; a `layer` field that treats them as one string will keep colliding.
+"""
+diff_target = "NONE - see [alignment].diff. De sancta cruce contains only sub-pieces 1) and 2) of section B; there is no `3)` in it and the strings 'Vat', '148' and '1267' do not occur in `desanctacruceein0000nest_djvu.txt` at all. Chrestomathia IV.3 is the one part of Chrest. IV with NO control of any strength. See research/syriac-peshitta-editions.md"
+layer_source_note = "seyame and the letter points are visible at the plate's own resolution and are reported; individual qushshaya/rukkakha points are NOT itemised (below the resolution at which this pass can be honest about them - a known gap, not a claim the plate lacks them)."
+seyame = true
+lines_per_page = 20
+line_numbers = """
+Marginal, every fifth line, in the OUTER margin (left on versos, right on rectos) - verified on this
+plate. ⭐ The numbering is **per sub-piece and restarts at each codex**: IV.1 runs 1-101, IV.2
+restarts at 1 and runs to 274, IV.3 restarts at 1 and runs to 92. A reader who takes the marginals
+as one series across Chrest. IV will mis-locate every line from p. 113 on.
+This page: 75, 80, 85, 90 - RIGHT margin (recto, outer). Line range 73-92.
+⚑ Page line-ranges here are derived from the PRINTED marginals, not from a row count: on each page
+a marginal numeral pins one row to an absolute line number, and the next page's first marginal pins
+the page's last line. Every boundary in pp. 108-131 closes without a gap or an overlap.
+"""
+page_number_form = "Syriac numeral letters, centred at head - no arabic number printed (as everywhere in the Chrestomathia)"
+
+transcription_note = """
+⛔ DELIBERATE NON-TRANSCRIPTION, not a failed plate fetch. Reasons, in order:
+
+1. **Unvocalized Serto carrying an unknown text.** R3(a) worked because it keyed texts it already
+   knew (Genesis, Matt. 5) and then checked them, and because Chrest. I is VOCALIZED Serto, where
+   the points disambiguate the skeleton. Chrest. IV is unvocalized Serto carrying a legend for which
+   no digital edition exists anywhere (ruled 2026-09-01, research/syriac-peshitta-editions.md).
+   Nothing primes the read; every word is a cold glyph-by-glyph decision.
+2. **The master scan is 1586 x 2512 px.** Checked 2026-09-01: `page/nNNN.jpg`, the same URL with
+   `?scale=0/1/2`, and the `_jp2.zip` member all return that identical size, so there is no
+   higher-resolution copy of this scan to escalate to. Serto pairs that differ by one hook or one
+   dot (dalath/rish, the yud/shin/semkath peaks, medial nun vs. lamadh vs. alaph) sit at the edge of
+   it; past ~2.5x the enlargement is interpolation, not information.
+3. **The house rule forbids the alternative.** [[reference_arabic-control-rule]] and
+   SYRIAC-LANGUAGE-PILOT.md §5/§8: never read codepoints by eye; an extractor that is unsure flags
+   rather than extracting "to be safe". A confidently wrong Syriac line is worse than a blank one.
+4. **Keying from the diff target would poison the diff.** De sancta cruce is the clearer of the two
+   settings (1726 px scan, larger type on the page). Keying from IT and then "diffing" against the
+   Grammatik would make the agreement an artefact of the method - the circularity R3(a) refused when
+   it declined to peek at BFBS for Matt. 5:5.
+
+⭐ What is owed here is a reader with Syriac, or a Serto-trained HTR model, working from De sancta
+cruce and the Grammatik side by side. Everything else in this record - line numbering, the
+folio/column collation, the codex boundaries, the footnote apparatus, the De sancta cruce
+line-for-line correspondence, the corrigenda ruling - is done and does not need redoing.
+"""
+
+text_syr_voc = """
+⛔ NOT READ - the Syriac of this page is deliberately not transcribed (see `transcription_note`).
+The line inventory below is what the plate does license: one entry per printed line, with the line's
+number in the piece's own marginal series and anything on that line that is not Syriac.
+
+Line inventory:
+  line 75: marginal numeral `75` printed
+  line 80: marginal numeral `80` printed
+  line 85: marginal numeral `85` printed
+  line 90: marginal numeral `90` printed
+"""
+
+primer_notes = """
+⭐ Chrest. IV.3 is the ONLY part of Chrest. IV that carries Nestle's own footnotes - IV.1 and
+IV.2 (pp. 108-126) have none at all. They are set below a short rule at the foot of the page, keyed
+by superscript Latin letters in the text, and they are codicological notes on Vat. syr. 148 rather
+than textual variants. IV.3 also carries editorial parentheses INSIDE the Syriac line - `(corr. …)`
+and bare `(…)` supplements - which the other two sub-pieces never use.
+⚑ The line numbers given for the in-text sigla in the inventory are read off row positions and are
+good to about ±1; the footnote TEXT below is read directly and is exact.
+
+NONE. The page ends with a short centred rule and the gathering signature `I*`. Chrestomathia IV -
+and with it the whole Chrestomathia - closes here; p. 132 begins *Menses anni syriaci*.
+"""
+
+[alignment]
+status = "⛔ Syriac not keyed (see transcription_note) - and for this sub-piece there is no diff target to align to at all. See diff_target."
+diff = """
+⛔ **Chrest. IV.3 is UNCONTROLLED.** De sancta cruce - the character-level target for IV.1 and
+IV.2 - does not contain this text: its section B has exactly two sub-pieces (paris. 234 and
+Add. 14,644), and 'Vat', '148' and '1267' do not occur anywhere in the volume (full-text search of
+`desanctacruceein0000nest_djvu.txt`). research/syriac-peshitta-editions.md's strength table needs a
+row below its weakest: IV.1/IV.2 = character-level but not independent; Chrest. III = sense-level
+via Latin; **IV.3 = no control.**
+
+⭐ But IV.3 is the one sub-piece whose source Nestle NAMES, and that is a lead: the bracketed line
+under the sub-head reads `[ex explanatione officiorum ecclesiasticorum a Georgio Arbelensi
+conscripta.] (I, 24.)`. So this is **not a third recension of the legend at all** - it is an excerpt
+from a different work, George of Arbela's *Expositio officiorum ecclesiae*, book I ch. 24, which
+quotes the Finding of the Cross. (Nestle's own bibliography cites him for it: "B. O. III, 1. 1:725.
+Georgius Arbel. Kreuzauffindung".) An edition exists - R. H. Connolly, CSCO Script. Syri, 1911-15 -
+but it is NOT on the Phase 0 pinned shelf and its licence is unchecked, so nothing is claimed
+against it here. ⚑ Whoever pins it should note that it would be the only genuinely INDEPENDENT
+witness anywhere in Chrest. IV, i.e. a textual control rather than a transcription one.
+
+⚑ The `work` field records this as a George-of-Arbela excerpt, not as "recension 3". Filing it
+under the legend alone would lose the fact that Nestle changed WORKS here, not just witnesses -
+the same class of thing as Genesis 4 switching to cod. Ambrosianus in Chrest. I, but larger.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 131
+leaf = "n220"

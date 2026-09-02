@@ -1,0 +1,80 @@
+# R3 — Chrestomathia II, Matt. 5, page 3 of 7.
+id = "nestle-1889-en/r3/c081-1"
+record_type = "R3"
+
+work = "peshitta:matt:5:17-22"
+work_note = """
+Opens mid-verse 17 (continued from p. 80) and breaks off mid-verse 22, which finishes on
+p. 82. Lines 29-43 of the continuous numbering; marginal numerals 30, 35, 40. The printer's
+signature `F` and the catchword `Nestle.` stand at the foot.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic/enclitic points"
+layer_source = "read from the plate"
+diff_target = "THE NEW TESTAMENT IN SYRIAC, BFBS London 1905-1920 — archive.org `newtestamentinsy00unse`, title page verified at n6. PD. Critical edition behind it: Pusey & Gwilliam, Tetraeuangelium sanctum, Clarendon 1901 (`tetraeuangeliums00puseuoft`). See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 15
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+page_number_read = "ܦܐ = 81"
+transcription_note = "Conventions as declared in c079-1.toml. Letter-level qushshaya/rukkakha points not transcribed — known gap. The participle point on ܐܡ̇ܪ IS transcribed where the plate shows it clearly, because it is lexically load-bearing (participle vs. perfect)."
+
+text_syr_voc = """
+ܢܒܝ̈ܐ ܂ ܠܐ ܐܬܝ̄ܬ ܕܐܫܪܐ ܆ ܐܠܐ ܕܐܡܠܐ ܀
+ܐܡܝܢ ܓܝܪ ܐܡ̇ܪ ܐ̄ܢܐ ܠܟܘܢ ܆ ܕܥܕܡܐ
+ܕܢܥܒܪܘܢ ܫܡܝܐ ܘܐܪܥܐ ܆ ܝܘܕ ܚܕܐ ܐܘ ܚܕ
+ܣܪܛܐ ܠܐ ܢܥܒܪ ܡܢ ܢܡܘܣܐ ܥܕܡܐ ܕܟܠ
+ܢܗܘܐ ܀ ܟܠܡܢ ܗܟܝܠ ܕܢܫܪܐ ܚܕ ܡܢ ܦܘܩܕܢܐ
+ܗܠܝܢ ܙܥܘܪ̈ܐ ܆ ܘܢܠܦ ܗܟܢܐ ܠܒܢܝ̈ܢܫܐ ܆ ܒܨܝܪܐ
+ܢܬܩܪܐ ܒܡܠܟܘܬܐ ܕܫܡܝܐ ܂ ܟܠ ܕܝܢ ܕܢܥܒܕ ܘܢܠܦ
+ܗܟܢܐ ܪܒܐ ܢܬܩܪܐ ܒܡܠܟܘܬܐ ܕܫܡܝܐ ܀ ܐܡ̇ܪ
+ܐ̄ܢܐ ܠܟܘܢ ܓܝܪ ܆ ܕܐܢ ܠܐ ܬܐܬܪ ܟܐܢܘܬܟܘܢ
+ܝܬܝܪ ܡܢ ܕܣܦܪ̈ܐ ܘܦܪ̈ܝܫܐ ܆ ܠܐ ܬܥܠܘܢ
+ܠܡܠܟܘܬܐ ܕܫܡܝܐ ܂ ܫܡܥܬܘܢ ܕܐܬܐܡ̄ܪ
+ܠܩܕܡ̈ܝܐ ܆ ܠܐ ܬܩܛܘܠ ܆ ܘܟܠ ܕܢܩܛܘܠ ܡܬܚܝܒ
+ܗ̄ܘ ܠܕܝܢܐ ܀ ܐܢܐ ܕܝܢ ܐܡ̇ܪ ܐ̄ܢܐ ܠܟܘܢ ܆
+ܕܟܠ ܡܢ ܕܢܪܓܙ ܥܠ ܐܚܘܗܝ ܐܝܩܐ ܆ ܡܬܚܝܒ ܗ̄ܘ
+ܠܕܝܢܐ ܂ ܘܟܠ ܕܢܐܡܪ ܠܐܚܘܗܝ ܪܩܐ ܆ ܡܬܚܝܒ
+"""
+
+verse_line_index = """
+v.17 continues into line 29 · v.18 line 30 · v.19 line 33 · v.20 line 36 (last word) ·
+v.21 line 39 (last two words) · v.22 line 41.
+Marginal line numerals at 30, 35, 40.
+"""
+
+primer_notes = "None."
+
+uncertain = """
+⚑ Line 33, `ܟܠܡܢ ܗܟܝܠ ܕܢܫܪܐ`. Two things here, one settled and one not.
+· SETTLED, and it is a genuine observation about the setting: ܟܠܡܢ is printed SOLID, as one
+  word, not as ܟܠ ܡܢ. Read at 8x on a dedicated crop. The same page prints ܟܠ ܕܝܢ separately
+  at line 35, so the solid form is a choice, not a spacing artefact.
+· NOT SETTLED: the order of ܗܟܝܠ and ܕܢܫܪܐ. Three reads of this line at 3x, 5x and 8x gave the
+  sequence ܟܠܡܢ ܗܟܝܠ ܕܢܫܪܐ twice and ܟܠܡܢ ܕܢܫܪܐ ܗܟܝܠ once. The majority reading is what is
+  recorded above. ⛔ It is recorded as UNCERTAIN and was NOT decided by asking what the verse
+  "should" say. A second reader with the plate should settle it before this line is shipped.
+"""
+
+[alignment]
+status = "keyed from Nestle; checked against BFBS 1905-1920 at leaf n16 (printed p. 5, vv. 9-21) and n16 verso band (vv. 22-28)"
+diff = """
+AGREEMENT: verse division 17-22; the consonantal sequence of vv. 17-18 and 20-22 as far as the
+control carries; seyame on ܢܒܝ̈ܐ, ܙܥܘܪ̈ܐ, ܠܒܢܝ̈ܢܫܐ, ܕܣܦܪ̈ܐ, ܘܦܪ̈ܝܫܐ, ܠܩܕܡ̈ܝܐ.
+
+⭐ v. 22 `ܐܝܩܐ` IS PRESENT in Nestle (`ܕܢܪܓܙ ܥܠ ܐܚܘܗܝ ܐܝܩܐ`) and is present in the BFBS text
+as well. Worth recording because this is the word (Gk. εἰκῇ) that the Greek tradition divides
+over; both PD Syriac witnesses here keep it, so the agreement is informative rather than
+trivial.
+
+OPEN, carried forward: the ܗܟܝܠ / ܕܢܫܪܐ order at line 33 (see `uncertain`). The control was
+not consulted to break that tie — deliberately, because using the diff target to settle a
+plate reading and then reporting agreement would be circular.
+
+NOT CHECKED: v. 19's word order in BFBS at the same point, for the same reason.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 81
+leaf = "n170"
+signature = "F (foot, with catchword `Nestle.`)"

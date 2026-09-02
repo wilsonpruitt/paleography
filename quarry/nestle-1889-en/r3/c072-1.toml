@@ -1,0 +1,73 @@
+id = "nestle-1889-en/r3/c072-1"
+record_type = "R3"
+
+work = "peshitta:gen:2:14-20"
+work_note = """
+Chrestomathia I, Caput II. Lines 27–41; marginal 30, 35, 40. Verse numerals 14–20. Breaks
+mid-verse 20, after ܘܠܟܠܗ ܦܪܚܬܐ ܕܫܡܝܐ.
+"""
+
+layer = "unvocalized Estrangela"
+layer_note = """
+Unvocalized Estrangela with seyame and diacritic points; no vowel signs.
+"""
+diff_target = "Barnes, PENTATEUCHUS SYRIACE (post Samuelem Lee), BFBS London 1914 — archive.org `ktavadeauritaauk00lees`, title page verified at n6. PD. ⭐ PAGINATION CALIBRATED THIS PASS: printed page = leaf − 9 (n10 = p. 1, Gen 1:1–13, signature B; n11 = p. 2, running head `ܣܦܪܐ ܕܒܪܝܬܐ` + `I. 14—28`; agreement on two independent pages, per MAP.md's own method). Barnes prints unvocalized Estrangela with seyame and diacritic points, verse numbers in the outer margin against the line on which a verse opens, `*` as verse divider and `❖` at the close of a paragraph. See research/syriac-peshitta-editions.md"
+layer_source = "read from the plate"
+seyame = true
+lines_per_page = 15
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+line_numbers = "marginal, every 5, in the OUTER margin (right on rectos, left on versos); numbering RESTARTS at each Caput"
+transcription_method = """
+Read from the plate, line by line, off 3.0–5.5x crops cut by horizontal projection (one strip
+per 2–4 printed lines); the 1.75x half-crops of tools/quarry_fetch.sh are NOT sufficient for
+pointed Serto and were used only for orientation. Consonantal skeleton, seyame, word division,
+punctuation, verse numerals, marginal line numerals and square-bracket supplements are read
+directly. ⚠ HONEST LIMIT, per the never-read-codepoints-by-eye rule: the West-Syriac vowel
+points are legible AS SHAPES at this resolution (zqofo prints as a small circle, ptoho as an
+open triangle, and so on — calibrated on ܐܰܠܳܗܳܐ, which recurs on every page), but the finest
+layer — rukkakha/qushshaya bars, the ܗ̇ point, linea occultans — is recorded where seen and is
+not warranted point-by-point. The vocalisation below is therefore a plate reading at the
+word level, not a certified diacritic-level edition; a blind control on a sample
+([[reference_arabic-control-rule]]) is still owed before this text is shipped.
+"""
+
+text_syr_voc = """
+¹⁴ ܘܫܡܗ ܕܢܗܪܐ ܕܬܠܬܐ ܕܩܠܬ: ܗܘ ܕܐܙܠ
+ܠܘܩܒܠ ܐܬܘܪ. ܘܢܗܪܐ ܕܐܪܒܥܐ ܗܘ ܦܪܬ ❖ ¹⁵ ܘܕܒܪܗ
+ܡܪܝܐ ܐܠܗܐ ܠܐܕܡ ܘܐܫܪܝܗ ܒܦܪܕܝܣܐ ܕܥܕܢ:
+ܕܢܦܠܚܝܘܗܝ ܘܕܢܛܪܝܘܗܝ. ¹⁶ ܘܦܩܕܗ ܡܪܝܐ ܐܠܗܐ
+ܠܐܕܡ ܘܐܡܪ ܠܗ: ܡܢ ܟܠܗܘܢ ܐܝܠܢ̈ܐ ܕܒܦܪܕܝܣܐ
+ܡܐܟܠ ܬܐܟܘܠ: ¹⁷ ܘܡܢ ܐܝܠܢܐ ܕܝܕܥܬܐ ܕܛܒܬܐ
+ܘܕܒܝܫܬܐ ܠܐ ܬܐܟܘܠ ܡܢܗ. ܡܛܠ ܕܒܝܘܡܐ
+ܕܬܐܟܘܠ ܡܢܗ ܡܘܬܐ ܬܡܘܬ. ¹⁸ ܘܐܡܪ ܡܪܝܐ
+ܐܠܗܐ: ܠܐ ܫܦܝܪ ܕܢܗܘܐ ܐܕܡ ܒܠܚܘܕܘܗܝ.
+ܐܥܒܕ ܠܗ ܡܥܕܪܢܐ ܐܟܘܬܗ. ¹⁹ ܘܓܒܠ ܡܪܝܐ
+ܐܠܗܐ ܡܢ ܐܪܥܐ ܟܠܗ ܚܝܘܬܐ ܕܕܒܪܐ: ܘܟܠܗ
+ܦܪܚܬܐ ܕܫܡܝܐ: ܘܐܝܬܝ ܐܢܘܢ ܠܘܬ ܐܕܡ
+ܕܢܚܙܐ ܡܢܐ ܩܪܐ ܠܗܘܢ: ܘܟܠ ܕܩܪܐ ܗܘܐ ܠܗܘܢ
+ܐܕܡ ܢܦܫܐ ܚܝܬܐ ܗܘ ܗܘ ܫܡܗ. ²⁰ ܘܩܪܐ ܐܕܡ
+ܫܡܗ̈ܐ ܠܟܠܗ ܒܥܝܪܐ: ܘܠܟܠܗ ܦܪܚܬܐ ܕܫܡܝܐ:
+"""
+
+primer_notes = """
+No footnotes; no bracketed supplements on this page.
+"""
+
+[alignment]
+status = "keyed from Nestle; checked against Barnes 1914"
+diff = """
+⭐ CHECKED against Barnes pp. 3–4 (leaves n12–n13).
+
+AGREEMENT, again including every proper name — ܕܩܠܬ · ܐܬܘܪ · ܦܪܬ · ܥܕܢ — and the two
+constructions most exposed to a bad plate reading: the infinitive absolute ܡܐܟܠ ܬܐܟܘܠ and
+ܡܘܬܐ ܬܡܘܬ, both of which Barnes has identically. Also ܡܥܕܪܢܐ ܐܟܘܬܗ · ܒܠܚܘܕܘܗܝ ·
+ܕܢܦܠܚܝܘܗܝ ܘܕܢܛܪܝܘܗܝ.
+
+No divergence of any kind was found on this page — text, word division, seyame or verse
+numbering. ✅ This is the cleanest page in the slice.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 72
+leaf = "n161"

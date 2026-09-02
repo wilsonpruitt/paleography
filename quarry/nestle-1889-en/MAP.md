@@ -82,9 +82,66 @@ Greek etymon, Hebrew cognate (`h.`), Nestorian variant (`nest.`). Sub-lemmas fol
 Phase 0 recorded the chrestomathy as *unvocalized Estrangela* from the n180 probe. On the plates
 it is **mixed, and the mix is pedagogical**: n156 (Genesis, p. 67) opens in **fully vocalized
 Serto**; by n160 (p. 71) the same Genesis text is running in **unvocalized Estrangela** with
-seyame and diacritic points. Nestle ramps the reader off the vowels and off Serto inside one
-passage. ⛔ **Declare the layer per record from the plate — the section default is wrong for
-this section.** (Good news for the Estrangela-leads ruling: Nestle supplies both faces.)
+seyame and diacritic points. ⛔ **Declare the layer per record from the plate — the section
+default is wrong for this section.** (Good news for the Estrangela-leads ruling: Nestle
+supplies both faces.)
+
+⭐ **CORRECTED 2026-09-01 by the R3(a) Genesis run (records `r3/c067-1` … `r3/c078-1`).** The
+sentence above got the *fact* right and the *shape* wrong. It is **not a one-way ramp** off
+Serto: within Chrestomathia I the script **alternates with the CAPUT**, and it alternates back.
+
+| Caput | pp. | leaves | layer |
+|---|---|---|---|
+| I (Gen 1) | 67–70 | n156–n159 | **vocalized Serto** |
+| II (Gen 2) | 70–73 | n159–n162 | **unvocalized Estrangela** |
+| III (Gen 3) | 73–76 | n162–n165 | **vocalized Serto** |
+| IV (Gen 4) | 76–78 | n165–n167 | **unvocalized Estrangela** |
+
+Consequences a later session must not rediscover:
+1. **Three pages carry BOTH layers** — 70, 73 and 76 — because the seam is a chapter head, not
+   a page break. `layer` on those records is a compound string and the sections are marked
+   inside `text_syr_voc`. A schema that assumes one layer per page is wrong for this piece.
+2. **Line numbering restarts at every Caput**, and the marginal numeral sits in the OUTER
+   margin (right on rectos, left on versos). Caput I runs 1–55, II 1–52, III 1–45, IV 1–51.
+   ⛔ A reader who takes the marginals as a single series across the piece will mis-locate
+   every line from p. 70 on.
+3. **A full chrestomathy page is 20 lines**, not 15; short pages are short because a heading
+   or a chapter seam eats the space.
+
+⭐ **Chrestomathia I, Caput IV is from a DIFFERENT WITNESS.** Nestle prints under the head:
+`CAPUT IV. (Secundum codicem Ambrosianum seculi fere sexti.)` — Genesis 4 is set from the
+Ambrosian codex, not from the base text of chs. 1–3. So for pp. 76–78 a diff against Barnes
+compares two witnesses, and a divergence there is a fact about the manuscript tradition, never
+a defect in the extraction. (Measured: they agree anyway, almost word for word.)
+
+⚑ **Nestle's square brackets in this piece mark HIS EXEMPLAR'S gaps, not textual doubt.** Six
+instances across pp. 70–78 (`[ܐܦܝ̈]`, `[ܠ]`, `[ܠܗ]`, `[ܝ]`, `[ܘ]`, `[ܡܢ ܬܡܢ]`, and once a
+supplied punctuation point `[.]`). Every one of them is printed plain and unbracketed in
+Barnes. Do not present them to a learner as a variant.
+
+⭐ **CORRECTED 2026-09-01 by the R3(a) Matthew 5 run (records `r3/c079-1` … `r3/c085-1`).**
+**Chrestomathia II (pp. 79–85) is unvocalized Estrangela on all seven pages — no vowel sign
+anywhere.** Unlike Chrest. I it does not alternate; it sits at the Estrangela pole throughout,
+with seyame, letter points, and a linea occultans over the elided letter of the enclitics
+(ܗܘܐ, ܗܝ, ܗܘ, ܐܢܐ, ܐܢܬ, ܐܢܬܘܢ, ܐܬܝܬ, ܐܬܐܡܪ, ܡܕܝܢܬܐ) as the only marks. It also carries a
+**continuous marginal line-numbering 1–100 across all seven pages** (not restarting per page
+the way Chrest. I restarts per Caput) and **no philological footnotes at all**, unlike
+Chrest. IV. ⚠ Trap: the superscript `40` at p. 84 line 82 is a *verse* number sitting near the
+margin and reads as a line number on a quick glance.
+
+⛔ **A diff between differently-vocalized witnesses is a consonantal diff only.** Chrest. II
+(unvocalized) against the BFBS 1905–1920 New Testament (also unvocalized in the base text
+used) checks consonants, seyame and numbering — not one vowel point. "Vocalisation outranks
+the sense" in the pilot's QA rule presupposes both sides are pointed; it silently does not
+apply here. Chrest. I against Barnes 1914 (§ above) is the stronger half of R3(a) for a
+pointing check precisely because both are vocalized.
+
+**BFBS *New Testament in Syriac* (`newtestamentinsy00unse`) leaf offset, calibrated 2026-09-01:
+leaf = printed page + 11**, fixed on four agreeing pages (n12=p.1 Cap. i; n14=p.3 head
+`ܡܬܝ ܓ`; n15=p.4 rubric `Cap. v.`; n18=p.7 head `ܡܬܝ ܘ` carrying Matt 6:9–15). ⚠ This scan's
+own `_hocr_pageindex.json` does **not** map one segment to one leaf cleanly — same class of
+defect as the `_page_numbers.json` trap already noted for the Nestle scan itself; don't trust
+it as the pagination authority.
 
 Glossary and grammar are vocalized Serto as recorded. p. 132 (Menses) is vocalized Serto.
 
@@ -126,6 +183,22 @@ Glossary and grammar are vocalized Serto as recorded. p. 132 (Menses) is vocaliz
 
 Both fold back into `SYRIAC-LANGUAGE-PILOT.md` §2 at the G1 gate.
 
+## Barnes 1914, the Genesis diff target — pagination calibrated 2026-09-01
+
+`ktavadeauritaauk00lees`, 416 leaves. **printed page = leaf − 9.** Two independent agreements,
+the same method this map used for Nestle: n10 = p. 1 (Gen 1:1–13, signature `B` at the foot,
+Syriac title page at n10's head is actually n10's predecessor n9/n10 pair — the *text* starts
+n10) and n11 = p. 2 (running head `ܣܦܪܐ ܕܒܪܝܬܐ` with `I. 14—28` in the outer corner; every
+subsequent page carries the same chapter-and-verse running head, which makes the offset
+self-checking). Genesis 1–4 = leaves **n10–n17**. Barnes prints unvocalized Estrangela with
+seyame, verse numbers in the outer margin against the line on which a verse opens, `*` between
+verses and `❖` at a paragraph close.
+
+⛔ Consequence for the R3 method: **Barnes can check the consonantal text, the seyame and the
+verse numbering, and it cannot check a single vowel.** On the Serto pages (67–70, 73–76) the
+pointing rests on the plate read alone and still owes a blind control on a sample. On the
+Estrangela pages the diff is like-for-like and is the strongest check anywhere in R3(a).
+
 ## Model records
 
 Copy these shapes; do not re-derive them from the schema prose.
@@ -135,8 +208,9 @@ Copy these shapes; do not re-derive them from the schema prose.
 | R1, big paradigm | `r1/p044-1.toml` | landscape-plate handling; `uncertain` on a cell, not the file |
 | R1, split on category | `r1/p023-1.toml` + `r1/p023-2.toml` | one printed page → two records, because the enclitics are a different category and are not even a table |
 | R1, lexical table | `r1/p132-1.toml` | the `kind = "lexical-table"` qualifier, and Nestle's own brackets |
-| R3, keyed | `r3/c070-1.toml` | layer + `transliteration_primer` + the schema-gap note |
-| R3, identified but not keyed | `r3/c067-1.toml`, `r3/c087-1.toml` | `[extraction] status/reason` — the honest shape when alignment is impossible |
+| R3, keyed + independently diffed | `r3/c067-1.toml`, `r3/c079-1.toml` | full `text_syr_voc` + `[alignment].diff` against a PD edition the passage's CONTENT was already known from |
+| R3, keyed cold, partial | `r3/c087-1.toml` | word-slot segmentation + contact-sheet tiling; confident vs. flagged readings side by side, unread lines marked, nothing invented |
+| R3, structural only, text NOT READ | `r3/c108-1.toml` | the honest ceiling: full provenance/witness/layer capture with `text_syr_voc` left unkeyed rather than guessed, per `reference_arabic-control-rule` |
 | R4 | `r4/g171-neshab.toml` | lemma/pos/gloss pair, `sub_lemmas`, empty `frequency_rank` |
 
 ⛔ **TOML ordering trap, paid for once:** put every top-level key BEFORE the `[source]` table.
@@ -144,7 +218,30 @@ A bare key written after a table header belongs to that table, so `lexeme = …`
 `[source]` silently becomes `source.lexeme` and the file still parses. Every model file above
 has `[source]` last.
 
+## R3 — RUN COMPLETE 2026-09-01, 65 pages + the Lord's Prayer, yield is NOT uniform
+
+Full detail and the reasoning behind each finding → `SYRIAC-LANGUAGE-PILOT.md` §7a
+("R3(a) part 1/2", "R3(b) part 1/2"). Census, for anyone sizing a lesson before reading that:
+
+| Piece | pp. | pages | text yield | control strength |
+|---|---|---|---|---|
+| Lord's Prayer | 70–72 | 1 record | **fully keyed + diffed** | independent PD (BFBS) |
+| Chrest. I, Genesis 1-4 | 67–78 | 12 | **fully keyed + diffed** | independent PD (Barnes 1914) |
+| Chrest. II, Matthew 5 | 79–85 | 7 | **fully keyed + diffed** | independent PD (BFBS) |
+| Chrest. III, Vitae Prophetarum | 86–107 | 22 | **~37% confidence-weighted** (250/435 lines read, 104 confident) | sense-only, Latin (Schermann) |
+| Chrest. IV, Historia inventionis | 108–131 | 24 | **0% — text NOT READ, structural fields only** | self-diff only, not independent (Nestle's own De sancta cruce) |
+
+⛔ **Read this before scoping a lesson (§6):** only the first 20 pages (Lord's Prayer + Genesis
++ Matthew) are lesson-ready real text with an independent check behind them. That alone clears
+§6's "ten lessons" bar. Vitae Prophetarum and Historia inventionis are not a smaller version of
+the same task — they are a different, currently-open problem (unknown text, no digital edition,
+unvocalized) needing a Syriacist seat or a Serto HTR pass before their `text_syr_voc` can be
+trusted at scale, not more of the same extraction effort.
+
 ## Measured cost and the full-run estimate
 
 → `research/syriac-pilot-phase1-calibration.md`. Headline: **4.7k vision + 1.5k output tokens
-per page measured over 8 pages; 201 pages ⇒ ~1.43M tokens irreducible I/O.**
+per page measured over 8 pages; 201 pages ⇒ ~1.43M tokens irreducible I/O.** ⚠ That estimate
+assumed uniform full-transcription yield across the chrestomathy; R3's actual run (above) shows
+the assumption held only for the 20 pages with known content behind them — the unknown-text
+pages cost roughly the same tokens for a fraction of the yield.

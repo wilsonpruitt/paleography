@@ -1,0 +1,99 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 16 of 22 (printed p. 101).
+# Keyed from the plate (n190). Shard C of the r3(b) run.
+id = "nestle-1889-en/r3/c101-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:zephaniah+haggai+zechariah"
+work_note = """
+Three Lives touch this page — the densest page of my shard.
+· lines 298-300  end of the Life of ZEPHANIAH, begun at p. 100 line 296. Closes at line 300
+                 with `܀`.
+· line 301       rubric `ܚܓܝ ܂` — HAGGAI (bare name, no ܢܒܝܐ)
+· lines 302-305  Life of HAGGAI, complete on this page. Four lines, closing at 305 with `܂`.
+· line 306       rubric `ܙܟܪܝܐ ܢܒܝܐ ܂` — ZECHARIAH the prophet
+· lines 307-317  Life of ZECHARIAH, closing at 317 with the short line `ܓܢܒ ܚܓܝ ܂`
+                 ("beside Haggai") — and the Life of Malachi opens on p. 102.
+⭐ Haggai's whole Life is four lines and both of them read cleanly; see text_syr_voc.
+⛔ No individual codex named.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+No vowel signs. Seyame present (ܕܥܡ̈ܡܐ 299, ܕܟܗ̈ܢܐ 305, ܕܢܒܝ̈ܐ 314). `܀` once, at line 300.
+Both ܂ and ܆ in use.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 20
+line_numbers = "300, 305, 310, 315 in the RIGHT (outer) margin — p. 101 is a recto — standing against printed lines 3, 8, 13 and 18. The page carries lines 298-317."
+page_number_form = "Syriac numeral letter, centred at head"
+page_number_read = "ܩܐ = 100 + 1 = 101, confirming leaf = page + 89 (n190)"
+transcription_note = """
+Conventions and flag forms exactly as in c098-1.toml: `⟨?ܟܟܟ⟩` = letters read but doubtful;
+`⟨?…⟩` = one or more words NOT read, nothing asserted about their letters.
+"""
+
+text_syr_voc = """
+ܡܢ ⟨?…⟩ ⟨?…⟩ ܂ ⟨?ܘܐܬܪܒܝ⟩ ܥܠ ܡܕܝܢܬܐ
+ܘܥܠ ܫܘܠܡܐ ܕܥܡ̈ܡܐ ܂ ܘܥܠ ⟨?…⟩ ⟨?ܕܪ̈ܝܫܐ⟩ ܂
+ܘܡܝܬ ܘܐܬܩܒܪ ⟨?…⟩ ܀
+ܚܓܝ ܂
+ܚܓܝ ܟܕ ܛܠܝܐ ܐܬܐ ܡܢ ܒܒܠ ܠܐܘܪܫܠܡ ܂
+⟨?…⟩ ܥܠ ܦܘܢܝܐ ܕܥܡܐ ⟨?…⟩ ܂ ܘܚܙܐ
+⟨?…⟩ ܕܒܢܝܢܐ ܕܗܝܟܠܐ ܂ ܘܟܕ ܡܝܬ ܐܬܩܒܪ ܥܠ
+ܓܢܒ ܩܒܪܐ ܕܟܗ̈ܢܐ ܒܬܫܒܘܚܬܐ ܐܟܘܬܗܘܢ ܂
+ܙܟܪܝܐ ܢܒܝܐ ܂
+ܙܟܪܝܐ ܐܬܐ ܡܢ ܒܝܬ ܟܠܕܝܐ ܟܕ ܗܘ ܥܠܝܡܐ ܂
+ܘܬܡܢ ⟨?…⟩ ܠܥܡܐ ܂ ⟨?ܐܬܘܬܐ⟩ ⟨?ܝܗܒ⟩
+ܠܬܚܘܝܬܐ ܂ ܗܢܐ ܐܡܪ ⟨?…⟩ ⟨?…⟩ ⟨?ܒܪܐ⟩ ܂
+ܘܒܐܘܪܫܠܡ ⟨?…⟩ ܗܘܐ ܂ ⟨?…⟩
+ܘܫܡܐ ⟨?…⟩ ܂ ܘܥܠ ⟨?…⟩ ܐܬܪܐ ⟨?…⟩
+ܕܙܕܝܩܘܬܐ ܂ ܘܥܠ ܬܫܡܫܬܗ ܩܕܡ ⟨?ܐܘܕܝܥ⟩ ܂ ܗܘ
+⟨?…⟩ ܒܐܘܪܫܠܡ ܂ ܘܥܠ ܚܙܬܐ ⟨?…⟩
+⟨?…⟩ ܘܕܗܝܡܢܘܬܐ ܆ ⟨?ܘܒܩܘܛܠܐ⟩ ܕܢܒܝ̈ܐ
+⟨?…⟩ ܂ ܘܥܠ ⟨?…⟩ ܂ ⟨?ܘܐܬܩܒܪ⟩
+ܘܡܝܬ ܒܣܝܒܘܬܐ ⟨?…⟩ ܂ ܘܐܬܩܒܪ ܥܠ
+ܓܢܒ ܚܓܝ ܂
+"""
+
+primer_notes = """
+NONE. No rule, no small type, no signature; blank paper below line 317.
+No square brackets on the page.
+"""
+
+[extraction]
+status = "keyed from the plate, UNVERIFIED: of ~130 word-slots, roughly 74 keyed as confident, 8 keyed and flagged ⟨?word⟩, the rest inside ⟨?…⟩ gaps. No line wholly unread. THE BEST-READ PAGE OF THIS SHARD. No Syriac-reading control exists for this piece."
+reason = """
+Lines 302, 304, 305 and 307 came out complete and coherent, and three of them are the kind of
+sentence that could only be right if the reading is right ('Haggai, while a boy, came from
+Babylon to Jerusalem'; 'beside the tomb of the priests, in glory like theirs'; 'Zechariah came
+from the land of the Chaldees while he was a young man'). That is the internal check available
+on this piece — the control cannot supply it. See c098-1.toml [extraction] for the method.
+"""
+
+[alignment]
+status = "keyed from the plate (partial); sense-checked against Schermann 1907 (Latin capitulum of Sinai Syr. 10)"
+diff = """
+⭐ SEQUENCE CONFIRMED as far as the capitulum runs: Zephaniah ends (300), Haggai (301),
+Zechariah (306) = capitulum XX Sophonias → XXI Aggaeus → … ⚠ AND THEN IT DIVERGES, and this is
+a real finding, not a mis-key. Schermann's capitulum gives XXI Aggaeus then XXII Ioel and then
+Malachias; it has NO Zechariah at all. Nestle's Syriac gives Haggai → ZECHARIAH → (p. 102)
+Malachi → Nathan. The Syriac recension Nestle prints therefore follows the canonical
+minor-prophet order (Haggai, Zechariah, Malachi) where the Sinai capitulum does not, and it
+continues past Malachi into the non-writing prophets (Nathan at line 330). ⛔ This is exactly
+the kind of divergence a summary-list control can register and cannot adjudicate: it tells us
+the two texts are not the same recension, nothing more.
+⭐ NOT CONFIRMED BY THE CONTROL BUT INTERNALLY COHERENT: line 317 buries Zechariah `ܓܢܒ ܚܓܝ`
+— 'beside Haggai' — which is the traditional account and which matches line 305's burial of
+Haggai 'beside the tomb of the priests'. The two lines corroborate each other inside the page.
+The capitulum says nothing about either burial.
+
+UNCERTAIN READINGS: ⟨?ܘܐܬܪܒܝ⟩ (298) · ⟨?ܕܪ̈ܝܫܐ⟩ (299) · ⟨?ܐܬܘܬܐ⟩, ⟨?ܝܗܒ⟩ (308) ·
+⟨?ܒܪܐ⟩ (309) · ⟨?ܐܘܕܝܥ⟩ (312) · ⟨?ܘܒܩܘܛܠܐ⟩ (314) · ⟨?ܘܐܬܩܒܪ⟩ (315).
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 101
+leaf = "n190"

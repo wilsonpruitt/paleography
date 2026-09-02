@@ -1,0 +1,95 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 15 of 22 (printed p. 100).
+# Keyed from the plate (n189). Shard C of the r3(b) run.
+id = "nestle-1889-en/r3/c100-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:habakkuk+zephaniah"
+work_note = """
+· lines 278-295  the rest of the Life of HABAKKUK, begun at p. 99 line 270. It closes at
+                 line 295 with `܀` — the first four-dot diamond in my shard.
+· line 296       rubric `ܨܦܢܝܐ ܂` — ZEPHANIAH (the second-to-last line of the page)
+· line 297       the Life of Zephaniah opens, and runs on to p. 101.
+⚠ The line-295 close is a full-measure line ending in `܀`, NOT the short-indented-line pattern
+of pp. 99 and 102. So the Life-boundary cue is not one signal but two alternatives: EITHER a
+short last line + pause, OR a full line closed with `܀`. Both are followed by the one-word
+rubric. A short line on its own is only a paragraph break.
+⛔ No individual codex named.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+No vowel signs. Seyame present. `܀` occurs once, at line 295. Both ܂ and ܆ in use.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 20
+line_numbers = "280, 285, 290, 295 in the LEFT (outer) margin — p. 100 is a verso — standing against printed lines 3, 8, 13 and 18. The page carries lines 278-297."
+page_number_form = "Syriac numeral letter, centred at head"
+page_number_read = "ܩ = 100 (qoph alone), confirming leaf = page + 89 (n189)"
+transcription_note = """
+Conventions and flag forms exactly as in c098-1.toml: `⟨?ܟܟܟ⟩` = letters read but doubtful;
+`⟨?…⟩` = one or more words NOT read, nothing asserted about their letters.
+"""
+
+text_syr_voc = """
+ܟܕ ܕܝܢ ܫܡܥ ⟨?…⟩ ܆ ⟨?ܐܬܪ⟩ ⟨?…⟩ ܟܕ ⟨?ܐܡ̈ܪ⟩ ܆
+⟨?ܕܐܙܠ⟩ ܐܢܐ ܠܐܪܥܐ ܪܚܝܩܬܐ ܆ ܘܒܥܠܬ ⟨?…⟩
+ܐܢܐ ܂ ⟨?…⟩ ܕܝܢ ⟨?ܡܫܬܘܚܪ⟩ ܐܢܐ ⟨?…⟩ ⟨?ܠܘܬܗ⟩ ⟨?…⟩ ܂
+ܘܗܘܐ ⟨?…⟩ ܂ ⟨?…⟩
+⟨?…⟩ ܥܠ ⟨?…⟩ ܟܕ ⟨?…⟩ ܂ ⟨?…⟩ ܠܐ ⟨?ܐܡ̈ܪ⟩
+⟨?…⟩ ܕܝܢ ⟨?…⟩
+⟨?…⟩ ܒܟܠ ܂ ܘܡܝܬ ܘܩܒܪ ⟨?…⟩ ܬܪ̈ܬܝܢ ܫܢ̈ܝܢ ܕܦܘܢܝܐ ܂
+⟨?…⟩ ܕܠܗ ⟨?…⟩ ܂ ⟨?…⟩ ܕܝܢ
+ܐܬܪܐ ⟨?…⟩ ܆ ⟨?…⟩
+⟨?…⟩ ܬܫܒܘܚܬܗ ⟨?…⟩ ܂ ⟨?…⟩ ܫܘܠܡܗ
+⟨?ܕܗܝܟܠܐ⟩ ܩܕܝܡ ܐܡܪ ܂ ⟨?…⟩
+ܗܘܐ ܂ ⟨?…⟩ ܘܥܠ
+ܘܥܠ ⟨?…⟩ ⟨?ܕܬܪ̈ܝܗܘܢ⟩ ⟨?…⟩ ⟨?ܡܫܬܘܬܦܝܢ⟩ ܂
+ܘܠܐ ⟨?…⟩ ܂ ⟨?…⟩ ܕܝܢ ܡܢ ܠܡܕܒܪܐ
+⟨?…⟩ ܡܢ ܡܠܐܟܐ ܆ ܐܝܟܐ ܕܡܢ ⟨?ܒܪܝܫܝܬ⟩
+⟨?…⟩ ܂ ܘܟܠܗܘܢ ⟨?…⟩
+⟨?…⟩ ܒܚܪܬܐ ܂ ܡܛܠ ܕܢܚܘܪܘܢ ܠܐܝܠܝܢ ⟨?…⟩
+ܡܢ ⟨?…⟩ ܂ ܐܝܟ ܕܡܢ ⟨?ܒܪܝܫܝܬ⟩ ܀
+ܨܦܢܝܐ ܂
+ܨܦܢܝܐ ܡܢ ܫܒܛܐ ܐܝܬܘܗܝ ܗܘܐ ܕܫܡܥܘܢ ܂
+"""
+
+primer_notes = """
+NONE. No rule, no small type, no signature at the foot; blank paper below line 297.
+No square brackets on the page.
+"""
+
+[extraction]
+status = "keyed from the plate, UNVERIFIED: of ~125 word-slots, roughly 43 keyed as confident, 8 keyed and flagged ⟨?word⟩, the rest inside ⟨?…⟩ gaps. No line wholly unread. No Syriac-reading control exists for this piece."
+reason = """
+The Habakkuk narrative on lines 278-295 is the hardest kind of material for this pass — first
+person speech, no formulas, several unfamiliar nouns. The two lines that read cleanly (284's
+`ܬܪ̈ܬܝܢ ܫܢ̈ܝܢ ܕܦܘܢܝܐ`, 297's tribe formula) are exactly the formulaic ones.
+See c098-1.toml [extraction] for method and for why flagged guesses were refused.
+"""
+
+[alignment]
+status = "keyed from the plate (partial); sense-checked against Schermann 1907 (Latin capitulum of Sinai Syr. 10)"
+diff = """
+⭐ CONFIRMED: line 297, `ܨܦܢܝܐ ܡܢ ܫܒܛܐ ܐܝܬܘܗܝ ܗܘܐ ܕܫܡܥܘܢ ܂` against Schermann XX,
+'Sophoniasque porro ex eadem tribu erat' — 'the same tribe' being Simeon, carried over from
+XIX Habacuc. Third independent tribe agreement in this shard, and the third in a row
+(Nahum, Habakkuk, Zephaniah all of Simeon in both witnesses).
+⭐ SEQUENCE CONFIRMED: Habakkuk closes (295) then Zephaniah opens (296) = capitulum XIX → XX.
+
+WHAT IT CANNOT DO: the seventeen lines of Habakkuk's Life on this page have no counterpart in
+the capitulum, which gives him only 'fuit tempore captivitatis, ex tribu Simeon. Isque attulit
+pulmentum Danielo, fuitque in lacu leonum.' ⚠ I could NOT read enough of lines 278-295 to say
+whether the Daniel/lions' den episode is present here — the pronoun-heavy first-person passage
+at 278-283 is consistent with it but that is an impression, not a reading, and it is recorded
+as an open question, not as a finding.
+
+UNCERTAIN READINGS: ⟨?ܐܬܪ⟩, ⟨?ܐܡ̈ܪ⟩ (278) · ⟨?ܕܐܙܠ⟩ (279) · ⟨?ܡܫܬܘܚܪ⟩, ⟨?ܠܘܬܗ⟩ (280) ·
+⟨?ܐܡ̈ܪ⟩ (282) · ⟨?ܕܗܝܟܠܐ⟩ (288) · ⟨?ܕܬܪ̈ܝܗܘܢ⟩, ⟨?ܡܫܬܘܬܦܝܢ⟩ (290) · ⟨?ܒܪܝܫܝܬ⟩ (292, 295).
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 100
+leaf = "n189"

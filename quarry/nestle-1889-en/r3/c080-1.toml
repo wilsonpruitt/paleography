@@ -1,0 +1,76 @@
+# R3 — Chrestomathia II, Matt. 5, page 2 of 7.
+id = "nestle-1889-en/r3/c080-1"
+record_type = "R3"
+
+work = "peshitta:matt:5:11-17"
+work_note = """
+Verse 17 BEGINS on this page (last line) and finishes on p. 81 — the page boundary falls
+mid-verse, so this record's text ends `... ܢܡܘܣܐ ܐܘ` and c081-1 opens `ܢܒܝ̈ܐ ܂`.
+Continuous marginal line-numbering: this page is lines 14-28, with the numerals 15, 20, 25
+printed in the outer margin.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic/enclitic points"
+layer_source = "read from the plate"
+diff_target = "THE NEW TESTAMENT IN SYRIAC, BFBS London 1905-1920 — archive.org `newtestamentinsy00unse`, title page verified at n6. PD. Critical edition behind it: Pusey & Gwilliam, Tetraeuangelium sanctum, Clarendon 1901 (`tetraeuangeliums00puseuoft`). See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 15
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+page_number_read = "ܦ = 80"
+transcription_note = "Conventions as declared in c079-1.toml (seyame U+0308, linea occultans U+0304, ܂ / ܆ / ܀ for the three pause marks). Letter-level qushshaya/rukkakha points not transcribed — known gap."
+
+text_syr_voc = """
+ܛܘܒܝܟܘܢ ܐܡܬܝ ܕܡܚܣܕܝܢ ܠܟܘܢ ܘܪܕܦܝܢ
+ܠܟܘܢ ܆ ܘܐܡܪܝܢ ܥܠܝܟܘܢ ܟܠ ܡܠܐ ܒܝܫܐ
+ܡܛܠܬܝ ܒܕܓܠܘܬܐ ܀ ܗܝܕܝܢ ܚܕܘ ܘܪܘܙܘ ܆
+ܕܐܓܪܟܘܢ ܣܓܝ ܒܫܡܝܐ ܂ ܗܟܢܐ ܓܝܪ ܪܕܦܘ
+ܠܢܒܝ̈ܐ ܕܡܢ ܩܕܡܝܟܘܢ ܂ ܐܢ̄ܬܘܢ ܐܢܘܢ
+ܡܠܚܗ ܕܐܪܥܐ ܂ ܐܢܗܘ ܕܝܢ ܕܡܠܚܐ ܬܦܟܗ ܆
+ܒܡܢܐ ܬܬܡܠܚ ܆ ܠܡܕܡ ܠܐ ܐܙܠܐ ܆ ܐܠܐ
+ܕܬܫܬܕܐ ܠܒܪ ܘܬܬܕܝܫ ܡܢ ܐܢܫܐ ܀ ܐܢ̄ܬܘܢ
+ܐܢܘܢ ܢܘܗܪܗ ܕܥܠܡܐ ܂ ܠܐ ܡܫܟܚܐ ܕܬܛܫܐ
+ܡܕܝ̄ܢܬܐ ܕܥܠ ܛܘܪܐ ܒܢܝܐ ܀ ܘܠܐ ܡܢܗܪܝܢ
+ܫܪܓܐ ܘܣܝܡܝܢ ܠܗ ܬܚܝܬ ܣܐܬܐ ܆ ܐܠܐ ܥܠ
+ܡܢܪܬܐ ܆ ܘܡܢܗܪ ܠܟܠ ܐܝܠܝܢ ܕܒܒܝܬܐ ܐܢܘܢ ܀
+ܗܟܢܐ ܢܢܗܪ ܢܘܗܪܟܘܢ ܩܕܡ ܒܢܝ̈ܢܫܐ ܆ ܕܢܚܙܘܢ
+ܥܒܕ̈ܝܟܘܢ ܛܒ̈ܐ ܘܢܫܒܚܘܢ ܠܐܒܘܟܘܢ ܕܒܫܡܝܐ ܂
+ܠܐ ܬܣܒܪܘܢ ܕܐܬܝ̄ܬ ܕܐܫܪܐ ܢܡܘܣܐ ܐܘ
+"""
+
+verse_line_index = """
+v.11 line 14 · v.12 line 16 · v.13 line 18 (last two words) · v.14 line 21 (last word) ·
+v.15 line 23 (last two words) · v.16 line 26 · v.17 line 28.
+Marginal line numerals at 15, 20, 25.
+"""
+
+primer_notes = "None. Nestle prints Chrest. II without footnotes throughout."
+
+[alignment]
+status = "keyed from Nestle; checked against BFBS 1905-1920 at leaf n16 (printed p. 5, running head ܡܬܝ ܗ, vv. 9-21+)"
+diff = """
+⭐ THE PAGE'S FINDING — a real word-order divergence in v. 14, and the diff caught it.
+
+  Nestle (lines 22-23): ܠܐ ܡܫܟܚܐ ܕܬܛܫܐ ܡܕܝ̄ܢܬܐ ܕܥܠ ܛܘܪܐ ܒܢܝܐ
+  BFBS n16              ܠܐ ܡܫܟܚܐ ܡܕܝ̱ܢܬܐ ܕܬܛܫܐ ܕܥܠ ܛܘܪܐ ܒܢܝܐ
+
+i.e. Nestle's "editio Americana" transposes ܕܬܛܫܐ and ܡܕܝܢܬܐ against the BFBS/Pusey-Gwilliam
+text. Both were read at 3x on their own plates before being compared; the Nestle reading
+straddles a line break (ܕܬܛܫܐ ends line 22, ܡܕܝܢܬܐ opens line 23), which is what made it
+visible rather than easy to skim past. ⚑ Per the standing rule this is evidence of an EDITION
+difference at least as readily as of a misreading — Nestle's text is kept as printed and
+NOT corrected toward the control.
+
+AGREEMENT elsewhere on the page: verse division 11-17; the consonantal sequence of vv. 11-13
+and 15-16; the seyame on ܠܢܒܝ̈ܐ, ܒܢܝ̈ܢܫܐ, ܥܒܕ̈ܝܟܘܢ, ܛܒ̈ܐ. Both witnesses carry the linea
+occultans on ܐܢ̱ܬܘܢ / ܡܕܝܢ̱ܬܐ / ܐܬܝ̱ܬ, though the two print it differently (BFBS as an oblique
+stroke on the elided letter, Nestle as a straight bar over the word) — a TYPOGRAPHIC
+difference, not a textual one, and one that matters only to whoever chooses codepoints later.
+
+NOT CHECKED at the control's resolution: the letter-level qushshaya/rukkakha points, and
+whether BFBS punctuates v. 15 with ܆ where Nestle does.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 80
+leaf = "n169"

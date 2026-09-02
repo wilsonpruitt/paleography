@@ -217,6 +217,178 @@ pedagogy, applied to type.
 - **G2 (sequence on paper):** ten lessons drafted, each ending in aligned real text.
   **Wilson runs lesson 1. If it is beyond him, that is a design defect report** — revise the
   ramp, not the learner. No web build before G2 passes.
+
+## 7a. R1/R2/R3 execution scoping — ruled 2026-09-01
+
+*Answers "what runs next, in what order" now that R4 (glossary, 874 records) is the only
+record type actually executed at scale. R1/R2/R3 are still calibration-only (5/0/3 sample
+records). This section is the score for whoever runs them; nothing below is new extraction.*
+
+**R5 does not exist — correct any lingering reference to it.** §4 above already ruled
+2026-09-01: Nestle's "Aids to Translation" become `word_notes`, a STRUCTURED FIELD on the R3
+record they're keyed to, never a fifth record type. If an older note (`NEXT-SESSION.md`,
+pre-dating this ruling) still frames it as an open "R5" question, that framing is stale —
+there is nothing left to decide here, only to execute.
+
+**R2 is confirmed ZERO for this primer, not merely low.** `MAP.md` already ruled Nestle
+contributes no R2 body (it's a grammar-plus-chrestomathy, not an exercise primer) and pointed
+composed-exercise extraction at **Robinson** instead. Its own estimate table still hedged
+"1–3" R2 records against the p.70–72 "Reading Exercise," but that hedge is now closed: the
+Reading Exercise **is** the Lord's Prayer in the Peshitta (Matt. 6:10–13) — a Peshitta
+passage, i.e. R3, not an author-composed sentence. **Nestle: 0 R2 records, confirmed.** Do
+not schedule an R2 pass against this primer; it happens against Robinson, in a later phase,
+and nothing here blocks on it.
+
+⚠ **Labeling trap in `MAP.md`'s own zone table:** it calls leaves n87–n89 (pp. 70–72) the
+"R2 zone," inherited from the schema's original four-way naming before the ruling above. The
+content there is actually **one R3 passage (the Lord's Prayer) plus its `word_notes`**,
+physically separate from — and outside the leaf range of — the main Chrestomathia block
+(n156–n220). A session extracting "the R3 zone" by leaf range alone will skip it. Treat
+n87–n89 as a second, earlier R3 source location, not as R2 territory.
+
+**R3 execution order: R3(a) → R3(b) → R1.** This answers `NEXT-SESSION.md`'s open "does R3
+run first?" — yes, and here is the split within R3 too:
+
+✅ **R3(a) part 1 — Chrestomathia I (Genesis 1–4, pp. 67–78, 12 records) RAN 2026-09-01.**
+Records `quarry/nestle-1889-en/r3/c067-1.toml` … `c078-1.toml`. Three findings that change the
+schema or the plan and are folded into `MAP.md` in full:
+· ⭐ **Layer alternates by CAPUT, not by page** (I Serto / II Estrangela / III Serto / IV
+  Estrangela), so **three pages carry two layers** and a one-layer-per-record assumption is
+  wrong for this piece. §4's R3 shape needs `layer` to tolerate a compound value, or a
+  `sections` array, before a second alternating primer is attempted.
+· ⭐ **Genesis 4 is from cod. Ambrosianus**, printed so by Nestle. A chrestomathy passage can
+  change WITNESS mid-piece; `work` alone does not carry that, and the R3 schema has no field
+  for it (recorded in `work_note` here). Worth a `witness` field before R3(b), where Chrest. IV
+  has three named codices in a row.
+· ⚑ **Nestle's square brackets mark his exemplar's gaps, not textual doubt** — verified against
+  Barnes at all six occurrences. A learner-facing render must not show them as variants.
+Also measured: **the key-then-check pipeline works, and its weak half is pointing.** Barnes is
+unvocalized, so the six Serto pages are checked only at the consonant/seyame level and the
+vocalisation rests on the plate read; the six Estrangela pages are checked like-for-like and
+came out clean. ⛔ A blind control on a vocalized sample ([[reference_arabic-control-rule]]) is
+owed before any of this text ships.
+
+✅ **R3(a) part 2 — Chrestomathia II (Matthew 5, pp. 79–85, 7 records) + the Lord's Prayer
+alignment (p. 70) RAN 2026-09-01.** Records `r3/c079-1.toml` … `c085-1.toml`; `r3/c070-1.toml`'s
+`[alignment]` completed against the same BFBS control (leaf offset pinned: leaf = page + 11,
+`research/syriac-peshitta-editions.md`). **R3(a) is now fully done — 22 of 22 pages.**
+· ⭐ **Chrest. II is unvocalized Estrangela throughout, not alternating** — the opposite pole
+  from Chrest. I. So Genesis and Matthew together give the layer table both poles cleanly.
+· ⛔ **New trap for §8: a diff between differently-vocalized (or both-unvocalized) witnesses
+  is a consonantal diff only.** "Vocalisation outranks the sense" presupposes both sides are
+  pointed; against BFBS this Matthew half checks consonants, seyame and numbering, never a
+  vowel. Chrest. I against Barnes is the stronger pointing check for that reason.
+· The diff still earned its keep: two genuine edition-level divergences (a transposed word
+  order at v.14; Nestle's closing ܐܡܝܢ absent in BFBS) plus one substantive four-limb v.44
+  reading confirmed in both PD editions. A handful of plate-level ambiguities were flagged
+  `uncertain` rather than resolved by peeking at the control (would be circular).
+· **This closes the G1 evidence needed before R3(b):** the key-then-check pipeline has now
+  found real divergences on two different pieces, in two different layer configurations.
+✅ **R3(b) is authorized to proceed** on this evidence — no further fold-back blocks it, though
+the `layer` (compound value) and `witness` schema gaps named in part 1 above are still owed
+before the schema is called settled at G1.
+
+✅ **R3(b) part 1 — Chrestomathia III, Vitae Prophetarum (pp. 86–107, 22 records) RAN
+2026-09-01.** Records `r3/c086-1.toml` … `c107-1.toml`. ⛔ **This is the run's central
+finding: R3(a)'s method does not transfer to unknown texts.** R3(a) worked by keying passages
+whose CONTENT was already known (Genesis, Matthew) and checking the keying — that's what
+"align, don't transcribe" degraded to once no shippable digital Peshitta existed. Vitae
+Prophetarum has no known text at all behind it, only a sense-level Latin rendering of a
+DIFFERENT Syriac witness (Schermann 1907). Result: **435 lines across 22 pages, only 250 with
+any reading at all (57%), 185 flagged `⟨?LINE NOT READ⟩`; of the 250 read, 104 confident +
+132 flagged uncertain — genuinely new text keyed cold, at roughly 37% confidence-weighted
+yield.** Nothing was guessed to fill the gap — per §8 / `reference_arabic-control-rule`,
+unreadable stayed flagged rather than resolved by inventing a plausible word. The Latin sense
+control (Schermann + his proper-name index) caught wrong-looking names but cannot adjudicate a
+letter, so it could not lift the rate.
+· ⭐ **The one thing that DID lift the rate, worth keeping**: segmenting word slots
+  mechanically (ink-column scan, split on gaps ≥11px), then cropping and tiling each run alone
+  onto contact sheets grouped by run width — a short word renders at 6-10× instead of ~2%,
+  turning e.g. ܕܝܢ vs. ܡܢ into one point-position feature. Tooling at the agent's scratchpad
+  (`words.py`, `sheet.py`) — worth promoting into `tools/` before a second unknown-text pass.
+· ⚠ **Incident, self-corrected, and instructive**: a scripted edit in the agent's own final
+  shard matched a header-comment string instead of a table header and truncated five files;
+  the agent rebuilt every structural field from text it still held, but the ORIGINAL
+  `[alignment].diff` prose for c089/c090/c091 could not be recovered and is now overwritten by
+  the keying pass's text — each record says so plainly rather than hiding it. `~/paleography`
+  IS a git repo (the agent's own report wrongly claimed otherwise) — **commit checkpoints
+  during a long unattended shard**, not just at the end, so a scripted edit gone wrong has
+  something to `git diff` against, not just the agent's own memory of the pre-edit text.
+· Two corrections already applied in-record: c091's line-numbering note is fixed (the
+  segmenter, not page-trim, was clipping the leading digit of 100/105/110/115); p. 90 line 95
+  has NO standalone ܀, so Jeremiah's life does not close as independently as Isaiah's does at
+  line 39.
+· ⚑ **Highest-leverage single guess in the shard, flagged for a Syriacist**: a recurring
+  four-glyph ܐ-?-?-ܐ read as `⟨?ܐܪܥܐ⟩` on all five of pp. 87-91 — if wrong, it's wrong ten times.
+
+✅ **R3(b) part 2 — Chrestomathia IV, Historia inventionis sanctae crucis (pp. 108–131, 24
+records) RAN 2026-09-01.** Records `r3/c108-1.toml` … `c131-1.toml`. ⛔ **Confirms part 1's
+finding harder: `text_syr_voc` is NOT READ on all 24 pages.** This piece's control (Nestle's
+own *De sancta cruce*, 1889) is character-level but not independent — it only checks a keying
+against itself — so it gave the agent nothing to key FROM either; the piece is unvocalized
+Serto with no digital edition, the master scan tops out at 1586×2512px (verified: `?scale=`
+and the `_jp2.zip` member all return the same size — there is no higher-resolution copy to
+escalate to), and keying it cold past ~2.5x zoom crossed from careful transcription into
+invention. The agent stopped and flagged rather than guess, correctly per §8.
+· What WAS established, cleanly: the three codex transitions (Paris. 234 → Add. 14,644 mid-
+  page on p. 113 → Vat. syr. 148 clean at 126/127); full folio/column-marker transcription in
+  each codex's own citation style; **IV.3 is not a third recension of the legend but an excerpt
+  from George of Arbela's *Expositio officiorum* I.24** — Nestle changed WORKS, not just
+  witnesses, so `work` for pp. 127-131 must say so; and a **line-for-line correspondence with
+  De sancta cruce with zero structural divergence** across pp. 108-126 (DSC leaf = page + 11).
+· ⛔ **Corrigenda trap, defused, not hit**: Nestle's own "Korrekturen" in De sancta cruce refer
+  to a DIFFERENT manuscript's line numbers (Add. 12,174, DSC's section A) that happen to
+  overlap numerically with lines that DO exist in our IV.2 (216, 261 among them) — applying
+  them would have silently corrupted five lines. Recorded as a ruling in every affected record.
+· Layer: unvocalized Serto throughout, no alternation — the layer table's third distinct case
+  (Chrest. I alternates by caput; II is unvocalized Estrangela, constant; IV is unvocalized
+  Serto, constant). **Script and pointing are independent axes**, not one `layer` string.
+· IV.3 is entirely uncontrolled (De sancta cruce only covers sub-pieces 1 and 2; "Vat. 148" and
+  "1267" appear nowhere in it). Lead for later: R. H. Connolly's edition of George of Arbela
+  (CSCO Script. Syri, 1911-15) — not yet on the Phase 0 shelf, licence unchecked — would be the
+  only genuinely independent (textual, not transcription) control anywhere in Chrest. IV.
+
+⛔ **The consequence for the plan, stated plainly.** R3(b)'s 46 pages did NOT produce 46 pages
+of keyed Syriac. They produced: full structural/provenance metadata on all 46 (witnesses,
+layers, folios, line ranges, work identification) + partial text on 22 (Vitae Prophetarum,
+~37% confidence-weighted) + zero text on 24 (Historia inventionis). **`text_syr_voc` for
+unknown-text, unvocalized, no-digital-edition pages is now a named open problem, not a task a
+general session can grind through** — it needs one of: a Syriacist seat actually filled, a
+Serto-specific HTR pass (Phase 4, currently frozen), or an explicit decision to defer these
+24-46 pages' full transcription and build the pilot's first lessons from R3(a)'s 22 fully-keyed
+pages alone, which already exceed the "ten lessons" target of §6.
+
+1. **R3(a) — the Peshitta-controlled block, runs first.** n87–n89 (Lord's Prayer +
+   word_notes, 3pp) + Chrest. I *Quattuor prima capita Geneseos* (pp. 67–78, n156–n167, 12pp)
+   + Chrest. II *Evangelii Matthaei caput quintum* (pp. 79–85, n168–n174, 7pp). 22 pages
+   total. Controls are pinned and independent PD editions (`research/syriac-peshitta-editions.md`):
+   Barnes 1914 for Genesis, BFBS 1905–1920 (+ Pusey-Gwilliam 1901) for Matthew and the Lord's
+   Prayer. **The Syriacist seat is not a precondition here** — these are transcription
+   checks against another printed Syriac edition, not doctrinal judgments.
+2. **R3(b) — the weaker-controlled block, runs second, only after (a) proves the
+   key-then-check pipeline.** Chrest. III *Vitae Prophetarum* (pp. 86–107, n175–n196, 22pp,
+   Schermann's Latin + name index — sense-level only) + Chrest. IV.1–3 *Historia inventionis
+   sanctae crucis* (pp. 108–131, n197–n220, 24pp, Nestle's own *De sancta cruce* — Syriac
+   diff but not an independent witness). 46 pages. Running (a) first means the pipeline is
+   proven on independent, character-level controls before it is spent on the two pieces
+   whose checks are each weaker in a different way (see `research/syriac-peshitta-editions.md`'s
+   own strength table).
+3. **R1 (grammar paradigms, pp. 1–69, 40–70 records expected) runs last, after R3.** Reason,
+   not just ordering for its own sake: §6 above builds a lesson backward from its destination
+   passage, and only extracts the R1 *cells* a chosen passage actually exercises — the whole
+   table is bank filler otherwise. Extracting all 40–70 R1 records blind, before any R3
+   passage is chosen for a lesson, risks capturing paradigm detail no lesson ends up needing
+   and re-deriving priority later. Running R3 first means R1 extraction can be steered by
+   which passages actually became lessons, not guessed at from the ToC.
+
+**⛔ The G0-era stop rule in §7 above is now stale wording, not a live risk.** It reads "if
+fewer than ⅔ of Nestle's chrestomathy passages can be matched to a shippable digital text,
+...stop and re-plan (probably: key the passages ourselves)." That fallback is no longer a
+fallback — it is now the method for the WHOLE chrestomathy, ruled 2026-09-01
+(`research/syriac-peshitta-editions.md`): no shippable digital Peshitta exists, so every
+passage is keyed from Nestle and checked against a PD scan, never aligned to an existing
+digital text. The ⅔ threshold never fires because the method it was guarding against was
+already replaced. Leave the stop rule in §7 as a historical note; do not gate R3(a)/(b) on it.
 - ⛔ **Stop rule:** if fewer than ~⅔ of Nestle's chrestomathy passages can be matched to a
   shippable digital text, the align-don't-OCR economics have failed — stop and re-plan
   (probably: key the passages ourselves and re-cost) rather than grinding OCR through the

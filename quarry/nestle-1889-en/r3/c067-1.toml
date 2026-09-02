@@ -1,39 +1,102 @@
-# CALIBRATION RECORD — see the header note on r1/p044-1.toml.
-# ⛔ TEXT NOT EXTRACTED IN THIS PASS — see `extraction` below. The page was read; the decision
-# not to key it is deliberate and is the finding, not an omission of convenience.
 id = "nestle-1889-en/r3/c067-1"
 record_type = "R3"
 
-work = "peshitta:gen:1:1-13"
-work_note = "Chrestomathia I, 'Quattuor prima capita Geneseos', opening page. Verse numbers 1-9 are printed superscript on this page; the piece runs to p. 78."
+work = "peshitta:gen:1:1-9"
+work_note = """
+Chrestomathia I, 'Quattuor prima capita Geneseos', OPENING PAGE: the section head
+`CHRESTOMATHIA.` / `I. QUATTUOR PRIMA CAPITA GENESEOS.` / `CAPUT I.` occupies the upper half,
+so only 12 lines of Syriac stand here (against 20 on a full page). No Syriac page numeral is
+printed on this opening page. Signature `E*` at the foot. Marginal line numbers 1, 5, 10 in
+the right (outer) margin; the piece's line numbering starts here and runs to 55 at the end of
+Caput I on p. 70. The page breaks mid-verse 9, after ܠܰܐܬܪܳܐ ܚܰܕ.
+
+⛔ VERSE-NUMBERING FAULT, and it is the page's chief finding. Nestle prints ¹ before ܒܪܺܫܝܬ and
+² before ܘܰܐܪܥܳܐ (both correct), then NO numeral at the head of v. 3 (ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ ܢܶܗܘܶܐ
+ܢܘܗܪܳܐ) — only a faint, plainly under-inked round mark stands there, verified at 10x — and
+then prints ³ before ܘܰܚܙܳܐ and ⁴ before ܘܰܦܪܰܫ, i.e. against the two halves of what Barnes
+numbers as the single verse 4. The sequence re-synchronises at ⁵ (ܘܰܩܪܳܐ) and is standard
+thereafter (⁶ at the firmament, ⁹ at the gathering of the waters). Recorded AS PRINTED; the
+numerals are not corrected. See [alignment].diff.
+"""
 
 layer = "vocalized Serto"
-diff_target = "Barnes, PENTATEUCHUS SYRIACE (post Samuelem Lee), BFBS London 1914 — archive.org `ktavadeauritaauk00lees`, title page verified at n6. PD. See research/syriac-peshitta-editions.md"
-layer_source = "read from the plate — ⭐ and it CONTRADICTS the Phase-0 section default"
-layer_finding = """
-Phase 0 recorded the chrestomathy as unvocalized Estrangela (from the n180 probe). p. 67 opens
-in FULLY VOCALIZED SERTO. By p. 71 (n160) the same Genesis passage is running in unvocalized
-Estrangela. Nestle ramps the reader off the vowels and off Serto INSIDE one passage. The
-per-record layer declaration is not bookkeeping here; the section default is simply wrong for
-this section. Folded into MAP.md.
+layer_note = """
+Fully vocalized Serto, with seyame and the resh/dalath points. ⭐ This CONTRADICTS the
+Phase-0 section default (unvocalized Estrangela, taken from the n180 probe) and it also
+refines MAP.md: the ramp is NOT a one-way drift from Serto to Estrangela across pp. 67–71.
+See layer_finding on this record and the summary in c070-1.
 """
+diff_target = "Barnes, PENTATEUCHUS SYRIACE (post Samuelem Lee), BFBS London 1914 — archive.org `ktavadeauritaauk00lees`, title page verified at n6. PD. ⭐ PAGINATION CALIBRATED THIS PASS: printed page = leaf − 9 (n10 = p. 1, Gen 1:1–13, signature B; n11 = p. 2, running head `ܣܦܪܐ ܕܒܪܝܬܐ` + `I. 14—28`; agreement on two independent pages, per MAP.md's own method). Barnes prints unvocalized Estrangela with seyame and diacritic points, verse numbers in the outer margin against the line on which a verse opens, `*` as verse divider and `❖` at the close of a paragraph. See research/syriac-peshitta-editions.md"
+layer_source = "read from the plate"
 seyame = true
-lines_per_page = 15
+lines_per_page = 12
 page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+line_numbers = "marginal, every 5, in the OUTER margin (right on rectos, left on versos); numbering RESTARTS at each Caput"
+transcription_method = """
+Read from the plate, line by line, off 3.0–5.5x crops cut by horizontal projection (one strip
+per 2–4 printed lines); the 1.75x half-crops of tools/quarry_fetch.sh are NOT sufficient for
+pointed Serto and were used only for orientation. Consonantal skeleton, seyame, word division,
+punctuation, verse numerals, marginal line numerals and square-bracket supplements are read
+directly. ⚠ HONEST LIMIT, per the never-read-codepoints-by-eye rule: the West-Syriac vowel
+points are legible AS SHAPES at this resolution (zqofo prints as a small circle, ptoho as an
+open triangle, and so on — calibrated on ܐܰܠܳܗܳܐ, which recurs on every page), but the finest
+layer — rukkakha/qushshaya bars, the ܗ̇ point, linea occultans — is recorded where seen and is
+not warranted point-by-point. The vocalisation below is therefore a plate reading at the
+word level, not a certified diacritic-level edition; a blind control on a sample
+([[reference_arabic-control-rule]]) is still owed before this text is shipped.
+"""
+layer_finding = """
+⭐ THE RAMP IS BY CAPUT, NOT BY PAGE — this corrects both Phase 0 and MAP.md. Across the whole
+of Chrestomathia I the script alternates with the chapter: Caput I (pp. 67–70) vocalized
+Serto · Caput II (pp. 70–73) unvocalized Estrangela · Caput III (pp. 73–76) vocalized Serto ·
+Caput IV (pp. 76–78) unvocalized Estrangela. MAP.md read n156 as Serto and n160 as Estrangela
+and inferred a one-way drift; the truth is a deliberate alternation, and three pages (70, 73,
+76) carry BOTH layers because a Caput boundary falls inside them. Declare the layer per record
+AND, on those three pages, per section within the record.
+"""
 
-[extraction]
-status = "identified and layer-declared; text not keyed"
-reason = """
-⭐ REVISED 2026-09-01 (Wilson's correction). The blocker is not that the Peshitta is encumbered
-— the BFBS/UBS 1905 NT text is PUBLIC DOMAIN, and only SEDRA's lemmatization and morphology are
-compute-only. The blocker is that no clean *carrier* of a digital Peshitta was found, and for
-the OLD Testament (this page) the position is worse: ETCBC/peshitta is OCR'd from the in-copyright
-Leiden 1987 edition and declares two different licences, so it is out; a PD printed OT edition
-(Lee 1823, Urmia 1852, Mosul 1887-92) has not been pinned.
+text_syr_voc = """
+¹ ܒܪܺܫܝܬ ܒܪܳܐ ܐܰܠܳܗܳܐ ܝܳܬ ܫܡܰܝܳܐ ܘܝܳܬ ܐܰܪܥܳܐ. ² ܘܰܐܪܥܳܐ
+ܗܘܳܬ ܬܘܗ ܘܒܘܗ: ܘܚܶܫܘܟܳܐ ܥܰܠ ܐܰܦ̈ܰܝ ܬܗܘܡܳܐ: ܘܪܘܚܶܗ
+ܕܰܐܠܳܗܳܐ ܡܪܰܚܦܳܐ ܥܰܠ ܐܰܦ̈ܰܝ ܡܰܝ̈ܳܐ. ❖ · ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܗܘܶܐ
+ܢܘܗܪܳܐ: ܘܰܗܘܳܐ ܢܘܗܪܳܐ. ³ ܘܰܚܙܳܐ ܐܰܠܳܗܳܐ ܠܢܘܗܪܳܐ ܕܫܰܦܺܝܪ.
+⁴ ܘܰܦܪܰܫ ܐܰܠܳܗܳܐ ܒܶܝܬ ܢܘܗܪܳܐ ܠܚܶܫܘܟܳܐ. ⁵ ܘܰܩܪܳܐ ܐܰܠܳܗܳܐ ܠܢܘܗܪܳܐ
+ܐܺܝܡܳܡܳܐ. ܘܰܠܚܶܫܘܟܳܐ ܩܪܳܐ ܠܺܠܝܳܐ: ܘܰܗܘܳܐ ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ
+ܝܰܘܡܳܐ ܚܰܕ. ❖ ⁶ ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܗܘܶܐ ܪܩܺܝܥܳܐ ܒܰܡܨܰܥܰܬ ܡܰܝ̈ܳܐ.
+ܘܰܗܘܳܐ ܦܳܪܶܫ ܒܶܝܬ ܡܰܝ̈ܳܐ ܠܡܰܝ̈ܳܐ. ⁷ ܘܰܥܒܰܕ ܐܰܠܳܗܳܐ ܪܩܺܝܥܳܐ:
+ܘܰܦܪܰܫ ܒܶܝܬ ܡܰܝ̈ܳܐ ܕܰܠܬܰܚܬ ܡܶܢ ܪܩܺܝܥܳܐ: ܘܒܶܝܬ ܡܰܝ̈ܳܐ
+ܕܰܠܥܶܠ ܡܶܢ ܪܩܺܝܥܳܐ. ܘܰܗܘܳܐ ܗܳܟܰܢܳܐ. ⁸ ܘܰܩܪܳܐ ܐܰܠܳܗܳܐ ܠܰܪܩܺܝܥܳܐ
+ܫܡܰܝܳܐ. ܘܰܗܘܳܐ ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ ܝܰܘܡܳܐ ܕܰܬܪܶܝܢ ❖ ⁹ ܘܶܐܡܰܪ
+ܐܰܠܳܗܳܐ: ܢܶܬܟܰܢܫܘܢ ܡܰܝ̈ܳܐ ܕܰܠܬܰܚܬ ܡܶܢ ܫܡܰܝܳܐ ܠܰܐܬܪܳܐ ܚܰܕ:
+"""
 
-So this page is keyed, not aligned — but that is a FEATURE of the phase, not a defect: Nestle
-1889 is itself a printed Peshitta, so keying it produces PD Syriac digital text nobody has
-released cleanly, and SEDRA plus a PD scan can CHECK the result without ever entering it.
+primer_notes = """
+No footnotes on this page. The only apparatus is the running section head and `CAPUT I.`;
+the `·` printed between ❖ and ܘܶܐܡܰܪ on line 3 is a broken/under-inked sort, not a mark of
+Nestle's own (see work_note).
+"""
+
+[alignment]
+status = "keyed from Nestle; checked against Barnes 1914"
+diff = """
+⭐ CHECKED against Barnes p. 1 = leaf n10 (Gen 1:1–13), read at 0.85x and again at page scale.
+
+AGREEMENT, word for word, across the whole page: ܒܪܝܫܝܬ ܒܪܐ ܐܠܗܐ ܝܬ ܫܡܝܐ ܘܝܬ ܐܪܥܐ ·
+ܘܐܪܥܐ ܗܘܬ ܬܘܗ ܘܒܘܗ · ܘܚܫܘܟܐ ܥܠ ܐܦ̈ܝ ܬܗܘܡܐ · ܘܪܘܚܗ ܕܐܠܗܐ ܡܪܚܦܐ ܥܠ ܐܦ̈ܝ ܡ̈ܝܐ ·
+ܘܗܘܐ ܦܪܫ ܒܝܬ ܡ̈ܝܐ ܠܡ̈ܝܐ · ܕܠܬܚܬ / ܕܠܥܠ ܡܢ ܪܩܝܥܐ · ܘܗܘܐ ܗܟܢܐ · ܝܘܡܐ ܕܬܪܝܢ ·
+ܢܬܟܢܫܘܢ ܡ̈ܝܐ … ܠܐܬܪܐ ܚܕ. No lexical or word-order divergence was found.
+
+⭐ ONE DIVERGENCE, and it is in the APPARATUS, not the text: the verse numbering (see work_note).
+Barnes's margin reads 1 / 3 / 4 / 5 / 6 / 7 / 8 / 9 …, with 3 against the line that opens
+ܘܐܡܪ ܐܠܗܐ ܢܗܘܐ ܢܘܗܪܐ and 4 against ܘܚܙܐ ܐܠܗܐ ܠܢܘܗܪܐ ܕܫܦܝܪ (whose second half, ܘܦܪܫ ܐܠܗܐ,
+carries no number of its own). Nestle's 3 and 4 sit one clause later than Barnes's. Since the
+two editions' TEXT is identical here, this cannot be an edition-level difference in
+versification carried by the exemplar; it is a compositor's fault in Nestle 1889, and the
+under-inked mark at the true place of v. 3 is the direct evidence for it.
+
+⚠ Not adjudicated: pointing. Barnes is unvocalized, so it can confirm the consonantal text and
+the seyame and it cannot check one vowel on this page. The vocalisation here stands on the
+plate reading alone (see transcription_method).
 """
 
 [source]

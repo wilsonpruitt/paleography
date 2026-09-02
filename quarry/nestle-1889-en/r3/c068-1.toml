@@ -1,0 +1,88 @@
+id = "nestle-1889-en/r3/c068-1"
+record_type = "R3"
+
+work = "peshitta:gen:1:9-21"
+work_note = """
+Chrestomathia I, Caput I. Lines 13–32 of the piece; marginal numerals 15, 20, 25, 30 in the
+LEFT (outer) margin, this being a verso. Syriac numeral letter ܣܚ (= 68) centred at the head.
+Opens mid-verse 9 (ܘܬܶܬܚܙܶܐ ܝܰܒܺܝܫܬܳܐ, continuing p. 67) and breaks mid-verse 21. Verse numerals
+10–21 are printed and are STANDARD on this page — the p. 67 fault does not continue.
+"""
+
+layer = "vocalized Serto"
+layer_note = """
+Fully vocalized Serto throughout; seyame and resh/dalath points present.
+"""
+diff_target = "Barnes, PENTATEUCHUS SYRIACE (post Samuelem Lee), BFBS London 1914 — archive.org `ktavadeauritaauk00lees`, title page verified at n6. PD. ⭐ PAGINATION CALIBRATED THIS PASS: printed page = leaf − 9 (n10 = p. 1, Gen 1:1–13, signature B; n11 = p. 2, running head `ܣܦܪܐ ܕܒܪܝܬܐ` + `I. 14—28`; agreement on two independent pages, per MAP.md's own method). Barnes prints unvocalized Estrangela with seyame and diacritic points, verse numbers in the outer margin against the line on which a verse opens, `*` as verse divider and `❖` at the close of a paragraph. See research/syriac-peshitta-editions.md"
+layer_source = "read from the plate"
+seyame = true
+lines_per_page = 20
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+line_numbers = "marginal, every 5, in the OUTER margin (right on rectos, left on versos); numbering RESTARTS at each Caput"
+transcription_method = """
+Read from the plate, line by line, off 3.0–5.5x crops cut by horizontal projection (one strip
+per 2–4 printed lines); the 1.75x half-crops of tools/quarry_fetch.sh are NOT sufficient for
+pointed Serto and were used only for orientation. Consonantal skeleton, seyame, word division,
+punctuation, verse numerals, marginal line numerals and square-bracket supplements are read
+directly. ⚠ HONEST LIMIT, per the never-read-codepoints-by-eye rule: the West-Syriac vowel
+points are legible AS SHAPES at this resolution (zqofo prints as a small circle, ptoho as an
+open triangle, and so on — calibrated on ܐܰܠܳܗܳܐ, which recurs on every page), but the finest
+layer — rukkakha/qushshaya bars, the ܗ̇ point, linea occultans — is recorded where seen and is
+not warranted point-by-point. The vocalisation below is therefore a plate reading at the
+word level, not a certified diacritic-level edition; a blind control on a sample
+([[reference_arabic-control-rule]]) is still owed before this text is shipped.
+"""
+
+text_syr_voc = """
+ܘܬܶܬܚܙܶܐ ܝܰܒܺܝܫܬܳܐ: ܘܰܗܘܳܐ ܗܳܟܰܢܳܐ. ¹⁰ ܘܰܩܪܳܐ ܐܰܠܳܗܳܐ ܠܝܰܒܺܝܫܬܳܐ
+ܐܰܪܥܳܐ: ܘܰܠܟܰܢܫܳܐ ܕܡܰܝ̈ܳܐ ܩܪܳܐ ܝܰܡ̈ܡܶܐ. ܘܰܚܙܳܐ ܐܰܠܳܗܳܐ ܕܫܰܦܺܝܪ.
+¹¹ ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܬܰܦܶܩ ܐܰܪܥܳܐ ܬܰܕܐܳܐ ܥܶܣܒܳܐ ܕܡܶܙܕܪܰܥ ܙܰܪܥܳܐ
+ܠܓܶܢܣܶܗ. ܘܺܐܝܠܳܢܳܐ ܕܦܺܐܪ̈ܶܐ ܕܥܳܒܶܕ ܦܺܐܪ̈ܶܐ ܠܓܶܢܣܶܗ:
+ܕܢܰܨܒܬܶܗ ܒܶܗ ܥܰܠ ܐܰܪܥܳܐ: ܘܰܗܘܳܐ ܗܳܟܰܢܳܐ. ¹² ܘܰܐܦܩܰܬ ܐܰܪܥܳܐ
+ܬܰܕܐܳܐ ܘܥܶܣܒܳܐ ܕܡܶܙܕܪܰܥ ܙܰܪܥܳܐ ܠܓܶܢܣܶܗ: ܘܺܐܝܠܳܢܳܐ ܕܥܳܒܶܕ ܦܺܐܪ̈ܶܐ
+ܕܢܰܨܒܬܶܗ ܒܶܗ ܠܓܶܢܣܶܗ. ܘܰܚܙܳܐ ܐܰܠܳܗܳܐ ܕܫܰܦܺܝܪ. ¹³ ܘܰܗܘܳܐ
+ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ ܝܰܘܡܳܐ ܕܰܬܠܳܬܳܐ ❖ ¹⁴ ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܗܘܘܢ
+ܢܰܗܺܝܪ̈ܶܐ ܒܰܪܩܺܝܥܳܐ ܕܰܫܡܰܝܳܐ: ܠܡܶܦܪܰܫ ܒܶܝܬ ܐܺܝܡܳܡܳܐ
+ܠܠܺܠܝܳܐ: ܘܢܶܗܘܘܢ ܠܳܐܬܘ̈ܳܬܳܐ ܘܰܠܙܰܒ̈ܢܶܐ ܘܰܠܝܰܘ̈ܡܳܬܳܐ ܘܰܠܫܰܢ̈ܰܝܳܐ.
+¹⁵ ܘܢܶܗܘܘܢ ܡܰܢܗܪܺܝܢ ܒܰܪܩܺܝܥܳܐ ܕܰܫܡܰܝܳܐ ܠܡܰܢܗܳܪܘ ܥܰܠ
+ܐܰܪܥܳܐ: ܘܰܗܘܳܐ ܗܳܟܰܢܳܐ. ¹⁶ ܘܰܥܒܰܕ ܐܰܠܳܗܳܐ ܬܪܶܝܢ ܢܰܗܺܝܪ̈ܶܐ ܪܰܘܪ̈ܒܶܐ:
+ܢܰܗܺܝܪܳܐ ܪܰܒܳܐ ܠܫܘܠܛܳܢܳܐ ܕܺܐܝܡܳܡܳܐ: ܘܢܰܗܺܝܪܳܐ ܙܥܘܪܳܐ
+ܠܫܘܠܛܳܢܳܐ ܕܠܺܠܝܳܐ: ܘܟܰܘܟ̈ܒܶܐ. ¹⁷ ܘܣܳܡ ܐܶܢܘܢ ܐܰܠܳܗܳܐ
+ܒܰܪܩܺܝܥܳܐ ܕܰܫܡܰܝܳܐ. ܠܡܰܢܗܳܪܘ ܥܰܠ ܐܰܪܥܳܐ. ¹⁸ ܘܰܠܡܶܫܠܰܛ
+ܒܺܐܝܡܳܡܳܐ ܘܰܒܠܺܠܝܳܐ: ܘܰܠܡܶܦܪܰܫ ܒܶܝܬ ܢܘܗܪܳܐ ܠܚܶܫܘܟܳܐ:
+ܘܰܚܙܳܐ ܐܰܠܳܗܳܐ ܕܫܰܦܺܝܪ. ¹⁹ ܘܰܗܘܳܐ ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ ܝܰܘܡܳܐ
+ܕܰܐܪܒܥܳܐ ❖ ²⁰ ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܪܚܫܘܢ ܡܰܝ̈ܳܐ ܪܰܚܫܳܐ ܢܰܦܫܳܐ ܚܰܝܬܳܐ
+ܘܦܳܪܰܚܬܳܐ ܕܦܳܪܚܳܐ ܥܰܠ ܐܰܪܥܳܐ: ܥܰܠ ܐܰܦ̈ܰܝ ܪܩܺܝܥܳܐ ܕܰܫܡܰܝܳܐ.
+²¹ ܘܰܒܪܳܐ ܐܰܠܳܗܳܐ ܬܰܢܺܝ̈ܢܶܐ ܪܰܘܪ̈ܒܶܐ: ܘܟܽܠ ܢܰܦܫܳܐ ܚܰܝܬܳܐ ܕܪܳܚܫܳܐ
+"""
+
+primer_notes = """
+No footnotes on this page; the apparatus is the head numeral and the marginal line numbers only.
+"""
+
+[alignment]
+status = "keyed from Nestle; checked against Barnes 1914"
+diff = """
+⭐ CHECKED against Barnes pp. 1–2 = leaves n10–n11 (p. 2 carries the running head
+`ܣܦܪܐ ܕܒܪܝܬܐ` with `I. 14—28` in the outer corner, which is what pins the offset).
+
+AGREEMENT throughout, including the places where a plate reading could plausibly have gone
+wrong: ܝܰܒܺܝܫܬܳܐ twice · ܘܠܟܢܫܐ ܕܡ̈ܝܐ ܩܪܐ ܝܡ̈ܡܐ · ܬܕܐܐ ܘܥܣܒܐ ܕܡܙܕܪܥ ܙܪܥܐ (Barnes has the
+ܘ before ܥܣܒܐ in v. 12; see below for v. 11) · ܠܐܬܘ̈ܬܐ ܘܠܙܒ̈ܢܐ ܘܠܝܘ̈ܡܬܐ ܘܠܫ̈ܢܝܐ ·
+ܬܪܝܢ ܢܗܝܪ̈ܐ ܪܘܪ̈ܒܐ · ܘܟܘܟ̈ܒܐ · ܬܢܝ̈ܢܐ ܪܘܪ̈ܒܐ. Verse numerals 10–21 agree with Barnes's
+margin exactly.
+
+⚑ ONE READING FLAGGED, NOT RESOLVED: v. 11. Barnes reads ܬܕܐܐ ܘܥܣܒܐ (with the conjunction) in
+BOTH v. 11 and v. 12. On the Nestle plate line 15 (v. 12) plainly has ܘܥܶܣܒܳܐ, while line 3
+(v. 11) reads to me as ܥܶܣܒܳܐ without it. The token count on line 3 is consistent either way,
+and the ܘ is a single stroke that a worn sort can lose. Recorded as read; ⚠ this is the one
+place on the page where the plate and the control disagree and the plate is the weaker witness.
+Worth a re-read at 8x before the text is shipped.
+
+⚠ Barnes cannot check the pointing (unvocalized).
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 68
+leaf = "n157"

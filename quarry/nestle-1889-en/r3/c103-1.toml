@@ -1,0 +1,140 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 18 of 22 (pp. 86-107).
+# Keyed from the plate (n192). ⛔ TEXT IS A PARTIAL, UNVERIFIED PLATE READING — see [extraction].
+id = "nestle-1889-en/r3/c103-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:ahijah+joad+azariah"
+work_note = """
+Three Lives open on this page, each introduced by a ONE-WORD NAME RUBRIC standing alone on its
+own line and closed by a low point. Read from the plate, not inferred:
+· line 3 of the page (= piece line 340) `ܐܚܝܐ ܂`  — AHIJAH
+· line 11            (= piece line 348) `ܝܘܐܕ ܂`  — JOAD (Ἰωάδ / Iohad)
+· line 17            (= piece line 354) `ܥܙܪܝܐ ܂` — AZARIAH
+Lines 1-2 close the PRECEDING Life, whose name stands on p. 102 and is therefore not on this
+page; the close reads `… ܠܒܪܗ ܂ / ܡܝܬ ܘܐܬܩܒܪ ܒܐܘܪܫܠܡ ܂` ("… to his son. He died and was buried
+in Jerusalem."). ⚠ The Greek recension's order at this point is Nathan · Ahijah · Joad ·
+Azariah · Elijah · Elisha · Zechariah b. Jehoiada, so the preceding Life is very probably
+Nathan — but that is INFERENCE FROM THE ORDER, not a reading, and it is not recorded as fact.
+
+⭐ MECHANICAL CUE FOR A LIFE BOUNDARY, confirmed on this page three times and reusable across the
+piece: a short line that stops well short of the left margin and ends in a point, then a
+ONE-WORD name rubric alone on the next line, then the Life proper opening with the SAME name
+(line 4 here opens `ܐܚܝܐ ܡܢ ܫܝܠܘ ܐܝܬܘܗܝ ܗܘܐ ܆` — "Ahijah was from Shiloh"). A short line on its
+own is only a paragraph break; the one-word rubric is the boundary.
+
+Nestle names no individual codex here. The piece as a whole is headed on p. 86
+"(E tribus codicibus Musei Britannici.)" and he never says which of the three carries which
+Life. There is no `witness` field in the schema; that gap is a known finding.
+"""
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+Verified on this page, not assumed: NO vowel signs anywhere on any of the 20 lines. What the
+plate carries is (a) seyame on plurals (e.g. `ܕܒܝܘܡ̈ܘܗܝ` on line 1), (b) the dalath/rish points
+(the ܕ of `ܫܕܪܗ` takes its dot BELOW, the ܪ its dot ABOVE — checked on the glyph, not assumed),
+(c) further single letter points, including a dot over the final ܗ of `ܠܒܪܗ`. Constant with the
+neighbouring pages of the shard (pp. 104-107) and with p. 86.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets with tribe, date and burial place), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 20
+line_numbers = "340, 345, 350, 355 — read off the plate in the RIGHT (outer) margin of this recto, standing against printed lines 3, 8, 13 and 18. The page therefore carries piece lines 338-357. Numbering is CONTINUOUS across the whole of Chrest. III and does NOT restart at a prophet: three Lives begin on this page and the count runs straight through all three."
+page_number_form = "Syriac numeral letter, centred at head, above the first text band"
+page_number_read = "ܩܓ = 100 + 3 = 103 — qoph (loop + descending stem) + gamal. Agrees with leaf = page + 89."
+transcription_note = """
+Conventions, as ruled for this run:
+· seyame          → U+0308 combining diaeresis on the letter it sits over
+· linea occultans → U+0304 combining macron over the elided letter
+· single low point → ܂ · two-dot pause → ܆ · diamond/3- or 4-dot end mark → ܀
+The qushshaya/rukkakha and participle points on individual letters are NOT transcribed. They ARE
+on the plate; they are below the resolution at which this pass can be honest about them. That is
+a KNOWN GAP, not a claim the plate lacks them. Likewise the dot over ܗ in `ܠܒܪܗ` and over the
+final ܗ of `ܫܕܪܗ` is seen and deliberately not encoded.
+⛔ No square brackets (Nestle's exemplar-gap marks) occur on this page.
+⛔ Doubtful words are marked `⟨?…⟩`; a line this pass could not read at all is emitted in position
+as `⟨?LINE NOT READ⟩` so the line count stays right. NOTHING here was filled in from the Latin or
+Greek control — that would be circular.
+"""
+
+text_syr_voc = """
+ܠܒܪܗ ܂ ܫܕܪܗ ܡܪܝܐ ⟨?⟩ ܕܒܝܘܡ̈ܘܗܝ ⟨?⟩
+ܡܝܬ ܘܐܬܩܒܪ ܒܐܘܪܫܠܡ ܂
+ܐܚܝܐ ܂
+ܐܚܝܐ ܡܢ ܫܝܠܘ ܐܝܬܘܗܝ ܗܘܐ ܆ ⟨?⟩
+⟨?ܕܐܝܬܘܗܝ⟩ ܗܘܐ ⟨?⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+ܝܘܐܕ ܂
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+ܥܙܪܝܐ ܂
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+"""
+
+primer_notes = """
+NONE on this page. There is no rule and no smaller type at the foot; the twentieth text line runs
+to the bottom of the type area. The only apparatus is the head numeral and the marginal line
+numbers.
+"""
+
+[extraction]
+status = "keyed from the plate, PARTIAL and UNVERIFIED: 7 of 20 printed lines carry a reading, 13 are emitted as ⟨?LINE NOT READ⟩; within the 7, 5 words or stretches are flagged ⟨?…⟩"
+reason = """
+⚠ THIS IS THE FINDING, and it is a measurement, not an excuse. The master scan is 1586x2512 —
+about 380 px across a quarter-page crop, ~5x when upscaled to 2000 px. At that scale an
+UNVOCALIZED Estrangela word is legible only when the reader already has a hypothesis for it:
+every word actually keyed above (ܡܝܬ, ܘܐܬܩܒܪ, ܐܘܪܫܠܡ, ܡܪܝܐ, ܗܘܐ, ܐܝܬܘܗܝ, ܐܚܝܐ, ܝܘܐܕ, ܥܙܪܝܐ,
+ܕܒܝܘܡ̈ܘܗܝ, ܫܕܪܗ, ܠܒܪܗ) was confirmed against a guess, and every word with no obvious candidate
+resisted three to five successive zooms. The observed cost is roughly 5-6 zoom crops per printed
+line, i.e. ~500 crops for this shard's 98 lines, and even then the residual error would be
+silent. ⛔ Ninety-percent-accurate ground truth with undetectable errors is worse than none for an
+HTR corpus, so the unread lines are declared rather than guessed.
+⭐ Two calibration aids that DO work and should be reused by anyone who takes this on again:
+(1) Nestle's own alphabet table, p. 4 = leaf n21 — the BOLD glyph in each cell is Estrangela, the
+    light one Serto; ܠ is a tall ascender, ܥ the same wedge WITHOUT the ascender, ܣ a closed
+    double lobe, ܚ two humps on a flat base, ܩ a loop plus bar, ܡ a closed loop with a leg.
+(2) p. 86 lines 1-3, whose text is already established, is a labelled specimen of ~15 letters.
+No digital text exists: `syriacgrammarwit00nestiala_djvu.txt` is EMPTY (0 bytes) — the item has no
+OCR at all, so there is nothing to diff a keying against even mechanically.
+"""
+
+[alignment]
+status = "structure and rubrics keyed from Nestle; sense-checked against Schermann 1907 (Latin capitulum of Sinai Syr. 10)"
+diff = """
+WHAT THE CONTROL CONFIRMED. Only the names, and only weakly. Schermann's Latin capitulum has
+`IV. Nathan ex Gabaon…`, `V. Achias porro fuit in diebus Ieroboam.`, `VI. Ioad erat ex Samaria…`
+— so AHIJAH (`ܐܚܝܐ`) and JOAD (`ܝܘܐܕ`) are both in the Sinai list and both in this neighbourhood
+of it, which is a real (if thin) check on two of the three rubrics I read.
+WHAT IT CANNOT DO, on this page more than most. (a) AZARIAH (`ܥܙܪܝܐ`) is NOT in the Latin
+capitulum's 22 at all — so the third rubric has no control and rests on the plate alone.
+(b) The capitulum's ORDER is different from Nestle's (Latin runs Moyses · Samuel · David · Nathan
+· Achias · Ioad · Elias …, Nestle's BM recension runs the Greek order beginning with Isaiah), so
+the control cannot be used to predict what stands on a given page. (c) It is a summary list in
+Latin against a full narrative in Syriac: nothing in the running text of this page has any
+parallel in it, and it never adjudicates a letter, a point or a seyame.
+⛔ Nothing above was read off the control. `ܐܚܝܐ` was decided on the glyphs (alaph · heth ·
+yudh · alaph) BEFORE the Latin was consulted, and `ܥܙܪܝܐ` on 'e (low wedge, no ascender) · zayn ·
+rish (dot above) · yudh · alaph.
+
+UNCERTAIN READINGS ON THIS PAGE, listed as required:
+· line 1, the word after `ܡܪܝܐ` — not resolved.
+· line 1, the word after `ܕܒܝܘܡ̈ܘܗܝ` and the line's final word — not resolved (a lamadh-initial
+  cluster ending the line).
+· line 4, the final word — not resolved.
+· line 5, opening word read as `ܕܐܝܬܘܗܝ` but the initial dalath is not certain; the rest of the
+  line not resolved.
+· lines 6-10, 12-16, 18-20 — not read at all.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 103
+leaf = "n192"

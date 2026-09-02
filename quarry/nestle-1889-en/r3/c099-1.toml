@@ -1,0 +1,109 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 14 of 22 (printed p. 99).
+# Keyed from the plate (n188). Shard C of the r3(b) run.
+id = "nestle-1889-en/r3/c099-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:nahum+habakkuk"
+work_note = """
+Two Life-boundaries fall on this page, and both are marked the same way: a SHORT last line
+closed with a pause, then a ONE-WORD (or name + ܢܒܝܐ) rubric standing alone on the next line,
+then the Life opening with the name repeated.
+· lines 258-259  end of the unnamed Life that runs through p. 98 (line 259 is short: `... ܟܠܗ̇ ܂`)
+· line 260       rubric `ܢܚܘܡ ܂`            — NAHUM
+· lines 261-268  Life of Nahum (line 268 short: `ܘܐܬܩܒܪ ܒܐܪܥܗ ܂`)
+· line 269       rubric `ܚܒܩܘܩ ܢܒܝܐ ܂`      — HABAKKUK the prophet
+· lines 270-277  Life of Habakkuk, running on to p. 100 (it ends at line 295 with `܀`)
+⚠ Note the rubric is NOT uniform: Nahum's is the bare name, Habakkuk's adds ܢܒܝܐ. Same on
+pp. 101-102 (ܚܓܝ ܂ bare, ܙܟܪܝܐ ܢܒܝܐ ܂ and ܡܠܐܟܝ ܢܒܝܐ ܂ with, ܢܬܢ ܂ bare). Nestle prints the
+rubric as its own line, indented to about the centre of the measure.
+⛔ No individual codex is named here either; only the section's 'e tribus codicibus Musei
+Britannici'.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+No vowel signs anywhere in the twenty lines. Seyame present (e.g. ܝܘ̈ܡܬܐ at 275); dalath/rish
+points present and read letter by letter; pause marks ܂ and ܆ both used. No `܀` on this page —
+the two Life-endings here are closed with the ordinary low point, NOT with the diamond, which
+is a real inconsistency in Nestle's setting (p. 100 line 295 and p. 101 line 300 DO carry `܀`).
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 20
+line_numbers = "260, 265, 270, 275 in the RIGHT (outer) margin — p. 99 is a recto — standing against printed lines 3, 8, 13 and 18. The page carries lines 258-277."
+page_number_form = "Syriac numeral letter, centred at head"
+page_number_read = "ܨܛ = 90 + 9 = 99, confirming leaf = page + 89 (n188)"
+transcription_note = """
+Conventions and flag forms exactly as in c098-1.toml: `⟨?ܟܟܟ⟩` = letters read but doubtful;
+`⟨?…⟩` = one or more words NOT read, with nothing asserted about their letters.
+Qushshaya/rukkakha and participle points not transcribed (known gap). Dalath/rish point read.
+"""
+
+text_syr_voc = """
+ܒܐܘܪܫܠܡ ܟܠܗܘܢ ⟨?ܝܘ̈ܡܬܐ⟩ ܕܗܝ ܡܕܝܢܬܐ ⟨?…⟩
+ܠܐܪܥܐ ⟨?…⟩ ܟܠܗ̇ ܂
+ܢܚܘܡ ܂
+ܢܚܘܡ ܐܝܬܘܗܝ ܗܘܐ ܡܢ ܐܠܩܘܫ ܂ ܡܢ ܥܒܪܐ
+ܕܒܝܬ ⟨?…⟩ ܂ ܡܢ ܫܒܛܐ ܕܫܡܥܘܢ ܂ ܗܘܐ ܡܢ
+ܒܬܪ ⟨?ܕܝܢ⟩ ܐܬܪܐ ⟨?…⟩ ܂ ܕܡܢ ⟨?ܡ̈ܝܐ⟩ ⟨?…⟩ ܆
+ܘܡܢ ⟨?…⟩ ܕܠܬܚܬ ܡܢ ܐܪܥܐ ⟨?…⟩ ܂ ⟨?…⟩ ܗܘܐ
+ܗܘܬ ܂ ⟨?…⟩ ܠܗ ⟨?…⟩
+⟨?…⟩ ܕܗܘܐ ܂ ⟨?…⟩ ܐܬܪ ⟨?…⟩ ܡܢ ⟨?ܡܕܝܢܬܐ⟩ ܂ ⟨?…⟩
+ܕܐܝܬ ܗܘܐ ܒܗ̇ ⟨?…⟩ ܂ ܡܝܬ ܕܝܢ ܒܫܠܡܐ
+ܘܐܬܩܒܪ ܒܐܪܥܗ ܂
+ܚܒܩܘܩ ܢܒܝܐ ܂
+ܚܒܩܘܩ ܐܝܬܘܗܝ ܗܘܐ ܡܢ ܫܒܛܐ ܕܫܡܥܘܢ ܂
+ܡܢ ⟨?…⟩ ܕܒܝܬ ⟨?…⟩ ܂ ܗܘܐ ⟨?ܚܝܐ⟩ ܡܢ ܩܕܝܡ
+⟨?ܫܒܝܬܐ⟩ ⟨?…⟩ ܕܐܘܪܫܠܡ ⟨?…⟩
+ܗܘ ⟨?…⟩ ܂ ⟨?…⟩ ܐܬܪܐ ⟨?…⟩ ܠܐܘܪܫܠܡ ܂ ⟨?ܒܪܡ⟩
+ܠܒܝܬ ⟨?…⟩ ܂ ܘܐܝܬܘܗܝ ܗܘܐ ܬܘܬܒܐ ܒܐܪܥܐ
+⟨?…⟩ ܟܠܗ ܝܘ̈ܡܬܐ ܆ ⟨?…⟩ ܗܠܝܢ
+ܕܗܘܘ ܒܐܘܪܫܠܡ ⟨?…⟩ ܂ ⟨?…⟩ ܗܘܐ ⟨?…⟩
+ܒܐܪܥܗ ܆ ܘܡܫܡܫ ܗܘܐ ⟨?…⟩ ܂
+"""
+
+primer_notes = """
+NONE. No rule, no small type at the foot. ⭐ But the page DOES carry a printer's signature at
+the foot, centred under the text block: `G*`. (Chrest. I's opening page, p. 67, carries `E*` —
+same asterisked form, so the gathering signatures of this volume run E*, F*, G* … and p. 99 is
+the head of gathering G*.) No square brackets on the page.
+"""
+
+[extraction]
+status = "keyed from the plate, UNVERIFIED: of ~130 word-slots, roughly 58 are keyed as confident, 7 keyed and flagged ⟨?word⟩, the rest inside ⟨?…⟩ gaps. No line was wholly unread. No Syriac-reading control exists for this piece."
+reason = """
+Better than p. 98 because the page is dense in the Vitae's formulaic vocabulary (three
+name-rubrics, two tribe formulas, two burial formulas) and those are exactly the strings this
+pass reads reliably. The gaps are the narrative interior and the place-names.
+See c098-1.toml [extraction] for the method and the reason flagged guesses were refused.
+"""
+
+[alignment]
+status = "keyed from the plate (partial); sense-checked against Schermann 1907 (Latin capitulum of Sinai Syr. 10)"
+diff = """
+⭐ THE CONTROL ACTUALLY BIT ON THIS PAGE, twice, and independently of my letter-reading:
+1. Line 262, read from the plate as `... ܡܢ ܫܒܛܐ ܕܫܡܥܘܢ ܂ ...` inside the Life headed
+   `ܢܚܘܡ ܂` — Schermann XVIII: 'Nahum fuit ex tribu Simeon.' Tribe agrees.
+2. Line 270, `ܚܒܩܘܩ ܐܝܬܘܗܝ ܗܘܐ ܡܢ ܫܒܛܐ ܕܫܡܥܘܢ ܂` — Schermann XIX: 'Habacuc fuit tempore
+   captivitatis, ex tribu Simeon.' Tribe agrees again.
+3. SEQUENCE agrees: Nahum (260) then Habakkuk (269), = capitulum XVIII then XIX.
+⚠ Note what that is worth: `ܫܒܛܐ ܕܫܡܥܘܢ` was read from the plate BEFORE the capitulum was
+consulted, and the two witnesses are a Syriac chrestomathy page and a Latin summary of a
+different Syriac manuscript — so the agreement is real evidence, not circular. It is still only
+SENSE-level: it says nothing about pointing, word division or the rest of the line.
+
+WHAT THE CONTROL CANNOT DO HERE: everything else. The capitulum gives Nahum one clause and
+Habakkuk two; this page gives them eighteen lines. `ܡܢ ܐܠܩܘܫ` (Elkosh, line 261) has NO
+counterpart in the capitulum at all — it is a detail of the full Life, and the control can
+neither confirm nor deny it. Most of the page has no parallel of any kind.
+
+UNCERTAIN READINGS: ⟨?ܝܘ̈ܡܬܐ⟩ (258) · ⟨?ܕܝܢ⟩, ⟨?ܡ̈ܝܐ⟩ (263) · ⟨?ܡܕܝܢܬܐ⟩ (266) ·
+⟨?ܚܝܐ⟩ (271) · ⟨?ܫܒܝܬܐ⟩ (272) · ⟨?ܒܪܡ⟩ (273).
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 99
+leaf = "n188"
+signature = "G*"

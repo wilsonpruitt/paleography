@@ -1,0 +1,185 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 92 of 22 (pp. 86-107).
+# Keyed from the plate (leaf n181). ⛔ UNVERIFIED AND PARTIAL — see `transcription_note` for the
+# flagging discipline and [extraction] for the counts. Nothing here is ground truth.
+id = "nestle-1889-en/r3/c092-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:syr"
+work_note = """
+Chrestomathia III, "Vitae Prophetarum", printed by Nestle "e tribus codicibus Musei Britannici"
+(pp. 86-107); page 7 of 22. Nestle names no individual codex on this page — there is no `witness`
+field in the schema yet and that gap is a known finding.
+
+WHICH LIFE: not established. No name rubric falls on this page (see [structure]); the three short
+lines here end paragraphs inside a running Life, they do not introduce one. Two content words were
+resolved letter by letter and are recorded as leads only: ܡܐܟܘܠܬܐ "food" (line 1) and ܗܝܟܠܐ "temple"
+(line 13).
+⚑ A NEAR-MISS WORTH KEEPING. Line 1's third word resolves to a five-cluster skeleton
+⟨?ܡ_ܠ_ܟ/ܘ_ܬ_ܗ⟩, and Hall's English has Habakkuk carrying food to Daniel "by angelic service" —
+Syriac ܡܠܐܟܘܬܐ — which would fit almost exactly. IT IS NOT ADOPTED: the plate's final letter of that
+word is a clear two-arch ܗ, not the ܐ that form needs. Left flagged. See this record's [alignment]
+for what happened elsewhere on the shard when a control-shaped guess WAS adopted.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+Read from the plate on THIS page, not inherited from a neighbour. No vowel sign of either tradition
+appears anywhere on the page. What IS printed: (a) seyame over plurals, (b) the rish/dalath point and
+the qushshaya/rukkakha points on individual letters, (c) pause points — a single low point, and a
+two-dot pause, (d) the linea occultans bar over the elided letter of the enclitics, printed as a long
+thin stroke with a blob at its right end. Across all six pages of this shard (pp. 92-97) the layer is
+CONSTANT, including in the one-word name rubrics: no alternation of the kind Chrest. I showed by
+caput. This agrees with shard A's finding for pp. 86-91.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. ⭐ SECOND CONTROL FOUND ON THIS SHARD, and a much stronger one, in English: Isaac H. Hall, 'The Lives of the Prophets', Journal of the Society of Biblical Literature and Exegesis 7 (1887) 28-40 — archive.org `jstor-3268776`, plain text downloadable, PD (JSTOR Early Journal Content); with Hall's 'Notes on the Lives of the Prophets', JSBLE 6 (1886), archive.org `jstor-3268671`, and a second piece at `jstor-3268731`. Hall translates a FULL Syriac Vitae Prophetarum (Union Theological Seminary MS, a modern copy of the same original behind the Sachau MS) at full narrative length, and says in his own preamble that it 'differs both from that published (in part) by Nestle, and from that in the Book of the Bee'. So: a different Syriac recension, in English, running parallel to every page of this piece — where the Latin capitulum gives one sentence per prophet. ⛔ It is a DIFFERENT witness and may never be used to supply a letter; see this record's [alignment] for a case where doing so produced a wrong reading that had to be retracted. ⭐ Nestle himself points at the Greek side, preface pp. VII-VIII: Tischendorf, Anecdota sacra et profana (2nd edn 1861) 110-119; the Journal of the Exegetical Society 1887 p. 1ff (Hall); and, 'best, however', cod. vat. 2125 (Marchalianus). See research/syriac-peshitta-editions.md"
+seyame = true
+diacritics = "consonant-distinguishing points present (rish/dalath, qushshaya/rukkakha); linea occultans present; NO vowel signs"
+lines_per_page = 20
+line_numbers = "118-137. Marginal numbers PRINTED and READ in the LEFT (outer) margin: 120 (against printed line 3 of this page), 125 (line 8), 130 (line 13), 135 (line 18)."
+line_numbering_scheme = "CONTINUOUS across the whole piece, NOT restarting per prophet — verified independently on all six pages of this shard and agreeing with shard A. p. 86 has 17 text lines (the heading eats three) numbered from 1; every page from p. 87 on has exactly 20. So p. 87 = printed lines 18-37, p. 92 = 118-137, p. 93 = 138-157, p. 94 = 158-177, p. 95 = 178-197, p. 96 = 198-217, p. 97 = 218-237; first line of page n = 20*(n-87)+18. On every page the marginal multiple of five stands against the 3rd, 8th, 13th and 18th text line, and it sits in the OUTER margin (left on verso, right on recto)."
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+page_number_read = "ܨܒ = 90 + 2 = 92"
+transcription_note = """
+Conventions DECLARED for this piece (they must match r3/c079-1.toml); no codepoint was read by eye:
+· seyame           → U+0308 combining diaeresis on the letter it sits over
+· linea occultans  → U+0304 combining macron over the elided letter
+· single low point → ܂
+· two-dot pause    → ܆
+· diamond / 4-dot / 3-dot end mark → ܀
+· a full stop printed on the baseline → ܂
+The qushshaya/rukkakha and participle points that the plate DOES carry on individual letters are NOT
+transcribed — below the resolution at which this pass can be honest, and their absence is a KNOWN
+GAP, not a claim the plate lacks them.
+⛔ Nestle's square brackets mark HIS EXEMPLAR'S GAPS, not textual doubt. NONE was seen on any page
+of this shard.
+
+⛔⛔ FLAGGING DISCIPLINE ON THIS SHARD — read this before using `text_syr_voc`.
+· `⟨?ܟܟܟ⟩`  a word whose skeleton was resolved but whose reading is NOT certain.
+· `⟨?…⟩`     a word position seen on the plate but not resolved at all.
+· `⟨?LINE NOT READ⟩` a whole line that defeated this pass. It is emitted IN POSITION so the line
+  count and the marginal-number alignment stay right; it is not a blank line.
+· Everything NOT wrapped is a reading this pass would defend — but nothing on this shard has been
+  checked by a reader of Estrangela or against any Syriac witness, because none exists for this
+  text. Treat the unwrapped words as an unverified first pass, not as ground truth.
+"""
+
+text_syr_voc = """
+ܗܢܐ ܒܝܕ ⟨?ܡ_ܠ_ܟ/ܘ_ܬ_ܗ⟩ ܡܐܟܘܠܬܐ ⟨?ܫ_ܘ/ܒ_ܝ_ܬ_ܐ⟩
+⟨?ܕܐܬ̈ܐ⟩ ܕܡܢ ⟨?ܒܫܡܗܘܢ⟩ ⟨?ܡܝܬܘ⟩ ܗܘܐ ܂ ⟨?…⟩
+⟨?LINE NOT READ⟩
+ܕܠܘܬ ܐܠܗܐ ܂
+ܗܢܐ ⟨?ܟܕ⟩ ⟨?…⟩ ܗܘܐ ܡܢ ⟨?…⟩ ܂
+⟨?ܩܪܒ⟩ ܠܘܬ ⟨?ܪ̈ܫܝܥܐ⟩ ܂ ⟨?ܘܒܡܕܝܢܬܐ⟩ ⟨?ܕܐܬܘ̈ܬܐ⟩ ⟨?…⟩
+ܗܝܕܝܢ ܂ ⟨?ܐܡܪܘ⟩ ܗܘܘ ܠܗܘܢ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ܂
+⟨?…⟩ ܂ ⟨?ܘܒܬܕܡܘܪܬܐ⟩ ܕܗܘܬ ⟨?…⟩ ܒܢ̈ܝܢܫܐ ܂
+⟨?…⟩ ⟨?ܐܢܘܢ⟩ ⟨?ܕܐܝܬ⟩ ⟨?…⟩ ܠܐܝܣܪܐܝܠ ܂ ⟨?…⟩
+⟨?…⟩ ܕܟܬܝܒ ܆
+ܗܢܐ ܟܕ ⟨?ܬܡܢ⟩ ܐܝܬܘܗܝ ܗܘܐ ܂ ⟨?ܡܫܝܚܐ⟩ ܗܘܐ
+⟨?ܠܥܡܐ⟩ ܕܐܝܣܪܐܝܠ ܂ ⟨?ܡܩܕܡ⟩ ⟨?…⟩ ܒܐܘܪܫܠܡ
+⟨?…⟩ ܗܝܟܠܐ ܂
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+"""
+
+primer_notes = """
+NONE on this page. The foot was cropped below the last text line and read: no rule, no footnote.
+⭐ That holds for the whole shard — Nestle prints pp. 92-97 with no philological apparatus at all.
+The only apparatus is the marginal line numbers, the Syriac page numeral at the head, and the
+one-word name rubrics inside the text.
+"""
+
+[structure]
+note = """
+Ink extent measured per line as a fraction of page width (threshold 120/255), with the marginal
+numeral EXCLUDED from the window — LEFT margin on this page.
+⚑ Method note worth carrying forward: measuring the extremes of ink across the whole page silently
+folds the marginal numeral into lines 3, 8, 13 and 18 and makes short numbered lines look
+full-measure. On p. 92 that hid a short line (#130) and on p. 96 it hid two (#200, #215). Exclude
+the numeral column before you trust a width.
+
+A SHORT line (w < 0.6) is a structural boundary. On this piece there are two kinds, and shard A's
+cue distinguishes them: a one-word line carrying only a personal name is a NAME RUBRIC opening a
+Life; any other short line ends a paragraph or a Life.
+
+SHORT LINES ON THIS PAGE:
+  · line  4 (#121) — 0.726–0.956, w 0.23 — ends a paragraph; READ
+  · line 10 (#127) — 0.646–0.960, w 0.31 — ends a paragraph
+  · line 13 (#130) — 0.699–0.962, w 0.26 — ends a paragraph; READ
+"""
+line_widths = """
+  line  1 (#118) 0.110-0.893 w 0.78        line 11 (#128) 0.111-0.896 w 0.78
+  line  2 (#119) 0.110-0.957 w 0.85        line 12 (#129) 0.111-0.960 w 0.85
+  line  3 (#120) 0.111-0.960 w 0.85        line 13 (#130) 0.699-0.962 w 0.26  SHORT
+  line  4 (#121) 0.726-0.956 w 0.23  SHORT line 14 (#131) 0.112-0.897 w 0.79
+  line  5 (#122) 0.111-0.894 w 0.78        line 15 (#132) 0.112-0.961 w 0.85
+  line  6 (#123) 0.110-0.958 w 0.85        line 16 (#133) 0.112-0.962 w 0.85
+  line  7 (#124) 0.109-0.961 w 0.85        line 17 (#134) 0.112-0.962 w 0.85
+  line  8 (#125) 0.111-0.961 w 0.85        line 18 (#135) 0.112-0.897 w 0.78
+  line  9 (#126) 0.110-0.966 w 0.86        line 19 (#136) 0.113-0.962 w 0.85
+  line 10 (#127) 0.646-0.960 w 0.31  SHORT line 20 (#137) 0.112-0.961 w 0.85
+"""
+
+[extraction]
+status = "keyed from the plate, UNVERIFIED and PARTIAL; no Syriac-reading control exists for this text"
+counts = "20 lines emitted · 12 lines carry a reading · 8 lines ⟨?LINE NOT READ⟩ · 26 unflagged words · 33 flagged spans · flag rate 56% of the word slots on the lines that were read at all (counts computed from text_syr_voc, not estimated)"
+shard_counts = "SHARD B TOTAL (pp. 92-97, 120 printed lines): 91 lines ⟨?LINE NOT READ⟩, 29 lines carrying a reading, 58 unflagged words, 51 flagged spans. i.e. this pass keyed roughly a quarter of the shard's lines and flagged just under half of the words inside them. That ratio IS the finding: name rubrics, Life-ending formulae and the fixed narrative furniture read cleanly; running narrative vocabulary does not."
+method = """
+METHOD, so the numbers below can be repeated. Each printed line was cropped on its own to full page
+width and upscaled to 2000px, then any doubtful word re-cropped horizontally to as little as 0.10 of
+page width (~8x). Nestle's own Estrangela alphabet table (p. 4, leaf n21) was pulled and used as the
+letterform key, and it corrected two working assumptions that had been costing readings: Estrangela
+TAW is a bowl with a tall right-hand ascender (not an "S"), and Estrangela MIM carries a leg
+descending to the LEFT which at line scale reads as a final-nun tail.
+
+MEASURED OUTCOME. Formulaic material reads first-time and fast: ܐܝܬܘܗܝ ܗܘܐ ܡܢ, ܗܘܐ, ܗܘܘ, ܡܢ, ܗܢܐ,
+ܟܕ, ܕܝܢ, ܡܝܬ ܘܐܬܩܒܪ, ܒܫܠܡܐ, ܐܠܗܐ, ܕܢܒܝ̈ܐ, ܐܘܪܫܠܡ, ܐܝܣܪܐܝܠ, and the one-word name rubrics.
+Non-formulaic narrative vocabulary does not: the third word of p. 92 line 1 took four re-crops down
+to 0.15 of page width and still resolves only to a five-cluster skeleton. That asymmetry — not the
+scan — is what caps this pass.
+"""
+reason = """
+⛔ STATUS: keyed from the plate, UNVERIFIED, and PARTIAL. Read the flagging discipline in
+`transcription_note` before using a single word of `text_syr_voc`.
+
+There is no Syriac-reading control for this text: no digital Syriac Vitae Prophetarum exists under
+any licence, there is no printed critical edition of Nestle's three BM codices, and the two controls
+that DO exist (Schermann's Latin capitulum; Hall's English of a different Syriac recension) are
+sense-level and in other languages. Nothing here has been checked against a Syriac witness because
+none is available to check against.
+
+⚑ The honest way to read the counts below: a line marked ⟨?LINE NOT READ⟩ is a line this pass could
+not key at all, and on the middle pages of the shard that is most of them. A line with words showing
+carries a mixture of readings this pass would defend and flagged skeletons it would not. Downstream,
+treat the whole field as a FIRST PASS TO BE CHECKED, never as GT.
+"""
+
+[alignment]
+status = "names and sense checked against Schermann 1907 (Latin capitulum of Sinai Syr. 10) and Hall 1887 (English, a different full Syriac recension); NOT checked against any Syriac witness, because none exists"
+diff = """
+The Latin capitulum has no parallel to any line of this page — it gives one sentence per prophet and
+this page is twenty lines of continuous narrative. Recorded as a negative: it neither contradicts nor
+corroborates anything here.
+
+⚑⚑ RETRACTION, and the reason this shard's alignment note is worth reading. Earlier in this pass, at
+LINE scale, the last line of p. 97 was read as `ܢܬܢ ܐܝܬܘܗܝ ܗܘܐ ܡܢ ܐܪܥܐ ܕܓܒܥܘܢ` and reported as a
+control hit against the capitulum's item IV, "Nathan ex Gabaon". Re-cropped at ~8x, the final word
+does not contain ܓܒܥܘܢ at all — its skeleton is ⟨?ܕ_ܒ/ܘ_ܪ_ܝ_ܬ_ܒ/ܘ_ܡ⟩ — and the first word has four
+letter-clusters, not the three ܢܬܢ needs. The reading was a pattern-match TO THE CONTROL, produced
+at a scale that could not support it, and it is withdrawn. This is exactly the circularity the brief
+forbids, caught only because the word was re-cropped. Every proper name on this shard should be
+re-cropped before it is believed, including the ones this shard still asserts.
+
+UNCERTAIN READINGS on this page: every span wrapped in ⟨?…⟩ in `text_syr_voc` — 37 of them, listed
+in position there rather than duplicated here.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 92
+leaf = "n181"

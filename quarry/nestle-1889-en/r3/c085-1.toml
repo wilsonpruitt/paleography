@@ -1,0 +1,78 @@
+# R3 — Chrestomathia II, Matt. 5, page 7 of 7 — the piece ends here.
+id = "nestle-1889-en/r3/c085-1"
+record_type = "R3"
+
+work = "peshitta:matt:5:44-48"
+work_note = """
+Opens mid-verse 44 (continued from p. 84) and runs to the end of the chapter at v. 48. The
+piece stops there: p. 86 (n175) begins Chrest. III, `III. VITAE PROPHETARUM`.
+Lines 89-100 — twelve lines, the short page; marginal numerals 90, 95, 100. The chapter's
+continuous line-numbering therefore closes at exactly 100.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic/enclitic points"
+layer_source = "read from the plate"
+diff_target = "THE NEW TESTAMENT IN SYRIAC, BFBS London 1905-1920 — archive.org `newtestamentinsy00unse`, title page verified at n6. PD. Critical edition behind it: Pusey & Gwilliam, Tetraeuangelium sanctum, Clarendon 1901 (`tetraeuangeliums00puseuoft`). See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 12
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+page_number_read = "ܦܗ = 85"
+transcription_note = "Conventions as declared in c079-1.toml. Letter-level qushshaya/rukkakha points not transcribed — known gap."
+
+text_syr_voc = """
+ܠܡܢ ܕܠܐܛ ܠܟܘܢ ܆ ܘܥܒܕܘ ܕܫܦܝܪ ܠܡܢ ܕܣܢܐ
+ܠܟܘܢ ܆ ܘܨܠܘ ܥܠ ܐܝܠܝܢ ܕܕܒܪܝܢ ܠܟܘܢ ܒܩܛܝܪܐ
+ܘܪܕܦܝܢ ܠܟܘܢ ܆ ܐܝܟܢܐ ܕܬܗܘܘܢ ܒܢ̈ܘܗܝ
+ܕܐܒܘܟܘܢ ܕܒܫܡܝܐ ܆ ܗܘ ܕܡܕܢܚ ܫܡܫܗ ܥܠ
+ܛܒ̈ܐ ܘܥܠ ܒܝ̈ܫܐ ܆ ܘܡܚܬ ܡܛܪܗ ܥܠ ܟܐܢ̈ܐ ܘܥܠ ܥܘ̈ܠܐ
+ܐܢ ܓܝܪ ܡܚܒܝܢ ܐܢ̄ܬܘܢ ܠܐܝܠܝܢ ܕܡܚܒܝܢ
+ܠܟܘܢ ܆ ܡܢܐ ܐܓܪܐ ܐܝܬ ܠܟܘܢ ܆ ܠܐ
+ܗܐ ܐܦ ܡܟܣ̈ܐ ܗܝ ܗܕܐ ܥܒܕܝܢ ܀ ܘܐܢ
+ܫܐܠܝܢ ܐܢ̄ܬܘܢ ܒܫܠܡܐ ܕܐܚܝ̈ܟܘܢ ܒܠܚܘܕ ܆ ܡܢܐ
+ܝܬܝܪ ܥܒܕܝܢ ܐܢ̄ܬܘܢ ܆ ܠܐ ܗܐ ܐܦ ܡܟܣ̈ܐ ܗܝ
+ܗܕܐ ܥܒܕܝܢ ܀ ܗܘܘ ܗܟܝܠ ܐܢ̄ܬܘܢ ܓܡܝܪ̈ܐ ܆
+ܐܝܟܢܐ ܕܐܒܘܟܘܢ ܕܒܫܡܝܐ ܓܡܝܪ ܗ̄ܘ ܂
+"""
+
+verse_line_index = """
+v.44 continues through line 91 · v.45 line 91 (last three words) · v.46 line 94 ·
+v.47 line 96 (last word) · v.48 line 99.
+Marginal line numerals at 90, 95, 100.
+"""
+
+primer_notes = "None. The piece ends without a colophon, rule or closing note; p. 86 simply opens Chrest. III."
+
+uncertain = """
+⚑ Line 93 (`ܛܒ̈ܐ ܘܥܠ ܒܝ̈ܫܐ ܆ ܘܡܚܬ ܡܛܪܗ ܥܠ ܟܐܢ̈ܐ ܘܥܠ ܥܘ̈ܠܐ`) is measurably longer than the
+other lines on the page. Either the compositor set it tighter, or one of its eight clusters
+belongs to line 94. Read once at 3x; not re-verified. The WORDS are not in doubt — only which
+side of the line break the last one or two fall on, which matters to `lines_per_page` fidelity
+and to nothing else.
+"""
+
+[alignment]
+status = "keyed from Nestle; checked against BFBS 1905-1920 at leaf n17 verso band (printed p. 6, which carries Matt 5:45-48 and then Cap. vi)"
+diff = """
+⭐ FULL AGREEMENT on this page — the cleanest result in the run, and it lands on the verses
+that matter most for a diff:
+
+· v. 45  ܐܝܟܢܐ ܕܬܗܘܘܢ ܒܢ̈ܘܗܝ ܕܐܒܘܟܘܢ ܕܒܫܡܝܐ ... ܥܠ ܛܒ̈ܐ ܘܥܠ ܒܝ̈ܫܐ ... ܥܠ ܟܐܢ̈ܐ ܘܥܠ ܥܘ̈ܠܐ
+· v. 46  ... ܡܢܐ ܐܓܪܐ ܐܝܬ ܠܟܘܢ ܂ ܠܐ ܗܐ ܐܦ ܡܟܣ̈ܐ ܗܝ ܗܕܐ ܥܒܕܝܢ
+· v. 47  ... ܒܫܠܡܐ ܕܐܚܝ̈ܟܘܢ ܒܠܚܘܕ ܂ ܡܢܐ ܝܬܝܪ ܥܒܕܝܢ ܐܢ̱ܬܘܢ ܂ ܠܐ ܗܐ ܐܦ ܡܟܣ̈ܐ ܗܝ ܗܕܐ ܥܒܕܝܢ
+· v. 48  ܗܘܘ ܗܟܝܠ ܐܢ̱ܬܘܢ ܓܡܝܪ̈ܐ ܂ ܐܝܟܢܐ ܕܐܒܘܟܘܢ ܕܒܫܡܝܐ ܓܡܝܪ ܗܘ
+
+word for word, in the same order, with the same seyame — including both occurrences of the
+`ܠܐ ܗܐ ܐܦ ܡܟܣ̈ܐ ܗܝ ܗܕܐ ܥܒܕܝܢ` refrain, which is where a mis-keyed repetition would show.
+
+⚑ The one thing this agreement does NOT establish: pointing. BFBS prints these verses fully
+vocalized and Nestle prints them bare, so the two texts agree on every consonant and on no
+vowel. Vocalisation outranks the sense for QA — and on this piece there is no vocalisation to
+check against, in either direction. That is a property of Chrest. II, not a defect of the run,
+and it is the reason Chrest. I (vocalized Serto, against Barnes 1914) is the stronger half of
+R3(a) for a pointing check.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 85
+leaf = "n174"

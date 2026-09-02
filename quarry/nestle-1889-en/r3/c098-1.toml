@@ -1,0 +1,132 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 13 of 22 (printed p. 98).
+# Keyed from the plate (n187). Shard C of the r3(b) run.
+id = "nestle-1889-en/r3/c098-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:life-preceding-nahum"
+work_note = """
+Chrestomathia III, 'Vitae Prophetarum', printed by Nestle 'e tribus codicibus Musei
+Britannici' (pp. 86-107). ⛔ Nestle names NO individual codex anywhere on this page; the
+collective 'e tribus codicibus' of the section head is all the witness information the piece
+carries here. There is no `witness` field in the schema and that gap is a known finding.
+
+⭐ NO LIFE BOUNDARY FALLS ON THIS PAGE. All twenty bands are full-measure text lines: there is
+no short indented last line, no `܀`, and no one-word name rubric anywhere on p. 98 (contrast
+pp. 99-102, which carry six between them). The whole page therefore sits inside ONE Life —
+the one that ends at line 259 on p. 99, immediately before the `ܢܚܘܡ ܂` rubric at line 260.
+⚠ The rubric that OPENS that Life stands on p. 97 (line 236, the last-but-one line of that
+page) and I could NOT read it with confidence from the plate: the word resolves to roughly
+[low-wide][ܘ][ܠ][?][ܡ] and none of my candidates satisfied it. It is NOT ܢܚܘܡ (which I did
+read, twice, at p. 97 line 236's successor page and at p. 99 line 260 — different shapes).
+⛔ I have deliberately NOT filled the name in from Schermann's order (where XVII Amos precedes
+XVIII Nahum): that is exactly the circular use of the control the brief forbids. `work` is
+therefore the position, not a name. p. 97 is another shard's page; whoever keys it should
+settle the rubric and then this record's `work` can be corrected.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+Verified on this page at up to 8x on single words: NO vowel signs of any kind anywhere in the
+twenty lines. What IS present: seyame (two dots) on plurals; the dalath/rish point (below /
+above the same hook — checked letter by letter); a single low point ܂ as the ordinary pause;
+a two-dot colon ܆; no `܀` on this page. Constant with the neighbouring pages of my shard and
+with the coordinator's reading of n196, so the layer is constant across Chrest. III.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 20
+line_numbers = "240, 245, 250, 255 in the LEFT (outer) margin, standing against printed lines 3, 8, 13 and 18. The page therefore carries lines 238-257 of the piece's continuous numbering."
+page_number_form = "Syriac numeral letter, centred at head"
+page_number_read = "ܨܚ = 90 + 8 = 98, confirming leaf = page + 89 (n187)"
+transcription_note = """
+⛔ Codepoints for the marks were NOT read by eye (the MUFI rule). Declared CONVENTION over what
+the plate shows:
+· seyame            → U+0308 combining diaeresis on the letter it sits over
+· single low point  → ܂
+· two-dot pause     → ܆
+· diamond / 4-dot   → ܀
+The qushshaya/rukkakha and participle dots on individual letters are NOT transcribed — they are
+below the resolution at which this pass can be honest. That is a KNOWN GAP, not a claim the
+plate lacks them. The dalath/rish point IS transcribed, because it changes the letter.
+
+⚠ TWO FLAG FORMS, and the difference matters:
+· `⟨?ܟܟܟ⟩`  = a word whose letters I read but am not sure of. The letters are a reading.
+· `⟨?…⟩`   = one or more words I did NOT read. ⛔ NOTHING is asserted about their letters.
+  This is used instead of inventing a flagged guess, which would still assert letters.
+⭐ p. 98 is the WORST page of this shard: see [extraction] for the count.
+"""
+
+text_syr_voc = """
+ܡܕܝܢܬܐ ܂ ܥܠ ܓܢܒ ܡܕܝܢܬܐ ⟨?…⟩
+⟨?…⟩ ܂ ⟨?ܢܒܝܐ⟩ ܂ ܘܐܬܐ ⟨?…⟩
+⟨?…⟩ ܠܐ ⟨?…⟩ ܗܘ ܂ ܐܠܐ ⟨?…⟩
+⟨?LINE NOT READ⟩
+⟨?…⟩ ܗܘܐ ⟨?ܓܝܪ⟩ ⟨?…⟩ ܐܠܐ ⟨?…⟩ ⟨?ܡܛܠ⟩
+⟨?…⟩ ܥܠ ⟨?…⟩ ⟨?ܪܒܬܐ⟩ ܂
+ܐܝܬܘܗܝ ܗܘܐ ⟨?ܐܠܗܐ⟩ ܂ ⟨?…⟩ ⟨?ܠܒܝܬܐ⟩
+⟨?…⟩ ܂ ⟨?…⟩ ܥܠ ⟨?ܐܪܥܐ⟩ ܂ ⟨?…⟩
+⟨?…⟩ ܠܐ ⟨?…⟩
+⟨?…⟩ ܗܘܐ ⟨?…⟩ ܂ ⟨?…⟩
+ܘܡܢ ܒܬܪ ܕܡܝܬ ⟨?…⟩ ܐܠܗܐ ⟨?…⟩ ⟨?ܕܡ̈ܝܬܐ⟩
+⟨?ܒܐܝ̈ܕܘܗܝ⟩ ⟨?ܕܐܠܗܐ⟩ ܂ ܡܢ ⟨?…⟩ ܗܘܐ ⟨?…⟩ ܠܗ
+ܕܠܐ ⟨?…⟩ ܐܠܗܐ ܂ ⟨?ܘܐܡܪ⟩ ܡܢ ⟨?…⟩
+ܒܬܪ ⟨?ܩܒܘܪܐ⟩ ⟨?…⟩ ܠܐܪܥܐ ⟨?ܕܝܗܘܕܝܐ⟩ ܂ ܘܡܢ ܒܬܪ
+⟨?ܕܡܝܬܬ⟩ ⟨?ܐܡܗ⟩ ⟨?…⟩ ܒܐܘܪܫܠܡ ܂ ܘܩܒܪܗ ܥܠ ܓܢܒ ⟨?ܒܬܘܠܬܐ⟩
+⟨?…⟩ ܒܐܪܥܐ ܕܢܦܫܗ ܂ ⟨?…⟩ ܘܡܝܬ ܘܐܬܩܒܪ
+⟨?…⟩ ⟨?ܕܗܘܐ⟩ ܗܘܐ ⟨?…⟩ ܕܫܒܛܐ ܆
+⟨?…⟩ ܗܘܐ ⟨?ܪܫܥܐ⟩ ܂ ⟨?…⟩ ܒܗܘ ܂ ܐܬܪܐ ܥܠ
+⟨?…⟩ ܟܠܗ ܐܪܥܐ ܂ ⟨?…⟩ ܡܝܬ ܂ ⟨?…⟩
+⟨?…⟩ ⟨?ܫܘܠܡܐ⟩ ܂ ⟨?…⟩ ܡܝܬ ܂ ⟨?…⟩
+"""
+
+primer_notes = """
+NONE on this page. There is no rule and no small type at the foot: the last text band (line
+257) is followed by blank paper to the trim. No signature either (p. 99 carries `G*`).
+No square brackets anywhere on the page.
+"""
+
+[extraction]
+status = "keyed from the plate, UNVERIFIED and MOSTLY UNREAD: of ~120 word-slots on the page, roughly 25 are keyed as confident, ~14 are keyed and flagged ⟨?word⟩, and the remainder fall inside ⟨?…⟩ gaps. 1 line (241) was not read at all. No Syriac-reading control exists for this piece."
+reason = """
+⭐ THE MEASUREMENT IS THE FINDING, and it is not the same on every page of this shard.
+Working from the 1586x2512 master (there is nothing higher), with the Estrangela alphabet
+calibrated against a KNOWN string — Nestle's own p. 86 lines 1-4, whose text the brief supplies
+— my word-level reading is reliable for the formulaic vocabulary of the Vitae
+(ܗܘܐ · ܡܢ · ܐܝܬܘܗܝ · ܡܝܬ · ܘܐܬܩܒܪ · ܥܠ ܓܢܒ · ܐܪܥܐ · ܡܕܝܢܬܐ · ܫܒܛܐ · ܐܘܪܫܠܡ · ܢܒܝܐ · ܟܕ · ܐܠܐ)
+and UNRELIABLE for place-names, personal names and rarer nouns — which is most of the content.
+p. 98 is the worst case because it is entirely narrative interior with no rubric, no formula
+cluster and several proper nouns; pp. 101-102 read far better (see those records).
+⛔ Flagged GUESSES were refused for the unread stretches: a `⟨?ܟܟܟ⟩` still asserts letters, and
+a corpus of asserted letters at this hit-rate is worse for HTR ground truth than a gap. `⟨?…⟩`
+asserts nothing. Everything structural on the page IS verified and is recorded above.
+"""
+
+[alignment]
+status = "keyed from the plate (partial); sense-checked against Schermann 1907 (Latin capitulum of Sinai Syr. 10)"
+diff = """
+WHAT THE CONTROL DID: nothing on this page, and that is the honest answer. Schermann's
+Appendix (pp. 105-106) is a 22-item CAPITULUM — one clause per prophet, tribe/date/burial —
+against twenty lines of continuous Syriac narrative here. p. 98 carries no prophet's name, no
+tribe formula and no burial formula that the capitulum could touch: the one place it could
+have helped (naming the Life) is precisely where the brief forbids using it, since the plate
+reading of the p. 97 rubric failed. So the control neither confirmed nor contradicted a single
+word of this page.
+
+WHAT IT DID CONFIRM, one page later and worth recording here because it bounds this Life:
+the rubric at p. 99 line 260 reads `ܢܚܘܡ ܂` and line 261 `... ܡܢ ܐܠܩܘܫ ܂ ...` with line 262
+`... ܡܢ ܫܒܛܐ ܕܫܡܥܘܢ ܂ ...`, against Schermann XVIII 'Nahum fuit ex tribu Simeon' — an
+independent agreement on the tribe, plus 'Elkosh', which the capitulum does not give at all.
+
+UNCERTAIN READINGS ON THIS PAGE, listed as required:
+⟨?ܢܒܝܐ⟩ (239) · ⟨?ܓܝܪ⟩, ⟨?ܡܛܠ⟩ (242) · ⟨?ܪܒܬܐ⟩ (243) · ⟨?ܐܠܗܐ⟩, ⟨?ܠܒܝܬܐ⟩ (244) ·
+⟨?ܐܪܥܐ⟩ (245) · ⟨?ܕܡ̈ܝܬܐ⟩ (248) · ⟨?ܒܐܝ̈ܕܘܗܝ⟩, ⟨?ܕܐܠܗܐ⟩ (249) · ⟨?ܘܐܡܪ⟩ (250) ·
+⟨?ܩܒܘܪܐ⟩, ⟨?ܕܝܗܘܕܝܐ⟩ (251) · ⟨?ܕܡܝܬܬ⟩, ⟨?ܐܡܗ⟩, ⟨?ܒܬܘܠܬܐ⟩ (252) · ⟨?ܕܗܘܐ⟩ (254) ·
+⟨?ܪܫܥܐ⟩ (255) · ⟨?ܫܘܠܡܐ⟩ (257).
+Line 241 not read at all.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 98
+leaf = "n187"

@@ -1,0 +1,119 @@
+# R3 — Chrestomathia II, "Evangelii Matthaei caput quintum", page 1 of 7.
+# Keyed from the plate (n168) and checked against the BFBS 1905-1920 Syriac NT.
+id = "nestle-1889-en/r3/c079-1"
+record_type = "R3"
+
+work = "peshitta:matt:5:1-10"
+work_note = """
+First page of Chrest. II. Printed heading: `II. EVANGELII MATTHAEI CAPUT QUINTUM.` with the
+sub-line `[ex editione Americana, supra nr. 65 c]` — i.e. Nestle is reprinting an American
+Bible Society Peshitta, NOT setting from a manuscript, and his own Litteratura nr. 65 c is
+the citation. Superscript verse numbers 1-10 are printed on this page; v. 10 finishes here.
+⭐ The piece carries a CONTINUOUS marginal line-numbering, every fifth line, running 1-100
+across the whole seven pages and NOT restarting per page. This page is lines 1-13.
+"""
+
+# ⛔ LAYER FINDING — this section is NOT what p. 67 (Chrest. I) was.
+layer = "unvocalized Estrangela, with seyame and the diacritic/enclitic points"
+layer_source = "read from the plate"
+layer_note = """
+Chrest. I (c067-1) opens in FULLY VOCALIZED SERTO. Chrest. II opens, and stays, in
+UNVOCALIZED ESTRANGELA: no vowel signs anywhere on any of the seven pages. What IS marked is
+(a) seyame on plurals, (b) the qushshaya/rukkakha and participle points, (c) a horizontal bar
+over the elided letter of the enclitics (ܗܘܐ, ܗܝ, ܗܘ, ܐܢܐ, ܐܢܬ, ܐܢܬܘܢ, ܐܬܝܬ, ܐܬܐܡܪ, ܡܕܝܢܬܐ).
+So MAP.md's "the mix is pedagogical" holds at the level of the whole chrestomathy, and this
+piece is the unvocalized-Estrangela pole of it. Declared per page, as ruled.
+"""
+diff_target = "THE NEW TESTAMENT IN SYRIAC, BFBS London 1905-1920 — archive.org `newtestamentinsy00unse`, title page verified at n6. PD. Critical edition behind it: Pusey & Gwilliam, Tetraeuangelium sanctum, Clarendon 1901 (`tetraeuangeliums00puseuoft`). See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 13
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+page_number_read = "ܥܛ = 70 + 9 = 79, confirming MAP.md's leaf = page + 89"
+
+# ⚠ FIELD NAME KEPT FROM THE SCHEMA, BUT THE TEXT IS NOT VOCALIZED. `text_syr_voc` is the
+# schema's slot for "the text as printed"; here what is printed carries no vowels. See `layer`.
+# One output line = one printed line. Superscript verse numerals are NOT inline; see
+# `verse_line_index`.
+transcription_note = """
+⛔ Codepoints for the marks were NOT read by eye (the MUFI rule). What is recorded is a
+declared CONVENTION over what the plate shows, reversible and checkable:
+· seyame            → U+0308 combining diaeresis on the letter it sits over
+· linea occultans   → U+0304 combining macron (the plate prints a straight horizontal bar
+                      over the whole enclitic; no claim is made about which Syriac-block
+                      codepoint an encoder should later choose)
+· single dot pause  → ܂ (U+0700)
+· two-dot vertical  → ܆ (U+0706)
+· diamond/four-dot  → ܀ (U+0700-block end mark, U+0701 not used)
+The qushshaya/rukkakha and participle points that the plate carries on individual letters are
+NOT transcribed — they are below the resolution at which this pass can be honest about them,
+and their absence here is a KNOWN GAP, not a claim that the plate lacks them.
+"""
+
+text_syr_voc = """
+ܟܕ ܚܙܐ ܕܝܢ ܝܫܘܥ ܠܟܢܫܐ ܆ ܣܠܩ ܠܛܘܪܐ ܆
+ܘܟܕ ܝܬܒ ܆ ܩܪܒܘ ܠܘܬܗ ܬܠܡܝ̈ܕܘܗܝ ܀ ܘܦܬܚ
+ܦܘܡܗ ܘܡܠܦ ܗ̄ܘܐ ܠܗܘܢ ܘܐܡܪ ܀ ܛܘܒܝܗܘܢ
+ܠܡܣ̈ܟܢܐ ܒܪܘܚ ܆ ܕܕܝܠܗܘܢ ܗ̄ܝ ܡܠܟܘܬܐ ܕܫܡܝܐ ܂
+ܛܘܒܝܗܘܢ ܠܐܒܝ̈ܠܐ ܕܗܢܘܢ ܢܬܒܝܐܘܢ ܂
+ܛܘܒܝܗܘܢ ܠܡܟܝ̈ܟܐ ܆ ܕܗܢܘܢ ܢܐܪܬܘܢ ܐܪܥܐ ܂
+ܛܘܒܝܗܘܢ ܠܐܝܠܝܢ ܕܟܦܢܝܢ ܘܨܗܝܢ ܠܟܐܢܘܬܐ ܆
+ܕܗܢܘܢ ܢܣܒܥܘܢ ܂ ܛܘܒܝܗܘܢ ܠܡܪ̈ܚܡܢܐ ܆
+ܕܥܠܝܗܘܢ ܢܗܘܘܢ ܪ̈ܚܡܐ ܂ ܛܘܒܝܗܘܢ ܠܐܝܠܝܢ
+ܕܕܟܝܢ ܒܠܒܗܘܢ ܆ ܕܗܢܘܢ ܢܚܙܘܢ ܠܐܠܗܐ ܂
+ܛܘܒܝܗܘܢ ܠܥܒܕ̈ܝ ܫܠܡܐ ܆ ܕܒܢ̈ܘܗܝ ܕܐܠܗܐ
+ܢܬܩܪܘܢ ܂ ܛܘܒܝܗܘܢ ܠܐܝܠܝܢ ܕܐܬܪܕܦܘ ܡܛܠ
+ܟܐܢܘܬܐ ܆ ܕܕܝܠܗܘܢ ܗ̄ܝ ܡܠܟܘܬܐ ܕܫܡܝܐ ܂
+"""
+
+verse_line_index = """
+v.1 line 1 · v.2 line 2 (last word) · v.3 line 3 (last word) · v.4 line 5 · v.5 line 6 ·
+v.6 line 7 · v.7 line 8 · v.8 line 9 · v.9 line 11 · v.10 line 12.
+Marginal line numbers printed at lines 1, 5, 10.
+"""
+
+primer_notes = """
+NONE on this page beyond the section heading and its bracketed source note. ⭐ And that holds
+for the whole of Chrest. II: Nestle prints these seven pages with NO philological footnotes at
+all — unlike Chrest. IV (De sancta cruce), which carries his corrigenda. The only apparatus is
+the marginal line numbers and the superscript verse numbers.
+"""
+
+[alignment]
+status = "keyed from Nestle; checked against BFBS 1905-1920 at leaf n15 (printed p. 4), where Cap. V begins"
+diff = """
+CONTROL LOCATED, not assumed: `newtestamentinsy00unse` leaf n12 = printed p. 1 = Matthew
+Cap. i; leaf n14 = printed p. 3, running head `ܡܬܝ ܓ`; leaf n15 = printed p. 4, where
+`Cap. v.` is printed in the margin and Matt 5:1 begins; leaf n16 = printed p. 5, running head
+`ܡܬܝ ܗ`, vv. 9-21+. So for this scan **leaf = printed page + 11**, calibrated on two agreeing
+running heads plus the chapter rubric, not on a bare offset. ⚑ The archive's
+`_hocr_pageindex.json` byte offsets for this item do NOT map one segment to one leaf and were
+discarded as a locator.
+
+⛔ THE TWO WITNESSES ARE IN DIFFERENT LAYERS. BFBS 1905-1920 prints Matthew in FULLY VOCALIZED
+Estrangela; Nestle prints it unvocalized. The diff is therefore over the CONSONANTAL SKELETON,
+word division, word order and seyame — it cannot and does not adjudicate pointing. Recording
+this is the point: an agreement here is weaker evidence than an agreement between two pointed
+editions would be.
+
+AGREEMENT on this page: the verse division (1-10), the whole consonantal sequence of vv. 1-4
+and 6-10 as far as the control's resolution carries, and the plural seyame on ܬܠܡܝ̈ܕܘܗܝ,
+ܠܡܣ̈ܟܢܐ, ܠܐܒܝ̈ܠܐ, ܠܡܟܝ̈ܟܐ, ܠܡܪ̈ܚܡܢܐ, ܪ̈ܚܡܐ, ܠܥܒܕ̈ܝ, ܕܒܢ̈ܘܗܝ.
+
+DIVERGENCES / FLAGS, kept as Nestle prints them:
+1. ⚑ v. 1, `ܠܟܢܫܐ`. Nestle prints it with NO seyame (singular). The BFBS plate at n15 appears
+   to carry seyame — `ܠܟܢ̈ܫܐ`, plural. Read as probable, not certain, at the control's
+   resolution; flagged rather than resolved, because a seyame present in one edition and
+   absent in the other is exactly the class of thing this diff exists to catch.
+2. ⚑ v. 5, `ܢܐܪܬܘܢ ܐܪܥܐ`. Nestle prints ܐܪܥܐ WITHOUT the ܠ. The reading of the control at this
+   point was NOT resolved (the band that carries v. 5 sits on the crop seam of n15 and the
+   re-zoom landed on vv. 6-8). ⛔ Left open rather than filled in from knowledge of the verse.
+3. v. 4 and v. 5 are printed with `ܕܗܢܘܢ` directly after the noun with no intervening pause
+   mark in v. 4 but with ܆ in v. 5 — a punctuation difference internal to Nestle, noted
+   because the pause marks are part of what a learner-facing render has to decide about.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 79
+leaf = "n168"
+printed_heading = "II. EVANGELII MATTHAEI CAPUT QUINTUM. [ex editione Americana, supra nr. 65 c]"

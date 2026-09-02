@@ -1,0 +1,164 @@
+# R3 - Chrestomathia IV, "Historia inventionis sanctae crucis", printed page 116 (leaf n205).
+# ⛔ Syriac text NOT keyed on this page - see `transcription_note`. Everything else is extracted.
+id = "nestle-1889-en/r3/c116-1"
+record_type = "R3"
+
+work = "historia-inventionis-crucis:2-cod-mus-brit-add-14644:lines-55-74"
+work_note = """
+**Codex: cod. Mus. Brit. Add. 14,644** - Nestle's sub-head is `2) e codice Mus. Brit. Add.
+14,644.`, printed mid-page on p. 113. Sub-piece IV.2, the second of the three named codices in
+Chrest. IV; 274 lines over pp. 113b-126, spanning foll. 18r-23v.
+⭐ The collation style CHANGES with the codex: IV.1 cites Paris. 234 by folio *and column*
+(`(b, col. 2.)`); IV.2 cites Add. 14,644 by folio and side only - `(18 r.)`, `(f. 18 vers.)`,
+`(fol. 19 rect.)`, `(fol. 19 vers.)` … `(f. 23 vers.)` - because the second manuscript is not in
+columns. A marker regex written against IV.1 will match nothing in IV.2.
+
+⭐ **RULED - and this is the trap the record exists to close.** Nestle's published corrigenda
+in De sancta cruce ("Korrekturen zu meiner Abschrift von B: Z. 148 lies …, 216 …, 261 …, 343 …; zu
+Z. 44 siehe die Praef. der Porta … z. B. Z. 222") **do NOT touch Chrestomathia IV.** In that
+footnote A and B are MANUSCRIPT SIGLA, not De sancta cruce's section letters: A = Bodl. Libr. MS.
+Marsh 13 (dated fol. 243v, A.D. 1177) and B = Mus. Brit. Add. 12,174 anni 1196 - the manuscript
+behind DSC's *first* section, `A.) (E COD. LONDIN. ADD. 12174 ANNI 1196.)`. That text runs to line
+345/346, which is why both the corrigenda and the collation apparatus headed `A [= Bodl. Libr. Ms.
+Marsh 13]` reach line 343 - a line number the Historia inventionis never reaches (IV.1 = 101 lines,
+IV.2 = 274, IV.3 = 92).
+⛔ The near-miss is the whole danger: 44, 148, 216, 222 and 261 are ALL valid line numbers inside
+Chrest. IV.2, and 216 and 261 are exactly the lines that carry `(fol. 22 vers.)` and `(f. 23 vers.)`.
+A later session that "applies Nestle's own corrigenda" to IV.2 would silently corrupt five lines of
+a text they were never written about. What makes it look as though they belong is that the
+apparatus is printed physically AFTER our text - DSC pp. 37-38, "steht S. 37. 38 hinter dem Text
+von B die vollständige Collation von A". It does not belong to it.
+
+"""
+
+layer = "unvocalized Serto, with seyame and the diacritic/enclitic points; no vowel sign anywhere"
+layer_source = "read from the plate (leaf n205), per page as ruled - not inherited from the section default"
+layer_note = """
+Declared from this plate, not from Phase 0's note and not from the neighbouring page. The whole of
+Chrestomathia IV - all 24 pages, all three codices - sits at the **unvocalized-Serto pole and never
+leaves it**: not one vowel point on any page. What the plates do carry is seyame on plurals, the
+letter points (dalath/rish, and the qushshaya/rukkakha and participle points), a linea occultans
+over elided letters, and the ܂ / ܆ / ❖ punctuation.
+⭐ So Chrest. IV settles the layer table's third case. Chrest. I alternates by caput (Serto /
+Estrangela / Serto / Estrangela) and puts two layers on three pages; Chrest. II is unvocalized
+Estrangela throughout; **Chrest. IV is unvocalized SERTO throughout** - the same vocalisation state
+as Chrest. II but the other script. Script and pointing are two independent axes and this piece is
+the proof; a `layer` field that treats them as one string will keep colliding.
+"""
+diff_target = "E. Nestle, DE SANCTA CRUCE: ein Beitrag zur christlichen Legendengeschichte, Berlin: Reuther 1889 - archive.org `desanctacruceein0000nest` (148 leaves; leaf = printed page + 11, calibrated on the plate at n33 = p. 22). Same passage, lifted by Nestle out of his own book of the same year: same section head `B. HISTORIA INVENTIONIS SANCTAE CRUCIS`, same sub-heads, same unvocalized Serto, same marginal numbering, same folio/column markers. Character-level Syriac diff target - but NOT an independent witness: agreement proves the keying of NESTLE, not of the manuscript. See research/syriac-peshitta-editions.md"
+layer_source_note = "seyame and the letter points are visible at the plate's own resolution and are reported; individual qushshaya/rukkakha points are NOT itemised (below the resolution at which this pass can be honest about them - a known gap, not a claim the plate lacks them)."
+seyame = true
+lines_per_page = 20
+line_numbers = """
+Marginal, every fifth line, in the OUTER margin (left on versos, right on rectos) - verified on this
+plate. ⭐ The numbering is **per sub-piece and restarts at each codex**: IV.1 runs 1-101, IV.2
+restarts at 1 and runs to 274, IV.3 restarts at 1 and runs to 92. A reader who takes the marginals
+as one series across Chrest. IV will mis-locate every line from p. 113 on.
+This page: 55, 60, 65, 70 - LEFT margin (verso, outer). Line range 55-74.
+⚑ Page line-ranges here are derived from the PRINTED marginals, not from a row count: on each page
+a marginal numeral pins one row to an absolute line number, and the next page's first marginal pins
+the page's last line. Every boundary in pp. 108-131 closes without a gap or an overlap.
+"""
+page_number_form = "Syriac numeral letters, centred at head - no arabic number printed (as everywhere in the Chrestomathia)"
+
+transcription_note = """
+⛔ DELIBERATE NON-TRANSCRIPTION, not a failed plate fetch. Reasons, in order:
+
+1. **Unvocalized Serto carrying an unknown text.** R3(a) worked because it keyed texts it already
+   knew (Genesis, Matt. 5) and then checked them, and because Chrest. I is VOCALIZED Serto, where
+   the points disambiguate the skeleton. Chrest. IV is unvocalized Serto carrying a legend for which
+   no digital edition exists anywhere (ruled 2026-09-01, research/syriac-peshitta-editions.md).
+   Nothing primes the read; every word is a cold glyph-by-glyph decision.
+2. **The master scan is 1586 x 2512 px.** Checked 2026-09-01: `page/nNNN.jpg`, the same URL with
+   `?scale=0/1/2`, and the `_jp2.zip` member all return that identical size, so there is no
+   higher-resolution copy of this scan to escalate to. Serto pairs that differ by one hook or one
+   dot (dalath/rish, the yud/shin/semkath peaks, medial nun vs. lamadh vs. alaph) sit at the edge of
+   it; past ~2.5x the enlargement is interpolation, not information.
+3. **The house rule forbids the alternative.** [[reference_arabic-control-rule]] and
+   SYRIAC-LANGUAGE-PILOT.md §5/§8: never read codepoints by eye; an extractor that is unsure flags
+   rather than extracting "to be safe". A confidently wrong Syriac line is worse than a blank one.
+4. **Keying from the diff target would poison the diff.** De sancta cruce is the clearer of the two
+   settings (1726 px scan, larger type on the page). Keying from IT and then "diffing" against the
+   Grammatik would make the agreement an artefact of the method - the circularity R3(a) refused when
+   it declined to peek at BFBS for Matt. 5:5.
+
+⭐ What is owed here is a reader with Syriac, or a Serto-trained HTR model, working from De sancta
+cruce and the Grammatik side by side. Everything else in this record - line numbering, the
+folio/column collation, the codex boundaries, the footnote apparatus, the De sancta cruce
+line-for-line correspondence, the corrigenda ruling - is done and does not need redoing.
+"""
+
+text_syr_voc = """
+⛔ NOT READ - the Syriac of this page is deliberately not transcribed (see `transcription_note`).
+The line inventory below is what the plate does license: one entry per printed line, with the line's
+number in the piece's own marginal series and anything on that line that is not Syriac.
+
+Line inventory:
+  line 55: marginal numeral `55` printed
+  line 60: marginal numeral `60` printed
+  line 65: marginal numeral `65` printed
+  line 67: `(fol. 19 vers.)`
+  line 70: marginal numeral `70` printed
+"""
+
+primer_notes = """
+NONE. Nestle prints no footnote on this page.
+⭐ And that holds for the whole of IV.1 and IV.2: **not one philological footnote in the nineteen
+pages 108-126.** The only apparatus in those two sub-pieces is the marginal line numbers and the
+folio/column markers. Nestle's notes on Chrest. IV appear only in IV.3 (pp. 128, 129, 130), which
+also carries in-text editorial parentheses. ⚑ This narrows a finding from R3(a): the Chrest. II
+record's remark that Chrest. II has 'no philological footnotes at all, unlike Chrest. IV' is true
+only of Chrest. IV.3 - 19 of Chrest. IV's 24 pages have no footnotes either.
+"""
+
+[alignment]
+status = "⛔ Syriac not keyed (see transcription_note). What IS aligned - exactly, and verified on independent anchors - is this page's LINE NUMBERING and its folio/column markers against Nestle's own De sancta cruce (1889), the same setting."
+diff = """
+⭐ **The two printings share their line breaks and their line numbering - verified, not assumed.**
+De sancta cruce sets more lines per page than the Grammatik (DSC p. 21 carries text lines 1-20 where
+Grammatik p. 108 carries 1-17), so the PAGES do not correspond - but the LINES do, one for one, and
+a given line carries the same marginal numeral in both books. Anchors, in both sub-pieces:
+  · IV.1 `(a, col. 2.)` = line 12 in both · `(b, col. 1)` = line 22 in both
+  · IV.1 `(b, col. 2.)` = line 80 in both (the DSC line carries the marginal `80` itself)
+  · IV.1 `(fol. 295, a, col. 1.)` = line 92 in both
+  · IV.2 `(f. 18 vers.)` = line 18 in both · `(f. 23 vers.)` = line 261 in both
+  · Both texts end on the same line: IV.1 at 101, IV.2 at 274 with the same closing mark.
+That correspondence is what makes a character-level diff possible at all, and it is the half of the
+diff this pass can honestly deliver. It also hands the next session a free locator: **any line N of
+Chrest. IV.1/IV.2 is found in De sancta cruce by its own marginal number**, with no page arithmetic.
+IV.1 = DSC pp. 21-25, IV.2 = DSC pp. 26-36.
+
+⛔ **The character-level diff itself is NOT RUN.** With the Grammatik side unkeyed there is nothing
+to compare glyph for glyph, and running it against DSC alone would only re-key DSC. Recorded as
+owed, not as done. ⚑ When it is run, an agreement will prove only that both printings were set from
+the same transcript - never that the transcript matches the manuscript
+([[feedback_blind-reader-fact-vs-rule]]: transcription check, not textual check).
+
+⭐ On this page specifically: line 67 carries `(fol. 19 vers.)`. No structural divergence was found anywhere in
+pp. 108-126 - not one line-number offset, not one displaced or missing folio marker, in 19 pages.
+That is a real result and it is the strongest thing the same-setting target can give short of the
+character diff: it means the Grammatik's Chrest. IV is a straight re-impression of De sancta cruce's
+section B, not a re-set text, so a later character diff should expect **compositor-level divergence
+only** and can treat any word-level divergence as a signal.
+
+⭐ **RULED - and this is the trap the record exists to close.** Nestle's published corrigenda
+in De sancta cruce ("Korrekturen zu meiner Abschrift von B: Z. 148 lies …, 216 …, 261 …, 343 …; zu
+Z. 44 siehe die Praef. der Porta … z. B. Z. 222") **do NOT touch Chrestomathia IV.** In that
+footnote A and B are MANUSCRIPT SIGLA, not De sancta cruce's section letters: A = Bodl. Libr. MS.
+Marsh 13 (dated fol. 243v, A.D. 1177) and B = Mus. Brit. Add. 12,174 anni 1196 - the manuscript
+behind DSC's *first* section, `A.) (E COD. LONDIN. ADD. 12174 ANNI 1196.)`. That text runs to line
+345/346, which is why both the corrigenda and the collation apparatus headed `A [= Bodl. Libr. Ms.
+Marsh 13]` reach line 343 - a line number the Historia inventionis never reaches (IV.1 = 101 lines,
+IV.2 = 274, IV.3 = 92).
+⛔ The near-miss is the whole danger: 44, 148, 216, 222 and 261 are ALL valid line numbers inside
+Chrest. IV.2, and 216 and 261 are exactly the lines that carry `(fol. 22 vers.)` and `(f. 23 vers.)`.
+A later session that "applies Nestle's own corrigenda" to IV.2 would silently corrupt five lines of
+a text they were never written about. What makes it look as though they belong is that the
+apparatus is printed physically AFTER our text - DSC pp. 37-38, "steht S. 37. 38 hinter dem Text
+von B die vollständige Collation von A". It does not belong to it.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 116
+leaf = "n205"

@@ -1,0 +1,71 @@
+# R3 — Chrestomathia II, Matt. 5, page 5 of 7.
+id = "nestle-1889-en/r3/c083-1"
+record_type = "R3"
+
+work = "peshitta:matt:5:29-36"
+work_note = """
+Opens mid-verse 29 (continued from p. 82) and breaks off mid-verse 36, which finishes on
+p. 84. Lines 59-73; marginal numerals 60, 65, 70. Printer's signature `F*` at the foot.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic/enclitic points"
+layer_source = "read from the plate"
+diff_target = "THE NEW TESTAMENT IN SYRIAC, BFBS London 1905-1920 — archive.org `newtestamentinsy00unse`, title page verified at n6. PD. Critical edition behind it: Pusey & Gwilliam, Tetraeuangelium sanctum, Clarendon 1901 (`tetraeuangeliums00puseuoft`). See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 15
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+page_number_read = "ܦܓ = 83"
+transcription_note = "Conventions as declared in c079-1.toml. Letter-level qushshaya/rukkakha points not transcribed — known gap."
+
+text_syr_voc = """
+ܕܢܐܒܕ ܚܕ ܗܕܡܝ̈ܟ ܆ ܘܠܐ ܟܠܗ ܦܓܪܟ ܢܦܠ
+ܒܓܗܢܐ ܀ ܘܐܢ ܐܝܕܟ ܕܝܡܝܢܐ ܡܟܫܠܐ ܠܟ ܆
+ܦܣܘܩ ܫܕܝܗ ܂ ܦܩܚ ܠܟ ܓܝܪ ܕܢܐܒܕ ܚܕ
+ܡܢ ܗܕܡܝ̈ܟ ܆ ܘܠܐ ܟܠܗ ܦܓܪܟ ܢܦܠ ܒܓܗܢܐ ܀
+ܐܬܐܡ̄ܪ ܕܡܢ ܕܫܪܐ ܐܢ̄ܬܬܗ ܆ ܢܬܠ ܠܗ ܟܬܒܐ
+ܕܕܘܠܠܐ ܀ ܐܢܐ ܕܝܢ ܐܡ̇ܪ ܐ̄ܢܐ ܠܟܘܢ ܆ ܕܟܠ
+ܡܢ ܕܫܪܐ ܐܢ̄ܬܬܗ ܠܒܪ ܡܢ ܡܠܬܐ ܕܙܢܝܘܬܐ ܆
+ܥܒܕ ܠܗ ܕܬܓܘܪ ܂ ܘܡܢ ܕܫܩܠ ܫܒܝܩܬܐ ܓܐܪ ܂
+ܬܘܒ ܫܡܥܬܘܢ ܕܐܬܐܡ̄ܪ ܠܩܕܡ̈ܝܐ ܆ ܕܠܐ
+ܬܕܓܠ ܒܡܘܡ̈ܬܟ ܆ ܬܫܠܡ ܕܝܢ ܠܡܪܝܐ
+ܡܘܡ̈ܬܟ ܀ ܐܢܐ ܕܝܢ ܐܡ̇ܪ ܐ̄ܢܐ ܠܟܘܢ ܆ ܠܐ
+ܬܐܡܘܢ ܣܟ ܆ ܠܐ ܒܫܡܝܐ ܆ ܕܟܘܪܣܝܐ ܗ̄ܘ
+ܕܐܠܗܐ ܀ ܘܠܐ ܒܐܪܥܐ ܆ ܕܟܘܒܫܐ ܗ̄ܝ
+ܕܬܚܝܬ ܪ̈ܓܠܘܗܝ ܆ ܐܦܠܐ ܒܐܘܪܫܠܡ ܆ ܕܡܕܝܢ̄ܬܗ
+ܗ̄ܝ ܕܡܠܟܐ ܪܒܐ ܀ ܐܦܠܐ ܒܪܝܫܟ ܬܐܡܐ ܆
+"""
+
+verse_line_index = """
+v.29 continues into line 59 · v.30 line 60 · v.31 line 63 · v.32 line 64 · v.33 line 67 ·
+v.34 line 69 · v.35 line 71 · v.36 line 73.
+Marginal line numerals at 60, 65, 70.
+"""
+
+primer_notes = "None."
+
+[alignment]
+status = "keyed from Nestle; the BFBS control for these verses sits on leaf n16 verso band and n17 (printed p. 6, running head ܡܬܝ ܗ, vv. 33-45); vv. 33-36 checked at n17, vv. 29-32 NOT re-verified"
+diff = """
+CHECKED at n17 (printed p. 6): vv. 33-36. AGREEMENT on the verse division and on the
+consonantal sequence of v. 34 (ܠܐ ܬܐܡܘܢ ܣܟ ... ܕܟܘܪܣܝܐ ܗܘ ܕܐܠܗܐ), v. 35 (ܘܠܐ ܒܐܪܥܐ ...
+ܕܡܕܝܢܬܗ ܗܝ ܕܡܠܟܐ ܪܒܐ) and v. 36 as far as it runs on this page. Seyame agrees on ܠܩܕܡ̈ܝܐ,
+ܒܡܘܡ̈ܬܟ, ܡܘܡ̈ܬܟ, ܪ̈ܓܠܘܗܝ.
+
+⚑ v. 30 (line 61), the SECOND instance of the p. 82 pattern: Nestle prints `ܦܣܘܩ ܫܕܝܗ ܂` —
+no ܘ on ܫܕܝܗ and **no ܡܢܟ**. Taken with v. 29's `ܚܨܝܗ ܘܫܕܝܗ ܂` on the previous page, the
+absence of ܡܢܟ in both members of the doublet is a consistent feature of the "editio
+Americana" Nestle reprinted, not an accident of one line. ⛔ The BFBS reading of vv. 29-30 was
+NOT resolved in this pass (the n16 band probed for it landed on v. 25), so this is recorded as
+a FIRM observation about Nestle and an OPEN comparison — the pair vv. 29/30 is the single
+highest-value thing for a second pass to check against the control.
+
+⚑ v. 29/30 (lines 59, 62): ܗܕܡܝ̈ܟ carries seyame in both places, but v. 29 reads
+`ܕܢܐܒܕ ܚܕ ܗܕܡܝ̈ܟ` with NO ܡܢ while v. 30 reads `ܕܢܐܒܕ ܚܕ ܡܢ ܗܕܡܝ̈ܟ`. Read twice; the
+asymmetry is on the plate.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 83
+leaf = "n172"
+signature = "F* (foot)"

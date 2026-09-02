@@ -1,0 +1,80 @@
+id = "nestle-1889-en/r3/c071-1"
+record_type = "R3"
+
+work = "peshitta:gen:2:6-13"
+work_note = """
+Chrestomathia I, Caput II. Lines 12–26 of Caput II's own numbering; marginal 15, 20, 25.
+Verse numerals 6–13. Two square-bracket supplements: `[ܠ]` at 2:6 and (on the previous page)
+`[ܐܦܝ̈]`.
+"""
+
+layer = "unvocalized Estrangela"
+layer_note = """
+Unvocalized Estrangela with seyame and consonant-distinguishing points; NO vowel signs. This
+is the layer Phase 0 recorded for the whole chrestomathy from the n180 probe — correct for
+this page, wrong as a section default (see c067-1.layer_finding).
+"""
+diff_target = "Barnes, PENTATEUCHUS SYRIACE (post Samuelem Lee), BFBS London 1914 — archive.org `ktavadeauritaauk00lees`, title page verified at n6. PD. ⭐ PAGINATION CALIBRATED THIS PASS: printed page = leaf − 9 (n10 = p. 1, Gen 1:1–13, signature B; n11 = p. 2, running head `ܣܦܪܐ ܕܒܪܝܬܐ` + `I. 14—28`; agreement on two independent pages, per MAP.md's own method). Barnes prints unvocalized Estrangela with seyame and diacritic points, verse numbers in the outer margin against the line on which a verse opens, `*` as verse divider and `❖` at the close of a paragraph. See research/syriac-peshitta-editions.md"
+layer_source = "read from the plate"
+seyame = true
+lines_per_page = 15
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+line_numbers = "marginal, every 5, in the OUTER margin (right on rectos, left on versos); numbering RESTARTS at each Caput"
+transcription_method = """
+Read from the plate, line by line, off 3.0–5.5x crops cut by horizontal projection (one strip
+per 2–4 printed lines); the 1.75x half-crops of tools/quarry_fetch.sh are NOT sufficient for
+pointed Serto and were used only for orientation. Consonantal skeleton, seyame, word division,
+punctuation, verse numerals, marginal line numerals and square-bracket supplements are read
+directly. ⚠ HONEST LIMIT, per the never-read-codepoints-by-eye rule: the West-Syriac vowel
+points are legible AS SHAPES at this resolution (zqofo prints as a small circle, ptoho as an
+open triangle, and so on — calibrated on ܐܰܠܳܗܳܐ, which recurs on every page), but the finest
+layer — rukkakha/qushshaya bars, the ܗ̇ point, linea occultans — is recorded where seen and is
+not warranted point-by-point. The vocalisation below is therefore a plate reading at the
+word level, not a certified diacritic-level edition; a blind control on a sample
+([[reference_arabic-control-rule]]) is still owed before this text is shipped.
+"""
+
+text_syr_voc = """
+⁶ ܘܡܒܘܥܐ ܣܠܩ ܗܘܐ ܡܢ ܐܪܥܐ: ܘܡܫܩܐ
+ܗܘܐ [ܠ]ܟܠ ܐܦܝ̈ ܐܪܥܐ. ⁷ ܘܓܒܠ ܡܪܝܐ ܐܠܗܐ
+ܠܐܕܡ ܥܦܪܐ ܡܢ ܐܕܡܬܐ: ܘܢܦܚ ܒܐܦܘ̈ܗܝ
+ܢܫܡܬܐ ܕܚܝ̈ܐ. ܘܗܘܐ ܐܕܡ ܠܢܦܫ ܚܝܐ. ⁸ ܘܢܨܒ
+ܡܪܝܐ ܐܠܗܐ ܦܪܕܝܣܐ ܒܥܕܢ ܡܢ ܩܕܝܡ: ܘܣܡ
+ܬܡܢ ܠܐܕܡ ܕܓܒܠ. ⁹ ܘܐܘܥܝ ܡܪܝܐ ܐܠܗܐ ܡܢ
+ܐܪܥܐ ܟܠ ܐܝܠܢ ܕܪܓܝܓ ܠܡܚܙܝܐ: ܘܛܒ
+ܠܡܐܟܠ: ܘܐܝܠܢܐ ܕܚܝ̈ܐ ܒܡܨܥܬܗ ܕܦܪܕܝܣܐ:
+ܘܐܝܠܢܐ ܕܝܕܥܬܐ ܕܛܒܬܐ ܘܕܒܝܫܬܐ. ¹⁰ ܘܢܗܪܐ
+ܢܦܩ ܗܘܐ ܡܢ ܥܕܢ ܠܡܫܩܝܘܬܗ ܠܦܪܕܝܣܐ:
+ܘܡܢ ܬܡܢ ܦܪܫ ܘܗܘܐ ܠܐܪܒܥܐ ܪ̈ܝܫܝܢ. ¹¹ ܫܡܗ ܕܚܕ
+ܦܝܫܘܢ: ܗܘ ܕܚܕܪ ܠܟܠܗ ܐܪܥܐ ܕܚܘܝܠܐ: ܕܬܡܢ
+ܕܗܒܐ. ¹² ܘܕܗܒܗ ܕܐܪܥܐ ܗܘ ܛܒ: ܬܡܢ
+ܒܕܘܠܚܐ ܘܟܐܦ̈ܐ ܕܒܪܘܠܐ. ¹³ ܘܫܡܗ ܕܢܗܪܐ
+ܬܢܝܢܐ ܓܝܚܘܢ: ܗܘ ܕܚܕܪ ܠܟܠܗ ܐܪܥܐ ܕܟܘܫ.
+"""
+
+primer_notes = """
+No footnotes. Apparatus: the square-bracket supplement `[ܠ]` at 2:6.
+"""
+
+[alignment]
+status = "keyed from Nestle; checked against Barnes 1914"
+diff = """
+⭐ CHECKED against Barnes p. 3 (leaf n12).
+
+AGREEMENT, including the proper names, which is where a plate reader without the language
+produces plausible nonsense and where this check therefore earns most: ܦܝܫܘܢ · ܚܘܝܠܐ ·
+ܓܝܚܘܢ · ܟܘܫ · ܒܕܘܠܚܐ · ܟܐܦ̈ܐ ܕܒܪܘܠܐ. Also ܘܡܒܘܥܐ ܣܠܩ ܗܘܐ ܡܢ ܐܪܥܐ · ܢܫܡܬܐ ܕܚ̈ܝܐ ·
+ܠܢܦܫ ܚܝܐ · ܠܐܪܒܥܐ ܪ̈ܝܫܝܢ.
+
+⚑ Barnes prints ܘܡܫܩܐ ܗܘܐ ܠܟܠ ܐܦ̈ܝ ܐܪܥܐ without brackets — so, as at 2:5, Nestle's `[ܠ]`
+marks his exemplar's omission, not a textual doubt.
+
+✅ NOTHING to adjudicate on pointing: this page carries none. An unvocalized Estrangela page
+diffed against an unvocalized Estrangela control is the strongest check available anywhere in
+R3(a), and it came out clean.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 71
+leaf = "n160"

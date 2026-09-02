@@ -1,0 +1,119 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 21 of 22 (pp. 86-107).
+# Keyed from the plate (n195). ⛔ TEXT IS A PARTIAL, UNVERIFIED PLATE READING — see [extraction].
+id = "nestle-1889-en/r3/c106-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:epiphanius-colophon+sequel"
+work_note = """
+⭐ THE STRUCTURAL FINDING OF THIS SHARD SITS ON THIS PAGE. Lines 6-7 (= piece lines 403-404)
+carry a COLOPHON that closes the Epiphanius Vitae, and a further, distinct piece then runs from
+line 8 (= piece line 405) to the end of Chrest. III on p. 107:
+    line 6:  ܫܠܡ ܕ⟨?⟩ …
+    line 7:  ܐܦܝܣܩܘܦܐ ܕܩܘܦܪܘܣ ܀
+`ܐܦܝܣܩܘܦܐ ܕܩܘܦܪܘܣ` ("bishop of Cyprus") is an INCLUSIO with the piece's own opening on p. 86
+line 3 (`ܕܩܕܝܫܐ ܐܦܝܦܢܝܘܣ ܐܦܝܣܩܘܦܐ ܕܩܘܦܪܘܣ ܂`), and `ܫܠܡ` is the ordinary Syriac "here ends".
+Both words were verified glyph by glyph at ~9-11x: ܕܩܘܦܪܘܣ as dalath · qoph · waw · pe · rish
+(dot above) · waw · semkath (the closed double lobe, unmistakable), and the end mark as FOUR
+dots in a diamond, i.e. ܀ not ܂. Schermann's Latin colophon — "Haec autem conscripserunt
+Epiphanius de Cypro et Cornel(i)us de Ierusalem" — independently says that the Syriac tradition
+pairs an Epiphanius text with a second one, which is exactly the seam seen here.
+⚠ WHAT THE SEQUEL IS, AND WHOSE, WAS NOT READ. Lines 8-20 are continuous text with no rubric
+anywhere on the page; the only rubric in the remainder of the piece stands on p. 107 line 9. The
+natural hypothesis from the Latin is Cornelius of Jerusalem, but that is NOT a reading and is not
+recorded as one. Whoever verifies this should read p. 106 lines 8-10 first — that is where a
+second attribution would stand.
+Nestle names no individual codex; "e tribus codicibus Musei Britannici" (p. 86) is all he gives.
+No `witness` field exists in the schema — known gap.
+"""
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+Verified on this page: no vowel signs on any of the 20 lines; seyame present (several plurals in
+lines 5-9 carry it); dalath/rish points present. ⭐ Note that the layer does NOT change at the
+colophon — the sequel that begins at line 8 is set in the same unvocalized Estrangela as the
+Epiphanius text before it, so the script gives no cue to the seam. Only the ܫܠܡ … ܀ does.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets with tribe, date and burial place), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 20
+line_numbers = "400, 405, 410, 415 — read off the plate in the LEFT (outer) margin of this verso, standing against printed lines 3, 8, 13 and 18. The page therefore carries piece lines 398-417. Numbering CONTINUOUS: it runs straight through the colophon at lines 403-404 without a break or a restart, so Nestle numbers the two pieces as one 435-line unit."
+page_number_form = "Syriac numeral letter, centred at head, above the first text band"
+page_number_read = "ܩܘ = 100 + 6 = 106 — qoph (loop + bar) + waw (small closed loop), the two loops side by side. Agrees with leaf = page + 89."
+transcription_note = """
+Same conventions as c103-1: seyame → U+0308, linea occultans → U+0304, low point → ܂, two-dot
+pause → ܆, end mark → ܀ (the plate prints it here as four dots in a diamond). Qushshaya/rukkakha
+and participle points are on the plate and are NOT transcribed — a known gap, not a claim of
+absence. No square brackets occur on this page.
+Doubtful words → `⟨?…⟩`; an unread line is emitted in position as `⟨?LINE NOT READ⟩`. Nothing was
+filled in from the Latin control — in particular `ܫܠܡ ܕ⟨?⟩` is left short rather than completed
+to the expected `ܫܠܡ ܟܬܒܐ ܕܩܕܝܫܐ ܐܦܝܦܢܝܘܣ`, which is what the sense wants and what the plate was
+not read to say.
+"""
+
+text_syr_voc = """
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+ܫܠܡ ܕ⟨?⟩
+ܐܦܝܣܩܘܦܐ ܕܩܘܦܪܘܣ ܀
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+"""
+
+primer_notes = """
+NONE on this page. No rule and no smaller type at the foot; the twentieth text line runs to the
+bottom of the type area. ⭐ Nestle prints the colophon as running text with no editorial note,
+no bracket and no change of type — nothing but the Syriac ܫܠܡ … ܀ marks the seam between the
+two pieces, and his own Latin heading on p. 86 ("III. VITAE PROPHETARUM") gives no hint that the
+section contains two works.
+"""
+
+[extraction]
+status = "keyed from the plate, PARTIAL and UNVERIFIED: 2 of 20 printed lines carry a reading (the colophon); 18 are emitted as ⟨?LINE NOT READ⟩; 1 word flagged ⟨?…⟩"
+reason = """
+Same measured ceiling as c103-1 — see that record's [extraction] for the numbers, the two
+calibration aids (Nestle's alphabet table at leaf n21; the labelled specimen at p. 86 lines 1-3)
+and the confirmation that the archive.org item carries NO OCR (`_djvu.txt` is 0 bytes).
+The colophon came out because `ܫܠܡ` and `ܐܦܝܣܩܘܦܐ ܕܩܘܦܪܘܣ` are formulae a reader can hypothesise
+and then verify; the surrounding narrative is not.
+"""
+
+[alignment]
+status = "colophon keyed from Nestle; checked against Schermann 1907, which corroborates the SHAPE of the finding"
+diff = """
+WHAT THE CONTROL CONFIRMED, and it is the most useful thing it does anywhere in this shard:
+Schermann's Latin ends "Haec autem conscripserunt Epiphanius de Cypro et Cornel(i)us de
+Ierusalem. Explicit." — i.e. the Sinai Syriac witness ALSO presents this material as an
+Epiphanius text with a second hand named beside it, and it also names Cyprus. That is
+independent corroboration that a colophon naming "the bishop of Cyprus" belongs at the close of
+the Epiphanius portion, which is exactly where the plate puts it (line 404 of 435). It does NOT
+confirm any letter of the Syriac.
+WHAT IT CANNOT DO: the capitulum is 22 summary entries; it has no parallel to the running text of
+lines 1-5 or 8-20, it cannot say who wrote the sequel, and it never adjudicates pointing.
+
+UNCERTAIN READINGS ON THIS PAGE:
+· line 6, everything after `ܫܠܡ ܕ` — not resolved. The expected `ܟܬܒܐ ܕܩܕܝܫܐ ܐܦܝܦܢܝܘܣ` was
+  deliberately NOT supplied from sense.
+· lines 1-5 and 8-20 — not read at all. Lines 8-10 are the ones that matter most (see
+  `work_note`): they should carry the sequel's attribution.
+· `ܐܦܝܣܩܘܦܐ ܕܩܘܦܪܘܣ ܀` is recorded as a confident reading; every glyph of `ܕܩܘܦܪܘܣ` was matched
+  at ~11x and the end mark counted as four dots.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 106
+leaf = "n195"

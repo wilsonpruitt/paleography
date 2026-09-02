@@ -1,0 +1,126 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 22 of 22 — THE LAST PAGE OF THE PIECE.
+# Keyed from the plate (n196). ⛔ TEXT IS A PARTIAL, UNVERIFIED PLATE READING — see [extraction].
+id = "nestle-1889-en/r3/c107-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:sequel-close"
+work_note = """
+⭐ CHREST. III ENDS HERE, AND THIS PAGE IS SHORT. Answering the question the shard was set:
+· p. 107 carries **18 text lines, not the 20 of a full page** — piece lines 418-435.
+· Its LAST line (435) reads `ܐܘܪܫܠܡ ܂ ܫܠܡ ܀` — "…Jerusalem. Ended." The piece closes with the
+  ordinary Syriac ܫܠܡ plus a three-dot end mark, so the ending is explicit, not a page break.
+· Below that line stands a SHORT CENTRED RULE (leaf y ≈ 0.855, spanning x 0.398-0.566) and then
+  NOTHING: the bottom ~25% of the type area is blank. The rule is a section-close ornament, not
+  a footnote rule — there is no footnote text under it anywhere on the page.
+· p. 107 does NOT carry any part of Chrestomathia IV. Chrest. IV begins cleanly at the head of
+  p. 108 (leaf n197): `IV. HISTORIA INVENTIONIS SANCTAE CRUCIS.` / `1) e cod. paris. 234.`, its
+  own marginal line numbering RESTARTING at 1, `(fol. 293, recto, col. 1.)` printed inline in
+  its first line — and, worth flagging for whoever holds it, **set in SERTO, not Estrangela**.
+One Life boundary falls on this page, with the usual cue (a one-word name rubric alone on its own
+line, closed by a low point): line 9 of the page (= piece line 426). ⚠ THE NAME WAS NOT READ —
+see [alignment].diff for the glyph description and the candidates.
+This page belongs to the SEQUEL that begins at p. 106 line 405, after the Epiphanius colophon;
+see c106-1. Nestle names no individual codex for Chrest. III beyond "e tribus codicibus Musei
+Britannici" (p. 86) — note the contrast with Chrest. IV, where he names cod. paris. 234 outright.
+No `witness` field exists in the schema — known gap, and this page is the sharpest illustration
+of it.
+"""
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+Verified on this page: no vowel signs on any of the 18 lines; seyame present; dalath/rish points
+present. The layer is CONSTANT to the last line of the piece. ⭐ It then changes at once: p. 108
+(Chrest. IV) is SERTO. So the Estrangela/Serto boundary in this book falls exactly at the
+Chrest. III / Chrest. IV seam, i.e. between leaves n196 and n197.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets with tribe, date and burial place), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 18
+line_numbers = "420, 425, 430, 435 — read off the plate in the RIGHT (outer) margin of this recto, standing against printed lines 3, 8, 13 and 18. 435 stands against the LAST line of the page and of the piece. The page therefore carries piece lines 418-435, and Chrest. III runs 1-435 over its 22 pages."
+page_number_form = "Syriac numeral letter, centred at head, above the first text band"
+page_number_read = "ܩܙ = 100 + 7 = 107 — qoph (loop + bar) + zayn (a plain vertical stroke). Agrees with leaf = page + 89."
+transcription_note = """
+Same conventions as c103-1: seyame → U+0308, linea occultans → U+0304, low point → ܂, two-dot
+pause → ܆, end mark → ܀. The closing mark on line 435 is printed as THREE dots in a triangle and
+is transcribed ܀ per the convention; a low point stands between `ܐܘܪܫܠܡ` and `ܫܠܡ`. Qushshaya/
+rukkakha and participle points are on the plate and are NOT transcribed — a known gap, not a
+claim of absence. No square brackets occur on this page.
+Doubtful words → `⟨?…⟩`; an unread line is emitted in position as `⟨?LINE NOT READ⟩`. Nothing was
+filled in from the Latin or Greek control.
+"""
+
+text_syr_voc = """
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?ܚܣܝܐ⟩ ܂
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+ܐܘܪܫܠܡ ܂ ܫܠܡ ܀
+"""
+
+primer_notes = """
+NONE. There is no footnote on this page and none anywhere in this shard (pp. 103-107): no rule
+with text under it, no smaller type, no reference marks in the Syriac. The short centred rule
+below line 435 is a section-close ornament with nothing beneath it (see `work_note`).
+⭐ Contrast p. 108, where Chrest. IV opens with a numbered Latin note `1) e cod. paris. 234.`
+directly under its heading — so Nestle DOES annotate elsewhere in the chrestomathy, and the
+silence over Chrest. III is a deliberate silence, not a printing habit.
+"""
+
+[extraction]
+status = "keyed from the plate, PARTIAL and UNVERIFIED: 2 of 18 printed lines carry a reading; 16 are emitted as ⟨?LINE NOT READ⟩; 1 word flagged ⟨?…⟩"
+reason = """
+Same measured ceiling as c103-1 — see that record's [extraction] for the numbers, the two
+calibration aids (Nestle's alphabet table at leaf n21; the labelled specimen at p. 86 lines 1-3)
+and the confirmation that the archive.org item carries NO OCR (`_djvu.txt` is 0 bytes).
+Line 435 came out because `ܐܘܪܫܠܡ` and `ܫܠܡ` are formulae; the rubric at line 426 did not, even
+at 11x, and it is the one short isolated word in this shard that defeated the method — which is
+itself worth recording, because it means the method's success on the other five rubrics was not
+guaranteed.
+"""
+
+[alignment]
+status = "close of the piece keyed from Nestle; the one rubric NOT identified; sense-checked against Schermann 1907"
+diff = """
+WHAT THE CONTROL CONFIRMED: only that a burial "in Ierusalem" is the kind of thing these Lives
+end with — Schermann's Latin has it for David (III) and for Isaias (XI) and Ieremias (XII) has an
+Egyptian one — so `ܐܘܪܫܠܡ` on the last line is at least in the register of the piece. That is a
+very weak confirmation and is recorded as such.
+WHAT IT CANNOT DO: the capitulum is a Latin summary list of 22 against a Syriac narrative; it has
+no parallel to any line of this page, it cannot supply the rubric at line 426, and it never
+adjudicates a letter or a point. Note also that this page belongs to the SEQUEL that starts after
+the Epiphanius colophon (c106-1), and the Latin capitulum corresponds to the Epiphanius portion —
+so the control is, if anything, even further from this page than from the rest of the shard.
+
+UNCERTAIN READINGS ON THIS PAGE:
+· line 9, the one-word rubric, transcribed `⟨?ܚܣܝܐ⟩ ܂`. WHAT WAS ACTUALLY SEEN, at ~11x, reading
+  right to left: (1) a low wide glyph of two rounded humps on a flat base — heth ܚ on the
+  alphabet table, though final kaph is not excluded; (2) a clean CLOSED DOUBLE LOBE — semkath ܣ
+  is the only glyph in the Estrangela repertoire with that shape, and it is the one certain
+  letter of the four; (3) a small block on a short stem — yudh ܝ, possibly qoph; (4) alaph "≺".
+  So the shape is `?-ܣ-?-ܐ` and the transcription above is the best fit, NOT a decision. ⛔ It
+  was deliberately not resolved by asking which prophet "ought" to stand last: the expected
+  Zechariah son of Jehoiada (`ܙܟܪܝܐ`) does NOT fit — it has no semkath — and forcing it would be
+  exactly the circular move the brief forbids. This word needs a Syriacist or a second plate
+  reader; it is the single highest-value unresolved item in the shard.
+· lines 1-8 and 10-17 — not read at all.
+· line 435 `ܐܘܪܫܠܡ ܂ ܫܠܡ ܀` is recorded as a confident reading (mim · lamadh · shin · rish · waw ·
+  alaph read off in reverse for ܐܘܪܫܠܡ; mim · lamadh · shin for ܫܠܡ; the end mark counted).
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 107
+leaf = "n196"

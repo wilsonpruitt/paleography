@@ -1,0 +1,110 @@
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 20 of 22 (pp. 86-107).
+# Keyed from the plate (n194). ⛔ TEXT IS A PARTIAL, UNVERIFIED PLATE READING — see [extraction].
+id = "nestle-1889-en/r3/c105-1"
+record_type = "R3"
+
+work = "vitae-prophetarum:elisha+job"
+work_note = """
+The page opens inside the Life of ELISHA, whose one-word rubric `ܐܠܝܫܥ ܂` stands on p. 104
+line 12 (= piece line 369). One Life boundary falls here, marked by the usual cue — a one-word
+name rubric alone on its own line, closed by a low point:
+· line 8 of the page (= piece line 385) `ܐܝܘܒ ܂` — JOB.
+
+⭐ AND THAT IS A REAL FINDING, not a slip of the eye. The word was read at ~11x on four clean,
+unambiguous glyphs — alaph "≺" · yudh (tiny blob) · waw (closed loop with a leg) · beth
+(flat-topped hook with a leftward foot) — and there is no competing candidate at that shape.
+**JOB IS NOT IN Schermann's Latin capitulum of Sinai Syr. 10 at all**, whose 22 run Moyses …
+Ioel, with Malachias appended. So Nestle's British-Museum recension carries a Life the Sinai
+witness does not, and the control is silent on the whole of this page's second half. Job does
+stand in some Greek/Syriac recensions of the Lives, so this is a recension difference to be
+recorded, not an anomaly to be explained away — but it should be checked by a Syriacist against
+Schermann's GREEK recensions A-E (pp. 1-104) before it is asserted in print.
+
+Nestle names no individual codex; "e tribus codicibus Musei Britannici" (p. 86) is all he says,
+and he never says which of the three. No `witness` field exists in the schema — known gap.
+"""
+layer = "unvocalized Estrangela, with seyame and the diacritic points"
+layer_source = "read from the plate"
+layer_note = """
+Verified on this page: no vowel signs on any of the 20 lines; seyame on plurals; dalath/rish
+points present. Constant with pp. 103, 104, 106, 107 and with p. 86.
+"""
+diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — archive.org `prophetarumvita00schegoog`. Latin version of the Syriac (cod. Sinait. syro 10) at pp. 105-106, leaf = page + 74 (calibrated on two running heads); Index nominum propriorum at printed p. 240. ⛔ The Latin Appendix is a two-page CAPITULUM (a summary list of 22 prophets with tribe, date and burial place), not the full Lives — SENSE-level control only, and a thin one. It catches a mis-keyed name or a meaningless sentence; it never adjudicates pointing and cannot be aligned page-for-page. See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 20
+line_numbers = "380, 385, 390, 395 — read off the plate in the RIGHT (outer) margin of this recto, standing against printed lines 3, 8, 13 and 18. The page therefore carries piece lines 378-397. Numbering CONTINUOUS; 385 sits against the `ܐܝܘܒ` rubric line itself and the count runs straight through the boundary."
+page_number_form = "Syriac numeral letter, centred at head, above the first text band"
+page_number_read = "ܩܗ = 100 + 5 = 105 — qoph (loop + bar) + he (the double-arch ന). Agrees with leaf = page + 89."
+transcription_note = """
+Same conventions as c103-1: seyame → U+0308, linea occultans → U+0304, low point → ܂, two-dot
+pause → ܆, end mark → ܀. Qushshaya/rukkakha and participle points are on the plate and are NOT
+transcribed — a known gap, not a claim of absence. No square brackets occur on this page.
+Doubtful words → `⟨?…⟩`; an unread line is emitted in position as `⟨?LINE NOT READ⟩`. Nothing was
+filled in from the Latin or Greek control.
+"""
+
+text_syr_voc = """
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+ܐܝܘܒ ܂
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+⟨?LINE NOT READ⟩
+"""
+
+primer_notes = """
+NONE on this page. No rule and no smaller type at the foot; the twentieth text line runs to the
+bottom of the type area.
+"""
+
+[extraction]
+status = "keyed from the plate, PARTIAL and UNVERIFIED: 1 of 20 printed lines carries a reading (the Job rubric); 19 are emitted as ⟨?LINE NOT READ⟩"
+reason = """
+Same measured ceiling as c103-1 — see that record's [extraction] for the numbers, the two
+calibration aids (Nestle's alphabet table at leaf n21; the labelled specimen at p. 86 lines 1-3)
+and the confirmation that the archive.org item carries NO OCR (`_djvu.txt` is 0 bytes).
+The one-word rubrics come out because an isolated short word can be attacked glyph by glyph at
+11x; running narrative cannot, at ~5-6 zoom crops per line with silent residual error.
+"""
+
+[alignment]
+status = "structure and the one rubric keyed from Nestle; checked against Schermann 1907 (Latin capitulum of Sinai Syr. 10) — and the check came back NEGATIVE, see diff"
+diff = """
+⭐ THE CONTROL'S MOST USEFUL RESULT ON THIS PAGE IS A MISMATCH. The Latin capitulum of Sinai
+Syr. 10 lists 22 prophets and JOB IS NOT AMONG THEM. So the rubric read at line 385 either
+(a) records a Life present in the BM recension and absent from the Sinai one, or (b) is a
+mis-reading. (b) is unlikely — `ܐܝܘܒ` is four unambiguous glyphs at 11x with no near neighbour
+in the Estrangela repertoire — but the two possibilities are named rather than collapsed, and
+the resolution is a Syriacist's look at Schermann's GREEK recensions A-E (pp. 1-104, leaves ~75-
+178; RE-CALIBRATE the leaf offset from a running head first, the item's `_page_numbers.json` is
+wrong in this volume).
+WHAT THE CONTROL DID CONFIRM: `X. Elisaeus fuit ex tribu Ruben, eratque discipulus Eliae.` —
+Elisha, whose Life occupies lines 378-384 of this page, is in the Sinai list.
+WHAT IT CANNOT DO: it is a summary list in Latin against continuous Syriac narrative; not one
+line of running text on this page has a parallel in it, and it never adjudicates a letter, a
+point or a seyame.
+
+UNCERTAIN READINGS ON THIS PAGE:
+· lines 1-7 and 9-20 — not read at all.
+· `ܐܝܘܒ` is recorded as a confident reading of the LETTERS. Its IDENTIFICATION as a Life of Job
+  in this recension is flagged above as needing the Greek control, which is a different claim.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 105
+leaf = "n194"

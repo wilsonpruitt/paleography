@@ -1,22 +1,27 @@
-# R3 — Chrestomathia III, "Vitae Prophetarum", page 2 of 22 (pp. 86-107; this page = p. 87).
-# Structural pass keyed from the plate (leaf n1176); Syriac text KEYED from the plate 2026-09-01 — see [extraction].
-id = "nestle-1889-en/r3/c087-1"
+# R3 — Chrestomathia III, "Vitae Prophetarum", page 3 of 22 (pp. 86-107; this page = p. 88).
+# Structural pass keyed from the plate (leaf n1177); Syriac text KEYED from the plate 2026-09-01 — see [extraction].
+id = "nestle-1889-en/r3/c088-1"
 record_type = "R3"
 
-work = "vitae-prophetarum:isaiah"
+work = "vitae-prophetarum:isaiah+jeremiah"
 work_note = """
-⭐ THIS RECORD REPLACES THE UN-KEYED CALIBRATION STUB that previously stood at this
-path, and it CORRECTS one of the stub's two claims:
-  · stub said `lines_per_page = 16`  — WRONG. The page carries 20 text lines.
-  · stub said `line_numbers = "20-35"` — RIGHT as a report of the marginal numerals actually
-    printed (20, 25, 30, 35), but it was read as if it were the page's line RANGE. It is not:
-    the page runs printed lines 18-37, and 20/25/30/35 are simply the four multiples of five
-    that fall inside that range.
-p. 86 has 17 text lines numbered from 1, so this page opens at line 18 — confirmed directly,
-because the marginal 20 sits against the THIRD text line of the page.
+⭐ A LIFE BOUNDARY FALLS INSIDE THIS PAGE, and it is the page's chief finding.
+  · line 39 is SHORT and set to the right; it closes the Life of ISAIAH and carries an
+    end-of-section mark. ⭐ Re-read at ~10x in the text-keying pass: the mark is FOUR DOTS SET IN
+    A LOZENGE, i.e. `܀`, standing as the line's own last ink-run — so the close of Isaiah is a
+    read fact, not an inference from the short line.
+  · line 40 is a one-word RUBRIC LINE, set alone: ܐܪܡܝܐ ܂ (Jeremiah). ⭐ Confirmed letter by
+    letter in the keying pass (run width 0.138 of page width, re-cropped on its own, well inside
+    the ≤0.15 threshold a proper name needs before it counts as a reading).
+  · line 41 opens the Life of JEREMIAH, and ܐܪܡܝܐ is its first word again — followed by
+    `ܐܝܬܘܗܝ ܗܘܐ ܡܢ …`, the same opening formula p. 86 line 4 uses for Isaiah.
+So: lines 38-39 = end of Isaiah · line 40 = rubric · lines 41-57 = Jeremiah.
+This means the section boundaries of Chrest. III are findable mechanically (short line + mark,
+then a one-word name line) without reading the narrative.
 
-Content: the Life of ISAIAH, continuing from p. 86 and running on into p. 88. No Life begins or
-ends on this page; there is no name rubric and no end-of-section mark. Nestle names no codex.
+Also on this page: ܐܠܟܣܢܕܪܘܣ (Alexander) stands in the lower half, twice — the
+Alexander/Alexandria episode of the Vita Ieremiae; see the alignment diff for the caveat on how
+firmly those two long runs can be read. Nestle names no codex.
 """
 
 layer = "unvocalized Estrangela, with seyame and the diacritic points"
@@ -34,9 +39,9 @@ diff_target = "Th. Schermann, PROPHETARUM VITAE FABULOSAE, Teubner 1907 — arch
 seyame = true
 diacritics = "consonant-distinguishing points present (rish/dalath, qushshaya/rukkakha); linea occultans present; NO vowel signs"
 lines_per_page = 20
-line_numbers = "18-37. Marginal numbers PRINTED and READ in the RIGHT (outer) margin: 20 (against printed line 3 of this page), 25 (line 8), 30 (line 13), 35 (line 18)."
+line_numbers = "38-57. Marginal numbers PRINTED and READ in the LEFT (outer) margin: 40 (against printed line 3 of this page), 45 (line 8), 50 (line 13), 55 (line 18)."
 page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
-page_number_read = "ܦܙ = 80 + 7 = 87"
+page_number_read = "ܦܚ = 80 + 8 = 88"
 transcription_note = """
 Conventions DECLARED for this piece (they must match r3/c079-1.toml); no
 codepoint was read by eye:
@@ -58,26 +63,26 @@ where the words are not. `⟨?LINE NOT READ⟩` was not needed anywhere in this 
 """
 
 text_syr_voc = """
-⟨?…⟩ ܂ ⟨?…⟩ ܕܝܢ ⟨?ܕܐܝܬ⟩ ܡܢ ܗܘܘ ⟨?…⟩ ⟨?…⟩
-ܗܘܘ ⟨?…⟩ ܂ ⟨?…⟩ ⟨?…⟩ ܠܐ ܂ ⟨?ܘܡܛܠ⟩ ܗܕܐ
-⟨?…⟩ ⟨?…⟩ ܡܢ ⟨?…⟩ ⟨?…⟩ ⟨?ܕܒܝܬ⟩ ⟨?…⟩ ⟨?ܐܪܥܐ⟩ ܂
-⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?ܐܪܥܐ⟩ ⟨?ܗܘܐ⟩ ܗܘܐ ܂ ⟨?…⟩
-⟨?ܘܐܦ⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩
-⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?ܘܐܦ⟩ ܡܢ ⟨?ܒܬܪ⟩ ⟨?…⟩
-⟨?ܕܗܘܐ⟩ ⟨?ܐܝܬ⟩ ܠܗܘܢ ⟨?ܚܝܐ⟩ ⟨?…⟩ ⟨?ܡܛܠ⟩ ⟨?…⟩
-⟨?…⟩ ܠܗܘܢ ⟨?ܡܛܠܬܗ⟩ ܂ ⟨?ܐܝܬܘܗܝ⟩ ⟨?…⟩ ܕܝܢ ⟨?…⟩
-⟨?…⟩ ⟨?…⟩ ⟨?ܩܒܪܐ⟩ ⟨?ܕܡ̈ܠܟܐ⟩ ܂ ⟨?…⟩ ⟨?ܩܒܪܐ⟩ ⟨?…⟩
-⟨?…⟩ ⟨?…⟩ ⟨?ܥܠܝܗܘܢ⟩ ⟨?…⟩ ⟨?…⟩ ܗܘܐ ⟨?…⟩
-⟨?…⟩ ⟨?…⟩ ܗܘܘ ܕܝܢ ⟨?…⟩ ܡܢ ⟨?…⟩
-⟨?…⟩ ⟨?…⟩ ܗܘ ⟨?…⟩ ⟨?ܕܐܝܬ⟩ ⟨?ܠܗ̇⟩ ⟨?…⟩ ܡܢ ⟨?…⟩
-⟨?…⟩ ܡܢ ⟨?ܡܕܝܢܬܐ⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩
-ܕܗܘܐ ⟨?…⟩ ܕܠܐ ⟨?…⟩ ⟨?ܘܐܝܬܘܗܝ⟩ ⟨?…⟩
-⟨?…⟩ ⟨?…⟩ ܡܢ ⟨?…⟩ ⟨?ܠܐ⟩ ⟨?…⟩ ܡܢ
-⟨?ܟܠܗ⟩ ܕܝܢ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?ܐܝܬ⟩ ܗܘܐ ⟨?…⟩
-⟨?…⟩ ܆ ܗܘ ⟨?ܕܐܬܐ⟩ ܗܘܐ ܡܢ ⟨?…⟩ ⟨?…⟩
-⟨?ܘܡܛܠ⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?ܐܪܥܐ⟩ ⟨?…⟩
-⟨?ܘܕܥܠܝܗܘܢ⟩ ܆ ⟨?…⟩ ⟨?…⟩ ⟨?ܕܐܒܗ̈ܘܗܝ⟩ ܆ ⟨?ܡܛܠ⟩
-⟨?…⟩ ⟨?…⟩ ⟨?ܐܠܗܐ⟩ ⟨?…⟩ ܆ ⟨?…⟩ ⟨?…⟩ ⟨?ܕܗܘܐ⟩
+⟨?…⟩ ⟨?ܘܕܠܐ⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ܐܠܗܐ
+ܡܢ ⟨?…⟩ ⟨?…⟩ ܀
+ܐܪܡܝܐ ܂
+ܐܪܡܝܐ ܐܝܬܘܗܝ ܗܘܐ ܡܢ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩
+⟨?ܕܡܢ⟩ ⟨?ܕܝܢ⟩ ⟨?…⟩ ⟨?…⟩ ܡܢ ⟨?…⟩ ⟨?ܘܡܝܬ⟩ ܂
+⟨?…⟩ ܕܝܢ ⟨?…⟩ ⟨?ܕܒܝܬ⟩ ⟨?…⟩ ⟨?ܡܛܠ⟩
+⟨?ܕܡܢ⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ܕܗܘܐ ܠܗܘܢ ⟨?…⟩
+⟨?…⟩ ⟨?…⟩ ܂ ⟨?…⟩ ܗܘܐ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩
+⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?ܗܠܝܢ⟩ ⟨?ܕܡܢ⟩ ⟨?…⟩
+⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ܕܝܢ ⟨?…⟩ ܆
+⟨?…⟩ ܕܝܢ ⟨?…⟩ ⟨?…⟩ ܂ ⟨?…⟩ ⟨?…⟩
+⟨?…⟩ ⟨?…⟩ ܕܐܠܗܐ ܂ ⟨?…⟩ ⟨?…⟩
+⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ܡܢ ⟨?…⟩ ⟨?…⟩
+⟨?…⟩ ⟨?ܘܗܘܐ⟩ ܠܗܘܢ ⟨?…⟩ ⟨?…⟩ ⟨?…⟩
+⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?ܐܦ⟩ ܡܢ ⟨?…⟩
+⟨?…⟩ ⟨?…⟩ ܕܝܢ ⟨?…⟩ ܡܢ ⟨?…⟩ ⟨?…⟩
+⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ⟨?ܐܠܟܣܢܕܪܘܣ⟩
+⟨?…⟩ ⟨?ܟܕ⟩ ⟨?…⟩ ⟨?ܠܕܘܟܬܐ⟩ ⟨?…⟩ ⟨?…⟩ ܆ ⟨?…⟩
+⟨?…⟩ ⟨?ܐܪܥܐ⟩ ⟨?…⟩ ܆ ⟨?ܐܠܟܣܢܕܪܘܣ⟩ ⟨?…⟩ ⟨?…⟩
+⟨?…⟩ ⟨?…⟩ ⟨?…⟩ ܂ ⟨?…⟩ ܡܢ ܐܪܡܝܐ
 """
 
 primer_notes = """
@@ -88,7 +93,7 @@ numeral at the head, and the section rubrics.
 """
 
 [extraction]
-status = "keyed from the plate, UNVERIFIED: of ~143 word-slots (segmented mechanically, see reason), 30 keyed confident, 36 keyed and flagged ⟨?word⟩, the rest ⟨?…⟩. That is 46% of slots keyed. No line was wholly unread. No Syriac-reading control exists for this piece."
+status = "keyed from the plate, UNVERIFIED: of ~125 word-slots (segmented mechanically, see reason), 29 keyed confident, 17 keyed and flagged ⟨?word⟩, the rest ⟨?…⟩. That is 37% of slots keyed. No line was wholly unread. No Syriac-reading control exists for this piece."
 reason = """
 ⭐ TEXT KEYED FROM THE PLATE 2026-09-01, replacing this record's earlier "TEXT NOT KEYED IN THIS
 PASS". That earlier refusal was the wrong call — a page keyed at a measured rate with every gap
@@ -151,20 +156,24 @@ diff below is the text-keying pass's, written fresh. Where the structural pass h
 finding, it has been restated below only if this pass independently re-confirmed it from the
 plate; nothing was reconstructed from memory of the lost text.
 
-⭐ WHAT THE PLATE GAVE UP ON THIS PAGE, and none of it came from the control:
- · `ܡܢ` five times and `ܕܝܢ` four times, told apart by the dalath point (see [extraction]).
- · `ܗܘܐ` / `ܗܘܘ` / `ܗܘ` seven times, `ܠܗܘܢ` twice, `ܠܐ`, `ܕܠܐ`, `ܗܕܐ`, `ܐܝܬܘܗܝ`, `ܕܗܘܐ`.
- · Two pause marks `܆` (lines 34, 36) — the two-dot form, read as such and not inferred.
-⚠ Two shapes recur that I can name only tentatively, and both are flagged everywhere they occur:
-a rounded glyph + a tall crossing pair + a tall stroke, read as `ܡܛܠ` / `ܘܡܛܠ` (24, 25, 35, 36);
-and a four-glyph ܐ-?-?-ܐ read as `ܐܪܥܐ` (20, 21, 35). If the second is wrong it is wrong three
-times on this page and again on pp. 88-91, so it is the single most load-bearing guess in the
-shard and the first thing a Syriac reader should check.
-⛔ `⟨?ܩܒܪܐ⟩ ⟨?ܕܡ̈ܠܟܐ⟩ … ⟨?ܩܒܪܐ⟩` (line 26) is exactly the kind of reading a control could have
-suggested and did not: the letters were read off the plate before the capitulum was opened, and
-the capitulum's item XI ('Isaias … sepultus in Ierusalem') says nothing about tombs of kings.
+⭐ THE PAGE'S STRUCTURE IS NOW CONFIRMED FROM THE KEYED TEXT, not only from the layout:
+ · line 39 is short and its LAST slot is a four-dot diamond `܀` — read as four dots in a lozenge
+   at ~10x, so the end-of-Isaiah mark is a fact, not an inference from the short line.
+ · line 40 is the one-word rubric and it reads `ܐܪܡܝܐ ܂`. The run is 0.138 of page width, i.e.
+   the name was re-cropped to well under the 0.15 threshold before being called a reading.
+ · line 41 opens `ܐܪܡܝܐ ܐܝܬܘܗܝ ܗܘܐ ܡܢ …` — the name repeated, then the Vitae's standing opening
+   formula, the same one p. 86 line 4 uses for Isaiah (`ܐܫܥܝܐ ܡܢ ܐܘܪܫܠܡ ܐܝܬܘܗܝ ܗܘܐ`). Four
+   confident words in a row, the best-attested line in the shard.
+ · line 57 ends `… ܡܢ ܐܪܡܝܐ`, the name again.
+⭐ ALEXANDER, and the rule-2 caveat stated plainly: two long runs (line 54 x 0.082-0.313, line 56
+x 0.408-0.625) carry the same word, and re-cropped on their own they read
+`ܠ-ܐ-ܠ-ܟ-ܣ-ܢ-ܕ-ܪ-…` — Alexander, with what looks like a prefixed ܠ. ⚠ These runs are 0.22-0.23
+of page width, so they CANNOT be cropped to ≤0.15 and still be seen whole; the ≤0.15 rule was met
+in spirit (the crop is 1900 px for a 350 px source, ~5x) but not to the letter, and the reading is
+flagged accordingly. The earlier structural pass reported ܐܠܟܣܢܕܪܘܣ twice in the lower half of
+this page and that is corroborated.
 
-UNCERTAIN READINGS (every ⟨?word⟩ on the page, in line order): ⟨?ܕܐܝܬ⟩ (18) · ⟨?ܘܡܛܠ⟩ (19) · ⟨?ܕܒܝܬ⟩, ⟨?ܐܪܥܐ⟩ (20) · ⟨?ܐܪܥܐ⟩, ⟨?ܗܘܐ⟩ (21) · ⟨?ܘܐܦ⟩ (22) · ⟨?ܘܐܦ⟩, ⟨?ܒܬܪ⟩ (23) · ⟨?ܕܗܘܐ⟩, ⟨?ܐܝܬ⟩, ⟨?ܚܝܐ⟩, ⟨?ܡܛܠ⟩ (24) · ⟨?ܡܛܠܬܗ⟩, ⟨?ܐܝܬܘܗܝ⟩ (25) · ⟨?ܩܒܪܐ⟩ ×2, ⟨?ܕܡ̈ܠܟܐ⟩ (26) · ⟨?ܥܠܝܗܘܢ⟩ (27) · ⟨?ܕܐܝܬ⟩, ⟨?ܠܗ̇⟩ (29) · ⟨?ܡܕܝܢܬܐ⟩ (30) · ⟨?ܘܐܝܬܘܗܝ⟩ (31) · ⟨?ܠܐ⟩ (32) · ⟨?ܟܠܗ⟩, ⟨?ܐܝܬ⟩ (33) · ⟨?ܕܐܬܐ⟩ (34) · ⟨?ܘܡܛܠ⟩, ⟨?ܐܪܥܐ⟩ (35) · ⟨?ܘܕܥܠܝܗܘܢ⟩, ⟨?ܕܐܒܗ̈ܘܗܝ⟩, ⟨?ܡܛܠ⟩ (36) · ⟨?ܐܠܗܐ⟩, ⟨?ܕܗܘܐ⟩ (37).
+UNCERTAIN READINGS (every ⟨?word⟩ on the page, in line order): ⟨?ܘܕܠܐ⟩ (38) · ⟨?ܕܡܢ⟩, ⟨?ܕܝܢ⟩, ⟨?ܘܡܝܬ⟩ (42) · ⟨?ܕܒܝܬ⟩, ⟨?ܡܛܠ⟩ (43) · ⟨?ܕܡܢ⟩ (44) · ⟨?ܗܠܝܢ⟩, ⟨?ܕܡܢ⟩ (46) · ⟨?ܘܗܘܐ⟩ (51) · ⟨?ܐܦ⟩ (52) · ⟨?ܐܠܟܣܢܕܪܘܣ⟩ (54) · ⟨?ܟܕ⟩, ⟨?ܠܕܘܟܬܐ⟩ (55) · ⟨?ܐܪܥܐ⟩, ⟨?ܐܠܟܣܢܕܪܘܣ⟩ (56).
 
 ⚠ WHAT THE CONTROL DID NOT DO HERE: Schermann's Latin Appendix is a two-page CAPITULUM — one
 sentence per prophet — against 20 lines of continuous Syriac narrative. It adjudicates no letter,
@@ -174,5 +183,5 @@ it. Nothing above was read out of the control; the control was consulted only af
 
 [source]
 primer = "nestle-1889-en"
-page = 87
-leaf = "n176"
+page = 88
+leaf = "n177"

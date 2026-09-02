@@ -1,354 +1,94 @@
-# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
-#
-# ⛔ FILED UNDER R3, NOT R2 — and this is the batch's most consequential finding.
-# The runbook expected p. 70 to be Nestle's one composed exercise. It is not. The
-# "READING EXERCISE" is **the Lord's Prayer in the Peshitta** — a canonical passage, so it is
-# an R3 record that ALIGNS, not an R2 record that must be plate-read. Nestle 1889 contains
-# **no R2 material whatsoever**. See MAP.md.
 id = "nestle-1889-en/r3/c070-1"
 record_type = "R3"
 
-work = "peshitta:matt:6:9-13"
+work = "peshitta:gen:1:30-2:5"
 work_note = """
-Nestle's heading says 10-13; the text as printed BEGINS at ܐܰܒܽܘܢ ܕܒܰܫܡܰܝܳܐ, which is v. 9.
-The heading is off by one verse. Recorded as printed, cited as 6:9-13.
+Chrestomathia I. Three closing lines of Caput I (piece-lines 53, 54, 55, with the marginal 55
+in the outer margin), then `CAPUT II.`, then eleven lines of Caput II whose own line numbering
+RESTARTS at 1 (marginal 5 appears on the fifth line of the new chapter). The page therefore
+carries two line-number series.
+
+⚑ Peshitta reading at Gen 2:2, kept as printed: ܘܫܠܡ ܐܠܗܐ ܒܝܘܡܐ ܫܬܝܬܝܐ ('on the SIXTH day
+God finished'), against the Hebrew's seventh. This is the Peshitta's own reading, not an error.
+
+⚑ First of Nestle's SQUARE-BRACKET SUPPLEMENTS in this piece, at Gen 2:5: `[ܐܦܝ̈]`. The
+brackets are the editor's; they mark a word supplied. They recur on pp. 71, 73, 74, 75, 78.
 """
 
-layer = "vocalized Serto"
-diff_target = "THE NEW TESTAMENT IN SYRIAC, BFBS London 1905-1920 — archive.org `newtestamentinsy00unse`, title page verified at n6. PD. Critical edition behind it: Pusey & Gwilliam, Tetraeuangelium sanctum, Clarendon 1901 (`tetraeuangeliums00puseuoft`). See research/syriac-peshitta-editions.md"
+layer = "MIXED — vocalized Serto (lines 53–55, end of Caput I) then unvocalized Estrangela (Caput II, lines 1–11)"
+layer_note = """
+⭐ THE PAGE ON WHICH THE SCRIPT CHANGES, and it changes at the CAPUT boundary, not at a page
+boundary. Lines 53–55 close Genesis 1 in fully vocalized Serto; the heading `CAPUT II.`
+follows; from Gen 2:1 the text is unvocalized Estrangela with seyame and diacritic points and
+NO vowel signs of any kind. MAP.md put this transition at p. 71 (n160) and read it as a
+one-way drift; it is here, it is at the chapter seam, and it reverses again at Caput III
+(p. 73). A single `layer` string cannot describe this page; hence the compound value above
+and the per-section marking inside text_syr_voc.
+"""
+diff_target = "Barnes, PENTATEUCHUS SYRIACE (post Samuelem Lee), BFBS London 1914 — archive.org `ktavadeauritaauk00lees`, title page verified at n6. PD. ⭐ PAGINATION CALIBRATED THIS PASS: printed page = leaf − 9 (n10 = p. 1, Gen 1:1–13, signature B; n11 = p. 2, running head `ܣܦܪܐ ܕܒܪܝܬܐ` + `I. 14—28`; agreement on two independent pages, per MAP.md's own method). Barnes prints unvocalized Estrangela with seyame and diacritic points, verse numbers in the outer margin against the line on which a verse opens, `*` as verse divider and `❖` at the close of a paragraph. See research/syriac-peshitta-editions.md"
 layer_source = "read from the plate"
-seyame = false
-punctuation = "as printed"
+seyame = true
+lines_per_page = 14
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+line_numbers = "marginal, every 5, in the OUTER margin (right on rectos, left on versos); numbering RESTARTS at each Caput"
+transcription_method = """
+Read from the plate, line by line, off 3.0–5.5x crops cut by horizontal projection (one strip
+per 2–4 printed lines); the 1.75x half-crops of tools/quarry_fetch.sh are NOT sufficient for
+pointed Serto and were used only for orientation. Consonantal skeleton, seyame, word division,
+punctuation, verse numerals, marginal line numerals and square-bracket supplements are read
+directly. ⚠ HONEST LIMIT, per the never-read-codepoints-by-eye rule: the West-Syriac vowel
+points are legible AS SHAPES at this resolution (zqofo prints as a small circle, ptoho as an
+open triangle, and so on — calibrated on ܐܰܠܳܗܳܐ, which recurs on every page), but the finest
+layer — rukkakha/qushshaya bars, the ܗ̇ point, linea occultans — is recorded where seen and is
+not warranted point-by-point. The vocalisation below is therefore a plate reading at the
+word level, not a certified diacritic-level edition; a blind control on a sample
+([[reference_arabic-control-rule]]) is still owed before this text is shipped.
+"""
 
 text_syr_voc = """
-ܐܰܒܽܘܢ ܕܒܰܫܡܰܝܳܐ ܢܶܬܩܰܕܰܫ ܫܡܳܟ ܬܺܐܬܶܐ ܡܰܠܟܽܘܬܳܟ ܢܶܗܘܶܐ ܨܶܒܝܳܢܳܟ
-ܐܰܝܟܰܢܳܐ ܕܒܰܫܡܰܝܳܐ ܐܳܦ ܒܰܐܪܥܳܐ ܗܰܒ ܠܰܢ ܠܰܚܡܳܐ ܕܣܽܘܢܩܳܢܰܢ ܝܰܘܡܳܢܳܐ
-ܘܰܫܒܽܘܩ ܠܰܢ ܚܰܘܒܰܝܢ ܐܰܝܟܰܢܳܐ ܕܳܐܦ ܚܢܰܢ ܫܒܰܩܢ ܠܚܰܝܳܒܰܝܢ
-ܘܠܳܐ ܬܰܥܠܰܢ ܠܢܶܣܝܽܘܢܳܐ ܐܶܠܳܐ ܦܰܨܳܢ ܡܶܢ ܒܺܝܫܳܐ
-ܡܶܛܽܠ ܕܕܺܝܠܳܟ ܗܺܝ ܡܰܠܟܽܘܬܳܐ ܘܚܰܝܠܳܐ ܘܬܶܫܒܽܘܚܬܳܐ ܠܥܳܠܰܡ ܥܳܠܡܺܝܢ ܐܰܡܺܝܢ
-"""
+ܕܺܐܝܬ ܒܶܗ ܢܰܦܫܳܐ ܚܰܝܬܳܐ: ܘܟܽܠ ܝܘܪܳܩ ܥܶܣܒܳܐ ܠܡܶܐܟܘܠܬܳܐ:
+ܘܰܗܘܳܐ ܗܳܟܰܢܳܐ. ³¹ ܘܰܚܙܳܐ ܐܰܠܳܗܳܐ ܟܽܠ ܕܰܥܒܰܕ: ܘܗܳܐ ܛܳܒ
+ܫܰܦܺܝܪ. ܘܰܗܘܳܐ ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ ܝܰܘܡܳܐ ܕܶܫܬܳܐ ❖
 
-# ⭐ Nestle prints his own scientific transliteration under the passage, using Greek letters
-# for the spirantized bgadkpat (β ϑ χ φ δ). This is a PRONUNCIATION LAYER the pilot gets for
-# free and did not plan for — reading-first wants exactly this.
-transliteration_primer = """
-Aβūn deβašmáyå, neϑqáddaš šemåχ. tiϑē malkuϑåχ; nehveh ṣeβyånåχ, aikánnå deβašmáyå aφ b'ár‛å.
-háβ-lan láḥmå desunqu̇nan yaumånå; vašeβóq-lan ḥaubain aikánnå d'aφ ḥnan šeβaqn leḥayyåβain.
-velå ϑálan lenesyónå, éllå φáṣṣån men bíšå; meṭṭul dedílåχ-hī malkuϑå veḥáilå veϑešbóḥtå
-le‛ålam ‛ålemín, amén.
+# ---- CAPUT II. — from here unvocalized Estrangela, line numbering restarts at 1 ----
+
+¹ ܘܐܫܬܟܠܠܘ ܫܡܝܐ ܘܐܪܥܐ: ܘܟܠܗܘܢ ܚܝܠܘ̈ܬܗܘܢ.
+² ܘܫܠܡ ܐܠܗܐ ܒܝܘܡܐ ܫܬܝܬܝܐ ܥܒܕܘ̈ܗܝ ܕܥܒܕ.
+ܘܐܬܬܢܝܚ ܒܝܘܡܐ ܫܒܝܥܝܐ ܡܢ ܟܠܗܘܢ ܥܒܕܘ̈ܗܝ ܕܥܒܕ.
+³ ܘܒܪܟ ܐܠܗܐ ܠܝܘܡܐ ܫܒܝܥܝܐ ܘܩܕܫܗ.
+ܡܛܠ ܕܒܗ ܐܬܬܢܝܚ ܡܢ ܟܠܗܘܢ ܥܒܕܘ̈ܗܝ: ܕܒܪܐ
+ܐܠܗܐ ܠܡܥܒܕ. ⁴ ܗܠܝܢ ܬܘܠܕ̈ܬܐ ܕܫܡܝܐ ܘܕܐܪܥܐ
+ܟܕ ܐܬܒܪܝܘ: ܒܝܘܡܐ ܕܥܒܕ ܡܪܝܐ ܐܠܗܐ ܫܡܝܐ
+ܘܐܪܥܐ. ⁵ ܘܟܠܗܘܢ ܐܝܠܢ̈ܐ ܕܚܩܠܐ ܕܥܕܟܝܠ ܠܐ
+ܗܘܘ ܒܐܪܥܐ. ܘܟܠܗ ܥܣܒܐ ܕܚܩܠܐ ܕܥܕܟܝܠ ܠܐ
+ܝܥܐ: ܡܛܠ ܕܠܐ ܐܚܬ ܡܪܝܐ ܐܠܗܐ ܡܛܪܐ
+ܥܠ [ܐܦܝ̈] ܐܪܥܐ. ܘܐܢܫܐ ܠܝܬ ܠܡܦܠܚ ܒܐܪܥܐ ❖
 """
-transliteration_note = "Diacritic detail of the Greek-letter transliteration is approximate in this calibration pass; it is a second plate-read problem in its own right."
 
 primer_notes = """
-Followed on pp. 70-72 by 'AIDS TO TRANSLATION': a running, WORD-BY-WORD grammatical commentary
-keyed to this passage (e.g. ܐܰܒܽܘܢ § 32 — ܕܒܰܫܡܰܝܳܐ = ܕ § 22 + ܒ § 49 b + ܫܡܰܝܳܐ, 'heaven,
-which though always plural in form is also construed as singular (§ 28 c); st. abs. ܫܡܶܝܢ,
-cstr. ܫܡܰܝ' …), with § cross-references into Nestle's own grammar throughout.
+The only apparatus is the chapter heading `CAPUT II.` and the square-bracket supplement
+`[ܐܦܝ̈]` in the last line. No footnotes.
 """
-
-# ✅ SCHEMA GAP CLOSED — Wilson ruled 2026-09-01: a field on R3, not a record type R5.
-schema_gap = """RESOLVED. Kept below as the reasoning that produced the ruling.
-
-The Aids to Translation are a FIFTH shape the schema has no home for: a per-word note keyed to
-a position in a passage, carrying grammar cross-references. Dropped into primer_notes (as
-above) they become an unstructured blob and lose the per-word keying — which is precisely what
-the reading-first curriculum needs, since it is a ready-made gloss layer of exactly the kind
-the hand-trainer already ships per line. Proposal for SYRIAC-LANGUAGE-PILOT.md §4: R3 gains
-`word_notes = [{ index, form_voc, note, noldeke }]`, or a record type R5. Ruling owed BEFORE
-the run — it changes what the run extracts, not just how it files it.
-"""
-
-# ⭐ WORD NOTES — Wilson's ruling, 2026-09-01: the 'Aids to Translation' become a field on
-# R3 rather than a record type of their own. Read from the plates pp. 70-72 (n87-n89).
-# ⚠ `nestle_sections` and NOT `noldeke`: every § here is a section of NESTLE'S OWN grammar,
-# not Nöldeke's. The two namespaces must not be merged — §4 makes Nöldeke the shared
-# coordinate system precisely because each primer numbers itself differently.
-
-[[word_notes]]
-index = 1
-form_voc = "ܐܰܒܽܘܢ"
-note = "§ 32."
-nestle_sections = ["32"]
-noldeke = []
-
-[[word_notes]]
-index = 2
-form_voc = "ܕܒܰܫܡܰܝܳܐ"
-note = "= ܕ § 22 + ܒ § 49 b + ܫܡܰܝܳܐ, heaven, which though always plural in form is also construed as singular (§ 28 c); st. abs. ܫܡܶܝܢ, cstr. ܫܡܰܝ."
-nestle_sections = ["22", "49b", "28c"]
-noldeke = []
-
-[[word_notes]]
-index = 3
-form_voc = "ܢܶܬܩܰܕܰܫ"
-note = "3 m. sg. impf. Ethpaal from denominative verb ܩܰܕܶܫ (Pael); indicative and jussive are not distinguished."
-nestle_sections = []
-noldeke = []
-
-[[word_notes]]
-index = 4
-form_voc = "ܫܡܳܟ"
-note = "from ܫܡܳܐ name, with suff. 2 m. sg.; emph. ܫܡܳܐ, with suff. ܫܡܶܗ; in the plural, with inserted ܗ, ܫܡܳܗ̈ܶܐ, ܫܡܳܗ̈ܳܬܳܐ, cf. ܐܰܒܳܐ, ܐܰܒܳܗ̈ܶܐ § 32."
-nestle_sections = ["32"]
-noldeke = []
-
-[[word_notes]]
-index = 5
-form_voc = "ܬܺܐܬܶܐ"
-note = "E. Syr. (a second pointing), 3 f. sg. impf. Peal from ܐܶܬܳܐ come, § 48 d, 2."
-nestle_sections = ["48d2"]
-noldeke = []
-
-[[word_notes]]
-index = 6
-form_voc = "ܡܰܠܟܽܘܬܳܟ"
-note = "abstract feminine ܡܰܠܟܽܘܬ § 30 IV + suff. 2 sg. m.; note Q(ushshaya) of the ܟ as distinguished from Hebr. מַלְכוּת."
-nestle_sections = ["30IV"]
-noldeke = []
-
-[[word_notes]]
-index = 7
-form_voc = "ܢܶܗܘܶܐ"
-note = "3 m. sg. impf. of ܗܘܳܐ §§ 47, 48 b."
-nestle_sections = ["47", "48b"]
-noldeke = []
-
-[[word_notes]]
-index = 8
-form_voc = "ܨܶܒܝܳܢܳܟ"
-note = "m. subst. in -ܳܢ, -ܳܢܳܐ from ܨܒܳܐ wish, will, with suff., § 25, 4, b, 1."
-nestle_sections = ["25.4b1"]
-noldeke = []
-
-[[word_notes]]
-index = 9
-form_voc = "ܐܰܝܟܰܢܳܐ"
-note = "how? interrogative adverb used relatively with following ܕ, cf. §§ 21. 22."
-nestle_sections = ["21", "22"]
-noldeke = []
-
-[[word_notes]]
-index = 10
-form_voc = "ܐܳܦ"
-note = "also, cf. Hebr. and Aram. אַף."
-nestle_sections = []
-noldeke = []
-
-[[word_notes]]
-index = 11
-form_voc = "ܒܰܐܪܥܳܐ"
-note = "(E. Syr. a second pointing) = ܐܰܪܥܳܐ emph. from ܐܪܥ = Hebr. אֶרֶץ, Aram. אֲרַע, אַרְעָא, Arab. أرض (§ 14 a; 26 fem.) + prep. ܒ § 17 b 2."
-nestle_sections = ["14a", "26", "17b2"]
-noldeke = []
-
-[[word_notes]]
-index = 12
-form_voc = "ܗܰܒ"
-note = "§ 48 g 5."
-nestle_sections = ["48g5"]
-noldeke = []
-
-[[word_notes]]
-index = 13
-form_voc = "ܠܰܢ"
-note = "§ 49 b; in later Syriac written as one word ܗܰܒܠܰܢ."
-nestle_sections = ["49b"]
-noldeke = []
-
-[[word_notes]]
-index = 14
-form_voc = "ܠܰܚܡܳܐ"
-note = "st. emph. from abs. ܠܚܶܡ, H. לֶחֶם."
-nestle_sections = []
-noldeke = []
-
-[[word_notes]]
-index = 15
-form_voc = "ܕܣܽܘܢܩܳܢܰܢ"
-note = "= ܕ to express the genitive (§ 55 b) + ܣܽܘܢܩܳܢ, ܣܽܘܢܩܳܢܳܐ m. subst., need, necessity, from the stem ܣܢܰܩ need — of Peal only part. pass. in use — + suffix, which in such a combination is almost always appended to the second member, although belonging strictly to the first or to the whole expression (§ 51 c)."
-nestle_sections = ["55b", "51c"]
-noldeke = []
-
-[[word_notes]]
-index = 16
-form_voc = "ܝܰܘܡܳܢܳܐ"
-note = "adj. acc. to § 25, 4 b 1 from ܝܰܘܡ, ܝܰܘܡܳܐ § 29, I, e."
-nestle_sections = ["25.4b1", "29Ie"]
-noldeke = []
-
-[[word_notes]]
-index = 17
-form_voc = "ܘܰܫܒܽܘܩ"
-note = "imp. sg. m. of ܫܒܰܩ pardon; for ܘ v. § 6 c; 38 c, e; the prefixing of ܘ does not produce a firmly closed syllable, hence ܒ with R(ukkakha)."
-nestle_sections = ["6c", "38ce"]
-noldeke = []
-
-[[word_notes]]
-index = 18
-form_voc = "ܠܰܢ"
-note = "v. supra."
-nestle_sections = []
-noldeke = []
-
-[[word_notes]]
-index = 19
-form_voc = "ܚܰܘܒܰܝܢ"
-note = "our debts, from ܚܰܘܒܳܐ, st. cstr. and abs. ܚܰܘܒ § 30, I e, pl. ܚܰܘ̈ܒܶܐ, ܚܰܘ̈ܒܳܬܳܐ + suff. 1 p. pl.; ⭐ the E. Syrians write it otherwise, acc. to § 6 d 1, so ܝܰܘܡܳܢܳܐ above."
-nestle_sections = ["30Ie", "6d1"]
-noldeke = []
-
-[[word_notes]]
-index = 20
-form_voc = "ܐܰܝܟܰܢܳܐ ܕ"
-note = "and ܐܳܦ, v. sup."
-nestle_sections = []
-noldeke = []
-
-[[word_notes]]
-index = 21
-form_voc = "ܚܢܰܢ"
-note = "§ 19."
-nestle_sections = ["19"]
-noldeke = []
-
-[[word_notes]]
-index = 22
-form_voc = "ܫܒܰܩܢ"
-note = "shorter form of the 1 pl. perf., § 36 a."
-nestle_sections = ["36a"]
-noldeke = []
-
-[[word_notes]]
-index = 23
-form_voc = "ܠܚܰܝ̈ܳܒܰܝܢ"
-note = "our debtors; dative particle ܠ + plur. of intensive noun ܚܰܝܳܒ § 25, 3 a, from a root med. ܘ, the ܘ passing into ܝ § 46 b."
-nestle_sections = ["25.3a", "46b"]
-noldeke = []
-
-[[word_notes]]
-index = 24
-form_voc = "ܘܠܳܐ"
-note = "and not; ܠܳܐ = non and ne."
-nestle_sections = []
-noldeke = []
-
-[[word_notes]]
-index = 25
-form_voc = "ܬܰܥܠܰܢ"
-note = "lead us, 2 m. sg. impf. Aphel (ܐܰܥܶܠ) from the root ܥܠܠ with suff. of 1 per. pl., § 43. As in Hebr., the imper. cannot stand with the negation."
-nestle_sections = ["43"]
-noldeke = []
-
-[[word_notes]]
-index = 26
-form_voc = "ܠܢܶܣܝܽܘܢܳܐ"
-note = "prepos. ܠ, which also denotes motion and direction, + ܢܶܣܝܽܘܢܳܐ = H. נִסָּיוֹן § 25, 4 b, 1 note, from the root ܢܣܐ, only in Pael."
-nestle_sections = ["25.4b1"]
-noldeke = []
-
-[[word_notes]]
-index = 27
-form_voc = "ܐܶܠܳܐ"
-note = "but, doubtless contracted from ܐܶܢ if and ܠܳܐ not."
-nestle_sections = []
-noldeke = []
-
-[[word_notes]]
-index = 28
-form_voc = "ܦܰܨܳܢ"
-note = "deliver us, m. sg. imp. Pael of ܦܨܳܐ with suff. 1 p. pl., § 47."
-nestle_sections = ["47"]
-noldeke = []
-
-[[word_notes]]
-index = 29
-form_voc = "ܡܶܢ ܒܺܝܫܳܐ"
-note = "from the evil (one); preposition ܡܶܢ § 49 c; ܒܺܝܫܳܐ st. abs. msc. of ܒܺܝܫ (cf. Aram. בִּאֵשׁ); ⭐ if it were to be rendered 'from evil' (neutr.), we should expect ܒܺܝܫܬܳܐ (§ 26)."
-nestle_sections = ["49c", "26"]
-noldeke = []
-
-[[word_notes]]
-index = 30
-form_voc = "ܡܶܛܽܠ"
-note = "prep. (from a noun with ܠ, √ ܡܛܳܐ) on account of (§ 49 f); with a following ܕ it becomes a conjunction."
-nestle_sections = ["49f"]
-noldeke = []
-
-[[word_notes]]
-index = 31
-form_voc = "ܕܕܺܝܠܳܟ"
-note = "§ 23."
-nestle_sections = ["23"]
-noldeke = []
-
-[[word_notes]]
-index = 32
-form_voc = "ܗܺܝ"
-note = "the fem. pron. (§ 19), as copula more correctly written as enclitic ܗ̱ܝ."
-nestle_sections = ["19"]
-noldeke = []
-
-[[word_notes]]
-index = 33
-form_voc = "ܚܰܝܠܳܐ"
-note = "§ 28 b; 29, I, f."
-nestle_sections = ["28b", "29If"]
-noldeke = []
-
-[[word_notes]]
-index = 34
-form_voc = "ܬܶܫܒܽܘܚܬܳܐ"
-note = "(acc. to others with ܬ R(ukkakha)) § 30 A. 2, plur. ܬܶܫܒ̈ܚܳܬܳܐ, of Pael ܫܰܒܰܚ praise."
-nestle_sections = ["30A2"]
-noldeke = []
-
-[[word_notes]]
-index = 35
-form_voc = "ܠܥܳܠܰܡ"
-note = "st. constr., which still appears, especially in a connexion like the present (§ 29, II a)."
-nestle_sections = ["29IIa"]
-noldeke = []
-
-[[word_notes]]
-index = 36
-form_voc = "ܐܰܡܺܝܢ"
-note = "⭐ 'we prefer to derive [it] from the Gk. ἀμήν, rather than from the Hebr. אָמֵן, in spite of Jer. 28, 6.' — an etymological JUDGEMENT, not a fact: Nestle's own view, argued against a counter-example."
-nestle_sections = []
-noldeke = []
 
 [alignment]
-status = "not attempted in calibration; now unblocked in principle — see below"
-shippable_text = """
-⭐ CORRECTED 2026-09-01 (Wilson). The Peshitta NT text is PUBLIC DOMAIN: SEDRA carries the
-BFBS/UBS 1905 edition (Pusey-Gwilliam gospels 1901, Gwilliam Acts, Gwilliam-Pinkerton Paul,
-Gwynn Catholic Epp. + Rev.), all published 1905, and a faithful transcription of a PD text
-carries no new copyright. So the earlier verdict here was too broad: SEDRA's LEMMATIZATION and
-MORPHOLOGY stay compute-only, but the TEXT does not. Their terms are a contract on their files,
-so carry the text from a PD edition rather than re-exporting theirs.
-"""
-carriers_checked = """
-No clean fetchable carrier of the 1905 text was found (2026-09-01):
-· ETCBC/peshitta (Text-Fabric) is the OLD Testament, OCR'd from the LEIDEN 1987 edition, which
-  is in copyright — and the repo says MIT while its own about.md says CC BY-NC. ⛔ Third
-  occurrence of the two-licences-in-one-repository trap (cf. Cod. 940, Cod. Syr. 1). Not usable.
-· STEPBible-Data (CC BY 4.0) surfaced no Syriac module.
-· syri.ac 403s to automated fetch; best browsed by hand.
-· Candidate PD SCAN, not yet probed: archive.org `newtestamentinsy00unse`. ⚠ Verify the edition
-  at the title page, never by the ID digits (Phase 0 protocol).
-· The Peshitta OT has no clean digital carrier at all now that Leiden is out; it wants a PD
-  printed edition — Lee 1823, Urmia 1852 or Mosul 1887-92.
-"""
-method = """
-⭐ So the method inverts: we PRODUCE the digital text rather than consume one. Nestle's
-chrestomathy is itself a printed Peshitta, PD since 1889. Key from Nestle, then CHECK against
-SEDRA and the 1905 scan and ship neither — which is exactly what a compute-only source permits,
-and it recovers the accuracy alignment was for. Alignment was never about saving keystrokes; it
-was about having something to diff against.
+status = "keyed from Nestle; checked against Barnes 1914"
+diff = """
+⭐ CHECKED against Barnes pp. 2–3 (leaves n11–n12).
+
+AGREEMENT on the close of Gen 1 (ܘܟܠ ܝܘܪܩ ܥܣܒܐ ܠܡܐܟܘܠܬܐ · ܘܚܙܐ ܐܠܗܐ ܟܠ ܕܥܒܕ ܘܗܐ ܛܒ ܫܦܝܪ ·
+ܝܘܡܐ ܕܫܬܐ) and on Gen 2:1–5, including the distinctive ܘܐܫܬܟܠܠܘ at 2:1 and the SIXTH day at
+2:2 — Barnes reads ܫܬܝܬܝܐ likewise, so Nestle is not idiosyncratic here.
+
+⚑ The `[ܐܦܝ̈]` at 2:5: Barnes prints ܥܠ ܐܦ̈ܝ ܐܪܥܐ unbracketed. So Nestle's brackets record a
+LACUNA IN HIS OWN EXEMPLAR, not a doubt about the Peshitta text — useful to know before the
+brackets are given any weight in a learner-facing edition.
+
+⚠ Barnes cannot check the pointing of lines 53–55; for the Estrangela section there is nothing
+to point, which is exactly why the Estrangela pages of this piece are the more reliable part
+of the extraction.
 """
 
 [source]
 primer = "nestle-1889-en"
 page = 70
-leaf = "n87"
-printed_heading = "READING EXERCISE. Matt. 6, 10—13."
-note = "Sits at the end of the GRAMMAR's pagination (leaf = page + 17), not the chrestomathy's."
+leaf = "n159"

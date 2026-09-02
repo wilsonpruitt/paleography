@@ -1,0 +1,69 @@
+# R3 — Chrestomathia II, Matt. 5, page 4 of 7.
+id = "nestle-1889-en/r3/c082-1"
+record_type = "R3"
+
+work = "peshitta:matt:5:22-29"
+work_note = """
+Opens mid-verse 22 (continued from p. 81) and breaks off mid-verse 29, which finishes on
+p. 83. Lines 44-58; marginal numerals 45, 50, 55.
+"""
+
+layer = "unvocalized Estrangela, with seyame and the diacritic/enclitic points"
+layer_source = "read from the plate"
+diff_target = "THE NEW TESTAMENT IN SYRIAC, BFBS London 1905-1920 — archive.org `newtestamentinsy00unse`, title page verified at n6. PD. Critical edition behind it: Pusey & Gwilliam, Tetraeuangelium sanctum, Clarendon 1901 (`tetraeuangeliums00puseuoft`). See research/syriac-peshitta-editions.md"
+seyame = true
+lines_per_page = 15
+page_number_form = "Syriac numeral letter, centred at head — no arabic number printed"
+page_number_read = "ܦܒ = 82"
+transcription_note = "Conventions as declared in c079-1.toml. Letter-level qushshaya/rukkakha points not transcribed — known gap."
+
+text_syr_voc = """
+ܗ̄ܘ ܠܟܢܘܫܬܐ ܂ ܘܡܢ ܕܢܐܡܪ ܠܠܐ ܆ ܡܬܚܝܒ ܗ̄ܘ
+ܠܓܗܢܐ ܕܢܘܪܐ ܀ ܐܢܗܘ ܗܟܝܠ ܕܡܩܪܒ ܐܢ̄ܬ
+ܩܘܪܒܢܟ ܥܠ ܡܕܒܚܐ ܆ ܘܬܡܢ ܬܬܕܟܪ ܕܐܚܝܕ
+ܥܠܝܟ ܐܚܘܟ ܐܟܬܐ ܀ ܫܒܘܩ ܬܡܢ
+ܩܘܪܒܢܟ ܥܠ ܡܕܒܚܐ ܆ ܘܙܠ ܠܘܩܕܡ ܐܬܪܥܐ
+ܥܡ ܐܚܘܟ ܆ ܘܗܝܕܝܢ ܬܐ ܩܪܒ ܩܘܪܒܢܟ ܀
+ܗܘܝܬ ܡܬܐܘܐ ܥܡ ܒܥܠܕܝܢܟ ܥܓܠ ܆ ܥܕ ܥܡܗ
+ܐܝܬ ܒܐܘܪܚܐ ܆ ܕܠܡܐ ܒܥܠܕܝܢܟ ܢܫܠܡܟ ܠܕܝܢܐ ܆
+ܘܕܝܢܐ ܢܫܠܡܟ ܠܓܒܝܐ ܆ ܘܬܗܘܐ ܢܦܠ ܒܝܬ ܐܣܝܪ̈ܐ ܀
+ܘܐܡܝܢ ܐܡ̇ܪ ܐ̄ܢܐ ܠܟ ܆ ܕܠܐ ܬܦܘܩ ܡܢ ܬܡܢ
+ܥܕܡܐ ܕܬܬܠ ܫܡܘܢܐ ܐܚܪܝܐ ܂ ܫܡܥܬܘܢ
+ܕܐܬܐܡ̄ܪ ܆ ܠܐ ܬܓܘܪ ܀ ܐܢܐ ܕܝܢ ܐܡ̇ܪ ܐ̄ܢܐ
+ܠܟܘܢ ܆ ܕܟܠ ܡܢ ܕܚܙܐ ܐܢ̄ܬܬܐ ܐܝܟ ܕܢܪܓܝܗ ܆
+ܡܚܕܐ ܓܪܗ ܒܠܒܗ ܀ ܐܢ ܕܝܢ ܥܝܢܟ ܕܝܡܝܢܐ
+ܡܟܫܠܐ ܠܟ ܆ ܚܨܝܗ ܘܫܕܝܗ ܂ ܦܩܚ ܠܟ ܓܝܪ
+"""
+
+verse_line_index = """
+v.22 continues into line 44 · v.23 line 45 · v.24 line 47 (last two words) · v.25 line 50 ·
+v.26 line 53 · v.27 line 54 (last word) · v.28 line 55 · v.29 line 57.
+Marginal line numerals at 45, 50, 55.
+"""
+
+primer_notes = "None."
+
+[alignment]
+status = "keyed from Nestle; checked against BFBS 1905-1920 at leaf n16 (printed p. 5, lower band carries vv. 22-28)"
+diff = """
+AGREEMENT: verse division 22-29; the consonantal sequence of vv. 23-28; ܐܣܝܪ̈ܐ with seyame;
+the compound spellings ܒܥܠܕܝܢܟ (twice, lines 50-51) written solid in both witnesses.
+
+⚑ DIVERGENCE, v. 29 (line 58): Nestle prints `ܚܨܝܗ ܘܫܕܝܗ ܂ ܦܩܚ ܠܟ ܓܝܪ` — i.e. **no ܡܢܟ**
+after ܘܫܕܝܗ. The same shape recurs on the next page at v. 30 (`ܦܣܘܩ ܫܕܝܗ ܂` — see c083-1),
+so it is a consistent feature of Nestle's exemplar, not a single dropped word. The BFBS
+reading at this point was NOT verified: the band probed at n16 turned out to carry v. 25, and
+v. 29-30 sit in the part of n16 that was not re-zoomed before the pass closed. ⛔ Flagged as
+an OPEN comparison, not asserted as a divergence — the observation about Nestle is firm, the
+claim about the control is not yet made.
+
+⚑ v. 22 (line 44), `ܠܠܐ`. Read from the plate as printed. This is the crux word of the verse
+(Gk. μωρέ) and it is exactly the kind of short, unpointed, unfamiliar form where a reader
+without the language can produce plausible nonsense — recorded here as a NAMED risk on this
+record rather than left silent.
+"""
+
+[source]
+primer = "nestle-1889-en"
+page = 82
+leaf = "n171"
