@@ -254,21 +254,30 @@ work*, not house-wide:
 
 ---
 
-## 7. Rulings wanted from Wilson — answerable in a word each
+## 7. Rulings — taken 2026-09-02 (Wilson), same session as the score
 
-1. **URL convention** — `<lang>.paleography.app` = learn, `paleography.app/<lang>` = read the
-   hand, as a standing rule? (Recommend **yes**.)
-2. **Separate Vercel project** rooted at `learn/site/`, Labs team? (Recommend **yes**.)
-3. **Move `LESSON-*.md` into `learn/syriac/`** with pointer updates? (Recommend **yes**; the
-   alternative is a build that globs the repo root.)
-4. **Sidecar drill TOML with the verbatim check**, not lesson records, for v1? (Recommend
-   **yes**; records are the §10 engine's problem.)
-5. **Publish the R1/R3/R4 records as pages** under `/sources/…` and build `/for-syriacists` on
-   them? (Recommend **yes** — it is the outreach gate's actual deliverable.)
-6. **A name** for `course.toml [title]`. "First Light" was the prototype's; keep it, or not.
-7. **Scorecard = local + copy-to-clipboard, no Supabase in v1?** (Recommend **yes**; the hand
-   site's opt-in confusion collection can extend here later, and the letter-confusion thesis
-   says it eventually should — but not before a learner other than Wilson exists.)
+1. ✅ **URL convention: `<lang>.paleography.app` = learn the language; `paleography.app/<lang>`
+   = read the hand.** Wilson's framing: the language side is **"linked and guided by
+   paleography"** — a subdomain of it, not a sibling product. ⭐ **If and when Tabella launches
+   and there is a broader language-learning pull, that bridge is crossed then** — nothing here
+   anticipates it; no Tabella dependency, no export, no shared identity.
+2. ✅ **Separate Vercel project**, Labs team, root `learn/site/`.
+3. ✅ **Move `LESSON-*.md` into `learn/syriac/`** — unopposed, taken as the default.
+4. ✅ **Sidecar drill TOML + verbatim check** for v1 — unopposed, taken as the default.
+5. ✅ **Publish the R1/R3/R4 records as pages** and build `/for-syriacists` on them.
+   ⭐ **Standing ruling, in his words: "there is no plan for a gate on this at any point, same
+   with paleography.app. Pure tool and proof of concept."** No login, no paywall, no
+   beta-wall, ever — on either side of the twin path. Anything that would put a door in front
+   of a page is out of scope by ruling, not by omission.
+6. ⬜ **Name — open, wordsmithing requested.** Wilson's instinct was "primer"; ⚠ it collides
+   twice — the hand site already labels `/hand/syriac` *"A reader's primer on syriac"*
+   (user-facing, same language, sibling address), and *The New Syriac Primer* (Kiraz, Gorgias)
+   is the standard in-print textbook a Syriacist thinks of first. Offered: **Reader** (*A
+   Syriac Reader* — the genre word for a graded book of real texts, carries the reading-first
+   thesis; recommended) · **Lessons** (*Syriac in Eleven Lessons* — plainest) · **Chrestomathy**
+   (exact, opaque to non-specialists). "First Light" stays the prototype's / Lesson 1's name.
+   `course.toml [title]` waits on this; nothing else does.
+7. ✅ **Scorecard = local + copy-to-clipboard. No Supabase in v1.**
 
 ---
 
