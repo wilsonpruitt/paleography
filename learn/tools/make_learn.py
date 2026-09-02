@@ -20,6 +20,7 @@ Usage:  python3 learn/tools/make_learn.py           # build
 """
 import glob
 import html
+import json
 import re
 import sys
 import tomllib
@@ -574,8 +575,27 @@ def run(write):
     build_prose_pages(errors, write)
     build_sources_page(records, course, write)
     build_index_page(lesson_files, full_lesson_texts, action_lines, write)
+    build_vercel_config(write)
 
     return errors, records, lesson_files
+
+
+def build_vercel_config(write):
+    """learn/site/vercel.json -- no rewrites needed (every route here is a literal
+    directory + index.html, unlike site/vercel.json's per-track rewrites), just the same
+    Cache-Control convention the hand site's own vercel.json uses, so a redeploy is never
+    served stale by an intermediate cache. Regenerated on every build like every other page
+    under learn/site/ -- do not hand-edit the output; this function is the source."""
+    if not write:
+        return
+    cfg = {
+        "headers": [
+            {"source": "/(.*)", "headers": [
+                {"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"}
+            ]}
+        ]
+    }
+    (SITE / "vercel.json").write_text(json.dumps(cfg, indent=1) + "\n", encoding="utf-8")
 
 
 def main():
