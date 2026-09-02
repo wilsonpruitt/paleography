@@ -486,3 +486,28 @@ web surface should feel like, not a spec — no framework, no data model, no pag
 here. It generalizes past Syriac (Hebrew, and the self-produced-GT band) once it exists, since
 the underlying move — turn structured extraction records into an unlimited drill generator —
 doesn't depend on which language's primer fed it.
+
+⭐ **Second idea, same conversation, also deferred, also Syriac-as-proof-of-concept: a stroke-
+order / letter-formation animation engine — no code yet.** The problem it answers: for a
+non-Roman script, "where does the pen even start" is genuinely baffling to a beginner in a way
+nothing in Lesson 0 currently addresses — that lesson teaches shape RECOGNITION (name a
+letter, hear its sound) but says nothing about how the letter is actually FORMED stroke by
+stroke, which matters both for handwriting and for reading cursively-joined ink with
+understanding. The proposed shape: a small program that generates an animated GIF (or
+equivalent) of a letter's strokes flowing in order, then a word's letters flowing and joining
+— built once as a generation *engine*, not as a library of hand-drawn animations per letter,
+so it is cheap to point at a new script later.
+
+**Why this is a cross-project idea, not a Syriac-only one:** the multi-language expansion
+plan (§10 above; also `EXPANSION-PLAN.md`) puts several more non-Roman scripts on deck —
+Hebrew, Coptic, Sanskrit's Devanagari, Syriac's own Serto/East Syriac variants — and every one
+of them will hit the same "where does the stroke start" wall a Latin/Greek-literate adult has
+never had to think about before. Built as a general engine keyed off each script's stroke-
+order data (not per-letter hand animation), a new language track inherits it as configuration,
+the same way a new track already inherits the trainer's registry-driven letterform/profile
+machinery ([[paleography]] memory, "Registry-driven since Phase A"). It may also belong on the
+PALEOGRAPHY (hand-reading) side of the twin path, not only the language-learning side — ductus
+(the order and direction of strokes) is exactly the kind of fact a manuscript reader benefits
+from knowing too, even though `PLAN.md` §3's exercise types currently teach recognition only,
+never formation. Worth deciding, when this is actually scoped, which side of the twin path
+owns it, or whether it is shared machinery like the registry itself.
