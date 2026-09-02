@@ -191,3 +191,84 @@ deep and debt and evening and city need the alphabetical-root method regardless 
 narrowing an English-word grep fixes a word that common. Full per-leaf lists are reproducible
 from the fetch already cached: `~archive.org compendioussyria00payn` hocr pageindex + searchtext
 gz files (small, ~1.2 MB total, worth re-fetching rather than storing verbatim here).
+
+## ⛔⛔ RETRACTION + real fix, 2026-09-02, same session as the appendix above
+
+The "full English-hit search across all 710 leaves" appendix above is **built on a broken
+offset assumption and its leaf numbers cannot be trusted.** Caught while trying to plate-check
+the "hover" candidate: leaf 607 (by that appendix's own method) shows page 592's real content
+on the actual plate, which has nothing to do with "brood, hover over." Diagnosis: the
+pageindex's first number-pair is NOT a stable page-sequential offset into `searchtext.txt` —
+three phrases (`shin-bone`, `flatterer`, `cockcrow`) all confirmed visible on the SAME physical
+plate mapped to three wildly different, non-constant-offset leaf numbers (666, 268, 589) when
+bisected against that column. The searchtext blob is not laid out in simple page order the way
+the earlier gotcha-note assumed; a constant correction factor does not exist. **Discard every
+leaf number in the appendix above** — the pagination formula (`leaf = page + 15`, for the
+`/download/.../page/n<N>.jpg` URL convention) is still correct and independently useful, but
+nothing in the appendix's word→leaf mapping survives.
+
+### The real tool: archive.org's own search-inside API
+
+`https://{server}/fulltext/inside.php?item_id=<id>&doc=<id>&path=<dir>&q=<word>` (server/dir
+from `https://archive.org/metadata/<id>`) returns real hits with an internal leaf number
+(`"page"` field, confirmed = archive's own OCR-leaf index, matching `page_numbers.json`'s
+`leafNum`), a pixel bounding box, **and the full surrounding OCR text** — this is the correct
+locating tool, not the raw pageindex/searchtext gz files. Validated conversion, confirmed via
+two independent phrases ("habitable earth" cluster, "Universal Doctor") both landing on plates
+that show exactly the quoted text:
+
+- **`n` (the download-URL leaf) = api `"page"` − 53**
+- **printed page number = api `"page"` − 68** (= `n − 15`, consistent with the formula already
+  established a different way)
+
+⚠ Bounding-box pixel coordinates from the API did **not** line up exactly against the
+`/page/n<N>.jpg` derivative in one test (off by enough to miss the word) — page-level location
+transfers cleanly, word-level pixel crops do not without more calibration. Not needed for
+Step 1; would matter for a precise Step-2 crop.
+
+### Corrected Step 1 result — real locations, from full API match text, no image fetches needed
+
+The API's returned `text` field already shows ~150 chars of context per hit, which is enough to
+tell a headword definition from a citation buried in someone else's entry **without reading any
+Syriac at all** — a cheap, reliable heuristic (does `rt. / m. / f. / adj.` sit immediately
+before the match, marking it as the primed gloss right after a Syriac headword and grammatical
+tag?) that carries none of the running-head letter-reading risk this session backed away from
+earlier. Applied to all 22 targets:
+
+| word | Syriac lemma | best page | confidence | evidence |
+|---|---|---|---|---|
+| deep | ܬܗܘܡܐ | **121** | high | "an abyss, deep; great cavern" |
+| hover | ܪܚܦ | **602** | high | "Pael ... brood, hover over; ... the Spirit of God brooded upon the face of the waters" — only hit in the whole book |
+| evening | ܪܡܫܐ | **608** | high | "m. ... evening" (noun form, matches lemma) |
+| luminary | ܢܗܝܪܐ | **359** | high | "subst. m. light, a light, luminary" — only hit |
+| sanctify | ܩܕܫ (Pael) | **541** | high | "Pael ... to keep or render holy, to hallow, sanctify" |
+| debt | ܚܘܒܐ | **149** | high | "rt. ⟨root⟩ m. a debt" |
+| debtor | ܚܝܒܐ | **353** | high | "rt.⟨root⟩. a debtor" |
+| persecute | ܪܕܦ | **594** | high | "chased ... to persecute" |
+| henceforth | ܡܟܝܠ | **299** | high | "therefore, so then, so now, now therefore, from [henceforth]" |
+| city | ܡܕܝܢܬܐ | **280** | high | TWO headword-marked hits on the same page, despite 112 total noise hits across the book |
+| lampstand (candlestick) | ܡܢܪܬܐ | **313** | high | "Heb. f. a) a lamp-stand, candlestick" |
+| bushel | ܣܐܬܐ | **388** | high | found via a follow-up query ("seah"), not the original grep: "a seah, a dry measure containing about 1½ pecks" — the original "bushel" hit (p.253) was confirmed a citation, not the headword |
+| reward | ܐܓܪܐ | **149** | high | "rt. ⟨root⟩. m. a recompense, reward" (same page as debt — different column/root) |
+| forgive | ܫܒܩ | **619** or 621 | medium | 619 = noun "pardoning, forgiving"; 621 = verb "to remit ... forgive" — lesson wants the verb, so 621 is the better first look |
+| debt-adjacent "righteousness" | ܟܐܢܘܬܐ | **130** or 173 | medium | both headword-marked; need the one whose root matches ܟܐܢ |
+| keeper | ܢܛܘܪܐ | **366** or 562 | medium | both headword-marked |
+| crafty | ܥܪܝܡ | **180** | medium | "astute, [crafty]" — root shown in the OCR needs matching against ܥܪܝܡ, not yet done |
+| beast | ܚܝܘܬܐ | **80** | medium | "a) a wild beast" — plausible, root not yet cross-checked |
+| mourner | ܐܒܝܠܐ | **34** | medium | "rt.⟨root⟩. f. a mourner" |
+| meek | ܡܟܝܟܐ | **361** | medium | "quiet, tranquil; gentle, [meek]" — no `rt./m./f.` marker caught this one, picked from only 5 candidates |
+| gather | ܟܢܫ | **245**, 558, or 570 | medium | 3 headword-marked hits, root not yet cross-checked against ܟܢܫ |
+| multiply | ܣܓܐ | **229** | medium | "Aph. to increase, augment, multiply" — plausible but not root-confirmed |
+| midst | ܡܨܥܬܐ | unresolved | low | no headword-marked hit among 6 candidates; needs a same-page-cluster look or a different query |
+
+**16 of 22 now have a specific, well-evidenced page number** (12 high-confidence, plus most of
+the "medium" row are really just one root-glyph check away from high). Only **midst** has no
+good candidate yet. This is a genuinely different result from the retracted appendix — not a
+patch on it.
+
+**Not done, deliberately, per the standing token-burn gate:** confirming root-letter match for
+the "medium" rows and locating "midst" both need either one more API query per word (cheap) or
+a plate look (still cheap — one image per word, not a transcription pass). Full transcription
+of any entry (Step 2 proper) still waits for Wilson's "which model, and go?" on the real count,
+now that the target list above is solid enough to make that count precise: **16–22 single-page
+reads**, not the runbook's earlier 60–100k-token guess based on a noisier list.
