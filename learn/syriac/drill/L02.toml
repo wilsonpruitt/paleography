@@ -1,0 +1,311 @@
+# Drill sidecar for Lesson 2 -- built (not transcribed from an artifact; L02 postdates
+# "First Light") for Phase C, SYRIAC-WEB-PLAN.md §5. vocab/forms/halfline/cloze/finish/
+# whole/drills content is pulled from learn/syriac/LESSON-2.md itself (Stage 0-4, the
+# Drills block, and the Scorecard section) -- SYRIAC-LESSON-PLAN.md's "New lemmas"/"New
+# form cells" lines for Lesson 2 were used only as a checklist of WHAT to extract, never
+# as the source of an exact Syriac string or gloss.
+#
+# halfline is the one judgment call per §3/§5: LESSON-2.md has no separate "Half a line"
+# stage, so these 5 items reuse Stage 2's own 5 target words (ܐܰܠܳܗܳܐ/ܫܡܰܝܳܐ/ܝܰܘܡܳܐ/
+# ܢܶܬܟܰܢܫܘܢ/ܕܫܰܦܺܝܪ) at a shorter 2-3-word fragment length, per the plan's own steer.
+
+lesson = "L02"
+
+[[vocab]]
+p = "ܪܩܺܝܥܳܐ"
+a = "firmament"
+t = "rqīʿā"
+[[vocab]]
+p = "ܡܨܰܥܰܬ"
+a = "midst-of"
+t = "mṣaʿaṯ"
+[[vocab]]
+p = "ܟܰܢܫܳܐ"
+a = "gathering-of"
+t = "ḵanšā"
+[[vocab]]
+p = "ܝܰܒܺܝܫܬܳܐ"
+a = "dry land"
+t = "yaḇīštā"
+[[vocab]]
+p = "ܝܰܡ̈ܡܶܐ"
+a = "seas"
+t = "yammē"
+[[vocab]]
+p = "ܥܶܣܒܳܐ"
+a = "herb"
+t = "ʿesbā"
+[[vocab]]
+p = "ܙܰܪܥܳܐ"
+a = "seed"
+t = "zarʿā"
+[[vocab]]
+p = "ܐܺܝܠܳܢܳܐ"
+a = "tree"
+t = "īlānā"
+[[vocab]]
+p = "ܦܺܐܪ̈ܶܐ"
+a = "fruits"
+t = "p̄īrē"
+[[vocab]]
+p = "ܠܓܶܢܣܶܗ"
+a = "to-its-kind"
+t = "l-genseh"
+[[vocab]]
+p = "ܕܰܠܬܰܚܬ"
+a = "below"
+t = "d-altaḥt"
+[[vocab]]
+p = "ܕܰܠܥܶܠ"
+a = "above"
+t = "d-alʿel"
+[[vocab]]
+p = "ܗܳܟܰܢܳܐ"
+a = "thus"
+t = "hāḵannā"
+[[vocab]]
+p = "ܡܶܢ"
+a = "from"
+t = "men"
+
+[[forms]]
+form = "ܢܶܗܘܶܐ"
+cell = "imperfect 3ms (now named as a cell, not a fixed phrase)"
+gloss = "let there be"
+lemma = "ܗܘܳܐ"
+[[forms]]
+form = "ܢܶܗܘܘܢ"
+cell = "imperfect 3mp"
+gloss = "let them be"
+lemma = "ܗܘܳܐ"
+[[forms]]
+form = "ܢܶܬܟܰܢܫܘܢ"
+cell = "imperfect 3mp, Ethpaal (passive-flavored, ܢܶܬ־ shape -- recognize, don't conjugate)"
+gloss = "let them be gathered"
+lemma = ""
+[[forms]]
+form = "ܘܰܐܦܩܰܬ"
+cell = "3fs perfect, object flavor"
+gloss = "and it brought forth"
+lemma = "ܬܰܦܶܩ"
+[[forms]]
+form = "ܕܡܶܙܕܪܰܥ"
+cell = "relative ד־"
+gloss = "that sows [seed]"
+lemma = ""
+[[forms]]
+form = "ܦܳܪܶܫ ܒܶܝܬ ܡܰܝ̈ܳܐ ܠܡܰܝ̈ܳܐ"
+cell = "ܒܶܝܬ … ܠ, \"between X and Y\" (seen in L1, drilled here)"
+gloss = "separating between waters and waters"
+lemma = "ܦܪܰܫ"
+
+[[halfline]]
+context = "Genesis 1:6"
+prompt = "ܘܶܐܡܰܪ <span class='blank'></span>"
+answer = "ܐܰܠܳܗܳܐ"
+translit = "alāhā"
+note = "God"
+[[halfline]]
+context = "Genesis 1:8"
+prompt = "ܠܰܪܩܺܝܥܳܐ <span class='blank'></span>"
+answer = "ܫܡܰܝܳܐ"
+translit = "šmayyā"
+note = "heaven"
+[[halfline]]
+context = "Genesis 1:8"
+prompt = "ܘܰܗܘܳܐ ܨܰܦܪܳܐ <span class='blank'></span>"
+answer = "ܝܰܘܡܳܐ"
+translit = "yawmā"
+note = "day"
+[[halfline]]
+context = "Genesis 1:9"
+prompt = "<span class='blank'></span> ܡܰܝ̈ܳܐ"
+answer = "ܢܶܬܟܰܢܫܘܢ"
+translit = "netkanšūn"
+note = "let them be gathered"
+[[halfline]]
+context = "Genesis 1:10"
+prompt = "ܘܰܚܙܳܐ ܐܰܠܳܗܳܐ <span class='blank'></span>"
+answer = "ܕܫܰܦܺܝܪ"
+translit = "d-šappīr"
+note = "that it was beautiful"
+
+[[cloze]]
+context = "Genesis 1:6"
+prompt = "ܘܶܐܡܰܪ <span class='blank'></span>: ܢܶܗܘܶܐ ܪܩܺܝܥܳܐ ܒܰܡܨܰܥܰܬ ܡܰܝ̈ܳܐ."
+answer = "ܐܰܠܳܗܳܐ"
+translit = "alāhā"
+note = "God"
+[[cloze]]
+context = "Genesis 1:8"
+prompt = "ܘܰܩܪܳܐ ܐܰܠܳܗܳܐ ܠܰܪܩܺܝܥܳܐ <span class='blank'></span>."
+answer = "ܫܡܰܝܳܐ"
+translit = "šmayyā"
+note = "heaven"
+[[cloze]]
+context = "Genesis 1:8"
+prompt = "ܘܰܗܘܳܐ ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ <span class='blank'></span> ܕܰܬܪܶܝܢ"
+answer = "ܝܰܘܡܳܐ"
+translit = "yawmā"
+note = "day"
+[[cloze]]
+context = "Genesis 1:9"
+prompt = "<span class='blank'></span> ܡܰܝ̈ܳܐ ܕܰܠܬܰܚܬ ܡܶܢ ܫܡܰܝܳܐ ܠܰܐܬܪܳܐ ܚܰܕ."
+answer = "ܢܶܬܟܰܢܫܘܢ"
+translit = "netkanšūn"
+note = "let them be gathered"
+[[cloze]]
+context = "Genesis 1:10"
+prompt = "ܘܰܚܙܳܐ ܐܰܠܳܗܳܐ <span class='blank'></span>."
+answer = "ܕܫܰܦܺܝܪ"
+translit = "d-šappīr"
+note = "beautiful"
+
+[[finish]]
+context = "Genesis 1:6"
+prompt = "ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܗܘܶܐ ܪܩܺܝܥܳܐ <span class='blank'></span>"
+answer = "ܒܰܡܨܰܥܰܬ ܡܰܝ̈ܳܐ"
+translit = "bamṣaʿaṯ mayyā"
+note = "where?"
+[[finish]]
+context = "Genesis 1:10"
+prompt = "ܘܰܩܪܳܐ ܐܰܠܳܗܳܐ ܠܝܰܒܺܝܫܬܳܐ <span class='blank'></span>"
+answer = "ܐܰܪܥܳܐ"
+translit = "arʿā"
+note = "what did he call it?"
+[[finish]]
+context = "Genesis 1:13"
+prompt = "ܘܰܗܘܳܐ ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ ܝܰܘܡܳܐ <span class='blank'></span>"
+answer = "ܕܰܬܠܳܬܳܐ"
+translit = "d-tlāṯā"
+note = "the third day, this time"
+
+[[whole]]
+context = "Genesis 1:6, unaided"
+prompt_type = "text"
+prompt = "“and God said, let there be a firmament in the midst of the waters”"
+answer = "ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܗܘܶܐ ܪܩܺܝܥܳܐ ܒܰܡܨܰܥܰܬ ܡܰܝ̈ܳܐ."
+translit = "w-emar alāhā: nehwē rqīʿā bamṣaʿaṯ mayyā"
+note = "consonants alone count as a full success"
+
+[[drills]]
+prompt = "ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܗܘܘܢ ܡܰܝ̈ܳܐ ܒܝܰܡ̈ܡܶܐ."
+answer = "And God said: let there be water in the seas."
+[[drills]]
+prompt = "ܘܰܩܪܳܐ ܐܰܠܳܗܳܐ ܠܰܐܪܥܳܐ ܝܰܒܺܝܫܬܳܐ."
+answer = "And God called the earth dry-land."
+[[drills]]
+prompt = "ܘܰܚܙܳܐ ܐܰܠܳܗܳܐ ܕܫܰܦܺܝܪ ܐܺܝܠܳܢܳܐ."
+answer = "And God saw that the tree was beautiful."
+[[drills]]
+prompt = "ܘܰܗܘܳܐ ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ ܝܰܘܡܳܐ ܕܰܬܠܳܬܳܐ."
+answer = "And there was evening and there was morning, the third day."
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "forms"
+title = "New forms"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "One word"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "drills"
+title = "Drills"
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+# Manual scorecard fields, transcribed from LESSON-2.md's own "## Scorecard" section.
+[scorecard]
+stage0_question = "could you use the letter table as a reference while reading?"
+stage1_of = 7
+stage1_label = "by the second read-through, how many of the seven lines could you get through leaning on the pronunciation line only at the hard spots?"
+stage4_options = ["written from memory", "transcribed from your own Latin letters"]

@@ -1,0 +1,330 @@
+# Drill sidecar for Lesson 6, Phase C (SYRIAC-WEB-PLAN.md §5/§3). Content pulled from
+# learn/syriac/LESSON-6.md itself.
+
+lesson = "L06"
+
+[[vocab]]
+p = "ܡܰܠܟܽܘܬܳܟ"
+a = "your kingdom"
+t = "malkūṯāḵ"
+[[vocab]]
+p = "ܨܶܒܝܳܢܳܟ"
+a = "your will"
+t = "ṣeḇyānāḵ"
+[[vocab]]
+p = "ܐܰܝܟܰܢܳܐ"
+a = "as"
+t = "ayḵannā"
+[[vocab]]
+p = "ܗܰܒ"
+a = "give!"
+t = "hab"
+[[vocab]]
+p = "ܠܰܚܡܳܐ"
+a = "bread"
+t = "laḥmā"
+[[vocab]]
+p = "ܕܣܽܘܢܩܳܢܰܢ"
+a = "of our need"
+t = "d-sūnqānan"
+[[vocab]]
+p = "ܝܰܘܡܳܢܳܐ"
+a = "today"
+t = "yawmānā"
+[[vocab]]
+p = "ܢܶܣܝܽܘܢܳܐ"
+a = "temptation"
+t = "nesyōnā"
+[[vocab]]
+p = "ܒܺܝܫܳܐ"
+a = "evil"
+t = "bīšā"
+[[vocab]]
+p = "ܡܶܛܽܠ"
+a = "because"
+t = "meṭṭul"
+[[vocab]]
+p = "ܡܰܠܟܽܘܬܳܐ"
+a = "the kingdom"
+t = "malkūṯā"
+[[vocab]]
+p = "ܘܚܰܝܠܳܐ"
+a = "and power"
+t = "w-ḥaylā"
+[[vocab]]
+p = "ܘܬܶܫܒܽܘܚܬܳܐ"
+a = "and glory"
+t = "w-tešbūḥtā"
+[[vocab]]
+p = "ܥܳܠܡܺܝܢ"
+a = "ages"
+t = "ʿālmīn"
+[[vocab]]
+p = "ܠܥܳܠܰܡ"
+a = "to-age-of"
+t = "l-ʿālam"
+[[vocab]]
+p = "ܐܰܡܺܝܢ"
+a = "amen"
+t = "amīn"
+
+[[forms]]
+form = "ܫܡܳܟ"
+cell = "suffix 2ms, ־ܳܟ"
+gloss = "your name"
+lemma = "ܫܡ"
+[[forms]]
+form = "ܐܰܒܽܘܢ"
+cell = "suffix 1cp on a noun, ־ܰܢ"
+gloss = "our Father"
+lemma = "ܐܰܒܳܐ"
+[[forms]]
+form = "ܚܰܘܒܰܝܢ"
+cell = "plural-noun suffix 1cp, ־ܰܝܢ"
+gloss = "our debts"
+lemma = ""
+[[forms]]
+form = "ܗܰܒ"
+cell = "ms imperative"
+gloss = "give!"
+lemma = ""
+[[forms]]
+form = "ܘܰܫܒܽܘܩ"
+cell = "ms imperative"
+gloss = "and forgive!"
+lemma = "ܫܒܰܩ"
+[[forms]]
+form = "ܦܰܨܳܢ"
+cell = "imperative + suffix (\"us\")"
+gloss = "deliver us!"
+lemma = ""
+[[forms]]
+form = "ܬܺܐܬܶܐ"
+cell = "imperfect 3fs"
+gloss = "let it come"
+lemma = ""
+[[forms]]
+form = "ܢܶܬܩܰܕܰܫ"
+cell = "imperfect, Ethpaal (passive-flavored)"
+gloss = "let it be hallowed"
+lemma = ""
+[[forms]]
+form = "ܫܒܰܩܢ"
+cell = "perfect 1cp"
+gloss = "we forgave"
+lemma = "ܫܒܰܩ"
+[[forms]]
+form = "ܕܺܝܠܳܟ"
+cell = "possessive base ܕܺܝܠ־ + suffix ־ܳܟ"
+gloss = "yours"
+lemma = "ܕܺܝܠ"
+
+[[halfline]]
+context = "Line 1"
+prompt = "<span class='blank'></span> ܕܒܰܫܡܰܝܳܐ"
+answer = "ܐܰܒܽܘܢ"
+translit = "aḇūn"
+note = "our Father"
+[[halfline]]
+context = "Line 2"
+prompt = "ܗܰܒ <span class='blank'></span>"
+answer = "ܠܰܢ"
+translit = "lan"
+note = "to us"
+[[halfline]]
+context = "Line 3"
+prompt = "ܘܰܫܒܽܘܩ ܠܰܢ <span class='blank'></span>"
+answer = "ܚܰܘܒܰܝܢ"
+translit = "ḥawbayn"
+note = "our debts"
+[[halfline]]
+context = "Line 4"
+prompt = "ܐܶܠܳܐ <span class='blank'></span>"
+answer = "ܦܰܨܳܢ"
+translit = "p̄aṣṣān"
+note = "deliver us!"
+[[halfline]]
+context = "Line 5"
+prompt = "ܡܶܛܽܠ <span class='blank'></span> ܗܺܝ"
+answer = "ܕܕܺܝܠܳܟ"
+translit = "d-ḏīlāḵ"
+note = "that it is yours"
+
+[[cloze]]
+context = "Line 1"
+prompt = "<span class='blank'></span> ܕܒܰܫܡܰܝܳܐ ܢܶܬܩܰܕܰܫ ܫܡܳܟ."
+answer = "ܐܰܒܽܘܢ"
+translit = "aḇūn"
+note = "whose Father?"
+[[cloze]]
+context = "Line 2"
+prompt = "ܗܰܒ <span class='blank'></span> ܠܰܚܡܳܐ ܕܣܽܘܢܩܳܢܰܢ ܝܰܘܡܳܢܳܐ."
+answer = "ܠܰܢ"
+translit = "lan"
+note = "give to whom?"
+[[cloze]]
+context = "Line 3"
+prompt = "ܘܰܫܒܽܘܩ ܠܰܢ <span class='blank'></span>."
+answer = "ܚܰܘܒܰܝܢ"
+translit = "ḥawbayn"
+note = "our what?"
+[[cloze]]
+context = "Line 4"
+prompt = "ܐܶܠܳܐ <span class='blank'></span> ܡܶܢ ܒܺܝܫܳܐ."
+answer = "ܦܰܨܳܢ"
+translit = "p̄aṣṣān"
+note = "deliver us!"
+[[cloze]]
+context = "Line 5"
+prompt = "ܡܶܛܽܠ <span class='blank'></span> ܗܺܝ ܡܰܠܟܽܘܬܳܐ."
+answer = "ܕܕܺܝܠܳܟ"
+translit = "d-ḏīlāḵ"
+note = "that it is yours"
+
+[[finish]]
+context = "Line 1"
+prompt = "ܐܰܒܽܘܢ ܕܒܰܫܡܰܝܳܐ <span class='blank'></span>"
+answer = "ܢܶܬܩܰܕܰܫ ܫܡܳܟ ܬܺܐܬܶܐ ܡܰܠܟܽܘܬܳܟ ܢܶܗܘܶܐ ܨܶܒܝܳܢܳܟ"
+translit = "netqaddaš šmāḵ, tīteh malkūṯāḵ, nehwē ṣeḇyānāḵ"
+note = "the first three wishes, in order"
+[[finish]]
+context = "Line 3"
+prompt = "ܘܰܫܒܽܘܩ ܠܰܢ ܚܰܘܒܰܝܢ ܐܰܝܟܰܢܳܐ <span class='blank'></span>"
+answer = "ܕܳܐܦ ܚܢܰܢ ܫܒܰܩܢ ܠܚܰܝܳܒܰܝܢ"
+translit = "d-āp̄ ḥnan šḇaqn l-ḥayyāḇayn"
+note = "as who forgives whom?"
+[[finish]]
+context = "Line 4"
+prompt = "ܘܠܳܐ ܬܰܥܠܰܢ ܠܢܶܣܝܽܘܢܳܐ <span class='blank'></span>"
+answer = "ܐܶܠܳܐ ܦܰܨܳܢ ܡܶܢ ܒܺܝܫܳܐ"
+translit = "ellā p̄aṣṣān men bīšā"
+note = "but do what instead?"
+
+[[whole]]
+context = "The Lord's Prayer, unaided"
+prompt_type = "text"
+prompt = "the whole prayer, from memory — then write verse 9 (line 1) from memory"
+answer = "ܐܰܒܽܘܢ ܕܒܰܫܡܰܝܳܐ ܢܶܬܩܰܕܰܫ ܫܡܳܟ ܬܺܐܬܶܐ ܡܰܠܟܽܘܬܳܟ ܢܶܗܘܶܐ ܨܶܒܝܳܢܳܟ"
+translit = "aḇūn d-ḇašmayyā, netqaddaš šmāḵ, tīteh malkūṯāḵ, nehwē ṣeḇyānāḵ"
+note = "consonants alone count as a full success"
+
+[[drills]]
+prompt = "ܐܰܒܽܘܢ ܕܒܰܫܡܰܝܳܐ ܢܶܬܩܰܕܰܫ ܫܡܳܟ."
+answer = "Our Father who is in heaven, hallowed be your name."
+[[drills]]
+prompt = "ܗܰܒ ܠܰܢ ܠܰܚܡܳܐ ܝܰܘܡܳܢܳܐ."
+answer = "Give us bread today."
+[[drills]]
+prompt = "ܘܰܫܒܽܘܩ ܠܰܢ ܚܰܘܒܰܝܢ ܐܰܝܟܰܢܳܐ ܕܳܐܦ ܚܢܰܢ ܫܒܰܩܢ."
+answer = "And forgive us our debts, as we also have forgiven."
+[[drills]]
+prompt = "ܕܕܺܝܠܳܟ ܗܺܝ ܡܰܠܟܽܘܬܳܐ ܘܚܰܝܠܳܐ."
+answer = "For yours is the kingdom, and the power."
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "forms"
+title = "New forms"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "One word"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "drills"
+title = "Drills"
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[scorecard]
+stage0_question = "could you hear ־ܳܟ \"your\" and ־ܰܢ/־ܰܝܢ \"our\" as a family, not five separate facts?"
+stage1_of = 5
+stage1_label = "how many of the five lines could you say aloud once, unaided, by the end?"
+stage4_options = ["the whole prayer recited", "v. 9 written"]

@@ -1,0 +1,315 @@
+# Drill sidecar for Lesson 7, Phase C (SYRIAC-WEB-PLAN.md §5/§3). Content pulled from
+# learn/syriac/LESSON-7.md itself.
+#
+# No `drills` array/track: LESSON-7.md has no "## Drills (ours, not Nestle's)" section at
+# all -- unlike every other lesson in the course. Confirmed by grep, not an oversight.
+# Flagged in the Phase C report rather than manufacturing drill sentences.
+
+lesson = "L07"
+
+[[vocab]]
+p = "ܘܚܶܘܝܳܐ"
+a = "and the serpent"
+t = "w-ḥewyā"
+[[vocab]]
+p = "ܥܪܺܝܡ"
+a = "crafty"
+t = "ʿrīm"
+[[vocab]]
+p = "ܚܰܝܘܬܳܐ"
+a = "beast"
+t = "ḥayūṯā"
+[[vocab]]
+p = "ܕܕܰܒܪܳܐ"
+a = "of the field"
+t = "d-ḏaḇrā"
+[[vocab]]
+p = "ܠܰܐܢ̱ܬܬܳܐ"
+a = "to the woman"
+t = "l-antṯā"
+[[vocab]]
+p = "ܫܰܪܺܝܪܳܐܝܺܬ"
+a = "truly"
+t = "šarrīrāʾīṯ"
+[[vocab]]
+p = "ܢܶܐܟܘܠ"
+a = "we shall eat"
+t = "nēḵul"
+[[vocab]]
+p = "ܥܰܝ̈ܢܰܝܟܘܢ"
+a = "your eyes"
+t = "ʿaynayḵōn"
+[[vocab]]
+p = "ܝܳܕܥ̈ܰܝ ܛܳܒܬܳܐ ܘܒܺܝܫܬܳܐ"
+a = "knowers of good and evil"
+t = "yāḏʿay ṭāḇtā w-ḇīštā"
+[[vocab]]
+p = "ܘܰܕܪܶܓܬܳܐ"
+a = "and of desire"
+t = "w-d-regtā"
+[[vocab]]
+p = "ܠܡܶܐܟܘܠܬܳܐ"
+a = "for food"
+t = "l-meḵultā"
+[[vocab]]
+p = "ܠܥܰܝ̈ܢܶܐ"
+a = "to the eyes"
+t = "l-ʿaynē"
+[[vocab]]
+p = "ܠܒܰܥܠܳܗ̇"
+a = "to her husband"
+t = "l-ḇaʿlāh"
+[[vocab]]
+p = "ܥܰܡܳܗ̇"
+a = "with her"
+t = "ʿammāh"
+
+[[forms]]
+form = "ܘܶܐܡܪܰܬ"
+cell = "3fs perfect (־ܰܬ)"
+gloss = "and she said"
+lemma = "ܐܶܡܰܪ"
+[[forms]]
+form = "ܘܰܚܙܳܬ"
+cell = "3fs perfect (־ܰܬ)"
+gloss = "and she saw"
+lemma = "ܚܙܳܐ"
+[[forms]]
+form = "ܘܢܶܣܒܰܬ"
+cell = "3fs perfect (־ܰܬ)"
+gloss = "and she took"
+lemma = ""
+[[forms]]
+form = "ܘܶܐܟܠܰܬ"
+cell = "3fs perfect (־ܰܬ)"
+gloss = "and she ate"
+lemma = ""
+[[forms]]
+form = "ܘܝܶܗܒܰܬ"
+cell = "3fs perfect (־ܰܬ)"
+gloss = "and she gave"
+lemma = ""
+[[forms]]
+form = "ܬܶܐܟܠܘܢ"
+cell = "imperfect 2mp"
+gloss = "you (pl.) shall eat"
+lemma = ""
+[[forms]]
+form = "ܕܠܳܐ ܬܶܐܟܠܘܢ"
+cell = "prohibition ܠܳܐ + imperfect"
+gloss = "that you shall not eat"
+lemma = ""
+[[forms]]
+form = "ܡܶܢܶܗ"
+cell = "preposition + suffix"
+gloss = "from it"
+lemma = "ܡܶܢ"
+[[forms]]
+form = "ܠܶܗ"
+cell = "preposition + suffix"
+gloss = "to it"
+lemma = "ܠ"
+[[forms]]
+form = "ܐܰܢ̱ܬܬܳܐ"
+cell = "linea occultans (silent-letter mark)"
+gloss = "the woman"
+lemma = ""
+[[forms]]
+form = "ܫܰܪܺܝܪܳܐܝܺܬ"
+cell = "adverb ־ܐܝܬ"
+gloss = "truly"
+lemma = "ܫܰܪܺܝܪ"
+
+[[halfline]]
+context = "Genesis 3:1"
+prompt = "<span class='blank'></span> ܥܪܺܝܡ ܗܘܳܐ"
+answer = "ܘܚܶܘܝܳܐ"
+translit = "w-ḥewyā"
+note = "and the serpent"
+[[halfline]]
+context = "Genesis 3:2"
+prompt = "<span class='blank'></span> ܐܰܢ̱ܬܬܳܐ ܠܚܶܘܝܳܐ"
+answer = "ܘܶܐܡܪܰܬ"
+translit = "w-emraṯ"
+note = "and she said"
+[[halfline]]
+context = "Genesis 3:4"
+prompt = "<span class='blank'></span> ܡܡܳܬ ܬܡܘܬܘܢ"
+answer = "ܠܳܐ"
+translit = "lā"
+note = "not — the serpent's denial"
+[[halfline]]
+context = "Genesis 3:6"
+prompt = "<span class='blank'></span> ܐܰܢ̱ܬܬܳܐ ܕܫܰܦܺܝܪ"
+answer = "ܘܰܚܙܳܬ"
+translit = "wa-ḥzāṯ"
+note = "and she saw"
+[[halfline]]
+context = "Genesis 3:6"
+prompt = "ܘܢܶܣܒܰܬ <span class='blank'></span>"
+answer = "ܡܶܢ ܦܺܐܪ̈ܰܘܗܝ"
+translit = "men p̄īrāwhī"
+note = "from its fruits"
+
+[[cloze]]
+context = "Genesis 3:1"
+prompt = "<span class='blank'></span> ܥܪܺܝܡ ܗܘܳܐ ܡܶܢ ܟܽܠܳܗ̇ ܚܰܝܘܬܳܐ."
+answer = "ܘܚܶܘܝܳܐ"
+translit = "w-ḥewyā"
+note = "who?"
+[[cloze]]
+context = "Genesis 3:2"
+prompt = "<span class='blank'></span> ܐܰܢ̱ܬܬܳܐ ܠܚܶܘܝܳܐ: ܡܶܢ ܦܺܐܪ̈ܶܐ … ܢܶܐܟܘܠ."
+answer = "ܘܶܐܡܪܰܬ"
+translit = "w-emraṯ"
+note = "she said"
+[[cloze]]
+context = "Genesis 3:4"
+prompt = "<span class='blank'></span> ܡܡܳܬ ܬܡܘܬܘܢ."
+answer = "ܠܳܐ"
+translit = "lā"
+note = "not — the serpent's denial"
+[[cloze]]
+context = "Genesis 3:6"
+prompt = "<span class='blank'></span> ܐܰܢ̱ܬܬܳܐ ܕܫܰܦܺܝܪ ܐܺܝܠܳܢܳܐ ܠܡܶܐܟܘܠܬܳܐ."
+answer = "ܘܰܚܙܳܬ"
+translit = "wa-ḥzāṯ"
+note = "she saw"
+[[cloze]]
+context = "Genesis 3:6"
+prompt = "ܘܢܶܣܒܰܬ <span class='blank'></span> ܘܶܐܟܠܰܬ."
+answer = "ܡܶܢ ܦܺܐܪ̈ܰܘܗܝ"
+translit = "men p̄īrāwhī"
+note = "from what?"
+
+[[finish]]
+context = "Genesis 3:2"
+prompt = "ܘܶܐܡܪܰܬ ܐܰܢ̱ܬܬܳܐ ܠܚܶܘܝܳܐ. ܡܶܢ ܦܺܐܪ̈ܶܐ <span class='blank'></span>"
+answer = "ܕܺܐܝܠܳܢܳܐ ܕܦܰܪܕܰܝܣܳܐ ܢܶܐܟܘܠ"
+translit = "d-īlānā d-p̄arādaysā nēḵul"
+note = "she may eat from which tree?"
+[[finish]]
+context = "Genesis 3:3"
+prompt = "ܘܡܶܢ ܦܺܐܪ̈ܶܐ ܕܺܐܝܠܳܢܳܐ ܕܰܒܡܶܨܥܰܬ ܦܰܪܕܰܝܣܳܐ <span class='blank'></span>"
+answer = "ܐܶܡܰܪ ܐܰܠܳܗܳܐ ܕܠܳܐ ܬܶܐܟܠܘܢ ܡܶܢܶܗ"
+translit = "emar alāhā d-lā teḵlūn menneh"
+note = "what did God say?"
+[[finish]]
+context = "Genesis 3:6"
+prompt = "ܘܰܚܙܳܬ ܐܰܢ̱ܬܬܳܐ ܕܫܰܦܺܝܪ ܐܺܝܠܳܢܳܐ <span class='blank'></span>"
+answer = "ܠܡܶܐܟܘܠܬܳܐ"
+translit = "l-meḵultā"
+note = "good for what?"
+[[finish]]
+context = "Genesis 3:6"
+prompt = "ܘܢܶܣܒܰܬ ܡܶܢ ܦܺܐܪ̈ܰܘܗܝ ܘܶܐܟܠܰܬ. ܘܝܶܗܒܰܬ <span class='blank'></span>"
+answer = "ܐܳܦ ܠܒܰܥܠܳܗ̇ ܥܰܡܳܗ̇ ܘܶܐܟܰܠܘ"
+translit = "āp̄ l-ḇaʿlāh ʿammāh, w-eḵalw"
+note = "and gave to whom?"
+
+[[whole]]
+context = "Genesis 3:6a, unaided"
+prompt_type = "text"
+prompt = "“and the woman saw that the tree was good for food”"
+answer = "ܘܰܚܙܳܬ ܐܰܢ̱ܬܬܳܐ ܕܫܰܦܺܝܪ ܐܺܝܠܳܢܳܐ ܠܡܶܐܟܘܠܬܳܐ."
+translit = "wa-ḥzāṯ antṯā d-šappīr īlānā l-meḵultā"
+note = "consonants alone count as a full success"
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "forms"
+title = "New forms"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "One word"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[scorecard]
+stage0_question = "could you hear ־ܰܬ as \"she\" the way you hear \"he ___-ed\" in Lesson 1?"
+stage1_of = 5
+stage1_label = "how many of the five lines by the end of Sitting One?"
+stage4_options = ["written from memory", "transcribed"]

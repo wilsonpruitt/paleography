@@ -1,0 +1,282 @@
+# Drill sidecar for Lesson 3, Phase C (SYRIAC-WEB-PLAN.md §5/§3). Content pulled from
+# learn/syriac/LESSON-3.md itself; SYRIAC-LESSON-PLAN.md's Lesson-3 "New lemmas"/"New form
+# cells" lines used only as a checklist, not as the source string.
+#
+# halfline (the one judgment call) reuses Stage 2's own 5 target words at a shorter
+# fragment length, same approach as L02.
+
+lesson = "L03"
+
+[[vocab]]
+p = "ܐܳܬܘ̈ܳܬܳܐ"
+a = "signs"
+t = "āṯwāṯā"
+[[vocab]]
+p = "ܙܰܒ̈ܢܶܐ"
+a = "seasons"
+t = "zaḇnē"
+[[vocab]]
+p = "ܫܰܢ̈ܰܝܳܐ"
+a = "years"
+t = "šannayā"
+[[vocab]]
+p = "ܟܰܘܟ̈ܒܶܐ"
+a = "stars"
+t = "ḵawḵḇē"
+[[vocab]]
+p = "ܪܰܒܳܐ"
+a = "great"
+t = "rabbā"
+[[vocab]]
+p = "ܙܥܘܪܳܐ"
+a = "small"
+t = "zʿōrā"
+[[vocab]]
+p = "ܫܘܠܛܳܢܳܐ"
+a = "dominion, rule"
+t = "šulṭānā"
+[[vocab]]
+p = "ܣܳܡ"
+a = "he set, placed"
+t = "sām"
+
+[[forms]]
+form = "ܢܰܗܺܝܪ̈ܶܐ"
+cell = "masculine plural emphatic ־̈ܶܐ, seyāmē"
+gloss = "luminaries"
+lemma = "ܢܰܗܺܝܪܳܐ"
+[[forms]]
+form = "ܠܡܶܦܪܰܫ"
+cell = "ܠܡܶ־ infinitive"
+gloss = "to separate"
+lemma = "ܦܪܰܫ"
+[[forms]]
+form = "ܠܡܰܢܗܳܪܘ"
+cell = "infinitive, Aphel (recognition only)"
+gloss = "to shine, to give light"
+lemma = ""
+[[forms]]
+form = "ܢܰܗܺܝܪ̈ܶܐ ܪܰܘܪ̈ܒܶܐ"
+cell = "adjective agreement (plural noun, plural adjective)"
+gloss = "great luminaries"
+lemma = ""
+[[forms]]
+form = "ܡܰܢܗܪܺܝܢ"
+cell = "Aphel participle, m.pl. (recognition only)"
+gloss = "shining, giving light"
+lemma = ""
+[[forms]]
+form = "ܐܶܢܘܢ"
+cell = "object pronoun"
+gloss = "them"
+lemma = ""
+
+[[halfline]]
+context = "Genesis 1:14b"
+prompt = "ܢܶܗܘܘܢ <span class='blank'></span>"
+answer = "ܢܰܗܺܝܪ̈ܶܐ"
+translit = "nahīrē"
+note = "luminaries"
+[[halfline]]
+context = "Genesis 1:16"
+prompt = "ܢܰܗܺܝܪܳܐ <span class='blank'></span>"
+answer = "ܪܰܒܳܐ"
+translit = "rabbā"
+note = "great"
+[[halfline]]
+context = "Genesis 1:16"
+prompt = "ܘ<span class='blank'></span>."
+answer = "ܟܰܘܟ̈ܒܶܐ"
+translit = "ḵawḵḇē"
+note = "stars"
+[[halfline]]
+context = "Genesis 1:16"
+prompt = "ܘܰܥܒܰܕ ܐܰܠܳܗܳܐ <span class='blank'></span> ܢܰܗܺܝܪ̈ܶܐ"
+answer = "ܬܪܶܝܢ"
+translit = "trēn"
+note = "two"
+[[halfline]]
+context = "Genesis 1:19"
+prompt = "ܝܰܘܡܳܐ <span class='blank'></span>"
+answer = "ܕܰܐܪܒܥܳܐ"
+translit = "d-arbʿā"
+note = "the fourth"
+
+[[cloze]]
+context = "Genesis 1:14b"
+prompt = "ܘܢܶܗܘܘܢ <span class='blank'></span> ܒܰܪܩܺܝܥܳܐ ܕܰܫܡܰܝܳܐ."
+answer = "ܢܰܗܺܝܪ̈ܶܐ"
+translit = "nahīrē"
+note = "plural — look for the dots"
+[[cloze]]
+context = "Genesis 1:16"
+prompt = "ܢܰܗܺܝܪܳܐ <span class='blank'></span> ܠܫܘܠܛܳܢܳܐ ܕܺܐܝܡܳܡܳܐ."
+answer = "ܪܰܒܳܐ"
+translit = "rabbā"
+note = "great"
+[[cloze]]
+context = "Genesis 1:16"
+prompt = "ܘ<span class='blank'></span>"
+answer = "ܟܰܘܟ̈ܒܶܐ"
+translit = "ḵawḵḇē"
+note = "finish the plural word — where does the seyāmē point?"
+[[cloze]]
+context = "Genesis 1:16"
+prompt = "ܘܰܥܒܰܕ ܐܰܠܳܗܳܐ <span class='blank'></span> ܢܰܗܺܝܪ̈ܶܐ ܪܰܘܪ̈ܒܶܐ."
+answer = "ܬܪܶܝܢ"
+translit = "trēn"
+note = "two"
+[[cloze]]
+context = "Genesis 1:19"
+prompt = "ܝܰܘܡܳܐ <span class='blank'></span>"
+answer = "ܕܰܐܪܒܥܳܐ"
+translit = "d-arbʿā"
+note = "the fourth"
+
+[[finish]]
+context = "Genesis 1:14"
+prompt = "ܘܢܶܗܘܘܢ ܢܰܗܺܝܪ̈ܶܐ ܒܰܪܩܺܝܥܳܐ ܕܰܫܡܰܝܳܐ ܠܡܶܦܪܰܫ <span class='blank'></span>"
+answer = "ܒܶܝܬ ܐܺܝܡܳܡܳܐ ܠܠܺܠܝܳܐ"
+translit = "bēṯ īmāmā l-līlyā"
+note = "between what and what?"
+[[finish]]
+context = "Genesis 1:16"
+prompt = "ܢܰܗܺܝܪܳܐ ܪܰܒܳܐ ܠܫܘܠܛܳܢܳܐ ܕܺܐܝܡܳܡܳܐ: ܘܢܰܗܺܝܪܳܐ <span class='blank'></span>"
+answer = "ܙܥܘܪܳܐ ܠܫܘܠܛܳܢܳܐ ܕܠܺܠܝܳܐ"
+translit = "zʿōrā l-šulṭānā d-līlyā"
+note = "the small one, for what?"
+[[finish]]
+context = "Genesis 1:19"
+prompt = "ܘܰܗܘܳܐ ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ <span class='blank'></span>"
+answer = "ܝܰܘܡܳܐ ܕܰܐܪܒܥܳܐ"
+translit = "yawmā d-arbʿā"
+note = "the fourth day, whole"
+
+[[whole]]
+context = "Genesis 1:16, unaided"
+prompt_type = "text"
+prompt = "“and God made two great luminaries — the great luminary to rule the day, and the small luminary to rule the night — and the stars”"
+answer = "ܘܰܥܒܰܕ ܐܰܠܳܗܳܐ ܬܪܶܝܢ ܢܰܗܺܝܪ̈ܶܐ ܪܰܘܪ̈ܒܶܐ: ܢܰܗܺܝܪܳܐ ܪܰܒܳܐ ܠܫܘܠܛܳܢܳܐ ܕܺܐܝܡܳܡܳܐ: ܘܢܰܗܺܝܪܳܐ ܙܥܘܪܳܐ ܠܫܘܠܛܳܢܳܐ ܕܠܺܠܝܳܐ: ܘܟܰܘܟ̈ܒܶܐ."
+translit = "w-ʿḇaḏ alāhā trēn nahīrē rawrḇē, nahīrā rabbā l-šulṭānā d-īmāmā, w-nahīrā zʿōrā l-šulṭānā d-līlyā, w-ḵawḵḇē"
+note = "add the seyāmē dots where they belong — that's today's specific target"
+
+[[drills]]
+prompt = "ܘܥܒܕ ܐܠܗܐ ܢܰܗܺܝܪ̈ܶܐ ܪܘܪ̈ܒܐ ܒܪܩܝܥܐ."
+answer = "And God made great luminaries in the firmament."
+[[drills]]
+prompt = "ܢܶܗܘܘܢ ܟܰܘܟ̈ܒܶܐ ܠܙܒ̈ܢܐ ܘܠܫܢ̈ܝܐ."
+answer = "Let there be stars for seasons and for years."
+[[drills]]
+prompt = "ܘܚܙܐ ܐܠܗܐ ܕܢܗܝܪܐ ܪܒܐ ܫܦܝܪ."
+answer = "And God saw that the great luminary was beautiful."
+[[drills]]
+prompt = "ܘܗܘܐ ܪܡܫܐ ܘܗܘܐ ܨܦܪܐ ܝܘܡܐ ܕܐܪܒܥܐ."
+answer = "And there was evening and there was morning, the fourth day."
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "forms"
+title = "New forms"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "One word"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "drills"
+title = "Drills"
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[scorecard]
+stage0_question = "could you use seyāmē as a live signal, not just recognize it after the fact?"
+stage1_of = 6
+stage1_label = "how many of the six lines by the second read-through?"
+stage4_options = ["written from memory", "transcribed"]

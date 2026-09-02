@@ -1,0 +1,289 @@
+# Drill sidecar for Lesson 10, Phase C (SYRIAC-WEB-PLAN.md §5/§3), the capstone. Content
+# pulled from learn/syriac/LESSON-10.md itself.
+#
+# scorecard note: LESSON-10.md's Stage 0 question ("did 'HIS-X of-Y' read as a familiar
+# shape, or a new one, by the end?") is free-text, same shape as L05's -- omitted rather
+# than forced into the yes/no radio; flagged in the Phase C report.
+
+lesson = "L10"
+
+[[vocab]]
+p = "ܡܠܚܗ"
+a = "its salt"
+t = "melḥeh"
+[[vocab]]
+p = "ܕܥܠܡܐ"
+a = "of the world"
+t = "d-ʿālmā"
+[[vocab]]
+p = "ܡܕܝ̄ܢܬܐ"
+a = "a city"
+t = "mḏīntā"
+[[vocab]]
+p = "ܕܥܠ ܛܘܪܐ"
+a = "that upon a mountain"
+t = "d-ʿal ṭūrā"
+[[vocab]]
+p = "ܒܢܝܐ"
+a = "built"
+t = "bnayā"
+[[vocab]]
+p = "ܫܪܓܐ"
+a = "a lamp"
+t = "šrāḡā"
+[[vocab]]
+p = "ܘܣܝܡܝܢ"
+a = "and they set"
+t = "w-sāymīn"
+[[vocab]]
+p = "ܣܐܬܐ"
+a = "a bushel"
+t = "sāṯā"
+[[vocab]]
+p = "ܡܢܪܬܐ"
+a = "a lampstand"
+t = "mnārtā"
+[[vocab]]
+p = "ܘܡܢܗܪ"
+a = "and it gives light"
+t = "w-manhar"
+[[vocab]]
+p = "ܕܒܒܝܬܐ"
+a = "that in the house"
+t = "d-ḇ-ḇaytā"
+[[vocab]]
+p = "ܒܢܝ̈ܢܫܐ"
+a = "men"
+t = "bnaynāšā"
+
+[[forms]]
+form = "ܐܢ̄ܬܘܢ ܐܢܘܢ"
+cell = "independent pronoun as copula"
+gloss = "you ARE"
+lemma = ""
+[[forms]]
+form = "ܡܠܚܗ ܕܐܪܥܐ"
+cell = "anticipatory suffix + ܕ, the \"HIS-X of-Y\" idiom"
+gloss = "the salt of the earth"
+lemma = "ܡܶܠܚ"
+[[forms]]
+form = "ܢܘܗܪܟܘܢ"
+cell = "suffix 2mp, ־ܟܘܢ \"your\""
+gloss = "your light"
+lemma = "ܢܘܗܪܳܐ"
+[[forms]]
+form = "ܥܒܕ̈ܝܟܘܢ"
+cell = "suffix 2mp on a plural noun"
+gloss = "your works"
+lemma = "ܥܒܕ"
+[[forms]]
+form = "ܐܒܘܟܘܢ"
+cell = "suffix 2mp"
+gloss = "your Father"
+lemma = ""
+[[forms]]
+form = "ܡܢܗܪܝܢ"
+cell = "mp participle as present (recognition only)"
+gloss = "they light"
+lemma = ""
+[[forms]]
+form = "ܘܣܝܡܝܢ"
+cell = "mp participle as present"
+gloss = "and they set"
+lemma = ""
+[[forms]]
+form = "ܕܢܚܙܘܢ ܥܒܕ̈ܝܟܘܢ ܛܒ̈ܐ ܘܢܫܒܚܘܢ"
+cell = "imperfect 3mp, purpose clause"
+gloss = "so that they may see … and glorify"
+lemma = ""
+
+[[halfline]]
+context = "Matt 5:13a"
+prompt = "ܐܢ̄ܬܘܢ ܐܢܘܢ <span class='blank'></span>"
+answer = "ܡܠܚܗ"
+translit = "melḥeh"
+note = "its-salt"
+[[halfline]]
+context = "Matt 5:14"
+prompt = "ܐܢ̄ܬܘܢ ܐܢܘܢ <span class='blank'></span>"
+answer = "ܢܘܗܪܗ"
+translit = "nuhreh"
+note = "its-light"
+[[halfline]]
+context = "Matt 5:16"
+prompt = "ܗܟܢܐ ܢܢܗܪ <span class='blank'></span>"
+answer = "ܢܘܗܪܟܘܢ"
+translit = "nuhraḵōn"
+note = "your-light"
+[[halfline]]
+context = "Matt 5:16"
+prompt = "ܘܢܫܒܚܘܢ <span class='blank'></span>"
+answer = "ܠܐܒܘܟܘܢ"
+translit = "l-aḇūḵōn"
+note = "to-your-Father"
+
+[[cloze]]
+context = "Matt 5:13a"
+prompt = "ܐܢ̄ܬܘܢ ܐܢܘܢ <span class='blank'></span> ܕܐܪܥܐ."
+answer = "ܡܠܚܗ"
+translit = "melḥeh"
+note = "the salt"
+[[cloze]]
+context = "Matt 5:14"
+prompt = "ܐܢ̄ܬܘܢ ܐܢܘܢ <span class='blank'></span> ܕܥܠܡܐ."
+answer = "ܢܘܗܪܗ"
+translit = "nuhreh"
+note = "the light"
+[[cloze]]
+context = "Matt 5:16"
+prompt = "ܗܟܢܐ ܢܢܗܪ <span class='blank'></span> ܩܕܡ ܒܢܝ̈ܢܫܐ."
+answer = "ܢܘܗܪܟܘܢ"
+translit = "nuhraḵōn"
+note = "YOUR light"
+[[cloze]]
+context = "Matt 5:16"
+prompt = "ܘܢܫܒܚܘܢ <span class='blank'></span> ܕܒܫܡܝܐ."
+answer = "ܠܐܒܘܟܘܢ"
+translit = "l-aḇūḵōn"
+note = "your Father"
+
+[[finish]]
+context = "Matt 5:13a"
+prompt = "ܐܢ̄ܬܘܢ ܐܢܘܢ ܡܠܚܗ <span class='blank'></span>"
+answer = "ܕܐܪܥܐ"
+translit = "d-arʿā"
+note = "salt of what?"
+[[finish]]
+context = "Matt 5:14"
+prompt = "ܐܢ̄ܬܘܢ ܐܢܘܢ ܢܘܗܪܗ <span class='blank'></span>"
+answer = "ܕܥܠܡܐ"
+translit = "d-ʿālmā"
+note = "light of what?"
+
+[[whole]]
+context = "Matt 5:14, unaided — the capstone"
+prompt_type = "text"
+prompt = "“you are the light of the world”"
+answer = "ܐܢ̄ܬܘܢ ܐܢܘܢ ܢܘܗܪܗ ܕܥܠܡܐ ܂"
+translit = "antūn ennōn nuhreh d-ʿālmā"
+note = "consonants alone count as a full success"
+
+[[drills]]
+prompt = "ܐܢ̄ܬܘܢ ܐܢܘܢ ܢܘܗܪܗ ܕܥܠܡܐ."
+answer = "You are the light of the world."
+[[drills]]
+prompt = "ܗܟܢܐ ܢܢܗܪ ܢܘܗܪܟܘܢ ܩܕܡ ܒܢܝ̈ܢܫܐ."
+answer = "Thus let your light shine before men."
+[[drills]]
+prompt = "ܕܢܚܙܘܢ ܥܒܕ̈ܝܟܘܢ ܛܒ̈ܐ ܘܢܫܒܚܘܢ ܠܐܒܘܟܘܢ."
+answer = "So that they may see your good works and glorify your Father."
+[[drills]]
+prompt = "ܐܢ̄ܬܘܢ ܐܢܘܢ ܡܠܚܗ ܕܐܪܥܐ."
+answer = "You are the salt of the earth."
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "forms"
+title = "New forms"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "One word"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "drills"
+title = "Drills"
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[scorecard]
+stage1_of = 5
+stage1_label = "how many of the five lines by the second read-through?"
+stage4_options = ["written from memory", "transcribed"]

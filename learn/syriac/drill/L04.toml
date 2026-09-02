@@ -1,0 +1,282 @@
+# Drill sidecar for Lesson 4, Phase C (SYRIAC-WEB-PLAN.md §5/§3). Content pulled from
+# learn/syriac/LESSON-4.md itself. halfline reuses Stage 2's own 4 targets, shorter.
+
+lesson = "L04"
+
+[[vocab]]
+p = "ܐ̱ܢܳܫܳܐ"
+a = "man, humankind"
+t = "enāšā"
+[[vocab]]
+p = "ܒܰܨܠܶܡ"
+a = "image-of"
+t = "aṣlem"
+[[vocab]]
+p = "ܕܡܘܬܰܢ"
+a = "our likeness"
+t = "demūṯān"
+[[vocab]]
+p = "ܘܢܶܫܬܰܠܛܘܢ"
+a = "and let them rule"
+t = "wa-nnešṭalṭūn"
+[[vocab]]
+p = "ܝܰܡܳܐ"
+a = "sea"
+t = "yammā"
+[[vocab]]
+p = "ܦܳܪܰܚܬܳܐ"
+a = "fowl"
+t = "p̄āraḥtā"
+[[vocab]]
+p = "ܒܥܺܝܪܳܐ"
+a = "cattle"
+t = "ḇʿīrā"
+[[vocab]]
+p = "ܐܳܕܳܡ"
+a = "Adam"
+t = "āḏām"
+[[vocab]]
+p = "ܕܟܰܪ"
+a = "male"
+t = "deḵar"
+[[vocab]]
+p = "ܢܶܩܒܳܐ"
+a = "female"
+t = "neqbā"
+[[vocab]]
+p = "ܒܰܪܶܟ"
+a = "he blessed (Pael)"
+t = "bareḵ"
+[[vocab]]
+p = "ܟܘܒܫܘܗ̇"
+a = "subdue it!"
+t = "ḵūḇšūh"
+
+[[forms]]
+form = "ܒܨܰܠܡܰܢ"
+cell = "possessive suffix 1cp, ־ܰܢ \"our\""
+gloss = "in our image"
+lemma = "ܨܰܠܡ"
+[[forms]]
+form = "ܒܨܰܠܡܶܗ"
+cell = "possessive suffix 3ms, ־ܶܗ \"his\""
+gloss = "in his image"
+lemma = "ܨܰܠܡ"
+[[forms]]
+form = "ܢܶܥܒܶܕ"
+cell = "imperfect 1cp"
+gloss = "let us make"
+lemma = ""
+[[forms]]
+form = "ܦܪܰܘ ܘܰܣܓܰܘ ܘܰܡܠܰܘ"
+cell = "mp imperative chain, ־ܰܘ"
+gloss = "be fruitful, and multiply, and fill"
+lemma = ""
+[[forms]]
+form = "ܠܳܐܕܳܡ"
+cell = "ܠ־ marking a definite object"
+gloss = "[to] Adam"
+lemma = ""
+[[forms]]
+form = "ܒܢܘܢ̈ܰܝ ܝܰܡܳܐ"
+cell = "construct plural (recognition only)"
+gloss = "fish of the sea"
+lemma = ""
+
+[[halfline]]
+context = "Genesis 1:26"
+prompt = "ܢܶܥܒܶܕ ܐ̱ܢܳܫܳܐ <span class='blank'></span>"
+answer = "ܒܨܰܠܡܰܢ"
+translit = "b-ṣalmān"
+note = "in our image"
+[[halfline]]
+context = "Genesis 1:27"
+prompt = "ܘܰܒܪܳܐ ܐܰܠܳܗܳܐ ܠܳܐܕܳܡ <span class='blank'></span>"
+answer = "ܒܨܰܠܡܶܗ"
+translit = "b-ṣalmeh"
+note = "in his image"
+[[halfline]]
+context = "Genesis 1:28"
+prompt = "<span class='blank'></span> ܘܰܣܓܰܘ"
+answer = "ܦܪܰܘ"
+translit = "praw"
+note = "be fruitful!"
+[[halfline]]
+context = "Genesis 1:27"
+prompt = "ܕܟܰܪ ܘ<span class='blank'></span>"
+answer = "ܢܶܩܒܳܐ"
+translit = "neqbā"
+note = "female"
+
+[[cloze]]
+context = "Genesis 1:26"
+prompt = "ܢܶܥܒܶܕ ܐ̱ܢܳܫܳܐ <span class='blank'></span> ܐܰܝܟ ܕܡܘܬܰܢ."
+answer = "ܒܨܰܠܡܰܢ"
+translit = "b-ṣalmān"
+note = "whose image?"
+[[cloze]]
+context = "Genesis 1:27"
+prompt = "ܘܰܒܪܳܐ ܐܰܠܳܗܳܐ ܠܳܐܕܳܡ <span class='blank'></span>."
+answer = "ܒܨܰܠܡܶܗ"
+translit = "b-ṣalmeh"
+note = "whose image, this time?"
+[[cloze]]
+context = "Genesis 1:28"
+prompt = "<span class='blank'></span> ܘܰܣܓܰܘ ܘܰܡܠܰܘ ܐܰܪܥܳܐ."
+answer = "ܦܪܰܘ"
+translit = "praw"
+note = "the first command"
+[[cloze]]
+context = "Genesis 1:27"
+prompt = "ܕܟܰܪ ܘ<span class='blank'></span> ܒܪܳܐ ܐܶܢܘܢ."
+answer = "ܢܶܩܒܳܐ"
+translit = "neqbā"
+note = "female"
+
+[[finish]]
+context = "Genesis 1:26"
+prompt = "ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܥܒܶܕ ܐ̱ܢܳܫܳܐ ܒܨܰܠܡܰܢ <span class='blank'></span>"
+answer = "ܐܰܝܟ ܕܡܘܬܰܢ"
+translit = "ayḵ demūṯān"
+note = "as WHAT?"
+[[finish]]
+context = "Genesis 1:28"
+prompt = "ܦܪܰܘ ܘܰܣܓܰܘ ܘ<span class='blank'></span>"
+answer = "ܡܠܰܘ ܐܰܪܥܳܐ ܘܟܘܒܫܘܗ̇"
+translit = "mlaw arʿā w-ḵūḇšūh"
+note = "finish the chain of three"
+[[finish]]
+context = "Genesis 1:28"
+prompt = "ܘܰܫܠܰܛܘ ܒܢܘܢ̈ܰܝ ܝܰܡܳܐ: ܘ<span class='blank'></span>"
+answer = "ܒܦܳܪܰܚܬܳܐ ܕܰܫܡܰܝܳܐ"
+translit = "b-p̄āraḥtā d-šmayyā"
+note = "and in what, of heaven?"
+
+[[whole]]
+context = "Genesis 1:27, unaided"
+prompt_type = "text"
+prompt = "“and God created Adam in his image; in the image of God he created him”"
+answer = "ܘܰܒܪܳܐ ܐܰܠܳܗܳܐ ܠܳܐܕܳܡ ܒܨܰܠܡܶܗ. ܒܰܨܠܶܡ ܐܰܠܳܗܳܐ ܒܰܪܝܶܗ."
+translit = "w-ḇrā alāhā l-āḏām b-ṣalmeh, b-aṣlem alāhā barāyeh"
+note = "consonants alone count as a full success"
+
+[[drills]]
+prompt = "ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܥܒܶܕ ܐ̱ܢܳܫܳܐ ܒܨܰܠܡܰܢ."
+answer = "And God said: let us make man in our image."
+[[drills]]
+prompt = "ܘܰܒܪܳܐ ܐܰܠܳܗܳܐ ܠܳܐܕܳܡ ܒܨܰܠܡܶܗ."
+answer = "And God created Adam in his image."
+[[drills]]
+prompt = "ܦܪܰܘ ܘܰܣܓܰܘ ܘܰܡܠܰܘ ܐܰܪܥܳܐ."
+answer = "Be fruitful, and multiply, and fill the earth."
+[[drills]]
+prompt = "ܘܫܠܛܘ ܒܢܘܢ̈ܰܝ ܝܰܡܳܐ ܘܰܒܟܽܠܳܗ̇ ܐܰܪܥܳܐ."
+answer = "And rule over the fish of the sea and over all the earth."
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "forms"
+title = "New forms"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "One word"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "drills"
+title = "Drills"
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[scorecard]
+stage0_question = "could you tell ־ܰܢ \"our\" apart from ־ܶܗ \"his\" by the end of Stage 1?"
+stage1_of = 3
+stage1_label = "how many of the three lines by the second read-through?"
+stage4_options = ["written from memory", "transcribed"]

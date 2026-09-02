@@ -289,14 +289,26 @@ def _syriac_substrings(value):
     return out
 
 
+_WRAP_RE = re.compile(r"\n>\s*")
+
+
 def check_verbatim(data, lesson_text, lesson_name):
     """Returns a list of error strings. Checks every Syriac-bearing field (p, prompt,
-    answer, given*, form fields) as a substring of the lesson's raw .md text."""
+    answer, given*, form fields) as a substring of the lesson's raw .md text.
+
+    A long Stage-1 verse in these lessons often wraps across two markdown-blockquote
+    lines (`> ...word\n> word...`), so a "whole line" answer spanning the wrap can't be
+    a literal substring of the raw file no matter how faithfully it's transcribed -- the
+    file itself has a "\n> " sitting where the transcription has a plain space. Also try
+    the fragment against a version of the lesson text with every such wrap collapsed to
+    a single space, so a faithful multi-line transcription still passes without being
+    forced to reproduce the file's own line-wrapping and blockquote markers."""
     errors = []
+    lesson_text_unwrapped = _WRAP_RE.sub(" ", lesson_text)
 
     def check_field(container_desc, value):
         for frag in _syriac_substrings(value):
-            if frag not in lesson_text:
+            if frag not in lesson_text and frag not in lesson_text_unwrapped:
                 errors.append(f"{lesson_name} [{container_desc}]: `{frag}` not found verbatim in the lesson .md")
 
     for l in data.get("letters", []):

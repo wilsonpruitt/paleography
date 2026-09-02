@@ -1,0 +1,305 @@
+# Drill sidecar for Lesson 9, Phase C (SYRIAC-WEB-PLAN.md §5/§3). Content pulled from
+# learn/syriac/LESSON-9.md itself -- unpointed narrative, no formula scaffold.
+#
+# Cain's name (ܩܐܝܢ) has no dictionary entry anywhere in this course's sources per the
+# lesson's own note; included here as a proper noun only, gloss "Cain", no lemma claimed.
+
+lesson = "L09"
+
+[[vocab]]
+p = "ܩܐܝܢ"
+a = "Cain"
+t = "Qayn"
+[[vocab]]
+p = "ܗܒܝܠ"
+a = "Abel"
+t = "Hāḇēl"
+[[vocab]]
+p = "ܐܚܘܗܝ"
+a = "his brother"
+t = "aḥūhī"
+[[vocab]]
+p = "ܒܚܩܠܐ"
+a = "in the field"
+t = "b-ḥaqlā"
+[[vocab]]
+p = "ܘܩܛܠܗ"
+a = "and he killed him"
+t = "w-qaṭleh"
+[[vocab]]
+p = "ܐܚܘܟ"
+a = "your brother"
+t = "aḥūḵ"
+[[vocab]]
+p = "ܩܠܐ"
+a = "voice-of"
+t = "qālā"
+[[vocab]]
+p = "ܕܕܡܗ"
+a = "of his blood"
+t = "d-ḏmeh"
+[[vocab]]
+p = "ܓܥܐ"
+a = "cries out"
+t = "gāʿē"
+[[vocab]]
+p = "ܠܘܬܝ"
+a = "unto me"
+t = "lwāṯī"
+[[vocab]]
+p = "ܘܡܟܝܠ"
+a = "and henceforth"
+t = "w-maḵḵīl"
+[[vocab]]
+p = "ܦܘܡܗ"
+a = "its mouth"
+t = "pūmāh"
+
+[[forms]]
+form = "ܝܕܥ ܐܢܐ"
+cell = "participle + enclitic pronoun = present tense"
+gloss = "I know"
+lemma = ""
+[[forms]]
+form = "ܢܛܘܪܗ ܐܢܐ ܕܐܚܝ"
+cell = "participle + enclitic pronoun, with a suffix on the noun as well"
+gloss = "am I my brother's keeper?"
+lemma = "ܢܳܛܽܘܪ"
+[[forms]]
+form = "ܥܒܕܬ"
+cell = "perfect 2ms"
+gloss = "you did"
+lemma = "ܥܒܰܕ"
+[[forms]]
+form = "ܦܬܚܬ"
+cell = "perfect 2ms"
+gloss = "you opened"
+lemma = "ܦܬܰܚ"
+[[forms]]
+form = "ܘܩܒܠܬ"
+cell = "perfect 2ms"
+gloss = "and you received"
+lemma = "ܩܰܒܶܠ"
+[[forms]]
+form = "ܐܝܟܘ"
+cell = "interrogative"
+gloss = "where is…?"
+lemma = ""
+[[forms]]
+form = "ܡܢܐ"
+cell = "interrogative"
+gloss = "what"
+lemma = ""
+[[forms]]
+form = "ܕܐܚܝ"
+cell = "suffix 1cs, ־ܝ \"my\""
+gloss = "of my brother"
+lemma = ""
+[[forms]]
+form = "ܠܝܛ ܐܢܬ"
+cell = "passive participle + enclitic pronoun"
+gloss = "you are cursed"
+lemma = "ܠܝܛ"
+[[forms]]
+form = "ܩܠܐ ܕܕܡܗ ܕܐܚܘܟ"
+cell = "the ܕ-chain (recognition only)"
+gloss = "the voice of the blood of your brother"
+lemma = ""
+
+[[halfline]]
+context = "Genesis 4:9a"
+prompt = "<span class='blank'></span> ܗܒܝܠ"
+answer = "ܐܝܟܘ"
+translit = "aykaw"
+note = "where is…?"
+[[halfline]]
+context = "Genesis 4:9b"
+prompt = "<span class='blank'></span> ܐܢܐ ܕܐܚܝ"
+answer = "ܢܛܘܪܗ"
+translit = "nāṭūreh"
+note = "keeper-of-him"
+[[halfline]]
+context = "Genesis 4:10"
+prompt = "<span class='blank'></span> ܥܒܕܬ"
+answer = "ܡܢܐ"
+translit = "mānā"
+note = "what"
+[[halfline]]
+context = "Genesis 4:11"
+prompt = "ܘܡܟܝܠ <span class='blank'></span> ܐܢܬ"
+answer = "ܠܝܛ"
+translit = "līṭ"
+note = "cursed"
+
+[[cloze]]
+context = "Genesis 4:9a"
+prompt = "<span class='blank'></span> ܗܒܝܠ ܐܚܘܟ."
+answer = "ܐܝܟܘ"
+translit = "aykaw"
+note = "where is…?"
+[[cloze]]
+context = "Genesis 4:9b"
+prompt = "<span class='blank'></span> ܐܢܐ ܕܐܚܝ."
+answer = "ܢܛܘܪܗ"
+translit = "nāṭūreh"
+note = "am I my brother's keeper — the noun"
+[[cloze]]
+context = "Genesis 4:10"
+prompt = "<span class='blank'></span> ܥܒܕܬ."
+answer = "ܡܢܐ"
+translit = "mānā"
+note = "what did you do?"
+[[cloze]]
+context = "Genesis 4:11"
+prompt = "ܘܡܟܝܠ <span class='blank'></span> ܐܢܬ ܡܢ ܐܪܥܐ."
+answer = "ܠܝܛ"
+translit = "līṭ"
+note = "cursed"
+
+[[finish]]
+context = "Genesis 4:9b"
+prompt = "ܠܐ ܝܕܥ ܐܢܐ <span class='blank'></span>"
+answer = "ܢܛܘܪܗ ܐܢܐ ܕܐܚܝ"
+translit = "nāṭūreh ennā d-āḥī"
+note = "and what does he add?"
+[[finish]]
+context = "Genesis 4:10"
+prompt = "ܩܠܐ ܕܕܡܗ ܕܐܚܘܟ <span class='blank'></span>"
+answer = "ܓܥܐ ܠܘܬܝ ܡܢ ܐܪܥܐ"
+translit = "gāʿē lwāṯī men arʿā"
+note = "crying out from where?"
+[[finish]]
+context = "Genesis 4:12"
+prompt = "ܘܙܐܥ ܘܢܐܕ <span class='blank'></span>"
+answer = "ܬܗܘܐ ܒܐܪܥܐ"
+translit = "tehwē b-arʿā"
+note = "finish v. 12's sentence"
+
+[[whole]]
+context = "Genesis 4:9, unaided"
+prompt_type = "text"
+prompt = "“where is Abel your brother? — I do not know; am I my brother's keeper?”"
+answer = "ܘܐܡܪ ܡܪܝܐ ܠܩܐܝܢ. ܐܝܟܘ ܗܒܝܠ ܐܚܘܟ. ܘܐܡܪ. ܠܐ ܝܕܥ ܐܢܐ. ܢܛܘܪܗ ܐܢܐ ܕܐܚܝ."
+translit = "w-emar māryā l-Qayn: aykaw Hāḇēl aḥūḵ. w-emar: lā yāḏaʿ ennā; nāṭūreh ennā d-āḥī"
+note = "consonants alone count as a full success"
+
+[[drills]]
+prompt = "ܘܐܡܪ ܡܪܝܐ ܠܩܐܝܢ. ܐܝܟܘ ܐܚܘܟ."
+answer = "And the Lord said to Cain: where is your brother?"
+[[drills]]
+prompt = "ܠܐ ܝܕܥ ܐܢܐ."
+answer = "I do not know."
+[[drills]]
+prompt = "ܩܠܐ ܕܕܡܗ ܓܥܐ ܡܢ ܐܪܥܐ."
+answer = "The voice of his blood cries out from the earth."
+[[drills]]
+prompt = "ܘܙܐܥ ܘܢܐܕ ܬܗܘܐ ܒܐܪܥܐ."
+answer = "And a fugitive and a wanderer you shall be in the earth."
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "forms"
+title = "New forms"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "One word"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "drills"
+title = "Drills"
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[scorecard]
+stage0_question = "could you hear \"participle + ܐ̱ܢܳܐ\" as present tense by the end of Stage 1?"
+stage1_of = 6
+stage1_label = "how many of the six lines by the second read-through?"
+stage4_options = ["v. 9's whole exchange written from memory", "transcribed"]

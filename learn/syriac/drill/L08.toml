@@ -1,0 +1,291 @@
+# Drill sidecar for Lesson 8, Phase C (SYRIAC-WEB-PLAN.md §5/§3). Content pulled from
+# learn/syriac/LESSON-8.md itself -- unpointed, like Lesson 5.
+
+lesson = "L08"
+
+[[vocab]]
+p = "ܛܘܒܝܗܘܢ"
+a = "blessed are they"
+t = "ṭūḇayhōn"
+[[vocab]]
+p = "ܠܡܣ̈ܟܢܐ"
+a = "to the poor"
+t = "l-meskēnē"
+[[vocab]]
+p = "ܠܐܒܝ̈ܠܐ"
+a = "to the mourners"
+t = "l-aḇīlē"
+[[vocab]]
+p = "ܠܡܟܝ̈ܟܐ"
+a = "to the meek"
+t = "l-maḵḵīḵē"
+[[vocab]]
+p = "ܠܐܝܠܝܢ ܕ"
+a = "to those who"
+t = "l-aylēn d-"
+[[vocab]]
+p = "ܕܟܦܢܝܢ"
+a = "that hunger"
+t = "d-kāp̄nīn"
+[[vocab]]
+p = "ܘܨܗܝܢ"
+a = "and thirst"
+t = "w-ṣāhēn"
+[[vocab]]
+p = "ܠܟܐܢܘܬܐ"
+a = "for righteousness"
+t = "l-ḵēnūṯā"
+[[vocab]]
+p = "ܠܡܪ̈ܚܡܢܐ"
+a = "to the merciful"
+t = "l-marḥmānē"
+[[vocab]]
+p = "ܪ̈ܚܡܐ"
+a = "mercies"
+t = "raḥmē"
+[[vocab]]
+p = "ܕܕܟܝܢ"
+a = "that are pure"
+t = "d-daḵyīn"
+[[vocab]]
+p = "ܒܠܒܗܘܢ"
+a = "in their heart"
+t = "b-lebbhōn"
+[[vocab]]
+p = "ܕܐܬܪܕܦܘ"
+a = "that were persecuted"
+t = "d-etraddap̄w"
+
+[[forms]]
+form = "ܢܐܪܬܘܢ"
+cell = "imperfect 3mp, Peal"
+gloss = "they shall inherit"
+lemma = ""
+[[forms]]
+form = "ܢܚܙܘܢ"
+cell = "imperfect 3mp, Peal"
+gloss = "they shall see"
+lemma = "ܚܙܳܐ"
+[[forms]]
+form = "ܢܬܩܪܘܢ"
+cell = "imperfect 3mp, Ethpeel"
+gloss = "they shall be called"
+lemma = ""
+[[forms]]
+form = "ܢܬܒܝܐܘܢ"
+cell = "imperfect 3mp, Ethpaal (recognize the shape, don't conjugate)"
+gloss = "they shall be comforted"
+lemma = ""
+[[forms]]
+form = "ܕܟܦܢܝܢ"
+cell = "mp absolute participle, predicate use"
+gloss = "that hunger"
+lemma = "ܟܦܢ"
+[[forms]]
+form = "ܕܕܝܠܗܘܢ"
+cell = "possessive base ܕܝܠ־ + suffix 3mp"
+gloss = "that theirs"
+lemma = "ܕܺܝܠ"
+[[forms]]
+form = "ܥܒܕ̈ܝ ܫܠܡܐ"
+cell = "construct plural (recognition only)"
+gloss = "makers of peace"
+lemma = ""
+
+[[halfline]]
+context = "v. 3"
+prompt = "ܛܘܒܝܗܘܢ <span class='blank'></span>"
+answer = "ܠܡܣ̈ܟܢܐ"
+translit = "l-meskēnē"
+note = "to the poor"
+[[halfline]]
+context = "v. 4"
+prompt = "<span class='blank'></span> ܢܬܒܝܐܘܢ"
+answer = "ܗܢܘܢ"
+translit = "hennōn"
+note = "they — the mourners"
+[[halfline]]
+context = "v. 5"
+prompt = "ܕܗܢܘܢ <span class='blank'></span>"
+answer = "ܢܐܪܬܘܢ"
+translit = "nertōn"
+note = "they shall inherit"
+[[halfline]]
+context = "v. 9"
+prompt = "ܕܒܢ̈ܘܗܝ ܕܐܠܗܐ <span class='blank'></span>"
+answer = "ܢܬܩܪܘܢ"
+translit = "netqrōn"
+note = "they shall be called"
+
+[[cloze]]
+context = "v. 3"
+prompt = "ܛܘܒܝܗܘܢ <span class='blank'></span> ܒܪܘܚ."
+answer = "ܠܡܣ̈ܟܢܐ"
+translit = "l-meskēnē"
+note = "to the poor"
+[[cloze]]
+context = "v. 4"
+prompt = "<span class='blank'></span> ܢܬܒܝܐܘܢ."
+answer = "ܗܢܘܢ"
+translit = "hennōn"
+note = "they — the mourners"
+[[cloze]]
+context = "v. 5"
+prompt = "ܕܗܢܘܢ <span class='blank'></span> ܐܪܥܐ."
+answer = "ܢܐܪܬܘܢ"
+translit = "nertōn"
+note = "shall inherit"
+[[cloze]]
+context = "v. 9"
+prompt = "ܕܒܢ̈ܘܗܝ ܕܐܠܗܐ <span class='blank'></span>."
+answer = "ܢܬܩܪܘܢ"
+translit = "netqrōn"
+note = "they shall be called"
+
+[[finish]]
+context = "v. 3"
+prompt = "ܛܘܒܝܗܘܢ ܠܡܣ̈ܟܢܐ ܒܪܘܚ ܆ <span class='blank'></span>"
+answer = "ܕܕܝܠܗܘܢ ܗ̄ܝ ܡܠܟܘܬܐ ܕܫܡܝܐ"
+translit = "d-ḏīlhōn hī malkūṯā d-šmayyā"
+note = "for what is theirs?"
+[[finish]]
+context = "v. 9"
+prompt = "ܛܘܒܝܗܘܢ ܠܥܒܕ̈ܝ ܫܠܡܐ ܆ <span class='blank'></span>"
+answer = "ܕܒܢ̈ܘܗܝ ܕܐܠܗܐ ܢܬܩܪܘܢ"
+translit = "d-ḇnawhī d-alāhā netqrōn"
+note = "finish v. 9"
+[[finish]]
+context = "v. 10"
+prompt = "ܛܘܒܝܗܘܢ ܠܐܝܠܝܢ ܕܐܬܪܕܦܘ ܡܛܠ ܟܐܢܘܬܐ ܆ <span class='blank'></span>"
+answer = "ܕܕܝܠܗܘܢ ܗ̄ܝ ܡܠܟܘܬܐ ܕܫܡܝܐ"
+translit = "d-ḏīlhōn hī malkūṯā d-šmayyā"
+note = "finish v. 10 — you already know it, from v. 3"
+
+[[whole]]
+context = "v. 9, assigned"
+prompt_type = "text"
+prompt = "one Beatitude of your choosing, unaided — plus, assigned regardless of your choice, v. 9 (the peacemakers)"
+answer = "ܛܘܒܝܗܘܢ ܠܥܒܕ̈ܝ ܫܠܡܐ ܆ ܕܒܢ̈ܘܗܝ ܕܐܠܗܐ ܢܬܩܪܘܢ ܂"
+translit = "ṭūḇayhōn l-ʿāḇday šlāmā, d-ḇnawhī d-alāhā netqrōn"
+note = "consonants alone count as a full success"
+
+[[drills]]
+prompt = "ܛܘܒܝܗܘܢ ܠܐܝܠܝܢ ܕܕܟܝܢ ܒܠܒܗܘܢ."
+answer = "Blessed are those who are pure in heart."
+[[drills]]
+prompt = "ܕܗܢܘܢ ܢܚܙܘܢ ܠܐܠܗܐ ܘܢܐܪܬܘܢ ܐܪܥܐ."
+answer = "For they shall see God and inherit the earth."
+[[drills]]
+prompt = "ܛܘܒܝܗܘܢ ܠܥܒܕ̈ܝ ܫܠܡܐ ܕܒܢ̈ܘܗܝ ܕܐܠܗܐ ܢܬܩܪܘܢ."
+answer = "Blessed are the makers of peace, for they shall be called sons of God."
+[[drills]]
+prompt = "ܕܕܝܠܗܘܢ ܗ̄ܝ ܡܠܟܘܬܐ ܕܫܡܝܐ."
+answer = "For theirs is the kingdom of heaven."
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "forms"
+title = "New forms"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "One word"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "drills"
+title = "Drills"
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[scorecard]
+stage0_question = "did the ־ܗܘܢ family (ܛܘܒܝܗܘܢ, ܗܢܘܢ, ־ܗܘܢ-shapes) feel automatic by the end?"
+stage1_of = 8
+stage1_label = "how many of the eight Beatitudes by the second read-through?"
+stage4_options = ["your chosen Beatitude + v. 9 both written", "one only"]

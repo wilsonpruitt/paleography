@@ -1,0 +1,249 @@
+# Drill sidecar for Lesson 5, Phase C (SYRIAC-WEB-PLAN.md §5/§3). Content pulled from
+# learn/syriac/LESSON-5.md itself -- the unpointed lesson, so every Syriac string below
+# is deliberately unvocalized, matching the .md.
+#
+# scorecard note: LESSON-5.md's Stage 0 question ("did reading unpointed text feel
+# possible before you started, or only after?") is free-text, not yes/no -- doesn't fit
+# drill_shell.html's stage0_question radio (yes/no only). Omitted rather than forced;
+# flagged in the Phase C report.
+
+lesson = "L05"
+
+[[vocab]]
+p = "ܘܐܫܬܟܠܠܘ"
+a = "and were finished"
+t = "w-eštaḵlelw"
+[[vocab]]
+p = "ܟܠܗܘܢ"
+a = "all of them"
+t = "ḵulhōn"
+[[vocab]]
+p = "ܫܬܝܬܝܐ"
+a = "the sixth"
+t = "štīṯāyā"
+[[vocab]]
+p = "ܫܒܝܥܝܐ"
+a = "the seventh"
+t = "šḇīʿāyā"
+[[vocab]]
+p = "ܘܐܬܬܢܝܚ"
+a = "and he rested"
+t = "w-ettneyaḥ"
+[[vocab]]
+p = "ܥܒܕܘ̈ܗܝ"
+a = "his works"
+t = "ʿḇāḏwāy"
+[[vocab]]
+p = "ܘܩܕܫܗ"
+a = "and sanctified it"
+t = "w-qaddšeh"
+[[vocab]]
+p = "ܡܛܠ"
+a = "because"
+t = "meṭṭul"
+[[vocab]]
+p = "ܠܡܥܒܕ"
+a = "to make"
+t = "l-meʿbaḏ"
+
+[[forms]]
+form = "ܐܠܗܐ"
+cell = "unpointed word-image of a known lemma (the cell IS the skill)"
+gloss = "God"
+lemma = ""
+[[forms]]
+form = "ܟܠܗܘܢ"
+cell = "suffix 3mp, ־ܗܘܢ"
+gloss = "all of them"
+lemma = "ܟܠ"
+[[forms]]
+form = "ܥܒܕܘ̈ܗܝ"
+cell = "3ms suffix on a plural noun (seyāmē the only clue)"
+gloss = "his works"
+lemma = "ܥܒܕ"
+[[forms]]
+form = "ܐܬܬܢܝܚ"
+cell = "Ethpeel perfect (recognition only)"
+gloss = "he rested"
+lemma = ""
+[[forms]]
+form = "ܫܬܝܬܝܐ"
+cell = "ordinal pattern ־ܝܐ"
+gloss = "the sixth"
+lemma = ""
+
+[[halfline]]
+context = "Genesis 2:2"
+prompt = "ܘܫܠܡ <span class='blank'></span>"
+answer = "ܐܠܗܐ"
+translit = "alāhā"
+note = "God — can you still see it without its vowels?"
+[[halfline]]
+context = "Genesis 2:2"
+prompt = "ܘܐܬܬܢܝܚ ܒܝܘܡܐ <span class='blank'></span>"
+answer = "ܫܒܝܥܝܐ"
+translit = "šḇīʿāyā"
+note = "the seventh"
+[[halfline]]
+context = "Genesis 2:3"
+prompt = "ܘܒܪܟ ܐܠܗܐ <span class='blank'></span>"
+answer = "ܠܝܘܡܐ"
+translit = "l-yawmā"
+note = "the day"
+
+[[cloze]]
+context = "Genesis 2:2"
+prompt = "ܘܫܠܡ <span class='blank'></span> ܒܝܘܡܐ ܫܬܝܬܝܐ ܥܒܕܘ̈ܗܝ."
+answer = "ܐܠܗܐ"
+translit = "alāhā"
+note = "God — can you still see it without its vowels? yes"
+[[cloze]]
+context = "Genesis 2:2"
+prompt = "ܘܐܬܬܢܝܚ ܒܝܘܡܐ <span class='blank'></span>."
+answer = "ܫܒܝܥܝܐ"
+translit = "šḇīʿāyā"
+note = "the seventh"
+[[cloze]]
+context = "Genesis 2:3"
+prompt = "ܘܒܪܟ ܐܠܗܐ <span class='blank'></span> ܫܒܝܥܝܐ ܘܩܕܫܗ."
+answer = "ܠܝܘܡܐ"
+translit = "l-yawmā"
+note = "the day"
+
+[[finish]]
+context = "Genesis 2:2"
+prompt = "ܘܫܠܡ ܐܠܗܐ ܒܝܘܡܐ ܫܬܝܬܝܐ <span class='blank'></span>"
+answer = "ܥܒܕܘ̈ܗܝ ܕܥܒܕ"
+translit = "ʿḇāḏwāy d-ʿḇaḏ"
+note = "whose works, doing what?"
+[[finish]]
+context = "Genesis 2:3"
+prompt = "ܘܒܪܟ ܐܠܗܐ ܠܝܘܡܐ ܫܒܝܥܝܐ <span class='blank'></span>"
+answer = "ܘܩܕܫܗ"
+translit = "w-qaddšeh"
+note = "and did what to it?"
+
+[[whole]]
+context = "Genesis 2:3a, unaided"
+prompt_type = "text"
+prompt = "“and God blessed the seventh day, and sanctified it”"
+answer = "ܘܒܪܟ ܐܠܗܐ ܠܝܘܡܐ ܫܒܝܥܝܐ ܘܩܕܫܗ."
+translit = "w-bareḵ alāhā l-yawmā šḇīʿāyā w-qaddšeh"
+note = "unpointed, consonants only — that IS the target today"
+
+[[drills]]
+prompt = "ܘܫܠܡ ܐܠܗܐ ܥܒܕܘ̈ܗܝ ܒܝܘܡܐ ܫܬܝܬܝܐ."
+answer = "And God finished his works on the sixth day."
+[[drills]]
+prompt = "ܘܒܪܟ ܐܠܗܐ ܠܝܘܡܐ ܫܒܝܥܝܐ."
+answer = "And God blessed the seventh day."
+[[drills]]
+prompt = "ܟܠܗܘܢ ܚܝܠܘ̈ܬܗܘܢ ܕܫܡܝܐ ܘܕܐܪܥܐ."
+answer = "All their hosts of heaven and of earth."
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "forms"
+title = "New forms"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "One word"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "drills"
+title = "Drills"
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[scorecard]
+stage1_of = 3
+stage1_label = "how many of the three lines could you sound out before checking the pronunciation line?"
+stage4_options = ["written unpointed from memory", "transcribed"]
