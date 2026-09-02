@@ -39,8 +39,15 @@ SHELL = LEARN / "shell" / "lesson_shell.html"
 DRILL_SHELL = LEARN / "shell" / "drill_shell.html"
 SITE = LEARN / "site"
 QUARRY = ROOT / "quarry"
+COURSE_TOML = SYRIAC_DIR / "course.toml"
 
 N_LESSONS = 11  # L00..L10
+
+# Phase D: the two authored scholar pages. (source path, url slug, nav title)
+PROSE_PAGES = [
+    (SYRIAC_DIR / "about.md", "about", "About"),
+    (SYRIAC_DIR / "for-syriacists.md", "for-syriacists", "For Syriacists"),
+]
 
 
 # ---------------------------------------------------------------------------
@@ -120,6 +127,76 @@ def extract_record_refs(meta_text, lesson_name):
             primer, rtype = current
         refs.append((primer, rtype, stem))
     return refs
+
+
+# ---------------------------------------------------------------------------
+# 2b. Phase D: prose pages, the landing page's per-lesson action line, record badges
+# ---------------------------------------------------------------------------
+
+def prose_page_meta(text):
+    """H1 title + the italic paragraph right after it (same shape as a lesson's opening
+    metadata line), stripped of its leading/trailing '*' markers, for use as <meta description>."""
+    lines = text.split("\n")
+    title = lines[0].lstrip("#").strip()
+    meta = lesson_metadata_paragraph(text)
+    desc = meta.strip()
+    if desc.startswith("*"):
+        desc = desc[1:]
+    if desc.endswith("*"):
+        desc = desc[:-1]
+    return title, desc.strip()
+
+
+ACTION_LINE_RE = re.compile(
+    r"\*\*What you will be able to do at the end:\*\*\s*(.+?)(?:\n[ \t]*\n|\Z)", re.S)
+# Lesson 0 has no "**What you will be able to do at the end:**" line -- it teaches shapes,
+# not meaning, so the standard line would be a category error. It does close with a sentence
+# doing exactly that job, in the same shape as the other ten (a verb the reader can act on),
+# and that is what the landing page quotes: "You should now be able to: name any of the 22
+# letters on sight, recall its rough sound, and recognize ... a mid-word gap ...". Taken from
+# the lesson's own text like every other one-liner -- generated, never authored here.
+LESSON0_FALLBACK_RE = re.compile(r"You should now be able to:\s*(.+?\.)\s", re.S)
+
+
+def extract_action_line(n, text, lf_name, errors):
+    """A lesson's own one-line 'what you'll be able to do' sentence, generated (never
+    authored here) from LESSON-N.md. Lesson 0 has no such line by design (it teaches shapes,
+    not meaning) -- fall back to its own opening framing sentence rather than fabricate one."""
+    m = ACTION_LINE_RE.search(text)
+    if m:
+        para = re.sub(r"\s*\n\s*", " ", m.group(1)).strip()
+        return para
+    if n == 0:
+        m0 = LESSON0_FALLBACK_RE.search(text)
+        if m0:
+            return re.sub(r"\s*\n\s*", " ", m0.group(1)).strip()
+        errors.append(f"{lf_name}: Lesson 0 fallback action-line pattern not found")
+        return None
+    errors.append(f"{lf_name}: missing '**What you will be able to do at the end:**' line")
+    return None
+
+
+def record_badge(rtype, data):
+    """A short (label, css-modifier) badge for the /sources index. R3's only state signal is
+    its free-text `status` sentence; R1/R4 carry a plain boolean `uncertain`."""
+    if rtype == "r3":
+        status = data.get("status", "")
+        if not status and isinstance(data.get("alignment"), dict):
+            status = data["alignment"].get("status", "")
+        if not isinstance(status, str) or not status.strip():
+            return ("unstated", "")
+        if status.startswith("⛔"):  # unkeyed pages are flagged with the same glyph in the plan/records
+            return ("unkeyed", "warn")
+        if "UNVERIFIED" in status:
+            return ("unverified", "warn")
+        if "checked against" in status.lower():
+            return ("checked", "ok")
+        return ("noted", "")
+    if data.get("uncertain") is True:
+        return ("uncertain", "warn")
+    if data.get("uncertain") is False:
+        return ("confirmed", "ok")
+    return (None, None)
 
 
 # ---------------------------------------------------------------------------
@@ -236,6 +313,186 @@ def build_record_footer(refs, missing_out):
     return f'<div class="footer"><strong>Sources cited</strong><ul>{"".join(items)}</ul></div>'
 
 
+# ---------------------------------------------------------------------------
+# 5b. Phase D pages: the two prose pages, /sources, /
+# ---------------------------------------------------------------------------
+
+def build_prose_pages(errors, write):
+    for path, slug, nav_title in PROSE_PAGES:
+        if not path.exists():
+            errors.append(f"missing prose page: {path}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        for line_no, msg in find_unsupported(text, path.name):
+            where = f"{path.name}:{line_no}" if line_no else path.name
+            errors.append(f"{where}: {msg}")
+        if not write:
+            continue
+        _h1_title, desc = prose_page_meta(text)
+        body = make_primers.render(text)
+        body = body.replace("<table>", '<div class="tablewrap"><table>').replace(
+            "</table>", "</table></div>")
+        page = wrap_page(nav_title, desc, body)
+        dest = SITE / slug / "index.html"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(page, encoding="utf-8")
+
+
+SOURCES_STYLE = """<style>
+.shelf{list-style:none;margin:0 0 18px;padding:0}
+.shelf li{margin:0 0 16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.shelf li:last-child{border-bottom:0}
+.shelf .st{font-family:var(--serif);font-size:18px}
+.shelf .sm{color:var(--muted);font-size:14px;margin-top:2px}
+.shard{margin:0 0 26px}
+.shard > summary{cursor:pointer;font-family:var(--serif);font-size:19px;padding:8px 0;
+ border-top:1px solid var(--line)}
+.pagegroup{margin:6px 0 6px 18px}
+.pagegroup > summary{cursor:pointer;font-size:14px;color:var(--muted)}
+.pagegroup ul{margin:6px 0 10px;padding-left:18px;columns:2;column-gap:24px}
+.pagegroup li{margin:2px 0;break-inside:avoid}
+.rtype-list{list-style:none;margin:0 0 20px;padding:0}
+.rtype-list li{margin:3px 0}
+.badge.warn{color:#C9A227;border-color:#C9A227}
+.badge.ok{color:#4C9A6B;border-color:#4C9A6B}
+.counts{color:var(--muted);font-size:14.5px;margin:0 0 14px}
+</style>"""
+
+
+def build_sources_page(records, course, write):
+    if not write:
+        return
+    shelf_items = []
+    for sid, s in course.get("sources", {}).items():
+        shelf_items.append(
+            f'<li><div class="st">{make_primers.inline(s.get("title",""))}</div>'
+            f'<div class="sm">{html.escape(s.get("rights",""))} '
+            f'&middot; <code>{html.escape(s.get("scan",""))}</code></div></li>'
+        )
+    shelf = f'<ul class="shelf">{"".join(shelf_items)}</ul>'
+
+    def li_for(rtype, stem, primer, data):
+        label, css = record_badge(rtype, data)
+        badge = f'<span class="badge {css}">{html.escape(label)}</span>' if label else ""
+        return f'<li><a href="/sources/{rtype}/{stem}"><code>{html.escape(stem)}</code></a>{badge}</li>'
+
+    # R1 and R3: small enough to list flat, sorted by stem.
+    by_rtype = {"r1": [], "r3": [], "r4": []}
+    for (rtype, stem), (primer, path, data) in records.items():
+        by_rtype[rtype].append((stem, primer, data))
+    body_parts = ['<h1>The sources</h1>',
+                  '<p>A chrestomathy is only as trustworthy as the plates behind it. This is '
+                  'the shelf those plates were read from, and the full set of records read '
+                  'off them — every reading this course rests on, published, so a claim in a '
+                  'lesson can be traced back to the page it came off.</p>',
+                  '<h2>The shelf</h2>', shelf,
+                  '<h2>The record index</h2>',
+                  f'<p class="counts">{len(by_rtype["r1"])} R1 paradigm records &middot; '
+                  f'{len(by_rtype["r3"])} R3 keyed pages &middot; '
+                  f'{len(by_rtype["r4"])} R4 lexicon entries.</p>']
+
+    body_parts.append(f'<h3>R1 &mdash; grammar paradigms ({len(by_rtype["r1"])})</h3>')
+    body_parts.append('<ul class="rtype-list">' + "".join(
+        li_for("r1", stem, primer, data)
+        for stem, primer, data in sorted(by_rtype["r1"])) + '</ul>')
+
+    body_parts.append(f'<h3>R3 &mdash; keyed pages ({len(by_rtype["r3"])})</h3>')
+    body_parts.append('<ul class="rtype-list">' + "".join(
+        li_for("r3", stem, primer, data)
+        for stem, primer, data in sorted(by_rtype["r3"])) + '</ul>')
+
+    r4_by_primer = {}
+    for stem, primer, data in by_rtype["r4"]:
+        r4_by_primer.setdefault(primer, []).append((stem, data))
+    body_parts.append(f'<h3>R4 &mdash; lexicon entries ({len(by_rtype["r4"])})</h3>')
+    for primer in sorted(r4_by_primer):
+        entries = sorted(r4_by_primer[primer])
+        body_parts.append(f'<details class="shard"><summary>{html.escape(primer)} '
+                           f'&mdash; {len(entries)} entries</summary>')
+        pages = {}
+        for stem, data in entries:
+            page_prefix = stem.split("-", 1)[0]
+            pages.setdefault(page_prefix, []).append((stem, data))
+        for page_prefix in sorted(pages):
+            group = pages[page_prefix]
+            body_parts.append(f'<details class="pagegroup"><summary>{html.escape(page_prefix)} '
+                               f'&mdash; {len(group)} entries</summary><ul>')
+            for stem, data in sorted(group):
+                body_parts.append(li_for("r4", stem, primer, data))
+            body_parts.append('</ul></details>')
+        body_parts.append('</details>')
+
+    body = SOURCES_STYLE + "\n".join(body_parts)
+    page = wrap_page("The sources", "The four printed sources this course reads from, and "
+                      "every record read off them.", body)
+    dest = SITE / "sources" / "index.html"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(page, encoding="utf-8")
+
+
+CHRESTOMATHY_LINE = (
+    "A chrestomathy is a graded collection of real passages for learning a language; this "
+    "one is Syriac, read first."
+)
+
+INDEX_STYLE = """<style>
+.lessons{list-style:none;margin:0 0 30px;padding:0}
+.lessons li{margin:0 0 16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.lessons li:last-child{border-bottom:0}
+.lessons a{font-family:var(--serif);font-size:19px;text-decoration:none}
+.lessons a:hover{text-decoration:underline}
+.lessons p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.doors{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 34px}
+.doors a{flex:1 1 200px;text-align:center;padding:14px 12px;border:1px solid var(--line);
+ border-radius:var(--r);text-decoration:none;color:var(--text);font-size:15px}
+.doors a:hover{border-color:var(--accent);color:var(--accent)}
+</style>"""
+
+
+def build_index_page(lesson_files, lesson_texts, action_lines, write):
+    if not write:
+        return
+    items = []
+    for n, lf in enumerate(lesson_files):
+        if not lf.exists():
+            continue
+        title = lesson_texts[n].split("\n", 1)[0].lstrip("#").strip()
+        line = action_lines.get(n)
+        line_html = f'<p>{make_primers.inline(line)}</p>' if line else ""
+        items.append(f'<li><a href="/lesson/{n}">{make_primers.inline(title)}</a>{line_html}</li>')
+    lessons_html = '<ol class="lessons">' + "".join(items) + '</ol>'
+
+    doors = ('<div class="doors">'
+             '<a href="/lesson/0">Start at Lesson 0</a>'
+             '<a href="https://paleography.app/syriac">Read the hand</a>'
+             '<a href="/for-syriacists">For Syriacists</a>'
+             '</div>')
+
+    body = (INDEX_STYLE +
+            '<h1>A Syriac Chrestomathy</h1>'
+            f'<p>{make_primers.inline(CHRESTOMATHY_LINE)}</p>'
+            '<p>Eleven lessons, Lesson 0 through Lesson 10, each ending in a real sentence '
+            'read unaided. Every reading in them is published and checkable on '
+            '<a href="/sources">the sources shelf</a>.</p>'
+            + doors +
+            '<h2>The lessons</h2>' + lessons_html +
+            '<div class="footer"><p>The full rights picture — what is public domain, what '
+            'this project claims, and under what licence — is stated in full on '
+            '<a href="/about">the about page</a>. It is free, has no account and no paywall, '
+            'and never will.</p></div>')
+
+    page = wrap_page("A Syriac Chrestomathy",
+                      "Read the Peshitta in eleven lessons, from the alphabet to a real "
+                      "sentence read unaided. Free, public domain, no account.", body)
+    page = page.replace("<title>A Syriac Chrestomathy — A Syriac Chrestomathy</title>",
+                         "<title>A Syriac Chrestomathy</title>")
+    page = page.replace('content="A Syriac Chrestomathy — A Syriac Chrestomathy">',
+                         'content="A Syriac Chrestomathy">')
+    dest = SITE / "index.html"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(page, encoding="utf-8")
+
+
 def run(write):
     errors = []
     missing = []
@@ -247,8 +504,14 @@ def run(write):
 
     records = gather_records()
 
+    with open(COURSE_TOML, "rb") as f:
+        course = tomllib.load(f)
+
     lesson_texts = {f"L{n:02d}": lf.read_text(encoding="utf-8")
                      for n, lf in enumerate(lesson_files) if lf.exists()}
+    full_lesson_texts = {n: lf.read_text(encoding="utf-8")
+                          for n, lf in enumerate(lesson_files) if lf.exists()}
+    action_lines = {}
     drill_errors, drill_compiled = make_drill.build(lesson_texts, write=write)
     errors.extend(f"[drill] {e}" for e in drill_errors)
     drill_shell_src = DRILL_SHELL.read_text(encoding="utf-8") if DRILL_SHELL.exists() else ""
@@ -260,6 +523,8 @@ def run(write):
         for line_no, msg in find_unsupported(text, lf.name):
             where = f"{lf.name}:{line_no}" if line_no else lf.name
             errors.append(f"{where}: {msg}")
+
+        action_lines[n] = extract_action_line(n, text, lf.name, errors)
 
         meta = lesson_metadata_paragraph(text)
         try:
@@ -305,6 +570,10 @@ def run(write):
             dest = SITE / "sources" / rtype / stem / "index.html"
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_text(page, encoding="utf-8")
+
+    build_prose_pages(errors, write)
+    build_sources_page(records, course, write)
+    build_index_page(lesson_files, full_lesson_texts, action_lines, write)
 
     return errors, records, lesson_files
 
