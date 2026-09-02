@@ -14,12 +14,34 @@ lemma = { unvoc = "ܩܕܫ", voc = "", translit = "qdš" }   # voc intentionally 
 pos = "verb, Pael (Peal starred: 'to be pure, holy')"
 gloss_en = "to keep or render holy, to hallow, sanctify, consecrate, to set apart for holy use; to celebrate holy rites, to give in marriage; to chant the Tersanctus, cry 'Holy, Holy, Holy'"
 root = "ܩܕܫ"
-printed_forms = "Peal is marked with an asterisk (unattested / root-meaning only); the Pael is the substantive entry"   # the other forms the entry itself prints, described not transcribed
+printed_forms = "Peal is marked with an asterisk (unattested / root-meaning only); the Pael is the substantive entry; the Ethpaal follows in the same entry and is now transcribed in [[stems]]"   # forms the entry itself prints; described, except the Ethpaal which is transcribed
 layer = "printed Serto (West Syriac letterforms), pointed; points present on the plate but not transcribed — see vocalization_note"
 vocalization_note = "Payne Smith prints this entry in Serto with vowel points, and the points ARE visible on the plate; they are deliberately NOT transcribed here. The project has no control table for this typeface's pointing (the MUFI lesson: never read diacritic codepoints by eye), so `voc` is left empty and `translit` is CONSONANTAL ONLY. The consonantal skeleton, the part-of-speech tag and the English gloss are read directly off the plate and are reliable; the vocalisation is the open item for a reader who can control it."
 fills_gap_for = "sanctify, Lesson 5 (Pael) and Lesson 6 (Ethpaal)"
 uncertain = true
-uncertain_note = "Lesson 6 wants the ETHPAAL. The Ethpaal was NOT read: it falls past the bottom of the crop taken. Only the Peal note and the Pael are plate-read here."
+uncertain_note = "The consonantal skeletons of BOTH stems - the Pael head lemma and the Ethpaal in [[stems]] - are plate-read from n506 and are reliable. What is still open is unchanged and is VOCALISATION ONLY: not one vowel point in this entry has been transcribed, in either stem. See vocalization_note."
+
+# -- Ethpaal added 2026-09-02 -------------------------------------------------
+# Read off the SAME plate (n506, left column, four lines below the Pael headword).
+# Nothing new was fetched; the earlier crop simply stopped above this line, which is what
+# the old uncertain_note recorded. The entry stacks Peal* / Pael / Ethpa. under one root,
+# exactly as predicted.
+# Shape: `stems` is an optional R4 field (SYRIAC-LANGUAGE-PILOT.md section 4) whose form the
+# schema leaves open - Nestle uses it as a one-line string (r4/g184-qam-stand.toml). Here it
+# is a STRUCTURED ARRAY instead, following the house `[[sub_lemmas]]` habit: same root entry
+# on the same plate, so a sub-entry on THIS record rather than a record of its own, and
+# `raw` keeps the printed piece verbatim.
+[[stems]]
+stem = "Ethpaal"
+printed_label = "ETHPA."
+unvoc = "ܐܬܩܕܫ"
+voc = ""   # intentionally empty - see vocalization_note below
+translit = "'tqdsh"   # consonantal only, matching the head lemma's convention
+gloss_en = "to be sanctified, consecrated; to be joined in marriage"
+raw = "ETHPA. ܐܬܩܕܫ to be sanctified, consecrated; to be joined in marriage."
+vocalization_note = "Vowel points ARE printed on this form and are visible at 8x, and are deliberately NOT transcribed, for the same reason as the head lemma: this project has no control table for this typeface's pointing, and a diacritic is never read by eye. The five-letter consonantal skeleton Alaph-Taw-Qoph-Dalath-Shin is unambiguous - its last three glyphs were compared side by side against the Pael headword four lines above, which prints the bare root. The dot under the Dalath is letter-identifying (Dalath vs. Rish), not vocalisation, and is carried in the codepoint."
+printed_note = "The entry carries a small RAISED typographic mark, which the Pael headword carries too (there above the second radical, here at the right-hand end of the word). It is not identified, and is neither transcribed nor interpreted here."
+plate_note = "Crop for the re-read: n506 at (195, 2590)-(420, 2690), upscaled 8x."
 
 [source]
 primer = "payne-smith-1903"
