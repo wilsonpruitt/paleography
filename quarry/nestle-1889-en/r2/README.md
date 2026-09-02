@@ -6,7 +6,7 @@
 - The one thing that looked like it — "READING EXERCISE" on p. 70 — is **the Lord's Prayer in
   the Peshitta** (Matt. 6:9-13, printed with Nestle's own Greek-letter transliteration and a
   word-by-word "Aids to Translation" commentary). It is a canonical passage, so it is filed as
-  `r3/c070-1.toml`.
+  `r3/c070g-1.toml`.
 
 Nestle is a descriptive grammar with a chrestomathy and a glossary. The whole R2 body has to
 come from **Robinson**, whose keylessness Phase 0 already established (`key = ""`, translations

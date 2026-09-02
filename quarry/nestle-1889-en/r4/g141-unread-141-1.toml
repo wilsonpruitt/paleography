@@ -14,7 +14,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ. A short cross-reference line immediately before ܒܰܝܬܳܐ; head-word and target both unresolved at this scale."
+uncertain_note = "⛔ STILL NOT READ after a 2026-09-01 high-zoom follow-up (Step-3). A short cross-reference line immediately before ܒܰܝܬܳܐ; head-word and target both unresolved at this scale, though now cleanly isolated as shapes: headword a wide open hook/comma joined to a small vertical stroke (2 glyphs); target a taller stroke with a loop and a dot beneath (2-3 glyphs). Position suggests a defective/construct spelling of 'house' referred to the fuller ܒܝܬ root, but that is placement reasoning, not a reading — not written."
 
 [source]
 primer = "nestle-1889-en"

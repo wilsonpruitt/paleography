@@ -16,7 +16,7 @@ layer = "vocalized Serto"
 greek = "ἑλικτός, εἱλικιώδης"
 primer_note = "⭐ A Greek-only entry: Nestle prints NO German and no English, just two Greek equivalents — the same move as ܙܽܘܦܳܐ on p. 150. The English here is ours, from ἑλικτός."
 uncertain = true
-uncertain_note = "⛔ NOT READ. Four glyph clusters, the last a long left-descender; the slot is between ܚܒܫ and ܚܕ, so the root should begin ܚܒ or ܚܓ. ܚܒܝܟ 'interwoven' would fit ἑλικτός but not the alphabetical slot, and nothing else proposed fits both. Left unread rather than guessed."
+uncertain_note = "⛔ STILL NOT READ, but ONE candidate now RULED OUT, 2026-09-01 (Step-3 follow-up). Four glyph clusters, the last a long left-descender; the slot is between ܚܒܫ and ܚܕ, so the root should begin ܚܒ or ܚܓ. ܚܒܝܟ 'interwoven' would fit ἑλικτός but not the alphabetical slot. High zoom now reads the word (right to left) as: peak (Beth-shaped) — descender-letter — peak (Beth-shaped again) — a diagonal stroke rising to two side-by-side dots. Beth appears TWICE, which ḥbyk (Ḥeth-Beth-Yod-Kaph) does not predict, and Ḥeth in this font is a squarish gate/box shape that isn't present — so ḥbyk should be DROPPED, not adopted. No replacement reading found; still unwritten."
 
 [source]
 primer = "nestle-1889-en"

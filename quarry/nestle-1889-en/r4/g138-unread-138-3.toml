@@ -14,7 +14,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ. The cross-reference line immediately after ܐܽܘܪܚܳܐ, probably ܐܳܪܚܳܐ (guest, traveller) referred back to the same root. Not resolved; recorded to keep the count honest."
+uncertain_note = "⚠ STRENGTHENED, not certain, 2026-09-01 (Step-3 follow-up). The cross-reference line immediately after ܐܽܘܪܚܳܐ, probably ܐܳܪܚܳܐ (guest, traveller) referred back to the same root. High zoom: headword shape (alaph + hook + loop-with-descender + closing alaph) structurally matches the ARḤ consonant skeleton with different pointing, and a short 2-3 letter target follows 'v.', consistent with a bare-root pointer. Called 'strong structural match to the hypothesis' but not letter-certain; not written into the lemma. Recorded to keep the count honest."
 
 [source]
 primer = "nestle-1889-en"

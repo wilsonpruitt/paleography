@@ -14,7 +14,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ, after one 3× zoom. The second of two cross-references printed on the last line of the page, after ܫܰܝܢܳܐ v. ܫܝܢ. Skeletons: a head of about seven glyphs ending ܘܬܳܐ and a target of about six, differing from the head by one leading letter — the same head-minus-a-letter shape as the other pointers on this page, which is exactly why no candidate could be told from its neighbour. Convention 5."
+uncertain_note = "⚠ STRUCTURE confirmed, letters still not, 2026-09-01 (Step-3 follow-up). The second of two cross-references printed on the last line of the page, after ܫܰܝܢܳܐ v. ܫܝܢ. A head of about seven glyphs ending ܘܬܳܐ and a target of about six, differing from the head by one leading letter. High zoom confirms the two leading letters really are DIFFERENT shape-categories, not a misreading artifact: the head's leading letter is a simple triangular peak (nun-like), the target's is a tall vertical stroke (alaph- or lamadh-like). Exact letter identity would need checking against the specific root this entry belongs to — not attempted here. Convention 5: not written."
 
 [source]
 primer = "nestle-1889-en"

@@ -14,7 +14,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ. A short ܓܒ- cross-reference between ܓܶܐܪܳܐ and ܓܰܒܳܝܳܐ; neither head-word nor target resolved."
+uncertain_note = "⚠ HEAD partially resolved, target still not, 2026-09-01 (Step-3 follow-up). A short ܓܒ- cross-reference between ܓܶܐܪܳܐ and ܓܰܒܳܝܳܐ. High zoom reads the head-word with good confidence as ܓܒܝ (Gamal-Beth-Yod), consistent with the expected ܓܒ- initial. The target (after 'v.') resolves less cleanly — rightmost glyph Yod-like, then an open angular stroke (Nun-shaped, not a repeat of Beth), then a vertical stroke with two vowel-points and a dot — does not read as a simple repeat of ܓܒܝ. Head recovered; target not confirmed to a specific lexeme, so the record stays unwritten pending that."
 
 [source]
 primer = "nestle-1889-en"

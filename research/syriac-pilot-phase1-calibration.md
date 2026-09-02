@@ -90,7 +90,7 @@ Two smaller ones, both already folded into `MAP.md`:
 - **A fifth record shape exists.** The "Aids to Translation" on pp. 70-72 are per-word notes
   keyed to a position in a passage, carrying § cross-references — a ready-made gloss layer of
   exactly the kind the hand-trainer already ships per line. R3's `primer_notes` flattens it into
-  a blob and loses the keying. Proposal in `r3/c070-1.toml`: `word_notes = [{ index, form_voc,
+  a blob and loses the keying. Proposal in `r3/c070g-1.toml`: `word_notes = [{ index, form_voc,
   note, noldeke }]`, or a record type R5. **This one is owed BEFORE the run** — it changes what
   the run extracts, not just how it files it.
 

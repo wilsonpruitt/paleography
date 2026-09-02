@@ -7,14 +7,14 @@ record_type = "R4"
 
 lemma = { unvoc = "", voc = "", translit = "" }
 pos = "cross-reference"
-gloss_en = "(unread)"
+gloss_en = "(cross-reference only, no separate gloss)"
 root = ""
 payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ. A cross-reference line printing two forms (sg. and emph.) and a target, immediately before ܐܘܪܚܳܐ. Possibly the ܐܪܙ / ܪܐܙܐ 'mystery' group, but not resolved. Recorded to keep the count honest."
+uncertain_note = "⚠ PARTIALLY READ 2026-09-01 (Step-3 follow-up), moderate confidence: a cross-reference line printing two forms (a short form and a longer emphatic/plural-looking form) and a target, immediately before ܐܘܪܚܳܐ. High-zoom reading: 'ܝܘܢ, ܝܘܢܢ v. ܝܘܢ' — repeating hook-with-two-dots letterforms consistent with yodh-waw-nun throughout. This does NOT match the earlier ܐܪܙ/ܪܐܙܐ 'mystery' guess, which should be dropped. Confidence is good but not certain enough to drop the uncertain flag; a Syriacist should confirm before this is treated as settled."
 
 [source]
 primer = "nestle-1889-en"

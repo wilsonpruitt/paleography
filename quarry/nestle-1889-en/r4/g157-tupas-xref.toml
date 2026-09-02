@@ -16,7 +16,7 @@ layer = "vocalized Serto"
 see = "v. ܛܘܦܣܐ"
 primer_note = "⭐ A cross-reference from one spelling of the Greek loan τύπος to another, five glyphs against six — the same word entered twice, as ὑπομνήματα was on pp. 134 and 149."
 uncertain = true
-uncertain_note = "⛔ NOT READ. Both the head and the target are ܛܘܦܣ-shaped and differ by one glyph, but which spelling is the head and which the target is not resolved."
+uncertain_note = "⚠ STRUCTURE resolved, exact spellings not, 2026-09-01 (Step-3 follow-up). Both the head and the target are ܛܘܦܣ-shaped and differ by one glyph. High zoom, cross-checked against the confirmed p.156 headword ('ὁ τύπος' = ṭ-w-p-s-ʾ, with a distinctive tall-ascender-with-hook-and-dot Alaph): the word AFTER 'v.' (the target) ends in that same confirmed Alaph shape, strongly suggesting the target is (or is very close to) ṭupsā itself. The word BEFORE 'v.' (the head, printed first, standard 'see' format) ends instead in a different, low flat wide hook — a real but unidentified final letter. So: head-word-then-target order is settled and the target is very plausibly the ṭupsā spelling itself; the head's exact final letter (and the middle 'double-hump' cluster in both words) remain unresolved."
 
 [source]
 primer = "nestle-1889-en"

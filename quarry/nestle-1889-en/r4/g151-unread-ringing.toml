@@ -17,7 +17,7 @@ layer = "vocalized Serto"
 greek = "ἦχος"
 primer_note = "Nestle notes of the second form 'deest apud PSm' — it is not in Payne Smith. His doubt about the lexicon, not ours."
 uncertain = true
-uncertain_note = "⛔ NOT READ. First entry of p. 151, immediately after ܙܠܓ on p. 150 and before ܙܡܢ, so the root falls in ܙܠ–ܙܡ. Five glyphs ending in ܐ, with two tall ascenders that read as lamadh — a reduplicated ܙܠܙܠ 'resound' would fit the sense and the slot, but that is a reconstruction from shape and position, NOT a reading, and it is not written into the lemma. Two further forms on the same line are likewise unread."
+uncertain_note = "⚠ STRENGTHENED, still short of certain, 2026-09-01 (Step-3 follow-up). First entry of p. 151, immediately after ܙܠܓ on p. 150 and before ܙܡܢ, so the root falls in ܙܠ–ܙܡ. Five glyphs ending in ܐ, with two tall ascenders that read as lamadh — a reduplicated ܙܠܙܠ 'resound' would fit the sense and the slot. A 2026-09-01 re-read at extreme zoom confirms BOTH ascenders are genuine closed Lamadh-loop crooks (not a low-res artifact), bracketing a rounded medial dome-shape that is a plausible but imperfect match for a medial Zayn — 'likely confirmed' rather than certain, so still not written into the lemma. The two further forms on the same line are now legible as shape-variants built on the same root (one echoes the diagonal-crook+dome cluster without the flanking strokes; the other, after 'et', is 7 glyphs with an extra Waw and Yod-dot, glossed 'idem' — plausibly a plural/variant spelling) but neither is transcribed."
 
 [[sub_lemmas]]
 voc = ""

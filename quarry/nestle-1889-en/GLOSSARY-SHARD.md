@@ -143,7 +143,7 @@ prints both counts. A page coming in at 9 or at 20 is not necessarily an error �
 
 - ✅ The **`‖` ruling** — answered: structured array on the parent. Convention 7 above.
 - ✅ The **`word_notes` ruling** — answered: a field on R3, not a record type R5. Done, 36
-  notes read off pp. 70-72 into `r3/c070-1.toml`.
+  notes read off pp. 70-72 into `r3/c070g-1.toml`.
 - ⬜ The **Syriacist seat**. Every Syriac string here is extractor output that nobody qualified
   has ruled on. That is the standing condition of this shard, not a reason to stop. ⚑ 710 records
   in, the cost of the empty seat is concrete and nameable: nineteen homograph pairs whose members
@@ -326,6 +326,149 @@ it were the first one.
   but Nestle's DOUBT, and the third one prints his '?' inside the bracket. ⬜ Still nobody's ruling.
 - **Cross-references come in four shapes**: bare 'v. X', the bracketed '[X v. Y]', a parenthetical
   '(cf. X)', and a bare 'Cf. X' with no gloss at all.
+
+## Step-3 blind control — results, in progress 2026-09-01
+
+**Method note, learned on the first run:** a fresh subagent reading the plate blind can transcribe
+the printed German/English glosses (roman type) at high confidence, but **cannot be trusted to
+type the Syriac in correct Unicode** — it substitutes look-alike Arabic letters (ه و ا for
+ܗ ܘ ܐ) even when it has plausibly read the pointing correctly off the image. ⚠ Wilson ruled
+2026-09-01: **run the remaining clusters on GLOSS TEXT ONLY** — pointing-level verification is out
+of scope for this pass. A retooled prompt (describe letter-shapes/points in words, never type
+Syriac Unicode) would be needed to check pointing, and was deferred, not done.
+
+- **g148-ha-demonstrative — CHECKED, glosses match, one divergence found.** All 8 sub-forms came
+  back in the stored order with matching German | English pairs, and the p.149 cross-reference
+  density matched ("a sixth of p.149" ↔ blind count of ~30-45% of the ه-section lines routing back
+  to this entry, direct or via the oه pronoun sub-form). ⬜ **One gloss text discrepancy, unresolved:**
+  the "in this way, thus" sub-form (ܗܳܟܰܢ, ܗܳܟܰܢܳܐ) — the blind read reports German gloss **"auf
+  diese Weise, so"**; the stored record has only **"auf diese Weise"** (no "so"). Needs a plate
+  check to settle whether extraction dropped a word or the blind read added one.
+
+- **g165-ma-interrogative, g167-man-who, g167-men-from, g167-men-men-particle — ALL CHECKED,
+  glosses match.** Every gloss pair in all four records came back in stored order at high
+  confidence, roman type read verbatim: ma's 5 sub-lemmas (das,was,als/that which,when ·
+  wozu?/whereto? · warum? sollte wohl?/why? might it be that? · [the ⛔ NOT READ slot] ·
+  wozu das? warum?/wherefore? why?), man's 4 (wer ist?/who is? · was?/what? · was ist?/what is? ·
+  wozu? warum?/wherefore? why?), and both men entries (von/from,by · zwar/indeed) with the
+  Praep.-label-vs-Greek-μέν disambiguation confirmed verbatim from `g167-men-men-particle`'s
+  primer_note. **The double ܡܳܢܰܘ claim (p.165 + p.167, different senses) is confirmed at the
+  gloss level** — the blind reader could not identify the p.165 occurrence by transliteration
+  (misread it as a different-looking word) but its gloss text ("wozu das? warum?") landed exactly
+  on the stored p.165 sub-lemma, and the p.167 occurrence ("was ist?") matched exactly too. ⬜
+  **Possible partial win on a ⛔ NOT READ record:** the blind reader's confused transliteration of
+  that same spot ("[cross-ref: v. ḥay] — mə-ḥay") sits right where `g165-ma-interrogative`'s
+  4th sub-lemma is marked NOT READ with a cross-reference extraction couldn't place — worth a
+  plate check, it may be recoverable. (Two other headwords the blind reader folded into its "mā
+  cluster" narrative — a 100/200 numeral idiom and "Ekel haben/be disgusted with" — are in fact
+  separate stored records, `g165-mea-hundred` and `g165-men-disgust`; not a discrepancy, just
+  the blind reader not being told entry boundaries.)
+
+- **g186-rab-great, g186-rab-make-noise, g187-rhem-love — ALL CHECKED, perfect match, zero
+  divergences.** rab-great's single sub-lemma (Magnaten/the peers, grandees) confirmed verbatim;
+  rab-make-noise's two sub-lemmas confirmed verbatim, **including the gloss text of the ⛔ NOT READ
+  second sub-lemma** ("Lärm, Geräusch/noise, sound, f.") — the blind reader could read that gloss
+  fine even though extraction couldn't place the headword's letters, consistent with the standing
+  ⛔ NOT READ convention (gloss known, form not). rhem-love's all 8 sub-lemmas confirmed verbatim
+  in order, including the two hardest lines (the "do." ditto-for-mercy and the empty act./pass.
+  closer). The blind reader also independently confirmed HOW the rab pair is told apart: no
+  pointing or POS-label difference, purely the gloss content — matching the primer_note's own
+  description of this as the section's sharpest homograph.
+
+- **g162-kap-bend, g162-kap-hand, g176-al-enter, g176-ali-raise, g191-shlih-apostle — ALL
+  CHECKED, zero divergences.** kap-bend (§42, beugen/bend) and kap-hand ((hohle) Hand/palm,hand,
+  with its variant + plural forms) both confirmed, and the blind reader independently reconstructed
+  the disambiguation mechanism exactly as the primer_note states: no visual difference in the
+  headword, told apart only by the morphology/POS that follows. al-enter's all 4 sub-lemmas
+  (cause/reason, entering, entrance ×3 variants, belonging-to-entrance) confirmed verbatim in order.
+  ali-raise's head gloss, the Ethpe. stem note, and its first 3 sub-lemmas (over, at the side of,
+  because) confirmed verbatim; sub-lemmas 4-5 (upwards, the Most High) were correctly not found —
+  they are the p.177 tail the record's own `continues_from` note says was folded in from the next
+  page, so this is page-boundary scope, not a gap. The blind reader also confirmed the al/ali
+  relationship as printed: "over" nests as a sub-form under the raise/lift root, not the enter
+  root, with no visible cross-reference between the two adjacent entries — exactly what the
+  primer_note claims. shlih-apostle confirmed exactly: one form, two senses run together on a
+  ‖-divider with no 1/2 numbering, told apart only by the "m. subst." label — the blind reader
+  wasn't told about the numbering convention used elsewhere on the same page and noticed the
+  absence on its own.
+
+- **g183-qbal-receive and g184-qaddem-anticipate — the shard's two most consequential large
+  entries, ALL CHECKED, zero divergences.** qbal-receive's head gloss + Pa. stem note + all 4
+  sub-lemmas (opposite side, over against, opposed/hostile/enemy, acceptable) confirmed verbatim
+  and in order. qaddem-anticipate — the largest entry in the whole shard — had its head gloss, the
+  unique Latin translation-history note ("reddit πρό Graecorum"), and all 8 sub-lemmas confirmed
+  verbatim and in order, **including the parenthetical "(cf. …)" cross-reference on the 7th
+  sub-lemma** that the primer_note says closes the shard's longest-range pointer back to p.183 —
+  the blind reader found that cross-reference mark on its own, with no idea what it meant. Two
+  independent blind reads (this one and the ma/man cluster) have now each stumbled onto a
+  cross-reference the shard doc calls out as significant, without being told to look for it.
+
+- **g134-ahr, g135-ayk, g136-ela, g137-en-if — CHECKED. Three confirmed, one has a real
+  divergence.** g134-ahr's head gloss and all 4 sub-lemmas confirmed verbatim (the blind reader
+  initially reported "not found" because the task brief guessed the wrong sense for it — "after,
+  behind" — when the entry is actually "be left, remain; last, another"; once matched by content
+  it lines up exactly, so this is a briefing error, not an extraction one). g136-ela and g137-en-if
+  both confirmed, and the blind reader **independently rediscovered the ela→en cross-reference**
+  (ܐܶܠܽܘ, glossed bare "v. ܐܶܢ" on p.136, with its actual gloss on p.137) without being told to look
+  for one — a fourth independent rediscovery of a flagged cross-reference this run.
+- ✅ **Both open divergences RESOLVED on the plate, 2026-09-01.**
+  1. **g148, the "so".** Confirmed on n237 — the plate prints "auf diese Weise, so | in this way,
+     thus." Extraction had dropped "so". **Fixed in `g148-ha-demonstrative.toml`.**
+  2. **g135-ayk, the three extra sub-forms.** Confirmed as a FALSE divergence — checked n224
+     directly. The entry closes at "(Cf. G. Hoffmann, ZDMG 32, 753.)"; the next line starts a new
+     headword (different shape, not a continuation) whose gloss coincidentally also reads "in such
+     a way" ("auf solche Weise, z. B."). The stored record's 4 sub-lemmas are correct as extracted.
+     Same shape as the p.165 "mā cluster" scope issue: an unbriefed blind reader cannot see entry
+     boundaries and will fold the next headword into the one it was sent to find. **No fix needed.**
+  **Net after resolution: 13 of 14 checked records fully correct as extracted, 1 real one-word
+  omission found and fixed.**
+
+## Step-3 blind control — running tally (2026-09-01)
+
+**14 records checked across 6 clusters** (g148-ha-demonstrative; g165-ma-interrogative,
+g167-man-who/men-from/men-men-particle; g186-rab-great/rab-make-noise, g187-rhem-love;
+g162-kap-bend/kap-hand, g176-al-enter/ali-raise, g191-shlih-apostle; g183-qbal-receive,
+g184-qaddem-anticipate; g134-ahr, g135-ayk, g136-ela, g137-en-if). **12 fully confirmed, 2 with
+open divergences needing a plate check** (g148's "auf diese Weise, so" vs "auf diese Weise"; g135's
+three extra sub-forms). One possible partial recovery of a ⛔ NOT READ cross-reference (g165, sub4).
+Four independent cross-reference rediscoveries, none prompted. Method holds: gloss text is
+high-confidence and checkable this way; pointing-level verification remains out of scope (see the
+method note above) and would need a retooled prompt.
+
+## ⛔ NOT READ recovery pass, 2026-09-01
+
+Attempted higher-magnification re-reads on all 16 ⛔ NOT READ records after the blind control
+closed. Result: **1 fully resolved and written, 1 contradiction resolved (head still open), 1
+cross-reference read with moderate confidence, 1 rejected candidate ruled out, several
+narrowed/corrected in shape without a full reading. 15 of 16 remain ⛔ or ⚠, none regressed.**
+
+- ✅ **`g185-unread-q-pervert` — RESOLVED and WRITTEN.** The middle letter's shape was directly
+  confirmed as Mem (closed loop, not the open ʿayin the glyph first suggested), agreeing with the
+  slot logic that had already narrowed it. Lemma is now ܩܰܡܶܠ. **`--unread` count: 16 → 15.**
+- ✅ **`g174-unread-sp-xref` — the contradiction is resolved; the head is still open.** The
+  3-glyph target was misread as ܣܟܠ at lower zoom; at ~12x it is ܣܦܪ — a SELF-reference back to
+  the ܣܦܪ root the entry sits inside, not an unrelated word wedged into the wrong slot. The
+  7-glyph head (plausibly an abstract noun, "authorship/scholarship") stays unwritten.
+- ⚠ **`g138-unread-138-2` — read with moderate confidence: "ܝܘܢ, ܝܘܢܢ v. ܝܘܢ."** This drops the
+  earlier ܐܪܙ/ܪܐܙܐ 'mystery' guess. Flagged `uncertain = true` still — good but not certain enough
+  to close without a Syriacist.
+- ⚠ **`g165-unread-mw-xref` — target read as ܚܘܐ (ḥwā), a genuinely new candidate**, superseding
+  both previously-rejected guesses; head still unresolved but likely a Mem-prefixed noun on the
+  same root.
+- ⚠ **`g152-unread-heliktos` — the ܚܒܝܟ guess is now RULED OUT** (a doubled Beth-shape the guess
+  doesn't predict); no replacement found.
+- ⚠ Shape-level progress without a full reading on `g143` (head recovered as ܓܒܝ, target open),
+  `g157` (head/target order settled, target plausibly = ܛܘܦܣܐ itself), `g151` (the ܙܠܙܠ guess now
+  looks genuinely likely, still short of certain), `g170` (head glyph-count corrected 5→3), `g138-1`,
+  `g138-3`, `g139`, `g141`, `g147`, `g190` — each narrowed in shape/structure, none written.
+- ⛔ **`g179-unread-p-piscinae` — confirmed as a genuine scan-resolution ceiling**, not a technique
+  problem: further zoom just enlarges the same blur on the middle 3-4 letters. Worth knowing before
+  spending more time on it — a higher-DPI source scan would be needed, not a better crop.
+
+⚠ **General finding: this leaf's archive.org scan is only ~1586px wide.** Several of the harder
+NOT READ spots hit that ceiling directly — extra digital zoom upsamples, it doesn't add real
+detail. Before re-attempting the remaining 15, check whether a higher-resolution source (a
+different archive.org derivative, or IIIF if this item exposes one) exists.
 
 ## Do not
 

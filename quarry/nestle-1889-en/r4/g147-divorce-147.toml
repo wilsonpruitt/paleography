@@ -15,7 +15,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ HEAD-WORD NOT READ. A five-letter ܕܘ- noun between ܕܟܪ and the ܕܟܠܬܐ cross-reference. The gloss is unambiguous; the lemma is not. Sent to the re-read list."
+uncertain_note = "⛔ HEAD-WORD STILL NOT READ after a 2026-09-01 high-zoom follow-up (Step-3). A five-letter ܕܘ- noun between ܕܟܪ and the ܕܟܠܬܐ cross-reference. The gloss is unambiguous; the lemma is not. High zoom confirms one letter — a closed circle (Waw) sitting on the baseline, the word's third glyph — but the flanking letters remain unresolved: a cluster of two adjoined vertical strokes each topped by a dot (possibly a two-letter ligature) opens the word, and a short vertical stroke with a dot and a curling foot closes it. One letter certain of five; not enough to write the lemma."
 
 [source]
 primer = "nestle-1889-en"

@@ -1,0 +1,350 @@
+# ⚠ RECOVERED 2026-09-02. This record was originally filed as `r3/c070-1.toml` and was
+# silently overwritten by the R3(a) Genesis run, because Nestle has TWO printed page-70s in
+# two different pagination sequences (grammar: leaf = page + 17; chrestomathy: leaf = page +
+# 89) and the naming convention (`cNNN-N` by printed page alone) did not disambiguate them.
+# Renamed to `c070g-1` ("g" = grammar pagination) to make the collision impossible to repeat.
+# Content is unchanged from the working record at the time of the collision, reconstructed
+# from the calibration commit (`git show 1dea774`) plus the completed alignment reported by
+# the agent that ran it (both preserved verbatim in the session that made this fix).
+#
+# ⛔ FILED UNDER R3, NOT R2 — and this is the batch's most consequential finding.
+# The runbook expected p. 70 to be Nestle's one composed exercise. It is not. The
+# "READING EXERCISE" is **the Lord's Prayer in the Peshitta** — a canonical passage, so it is
+# an R3 record that ALIGNS, not an R2 record that must be plate-read. Nestle 1889 contains
+# **no R2 material whatsoever**. See MAP.md.
+id = "nestle-1889-en/r3/c070g-1"
+record_type = "R3"
+
+work = "peshitta:matt:6:9-13"
+work_note = """
+Nestle's heading says 10-13; the text as printed BEGINS at ܐܰܒܽܘܢ ܕܒܰܫܡܰܝܳܐ, which is v. 9.
+The heading is off by one verse. Recorded as printed, cited as 6:9-13.
+"""
+
+layer = "vocalized Serto"
+diff_target = "THE NEW TESTAMENT IN SYRIAC, BFBS London 1905-1920 — archive.org `newtestamentinsy00unse`, title page verified at n6. PD. Critical edition behind it: Pusey & Gwilliam, Tetraeuangelium sanctum, Clarendon 1901 (`tetraeuangeliums00puseuoft`). See research/syriac-peshitta-editions.md"
+layer_source = "read from the plate"
+seyame = false
+punctuation = "as printed"
+
+text_syr_voc = """
+ܐܰܒܽܘܢ ܕܒܰܫܡܰܝܳܐ ܢܶܬܩܰܕܰܫ ܫܡܳܟ ܬܺܐܬܶܐ ܡܰܠܟܽܘܬܳܟ ܢܶܗܘܶܐ ܨܶܒܝܳܢܳܟ
+ܐܰܝܟܰܢܳܐ ܕܒܰܫܡܰܝܳܐ ܐܳܦ ܒܰܐܪܥܳܐ ܗܰܒ ܠܰܢ ܠܰܚܡܳܐ ܕܣܽܘܢܩܳܢܰܢ ܝܰܘܡܳܢܳܐ
+ܘܰܫܒܽܘܩ ܠܰܢ ܚܰܘܒܰܝܢ ܐܰܝܟܰܢܳܐ ܕܳܐܦ ܚܢܰܢ ܫܒܰܩܢ ܠܚܰܝܳܒܰܝܢ
+ܘܠܳܐ ܬܰܥܠܰܢ ܠܢܶܣܝܽܘܢܳܐ ܐܶܠܳܐ ܦܰܨܳܢ ܡܶܢ ܒܺܝܫܳܐ
+ܡܶܛܽܠ ܕܕܺܝܠܳܟ ܗܺܝ ܡܰܠܟܽܘܬܳܐ ܘܚܰܝܠܳܐ ܘܬܶܫܒܽܘܚܬܳܐ ܠܥܳܠܰܡ ܥܳܠܡܺܝܢ ܐܰܡܺܝܢ
+"""
+
+# ⭐ Nestle prints his own scientific transliteration under the passage, using Greek letters
+# for the spirantized bgadkpat (β ϑ χ φ δ). This is a PRONUNCIATION LAYER the pilot gets for
+# free and did not plan for — reading-first wants exactly this.
+transliteration_primer = """
+Aβūn deβašmáyå, neϑqáddaš šemåχ. tiϑē malkuϑåχ; nehveh ṣeβyånåχ, aikánnå deβašmáyå aφ b'ár‛å.
+háβ-lan láḥmå desunqu̇nan yaumånå; vašeβóq-lan ḥaubain aikánnå d'aφ ḥnan šeβaqn leḥayyåβain.
+velå ϑálan lenesyónå, éllå φáṣṣån men bíšå; meṭṭul dedílåχ-hī malkuϑå veḥáilå veϑešbóḥtå
+le‛ålam ‛ålemín, amén.
+"""
+transliteration_note = "Diacritic detail of the Greek-letter transliteration is approximate in this calibration pass; it is a second plate-read problem in its own right."
+
+primer_notes = """
+Followed on pp. 70-72 by 'AIDS TO TRANSLATION': a running, WORD-BY-WORD grammatical commentary
+keyed to this passage (e.g. ܐܰܒܽܘܢ § 32 — ܕܒܰܫܡܰܝܳܐ = ܕ § 22 + ܒ § 49 b + ܫܡܰܝܳܐ, 'heaven,
+which though always plural in form is also construed as singular (§ 28 c); st. abs. ܫܡܶܝܢ,
+cstr. ܫܡܰܝ' …), with § cross-references into Nestle's own grammar throughout.
+"""
+
+# ✅ SCHEMA GAP CLOSED — Wilson ruled 2026-09-01: a field on R3, not a record type R5.
+schema_gap = """RESOLVED. Kept below as the reasoning that produced the ruling.
+
+The Aids to Translation are a FIFTH shape the schema has no home for: a per-word note keyed to
+a position in a passage, carrying grammar cross-references. Dropped into primer_notes (as
+above) they become an unstructured blob and lose the per-word keying — which is precisely what
+the reading-first curriculum needs, since it is a ready-made gloss layer of exactly the kind
+the hand-trainer already ships per line. Proposal for SYRIAC-LANGUAGE-PILOT.md §4: R3 gains
+`word_notes = [{ index, form_voc, note, noldeke }]`, or a record type R5. Ruling owed BEFORE
+the run — it changes what the run extracts, not just how it files it.
+"""
+
+# ⭐ WORD NOTES — Wilson's ruling, 2026-09-01: the 'Aids to Translation' become a field on
+# R3 rather than a record type of their own. Read from the plates pp. 70-72 (n87-n89).
+# ⚠ `nestle_sections` and NOT `noldeke`: every § here is a section of NESTLE'S OWN grammar,
+# not Nöldeke's. The two namespaces must not be merged — §4 makes Nöldeke the shared
+# coordinate system precisely because each primer numbers itself differently.
+
+[[word_notes]]
+index = 1
+form_voc = "ܐܰܒܽܘܢ"
+note = "§ 32."
+nestle_sections = ["32"]
+noldeke = []
+
+[[word_notes]]
+index = 2
+form_voc = "ܕܒܰܫܡܰܝܳܐ"
+note = "= ܕ § 22 + ܒ § 49 b + ܫܡܰܝܳܐ, heaven, which though always plural in form is also construed as singular (§ 28 c); st. abs. ܫܡܶܝܢ, cstr. ܫܡܰܝ."
+nestle_sections = ["22", "49b", "28c"]
+noldeke = []
+
+[[word_notes]]
+index = 3
+form_voc = "ܢܶܬܩܰܕܰܫ"
+note = "3 m. sg. impf. Ethpaal from denominative verb ܩܰܕܶܫ (Pael); indicative and jussive are not distinguished."
+nestle_sections = []
+noldeke = []
+
+[[word_notes]]
+index = 4
+form_voc = "ܫܡܳܟ"
+note = "from ܫܡܳܐ name, with suff. 2 m. sg.; emph. ܫܡܳܐ, with suff. ܫܡܶܗ; in the plural, with inserted ܗ, ܫܡܳܗ̈ܶܐ, ܫܡܳܗ̈ܳܬܳܐ, cf. ܐܰܒܳܐ, ܐܰܒܳܗ̈ܶܐ § 32."
+nestle_sections = ["32"]
+noldeke = []
+
+[[word_notes]]
+index = 5
+form_voc = "ܬܺܐܬܶܐ"
+note = "E. Syr. (a second pointing), 3 f. sg. impf. Peal from ܐܶܬܳܐ come, § 48 d, 2."
+nestle_sections = ["48d2"]
+noldeke = []
+
+[[word_notes]]
+index = 6
+form_voc = "ܡܰܠܟܽܘܬܳܟ"
+note = "abstract feminine ܡܰܠܟܽܘܬ § 30 IV + suff. 2 sg. m.; note Q(ushshaya) of the ܟ as distinguished from Hebr. מַלְכוּת."
+nestle_sections = ["30IV"]
+noldeke = []
+
+[[word_notes]]
+index = 7
+form_voc = "ܢܶܗܘܶܐ"
+note = "3 m. sg. impf. of ܗܘܳܐ §§ 47, 48 b."
+nestle_sections = ["47", "48b"]
+noldeke = []
+
+[[word_notes]]
+index = 8
+form_voc = "ܨܶܒܝܳܢܳܟ"
+note = "m. subst. in -ܳܢ, -ܳܢܳܐ from ܨܒܳܐ wish, will, with suff., § 25, 4, b, 1."
+nestle_sections = ["25.4b1"]
+noldeke = []
+
+[[word_notes]]
+index = 9
+form_voc = "ܐܰܝܟܰܢܳܐ"
+note = "how? interrogative adverb used relatively with following ܕ, cf. §§ 21. 22."
+nestle_sections = ["21", "22"]
+noldeke = []
+
+[[word_notes]]
+index = 10
+form_voc = "ܐܳܦ"
+note = "also, cf. Hebr. and Aram. אַף."
+nestle_sections = []
+noldeke = []
+
+[[word_notes]]
+index = 11
+form_voc = "ܒܰܐܪܥܳܐ"
+note = "(E. Syr. a second pointing) = ܐܰܪܥܳܐ emph. from ܐܪܥ = Hebr. אֶרֶץ, Aram. אֲרַע, אַרְעָא, Arab. أرض (§ 14 a; 26 fem.) + prep. ܒ § 17 b 2."
+nestle_sections = ["14a", "26", "17b2"]
+noldeke = []
+
+[[word_notes]]
+index = 12
+form_voc = "ܗܰܒ"
+note = "§ 48 g 5."
+nestle_sections = ["48g5"]
+noldeke = []
+
+[[word_notes]]
+index = 13
+form_voc = "ܠܰܢ"
+note = "§ 49 b; in later Syriac written as one word ܗܰܒܠܰܢ."
+nestle_sections = ["49b"]
+noldeke = []
+
+[[word_notes]]
+index = 14
+form_voc = "ܠܰܚܡܳܐ"
+note = "st. emph. from abs. ܠܚܶܡ, H. לֶחֶם."
+nestle_sections = []
+noldeke = []
+
+[[word_notes]]
+index = 15
+form_voc = "ܕܣܽܘܢܩܳܢܰܢ"
+note = "= ܕ to express the genitive (§ 55 b) + ܣܽܘܢܩܳܢ, ܣܽܘܢܩܳܢܳܐ m. subst., need, necessity, from the stem ܣܢܰܩ need — of Peal only part. pass. in use — + suffix, which in such a combination is almost always appended to the second member, although belonging strictly to the first or to the whole expression (§ 51 c)."
+nestle_sections = ["55b", "51c"]
+noldeke = []
+
+[[word_notes]]
+index = 16
+form_voc = "ܝܰܘܡܳܢܳܐ"
+note = "adj. acc. to § 25, 4 b 1 from ܝܰܘܡ, ܝܰܘܡܳܐ § 29, I, e."
+nestle_sections = ["25.4b1", "29Ie"]
+noldeke = []
+
+[[word_notes]]
+index = 17
+form_voc = "ܘܰܫܒܽܘܩ"
+note = "imp. sg. m. of ܫܒܰܩ pardon; for ܘ v. § 6 c; 38 c, e; the prefixing of ܘ does not produce a firmly closed syllable, hence ܒ with R(ukkakha)."
+nestle_sections = ["6c", "38ce"]
+noldeke = []
+
+[[word_notes]]
+index = 18
+form_voc = "ܠܰܢ"
+note = "v. supra."
+nestle_sections = []
+noldeke = []
+
+[[word_notes]]
+index = 19
+form_voc = "ܚܰܘܒܰܝܢ"
+note = "our debts, from ܚܰܘܒܳܐ, st. cstr. and abs. ܚܰܘܒ § 30, I e, pl. ܚܰܘ̈ܒܶܐ, ܚܰܘ̈ܒܳܬܳܐ + suff. 1 p. pl.; ⭐ the E. Syrians write it otherwise, acc. to § 6 d 1, so ܝܰܘܡܳܢܳܐ above."
+nestle_sections = ["30Ie", "6d1"]
+noldeke = []
+
+[[word_notes]]
+index = 20
+form_voc = "ܐܰܝܟܰܢܳܐ ܕ"
+note = "and ܐܳܦ, v. sup."
+nestle_sections = []
+noldeke = []
+
+[[word_notes]]
+index = 21
+form_voc = "ܚܢܰܢ"
+note = "§ 19."
+nestle_sections = ["19"]
+noldeke = []
+
+[[word_notes]]
+index = 22
+form_voc = "ܫܒܰܩܢ"
+note = "shorter form of the 1 pl. perf., § 36 a."
+nestle_sections = ["36a"]
+noldeke = []
+
+[[word_notes]]
+index = 23
+form_voc = "ܠܚܰܝ̈ܳܒܰܝܢ"
+note = "our debtors; dative particle ܠ + plur. of intensive noun ܚܰܝܳܒ § 25, 3 a, from a root med. ܘ, the ܘ passing into ܝ § 46 b."
+nestle_sections = ["25.3a", "46b"]
+noldeke = []
+
+[[word_notes]]
+index = 24
+form_voc = "ܘܠܳܐ"
+note = "and not; ܠܳܐ = non and ne."
+nestle_sections = []
+noldeke = []
+
+[[word_notes]]
+index = 25
+form_voc = "ܬܰܥܠܰܢ"
+note = "lead us, 2 m. sg. impf. Aphel (ܐܰܥܶܠ) from the root ܥܠܠ with suff. of 1 per. pl., § 43. As in Hebr., the imper. cannot stand with the negation."
+nestle_sections = ["43"]
+noldeke = []
+
+[[word_notes]]
+index = 26
+form_voc = "ܠܢܶܣܝܽܘܢܳܐ"
+note = "prepos. ܠ, which also denotes motion and direction, + ܢܶܣܝܽܘܢܳܐ = H. נִסָּיוֹן § 25, 4 b, 1 note, from the root ܢܣܐ, only in Pael."
+nestle_sections = ["25.4b1"]
+noldeke = []
+
+[[word_notes]]
+index = 27
+form_voc = "ܐܶܠܳܐ"
+note = "but, doubtless contracted from ܐܶܢ if and ܠܳܐ not."
+nestle_sections = []
+noldeke = []
+
+[[word_notes]]
+index = 28
+form_voc = "ܦܰܨܳܢ"
+note = "deliver us, m. sg. imp. Pael of ܦܨܳܐ with suff. 1 p. pl., § 47."
+nestle_sections = ["47"]
+noldeke = []
+
+[[word_notes]]
+index = 29
+form_voc = "ܡܶܢ ܒܺܝܫܳܐ"
+note = "from the evil (one); preposition ܡܶܢ § 49 c; ܒܺܝܫܳܐ st. abs. msc. of ܒܺܝܫ (cf. Aram. בִּאֵשׁ); ⭐ if it were to be rendered 'from evil' (neutr.), we should expect ܒܺܝܫܬܳܐ (§ 26)."
+nestle_sections = ["49c", "26"]
+noldeke = []
+
+[[word_notes]]
+index = 30
+form_voc = "ܡܶܛܽܠ"
+note = "prep. (from a noun with ܠ, √ ܡܛܳܐ) on account of (§ 49 f); with a following ܕ it becomes a conjunction."
+nestle_sections = ["49f"]
+noldeke = []
+
+[[word_notes]]
+index = 31
+form_voc = "ܕܕܺܝܠܳܟ"
+note = "§ 23."
+nestle_sections = ["23"]
+noldeke = []
+
+[[word_notes]]
+index = 32
+form_voc = "ܗܺܝ"
+note = "the fem. pron. (§ 19), as copula more correctly written as enclitic ܗ̱ܝ."
+nestle_sections = ["19"]
+noldeke = []
+
+[[word_notes]]
+index = 33
+form_voc = "ܚܰܝܠܳܐ"
+note = "§ 28 b; 29, I, f."
+nestle_sections = ["28b", "29If"]
+noldeke = []
+
+[[word_notes]]
+index = 34
+form_voc = "ܬܶܫܒܽܘܚܬܳܐ"
+note = "(acc. to others with ܬ R(ukkakha)) § 30 A. 2, plur. ܬܶܫܒ̈ܚܳܬܳܐ, of Pael ܫܰܒܰܚ praise."
+nestle_sections = ["30A2"]
+noldeke = []
+
+[[word_notes]]
+index = 35
+form_voc = "ܠܥܳܠܰܡ"
+note = "st. constr., which still appears, especially in a connexion like the present (§ 29, II a)."
+nestle_sections = ["29IIa"]
+noldeke = []
+
+[[word_notes]]
+index = 36
+form_voc = "ܐܰܡܺܝܢ"
+note = "⭐ 'we prefer to derive [it] from the Gk. ἀμήν, rather than from the Hebr. אָמֵן, in spite of Jer. 28, 6.' — an etymological JUDGEMENT, not a fact: Nestle's own view, argued against a counter-example."
+nestle_sections = []
+noldeke = []
+
+[alignment]
+status = "keyed from Nestle; checked against BFBS 1905-1920 (`newtestamentinsy00unse`)"
+diff = """
+Leaf offset for the BFBS scan calibrated (not assumed): leaf = printed page + 11, fixed on
+four agreeing pages — n12 = p.1, Cap. i; n14 = p.3, head ܡܬܝ ܓ; n15 = p.4, rubric Cap. v.;
+n18 = p.7, head ܡܬܝ ܘ, carrying Matt 6:9-15.
+
+Consonantal agreement word-for-word across 6:9-13, with one divergence: Nestle prints the
+closing ܐܡܝܢ; the BFBS text ends at ܥܠܡܝܢ ܀ and goes straight to v.14 without it. (Nestle's own
+word_notes entry 36 above argues at length for the Greek derivation of this very word, so he
+held a settled view on it — the divergence reads as an edition difference, not a slip; kept as
+printed in text_syr_voc regardless.)
+
+⚠ Pointing was NOT compared mark-for-mark: Nestle prints this passage in vocalized Serto, the
+BFBS scan uses a different vowel system, and reconciling the two is a second plate-read
+problem in its own right, not attempted here.
+"""
+method = "Keyed from Nestle (itself a PD 1889 printed Peshitta); checked against the BFBS 1905-1920 scan, not shipped from it. See research/syriac-peshitta-editions.md."
+
+[source]
+primer = "nestle-1889-en"
+page = 70
+leaf = "n87"
+printed_heading = "READING EXERCISE. Matt. 6, 10—13."
+note = "Sits at the end of the GRAMMAR's pagination (leaf = page + 17), not the chrestomathy's."

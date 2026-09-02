@@ -14,7 +14,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ. A one-line cross-reference standing between ܡܽܘܚܳܐ 'marrow' and ܡܽܘܪܳܐ 'myrrh', so a ܡܘ- word by spelling. Skeleton at 3×: six glyphs, ܡ + circle + two small angular letters + ܬ + ܐ, referred to a three-glyph target. ܡܰܘܗܰܒܬܳܐ v. ܝܗܒ fits the glyph count but not the slot (ܡܘܗ sorts before ܡܘܚ); ܡܽܘܟܳܟܳܐ v. ܡܟܟ fits the slot but not the count. Neither written. Convention 5 — the record exists so the page's count stays honest and --unread can find it."
+uncertain_note = "⚠ TARGET now confidently read, HEAD still not, 2026-09-01 (Step-3 follow-up). A one-line cross-reference standing between ܡܽܘܚܳܐ 'marrow' and ܡܽܘܪܳܐ 'myrrh'. Both previously-considered candidates (ܡܰܘܗܰܒܬܳܐ v. ܝܗܒ, and ܡܽܘܟܳܟܳܐ v. ܡܟܟ) are superseded: high zoom, cross-checked letterform-by-letterform against the confirmed ḥet in the neighboring ܡܽܘܚܳܐ printed directly above, reads the 3-glyph TARGET (after 'v.') as ܚܘܐ (Ḥet–Waw–Alaph, ḥwā) — a genuine positive read, not a guess. The 6-glyph HEAD is not resolved: it ends in the same Alaph, contains at least one more Waw-loop and a Ḥet/Yod-like diagonal-dot stroke, consistent with a Mem-prefixed participial noun on the ḥwā/ḥwy root ('show, declare' — e.g. a pattern like m-ḥ-w-y-n-ʾ), but the ink is too crowded at that spot to certify a full letter sequence. Plausible root identified; exact head spelling still open."
 
 [source]
 primer = "nestle-1889-en"

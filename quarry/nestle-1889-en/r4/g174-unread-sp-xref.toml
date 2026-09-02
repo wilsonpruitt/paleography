@@ -14,7 +14,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ, after one 3× zoom. A one-line cross-reference standing between ܣܦܰܪ and ܣܳܩܽܘܪܳܐ, so its sort key falls between ܣܦܪ and ܣܩܪ. Skeletons: the head is about seven glyphs ending in ܠܳܐ; the target is three, hump + small letter + tall descender, which reads most naturally as ܣܟܠ — the root of p. 173's ܣܟܰܠ entry. But a ܣܟܠ word cannot sit in this slot, and no ܣܦ-/ܣܨ- word of seven letters fits the shapes, so the two halves contradict each other and neither was written. Convention 5, and convention 10: the doubt is recorded, not resolved."
+uncertain_note = "⛔ HEAD still NOT READ; ✅ the contradiction that blocked this record is RESOLVED 2026-09-01 (Step-3 follow-up). Originally: a one-line cross-reference between ܣܦܰܪ and ܣܳܩܽܘܪܳܐ, head ~7 glyphs ending ܠܳܐ, target 3 glyphs that first looked like ܣܟܠ (p. 173's root) — but ܣܟܠ cannot sit in this slot, so head and target contradicted each other and neither was written. A targeted high-zoom pass at ~12x now reads the target unambiguously as ܣܦܪ — NOT ܣܟܠ, a misreading at lower zoom — which means this line is a SELF-REFERENCE back to the ܣܦܪ root the entry itself sits inside (the root, glossed 'Schrift, Buch' etc., stands three lines above on the same half-page). That resolves the contradiction: shape, alphabetical logic and page context now all agree. The head (7 glyphs, ending in a lamadh-ascender + alaph peak — an abstract-noun pattern) is almost certainly a derived noun of that same root, plausibly 'authorship/scholarship', but its middle letters are not yet spelled with confidence, so per convention 5 the head stays unwritten. Only the head remains open."
 
 [source]
 primer = "nestle-1889-en"

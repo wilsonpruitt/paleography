@@ -14,7 +14,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ. A line carrying TWO cross-references (both a feminine noun in -ܬܐ and a second form, each with its own target), between ܐܪܥ and ܐܪܬܘܕܘܟܣܐ. Neither head-word resolved. Recorded to keep the page count honest."
+uncertain_note = "⛔ STILL NOT READ after a 2026-09-01 high-zoom follow-up (Step-3). A line carrying TWO cross-references (both a feminine noun in -ܬܐ and a second form, each with its own target), between ܐܪܥ and ܐܪܬܘܕܘܟܣܐ. The two-clause structure is now cleanly confirmed (semicolon-separated, first headword with vocalization dots + feminine -tā ending, matching short target; second headword sharing the same base minus the -tā ending, matching a near-identical target) — but neither headword maps to a specific lexeme with confidence. Structurally resolved, lexically not. Recorded to keep the page count honest."
 
 [source]
 primer = "nestle-1889-en"

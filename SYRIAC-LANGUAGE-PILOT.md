@@ -269,8 +269,8 @@ came out clean. ⛔ A blind control on a vocalized sample ([[reference_arabic-co
 owed before any of this text ships.
 
 ✅ **R3(a) part 2 — Chrestomathia II (Matthew 5, pp. 79–85, 7 records) + the Lord's Prayer
-alignment (p. 70) RAN 2026-09-01.** Records `r3/c079-1.toml` … `c085-1.toml`; `r3/c070-1.toml`'s
-`[alignment]` completed against the same BFBS control (leaf offset pinned: leaf = page + 11,
+alignment (p. 70) RAN 2026-09-01.** Records `r3/c079-1.toml` … `c085-1.toml`; the Lord's Prayer
+record's `[alignment]` completed against the same BFBS control (leaf offset pinned: leaf = page + 11,
 `research/syriac-peshitta-editions.md`). **R3(a) is now fully done — 22 of 22 pages.**
 · ⭐ **Chrest. II is unvocalized Estrangela throughout, not alternating** — the opposite pole
   from Chrest. I. So Genesis and Matthew together give the layer table both poles cleanly.
@@ -416,8 +416,21 @@ Named because each has already cost a session somewhere in this house:
   "which model, and go?" stop to Wilson before dispatch.
 - **Phase 2 — frequency spine (Sonnet):** licence-gated computation over the digital
   Peshitta; a script, not a judgment.
-- **Phase 3 — ten lessons + lesson-1 test (Fable, short):** the sequencing is the
-  judgment-dense step and ends with Wilson as learner #1.
+- ✅ **Phase 3 — ten lessons drafted 2026-09-02 (Fable).** Score → `SYRIAC-LESSON-PLAN.md`;
+  worked lesson 1 (Gen 1:1–5, the scored winner) → `LESSON-1.md`. G2 now waits on one thing
+  only: **Wilson runs lesson 1.** Built entirely from the 20 checked pages; Serto-printed
+  passages are re-rendered per §3's script ruling (flagged, not silent).
+  ⛔ Found in passing, and FIXED the same session: the Lord's Prayer record had been CLOBBERED
+  by a page-70 filename collision (grammar p. 70 vs chrestomathy p. 70 → both `r3/c070-1.toml`;
+  the R3 shard's Genesis record silently overwrote the earlier Lord's Prayer record). ✅
+  **Restored 2026-09-02 as `r3/c070g-1.toml`** ("g" = grammar pagination, collision-proof).
+  Recovery was better than the Fable agent's own worry: it only had `git show 1dea774`, which
+  predates the working record's later state — the FULL record, including all 36 structured
+  `word_notes` and the completed BFBS `[alignment]` diff, was still in this session's own
+  transcript (it had been read in full before the collision occurred) and is what got restored,
+  not the bare calibration stub. Nothing about the Lord's Prayer content was actually lost.
+  All stale pointers (`r2/README.md`, `GLOSSARY-SHARD.md`, `research/syriac-pilot-phase1-
+  calibration.md`, `SYRIAC-LESSON-PLAN.md`) updated to `c070g-1.toml` in the same pass.
 
 No repo decision needed yet: pilot records live under `~/paleography` beside the registry
 (the twin paths share machinery); if the language side outgrows the repo, splitting is a

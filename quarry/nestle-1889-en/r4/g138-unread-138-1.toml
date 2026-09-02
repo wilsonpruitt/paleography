@@ -14,7 +14,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ. A short cross-reference line between ܐܦܩܪܣܐ and ܐܪܙ; four letters, and neither the head-word nor its target resolved at this scale. Recorded so the page's entry count stays honest — see [[feedback_empty-grep-is-not-absence]]. Re-read at higher magnification before this page is signed off."
+uncertain_note = "⛔ STILL NOT READ after a 2026-09-01 high-zoom follow-up (Step-3). A short cross-reference line between ܐܦܩܪܣܐ and ܐܪܙ; four letters, and neither the head-word nor its target resolved at this scale. Structure now clearer: head-word's rightmost glyph is a diacritic-topped vertical stroke joined to a wide open hook/loop dipping below the baseline (waw- or sadhe-like), possibly repeated once more before 'v.'; target after 'v.' is a single similar hook with one dot beneath. The base scan (~1586px page width) appears to be the actual ceiling here, not the zoom technique — sadhe/waw/resh are not separable at this hand's size on this scan. Recorded so the page's entry count stays honest — see [[feedback_empty-grep-is-not-absence]]."
 
 [source]
 primer = "nestle-1889-en"

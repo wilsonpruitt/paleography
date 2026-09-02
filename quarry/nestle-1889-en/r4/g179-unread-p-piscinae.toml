@@ -15,7 +15,7 @@ noldeke = []
 layer = "vocalized Serto"
 latin = "piscinae"
 uncertain = true
-uncertain_note = "⛔ NOT READ, after one 3× zoom, and unusual in that the GLOSS is certain and the head-word is not: the entry reads '[…] piscinae.', one Latin word, plural, and nothing else. Skeleton at 3×: eight or nine glyphs beginning ܦ + ܘ + a semkath-hump and ending in a final descender. A consonant-by-consonant transcription was drafted and discarded — the middle three letters are not separable at this resolution, and a lexicon entry with a wrong string in it is worse than an empty one. Convention 5."
+uncertain_note = "⛔ STILL NOT READ after aggressive re-zoom (~18-24x effective), 2026-09-01 (Step-3 follow-up) — confirmed as a genuine scan-resolution ceiling, not a technique limit. The entry reads '[…] piscinae.', one Latin word, plural, and nothing else. Confirmed further than before: the word begins with a peh-shaped loop+vowel-tick, has a lamadh-alaph '-lā-' ligature somewhere mid-word, and ends in a double-hump (shin- or mem-like) letter with a hooked tail. The middle 3-4 letters stay genuinely blurred — further digital zoom just enlarges the same blur without resolving new edges. Convention 5: not written."
 
 [source]
 primer = "nestle-1889-en"

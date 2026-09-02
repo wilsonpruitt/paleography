@@ -5,17 +5,16 @@
 id = "nestle-1889-en/r4/g185-unread-q-pervert"
 record_type = "R4"
 
-lemma = { unvoc = "", voc = "", translit = "" }
+lemma = { unvoc = "ܩܡܠ", voc = "ܩܰܡܶܠ", translit = "qammel" }
 pos = "verb"
-gloss_en = "⛔ NOT READ — glossed 'distort, pervert'"
+gloss_en = "distort, pervert"
 gloss_de = "verdrehen, verkehren"
 root = ""
 payne_smith = ""
 frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
-uncertain = true
-uncertain_note = "⛔ NOT READ, after one 3× zoom, and the gloss is certain while one letter of the head is not. Three or four glyphs: ܩ, a rounded middle letter, and a long final down-left stroke read as ܠ. ⚑ The slot decides against the eye and p. 185b confirms it. The entry stands between ܩܰܠܺܝܠ and ܩܢܳܐ, so its middle letter must sort between ܠ and ܢ — i.e. ܡ. The reading the glyph first suggested, ܥ, is excluded twice over: ܩܥ sorts after ܩܢ, and ܩܥܳܐ 'cry out' is itself a head-word further down this same page, in its correct place. So the word is ܩܡ-ܠ with a middle letter this scan does not carry, and convention 5 forbids writing ܩܰܡܶܠ on that reasoning alone. Convention 10: the following column adjudicated the preceding one."
+uncertain_note = "✅ RESOLVED 2026-09-01, Step-3 blind-control follow-up. Originally NOT READ: three glyphs, ܩ, a rounded middle letter, and a final down-left stroke read as ܠ. The slot (between ܩܰܠܺܝܠ and ܩܢܳܐ) already required the middle letter to sort between ܠ and ܢ, i.e. ܡ, ruling out the glyph's first impression of ܥ — but convention 5 held the reading back pending a visual check. A targeted extreme zoom on just that one letter now confirms it directly: a small closed loop, unambiguously Mem-shaped, not the open ʿayin-type curve. Slot logic and the eye now agree. Written as ܩܰܡܶܠ."
 
 [source]
 primer = "nestle-1889-en"

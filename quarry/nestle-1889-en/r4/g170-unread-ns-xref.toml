@@ -14,7 +14,7 @@ frequency_rank = ""
 noldeke = []
 layer = "vocalized Serto"
 uncertain = true
-uncertain_note = "⛔ NOT READ, after one 3× zoom. A one-line cross-reference standing between ܢܣܺܝܟ and ܢܣܰܪ, so a ܢܣ- word by spelling. Skeletons: the head is five glyphs, hook + semkath-shape + loop + semkath-shape + hook-tail; the target is four, semkath-shape + loop + tall stroke + hook-tail. No candidate fits both the slot and the shapes; none was written. Convention 5."
+uncertain_note = "⚠ HEAD glyph-count CORRECTED, still not identified; target unchanged, 2026-09-01 (Step-3 follow-up). A one-line cross-reference standing between ܢܣܺܝܟ and ܢܣܰܪ. High zoom revises the head from the original 5-glyph read down to only 3 visible glyph-clusters — a small hook/tick (Nun), a double-bump loop (Samekh), and a wide flat final hook — i.e. structurally ܢܣ- plus one final letter, consistent with an 'ns-' variant near ܢܣܰܒ 'take' (a full entry a few lines further down this same page). The 4-glyph target is confirmed in shape (Samekh-like double-loop, diagonal stroke-with-dot, open Waw-circle, final hook-with-tail) but the loop-type letters (mem/nun/pe/samekh) remain genuinely ambiguous at this scan's native resolution — a source-resolution ceiling, not a technique problem. Neither word written."
 
 [source]
 primer = "nestle-1889-en"
