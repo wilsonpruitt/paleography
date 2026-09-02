@@ -207,7 +207,21 @@ Full write-up, corrected page numbers, and the method are the **last section of
 "payne-smith-1903"`, `fills_gap_for`) is the runbook's **proposed** extension — unopposed but
 never actually blessed by Wilson. Worth a one-word ruling before anything else lands under it.
 
-## ⭐ THE IMMEDIATE NEXT TASK — write Lessons 2–10 out as documents
+## ⭐ THE IMMEDIATE NEXT TASK — the web build, per `SYRIAC-WEB-PLAN.md`
+
+✅ **Lessons 2–10 WRITTEN 2026-09-02** (commit `42c6e14`, Opus-tier fork, all Syriac verbatim from
+the R3 records; two source flags carried forward unresolved — c068-1's v.11 conjunction in L2,
+c080-1's v.14 word order in L10). The course is complete on paper: `LESSON-0.md` … `LESSON-10.md`.
+
+**Now: `SYRIAC-WEB-PLAN.md`** (Fable, 2026-09-02) — the score for **syriac.paleography.app**:
+book + drill generated from one source, three surfaces (learner `/N`, scholar `/about` `/sources`
+`/for-syriacists`, everyone `/`), First Light's engine split from its Lesson-0/1 data and made
+per-lesson config, drill sidecars extracted from the `.md` with a verbatim `--check`, R1/R3/R4
+records rendered as pages so a Syriacist can click through to the plate reading. **Phases A–E
+in §5; ⛔ seven rulings in §7 wanted from Wilson before Phase A starts.** The held Syriacist
+outreach (item 2 below) is gated on this build existing.
+
+## ✅ DONE — write Lessons 2–10 out as documents (history)
 
 Everything upstream is now in place. `SYRIAC-LESSON-PLAN.md` has all ten lessons scored;
 `LESSON-0.md` and `LESSON-1.md` are fully worked and G2-passed; R3 has 20 solid keyed pages;
