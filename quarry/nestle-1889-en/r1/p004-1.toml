@@ -1,0 +1,221 @@
+# R1, alphabet table — extracted 2026-09-02, on demand for SYRIAC-LESSON-PLAN.md's Lesson 0
+# (Wilson's own request, after running Lesson 1: "more on the alphabet itself and decoding").
+# This is exactly the lesson-driven R1 pull §7a reasoned toward — extract the cells a chosen
+# lesson actually needs, not the whole R1 body blind. Read from the plate at leaf n21 (p.4)
+# and n22 (p.5, the accompanying "3. VOWEL-SCHEME" prose that names the three hands).
+id = "nestle-1889-en/r1/p004-1"
+record_type = "R1"
+
+lexeme = "alphabet"
+category = "alphabet table"
+kind = "reference-table"   # same qualifier pattern as p132's "lexical-table" — not a verb/noun paradigm
+
+table_note = """
+Nestle's own table, "2. ALPHABET" (p.4), columns: Name (his transliteration) · Form, not
+joined · Form joined (to letter preceding / to preceding and following / to letter following)
+· Value (phonetic, numerical). Each "Form" cell prints TWO glyphs side by side — read as two
+different Syriac hands shown for comparison, per Nestle's own enumeration one page later
+(p.5, "3. VOWEL-SCHEME": "1) the oldest Majuscle, known as Estrangelo... 2) A smaller
+character, Semiminuscle, adopted by the Jacobites" = Serto). Column order therefore read as
+LEFT = Estrangelo, RIGHT = Serto, matching that enumeration — flagged `uncertain` below since
+the plate carries no printed caption naming which column is which; the lesson content built
+from this record uses standard Unicode Estrangela shaping rather than replicating Nestle's
+1889 letterforms pixel-for-pixel, so this ambiguity does not propagate into the lesson.
+"""
+uncertain = true
+uncertain_note = "Which printed column is Estrangelo vs Serto is inferred from p.5's prose order, not from a caption on the table itself."
+
+# Independent cross-check, worth recording: the 8 letters whose 'joined to preceding a.
+# following' and 'joined to letter following' columns print '—' (i.e. they never join
+# forward) are Ålaf, Dålath, He, Vav, Zain, Såde, Rīsh, Tau — EXACTLY the set already named in
+# the hand-trainer's own orientation prose (registry/languages/syriac.toml `orient`: "ܐ ܕ ܗ ܘ
+# ܙ ܨ ܪ ܬ"). Two independent sources for one project fact now agree.
+non_joining_letters = ["alaph", "dalath", "he", "waw", "zain", "sadhe", "rish", "taw"]
+
+[[cells]]
+gram_tags = ["letter", "1"]
+lexeme_syr = "ܐ"
+name = "Ålaf"
+phonetic = "' (spiritus lenis — a light catch in the throat, like the gap in English \"uh-oh\")"
+numerical_value = 1
+joins_to_following = false
+
+[[cells]]
+gram_tags = ["letter", "2"]
+lexeme_syr = "ܒ"
+name = "Bēth"
+phonetic = "b, β (a soft v/bh when not doubled or after a consonant)"
+numerical_value = 2
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "3"]
+lexeme_syr = "ܓ"
+name = "Gåmal"
+phonetic = "g, γ (a soft gh between vowels)"
+numerical_value = 3
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "4"]
+lexeme_syr = "ܕ"
+name = "Dålath"
+phonetic = "d, δ (a soft th-in-\"the\" between vowels)"
+numerical_value = 4
+joins_to_following = false
+confusable_with = "rish — same base hook shape, dot BELOW for dalath, dot ABOVE for rish"
+
+[[cells]]
+gram_tags = ["letter", "5"]
+lexeme_syr = "ܗ"
+name = "He"
+phonetic = "h"
+numerical_value = 5
+joins_to_following = false
+
+[[cells]]
+gram_tags = ["letter", "6"]
+lexeme_syr = "ܘ"
+name = "Vav"
+phonetic = "v, w"
+numerical_value = 6
+joins_to_following = false
+
+[[cells]]
+gram_tags = ["letter", "7"]
+lexeme_syr = "ܙ"
+name = "Zain"
+phonetic = "z, as in \"zero\""
+numerical_value = 7
+joins_to_following = false
+
+[[cells]]
+gram_tags = ["letter", "8"]
+lexeme_syr = "ܚ"
+name = "Cheth"
+phonetic = "ḥ, a hard breathy h from the back of the throat (no English equivalent; close to Scottish \"loch\")"
+numerical_value = 8
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "9"]
+lexeme_syr = "ܛ"
+name = "Teth"
+phonetic = "ṭ, an emphatic/heavier t"
+numerical_value = 9
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "10"]
+lexeme_syr = "ܝ"
+name = "Yud"
+phonetic = "y"
+numerical_value = 10
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "20"]
+lexeme_syr = "ܟ"
+name = "Kåf"
+phonetic = "k, χ (a soft kh between vowels)"
+numerical_value = 20
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "30"]
+lexeme_syr = "ܠ"
+name = "Låmadh"
+phonetic = "l"
+numerical_value = 30
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "40"]
+lexeme_syr = "ܡ"
+name = "Mīm"
+phonetic = "m"
+numerical_value = 40
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "50"]
+lexeme_syr = "ܢ"
+name = "Nūn"
+phonetic = "n"
+numerical_value = 50
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "60"]
+lexeme_syr = "ܣ"
+name = "Semkath"
+phonetic = "s"
+numerical_value = 60
+joins_to_following = true
+note = "Has a rare distinct FINAL form (Unicode U+0724) — MAP.md's hand-trainer note records it appearing exactly once in that bank; not drilled in Lesson 0."
+
+[[cells]]
+gram_tags = ["letter", "70"]
+lexeme_syr = "ܥ"
+name = "'E"
+phonetic = "ʿ, a guttural sound made by constricting the throat (no English equivalent — like Hebrew ayin/Arabic ʿayn)"
+numerical_value = 70
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "80"]
+lexeme_syr = "ܦ"
+name = "Pē"
+phonetic = "p, f"
+numerical_value = 80
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "90"]
+lexeme_syr = "ܨ"
+name = "Såde"
+phonetic = "ṣ, an emphatic/heavier s"
+numerical_value = 90
+joins_to_following = false
+
+[[cells]]
+gram_tags = ["letter", "100"]
+lexeme_syr = "ܩ"
+name = "Qūf"
+phonetic = "q, a k made further back in the throat"
+numerical_value = 100
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "200"]
+lexeme_syr = "ܪ"
+name = "Rīsh"
+phonetic = "r"
+numerical_value = 200
+joins_to_following = false
+confusable_with = "dalath — see above"
+
+[[cells]]
+gram_tags = ["letter", "300"]
+lexeme_syr = "ܫ"
+name = "Shīn"
+phonetic = "sh, š"
+numerical_value = 300
+joins_to_following = true
+
+[[cells]]
+gram_tags = ["letter", "400"]
+lexeme_syr = "ܬ"
+name = "Tau"
+phonetic = "t, θ (a soft th-in-\"thin\" between vowels)"
+numerical_value = 400
+joins_to_following = false
+
+noldeke = ["§1", "§2"]
+
+[source]
+primer = "nestle-1889-en"
+page = 4
+leaf = "n21"
+printed_heading = "2. ALPHABET."
+note = "Companion prose on the three Syriac hands (Estrangelo/Serto/Malkite) is p.5, '3. VOWEL-SCHEME', leaf n22, not separately recorded — it is background, not a table cell."

@@ -417,9 +417,19 @@ Named because each has already cost a session somewhere in this house:
 - **Phase 2 — frequency spine (Sonnet):** licence-gated computation over the digital
   Peshitta; a script, not a judgment.
 - ✅ **Phase 3 — ten lessons drafted 2026-09-02 (Fable).** Score → `SYRIAC-LESSON-PLAN.md`;
-  worked lesson 1 (Gen 1:1–5, the scored winner) → `LESSON-1.md`. G2 now waits on one thing
-  only: **Wilson runs lesson 1.** Built entirely from the 20 checked pages; Serto-printed
-  passages are re-rendered per §3's script ruling (flagged, not silent).
+  worked lesson 1 (Gen 1:1–5, the scored winner) → `LESSON-1.md`. Built entirely from the 20
+  checked pages; Serto-printed passages are re-rendered per §3's script ruling (flagged, not
+  silent).
+  ⭐ **First real G2 feedback landed the same day.** Wilson read Lesson 1 and reported a design
+  gap: it asked him to decode shapes and read for meaning simultaneously, with no prior pass
+  on the alphabet itself. Per §7's own G2 rule ("if it is beyond him, revise the ramp, not the
+  learner"), this is a defect report against the score, and it's now fixed: **Lesson 0**
+  (`LESSON-0.md`) precedes Lesson 1 — pure letter-shape recognition, the 22 names and sounds,
+  the eight non-joining letters and the mid-word-gap trap, decoding drills built from
+  invented/meaningless letter-strings only, no vocabulary or grammar anywhere in it. Its
+  content is Nestle's own alphabet table (p.4), extracted on demand as `r1/p004-1.toml` — the
+  first genuinely lesson-driven R1 pull, exactly as §7a reasoned R1 extraction should work.
+  G2 now waits on one thing only: **Wilson runs Lesson 0, then Lesson 1.**
   ⛔ Found in passing, and FIXED the same session: the Lord's Prayer record had been CLOBBERED
   by a page-70 filename collision (grammar p. 70 vs chrestomathy p. 70 → both `r3/c070-1.toml`;
   the R3 shard's Genesis record silently overwrote the earlier Lord's Prayer record). ✅

@@ -92,11 +92,35 @@ novelty — a known lemma with a new suffix counts as "new" — so treat as an u
 pronominal suffixes — which is exactly what those lessons teach. L7 is the genuinely
 heaviest lesson and says so in its own header; its stages split into two sittings.)
 
-## 2. The ten lessons
+## 2. Lesson 0, then the ten lessons
 
-Stage vocabulary below follows §6's ramp: **0** orientation · **1** read-along, full gloss ·
-**2** one-word cloze IN the text · **3** finish-the-line · **4** whole line unaided (then the
-same line as ink on the `/syriac` hand track, when the bank has a witness).
+⭐ **Lesson 0 added 2026-09-02, on Wilson's own report after running Lesson 1** — the first
+G2 feedback the pilot has actually received, and it's a real design defect against this
+score, not against him: Lesson 1 asked him to decode AND read-for-meaning at once, with no
+prior pass on the shapes themselves. §6's ramp already has a "stage 0 orientation" *inside*
+each lesson, but nothing upstream of Lesson 1 taught the alphabet as pure shape-recognition.
+**Lesson 0 — `LESSON-0.md` — fixes this**: all 22 letters named and sounded (Nestle's own
+table, p.4, newly extracted as `r1/p004-1.toml` — see §0a below), the eight non-joining
+letters and the mid-word-gap trap, and decoding drills built from **invented, meaningless
+letter-strings only** — no vocabulary, no grammar, nothing to guess from context, exactly
+Wilson's own spec. It is deliberately NOT part of the scored ten: it teaches no lemma, no
+form, no passage, so it sits outside §6's coverage/new-form scoring entirely and simply runs
+first. Stage vocabulary below (for lessons 1–10) follows §6's ramp: **0** orientation ·
+**1** read-along, full gloss · **2** one-word cloze IN the text · **3** finish-the-line ·
+**4** whole line unaided (then the same line as ink on the `/syriac` hand track, when the
+bank has a witness).
+
+### 0a. Where Lesson 0's content came from
+
+`r1/p004-1.toml`, extracted on demand from the plate (leaf n21, p.4 — Nestle's "2. ALPHABET"
+table) rather than assembled from memory, per this project's own rule against guessing at
+Syriac fact. Worth noting: the table's 8 non-joining letters (Ålaf, Dålath, He, Vav, Zain,
+Såde, Rīsh, Tau) came out identical, independently, to the set already named in the
+hand-trainer's `registry/languages/syriac.toml` orientation prose — two different sources,
+same fact, no coordination between them. One thing in the plate is flagged `uncertain`: which
+of the table's two printed forms-per-cell is Estrangelo vs. Serto (inferred from the ordering
+of p.5's prose, not a caption on the table itself) — doesn't affect Lesson 0, which renders
+letters via standard Unicode Estrangela shaping rather than Nestle's own 1889 glyphs.
 
 ---
 
