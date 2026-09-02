@@ -1,0 +1,714 @@
+<!-- Drill engine, lifted from the "First Light" private Claude Artifact (2026-09-02),
+     G2-passed by Wilson running Lesson 0 and Lesson 1 end to end. Generalized per
+     SYRIAC-WEB-PLAN.md §3/§5 Phase B: reads its TRACKS+ITEMS from /drill/<lesson>.json
+     (already derived at build time by learn/tools/make_drill.py) instead of hardcoded
+     constants, adds the `forms`/`drills` phase types, persists to localStorage, and gives
+     the scorecard a copy-to-clipboard button and a data-driven manual-report block instead
+     of Lesson 1's hardcoded one. The five original phase-type renderers (study, translit,
+     mc, fillin, produce) and the interaction flow (shuffle, progress dots, phasebar,
+     again/continue) are UNCHANGED from the artifact -- this is a data-plumbing pass, not a
+     redesign; Wilson already G2-passed the UX. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Sans+Syriac:wght@400;500;600&display=swap">
+<style>
+#drill-root{
+  --paper:#ECE7DC; --paper-raised:#F8F5EC; --paper-line:#D9D2C2;
+  --ink:#211D18; --ink-soft:#5B5346; --ink-faint:#8C8272;
+  --rubric:#A32C22; --rubric-soft:#C65A45;
+  --verdigris:#3F7368; --verdigris-soft:#5B9186;
+  --focus:#2F6F63;
+  --shadow: 0 1px 2px rgba(33,29,24,.06), 0 8px 20px -12px rgba(33,29,24,.18);
+  font-family:'Source Sans 3',system-ui,sans-serif; line-height:1.5; color:var(--ink);
+  background:var(--paper); border-radius:14px; margin:28px 0; padding:0 0 1px;
+  border:1px solid var(--paper-line);
+}
+@media (prefers-color-scheme: dark){
+  #drill-root:not([data-theme="light"]){
+    --paper:#17140F; --paper-raised:#211D18; --paper-line:#3A342A;
+    --ink:#EDE7DA; --ink-soft:#B8AF9E; --ink-faint:#786F5E;
+    --rubric:#E06A54; --rubric-soft:#C65A45;
+    --verdigris:#6FA695; --verdigris-soft:#5B9186;
+    --focus:#6FA695;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 28px -14px rgba(0,0,0,.6);
+  }
+}
+#drill-root[data-theme="dark"]{
+  --paper:#17140F; --paper-raised:#211D18; --paper-line:#3A342A;
+  --ink:#EDE7DA; --ink-soft:#B8AF9E; --ink-faint:#786F5E;
+  --rubric:#E06A54; --rubric-soft:#C65A45;
+  --verdigris:#6FA695; --verdigris-soft:#5B9186;
+  --focus:#6FA695;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 28px -14px rgba(0,0,0,.6);
+}
+#drill-root *{box-sizing:border-box;}
+#drill-root h1,#drill-root h2,#drill-root h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0;}
+#drill-root .syriac{font-family:'Noto Sans Syriac','Noto Sans',sans-serif; direction:rtl; unicode-bidi:isolate;}
+#drill-root a{color:var(--verdigris);}
+#drill-root button{font:inherit; cursor:pointer;}
+#drill-root :focus-visible{outline:2px solid var(--focus); outline-offset:2px;}
+#drill-root .dwrap{padding:0 20px 28px;}
+#drill-root header.dtop{position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(6px); border-bottom:1px solid var(--paper-line); border-radius:14px 14px 0 0;}
+#drill-root .dtop-inner{padding:16px 20px 12px; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+#drill-root .dbrand h1{font-size:1.25rem; font-weight:700;}
+#drill-root .dscorechip{font-variant-numeric:tabular-nums; background:var(--paper-raised); border:1px solid var(--paper-line); border-radius:999px; padding:6px 14px; font-size:.85rem; color:var(--ink-soft); white-space:nowrap;}
+#drill-root .dscorechip b{color:var(--ink); font-weight:600;}
+#drill-root nav.dtabs{padding:0 20px; display:flex; gap:4px; overflow-x:auto; scrollbar-width:none; border-bottom:1px solid var(--paper-line);}
+#drill-root nav.dtabs::-webkit-scrollbar{display:none;}
+#drill-root .dtab{flex:0 0 auto; background:none; border:none; border-bottom:2px solid transparent; color:var(--ink-soft); font-size:.86rem; font-weight:600; padding:10px 12px; white-space:nowrap;}
+#drill-root .dtab[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--rubric);}
+#drill-root section.dpanel{display:none; padding-top:24px;}
+#drill-root section.dpanel.active{display:block;}
+#drill-root .dpanel-head{margin-bottom:16px;}
+#drill-root .dpanel-head h2{font-size:1.2rem;}
+#drill-root .phasebar{display:flex; gap:6px; margin-bottom:18px; flex-wrap:wrap;}
+#drill-root .phasepill{font-size:.78rem; font-weight:600; padding:5px 12px; border-radius:999px; border:1px solid var(--paper-line); background:var(--paper-raised); color:var(--ink-soft);}
+#drill-root .phasepill.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+#drill-root .progress{display:flex; gap:5px; margin:0 0 20px; flex-wrap:wrap;}
+#drill-root .dot{width:9px; height:9px; border-radius:50%; background:var(--paper-line); flex:0 0 auto;}
+#drill-root .dot.current{background:var(--ink-faint);}
+#drill-root .dot.seen{background:var(--paper-line); box-shadow:inset 0 0 0 1.5px var(--ink-faint);}
+#drill-root .dot.right{background:var(--verdigris);}
+#drill-root .dot.wrong{background:var(--rubric);}
+#drill-root .a-name{font-size:1.4rem; text-align:center; font-family:'Fraunces',serif; font-weight:600; margin-bottom:6px;}
+#drill-root .study-tag{text-align:center; text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--verdigris); font-weight:600; margin-bottom:10px;}
+#drill-root .card-row{display:flex; gap:16px; align-items:flex-start;}
+#drill-root .card-row .card{flex:1; min-width:0;}
+#drill-root .card{background:var(--paper-raised); border:1px solid var(--paper-line); border-radius:14px; padding:28px 24px; box-shadow:var(--shadow);}
+#drill-root .breakdown{flex:0 0 168px; background:var(--paper-raised); border:1px solid var(--paper-line); border-radius:14px; padding:16px; box-shadow:var(--shadow);}
+#drill-root .breakdown-label{text-transform:uppercase; letter-spacing:.08em; font-size:.68rem; color:var(--ink-faint); font-weight:600; margin-bottom:10px;}
+#drill-root .breakdown-row{display:flex; align-items:center; gap:10px; padding:6px 0; border-bottom:1px solid var(--paper-line);}
+#drill-root .breakdown-row:last-child{border-bottom:none;}
+#drill-root .breakdown-ch{font-family:'Noto Sans Syriac','Noto Sans',sans-serif; font-size:1.4rem; direction:rtl;}
+#drill-root .breakdown-name{font-family:'Fraunces',serif; font-weight:600; font-size:.88rem;}
+@media (max-width:640px){#drill-root .card-row{flex-direction:column;} #drill-root .breakdown{flex:1 1 auto; width:100%;}}
+#drill-root .card .context{color:var(--ink-soft); font-size:.85rem; margin-bottom:14px;}
+#drill-root .card .prompt{font-size:1.9rem; line-height:1.7; text-align:center; margin:8px 0 6px;}
+#drill-root .card .prompt.textprompt{font-size:1.1rem; font-family:'Source Sans 3',sans-serif; font-style:normal; line-height:1.5;}
+#drill-root .gap{color:var(--rubric); font-weight:700;}
+#drill-root .blank{display:inline-block; width:2.6em; height:.14em; margin:0 .2em; background:var(--rubric); vertical-align:.45em; border-radius:2px;}
+#drill-root .answer-zone{margin-top:22px;}
+#drill-root .answer{display:none; margin-top:6px; padding-top:18px; border-top:1px dashed var(--paper-line);}
+#drill-root .answer.shown{display:block;}
+#drill-root .answer .a-label{text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--ink-faint); font-weight:600; margin-bottom:8px;}
+#drill-root .answer .a-syriac{font-size:1.6rem; text-align:center; margin-bottom:8px;}
+#drill-root .answer .a-note{color:var(--ink-soft); font-size:.92rem; text-align:center;}
+#drill-root .given-chip{display:flex; align-items:center; justify-content:center; gap:6px; background:var(--paper); border:1px solid var(--paper-line); border-radius:8px; padding:8px 14px; font-size:.85rem; color:var(--ink-soft); margin:0 auto 14px; width:fit-content;}
+#drill-root .given-chip b{color:var(--ink); font-family:'Fraunces',serif; font-size:1.05rem;}
+#drill-root .ask-label{text-align:center; color:var(--ink-soft); font-size:.88rem; margin-bottom:14px;}
+#drill-root .mc-note{text-align:center; color:var(--ink-soft); font-size:.88rem; margin:14px 0;}
+#drill-root .mc-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px;}
+@media (max-width:480px){#drill-root .mc-grid{grid-template-columns:1fr;}}
+#drill-root .mc-btn{border-radius:10px; border:1px solid var(--paper-line); background:var(--paper); color:var(--ink); padding:14px 16px; font-size:1rem; text-align:center;}
+#drill-root .mc-btn.syropt{font-family:'Noto Sans Syriac',sans-serif; font-size:1.25rem; direction:rtl;}
+#drill-root .mc-btn:hover:not([disabled]){border-color:var(--ink-faint);}
+#drill-root .mc-btn.correct{background:var(--verdigris); color:var(--paper-raised); border-color:var(--verdigris);}
+#drill-root .mc-btn.incorrect{background:var(--rubric); color:var(--paper-raised); border-color:var(--rubric);}
+#drill-root .mc-btn.reveal-correct{border-color:var(--verdigris); box-shadow:inset 0 0 0 2px var(--verdigris);}
+#drill-root .mc-btn[disabled]{cursor:default;}
+#drill-root .btnrow{display:flex; gap:10px; justify-content:center; margin-top:22px; flex-wrap:wrap;}
+#drill-root .btn{border-radius:9px; padding:10px 18px; font-size:.9rem; font-weight:600; border:1px solid var(--paper-line); background:var(--paper); color:var(--ink);}
+#drill-root .btn:hover{border-color:var(--ink-faint);}
+#drill-root .btn.primary{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+#drill-root .btn.primary:hover{background:var(--verdigris); border-color:var(--verdigris);}
+#drill-root .btn.right{background:var(--verdigris); color:var(--paper-raised); border-color:var(--verdigris);}
+#drill-root .btn.wrong{background:var(--rubric); color:var(--paper-raised); border-color:var(--rubric);}
+#drill-root .btn.ghost{background:none;}
+#drill-root .btn[disabled]{opacity:.35; cursor:default;}
+#drill-root .done-card{text-align:center; padding:36px 24px;}
+#drill-root .done-card .tally{font-family:'Fraunces',serif; font-size:2.2rem; margin:10px 0; font-variant-numeric:tabular-nums;}
+#drill-root .done-card .tally b{color:var(--verdigris);}
+#drill-root .grid-score{display:grid; grid-template-columns:1fr auto; gap:10px 16px; align-items:center; background:var(--paper-raised); border:1px solid var(--paper-line); border-radius:14px; padding:20px 22px; margin-bottom:20px;}
+#drill-root .grid-score .label{color:var(--ink-soft); font-size:.9rem;}
+#drill-root .grid-score .val{font-family:'Fraunces',serif; font-weight:600; font-variant-numeric:tabular-nums; text-align:right;}
+#drill-root .grid-score .val.pending{color:var(--ink-faint); font-style:italic; font-family:'Source Sans 3';}
+#drill-root .manual{background:var(--paper-raised); border:1px solid var(--paper-line); border-radius:14px; padding:20px 22px; margin-bottom:20px;}
+#drill-root .manual h3{font-size:.98rem; margin-bottom:12px;}
+#drill-root .field{margin-bottom:16px;}
+#drill-root .field label{display:block; font-size:.85rem; color:var(--ink-soft); margin-bottom:6px; font-weight:600;}
+#drill-root .field input[type=text],#drill-root .field input[type=number],#drill-root .field textarea{width:100%; background:var(--paper); border:1px solid var(--paper-line); border-radius:8px; padding:9px 11px; color:var(--ink); font-family:inherit; font-size:.95rem;}
+#drill-root .field textarea{min-height:60px; resize:vertical;}
+#drill-root .steprow{display:flex; align-items:center; gap:10px;}
+#drill-root .steprow .stepbtn{width:30px; height:30px; border-radius:8px; border:1px solid var(--paper-line); background:var(--paper); color:var(--ink); font-weight:700; line-height:1;}
+#drill-root .steprow .stepval{font-family:'Fraunces',serif; font-weight:600; min-width:3.5em; text-align:center;}
+#drill-root .radiorow{display:flex; gap:16px; flex-wrap:wrap;}
+#drill-root .radiorow label{display:flex; align-items:center; gap:6px; font-size:.9rem; color:var(--ink); font-weight:400;}
+#drill-root .summary-out{width:100%; min-height:200px; background:var(--paper); border:1px solid var(--paper-line); border-radius:10px; padding:14px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.82rem; color:var(--ink-soft); white-space:pre-wrap; line-height:1.55;}
+#drill-root .dfoot{color:var(--ink-faint); font-size:.78rem; text-align:center; margin-top:24px; line-height:1.6;}
+@media (max-width:520px){#drill-root .card{padding:22px 16px;} #drill-root .card .prompt{font-size:1.55rem;}}
+</style>
+
+<div id="drill-root">
+  <header class="dtop">
+    <div class="dtop-inner">
+      <div class="dbrand"><h1 id="d-title">Drill</h1></div>
+      <div class="dscorechip" id="d-global-score">0 <span style="opacity:.6">of</span> 0 marked correct</div>
+    </div>
+    <nav class="dtabs" id="d-tabs"></nav>
+  </header>
+  <div class="dwrap" id="d-wrap">
+    <p style="padding-top:20px;color:var(--ink-faint);">Loading drill…</p>
+  </div>
+  <div class="dfoot">Redo any phase as many times as you like — nothing here is permanent except the copy you make of your own scorecard.</div>
+</div>
+
+<script>
+(function(){
+  const ROOT = document.getElementById('drill-root');
+  const LESSON = ROOT.closest('[data-lesson]') ? ROOT.closest('[data-lesson]').dataset.lesson
+               : (window.__DRILL_LESSON__ || ROOT.dataset.lesson);
+  if (!LESSON) { document.getElementById('d-wrap').innerHTML = '<p>No lesson id set.</p>'; return; }
+
+  const LSKEY = 'syriac-drill-' + LESSON;
+  function loadLS(){
+    try { const raw = localStorage.getItem(LSKEY); return raw ? JSON.parse(raw) : null; }
+    catch(e){ return null; }
+  }
+  function saveLS(payload){
+    try { localStorage.setItem(LSKEY, JSON.stringify(payload)); } catch(e){}
+  }
+
+  fetch('/drill/' + LESSON + '.json').then(r => r.json()).then(boot).catch(err => {
+    document.getElementById('d-wrap').innerHTML = '<p>Drill data failed to load.</p>';
+  });
+
+  function boot(DATA){
+    const TRACKS = DATA.tracks;
+    const ITEMS = DATA.items;
+    const ALPHABET = DATA.alphabet || {letters:[], nameByChar:{}};
+    const SCORECARD_CFG = DATA.scorecard || {};
+    document.getElementById('d-title').textContent = LESSON + ' drill';
+
+    function getItems(t,p){ return (ITEMS[t] && ITEMS[t][p]) || []; }
+
+    const FLOW = [];
+    TRACKS.forEach(t => t.phases.forEach(p => FLOW.push({track:t.key, phase:p.key})));
+
+    /* ---------- word-breakdown panel (letter-by-letter, word-level tracks only) ---------- */
+    const WORD_LEVEL_TRACKS = new Set(['vocabSound','vocabMeaning','halfline']);
+    function decomposeWord(str){
+      if (!str) return [];
+      return [...str].filter(ch => ALPHABET.nameByChar[ch]).map(ch => ({ch, name:ALPHABET.nameByChar[ch]}));
+    }
+    function breakdownHTML(str){
+      const letters = decomposeWord(str);
+      if (letters.length < 2) return '';
+      return `<div class="breakdown">
+        <div class="breakdown-label">Letters</div>
+        ${letters.map(l => `<div class="breakdown-row"><span class="breakdown-ch syriac">${l.ch}</span><span class="breakdown-name">${l.name}</span></div>`).join('')}
+      </div>`;
+    }
+    function maybeBreakdown(trackKey, syriacText){
+      return WORD_LEVEL_TRACKS.has(trackKey) ? breakdownHTML(syriacText) : '';
+    }
+
+    /* ---------- state ---------- */
+    const saved = loadLS() || {};
+    const state = saved.state || {};
+    const orderMap = {};
+    const currentPhaseForTrack = {};
+    const ungradedSkeys = new Set();
+    TRACKS.forEach(t => t.phases.forEach(p => { if (p.type === 'study' || p.type === 'translit') ungradedSkeys.add(stateKey(t.key, p.key)); }));
+
+    function stateKey(t,p){ return t + '.' + p; }
+    function shuffle(arr){
+      const a = arr.slice();
+      for (let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; }
+      return a;
+    }
+    function makeOptions(correct, pool){
+      const distractors = shuffle((pool||[]).filter(x => x !== correct)).slice(0,3);
+      return shuffle([correct, ...distractors]);
+    }
+    function persist(){
+      saveLS({state, manual: manualState});
+    }
+    function grade(skey, idx, val){
+      if (!state[skey]) state[skey] = [];
+      state[skey][idx] = val;
+      updateGlobalScore();
+      persist();
+    }
+
+    /* ---------- tabs ---------- */
+    const tabsEl = document.getElementById('d-tabs');
+    const TAB_ORDER = TRACKS.map(t=>t.key).concat('scorecard');
+    const TAB_LABELS = {}; TRACKS.forEach(t => TAB_LABELS[t.key] = t.title); TAB_LABELS.scorecard = 'Scorecard';
+    const wrapEl = document.getElementById('d-wrap');
+    wrapEl.innerHTML = '';
+    TRACKS.forEach(t => {
+      const sec = document.createElement('section');
+      sec.className = 'dpanel'; sec.dataset.panel = t.key;
+      sec.innerHTML = `<div class="dpanel-head"><h2>${t.title}</h2></div><div class="deck" data-deck="${t.key}"></div>`;
+      wrapEl.appendChild(sec);
+    });
+    const scoreSec = document.createElement('section');
+    scoreSec.className = 'dpanel'; scoreSec.dataset.panel = 'scorecard';
+    scoreSec.innerHTML = `
+      <div class="dpanel-head"><h2>Scorecard</h2></div>
+      <div class="grid-score" id="d-auto-score"></div>
+      <div class="manual" id="d-manual"></div>
+      <div class="manual">
+        <h3>Compiled summary — copy this into a note to yourself</h3>
+        <textarea class="summary-out" id="d-summary-out" readonly></textarea>
+        <div class="btnrow"><button class="btn primary" id="d-copy-btn">Copy summary</button></div>
+      </div>`;
+    wrapEl.appendChild(scoreSec);
+
+    TAB_ORDER.forEach((key,i) => {
+      const b = document.createElement('button');
+      b.className = 'dtab'; b.dataset.panel = key; b.setAttribute('role','tab');
+      b.textContent = TAB_LABELS[key];
+      b.addEventListener('click', () => {
+        if (key === 'scorecard'){ setActiveTab('scorecard'); renderScorecard(); return; }
+        const track = TRACKS.find(t=>t.key===key);
+        const ph = currentPhaseForTrack[key] || track.phases[0].key;
+        goTo(key, ph, false);
+      });
+      tabsEl.appendChild(b);
+    });
+
+    function setActiveTab(key){
+      ROOT.querySelectorAll('.dpanel').forEach(p => p.classList.toggle('active', p.dataset.panel===key));
+      ROOT.querySelectorAll('.dtab').forEach(t => t.setAttribute('aria-selected', t.dataset.panel===key ? 'true':'false'));
+    }
+    function goTo(trackKey, phaseKey, forceRestart){
+      setActiveTab(trackKey);
+      startOrResumePhase(trackKey, phaseKey, !!forceRestart);
+    }
+    function startOrResumePhase(trackKey, phaseKey, forceRestart){
+      currentPhaseForTrack[trackKey] = phaseKey;
+      const track = TRACKS.find(t=>t.key===trackKey);
+      const pdef = track.phases.find(p=>p.key===phaseKey);
+      const items = getItems(trackKey, phaseKey);
+      const skey = stateKey(trackKey, phaseKey);
+      if (forceRestart || !state[skey]){
+        state[skey] = new Array(items.length).fill(null);
+        orderMap[skey] = pdef.randomize ? shuffle([...Array(items.length).keys()]) : [...Array(items.length).keys()];
+      } else if (!orderMap[skey]){
+        orderMap[skey] = pdef.randomize ? shuffle([...Array(items.length).keys()]) : [...Array(items.length).keys()];
+      }
+      let idx = state[skey].indexOf(null);
+      if (idx === -1) idx = items.length;
+      renderPhase(trackKey, phaseKey, idx);
+    }
+    function nextFlowEntry(trackKey, phaseKey){
+      const i = FLOW.findIndex(e => e.track===trackKey && e.phase===phaseKey);
+      return FLOW[i+1] || null;
+    }
+    function nextLabel(entry){
+      const t = TRACKS.find(tr=>tr.key===entry.track);
+      const p = t.phases.find(ph=>ph.key===entry.phase);
+      return t.phases.length > 1 ? `${t.title} — ${p.label}` : t.title;
+    }
+
+    /* ---------- rendering ---------- */
+    function phasebarHTML(trackKey, activePhaseKey){
+      const track = TRACKS.find(t=>t.key===trackKey);
+      if (track.phases.length < 2) return '';
+      return '<div class="phasebar">' + track.phases.map(p => {
+        const cls = p.key===activePhaseKey ? 'phasepill active' : 'phasepill';
+        return `<button class="${cls}" data-jt="${trackKey}" data-jp="${p.key}">${p.label}</button>`;
+      }).join('') + '</div>';
+    }
+    function wirePhasebarButtons(host){
+      host.querySelectorAll('[data-jt]').forEach(b => b.addEventListener('click', () => goTo(b.dataset.jt, b.dataset.jp, false)));
+    }
+    function progressDotsHTML(skey, idx, total, graded){
+      let out = '<div class="progress">';
+      for (let i=0;i<total;i++){
+        const s = (state[skey]||[])[i];
+        let cls = '';
+        if (s) cls = graded ? (s==='right'?'right':'wrong') : 'seen';
+        if (i===idx) cls = 'current';
+        out += `<span class="dot ${cls}"></span>`;
+      }
+      return out + '</div>';
+    }
+
+    function renderPhase(trackKey, phaseKey, idx){
+      const track = TRACKS.find(t=>t.key===trackKey);
+      const pdef = track.phases.find(p=>p.key===phaseKey);
+      const items = getItems(trackKey, phaseKey);
+      const host = ROOT.querySelector(`.deck[data-deck="${trackKey}"]`);
+      if (!host) return;
+      if (idx >= items.length){ renderPhaseDone(trackKey, phaseKey, host); return; }
+      if (pdef.type === 'study')    return renderStudyCard(trackKey, phaseKey, idx, host);
+      if (pdef.type === 'translit') return renderTranslitCard(trackKey, phaseKey, idx, host);
+      if (pdef.type === 'mc')       return renderMCCard(trackKey, phaseKey, idx, host);
+      if (pdef.type === 'fillin')   return renderFillinCard(trackKey, phaseKey, idx, host);
+      if (pdef.type === 'produce')  return renderProduceCard(trackKey, phaseKey, idx, host);
+    }
+
+    function renderTranslitCard(trackKey, phaseKey, idx, host){
+      const items = getItems(trackKey, phaseKey);
+      const skey = stateKey(trackKey, phaseKey);
+      const ord = orderMap[skey];
+      const item = items[ord[idx]];
+      const total = items.length;
+      const isLast = idx === total - 1;
+      host.innerHTML = `
+        ${phasebarHTML(trackKey, phaseKey)}
+        <div class="study-tag">Sound it out — ${idx+1} of ${total} (shuffled)</div>
+        ${progressDotsHTML(skey, idx, total, false)}
+        <div class="card-row">
+          <div class="card">
+            <div class="prompt syriac">${item.p}</div>
+            <div class="answer shown" style="border-top:none; padding-top:6px;">
+              <div class="a-label">Transliteration</div>
+              <div class="a-name" style="font-style:italic;">${item.translit}</div>
+              ${item.note ? `<div class="a-note">${item.note}</div>` : ''}
+            </div>
+            <div class="btnrow">
+              <button class="btn ghost" data-action="back" ${idx===0?'disabled':''}>← Back</button>
+              <button class="btn primary" data-action="advance">${isLast ? 'Continue →' : 'Next →'}</button>
+            </div>
+          </div>
+          ${maybeBreakdown(trackKey, item.p)}
+        </div>
+        <div style="text-align:center; margin-top:14px;"><button class="btn ghost" data-action="skip" style="font-size:.8rem;">Skip ahead</button></div>`;
+      wirePhasebarButtons(host);
+      host.querySelector('[data-action="back"]').addEventListener('click', () => { if (idx>0) renderPhase(trackKey, phaseKey, idx-1); });
+      host.querySelector('[data-action="advance"]').addEventListener('click', () => {
+        if (!state[skey]) state[skey] = [];
+        state[skey][idx] = 'right'; persist();
+        if (isLast){ const next = nextFlowEntry(trackKey, phaseKey); if (next) goTo(next.track, next.phase, false); }
+        else renderPhase(trackKey, phaseKey, idx+1);
+      });
+      host.querySelector('[data-action="skip"]').addEventListener('click', () => {
+        const next = nextFlowEntry(trackKey, phaseKey); if (next) goTo(next.track, next.phase, false);
+      });
+    }
+
+    function renderStudyCard(trackKey, phaseKey, idx, host){
+      const track = TRACKS.find(t=>t.key===trackKey);
+      const pdef = track.phases.find(p=>p.key===phaseKey);
+      const items = getItems(trackKey, phaseKey);
+      const skey = stateKey(trackKey, phaseKey);
+      const ord = orderMap[skey];
+      const item = items[ord[idx]];
+      const total = items.length;
+      const isLast = idx === total - 1;
+      host.innerHTML = `
+        ${phasebarHTML(trackKey, phaseKey)}
+        <div class="study-tag">${pdef.label} — ${idx+1} of ${total}${pdef.randomize ? ' (shuffled)' : ''}</div>
+        ${progressDotsHTML(skey, idx, total, false)}
+        <div class="card-row">
+          <div class="card">
+            ${item.context ? `<div class="context" style="text-align:center;">${item.context}</div>` : ''}
+            <div class="prompt syriac">${item.p}</div>
+            <div class="answer shown" style="border-top:none; padding-top:6px;">
+              <div class="a-name">${item.a}</div>
+              ${item.note ? `<div class="a-note">${item.note}</div>` : ''}
+            </div>
+            <div class="btnrow">
+              <button class="btn ghost" data-action="back" ${idx===0?'disabled':''}>← Back</button>
+              <button class="btn primary" data-action="advance">${isLast ? 'Continue →' : 'Next →'}</button>
+            </div>
+          </div>
+          ${maybeBreakdown(trackKey, item.p)}
+        </div>
+        <div style="text-align:center; margin-top:14px;"><button class="btn ghost" data-action="skip" style="font-size:.8rem;">Skip ahead</button></div>`;
+      wirePhasebarButtons(host);
+      host.querySelector('[data-action="back"]').addEventListener('click', () => { if (idx>0) renderPhase(trackKey, phaseKey, idx-1); });
+      host.querySelector('[data-action="advance"]').addEventListener('click', () => {
+        if (!state[skey]) state[skey] = [];
+        state[skey][idx] = 'right'; persist();
+        if (isLast){ const next = nextFlowEntry(trackKey, phaseKey); if (next) goTo(next.track, next.phase, false); }
+        else renderPhase(trackKey, phaseKey, idx+1);
+      });
+      host.querySelector('[data-action="skip"]').addEventListener('click', () => {
+        const next = nextFlowEntry(trackKey, phaseKey); if (next) goTo(next.track, next.phase, false);
+      });
+    }
+
+    function wireMC(card, options, correct, skey, idx, note){
+      const nextBtn = card.querySelector('[data-action="next"]');
+      const feedback = card.querySelector('[data-feedback]');
+      card.querySelectorAll('.mc-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const val = options[parseInt(btn.dataset.idx,10)];
+          const ok = val === correct;
+          card.querySelectorAll('.mc-btn').forEach(b => {
+            b.disabled = true;
+            const bv = options[parseInt(b.dataset.idx,10)];
+            if (bv === correct) b.classList.add(ok ? 'correct' : 'reveal-correct');
+            if (b===btn && !ok) b.classList.add('incorrect');
+          });
+          feedback.style.display = 'block';
+          feedback.textContent = (ok ? 'Right. ' : 'Not quite — correct answer highlighted. ') + (note || '');
+          grade(skey, idx, ok ? 'right' : 'wrong');
+          nextBtn.disabled = false;
+        });
+      });
+    }
+
+    function renderMCCard(trackKey, phaseKey, idx, host){
+      const items = getItems(trackKey, phaseKey);
+      const skey = stateKey(trackKey, phaseKey);
+      const ord = orderMap[skey];
+      const item = items[ord[idx]];
+      const total = items.length;
+      const isLast = idx === total - 1;
+      const options = makeOptions(item.correct, item.pool);
+      host.innerHTML = `
+        ${phasebarHTML(trackKey, phaseKey)}
+        ${progressDotsHTML(skey, idx, total, true)}
+        <div class="card-row">
+          <div class="card">
+            <div class="prompt ${item.promptType==='syriac' ? 'syriac' : 'textprompt'}">${item.prompt}</div>
+            <div class="mc-note">Multiple choice — pick the reading.</div>
+            <div class="mc-grid">${options.map((o,i) => `<button class="mc-btn ${item.optionType==='syriac'?'syropt':''}" data-idx="${i}">${o}</button>`).join('')}</div>
+            <div class="mc-note" data-feedback style="display:none;"></div>
+            <div class="btnrow"><button class="btn ghost" data-action="next" disabled>${isLast ? 'Finish' : 'Next →'}</button></div>
+          </div>
+          ${item.promptType === 'syriac' ? maybeBreakdown(trackKey, item.prompt) : ''}
+        </div>`;
+      wirePhasebarButtons(host);
+      const card = host.querySelector('.card');
+      wireMC(card, options, item.correct, skey, idx, item.note);
+      card.querySelector('[data-action="next"]').addEventListener('click', () => renderPhase(trackKey, phaseKey, idx+1));
+    }
+
+    function renderFillinCard(trackKey, phaseKey, idx, host){
+      const items = getItems(trackKey, phaseKey);
+      const skey = stateKey(trackKey, phaseKey);
+      const ord = orderMap[skey];
+      const item = items[ord[idx]];
+      const total = items.length;
+      const isLast = idx === total - 1;
+      const options = makeOptions(item.correct, item.pool);
+      host.innerHTML = `
+        ${phasebarHTML(trackKey, phaseKey)}
+        ${progressDotsHTML(skey, idx, total, true)}
+        <div class="card">
+          <div class="prompt syriac">${item.prompt}</div>
+          <div class="given-chip">${item.givenLabel}: <b>${item.givenValue}</b></div>
+          <div class="ask-label">One letter left — which is it?</div>
+          <div class="mc-grid">${options.map((o,i) => `<button class="mc-btn" data-idx="${i}">${o}</button>`).join('')}</div>
+          <div class="mc-note" data-feedback style="display:none;"></div>
+          <div class="btnrow"><button class="btn ghost" data-action="next" disabled>${isLast ? 'Finish' : 'Next →'}</button></div>
+        </div>`;
+      wirePhasebarButtons(host);
+      const card = host.querySelector('.card');
+      wireMC(card, options, item.correct, skey, idx, item.note);
+      card.querySelector('[data-action="next"]').addEventListener('click', () => renderPhase(trackKey, phaseKey, idx+1));
+    }
+
+    function renderProduceCard(trackKey, phaseKey, idx, host){
+      const items = getItems(trackKey, phaseKey);
+      const skey = stateKey(trackKey, phaseKey);
+      const ord = orderMap[skey];
+      const item = items[ord[idx]];
+      const total = items.length;
+      const isLast = idx === total - 1;
+      host.innerHTML = `
+        ${phasebarHTML(trackKey, phaseKey)}
+        ${progressDotsHTML(skey, idx, total, true)}
+        <div class="card-row">
+          <div class="card">
+            ${item.context ? `<div class="context">${item.context}</div>` : ''}
+            <div class="prompt ${item.promptType==='syriac' ? 'syriac' : 'textprompt'}">${item.prompt}</div>
+            <div class="answer-zone">
+              <div class="btnrow"><button class="btn primary" data-action="reveal">Reveal</button></div>
+              <div class="answer" data-answer>
+                <div class="a-label">Answer</div>
+                <div class="${item.answerType==='syriac' ? 'a-syriac syriac' : 'a-name'}">${item.answer}</div>
+                ${item.translit ? `<div class="a-note" style="font-style:italic;">${item.translit}</div>` : ''}
+                ${item.note ? `<div class="a-note">${item.note}</div>` : ''}
+                <div class="btnrow">
+                  <button class="btn right" data-action="right">I had it</button>
+                  <button class="btn wrong" data-action="wrong">Missed it</button>
+                  <button class="btn ghost" data-action="next" disabled>${isLast ? 'Finish' : 'Next →'}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          ${item.promptType === 'syriac' ? maybeBreakdown(trackKey, item.prompt) : ''}
+        </div>`;
+      wirePhasebarButtons(host);
+      const card = host.querySelector('.card');
+      const answer = card.querySelector('[data-answer]');
+      const nextBtn = card.querySelector('[data-action="next"]');
+      card.querySelector('[data-action="reveal"]').addEventListener('click', (e) => {
+        answer.classList.add('shown'); e.target.closest('.btnrow').style.display = 'none';
+      });
+      card.querySelector('[data-action="right"]').addEventListener('click', () => { grade(skey, idx, 'right'); nextBtn.disabled = false; });
+      card.querySelector('[data-action="wrong"]').addEventListener('click', () => { grade(skey, idx, 'wrong'); nextBtn.disabled = false; });
+      nextBtn.addEventListener('click', () => renderPhase(trackKey, phaseKey, idx+1));
+    }
+
+    function renderPhaseDone(trackKey, phaseKey, host){
+      const track = TRACKS.find(t=>t.key===trackKey);
+      const pdef = track.phases.find(p=>p.key===phaseKey);
+      const items = getItems(trackKey, phaseKey);
+      const skey = stateKey(trackKey, phaseKey);
+      const graded = pdef.type !== 'study' && pdef.type !== 'translit';
+      const right = graded ? (state[skey]||[]).filter(s=>s==='right').length : items.length;
+      const total = items.length;
+      const next = nextFlowEntry(trackKey, phaseKey);
+      host.innerHTML = `
+        ${phasebarHTML(trackKey, phaseKey)}
+        <div class="card done-card">
+          <div class="a-label">${pdef.label} complete</div>
+          <div class="tally"><b>${right}</b> / ${total}</div>
+          <div class="a-note">Redo any phase as many times as you like — nothing here is permanent.</div>
+          <div class="btnrow">
+            <button class="btn" data-action="again">Do this again</button>
+            ${next ? `<button class="btn primary" data-action="continue">Continue to ${nextLabel(next)} →</button>` : `<button class="btn primary" data-action="scorecard">See the scorecard →</button>`}
+          </div>
+        </div>`;
+      wirePhasebarButtons(host);
+      host.querySelector('[data-action="again"]').addEventListener('click', () => goTo(trackKey, phaseKey, true));
+      const cont = host.querySelector('[data-action="continue"]');
+      if (cont) cont.addEventListener('click', () => goTo(next.track, next.phase, false));
+      const sc = host.querySelector('[data-action="scorecard"]');
+      if (sc) sc.addEventListener('click', () => { setActiveTab('scorecard'); renderScorecard(); });
+    }
+
+    function updateGlobalScore(){
+      let right = 0, total = 0;
+      Object.keys(state).forEach(k => {
+        if (ungradedSkeys.has(k)) return;
+        (state[k]||[]).forEach(s => { if (s){ total++; if (s==='right') right++; } });
+      });
+      document.getElementById('d-global-score').innerHTML = `<b>${right}</b> of ${total} marked correct`;
+    }
+
+    /* ---------- scorecard, data-driven manual fields (may be empty, e.g. Lesson 0) ---------- */
+    const manualState = saved.manual || {stage1:0, stage4:'', stopped:'', mins:'', sittings:''};
+    function buildManualHTML(){
+      if (!SCORECARD_CFG || Object.keys(SCORECARD_CFG).length === 0) return '';
+      let h = '';
+      if (SCORECARD_CFG.stage0_question) h += `
+        <h3>Stage 0</h3>
+        <div class="field radiorow" id="d-stage0">
+          <label>${SCORECARD_CFG.stage0_question}</label>
+        </div>
+        <div class="radiorow" style="margin-bottom:16px;">
+          <label><input type="radio" name="d-s0" value="yes"> yes</label>
+          <label><input type="radio" name="d-s0" value="no"> no</label>
+        </div>`;
+      if (SCORECARD_CFG.stage1_of) h += `
+        <h3>Stage 1</h3>
+        <div class="field">
+          <label>${SCORECARD_CFG.stage1_label || ''}</label>
+          <div class="steprow">
+            <button class="stepbtn" data-step="stage1" data-dir="-1">−</button>
+            <span class="stepval" id="d-stage1-val">0 / ${SCORECARD_CFG.stage1_of}</span>
+            <button class="stepbtn" data-step="stage1" data-dir="1">+</button>
+          </div>
+        </div>`;
+      if (SCORECARD_CFG.stage4_options && SCORECARD_CFG.stage4_options.length) h += `
+        <h3>Stage 4 — how did it go?</h3>
+        <div class="field">
+          <div class="radiorow" id="d-stage4">
+            ${SCORECARD_CFG.stage4_options.map((o,i) => `<label><input type="radio" name="d-s4" value="${o}"> ${o}</label>`).join('')}
+            <label><input type="radio" name="d-s4" value="none" checked> not yet</label>
+          </div>
+        </div>`;
+      h += `
+        <h3>Everything else</h3>
+        <div class="field"><label>Where exactly did it stop being fun (if it did)?</label>
+          <textarea id="d-stopped-fun" placeholder="A specific letter, a specific stage, a specific line."></textarea></div>
+        <div class="field" style="display:flex; gap:20px; flex-wrap:wrap;">
+          <div style="flex:1; min-width:140px;"><label>Total time (minutes)</label><input type="number" id="d-total-mins" min="0"></div>
+          <div style="flex:1; min-width:140px;"><label>Sittings</label><input type="number" id="d-total-sittings" min="1"></div>
+        </div>`;
+      return h;
+    }
+
+    let manualWired = false;
+    function wireManual(){
+      if (manualWired) return; manualWired = true;
+      const host = document.getElementById('d-manual');
+      host.querySelectorAll('[data-step="stage1"]').forEach(b => {
+        b.addEventListener('click', () => {
+          const max = SCORECARD_CFG.stage1_of || 99;
+          manualState.stage1 = Math.max(0, Math.min(max, manualState.stage1 + parseInt(b.dataset.dir)));
+          document.getElementById('d-stage1-val').textContent = `${manualState.stage1} / ${max}`;
+          persist(); updateSummary();
+        });
+      });
+      const s0 = host.querySelectorAll('[name="d-s0"]');
+      s0.forEach(r => { if (r.value === manualState.stage0) r.checked = true; r.addEventListener('change', () => { manualState.stage0 = r.value; persist(); updateSummary(); }); });
+      const s4 = host.querySelectorAll('[name="d-s4"]');
+      s4.forEach(r => { if (r.value === manualState.stage4) r.checked = true; r.addEventListener('change', () => { manualState.stage4 = r.value; persist(); updateSummary(); }); });
+      const stop = document.getElementById('d-stopped-fun');
+      if (stop){ stop.value = manualState.stopped || ''; stop.addEventListener('input', () => { manualState.stopped = stop.value; persist(); updateSummary(); }); }
+      const mins = document.getElementById('d-total-mins');
+      if (mins){ mins.value = manualState.mins || ''; mins.addEventListener('input', () => { manualState.mins = mins.value; persist(); updateSummary(); }); }
+      const sittings = document.getElementById('d-total-sittings');
+      if (sittings){ sittings.value = manualState.sittings || ''; sittings.addEventListener('input', () => { manualState.sittings = sittings.value; persist(); updateSummary(); }); }
+      const s1v = document.getElementById('d-stage1-val');
+      if (s1v) s1v.textContent = `${manualState.stage1||0} / ${SCORECARD_CFG.stage1_of}`;
+    }
+
+    function renderScorecard(){
+      const host = document.getElementById('d-auto-score');
+      let rows = '';
+      TRACKS.forEach(t => {
+        t.phases.forEach(p => {
+          if (p.type === 'study' || p.type === 'translit') return;
+          const skey = stateKey(t.key, p.key);
+          const items = getItems(t.key, p.key);
+          const label = t.phases.length > 1 ? `${t.title} — ${p.label}` : t.title;
+          if (!state[skey] || state[skey].every(s => !s)){
+            rows += `<div class="label">${label}</div><div class="val pending">not run yet</div>`;
+          } else {
+            const right = state[skey].filter(s=>s==='right').length;
+            rows += `<div class="label">${label}</div><div class="val">${right} / ${items.length}</div>`;
+          }
+        });
+      });
+      host.innerHTML = rows;
+      document.getElementById('d-manual').innerHTML = buildManualHTML();
+      manualWired = false;
+      wireManual();
+      updateSummary();
+    }
+
+    function updateSummary(){
+      const lines = [];
+      lines.push(LESSON + ' — scorecard');
+      lines.push('');
+      TRACKS.forEach(t => {
+        t.phases.forEach(p => {
+          if (p.type === 'study' || p.type === 'translit') return;
+          const skey = stateKey(t.key, p.key);
+          const items = getItems(t.key, p.key);
+          const label = t.phases.length > 1 ? `${t.title} — ${p.label}` : t.title;
+          const attempted = state[skey] && state[skey].some(s=>s);
+          const right = state[skey] ? state[skey].filter(s=>s==='right').length : 0;
+          lines.push(`${label}: ${attempted ? right+' / '+items.length : 'not run'}`);
+        });
+      });
+      if (SCORECARD_CFG.stage1_of) lines.push(`Stage 1 (self-reported): ${manualState.stage1||0} / ${SCORECARD_CFG.stage1_of}`);
+      if (SCORECARD_CFG.stage0_question) lines.push(`Stage 0: ${manualState.stage0 || 'not answered'}`);
+      if (SCORECARD_CFG.stage4_options) lines.push(`Stage 4: ${manualState.stage4 || 'not yet'}`);
+      lines.push(`Total time: ${manualState.mins || '—'} minutes, ${manualState.sittings || '—'} sitting(s)`);
+      lines.push(`Where it stopped being fun: ${manualState.stopped || '(nothing noted)'}`);
+      const out = document.getElementById('d-summary-out');
+      if (out) out.value = lines.join('\n');
+    }
+
+    document.getElementById('d-copy-btn').addEventListener('click', () => {
+      const out = document.getElementById('d-summary-out');
+      const text = out.value;
+      let copied = false;
+      try { navigator.clipboard.writeText(text); copied = true; } catch(e){}
+      if (!copied){
+        try { out.select(); document.execCommand('copy'); copied = true; } catch(e){}
+      }
+      const btn = document.getElementById('d-copy-btn');
+      const orig = btn.textContent;
+      btn.textContent = copied ? 'Copied' : 'Select the text above and copy';
+      setTimeout(() => { btn.textContent = orig; }, 1600);
+    });
+
+    /* ---------- boot ---------- */
+    if (TRACKS.length){
+      goTo(TRACKS[0].key, TRACKS[0].phases[0].key, false);
+    }
+    updateGlobalScore();
+  }
+})();
+</script>

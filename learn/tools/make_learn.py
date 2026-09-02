@@ -31,9 +31,12 @@ ROOT = LEARN.parent                              # repo root
 
 sys.path.insert(0, str(ROOT / "tools"))
 import make_primers  # noqa: E402  (render(), inline() -- the shared closed-set Markdown renderer)
+sys.path.insert(0, str(HERE))
+import make_drill  # noqa: E402  (Phase B: drill/L*.toml -> site/drill/L*.json, + verbatim check)
 
 SYRIAC_DIR = LEARN / "syriac"
 SHELL = LEARN / "shell" / "lesson_shell.html"
+DRILL_SHELL = LEARN / "shell" / "drill_shell.html"
 SITE = LEARN / "site"
 QUARRY = ROOT / "quarry"
 
@@ -244,6 +247,12 @@ def run(write):
 
     records = gather_records()
 
+    lesson_texts = {f"L{n:02d}": lf.read_text(encoding="utf-8")
+                     for n, lf in enumerate(lesson_files) if lf.exists()}
+    drill_errors, drill_compiled = make_drill.build(lesson_texts, write=write)
+    errors.extend(f"[drill] {e}" for e in drill_errors)
+    drill_shell_src = DRILL_SHELL.read_text(encoding="utf-8") if DRILL_SHELL.exists() else ""
+
     for n, lf in enumerate(lesson_files):
         if not lf.exists():
             continue
@@ -277,6 +286,9 @@ def run(write):
             body = make_primers.render(text)
             body = body.replace("<table>", '<div class="tablewrap"><table>').replace(
                 "</table>", "</table></div>")
+            lid = f"L{n:02d}"
+            if lid in drill_compiled and drill_shell_src:
+                body += f'\n<div data-lesson="{lid}">{drill_shell_src}</div>\n'
             footer = build_record_footer(refs, [])
             prevn = f'<a href="/lesson/{n-1}">&larr; Lesson {n-1}</a>' if n > 0 else '<a href="/">&larr; Course</a>'
             nextn = f'<a href="/lesson/{n+1}">Lesson {n+1} &rarr;</a>' if n < N_LESSONS - 1 else '<span></span>'

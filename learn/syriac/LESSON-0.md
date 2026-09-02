@@ -123,7 +123,54 @@ a word break.
 
 ---
 
-## Part 3 — Decoding drills (nonsense words, no meaning)
+## Part 3 — Pairs (two letters, still no meaning)
+
+One more step before the full decoding drills: ten invented two-letter strings, each pairing
+letters from different batches above so you're not just re-reading one row. Same method as
+always — name each letter, say the sounds in order, check against the answer — but now
+notice something new: **read right to left**, so the transliteration below reads left to
+right in the order your eye actually meets the letters, not in "first letter of the word"
+order the way you might expect from English.
+
+Cover the answers before you start.
+
+1. ܒܓ
+   Answer: Bēth, Gåmal → "b‑g"
+
+2. ܕܛ
+   Answer: Dålath, Teth → "d‑ṭ"
+
+3. ܗܟ
+   Answer: He, Kåf → "h‑k"
+
+4. ܘܡ
+   Answer: Vav, Mīm → "v/w‑m"
+
+5. ܙܢ
+   Answer: Zain, Nūn → "z‑n"
+
+6. ܚܣ
+   Answer: Cheth, Semkath → "ḥ‑s"
+
+7. ܝܥ
+   Answer: Yud, 'E → "y‑ʿ"
+
+8. ܠܨ
+   Answer: Låmadh, Såde → "l‑ṣ"
+
+9. ܩܫ
+   Answer: Qūf, Shīn → "q‑sh"
+
+10. ܦܬ
+    Answer: Pē, Tau → "p/f‑t"
+
+None of these two-letter strings is a real Syriac word — same rule as Part 4 below, one
+size smaller. If all ten came easily, the triples in Part 4 will feel like a small step, not
+a big one.
+
+---
+
+## Part 4 — Decoding drills (nonsense words, no meaning)
 
 Below are invented letter-strings. **None of them mean anything in Syriac** — that's
 deliberate, so you're purely matching shape to name to sound, with nothing to guess from

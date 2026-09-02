@@ -1,0 +1,258 @@
+# Drill sidecar for Lesson 0 -- transcribed VERBATIM from the "First Light" private Claude
+# Artifact (2026-09-02), the throwaway prototype Wilson G2-passed running Lesson 0 end to
+# end. This is the source of truth for L00's drill content; SYRIAC-WEB-PLAN.md §3: "carry
+# them over verbatim, don't re-derive." Do not hand-edit a Syriac string here without also
+# checking it still matches learn/syriac/LESSON-0.md -- and see the KNOWN GAP note below.
+#
+# KNOWN GAP, flagged not silently resolved: First Light's `pairs` track (10 two-letter
+# nonsense strings -- ܒܓ ܕܛ ܗܟ ܘܡ ܙܢ ܚܣ ܝܥ ܠܨ ܩܫ ܦܬ) does NOT occur anywhere in the current
+# LESSON-0.md text. Verified: `grep` for all ten strings against LESSON-0.md returns zero
+# hits. LESSON-0.md's own structure has no "Pairs" section -- Part 1 tests single letters
+# in 7-letter batches, Part 3 goes straight to the 6 triples/quadruples (which DO match
+# LESSON-0.md's "Decoding drills" verbatim). This data is transcribed here anyway, per the
+# explicit instruction to carry First Light's constants over verbatim rather than
+# re-derive -- but the `pairs` track will fail a strict per-lesson verbatim check against
+# LESSON-0.md, and that failure is real, not a bug in the check. Wilson's call: either
+# LESSON-0.md gains a Pairs section (matching what was G2-passed in the prototype), or the
+# `pairs` track is dropped from L00 and this file trimmed to match. Not resolved here.
+
+lesson = "L00"
+
+[[letters]]
+p = "ܐ"
+a = "Ålaf"
+note = "a light catch in the throat — the gap in English “uh-oh”"
+[[letters]]
+p = "ܒ"
+a = "Bēth"
+note = "b"
+[[letters]]
+p = "ܓ"
+a = "Gåmal"
+note = "g, as in “go”"
+[[letters]]
+p = "ܕ"
+a = "Dålath"
+note = "d — dot BELOW; the hook it shares with Rīsh"
+[[letters]]
+p = "ܗ"
+a = "He"
+note = "h"
+[[letters]]
+p = "ܘ"
+a = "Vav"
+note = "v / w"
+[[letters]]
+p = "ܙ"
+a = "Zain"
+note = "z, as in “zero”"
+[[letters]]
+p = "ܚ"
+a = "Cheth"
+note = "a hard, breathy h from the back of the throat — close to Scottish “loch”"
+[[letters]]
+p = "ܛ"
+a = "Teth"
+note = "a heavier, emphatic t"
+[[letters]]
+p = "ܝ"
+a = "Yud"
+note = "y"
+[[letters]]
+p = "ܟ"
+a = "Kåf"
+note = "k (softer “kh” between vowels)"
+[[letters]]
+p = "ܠ"
+a = "Låmadh"
+note = "l"
+[[letters]]
+p = "ܡ"
+a = "Mīm"
+note = "m"
+[[letters]]
+p = "ܢ"
+a = "Nūn"
+note = "n"
+[[letters]]
+p = "ܣ"
+a = "Semkath"
+note = "s"
+[[letters]]
+p = "ܥ"
+a = "'E"
+note = "a guttural throat-sound with no English equivalent — Hebrew ayin, Arabic ʿayn"
+[[letters]]
+p = "ܦ"
+a = "Pē"
+note = "p / f"
+[[letters]]
+p = "ܨ"
+a = "Såde"
+note = "a heavier, emphatic s"
+[[letters]]
+p = "ܩ"
+a = "Qūf"
+note = "a k made further back in the throat"
+[[letters]]
+p = "ܪ"
+a = "Rīsh"
+note = "r — dot ABOVE; the hook it shares with Dålath"
+[[letters]]
+p = "ܫ"
+a = "Shīn"
+note = "sh"
+[[letters]]
+p = "ܬ"
+a = "Tau"
+note = "t (softer “th” between vowels)"
+
+[letter_sound]
+"Ålaf" = "ʾ"
+"Bēth" = "b"
+"Gåmal" = "g"
+"Dålath" = "d"
+"He" = "h"
+"Vav" = "w"
+"Zain" = "z"
+"Cheth" = "ḥ"
+"Teth" = "ṭ"
+"Yud" = "y"
+"Kåf" = "k"
+"Låmadh" = "l"
+"Mīm" = "m"
+"Nūn" = "n"
+"Semkath" = "s"
+"'E" = "ʿ"
+"Pē" = "p"
+"Såde" = "ṣ"
+"Qūf" = "q"
+"Rīsh" = "r"
+"Shīn" = "sh"
+"Tau" = "t"
+
+# KNOWN GAP -- see header note. Transcribed verbatim from the artifact; not yet backed by
+# LESSON-0.md text.
+[[pairs]]
+p = "ܒܓ"
+letters = ["Bēth", "Gåmal"]
+[[pairs]]
+p = "ܕܛ"
+letters = ["Dålath", "Teth"]
+[[pairs]]
+p = "ܗܟ"
+letters = ["He", "Kåf"]
+[[pairs]]
+p = "ܘܡ"
+letters = ["Vav", "Mīm"]
+[[pairs]]
+p = "ܙܢ"
+letters = ["Zain", "Nūn"]
+[[pairs]]
+p = "ܚܣ"
+letters = ["Cheth", "Semkath"]
+[[pairs]]
+p = "ܝܥ"
+letters = ["Yud", "'E"]
+[[pairs]]
+p = "ܠܨ"
+letters = ["Låmadh", "Såde"]
+[[pairs]]
+p = "ܩܫ"
+letters = ["Qūf", "Shīn"]
+[[pairs]]
+p = "ܦܬ"
+letters = ["Pē", "Tau"]
+
+# Triples -- these DO match LESSON-0.md's Part 3 "Decoding drills" verbatim (6 items).
+[[triples]]
+p = "ܒܘܠ"
+letters = ["Bēth", "Vav", "Låmadh"]
+note = "“b-v/w-l”"
+[[triples]]
+p = "ܛܟܪ"
+letters = ["Teth", "Kåf", "Rīsh"]
+note = "“ṭ-k-r”"
+[[triples]]
+p = "ܢܥܡ"
+letters = ["Nūn", "'E", "Mīm"]
+note = "“n-ʿ-m”"
+[[triples]]
+p = "ܗܫܕ"
+letters = ["He", "Shīn", "Dålath"]
+note = "“h-sh-d”"
+[[triples]]
+p = "ܩܝܬܙ"
+letters = ["Qūf", "Yud", "Tau", "Zain"]
+note = "“q-y-t-z” — two non-joiners in a row at the end"
+[[triples]]
+p = "ܦܪ ܓܣ"
+letters = ["Pē", "Rīsh", "Gåmal", "Semkath"]
+note = "the gap is real but genuinely ambiguous — one four-letter word or two two-letter ones can't be told from shape alone."
+
+[[tracks]]
+key = "letters"
+title = "Letters"
+[[tracks.phases]]
+key = "study"
+type = "study"
+label = "Study"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "pairs"
+title = "Pairs"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "fillin"
+type = "fillin"
+label = "Fill in"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "triples"
+title = "Triples"
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "fillin"
+type = "fillin"
+label = "Fill in"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true

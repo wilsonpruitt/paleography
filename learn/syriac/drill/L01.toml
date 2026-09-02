@@ -1,0 +1,287 @@
+# Drill sidecar for Lesson 1 -- transcribed VERBATIM from the "First Light" private Claude
+# Artifact (2026-09-02), the throwaway prototype Wilson G2-passed running Lesson 1 end to
+# end ("loved it... what we have here works for lesson one"). Source of truth for L01's
+# drill content; SYRIAC-WEB-PLAN.md §3: "carry them over verbatim, don't re-derive."
+#
+# Cross-checked against learn/syriac/LESSON-1.md, 2026-09-02: every vocab/vowel/halfline/
+# cloze/finish/whole Syriac string below occurs verbatim (as a substring) somewhere in
+# LESSON-1.md's Stage 0-4 text. No discrepancy found for this lesson (contrast L00.toml's
+# `pairs` track, which does NOT match LESSON-0.md -- see that file's header note).
+
+lesson = "L01"
+
+[[vocab]]
+p = "ܐܰܠܳܗܳܐ"
+a = "God"
+t = "alāhā"
+[[vocab]]
+p = "ܢܘܗܪܳܐ"
+a = "light"
+t = "nuhrā"
+[[vocab]]
+p = "ܐܰܪܥܳܐ"
+a = "earth"
+t = "arʿā"
+[[vocab]]
+p = "ܫܡܰܝܳܐ"
+a = "heaven(s)"
+t = "šmayyā"
+[[vocab]]
+p = "ܚܶܫܘܟܳܐ"
+a = "darkness"
+t = "ḥeššōḵā"
+[[vocab]]
+p = "ܡܰܝ̈ܳܐ"
+a = "the waters"
+t = "mayyā"
+[[vocab]]
+p = "ܝܰܘܡܳܐ"
+a = "day"
+t = "yawmā"
+[[vocab]]
+p = "ܪܰܡܫܳܐ"
+a = "evening"
+t = "ramšā"
+[[vocab]]
+p = "ܨܰܦܪܳܐ"
+a = "morning"
+t = "ṣap̄rā"
+[[vocab]]
+p = "ܬܗܘܡܳܐ"
+a = "the deep"
+t = "thōmā"
+
+[[vowels]]
+mark = "ܒܰ"
+name = "pthāḥā"
+sound = "a as in “father” (short)"
+[[vowels]]
+mark = "ܒܳ"
+name = "zqāpā"
+sound = "ā, long — West Syriac tradition says it as “o” (a‑LO‑ho for “God”); say “ā” for now, it's simpler and no one will arrest you"
+[[vowels]]
+mark = "ܒܶ"
+name = "rbāṣā"
+sound = "e as in “bed”"
+[[vowels]]
+mark = "ܒܺ"
+name = "ḥbāṣā"
+sound = "ee as in “see”"
+[[vowels]]
+mark = "ܒܽ"
+name = "ʿṣāṣā"
+sound = "oo as in “moon”"
+
+vowel_context = "shown on ܒ (Bēth) as a neutral carrier only — name the MARK, not the letter"
+
+[[halfline]]
+context = "Genesis 1:1"
+prompt = "ܒܪܺܫܝܬ ܒܪܳܐ <span class='blank'></span>."
+answer = "ܐܰܠܳܗܳܐ"
+translit = "alāhā"
+note = "God"
+[[halfline]]
+context = "Genesis 1:1"
+prompt = "ܝܳܬ <span class='blank'></span>"
+answer = "ܫܡܰܝܳܐ"
+translit = "šmayyā"
+note = "the heavens"
+[[halfline]]
+context = "Genesis 1:1"
+prompt = "ܘܝܳܬ <span class='blank'></span>."
+answer = "ܐܰܪܥܳܐ"
+translit = "arʿā"
+note = "the earth"
+[[halfline]]
+context = "Genesis 1:2a"
+prompt = "ܘ<span class='blank'></span> ܥܰܠ ܐܰܦ̈ܰܝ ܬܗܘܡܳܐ:"
+answer = "ܚܶܫܘܟܳܐ"
+translit = "ḥeššōḵā"
+note = "darkness — the waw “and” is already attached in front"
+[[halfline]]
+context = "Genesis 1:2b"
+prompt = "ܥܰܠ ܐܰܦ̈ܰܝ <span class='blank'></span>"
+answer = "ܬܗܘܡܳܐ"
+translit = "thōmā"
+note = "the deep"
+[[halfline]]
+context = "Genesis 1:2b"
+prompt = "ܥܰܠ ܐܰܦ̈ܰܝ <span class='blank'></span>."
+answer = "ܡܰܝ̈ܳܐ"
+translit = "mayyā"
+note = "the waters"
+[[halfline]]
+context = "Genesis 1:3"
+prompt = "ܢܶܗܘܶܐ <span class='blank'></span>"
+answer = "ܢܘܗܪܳܐ"
+translit = "nuhrā"
+note = "light"
+[[halfline]]
+context = "Genesis 1:5b"
+prompt = "ܘܰܗܘܳܐ <span class='blank'></span>"
+answer = "ܪܰܡܫܳܐ"
+translit = "ramšā"
+note = "evening"
+[[halfline]]
+context = "Genesis 1:5b"
+prompt = "ܘܰܗܘܳܐ <span class='blank'></span> ܝܰܘܡܳܐ ܚܰܕ."
+answer = "ܨܰܦܪܳܐ"
+translit = "ṣap̄rā"
+note = "morning — “day, one” is already given after it"
+
+[[cloze]]
+context = "Genesis 1:1"
+prompt = "ܒܪܺܫܝܬ ܒܪܳܐ <span class='blank'></span> ܝܳܬ ܫܡܰܝܳܐ ܘܝܳܬ ܐܰܪܥܳܐ."
+answer = "ܐܰܠܳܗܳܐ"
+translit = "alāhā"
+note = "God"
+[[cloze]]
+context = "Genesis 1:3"
+prompt = "ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܗܘܶܐ <span class='blank'></span>: ܘܰܗܘܳܐ ܢܘܗܪܳܐ."
+answer = "ܢܘܗܪܳܐ"
+translit = "nuhrā"
+note = "light"
+[[cloze]]
+context = "Genesis 1:5b"
+prompt = "ܘܰܗܘܳܐ ܪܰܡܫܳܐ ܘܰܗܘܳܐ ܨܰܦܪܳܐ <span class='blank'></span> ܚܰܕ."
+answer = "ܝܰܘܡܳܐ"
+translit = "yawmā"
+note = "day"
+[[cloze]]
+context = "Genesis 1:2a"
+prompt = "ܘܰܐܪܥܳܐ <span class='blank'></span> ܬܘܗ ܘܒܘܗ."
+answer = "ܗܘܳܬ"
+translit = "hwāṯ"
+note = "she-was — the feminine one"
+[[cloze]]
+context = "Genesis 1:4"
+prompt = "ܘܰܚܙܳܐ ܐܰܠܳܗܳܐ ܠܢܘܗܪܳܐ ܕ<span class='blank'></span>."
+answer = "ܫܰܦܺܝܪ"
+translit = "šappīr"
+note = "beautiful"
+
+[[finish]]
+context = "Genesis 1:3"
+prompt = "ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܗܘܶܐ ܢܘܗܪܳܐ: …"
+answer = "ܘܰܗܘܳܐ ܢܘܗܪܳܐ"
+translit = "wa-hwā nuhrā"
+note = "finish the verse"
+[[finish]]
+context = "Genesis 1:5b"
+prompt = "ܘܰܗܘܳܐ ܪܰܡܫܳܐ …"
+answer = "ܘܰܗܘܳܐ ܨܰܦܪܳܐ ܝܰܘܡܳܐ ܚܰܕ"
+translit = "wa-hwā ṣap̄rā yawmā ḥaḏ"
+note = "finish the refrain"
+[[finish]]
+context = "Genesis 1:5a"
+prompt = "ܘܰܩܪܳܐ ܐܰܠܳܗܳܐ ܠܢܘܗܪܳܐ …"
+answer = "ܐܺܝܡܳܡܳܐ"
+translit = "īmāmā"
+note = "what did he call it?"
+[[finish]]
+context = "Genesis 1:4"
+prompt = "ܘܰܦܪܰܫ ܐܰܠܳܗܳܐ ܒܶܝܬ …"
+answer = "ܢܘܗܪܳܐ ܠܚܶܫܘܟܳܐ"
+translit = "nuhrā l-ḥeššōḵā"
+note = "between what and what?"
+
+[[whole]]
+context = "Genesis 1:3, unaided"
+prompt_type = "text"
+prompt = "“and God said, let there be light, and there was light”"
+answer = "ܘܶܐܡܰܪ ܐܰܠܳܗܳܐ: ܢܶܗܘܶܐ ܢܘܗܪܳܐ: ܘܰܗܘܳܐ ܢܘܗܪܳܐ."
+translit = "w-emar alāhā: nehwē nuhrā, wa-hwā nuhrā"
+note = "check consonant by consonant, right to left — consonants alone are a full success"
+
+[[tracks]]
+key = "vocabSound"
+title = "Vocabulary — Sound"
+[[tracks.phases]]
+key = "vowels"
+type = "study"
+label = "Vowel marks"
+randomize = false
+[[tracks.phases]]
+key = "sound"
+type = "translit"
+label = "Sound it out"
+randomize = true
+[[tracks.phases]]
+key = "recognizeSound"
+type = "mc"
+label = "Recognize (sound)"
+randomize = true
+
+[[tracks]]
+key = "vocabMeaning"
+title = "Vocabulary — Meaning"
+[[tracks.phases]]
+key = "meanings"
+type = "study"
+label = "Definitions"
+randomize = true
+[[tracks.phases]]
+key = "recognize"
+type = "mc"
+label = "Recognize"
+randomize = true
+[[tracks.phases]]
+key = "recognizeReverse"
+type = "mc"
+label = "Recognize, reversed"
+randomize = true
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = true
+
+[[tracks]]
+key = "halfline"
+title = "Half a line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "cloze"
+title = "Cloze"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "finish"
+title = "Finish the line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+[[tracks]]
+key = "whole"
+title = "Whole line"
+[[tracks.phases]]
+key = "produce"
+type = "produce"
+label = "Produce"
+randomize = false
+
+# Manual scorecard fields, transcribed from LESSON-1.md's own "## Scorecard" section
+# (ground truth over First Light's hardcoded Lesson-1-shaped panel, per instructions to
+# prefer the current .md when the two diverge -- checked, they don't diverge on the counts
+# that matter: Stage 2 = 5 gaps = len(cloze) below; Stage 3 = 4 completions = len(finish)).
+[scorecard]
+stage0_question = "could you use the letter table as a reference while reading?"
+stage1_of = 7
+stage1_label = "by the second read-through, roughly how many of the seven lines could you get through leaning on the pronunciation line only at the hard spots?"
+stage2_of = 5
+stage2_label = "how many of the five gaps on the second (closed-book) pass?"
+stage3_of = 4
+stage3_label = "how many of the four completions?"
+stage4_options = ["written from memory", "written by transcribing your own Latin letters", "not yet"]
