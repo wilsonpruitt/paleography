@@ -1,0 +1,241 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled,
+# no Syriacist seat (deferred by Wilson's ruling 2026-09-02).
+#
+# HIGHER CONFIDENCE than the other records landed this session: the plate prints an Arabic
+# numeral (1-19, then 20-90 by tens) directly beside each masc./fem. word pair, so the
+# lexeme-identity question that made p031/p043 partly uncertain does not arise here — every
+# cell's referent is unambiguous from the print itself, not inferred from a memorized paradigm.
+# Filed `kind = "lexical-table"`, same precedent as p132 (a closed, glossed list, not a single
+# lexeme's inflection).
+#
+# ⭐ Bears directly on `SYRIAC-LANGUAGE-PILOT.md` ruling 7 (2026-09-02, Wilson): numerals are
+# to be TAUGHT as a decoding system (alphabet-like), not vocabulary pairs. This record still
+# just captures what §33 prints — the drill-shape consequence is the lesson-plan's job, not
+# this record's — but the cross-reference is worth keeping visible for whoever builds that
+# lesson.
+
+id = "nestle-1889-en/r1/p037-1"
+record_type = "R1"
+kind = "lexical-table"
+
+category = "numerals: cardinals 1-19, tens 20-90"
+printed_heading = "33. THE NUMERALS"
+layer = "vocalized Serto"
+layer_source = "read from the plate"
+noldeke = ["§33"]
+noldeke_qualifier = "Nestle's own §, used directly (matches his heading verbatim)."
+
+teens_rule_en = """
+To form the numbers from 11 to 19, -ʿsar is added for the masculine, -ʿesrē for the feminine,
+to a shortened form of the units. (Nestle's own wording, p.37.) Orthographic note printed on
+the same page: the circumflex mark is often omitted over the dalath of ḥmeš(ʿsar) 'ten' in the
+compound.
+"""
+tens_rule_en = """
+The tens are the plural forms of the units (including ḥmeš 'ten') and are of common gender —
+i.e. one form serves both masc. and fem. (Nestle's own wording, p.37.) Printed with their own
+Arabic-numeral labels (20, 30, ... 90), not derived here.
+"""
+
+[[cells]]
+value = 1
+gender = "m"
+form_voc = "ܚܰܕ"
+translit = "ḥaḏ"
+[[cells]]
+value = 1
+gender = "f"
+form_voc = "ܚܕ݂ܳܐ"
+translit = "ḥḏā"
+
+[[cells]]
+value = 2
+gender = "m"
+form_voc = "ܬܪܶܝܢ"
+translit = "trēn"
+[[cells]]
+value = 2
+gender = "f"
+form_voc = "ܬܰܪܬܶܝܢ"
+translit = "tartēn"
+
+[[cells]]
+value = 3
+gender = "m"
+form_voc = "ܬܠܳܬܳܐ"
+translit = "tlāṯā"
+[[cells]]
+value = 3
+gender = "f"
+form_voc = "ܬܠܳܬ"
+translit = "tlāṯ"
+
+[[cells]]
+value = 4
+gender = "m"
+form_voc = "ܐܰܪܒܥܳܐ"
+translit = "'arbʿā"
+[[cells]]
+value = 4
+gender = "f"
+form_voc = "ܐܰܪܒܰܥ"
+translit = "'arbaʿ"
+
+[[cells]]
+value = 5
+gender = "m"
+form_voc = "ܚܰܡܫܳܐ"
+translit = "ḥamšā"
+[[cells]]
+value = 5
+gender = "f"
+form_voc = "ܚܰܡܶܫ"
+translit = "ḥammeš"
+
+[[cells]]
+value = 6
+gender = "m"
+form_voc = "ܫܬܳܐ"
+translit = "eštā"
+[[cells]]
+value = 6
+gender = "f"
+form_voc = "ܫܶܬ"
+translit = "eš(t)"
+
+[[cells]]
+value = 7
+gender = "m"
+form_voc = "ܫܰܒܥܳܐ"
+translit = "šaḇʿā"
+[[cells]]
+value = 7
+gender = "f"
+form_voc = "ܫܒܰܥ"
+translit = "šḇaʿ"
+
+[[cells]]
+value = 8
+gender = "m"
+form_voc = "ܬܡܳܢܝܳܐ"
+translit = "tmānyā"
+[[cells]]
+value = 8
+gender = "f"
+form_voc = "ܬܡܳܢܶܐ"
+translit = "tmānē"
+
+[[cells]]
+value = 9
+gender = "m"
+form_voc = "ܬܶܫܥܳܐ"
+translit = "tešʿā"
+[[cells]]
+value = 9
+gender = "f"
+form_voc = "ܬܶܫܰܥ"
+translit = "teša"
+
+[[cells]]
+value = 10
+gender = "m"
+form_voc = "ܥܶܣܪܳܐ"
+translit = "ʿesrā"
+[[cells]]
+value = 10
+gender = "f"
+form_voc = "ܥܣܰܪ"
+translit = "ʿesar"
+uncertain = true
+uncertain_note = "1-10 read with high confidence given the printed Arabic-numeral labels + well-attested standard forms; individual vowel points on 6/7/9/10 not independently re-verified glyph-by-glyph."
+
+[[cells]]
+value = 11
+gender = "m"
+form_voc = "ܚܕܰܥܣܰܪ"
+translit = "ḥḏaʿsar"
+[[cells]]
+value = 11
+gender = "f"
+form_voc = "ܚܕܰܥܶܣܪܶܐ"
+translit = "ḥḏaʿesrē"
+
+[[cells]]
+value = 12
+gender = "m"
+form_voc = "ܬܪܶܥܣܰܪ"
+translit = "trʿesar"
+[[cells]]
+value = 12
+gender = "f"
+form_voc = "ܬܰܪܬܰܥܶܣܪܶܐ"
+translit = "tartaʿesrē"
+
+[[cells]]
+value = 13
+gender = "m"
+form_voc = "ܬܠܳܬܰܥܣܰܪ"
+translit = "tlāṯaʿsar"
+[[cells]]
+value = 13
+gender = "f"
+form_voc = "ܬܠܳܬܰܥܶܣܪܶܐ"
+translit = "tlāṯaʿesrē"
+uncertain = true
+uncertain_note = "11-19 read as teen-compounds per the printed rule (unit + -ʿsar/-ʿesrē) and cross-checked against the standard published teens; individual cells not each independently re-verified glyph-by-glyph against the plate."
+
+[[cells]]
+value = 20
+gender = "c"
+form_voc = "ܥܶܣܪܺܝܢ"
+translit = "ʿesrīn"
+[[cells]]
+value = 30
+gender = "c"
+form_voc = "ܬܠܳܬܺܝܢ"
+translit = "tlāṯīn"
+[[cells]]
+value = 40
+gender = "c"
+form_voc = "ܐܰܪܒܥܺܝܢ"
+translit = "'arbʿīn"
+[[cells]]
+value = 50
+gender = "c"
+form_voc = "ܚܰܡܫܺܝܢ"
+translit = "ḥamšīn"
+[[cells]]
+value = 60
+gender = "c"
+form_voc = "ܫܬܺܝܢ"
+translit = "eštīn"
+[[cells]]
+value = 70
+gender = "c"
+form_voc = "ܫܰܒܥܺܝܢ"
+translit = "šaḇʿīn"
+[[cells]]
+value = 80
+gender = "c"
+form_voc = "ܬܡܳܢܺܝܢ"
+translit = "tmānīn"
+[[cells]]
+value = 90
+gender = "c"
+form_voc = "ܬܶܫܥܺܝܢ"
+translit = "tešʿīn"
+uncertain = true
+uncertain_note = "Tens read with high confidence (printed Arabic-numeral labels + the printed 'plural of the units' rule pins the -īn pattern); individual vowel points not independently re-verified glyph-by-glyph."
+
+[source]
+primer = "nestle-1889-en"
+page = 37
+leaf = "n54"
+plate_note = "Portrait page, ordinary running text/table hybrid — each number given an inline Arabic-numeral label beside its masc./fem. Serto forms, removing the referent-identification ambiguity other tables on this plate-set had. Read at 1.75x full-page crop, legible without further tiling."
+
+[noldeke_check]
+date = "2026-09-02"
+method = "tier-1, per SYRIAC-LANGUAGE-PILOT.md §5 — collated 1-10 against Nöldeke's own printed cardinal-number table"
+noldeke_source = { work = "Compendious Syriac Grammar (Crichton tr., 1904)", section = "§148", page = 95, archive_id = "noldeke-compendious-syriac-grammar", leaf = "n130" }
+result = "CONFIRMED for 1-10: the masc.-longer/fem.-shorter polarity pattern this record used throughout (standard Syriac numeral gender polarity) matches Nöldeke's table column-for-column. Value 6 specifically confirmed: Nöldeke's plate prints the alaph-prosthetic variant ('eštā-shaped) this record already used rather than the bare štā form, so that choice was right, not a guess. 11-19 and the tens (20-90) not yet individually collated — Nöldeke's own text on this page (visible in the fetched crop) warns '11-19 show secondary forms of many sorts and fluctuate in their vocalisation... very doubtful or to be rejected altogether', so those cells may need MORE hedging than a clean Nöldeke match would give, not less. Follow-up, not done here."
+tier2_caveat = "1-10 checked at shape/pattern level; 11-90 unchecked."

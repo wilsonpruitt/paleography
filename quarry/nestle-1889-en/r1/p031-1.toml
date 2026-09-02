@@ -1,0 +1,195 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled,
+# and NO Syriacist seat is filled (deferred by Wilson's ruling 2026-09-02: proceed uncontrolled
+# rather than wait). Confidence is uneven by design, per column — see `vocalization_confidence`
+# below. Do not treat `form_voc` here as more certain than it is; `form_unvoc` (consonant
+# skeleton only) is the load-bearing field until a blind control runs.
+#
+# This is a 12-row × 5-column SURVEY table (one row per exemplar noun, illustrating 12
+# different noun-formation classes), not a single lexeme's paradigm. Filed
+# `kind = "paradigm-survey"`. ✅ RULED 2026-09-02 (Wilson) — formalized as one of four named
+# R1 shapes in SYRIAC-LANGUAGE-PILOT.md §4, alongside p132's `lexical-table` and p034's `rule`.
+#
+# ⭐ Blind control for this record specifically: SYRIAC-LANGUAGE-PILOT.md's new two-tier R1
+# control protocol (§5) applies — check each row's standard forms against Nöldeke's own noun-
+# state tables where he prints the same class; the rows already flagged `uncertain` above
+# (b, c, g, h, III.a) are exactly tier-2 cases (plate shape diverging from the expected
+# paradigm) that Nöldeke can't adjudicate — those stay `proposed` until a real second look.
+
+id = "nestle-1889-en/r1/p031-1"
+record_type = "R1"
+kind = "paradigm-survey"
+
+category = "noun: state (absolute/construct/emphatic) × number, across 12 exemplar noun-classes"
+printed_heading = "29. EMPHATIC STATE — table of noun classes and their inflexion"
+layer = "vocalized Serto"
+layer_source = "read from the plate"
+noldeke = ["§29"]
+noldeke_qualifier = "Nestle's own § (29), used directly — this is his section number, not a Nöldeke cross-reference; no Nöldeke § was confidently matched, left blank rather than guessed."
+
+columns = ["sg_abs_cstr", "sg_emph", "pl_abs", "pl_cstr", "pl_emph"]
+vocalization_confidence = """
+Consonant skeletons (form_unvoc) are read with reasonable confidence — the Serto letterforms
+are legible at the crop resolution used (2.6x, two-tile split per row-band). Full vocalization
+(form_voc) is NOT: the small triangle/dot diacritics distinguishing e.g. pthaha from zqapha
+from rbasa at this type size are exactly the class of mark this project's own house rule
+(reference_arabic-control-rule) says never to finalize by eye alone. Treat every form_voc
+below as a best-effort placement of visible dot/triangle shapes onto the (confident) consonant
+skeleton — proposed, not adjudicated.
+"""
+
+[[cells]]
+class = "I.a"
+gloss_en = "king"
+sg_abs_cstr = { form_unvoc = "ܡܠܟ", form_voc = "ܡܰܠܟ" }
+sg_emph     = { form_unvoc = "ܡܠܟܐ", form_voc = "ܡܰܠܟ݁ܳܐ" }
+pl_abs      = { form_unvoc = "ܡܠܟܝܢ", form_voc = "ܡ̈ܰܠܟ݁ܺܝܢ" }
+pl_cstr     = { form_unvoc = "ܡܠܟܝ", form_voc = "ܡ̈ܰܠܟ݁ܰܝ" }
+pl_emph     = { form_unvoc = "ܡܠܟܐ", form_voc = "ܡ̈ܰܠܟ݁ܶܐ" }
+
+[[cells]]
+class = "I.b"
+gloss_en = "foot"
+sg_abs_cstr = { form_unvoc = "ܪܓܠ", form_voc = "ܪ̈ܶܓ݂ܶܠ" }
+sg_emph     = { form_unvoc = "ܪܓܠܐ", form_voc = "ܪ̈ܶܓ݂ܠܳܐ" }
+pl_abs      = { form_unvoc = "ܪܓ̈ܠܝܢ" }
+pl_cstr     = { form_unvoc = "ܪ̈ܓ݂ܠܝ" }
+pl_emph     = { form_unvoc = "ܪ̈ܓ݂ܠܐ" }
+uncertain = true
+uncertain_note = """
+RE-VERIFIED 2026-09-02 on a second, tighter (3.2x) crop, prompted by the Nöldeke tier-1
+mismatch below: the plural columns' diagonal yod-stroke is the SAME shape as row I.a's
+masculine -in/-ay/-ē pattern, not a distinct -āt- shape — confirmed on independent re-read,
+not a first-pass misreading. The open question is now LEXICAL, not a transcription doubt:
+either this word isn't the ordinary feminine reglā 'foot' (a different, masculine, word also
+glossed 'foot'), or Nestle's own paradigm treats it as masculine for some reason a Syriacist
+would need to name. Reading stands; still flagged because the WHY is unresolved.
+"""
+
+[[cells]]
+class = "I.c"
+gloss_en = "sanctuary"
+sg_abs_cstr = { form_unvoc = "ܡܩܕܫ" }
+sg_emph     = { form_unvoc = "ܡܩܕܫܐ" }
+pl_abs      = { form_unvoc = "ܡܩ̈ܕܫܝܢ" }
+pl_cstr     = { form_unvoc = "ܡ̈ܩܕܫܝ" }
+pl_emph     = { form_unvoc = "ܡ̈ܩܕܫܐ" }
+uncertain = true
+uncertain_note = "m-preformative pattern (maqdš-); internal vowel pointing not confidently placed."
+
+[[cells]]
+class = "I.d"
+gloss_en = "child"
+sg_abs_cstr = { form_unvoc = "ܛܠܐ" }
+sg_emph     = { form_unvoc = "ܛܠܝܐ" }
+pl_abs      = { form_unvoc = "ܛ̈ܠܝܢ" }
+pl_cstr     = { form_unvoc = "ܛ̈ܠܝ" }
+pl_emph     = { form_unvoc = "ܛ̈ܠܝܐ" }
+
+[[cells]]
+class = "I.e"
+gloss_en = "day"
+sg_abs_cstr = { form_unvoc = "ܝܘܡ" }
+sg_emph     = { form_unvoc = "ܝܘܡܐ" }
+pl_abs      = { form_unvoc = "ܝܘ̈ܡܝܢ" }
+pl_cstr     = { form_unvoc = "ܝܘ̈ܡܝ" }
+pl_emph     = { form_unvoc = "ܝܘ̈ܡܬܐ" }
+uncertain = true
+uncertain_note = "pl. emph. looks longer than the others (an -āthā-shaped tail), consistent with the known irregular plural yawmāthā 'days' — flagged because this is the one row where the plate shape and the standard grammar agree, so worth a second look in control precisely because agreement can also mean I unconsciously matched the shape to the expectation."
+
+[[cells]]
+class = "I.f"
+gloss_en = "eye"
+sg_abs_cstr = { form_unvoc = "ܥܝܢ" }
+sg_emph     = { form_unvoc = "ܥܝܢܐ" }
+pl_abs      = { form_unvoc = "ܥ̈ܝܢܝܢ" }
+pl_cstr     = { form_unvoc = "ܥ̈ܝܢܝ" }
+pl_emph     = { form_unvoc = "ܥ̈ܝܢܐ" }
+
+[[cells]]
+class = "I.g"
+gloss_en = "sea"
+sg_abs_cstr = { form_unvoc = "ܝܡ" }
+sg_emph     = { form_unvoc = "ܝܡܐ" }
+pl_abs      = { form_unvoc = "ܝܡ̈ܡܝܢ" }
+pl_cstr     = { form_unvoc = "ܝ̈ܡܡܝ" }
+pl_emph     = { form_unvoc = "ܝ̈ܡܡܐ" }
+uncertain = true
+uncertain_note = "geminate-m root (ym / ymm) — whether the plural doubles the second radical is a real grammatical question, not just a reading-confidence one; base skeleton shows what looks like a doubled stroke, not confirmed."
+
+[[cells]]
+class = "I.h"
+gloss_en = "rest"
+sg_abs_cstr = { form_unvoc = "ܢܝܚ" }
+sg_emph     = { form_unvoc = "ܢܝܚܐ" }
+pl_abs      = { form_unvoc = "ܢ̈ܝܚܝܢ" }
+pl_cstr     = { form_unvoc = "ܢ̈ܝܚܝ" }
+pl_emph     = { form_unvoc = "ܢ̈ܝܚܐ" }
+
+[[cells]]
+class = "II.a"
+gloss_en = "eternity"
+sg_abs_cstr = { form_unvoc = "ܥܠܡ" }
+sg_emph     = { form_unvoc = "ܥܠܡܐ" }
+pl_abs      = { form_unvoc = "ܥ̈ܠܡܝܢ" }
+pl_cstr     = { form_unvoc = "ܥ̈ܠܡܝ" }
+pl_emph     = { form_unvoc = "ܥ̈ܠܡܐ" }
+
+[[cells]]
+class = "II.b"
+gloss_en = "witness"
+sg_abs_cstr = { form_unvoc = "ܣܗܕܘ" }
+sg_emph     = { form_unvoc = "ܣܗ̈ܕܘܬܐ" }
+pl_abs      = { form_unvoc = "ܣܗ̈ܕܘܢ" }
+pl_cstr     = { form_unvoc = "ܣܗ̈ܕܘ" }
+pl_emph     = { form_unvoc = "ܣܗ̈ܕܘܬܐ" }
+uncertain = true
+uncertain_note = "sāhdūtā-shaped word (abstract in -ūtā, not the agent noun sāhdā 'witness [person]') — the gloss 'witness' may cover either the person or the abstract 'testimony'; base skeleton looks closer to the abstract noun. Flagging the lexical-identity question, not just the pointing."
+
+[[cells]]
+class = "III.a"
+gloss_en = "banquet"
+sg_abs_cstr = { form_unvoc = "ܡܫܬܘܬܐ" }
+sg_emph     = { form_unvoc = "ܡܫ̈ܬܘܬܐ" }
+pl_abs      = { form_unvoc = "ܡܫ̈ܬܘܬܐ" }
+pl_cstr     = { form_unvoc = "ܡܫ̈ܬܘܬ" }
+pl_emph     = { form_unvoc = "ܡܫ̈ܬܘܬܐ" }
+uncertain = true
+uncertain_note = "Longest word in the table (mštūtā-shaped); the singular/plural absolute and emphatic columns look very close to each other in the image at this zoom — a second, tighter crop is needed before trusting the abs/emph distinction on this row specifically."
+
+[[cells]]
+class = "III.b"
+gloss_en = "vision"
+sg_abs_cstr = { form_unvoc = "ܚܙܘ" }
+sg_emph     = { form_unvoc = "ܚܙܘܢܐ" }
+pl_abs      = { form_unvoc = "ܚ̈ܙܘܢܝܢ" }
+pl_cstr     = { form_unvoc = "ܚ̈ܙܘܢܝ" }
+pl_emph     = { form_unvoc = "ܚ̈ܙܘܢܐ" }
+
+[source]
+primer = "nestle-1889-en"
+page = 31
+leaf = "n48"
+plate_note = "Portrait page, table fills the whole leaf; two vertical row-bands (I.a-h, then II-III) each split into left (Sing.) / right (Plur.) halves, read at 2.6x per band-half — four crops total."
+
+[noldeke_check]
+date = "2026-09-02"
+method = "tier-1, per SYRIAC-LANGUAGE-PILOT.md §5"
+noldeke_source = { work = "Compendious Syriac Grammar (Crichton tr., 1904)", section = "§70", page = 48, archive_id = "noldeke-compendious-syriac-grammar", leaf = "n83" }
+caveat = "Nöldeke's §70 is NOT a 12-class survey like this plate — one worked example (the adjective 'wicked') covering only the GENERAL state-ending pattern (masc. sg. abs/cstr bare, emph +ā; masc. pl. abs -in, cstr -ay, emph -ē; fem. sg. abs +ā, cstr +ath, emph +āthā; fem. pl. abs -ān, cstr -āth, emph -āthā). So this check validates ENDING SHAPES across all twelve rows, not lexeme-by-lexeme forms the way p043's verb check could."
+result = """
+CONFIRMED for the masculine rows (I.a, I.c-d, I.f-h, II.a): every one uses exactly Nöldeke's
+masc. pattern (-Ø/-Ø/-ā singular, -in/-ay/-ē plural) — I.a's malkin/malkay/malkē is a textbook
+match. I.e's irregular yawmāthā-shaped plural emphatic is independently explained by
+Nöldeke's rule too: 'day' is a known exception that borrows the FEMININE plural ending onto a
+masculine noun — the `uncertain_note` on that row correctly named this rather than silently
+normalizing it.
+
+⚠ NOT resolved, and arguably sharpened: row I.b ('foot')'s plural columns used the masculine
+-in/-ay/-ē pattern, but if the lexeme really is reglā (a feminine noun), Nöldeke's general
+rule predicts -ān/-āth/-āthā instead — a real mismatch, not just a reading-confidence gap.
+This tier-1 check can't settle WHICH is wrong (the plate reading, the lexeme identification,
+or an exception this table is illustrating on purpose) — it only confirms the mismatch is real
+and worth a second plate look before Step 3, not resolved by a memorized paradigm either way.
+II.b ('witness') stays open for the same reason — its abstract-noun-shaped ending doesn't map
+cleanly onto either the adjective paradigm here or a simple agent-noun pattern.
+"""

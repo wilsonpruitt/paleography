@@ -1,0 +1,156 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled,
+# no Syriacist seat (deferred by Wilson's ruling 2026-09-02).
+#
+# Resolves MAP.md's Step-1 open question: p.63-64 (§49 Particles) is, like p.34, RULE +
+# examples, not a printed suffix-paradigm grid. Filed `kind = "rule"`, same shape as p034-1.
+# ⭐ One part of this record IS high-confidence, though: §49h's list of ~14 prepositions is
+# each individually glossed in English right on the plate (like p037's numerals), so those
+# entries carry the same confidence level as a lexical-table, even though the surrounding
+# suffix-attachment rule is prose. Split the confidence honestly rather than flattening the
+# whole record to one uncertainty level.
+
+id = "nestle-1889-en/r1/p063-1"
+record_type = "R1"
+kind = "rule"
+
+category = "particles: inseparable prepositions + suffix-taking prepositions"
+printed_heading = "D. THE PARTICLES § 49"
+layer = "vocalized Serto"
+layer_source = "read from the plate"
+noldeke = ["§49"]
+noldeke_qualifier = "Nestle's own §, used directly."
+
+[[rule]]
+letter = "b"
+rule_text_en = """
+The inseparable prepositions b- ("in"), d-/w- (copula), l- ("to, for"), comprised in the
+mnemonic wabl, take a before a vowelless consonant (rarely e). With suffixes: [b- suffixed
+forms, e.g. 1s bī, 2ms bāk, 3ms beh — printed as a short example list, not individually
+broken out here]; similarly with l-.
+"""
+prose_only = true
+prose_note = "Illustrative Serto examples for b-/l- with a handful of suffixes are printed inline but not re-transcribed cell-by-cell — same treatment as p034-1(b)."
+
+[[rule]]
+letter = "h"
+rule_text_en = """
+The following ALSO take the suffixes of the singular (i.e. inflect like a singular noun with
+suffixes, not like the plural pattern): men "from", ʿam "with", lwāṯ "to, towards", ʾayk
+"like", bāṯar "behind, after" (with the vowel a retained before the 1sg. and the 2nd/3rd
+plural suffixes). With the PLURAL suffixes (i.e. inflecting like a plural noun): ʿal "over",
+ḥlāp "instead of", sḥōr "around", bāṯar "after" (again, in this pattern too), saṭar "except",
+balḥōḏ "only", qḏām "before", (t)ḥōṯ "under".
+"""
+[[rule.prepositions]]
+form_voc = "ܡܶܢ"
+translit = "men"
+gloss_en = "from"
+suffix_pattern = "singular"
+[[rule.prepositions]]
+form_voc = "ܥܰܡ"
+translit = "ʿam"
+gloss_en = "with"
+suffix_pattern = "singular"
+[[rule.prepositions]]
+form_voc = "ܠܘܳܬ"
+translit = "lwāṯ"
+gloss_en = "to, towards"
+suffix_pattern = "singular"
+[[rule.prepositions]]
+form_voc = "ܐܰܝܟ"
+translit = "'ayk"
+gloss_en = "like"
+suffix_pattern = "singular"
+[[rule.prepositions]]
+form_voc = "ܒܳܬܰܪ"
+translit = "bāṯar"
+gloss_en = "after"
+suffix_pattern = "singular"
+suffix_pattern_note = "vowel a retained before 1sg. and 2nd/3rd plural suffixes, per the printed rule"
+[[rule.prepositions]]
+form_voc = "ܒܳܬܰܪ"
+translit_uncertain = "bāṯar-shaped, second word"
+gloss_en = "behind"
+suffix_pattern = "singular"
+uncertain = true
+uncertain_note = "RE-VERIFIED 2026-09-02 at 5x zoom: Nestle's plate prints TWO Serto words before the single gloss 'behind, after', not one word twice — this record's first pass wrongly merged them into one bāṯar entry, printed 'twice... not a duplicate' (see p063-1's noldeke_check for how this was caught: Nöldeke §156 independently shows 'behind' and 'after' as two prepositions from different roots, 'on the track of' vs 'hiding from'). The two printed words ARE visually very close at this type size — same general skeleton, a subtle middle-letter difference not confidently resolved as teth vs taw. form_voc here reuses the first word's spelling as a PLACEHOLDER, not a confirmed independent reading — needs a real second look, ideally by someone who can tell teth from taw at this resolution."
+[[rule.prepositions]]
+form_voc = "ܥܰܠ"
+translit = "ʿal"
+gloss_en = "over"
+suffix_pattern = "plural"
+[[rule.prepositions]]
+form_voc = "ܚܠܳܦ"
+translit = "ḥlāp"
+gloss_en = "instead of"
+suffix_pattern = "plural"
+[[rule.prepositions]]
+form_voc = "ܣܚܳܪ"
+translit = "sḥōr"
+gloss_en = "around"
+suffix_pattern = "plural"
+[[rule.prepositions]]
+form_voc = "ܒܳܬܰܪ"
+translit = "bāṯar"
+gloss_en = "after"
+suffix_pattern = "plural"
+suffix_pattern_note = "printed twice, once under each pattern — Nestle's own text, not a duplicate entry error"
+[[rule.prepositions]]
+form_voc = "ܒܳܬܰܪ"
+translit_uncertain = "bāṯar-shaped, second word"
+gloss_en = "behind"
+suffix_pattern = "plural"
+uncertain = true
+uncertain_note = "Same correction as the singular-pattern pair above — 'behind' and 'after' are two distinct printed words, not one word twice. Same placeholder-spelling caveat applies."
+[[rule.prepositions]]
+form_voc = "ܣܛܰܪ"
+translit = "saṭar"
+gloss_en = "except"
+suffix_pattern = "plural"
+[[rule.prepositions]]
+form_voc = "ܒܰܠܚܽܘܕ݂"
+translit = "balḥōḏ"
+gloss_en = "only"
+suffix_pattern = "plural"
+[[rule.prepositions]]
+form_voc = "ܩܕܳܡ"
+translit = "qḏām"
+gloss_en = "before"
+suffix_pattern = "plural"
+[[rule.prepositions]]
+form_voc = "ܬܚܘܬ"
+translit = "(t)ḥōṯ"
+gloss_en = "under"
+suffix_pattern = "plural"
+prepositions_confidence = "Each entry glossed in English on the plate, same identification confidence as p037's numerals. Consonant skeletons read with reasonable confidence; fine vocalization not independently re-verified glyph-by-glyph."
+
+[source]
+primer = "nestle-1889-en"
+page = 63
+page_end = 64
+leaf = "n80"
+leaf_end = "n81"
+plate_note = "Portrait pages, ordinary running text. §49a-g (p.63, spilling onto p.64 top) covers the inseparable b-/d-/l- prepositions and several irregular verbs — not re-transcribed, out of scope for this target. §49h (p.64 middle) is the glossed preposition list captured above."
+
+[noldeke_check]
+date = "2026-09-02"
+method = "tier-1, per SYRIAC-LANGUAGE-PILOT.md §5"
+noldeke_source = { work = "Compendious Syriac Grammar (Crichton tr., 1904)", section = "§156", page = 101, page_end = 102, archive_id = "noldeke-compendious-syriac-grammar", leaf = "n136", leaf_end = "n137" }
+result = """
+Nöldeke's §156 is a much longer glossed preposition list covering the same ground as this
+record's §49h list. Two direct word-for-word confirmations: qḏām 'before' (identical word,
+identical gloss, both marked as taking plural suffixes) and ḥlāp 'instead of' (identical word,
+identical gloss, plural suffixes). 'Around' re-checked against a fresh crop of Nestle's own
+plate: the printed word does look sḥōr-shaped (s-ḥ-w-r), so this is a genuine vocabulary
+difference between the two grammars, not a reading error on this record's part — Nöldeke's
+own example for the concept just uses a different root.
+
+✅ FIXED 2026-09-02: this record originally glossed a single bāṯar as BOTH 'behind' and
+'after' under both suffix-pattern rows. Re-cropped Nestle's plate at 5x and confirmed TWO
+distinct printed words before the shared gloss 'behind, after' — Nöldeke's claim (two separate
+derived prepositions, 'on the track of' vs 'hiding from') is directly visible on Nestle's own
+page, not just a difference between the two grammars. Split into two `[[rule.prepositions]]`
+entries above ('after' = bāṯar, confirmed; 'behind' = a visually very similar but distinct
+second word, exact spelling still `uncertain` — the two printed forms are close enough at this
+type size that a confident teth-vs-taw call needs a better crop or a real reader).
+"""

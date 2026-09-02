@@ -4,7 +4,9 @@
 # pagination but is not one of the works its Table of Contents lists. It is a bare lexical
 # table: 12 month names, then the days of the week. Not a passage (R3), and not a paradigm of
 # inflected forms (R1 as §4 means it). Filed R1 with `kind = "lexical-table"`.
-# ⛔ Wilson's ruling owed: keep this shape as R1, or give the schema a lexical-list type?
+# ✅ RULED 2026-09-02 (Wilson): keep as R1, `kind = "lexical-table"` — now formalized as one
+# of four named R1 shapes in SYRIAC-LANGUAGE-PILOT.md §4, alongside `rule` and
+# `paradigm-survey` (2026-09-02's other new shapes).
 id = "nestle-1889-en/r1/p132-1"
 record_type = "R1"
 kind = "lexical-table"

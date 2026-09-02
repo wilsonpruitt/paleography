@@ -33,6 +33,17 @@ are a quarry, not a syllabus.
 6. ⭐ **Wilson is learner #1 — the tool must teach HIM** (standing ruling, and the
    [scaffold-the-learner rule](#8-traps) applies with full force: never let the data decide
    the curriculum).
+7. ⭐ **Numerals are decoding, not vocabulary — ruled 2026-09-02.** Wilson's own framing:
+   most systems teach "one," "two" the way they teach "red," "dog" — paired vocabulary with a
+   translation to recall. But a number has no visual analogue the way a color or an animal
+   does; recalling ܬܪܝܢ for "2" is closer to recalling a LETTER for a sound than to recalling
+   a WORD for a referent. **Numerals should be taught like the alphabet: a small closed
+   decoding system drilled for instant recognition, not a vocabulary set drilled for
+   translation.** Consequence for lesson design (not for R1 extraction itself, which still
+   just captures what §33's plate prints): whichever lesson introduces numerals should use an
+   alphabet-style drill shape (recognition/production pairs, high-repetition, no semantic
+   scaffolding) rather than the vocab-card shape the rest of the curriculum uses for nouns.
+   Applies beyond Syriac — any future numeral-teaching content in any language track.
 
 ## 2. What the pilot is — and is not
 
@@ -92,10 +103,45 @@ primer teaches something Nöldeke splits or lacks, the tag is the nearest § plu
 qualifier — never a new invented ID in the pilot.
 
 ### R1 — Paradigm table
-`lexeme` (lemma, unvocalized + vocalized) · `category` (verb stem/tense, noun state, suffix
-set…) · `cells` (list of `{gram_tags, form_unvoc, form_voc, translit}`) · `noldeke` ·
-`source`. ⚠ One table in print is often several tables in data (strong verb ≠ its footnoted
-weak-verb variants) — split on category, not on typography.
+
+⭐ **Four shapes, ruled 2026-09-02 (Wilson).** Extraction across the pilot's first primer
+(`SYRIAC-R1-RUNBOOK.md`'s nine-target pull, `quarry/nestle-1889-en/r1/`) kept hitting real
+grammar content that didn't fit a single lexeme's inflection table — a calendar list (p132), a
+rule-plus-worked-examples page (p034, p063), a 12-row multi-lexeme survey (p031). Each
+recurred or will recur in any primer, so this is the schema finding its actual shape, not
+drift — naming the four variants now, rather than re-deciding ad hoc every time a fifth shows
+up. `record_type` is always `"R1"`; `kind` distinguishes the variant, omitted for the default.
+
+1. **Default (no `kind`) — one lexeme's inflection.** `lexeme` (lemma, unvocalized +
+   vocalized) · `category` (verb stem/tense, noun state, suffix set…) · `cells` (list of
+   `{gram_tags, form_unvoc, form_voc, translit}`) · `noldeke` · `source`. ⚠ One table in
+   print is often several tables in data (strong verb ≠ its footnoted weak-verb variants) —
+   split on category, not on typography. *Precedent: `p023-1/-2` (pronoun), `p044-1` (Peal
+   perfect+suffixes), `p043-1/-2/-3` (Peal perfect/imperfect/imperative, bare).*
+2. **`kind = "lexical-table"` — a closed, glossed list, not an inflection.** Same `cells`
+   shape but each cell is a different LEXEME (`gloss_en` required per cell), not a different
+   grammatical form of one lexeme. Calendars, numeral sets, glossed particle lists. *Precedent:
+   `p132-1/-2` (months, weekdays), `p037-1` (numerals 1-19 + tens).*
+3. **`kind = "rule"` — the primer teaches by stated rule + worked examples, no grid.** Some
+   grammar (noun+suffix attachment, preposition+suffix attachment) is taught as prose stating
+   a transformation rule plus a handful of illustrative forms, not a systematic table. Shape:
+   `[[rule]]` array, each entry `{letter, rule_text_en, printed_examples?}`; `base_records`
+   naming the tables the rule composes when relevant. **Do not synthesize the full
+   cross-product paradigm the rule implies** — capture the rule as printed and let composition
+   happen downstream, with the base tables in hand. *Precedent: `p034-1` (noun+suffix),
+   `p063-1` (preposition+suffix).*
+4. **`kind = "paradigm-survey"` — one table, many lexemes, one shared paradigm shape.**
+   Distinct from `lexical-table`: every row here IS still inflected (state × number, e.g.),
+   it's just that each row is a different exemplar lexeme illustrating a different
+   noun/verb-formation class, not one lexeme run through its full paradigm. `columns` names
+   the shared paradigm slots; `[[cells]]` rows carry `class`, `gloss_en`, and one sub-table
+   per column. *Precedent: `p031-1` (§29 noun-state survey across 12 noun classes).*
+
+Confidence still varies WITHIN a `kind`, not just between them (p037's numerals are
+high-confidence because every cell has a printed Arabic-numeral label; p031's survey rows are
+uneven because several lexeme identities themselves were uncertain) — `kind` says what shape
+the data is, not how sure the extractor was. Keep per-cell/per-record `uncertain` doing that
+job.
 
 ### R2 — Composed exercise
 The author's own sentences — the part of the primer that exists nowhere else and the only
@@ -173,6 +219,38 @@ and a primer that *says* it prints vocalized text will still have unvocalized li
 **Curriculum QA is separate from transcription QA.** Reading-first demotes vocalization in
 what the *learner* sees first; the *extractor* captures every point faithfully. Opposite
 answers to different questions — do not let one leak into the other.
+
+⭐ **R1 blind control without a Syriacist — ruled 2026-09-02 (Wilson: hold the outreach email
+until something public exists, so the seat stays empty for a while yet).** The obvious
+fallback — a second, fresh Claude session re-reading the same plate blind — is NOT the right
+default here, on the [[reference_arabic-control-rule]]'s own logic: that rule's control is
+always an INDEPENDENT SOURCE (a PD original + a PD comparable translation), never a second
+read of the same document by the same kind of reader. Two vision-reads of one JPEG share every
+failure mode (small-type Serto diacritics, this scan's specific resolution) — agreement
+between them is not evidence, it's correlated error.
+
+**The real independent source is already in the schema: Nöldeke.** Every R1 record tags
+`noldeke = ["§NN"]` precisely because his 1904 PD English grammar is the shared coordinate
+system — and for any paradigm he *also* prints (which is most of Phase-1's target list: verb
+conjugations, pronoun sets, numerals, noun states), his own forms ARE the free control, exactly
+the Al-Maʿarrī/Nicholson shape from the Arabic pilot. Two-tier protocol:
+1. **Standard paradigms Nöldeke (or another PD reference grammar — Duval, Robinson's
+   *Paradigms and Exercises*) also prints:** control = his printed forms for the same cell,
+   fetched and collated the same blind-then-diff way — read Nestle's plate first, record it,
+   *then* open Nöldeke and diff. Record every divergence, including where Nöldeke is right.
+   This needs no human and no second vision-read; it's close to free.
+2. **Primer-specific content with no external "should be"** — the `kind = "rule"` records'
+   own worked examples (they illustrate NESTLE'S prose, not a universal paradigm), and any
+   cell already flagged `uncertain` because the plate's shape didn't match the standard
+   paradigm (`p031-1`'s several flagged rows) — Nöldeke can't adjudicate a disagreement with
+   himself. These stay `proposed` until either a fresh independent plate-read or the eventual
+   Syriacist actually looks. Don't manufacture false confidence by skipping tier 2 because
+   tier 1 was easy.
+
+Same direction-of-error caution as the Arabic rule: passing the Nöldeke check is real
+evidence; a mismatch doesn't automatically mean the extraction is wrong (Nestle and Nöldeke
+can genuinely differ — dialect, edition) — a mismatch means look closer, not "fail," record
+which side moves.
 
 ## 6. Re-sequencing — the actual reorder
 

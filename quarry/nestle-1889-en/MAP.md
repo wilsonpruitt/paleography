@@ -245,3 +245,59 @@ per page measured over 8 pages; 201 pages ⇒ ~1.43M tokens irreducible I/O.** �
 assumed uniform full-transcription yield across the chrestomathy; R3's actual run (above) shows
 the assumption held only for the 20 pages with known content behind them — the unknown-text
 pages cost roughly the same tokens for a fraction of the yield.
+
+## R1 Step 1 — plate locations for `SYRIAC-R1-RUNBOOK.md`'s nine targets, run 2026-09-02
+
+Located from the scan's own hOCR text index (`_hocr_pageindex.json.gz` + `_hocr_searchtext.txt.gz`,
+re-fetched fresh — **not kept on disk**, same disk-discipline as `corpus/raw`), text only, no
+plate images pulled. Confirms `leaf = page + 17` holds through the whole Morphology zone
+(pronoun records already on disk are `p023-*`, matching leaf n40 exactly) and section headers
+OCR cleanly enough to place every target, even where the paradigm grid itself OCRs to noise.
+**Result: nine targets collapse onto five leaves, and two guesses in the runbook were wrong —
+in the direction of LESS work, not more.**
+
+| target (runbook's list) | printed p. | leaf | plate / section head found |
+|---|---|---|---|
+| Noun + possessive-suffix set | 34 | n51 | §31 "NOUN WITH SUFFIXES" — single page, matches runbook's guess |
+| Peal imperfect | 43 | **n60** | §38 "STRONG VERBS" — see correction below |
+| Peal perfect, bare | 43 | **n60** | same plate as imperfect |
+| Peal imperative | 43 | **n60** | same plate |
+| Peal infinitive | 43 | **n60** | same plate — confirms runbook's "probably folded into the main table" |
+| Peal participle, active + passive | 43 | **n60** | same plate |
+| Noun plural emphatic + seyame rule | 31 | **n48** | §29 "EMPHATIC STATE" — full sing/plur × abs/cstr/emph grid |
+| Construct state | 31 | **n48** | SAME plate as above — see correction below |
+| Numerals: cardinals + ordinals | 36–37 | n53–n54 | §33 "THE NUMERALS" — cardinal table on n54, inflected/construct forms discussed on n53 |
+| Preposition + pronominal suffix table | 63–64 | n80–n81 | §49 "PARTICLES" — location only; OCR too garbled here to confirm table vs. prose, needs the actual plate |
+
+**Two corrections to the runbook's "likely location" guesses:**
+1. **Peal perfect bare is NOT "the same plate as p044 minus its suffix columns" — it is a
+   separate plate, one page earlier.** p.43 (leaf n60, headed "38. STRONG VERBS") is a full
+   strong-verb synopsis grid — bare Peal perfect, imperfect, imperative, infinitive, and
+   participle (active + passive) all in one table, immediately BEFORE p.44's "39. STRONG VERB
+   WITH SUFFIXES" (`r1/p044-1.toml`, already on disk). So five of the nine targets are one
+   single plate, not five separate pulls.
+2. **Construct state is not a separate table from the plural-emphatic one — same grid.** §29's
+   summary table (p.31, "Sing. Plur. / st. abs. and cstr. / st. emph. / st. abs. / st. cstr.
+   st. emph.") already carries the construct-state column for both numbers. One plate covers
+   both targets.
+
+**One target demoted out of R1 entirely:** "Adjective agreement pattern" is not a paradigm —
+p.68 (leaf n85, §55 "NOUN") is prose in **III. Notes on the Syntax (§§50–56)**, discussing
+attributive-adjective word order. It belongs with the runbook's open syntax-note question
+(relative ܕ, prohibition ܠܳܐ, etc.), not as an R1 lexeme+cells record. Not resolving that
+routing question here — just correcting its target type.
+
+**Net effect on Step 2's dispatch:** the nine-target list now needs plate reads on **five or
+six leaves** (n48, n51, n53, n54, n60, and n80–81 pending confirmation), down from the
+runbook's own "~6–10 leaf fetches" estimate for Step 1 locating — and Step 2's actual
+transcription work is smaller than nine separate paradigm pulls would suggest, since two
+plates (n48, n60) each answer multiple targets at once. Preliminary token estimate before
+Step 2 dispatch, quoting the measured rate per `research/syriac-pilot-phase1-calibration.md`
+rather than re-guessing: **6.2k tokens/page irreducible I/O measured on grammar-zone-adjacent
+pages, ~2× end to end ⇒ roughly 12–15k tokens/page.** Six leaves (treating n80/n81 as one
+target read across two pages) ⇒ **very roughly 75–90k tokens on Opus**, likely higher if the
+two multi-column grid plates (n48, n60) need the same two-crop halving `p044-1`'s table did
+rather than one read each — actual figure still wants a real crop-count check on those two
+plates before Wilson's go, not a guess dressed as a number. This is still Step 1 (locate);
+Step 2 (extract) has not run and will not without a "which model, and go?" per the runbook's
+own hard stop.

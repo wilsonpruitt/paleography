@@ -1,0 +1,152 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled.
+#
+# ⚑ NEW `kind` VALUE, ruled by Wilson 2026-09-02 (see SYRIAC-R1-RUNBOOK.md's target list, item
+# 1, "Noun + possessive-suffix set"). p.34 is NOT a printed paradigm grid — §31 states a RULE
+# (append the §23 suffix set to a noun's status-emphaticus stem) plus scattered worked examples,
+# not a systematic person×lexeme table. Filed `kind = "rule"`, parallel to p132's precedent
+# `kind = "lexical-table"`. ⭐ Wilson's own instruction: capture the rule AS PRINTED — do not
+# synthesize the full noun+suffix cross-product paradigm from our own expectations of what it
+# "should" produce. That composition (state-table × suffix-set) is downstream work for whoever
+# consumes this record, done with the base tables (`r1/p023-1`, `r1/p023-2`, `r1/p031-1`) in
+# hand, not baked in here. Expect this shape to recur in other primers — Nestle is not unusual
+# in teaching noun-suffixation as a rule rather than a grid.
+
+id = "nestle-1889-en/r1/p034-1"
+record_type = "R1"
+kind = "rule"
+
+category = "noun: possessive-suffix attachment (rule + worked examples, not a printed table)"
+layer = "vocalized Serto"
+layer_source = "read from the plate"
+noldeke = []
+noldeke_qualifier = "No single Nöldeke § claimed — his suffix treatment is distributed across several §§ in the noun chapter; not resolved here rather than guess one."
+
+base_records = ["nestle-1889-en/r1/p023-1", "nestle-1889-en/r1/p023-2", "nestle-1889-en/r1/p031-1"]
+base_records_note = "The rule below transforms the singular-suffix set (p023-1/-2) and attaches it to the status-emphaticus stem (p031-1's 'st. emph.' column). It does not name p044-1 (Peal-perfect-with-suffixes) — that is the VERB suffix set, a separate paradigm this page does not touch."
+
+[[rule]]
+letter = "a"
+rule_text_en = """
+The appending of the suffixes presents little difficulty. The singular forms given in §23
+(with ܪܶܥܝܳܢܳܐ, "mind" — Nestle's own carrier word for that table), when joined to the PLURAL
+of nouns, become the forms listed below (§23's singular-noun suffix set re-shaped for a
+plural stem: an extra -ay- glide appears before the person marker).
+"""
+[[rule.printed_examples]]
+seq = 1
+form_voc = "ܘ̈ܗܘܢ"
+translit_uncertain = "ayhōn"
+gram_tags_proposed = { person = "3", gender = "m", number = "pl" }
+plate_note = "First of seven forms; ends in the waw-nun shape matching Nöldeke's 'their (m.)' ayhōn."
+[[rule.printed_examples]]
+seq = 2
+form_voc = "ܗ̈ܘ"
+translit_uncertain = "aw(hi)"
+gram_tags_proposed = { person = "3", gender = "m", number = "sg" }
+plate_note = "Second form, shorter than seq 1, matches Nöldeke's 'his' aw(hi) in length and ending shape."
+[[rule.printed_examples]]
+seq = 3
+form_voc = "ܝ̈"
+translit_uncertain = "ay"
+gram_tags_proposed = { person = "1", number = "sg" }
+plate_note = "Third form, shortest of the seven, matches Nöldeke's 'my' ay."
+[[rule.printed_examples]]
+seq = 4
+form_voc = "ܟ̈ܘܢ"
+translit_uncertain = "aykōn"
+gram_tags_proposed = { person = "2", gender = "m", number = "pl" }
+plate_note = "Fourth form, matches Nöldeke's 'your (m.)' aykōn in shape."
+[[rule.printed_examples]]
+seq = 5
+form_voc = "ܟ̈"
+translit_uncertain = "ayk"
+gram_tags_proposed = { person = "2", gender = "m", number = "sg" }
+plate_note = "Fifth form, matches Nöldeke's 'thy (m.)' ayk."
+[[rule.printed_examples]]
+seq = 6
+form_voc = "ܢ̈"
+translit_uncertain = "ayn"
+gram_tags_proposed = { person = "1", number = "pl" }
+plate_note = "Sixth form, matches Nöldeke's 'our' ayn."
+[[rule.printed_examples]]
+seq = 7
+form_voc = "ܗ̈ܝܢ"
+translit_uncertain = "ayhen"
+gram_tags_proposed = { person = "3", gender = "f", number = "pl" }
+plate_note = "Seventh form, before the final period, matches Nöldeke's 'their (f.)' ayhen."
+examples_confidence = """
+UPGRADED 2026-09-02, re-cropped at 2.8x and matched against Nöldeke's confirmed 10-item
+plural-suffix set (§145, this record's own [noldeke_check] above). Nestle's 7 forms appear to
+be a SUBSET of Nöldeke's 10 — omitting the two purely-feminine-singular entries (thy f. ayki,
+her ayha) and 'your (f.)' ayken, which is plausible (grammars often print only the persons
+whose ending differs enough to need showing). `gram_tags_proposed` is a MAPPING PROPOSAL by
+shape/length correlation to Nöldeke's named set, not an independent glyph-by-glyph reading of
+Nestle's plate — still short of the seyame-dot-level precision the house rule
+(reference_arabic-control-rule) requires before trusting fine pointing. Real upgrade from the
+prior state (pure unlabeled guesses); still `proposed`, not adjudicated.
+"""
+
+[[rule]]
+letter = "b"
+rule_text_en = """
+With the suffixes the noun generally assumes the form of the status emphaticus, dropping the
+terminations ā and ē; no change occurs except where ease of pronunciation demands the
+insertion or restoration of a vowel, or a change in its position, especially before the
+vowelless and consonantal suffixes -y; -kem, -kem; -hōn, -hōn [reading uncertain, same caveat
+as (a)]. In the case of the masculines, in the above paradigms, e.g., the position of the
+vowel is shifted only in [form], compared with [form]. Insertion in [form], [form];
+similarly in [form], [form] alongside of [form], [form]; in ... my burden from [form], [form],
+[form] etc.
+"""
+prose_only = true
+prose_note = "This clause is illustrative prose citing forms already given elsewhere on the page (the printed text is dense with inline Serto examples not individually glossed); not re-transcribed cell-by-cell here — the RULE itself (status-emphaticus stem + suffix, with pronunciation-driven vowel shift) is the extractable content, per Wilson's steer."
+
+[[rule]]
+letter = "c"
+rule_text_en = """
+Nouns from y-stems (e.g. gabyā "side", šelyā "rib"/"quiet" — Nestle's own examples) form the
+suffix of the 1st person as printed forms which the Jacobites pronounce gabī, šelī, and the
+Nestorians gabʰ, šel [Nestle's own Roman transliteration, printed in the plate — reliable,
+not a vision read]. With -hōn and -jem [reading uncertain]: [forms]; so also [form], but
+Nestorian [form], because in the status absolutus [form], which is, at the same time, the
+form with the suffix of the 1st person; in the same way [form].
+
+In the plural of these words the radical y is sometimes dropped and sometimes retained:
+[form] and [form], [form] and [form]; [form] and [form]; with sub[fixes continuing onto p.35].
+"""
+dialect_variants = [
+  { tradition = "Jacobite (West Syriac)", form = "gabī", noldeke_note = "1st person suffix on a y-stem noun" },
+  { tradition = "Jacobite (West Syriac)", form = "šelī" },
+  { tradition = "Nestorian (East Syriac)", form = "gabʰ" },
+  { tradition = "Nestorian (East Syriac)", form = "šel" },
+]
+dialect_variants_confidence = "HIGH — these four forms are Nestle's own Roman-letter transliteration printed in the plate, not a Serto vision-read."
+prose_only = true
+prose_note = "Same treatment as (b): the exception clause for y-stem nouns is captured as English rule text with the four dialect-variant forms (reliably read, being Roman type) pulled out structured; the surrounding Serto examples are not individually transcribed."
+
+[source]
+primer = "nestle-1889-en"
+page = 34
+leaf = "n51"
+plate_note = "Portrait page, ordinary running text with inline Serto examples (not a landscape table like p043/p044). Read at ~1.9x two-half crop; the (a) example line re-read at 2.4x for this record."
+
+[noldeke_check]
+date = "2026-09-02"
+method = "tier-1, per SYRIAC-LANGUAGE-PILOT.md §5"
+noldeke_source = { work = "Compendious Syriac Grammar (Crichton tr., 1904)", section = "§145", page = 87, archive_id = "noldeke-compendious-syriac-grammar", leaf = "n122" }
+result = """
+Better than a confirmation — Nöldeke states the IDENTICAL rule ('the suffixes... coalesce
+with the ai of the pl. m.') and gives a clean, fully English-labeled worked example ('judgment'
+= dīnā) that this record's own `rule.printed_examples` (seq 1-7, all `translit_uncertain`) can
+now be checked against directly, person by person, rather than left as unlabeled shapes.
+
+Nöldeke's plural-suffix set, English-labeled, 10 persons (Nestle's plate only showed 7 — likely
+a subset, not a different rule): my ay · thy(m.) ayk · thy(f.) ayki · his aw(hi) · her ayha ·
+our ayn · your(m.) aykon · your(f.) aykon [orthographically, pronounced softer] · their(m.)
+ayhon · their(f.) ayhen. This does NOT replace the seq1-7 entries above (those are still
+Nestle's own plate, not re-transcribed) — it's an independent, confidently-labeled reference
+set for whoever composes the noun+suffix paradigm downstream, exactly the kind of base table
+`base_records` above pointed at. Recommend a follow-up: re-crop Nestle's p.34 example line at
+higher zoom and match each of the 7 printed forms against this named set rather than guessing
+sequence-position-to-person blind, the way this record currently does.
+"""

@@ -1,45 +1,214 @@
 # Next session — start here
 
-*Rewritten 2026-09-02, at the close of the Syriac R3 shard + Phase 3 lesson design. Read this
-before `PLAN.md` or `EXPANSION-PLAN.md`: those are the score, this is where the needle is.*
+*Rewritten 2026-09-02, at the close of G2 passing. Read this before `PLAN.md` or
+`EXPANSION-PLAN.md`: those are the score, this is where the needle is.*
 
 ---
 
-## ⭐ THE IMMEDIATE NEXT TASK — build a throwaway drill prototype, not R1
+## ⭐ THE IMMEDIATE NEXT TASK — run R1 extraction, per `SYRIAC-R1-RUNBOOK.md`
 
-Wilson's own words, ending the session that produced Lesson 0/1: *"i like the structure of
-lesson 0 and 1 but i will personally need the drills before i can test its effectiveness on
-myself."* Static markdown with an answer key three lines below the question is not a real
-test of recall — G2 ("Wilson runs lesson 1... if it is beyond him, revise the ramp") cannot
-actually be checked without something that hides the answer and grades him.
+✅ **G2 PASSED, 2026-09-02.** The throwaway drill prototype got built (private Claude Artifact
+"First Light," iterated live with Wilson through several rounds — randomized order, a
+sound-it-out phase ahead of every recognition step, a vowel-marks primer, a Half-a-Line stage
+between vocabulary and full sentences, a letter-breakdown side panel at word level). Wilson ran
+Lesson 0 and Lesson 1 through it end to end: *"loved it. we are on to something here.
+structurally, i think we are solid... what we have here works for lesson one."* The ramp is
+validated — do not re-litigate Lesson 0/1's design.
 
-**Build a small, disposable interactive drill — recommend a private Claude Artifact (HTML),
-not a repo web build.** Scope, deliberately narrow:
-- Lesson 0's letter-recognition drills (`LESSON-0.md` Parts 1 and 3) — show a letter or a
-  short nonsense string, ask for the name/reading, reveal and grade.
-- Lesson 1's stages 2–4 (`LESSON-1.md`) — one-word cloze in the text, finish-the-line,
-  whole-line — real hide/reveal, not a document he self-grades by eye.
+✅ **Step 1 (locate) run 2026-09-02, Opus, "go" given.** Addendum in `quarry/nestle-1889-en/MAP.md`
+("R1 Step 1 — plate locations"). Nine targets collapse to 5–6 leaves (n48, n51, n53–54, n60,
+n80–81); two of the runbook's "likely location" guesses corrected (both toward less work).
+**⛔ Step 2 (extract) only partially attempted, and here's why it stopped:** on inspection, p.34
+(leaf n51, the "Noun + possessive-suffix set" target — the runbook's HIGHEST priority) is **not
+a printed table at all** — §31 is prose stating the rule (append the §23 suffix set to the
+plural stem) plus a handful of scattered example words, not a systematic grid. And p.43
+(leaf n60, §38 "Strong Verbs") — which bundles 5 of the 9 targets (bare Peal perfect, imperfect,
+imperative, infinitive, participle act./pass.) — is real and exactly where predicted, but it's a
+dense ~35-cell-for-Peal-alone grid (person × number × 3 stems, tiny diacritics) that I could not
+read with confident per-glyph accuracy at vision resolution without risking baked-in wrong
+vocalization — the project's own standing worry (`reference_paleography-gt-ingest.md`). I did
+NOT commit a guessed transcription to `r1/*.toml`; nothing new is on disk from Step 2 yet.
+**Two things for Wilson before this resumes:** (1) how should the p.34 rule+examples be
+captured — `word_notes` on the §23 pronoun-suffix records, or a `kind = "rule"` R1 record
+(third precedent after p132's `lexical-table`)? Same shape as the still-open syntax-note
+question. (2) the p.43 grid is real transcription work, not a quick fetch like p023/p044 were —
+worth deciding whether it waits for the Syriacist seat (still empty) rather than going in
+uncontrolled the way the six existing calibration records did.
+
+✅ **Both resolved by Wilson, 2026-09-02: defer the Syriacist seat, keep going uncontrolled now;
+p.34 → `kind = "rule"`.** Four new R1 records landed this session, all calibration-only /
+`proposed`, none blind-controlled:
+- `r1/p034-1.toml` — the new `kind = "rule"` record for §31 (noun+suffix rule + worked
+  examples). Cross-references `p023-1`/`p023-2`/`p031-1` as the base tables the rule composes,
+  rather than synthesizing the full cross-product paradigm ourselves.
+- `r1/p031-1.toml` — new `kind = "paradigm-survey"` (third `kind` value, alongside p132's
+  `lexical-table`) for §29's 12-row noun-class table — covers BOTH the plural-emphatic/seyame
+  and construct-state targets in one record, per Step 1's finding that they share a plate.
+  Confidence is uneven by row — several rows flag `uncertain` where the plate shape didn't
+  match a memorized "expected" paradigm and I recorded the shape rather than the expectation
+  (Wilson's explicit steer).
+- `r1/p043-1.toml` — bare Peal perfect (10 cells, sg+pl), same lexeme as `p044-1` (qṭal
+  "kill"). **Only the Perfect row of p.43's grid** — Imperfect, Imperative, Infinitive, and
+  Participle (active+passive) are confirmed on the SAME plate (§38) but NOT yet transcribed;
+  land as `p043-2`/`-3`/`-4` in the next pass, don't fold in without their own source note.
+- ⬜ **Not yet touched this session:** numerals (n53–54), preposition+suffix table (n80–81,
+  still unconfirmed as a clean table vs. prose).
+- **Third open `kind`-schema question, same shape as p132's:** R1 now has `lexeme+cells`
+  (standard), `kind = "lexical-table"` (p132), `kind = "rule"` (p034), `kind =
+  "paradigm-survey"` (p031). Worth a single ruling on all of these together before the schema
+  grows a fourth ad hoc value, rather than one at a time.
+
+✅ **Session continued, all nine original R1-runbook targets now landed (2026-09-02).** Final
+tally, 8 new records, all TOML-valid (`python3 -c "import tomllib"` checked), all
+calibration-only/`proposed`, none blind-controlled — no Syriacist seat, by Wilson's explicit
+"defer the seat, keep going" ruling:
+- `p034-1` — noun+suffix RULE (target 1)
+- `p031-1` — plural-emphatic + construct-state, one plate (targets 7, 8)
+- `p043-1`/`-2`/`-3`/`-4` — Peal perfect bare, imperfect, imperative, infinitive+participle,
+  all off the SAME §38 grid (targets 2-6). `-4`'s participle cells are base singular forms
+  only — the plate shows a second stacked sub-form per cell not broken out, flagged as a
+  follow-up, not guessed.
+- `p037-1` — numerals 1-19 + tens 20-90 (target 9). **Highest-confidence record of the
+  session** — every cell carries a printed Arabic-numeral label, so lexeme identity was never
+  in question the way it was for the verb/noun tables.
+- `p063-1` — BONUS, not one of the nine: the preposition+suffix target (§49) turned out to be
+  rule+examples like p034, not a table. Filed the same way; §49h's ~14-preposition list is
+  individually English-glossed on the plate, so that part carries lexical-table-level
+  confidence even inside a `kind = "rule"` record.
+- ⭐ **Also logged this session, not extraction but a standing pedagogy ruling from Wilson:**
+  `SYRIAC-LANGUAGE-PILOT.md` ruling 7 — numerals should be taught as a closed decoding system
+  (alphabet-like), not vocabulary pairs, because a number has no visual referent to recall the
+  way "dog" or "red" does. Bears on whichever lesson introduces numerals; doesn't change what
+  `p037-1` captured.
+✅ **All three open items ruled, 2026-09-02, same session:**
+1. **Syriacist outreach (Ishac/Roughan): HELD**, not cancelled — see the "Owed by Wilson" item
+   2 below for the exact reasoning and gate (needs a public, working artifact to point to
+   first).
+2. **`kind` field: formalized, four named shapes**, in `SYRIAC-LANGUAGE-PILOT.md` §4 —
+   default (lexeme+cells), `lexical-table`, `rule`, `paradigm-survey`. All eight of this
+   session's new records now cross-reference the formalized version instead of carrying an
+   open question in their header comments.
+3. **Blind control without a Syriacist: NOT a second fresh-session vision-read** (two reads of
+   the same JPEG share failure modes — correlated error, not independent evidence, per
+   `reference_arabic-control-rule`'s own logic). Real control = **Nöldeke's own PD grammar**,
+   already the schema's shared coordinate system via `noldeke` tags — his printed forms for
+   the same paradigm cell are a free, independent, zero-human-required check for standard
+   paradigms. Two-tier protocol written up in `SYRIAC-LANGUAGE-PILOT.md` §5: tier 1 (Nöldeke
+   also prints it) collates against him; tier 2 (primer-specific rule content, or any cell
+   already flagged `uncertain` because it diverged from the expected paradigm) has no
+   external "should be" and stays `proposed` regardless.
+
+✅ **Tier-1 Nöldeke collation RUN, 2026-09-02, same session.** Found and calibrated a second
+PD scan: `noldeke-compendious-syriac-grammar` on archive.org (same hOCR-pageindex tooling as
+Nestle's; **leaf = printed page + 35**, verified on two plates). Collated:
+- **`p043-1/-2/-3/-4`** (Peal perfect/imperfect/imperative/infinitive/participle) against
+  Nöldeke's §168 "Regular Verb" table, p.109 (leaf n144) — **CONFIRMED across the board**,
+  same paradigm verb (qṭal) independently chosen by both grammars. Bonus finds: (1) the 3fp
+  perfect cell this session had flagged `uncertain` is exactly the one cell where Nöldeke's
+  own plate ALSO prints two dialectal variants — the flag was right, not overcaution;
+  (2) p043-4's coverage-gap note (an unexplained second stacked form per participle cell) is
+  resolved — it's the feminine singular, confirmed against Nöldeke's plate, which prints both
+  genders per cell where p.43's own plate only gave m.sg legibly.
+- **`p037-1`** (numerals) against Nöldeke's §148, p.95 (leaf n130) — **CONFIRMED for 1-10**,
+  including the harder call (6's alaph-prosthetic variant, 'eštā not štā). ⚠ **11-19 and
+  20-90 NOT yet collated** — worth flagging that Nöldeke's own text on the same page warns the
+  teens "fluctuate in their vocalisation... very doubtful or to be rejected altogether," so
+  those cells may deserve MORE hedging than a clean match would imply, not less.
+- **Not yet collated this session:** `p034-1`/`p063-1` (rule records — Nöldeke covers
+  possessive-suffix attachment at §145 p.87/leaf122 and prepositions at §156-157
+  p.101-103/leaf136+138, both located and ready for a follow-up pass), `p031-1` (noun-state
+  survey — Nöldeke's simplest-forms paradigm is §70 p.48/leaf83, worth checking especially
+  against the rows already flagged `uncertain`), `p023-1/-2` (pronouns — the two
+  longest-owed records, Nöldeke's own pronoun section is §63-66 p.44-46/leaf79-81).
+
+✅ **Tier-1 pass COMPLETE, 2026-09-02, same session — all fourteen R1 records now carry a
+`[noldeke_check]` block** (the six pre-existing calibration records plus this session's eight).
+Net result: mostly confirmation, but three real, actionable findings, not just reassurance:
+
+1. **`p031-1` (noun-state survey), row I.b 'foot':** Nöldeke's general state-ending rule
+   (§70) predicts feminine plural endings (-ān/-āth/-āthā) for a fem. noun like reglā; this
+   record's plate reading used the masculine pattern (-in/-ay/-ē) instead. Tier-1 can't say
+   which side is wrong — only that the `uncertain` flag already on this row was earning its
+   keep, and it needs an actual second plate look, not a memorized-paradigm "fix."
+2. **`p034-1` (noun+suffix rule):** Nöldeke's §145 states the identical coalescence rule with
+   a full, cleanly English-labeled worked example ('judgment', all 10 persons × sg/pl) — a
+   genuinely better reference than this record's own low-confidence `seq1-7` guesses at
+   Nestle's 7-item example list. Follow-up: re-crop Nestle's p.34 line and match each of the 7
+   printed forms against Nöldeke's named set instead of leaving them as unlabeled shapes.
+3. **`p063-1` (prepositions), the `bāṯar` entries:** Nöldeke shows 'behind' and 'after' as
+   TWO separate derived prepositions (different roots — 'on the track of' vs 'hiding from'),
+   not one word covering both senses the way this record currently has it. A real correction
+   to make on a follow-up pass, not just a confidence question.
+
+Also two clean confirmations worth knowing: `p023-1`/`-2` (the longest-owed pair) both check
+out against Nöldeke §63-64, including the existing `noldeke_qualifier` on `p023-2` turning out
+to be exactly right (Nöldeke really does split this differently from Nestle, as already noted
+before this check ran). `p037-1`'s numerals 1-10 also confirmed (prior turn).
+
+✅ **All three findings RULED AND ACTED ON, 2026-09-02, same session — re-cropped the actual
+plates rather than reasoning from the Nöldeke comparison alone:**
+1. **`p031-1` row I.b 'foot':** re-verified on a second, tighter (3.2x) crop. The masculine
+   -in/-ay/-ē plural pattern IS what's printed — confirmed, not a first-pass misread. Open
+   question is now purely lexical (why a 'foot' word takes masculine endings — wrong lexeme
+   ID, or a real Nestle-specific usage), explicitly left for a Syriacist, not re-guessed.
+2. **`p034-1` noun+suffix examples:** re-cropped at 2.8x and mapped Nestle's 7 printed forms
+   against Nöldeke's confirmed 10-item named set by shape/length correlation. Real upgrade —
+   `translit_uncertain` fields went from bare unlabeled guesses to person-tagged proposals
+   (`gram_tags_proposed`) — but flagged honestly as still short of glyph-level certainty.
+3. **`p063-1` bāṯar split:** re-cropped at 5x and CONFIRMED Nestle's plate really does print
+   two distinct Serto words before the shared gloss 'behind, after' — the original record's
+   merge was a genuine transcription gap, now fixed with two separate `[[rule.prepositions]]`
+   entries. The second word's exact spelling (teth vs taw) stays `uncertain` — visually very
+   close to the first at this type size, needs a better crop or a real reader, not a guess.
+   Also resolved the 'around' question from the same check: Nestle's own plate confirms
+   sḥōr-shaped, so that was a genuine Nestle-vs-Nöldeke vocabulary difference, not an error.
+
+**Genuinely open now:** the `p034-1` example mapping's exact person-assignment (proposed, not
+proven) and `p063-1`'s second bāṯar-shaped word's precise spelling. Both need either a tighter
+crop than this session managed or an actual Syriacist — not more reasoning from what's already
+been read. Everything else in this primer's R1 zone (all nine original runbook targets plus
+the bonus preposition record) is now extracted, tier-1 checked, AND re-verified where the
+check found something.
+
+## ⭐ THE NEW IMMEDIATE NEXT TASK — Payne Smith vocab gap, `PAYNE-SMITH-VOCAB-RUNBOOK.md`
+
+✅ **Checked Lessons 1–10's own "New lemmas" lists against the 874-record Nestle R4 glossary,
+2026-09-02.** Finding: R4 itself is COMPLETE (`GLOSSARY-SHARD.md` — don't re-run it), but
+Nestle's own glossary simply doesn't define ~22 words the lessons need, because the lessons
+pull from Peshitta/Gospel passages beyond Nestle's own examples. Found and calibrated a second
+PD source — Payne Smith's *Compendious Syriac Dictionary* (1903), `compendioussyria00payn` on
+archive.org, same hOCR tooling as the other two scans this pilot already uses, leaf = page +
+15 (checked twice). Text-search confirms 21 of 22 target words are in it directly, the 22nd
+("lampstand") under the period term "candlestick."
+
+**Full target list, Step 1 (locate) method, schema proposal, and the token-burn hard stop are
+all written up in `PAYNE-SMITH-VOCAB-RUNBOOK.md` — read that, not this summary, before
+starting.** Nothing has been extracted yet; Step 1 (precise headword location per word) hasn't
+even run — what exists so far is a noisy English-text-hit list, explicitly flagged in the
+runbook as a fallback cross-check, not the real locating method. Start there.
+
+**Next task is R1: grammar-paradigm extraction, steered by what Lessons 2–10 actually need**
+(§7a's ruling — never the whole 40–70-record body blind). The steering work is already done:
+`SYRIAC-R1-RUNBOOK.md` (written 2026-09-02) walks every "new form cells" line in
+`SYRIAC-LESSON-PLAN.md` §2 and produces a deduplicated nine-paradigm target list, notes which
+of the six existing R1 calibration records already cover part of it (the two pronoun tables,
+`p023-1`/`p023-2`, need only adjudication, not re-extraction), flags which lesson-mentioned
+forms are recognition-only and should NOT get a full paradigm pull, and leaves one open
+scoping question for Wilson (how syntax-note items like the relative ܕ or the prohibition
+ܠܳܐ + imperfect should be captured — `word_notes` vs. a light `kind = "syntax-note"` R1 record).
+**Start there, follow its three steps (locate on the plates → extract after Wilson's go →
+adjudicate), and do not extract before the runbook's own hard-stop token-burn estimate gets a
+"which model, and go?" from Wilson.**
 
 **What this is NOT:** not the generative multiple-choice drill *engine* described in
-`SYRIAC-LANGUAGE-PILOT.md` §10 (that's a bigger, separate design decision — building it over
-R1–R4 records at scale, for every future language). Not R1 grammar extraction either — that
-runs AFTER this, once G2 actually passes, and only pulls the paradigm cells lessons 2–10
-need (§7a's ruling), not the whole grammar blind. This prototype exists purely so Wilson can
-tell us whether the RAMP works, cheaply, before more content or more engineering sits on top
-of an unvalidated design. Throwing it away and rebuilding properly later is fine and expected.
-
-**Source data it needs**, all already extracted and committed:
-- `LESSON-0.md`, `LESSON-1.md` — the lesson text and drill specs as currently written.
-- `quarry/nestle-1889-en/r1/p004-1.toml` — the 22-letter alphabet table (names, sounds,
-  non-joining letters) behind Lesson 0.
-- `quarry/nestle-1889-en/r3/c067-1.toml` (Genesis 1:1–5, Lesson 1's text) and the R4 glossary
-  entries it cites, if the drill wants to pull glosses live rather than copy them from the doc.
-- `SYRIAC-LESSON-PLAN.md` §0/§2 — the reasoning behind what each lesson drills, if the
-  prototype needs to explain itself.
-
-**After Wilson actually runs it:** either G2 passes (→ resume R1, steered by lessons 2–10)
-or it surfaces a ramp defect (→ revise `SYRIAC-LESSON-PLAN.md`/the lesson docs, not the
-learner, per §7).
+`SYRIAC-LANGUAGE-PILOT.md` §10 (a bigger, separate design decision — building it over R1–R4
+records at scale, for every future language). Not the SRS/Tabella-adjacent vocab-and-parsing
+engine Wilson flagged the same session G2 passed (`paleography.md`, noted 2026-09-02, not
+started) — that's a different structure for a different problem (recall scheduling, not
+content variety) and isn't scoped yet. Not writing Lessons 2–10 out as full documents either —
+that's a Fable/Sonnet sequencing pass over `SYRIAC-LESSON-PLAN.md`'s existing scores, and per
+§6 a lesson is built backward from its R1/R3 material, so the extraction in this runbook feeds
+that writing pass, not the other way around.
 
 ---
 
@@ -60,9 +229,11 @@ learner, per §7).
   2. A stroke-order/letter-formation GIF-generation engine, Syriac as proof of concept,
      meant to generalize to every future non-Roman script (and possibly the paleography
      hand-reading side too). Same §10, second half.
-- **R1 (grammar paradigms) is mostly unstarted** — 5 calibration records plus the new alphabet
-  table (`r1/p004-1.toml`). Per §7a's ruling, extract only what lessons 2-10 actually need,
-  once they're written, not the whole 40-70 record body blind.
+- **R1 (grammar paradigms) is scoped, not yet extracted.** 6 calibration records exist
+  (alphabet + 2 pronoun tables + Peal-perfect-with-suffixes + 2 calendar tables), all
+  unadjudicated. `SYRIAC-R1-RUNBOOK.md` (written 2026-09-02) turns Lessons 2-10's own "new
+  form cells" lines into a deduplicated 9-paradigm target list — see the immediate-task
+  section above.
 - **Fixed this session, worth knowing about if anything references the old name:** the Lord's
   Prayer record was clobbered by a page-70 filename collision (Nestle has two printed page
   70s in two pagination sequences) and is now `r3/c070g-1.toml`, restored in full.
@@ -79,6 +250,16 @@ learner, per §7).
    `proposed`. Same two people cover both this and item 1: **Ephrem Aboud Ishac** and
    **Christine Roughan**, who ran the Winter School Syriac group. ⏸ UT Austin LRC's earlier
    (2026-08-28) outreach is unanswered and cannot serve Syriac anyway (EIEOL is Indo-European).
+   ⭐ **RULED, 2026-09-02 (Wilson): hold this email until something stable and public exists
+   to point to.** Reasoning in his own terms: anyone who doesn't work with LLMs a lot will
+   underestimate what a one-man shop can actually do here and dismiss the pitch on priors,
+   sight unseen. A cold ask that says "we're extracting Nöldeke-adjacent grammar with an LLM,
+   want to help adjudicate" reads as implausible without a working page to click through.
+   **Gate: don't send until there's a live, public artifact demonstrating the pipeline** —
+   the G2-passed drill prototype turned into real site content is the natural candidate, not
+   raw calibration TOML in a git repo. Since item 1's licence-question email goes to the same
+   two people, it likely waits too unless split into its own, simpler ask — Wilson's call, not
+   decided here.
 3. **The word-division gloss fires on Greek** — `SPACING`'s note is Latin end to end but has
    appeared under Greek lines since that track shipped, kept only to stay byte-identical.
    Drop it there, or write a Greek one?

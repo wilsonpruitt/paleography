@@ -1,0 +1,49 @@
+# CALIBRATION RECORD — see the header notes on r1/p043-1.toml and r1/p043-2.toml (same
+# lexeme, same triangulation method). Proposed, uncontrolled — no Syriacist seat.
+# Plate row order (Peal top / Pael middle / Aphel bottom, each divided by a rule) directly
+# confirmed for this block via a labeled crop ("Peal / Pael / Aphel" printed at the foot of
+# both the Imperative and the Infinitive+Participle blocks) — higher confidence on ROW
+# assignment here than p043-1/-2 had.
+
+id = "nestle-1889-en/r1/p043-3"
+record_type = "R1"
+
+lexeme = { unvoc = "ܩܛܠ", voc = "ܩܛܰܠ", translit = "qṭal", gloss_en = "kill" }
+category = "verb: Peal imperative"
+layer = "vocalized Serto"
+layer_source = "read from the plate (section default agrees)"
+noldeke = []
+noldeke_qualifier = "Nestle's own § is 38; no confident Nöldeke cross-reference chosen."
+
+[[cells]]
+gram_tags = { gender = "m", number = "sg" }
+form_voc = "ܩܛܽܘܠ"
+translit = "qṭol"
+
+[[cells]]
+gram_tags = { gender = "f", number = "sg" }
+form_voc = "ܩܛܽܘܠܝ"
+translit = "qṭolī"
+
+[[cells]]
+gram_tags = { gender = "m", number = "pl" }
+form_voc = "ܩܛܽܘܠܘ"
+translit = "qṭolw"
+
+[[cells]]
+gram_tags = { gender = "f", number = "pl" }
+form_voc = "ܩܛ̈ܘܠܶܝܢ"
+translit = "qṭolēn"
+
+[source]
+primer = "nestle-1889-en"
+page = 43
+leaf = "n60"
+plate_note = "Same plate as p043-1/-2. Imperative block: Singular(m,f) / Plural(m,f) column headers directly above the data, Peal/Pael/Aphel row labels directly below — row and column alignment both confirmed visually for this block, higher confidence than the Perfect/Imperfect blocks' header alignment."
+
+[noldeke_check]
+date = "2026-09-02"
+method = "tier-1, per SYRIAC-LANGUAGE-PILOT.md §5"
+noldeke_source = { work = "Compendious Syriac Grammar (Crichton tr., 1904)", section = "§168", page = 109, archive_id = "noldeke-compendious-syriac-grammar", leaf = "n144" }
+result = "CONFIRMED — sg m/f and pl m/f all match in shape/pattern. Nöldeke's plate prints a second dialectal variant for both plural cells (m: qṭolw/qṭolun-shaped; f: a second -y-ending variant) that this record did not capture — not a disagreement, an additional attested form worth adding on a future pass."
+tier2_caveat = "Shape/pattern level only, see p043-1's caveat."

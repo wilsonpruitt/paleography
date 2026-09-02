@@ -1,0 +1,51 @@
+# CALIBRATION RECORD — see the header notes on r1/p043-1.toml through -3.toml (same lexeme,
+# same triangulation method). Proposed, uncontrolled — no Syriacist seat.
+#
+# ⚑ COVERAGE: base (singular m.) forms only. The plate's Participle columns show what looks
+# like 2 stacked sub-forms per stem per active/passive (consistent with a gender or
+# number distinction, e.g. m.sg over f.sg, or sg over pl) that this record does NOT break
+# out — only the top line of each cell was read with any confidence. If a later lesson needs
+# participle gender/number agreement (not just recognition of the bare form), this record
+# needs a second pass with tighter per-cell crops, not a guess extrapolated from the singular.
+
+id = "nestle-1889-en/r1/p043-4"
+record_type = "R1"
+
+lexeme = { unvoc = "ܩܛܠ", voc = "ܩܛܰܠ", translit = "qṭal", gloss_en = "kill" }
+category = "verb: Peal infinitive and participle (active + passive), base forms"
+layer = "vocalized Serto"
+layer_source = "read from the plate (section default agrees)"
+noldeke = []
+noldeke_qualifier = "Nestle's own § is 38; no confident Nöldeke cross-reference chosen."
+
+[[cells]]
+gram_tags = { form = "infinitive" }
+form_voc = "ܡܶܩܛܰܠ"
+translit = "meqṭal"
+
+[[cells]]
+gram_tags = { form = "participle", voice = "active", gender = "m", number = "sg" }
+form_voc = "ܩܳܛܶܠ"
+translit = "qāṭel"
+uncertain = true
+uncertain_note = "Only the top line of a visually two-line cell was read; the second line (likely f.sg or a plural form) is not captured in this record — see the coverage note above."
+
+[[cells]]
+gram_tags = { form = "participle", voice = "passive", gender = "m", number = "sg" }
+form_voc = "ܩܛܺܝܠ"
+translit = "qṭīl"
+uncertain = true
+uncertain_note = "Same two-line-cell caveat as the active participle above."
+
+[source]
+primer = "nestle-1889-en"
+page = 43
+leaf = "n60"
+plate_note = "Same plate as p043-1/-2/-3. Infinitive block: single form per stem, high confidence. Participle block: 'active' / 'passive' column headers directly above the data, each cell showing what appears to be two stacked sub-forms not individually broken out here — flagged as a follow-up target, not guessed at."
+
+[noldeke_check]
+date = "2026-09-02"
+method = "tier-1, per SYRIAC-LANGUAGE-PILOT.md §5"
+noldeke_source = { work = "Compendious Syriac Grammar (Crichton tr., 1904)", section = "§168", page = 109, archive_id = "noldeke-compendious-syriac-grammar", leaf = "n144" }
+result = "CONFIRMED for infinitive (meqṭal-shaped, m-prefix clearly visible on both plates) and passive participle (qṭīl-shaped). Active participle roughly consistent but not pinned down as precisely. ⭐ Nöldeke's plate resolves this record's own coverage gap: his Participle block prints exactly TWO forms per active/passive cell — m.sg and f.sg (e.g. active m. qāṭel-shaped / f. qāṭlā-shaped) — confirming the 'second stacked sub-form' this record's coverage note flagged as unbroken-out IS the feminine singular, not a plural or something else. Land as a follow-up: add gender=f cells using Nöldeke's f.sg forms as the guide."
+tier2_caveat = "Shape/pattern level only, see p043-1's caveat."

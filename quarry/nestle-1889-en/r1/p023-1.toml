@@ -73,3 +73,17 @@ gloss_en = "they (f.)"
 primer = "nestle-1889-en"
 page = 23
 leaf = "n40"
+
+[noldeke_check]
+date = "2026-09-02"
+method = "tier-1, per SYRIAC-LANGUAGE-PILOT.md §5"
+noldeke_source = { work = "Compendious Syriac Grammar (Crichton tr., 1904)", section = "§63", page = 44, archive_id = "noldeke-compendious-syriac-grammar", leaf = "n79" }
+result = """
+CONFIRMED — Nöldeke's §63 'Subject-Forms' table gives Separate Forms alongside Enclitic
+Forms for the same set. 1sg (short form matching 'enā, with an even-shorter enclitic variant
+noted), 3ms hū and 3fs hī (both short, matching this record's forms exactly), and the 1pl
+entry showing TWO forms side by side — a short one and an alaph-prefixed longer one —
+directly matches this record's `form_voc`/`form_voc_alt` pair (ḥnan / 'enaḥnan) both in shape
+and in the fact that Nöldeke ALSO treats it as a dialectal-pair, not a single form.
+"""
+tier2_caveat = "Shape/pattern level; 2ms/2fs/2mp/2fp/3mp/3fp not individually re-verified glyph-by-glyph."

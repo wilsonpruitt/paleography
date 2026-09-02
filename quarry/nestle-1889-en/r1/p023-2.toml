@@ -51,3 +51,17 @@ uncertain_note = "Nestle gives the sandhi form in transliteration only; the Syri
 primer = "nestle-1889-en"
 page = 23
 leaf = "n40"
+
+[noldeke_check]
+date = "2026-09-02"
+method = "tier-1, per SYRIAC-LANGUAGE-PILOT.md §5"
+noldeke_source = { work = "Compendious Syriac Grammar (Crichton tr., 1904)", section = "§64", page = 45, archive_id = "noldeke-compendious-syriac-grammar", leaf = "n80" }
+result = """
+CONFIRMED, and the existing `noldeke_qualifier` on this record turns out to be exactly right:
+Nöldeke DOES treat this under a different heading than Nestle (§64, 'Enclitic forms... coalesce
+with participles', worked as compound examples like qāṭel-nā 'I kill') rather than as a bare
+pronoun-form list. His worked example for 1sg literally shows the participle + -nā enclitic
+this record's `form_voc` = ܐ̱ܢܳܐ / translit = 'nā' already captured — the coalescence pattern
+matches directly.
+"""
+tier2_caveat = "1pl/3mp/3fp/Nestorian-variant cells not individually re-verified against Nöldeke's fuller plural conjugation table (same page, continues past this crop)."

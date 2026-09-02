@@ -1,0 +1,107 @@
+# CALIBRATION RECORD — see the header note on r1/p044-1.toml. Readings not yet controlled,
+# no Syriacist seat (deferred by Wilson's ruling 2026-09-02).
+#
+# Confirms MAP.md's Step-1 correction: this is the BARE Peal perfect, on its own plate, one
+# page BEFORE p044's "STRONG VERB WITH SUFFIXES" table — not the same grid minus columns.
+# Same lexeme as p044-1 (ܩܛܰܠ qṭal "kill") — Nestle's own paradigm verb, used consistently
+# across the strong-verb tables, so the lexeme identity here is not a guess.
+#
+# ⚑ COVERAGE, this record: PERFECT only (bare Peal, singular + plural, all 10 person/number
+# cells). p.43 also carries Peal Imperfect, Imperative, Infinitive, and Participle
+# (active+passive) on the SAME plate (§38's full Peal/Pael/Aphel synopsis grid) — those four
+# targets are confirmed located (Step 1, MAP.md) but NOT yet transcribed: the grid is dense
+# (person × number × 3 stems in one table) and column-to-person-label alignment needs a more
+# careful mapping pass than this record got before committing forms. Land as separate records
+# (p043-2 imperfect, p043-3 imperative, p043-4 infinitive+participle) in a follow-up pass —
+# do not silently fold them in here later without their own source/plate_note.
+#
+# Method note (⚠ read before trusting `form_voc`): the visible plate confirms the CONSONANT
+# skeleton and relative word-LENGTH per cell (short forms for 1c/3m columns, longer for 2f/2m —
+# matches expectation), but the fine vowel-point placement was cross-checked against the
+# standard published Peal-perfect-of-qṭal paradigm rather than read letter-by-letter from the
+# print at this resolution. This is triangulation (plate shape + known paradigm for the SAME
+# already-attested lexeme), not blind transcription and not a silent "expected form" backfill —
+# flagging the method explicitly per Wilson's steer on p034-1. Treat as PROPOSED.
+
+id = "nestle-1889-en/r1/p043-1"
+record_type = "R1"
+
+lexeme = { unvoc = "ܩܛܠ", voc = "ܩܛܰܠ", translit = "qṭal", gloss_en = "kill" }
+category = "verb: Peal perfect, bare (no object suffix)"
+layer = "vocalized Serto"
+layer_source = "read from the plate (section default agrees)"
+noldeke = []
+noldeke_qualifier = "Nestle's own § is 38; no confident Nöldeke cross-reference chosen, left blank rather than guessed."
+
+[[cells]]
+gram_tags = { person = "3", gender = "m", number = "sg" }
+form_voc = "ܩܛܰܠ"
+translit = "qṭal"
+
+[[cells]]
+gram_tags = { person = "3", gender = "f", number = "sg" }
+form_voc = "ܩܶܛܠܰܬ݂"
+translit = "qeṭlaṯ"
+
+[[cells]]
+gram_tags = { person = "2", gender = "m", number = "sg" }
+form_voc = "ܩܛܰܠܬ"
+translit = "qṭalt"
+
+[[cells]]
+gram_tags = { person = "2", gender = "f", number = "sg" }
+form_voc = "ܩܛܰܠܬܝ"
+translit = "qṭalt(y)"
+
+[[cells]]
+gram_tags = { person = "1", number = "sg" }
+form_voc = "ܩܶܛܠܶܬ݂"
+translit = "qeṭleṯ"
+
+[[cells]]
+gram_tags = { person = "3", gender = "m", number = "pl" }
+form_voc = "ܩܛܰܠܘ"
+translit = "qṭalw"
+
+[[cells]]
+gram_tags = { person = "3", gender = "f", number = "pl" }
+form_voc = "ܩܛܰܠ̈"
+translit = "qṭal(āy)"
+uncertain = true
+uncertain_note = "3fp perfect has known dialectal/orthographic variation (qṭalāy vs. an unmarked qṭal with seyame only); the plate's seyame dots at this cell were not resolved with confidence."
+
+[[cells]]
+gram_tags = { person = "2", gender = "m", number = "pl" }
+form_voc = "ܩܛܰܠܬܽܘܢ"
+translit = "qṭaltōn"
+
+[[cells]]
+gram_tags = { person = "2", gender = "f", number = "pl" }
+form_voc = "ܩܛܰܠܬܶܝܢ"
+translit = "qṭaltēn"
+
+[[cells]]
+gram_tags = { person = "1", number = "pl" }
+form_voc = "ܩܛܰܠܢ"
+translit = "qṭaln"
+
+[source]
+primer = "nestle-1889-en"
+page = 43
+leaf = "n60"
+plate_note = """
+Portrait page (not rotated, unlike p044's leaf n61). Full §38 grid: Perfect / Imperfect /
+Imperative / Infinitive / Participle (active+passive) × Peal/Pael/Aphel, each stem-triad
+stacked Peal(top)/Pael(middle)/Aphel(bottom, below a rule line, Aphel's ا-prefix visually sets
+it apart). This record transcribes only the Perfect row's Peal cells. Read via multiple tiled
+crops at 2.6x-3.2x; header-to-column alignment confirmed for the Plural half (labels '1c 2f 2m
+3f 3m' printed directly above the data), taken on faith by lexeme-shape-length matching for the
+Singular half where the crop did not capture the header row in the same frame.
+"""
+
+[noldeke_check]
+date = "2026-09-02"
+method = "tier-1, per SYRIAC-LANGUAGE-PILOT.md §5 — collated against Nöldeke's own printed Regular Verb paradigm"
+noldeke_source = { work = "Compendious Syriac Grammar (Crichton tr., 1904)", section = "§168", page = 109, archive_id = "noldeke-compendious-syriac-grammar", leaf = "n144" }
+result = "CONFIRMED — Nöldeke's §168 paradigm uses the SAME lexeme (qṭal) and matches this record's cells closely in shape and pattern for all ten. The 3fp cell already flagged `uncertain` above is exactly the one cell where Nöldeke's own plate prints two dialectal variants side by side — his table independently corroborates that this cell is genuinely variable, not a reading error on this record's part."
+tier2_caveat = "Confirmation is at the shape/pattern level (person, number, general vocalization pattern), not a stroke-by-stroke diacritic diff against Nöldeke's plate — still short of a human Syriacist's adjudication."
