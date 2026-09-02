@@ -153,15 +153,13 @@ Same house rules as the other runbooks this pilot: split on category not typogra
 full-res, never read diacritic codepoints by eye, vocalisation outranks the sense, declare the
 layer even when it matches the default.
 
-⚑ **Schema question, flagging not deciding:** these 22 records don't belong under
-`quarry/nestle-1889-en/r4/` — they come from a different primer. Proposed (consistent with
+✅ **Schema ruled and BLESSED (Wilson, 2026-09-02), after the fact — 27 records already used it.**
+Secondary-source vocab pulls land under their own `quarry/<primer>/r4/` tree (consistent with
 this project's existing multi-primer architecture — Old French, Syriac, and eventually
-Hungarian each get their own `quarry/<primer>/` tree): land them under a new
-`quarry/payne-smith-1903/r4/`, `record_type = "R4"`, `source.primer = "payne-smith-1903"`,
-and cross-reference back with a `fills_gap_for` field naming which Nestle-primer lesson needed
-it. This is the obvious extension of the existing pattern, not a new one — flagged for
-Wilson's confirmation before the first record lands, per the project's habit of ruling on
-schema shape before, not after, a batch commits to it.
+Hungarian each get their own `quarry/<primer>/` tree), `record_type = "R4"`,
+`source.primer = "<primer-id>"`, and a `fills_gap_for` field cross-referencing which
+Nestle-primer lesson needed it. **This is now the standing pattern for any future secondary
+source**, not a one-off for Payne Smith.
 
 ⛔ **Hard stop before dispatch, per the house rule on big token burns**: Step 1's actual leaf
 count (should be ≤22, one per word, once located precisely — down from the ~90 raw hit-leaves
