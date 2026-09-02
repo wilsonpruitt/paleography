@@ -121,9 +121,14 @@ Nestle's; **leaf = printed page + 35**, verified on two plates). Collated:
   against the rows already flagged `uncertain`), `p023-1/-2` (pronouns — the two
   longest-owed records, Nöldeke's own pronoun section is §63-66 p.44-46/leaf79-81).
 
-✅ **Tier-1 pass COMPLETE, 2026-09-02, same session — all fourteen R1 records now carry a
-`[noldeke_check]` block** (the six pre-existing calibration records plus this session's eight).
-Net result: mostly confirmation, but three real, actionable findings, not just reassurance:
+✅ **Tier-1 pass COMPLETE, 2026-09-02, same session — 10 of the 14 R1 records now carry a
+`[noldeke_check]` block.** ⛔ **Correction (2026-09-02, caught while writing the web build's
+`/about` page and verified against the records themselves):** this was first written as "all
+fourteen," which is wrong — four records have no `[noldeke_check]` and none is missing by
+oversight: `p004-1` (the alphabet table) and `p132-1`/`p132-2` (calendar lexical lists) have no
+Nöldeke counterpart to collate against, and `p044-1` (Peal perfect with object suffixes) is
+still genuinely owed, not yet run. Net result on the 10 that were checked: mostly confirmation,
+but three real, actionable findings, not just reassurance:
 
 1. **`p031-1` (noun-state survey), row I.b 'foot':** Nöldeke's general state-ending rule
    (§70) predicts feminine plural endings (-ān/-āth/-āthā) for a fem. noun like reglā; this
