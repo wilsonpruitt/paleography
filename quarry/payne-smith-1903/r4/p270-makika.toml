@@ -1,0 +1,28 @@
+# Payne Smith shard, R4. FIRST-PASS CALIBRATION RECORD.
+# ⚠ This is the FIRST extraction ever made from this source in this project. There is
+# no Syriacist seat, and — unlike the R1 grammar records, which had Nöldeke to collate
+# against — there is NO independent control source for this dictionary's vocabulary: no
+# second transcription, no control table, no blind reader. Nothing below has been checked
+# by anyone but the extractor. Schema: SYRIAC-LANGUAGE-PILOT.md §4, adapted per
+# PAYNE-SMITH-VOCAB-RUNBOOK.md "Step 2" (proposed shape, not yet confirmed by Wilson).
+
+
+id = "payne-smith-1903/r4/p270-makika"
+record_type = "R4"
+
+lemma = { unvoc = "ܡܟܝܟܐ", voc = "", translit = "mkyk'" }   # voc intentionally empty; translit consonantal
+pos = "part. adj. (second passive form) of the verb ܡܟ (ܡܟܟ)"
+gloss_en = "sunken, low, low-lying, prostrate; metaph. low, lowly, humble, meek"
+root = "ܡܟܟ"
+printed_forms = "the plate gives the Peshitta Beatitude in full immediately after the gloss: 'blessed are the meek for they shall inherit the earth' (Mt. v. 5)"   # the other forms the entry itself prints, described not transcribed
+layer = "printed Serto (West Syriac letterforms), pointed; points present on the plate but not transcribed — see vocalization_note"
+vocalization_note = "Payne Smith prints this entry in Serto with vowel points, and the points ARE visible on the plate; they are deliberately NOT transcribed here. The project has no control table for this typeface's pointing (the MUFI lesson: never read diacritic codepoints by eye), so `voc` is left empty and `translit` is CONSONANTAL ONLY. The consonantal skeleton, the part-of-speech tag and the English gloss are read directly off the plate and are reliable; the vocalisation is the open item for a reader who can control it."
+fills_gap_for = "meek, Lesson 8"
+uncertain = true
+uncertain_note = "ܡܟܟܐ is NOT a headword here: Payne Smith files it as the second passive participial form under the verb ܡܟ, whose entry begins earlier on p. 270. The gloss and the Beatitude citation are plate-read on p. 270; the head of the verb entry was not itself read, so the entry's own opening line is unverified."
+
+[source]
+primer = "payne-smith-1903"
+page = 270
+leaf = "n285"
+archive_id = "compendioussyria00payn"

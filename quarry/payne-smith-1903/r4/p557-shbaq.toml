@@ -1,0 +1,28 @@
+# Payne Smith shard, R4. FIRST-PASS CALIBRATION RECORD.
+# ⚠ This is the FIRST extraction ever made from this source in this project. There is
+# no Syriacist seat, and — unlike the R1 grammar records, which had Nöldeke to collate
+# against — there is NO independent control source for this dictionary's vocabulary: no
+# second transcription, no control table, no blind reader. Nothing below has been checked
+# by anyone but the extractor. Schema: SYRIAC-LANGUAGE-PILOT.md §4, adapted per
+# PAYNE-SMITH-VOCAB-RUNBOOK.md "Step 2" (proposed shape, not yet confirmed by Wilson).
+
+
+id = "payne-smith-1903/r4/p557-shbaq"
+record_type = "R4"
+
+lemma = { unvoc = "ܫܒܩ", voc = "", translit = "šbq" }   # voc intentionally empty; translit consonantal
+pos = "verb, Peal"
+gloss_en = "f) to remit, forgive (debts, sins; taxes); g) to leave, forsake, desert, abandon; h) to leave out, omit"
+root = "ܫܒܩ"
+printed_forms = "the plate's forgive-sense examples are 'thou hast left thy first love' and 'forsaken eggs'; Ethpe. follows, with a W-Syr. imperative variant noted"   # the other forms the entry itself prints, described not transcribed
+layer = "printed Serto (West Syriac letterforms), pointed; points present on the plate but not transcribed — see vocalization_note"
+vocalization_note = "Payne Smith prints this entry in Serto with vowel points, and the points ARE visible on the plate; they are deliberately NOT transcribed here. The project has no control table for this typeface's pointing (the MUFI lesson: never read diacritic codepoints by eye), so `voc` is left empty and `translit` is CONSONANTAL ONLY. The consonantal skeleton, the part-of-speech tag and the English gloss are read directly off the plate and are reliable; the vocalisation is the open item for a reader who can control it."
+fills_gap_for = "forgive, Lesson 6"
+uncertain = true
+uncertain_note = "Only senses f)–h) were read. The entry is long and its senses a)–e) and its opening line (headword forms, fut., participles) were NOT read — they sit above the crop taken. `pos` and the head-lemma follow from the running head ܫܒܩ and the alphabetical position, not from a direct look at the entry's first line."
+
+[source]
+primer = "payne-smith-1903"
+page = 557
+leaf = "n572"
+archive_id = "compendioussyria00payn"

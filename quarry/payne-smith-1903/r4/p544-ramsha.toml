@@ -1,0 +1,27 @@
+# Payne Smith shard, R4. FIRST-PASS CALIBRATION RECORD.
+# ⚠ This is the FIRST extraction ever made from this source in this project. There is
+# no Syriacist seat, and — unlike the R1 grammar records, which had Nöldeke to collate
+# against — there is NO independent control source for this dictionary's vocabulary: no
+# second transcription, no control table, no blind reader. Nothing below has been checked
+# by anyone but the extractor. Schema: SYRIAC-LANGUAGE-PILOT.md §4, adapted per
+# PAYNE-SMITH-VOCAB-RUNBOOK.md "Step 2" (proposed shape, not yet confirmed by Wilson).
+
+
+id = "payne-smith-1903/r4/p544-ramsha"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܡܫܐ", voc = "", translit = "rmš'" }   # voc intentionally empty; translit consonantal
+pos = "m.; abs. ܪܡܫ"
+gloss_en = "evening, eventide"
+root = "ܪܡܫ"
+printed_forms = "abs., emph., a plural, and a form 'in the Lexx.'; the denominative verb ܪܡܫ 'to grow towards evening, to become evening' (Pa. 'to stay till the evening', Aph. 'to grow late, grow dark') stands immediately above on the same page"   # the other forms the entry itself prints, described not transcribed
+layer = "printed Serto (West Syriac letterforms), pointed; points present on the plate but not transcribed — see vocalization_note"
+vocalization_note = "Payne Smith prints this entry in Serto with vowel points, and the points ARE visible on the plate; they are deliberately NOT transcribed here. The project has no control table for this typeface's pointing (the MUFI lesson: never read diacritic codepoints by eye), so `voc` is left empty and `translit` is CONSONANTAL ONLY. The consonantal skeleton, the part-of-speech tag and the English gloss are read directly off the plate and are reliable; the vocalisation is the open item for a reader who can control it."
+fills_gap_for = "evening, Lesson 1"
+uncertain = false
+
+[source]
+primer = "payne-smith-1903"
+page = 544
+leaf = "n559"
+archive_id = "compendioussyria00payn"

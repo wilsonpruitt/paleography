@@ -1,0 +1,27 @@
+# Payne Smith shard, R4. FIRST-PASS CALIBRATION RECORD.
+# ⚠ This is the FIRST extraction ever made from this source in this project. There is
+# no Syriacist seat, and — unlike the R1 grammar records, which had Nöldeke to collate
+# against — there is NO independent control source for this dictionary's vocabulary: no
+# second transcription, no control table, no blind reader. Nothing below has been checked
+# by anyone but the extractor. Schema: SYRIAC-LANGUAGE-PILOT.md §4, adapted per
+# PAYNE-SMITH-VOCAB-RUNBOOK.md "Step 2" (proposed shape, not yet confirmed by Wilson).
+
+
+id = "payne-smith-1903/r4/p271-makil"
+record_type = "R4"
+
+lemma = { unvoc = "ܡܟܝܠ", voc = "", translit = "mkyl" }   # voc intentionally empty; translit consonantal
+pos = "adv. (comp. of ܡܢ and an obsolete ܟܝܠ)"
+gloss_en = "a) adv. of time: thence, thenceforward, from that time, after this; b) illative adv.: therefore, so then, so now, now therefore, from henceforth"
+root = ""
+printed_forms = "ܠܐ ܡܟܝܠ 'no longer, no more, not again' closes the entry"   # the other forms the entry itself prints, described not transcribed
+layer = "printed Serto (West Syriac letterforms), pointed; points present on the plate but not transcribed — see vocalization_note"
+vocalization_note = "Payne Smith prints this entry in Serto with vowel points, and the points ARE visible on the plate; they are deliberately NOT transcribed here. The project has no control table for this typeface's pointing (the MUFI lesson: never read diacritic codepoints by eye), so `voc` is left empty and `translit` is CONSONANTAL ONLY. The consonantal skeleton, the part-of-speech tag and the English gloss are read directly off the plate and are reliable; the vocalisation is the open item for a reader who can control it."
+fills_gap_for = "henceforth, Lesson 9"
+uncertain = false
+
+[source]
+primer = "payne-smith-1903"
+page = 271
+leaf = "n286"
+archive_id = "compendioussyria00payn"

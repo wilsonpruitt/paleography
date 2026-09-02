@@ -1,0 +1,28 @@
+# Payne Smith shard, R4. FIRST-PASS CALIBRATION RECORD.
+# ⚠ This is the FIRST extraction ever made from this source in this project. There is
+# no Syriacist seat, and — unlike the R1 grammar records, which had Nöldeke to collate
+# against — there is NO independent control source for this dictionary's vocabulary: no
+# second transcription, no control table, no blind reader. Nothing below has been checked
+# by anyone but the extractor. Schema: SYRIAC-LANGUAGE-PILOT.md §4, adapted per
+# PAYNE-SMITH-VOCAB-RUNBOOK.md "Step 2" (proposed shape, not yet confirmed by Wilson).
+
+
+id = "payne-smith-1903/r4/p538-rhep"
+record_type = "R4"
+
+lemma = { unvoc = "ܪܚܦ", voc = "", translit = "rḥp" }   # voc intentionally empty; translit consonantal
+pos = "verb, Pael"
+gloss_en = "to brood, hover over; to cherish, pity, take care of (with ܥܠ)"
+root = "ܪܚܦ"
+printed_forms = "the head prints the bare root, then 'Pael' with its own form; the plate's example continues into the Genesis 1:2 brooding-Spirit phrase"   # the other forms the entry itself prints, described not transcribed
+layer = "printed Serto (West Syriac letterforms), pointed; points present on the plate but not transcribed — see vocalization_note"
+vocalization_note = "Payne Smith prints this entry in Serto with vowel points, and the points ARE visible on the plate; they are deliberately NOT transcribed here. The project has no control table for this typeface's pointing (the MUFI lesson: never read diacritic codepoints by eye), so `voc` is left empty and `translit` is CONSONANTAL ONLY. The consonantal skeleton, the part-of-speech tag and the English gloss are read directly off the plate and are reliable; the vocalisation is the open item for a reader who can control it."
+fills_gap_for = "hover, Lesson 1"
+uncertain = true
+uncertain_note = "The Genesis 1:2 citation ('the Spirit of God brooded upon the face of the waters'), which is why Lesson 1 wants this word, runs past the bottom of the crop and was seen only in the scan's own OCR text for this page, not on the plate."
+
+[source]
+primer = "payne-smith-1903"
+page = 538
+leaf = "n553"
+archive_id = "compendioussyria00payn"

@@ -1,0 +1,33 @@
+# Payne Smith shard, R4. FIRST-PASS CALIBRATION RECORD.
+# ⚠ This is the FIRST extraction ever made from this source in this project. There is
+# no Syriacist seat, and — unlike the R1 grammar records, which had Nöldeke to collate
+# against — there is NO independent control source for this dictionary's vocabulary: no
+# second transcription, no control table, no blind reader. Nothing below has been checked
+# by anyone but the extractor. Schema: SYRIAC-LANGUAGE-PILOT.md §4, adapted per
+# PAYNE-SMITH-VOCAB-RUNBOOK.md "Step 2" (proposed shape, not yet confirmed by Wilson).
+
+
+id = "payne-smith-1903/r4/p295-msaatha"
+record_type = "R4"
+
+lemma = { unvoc = "ܡܨܥܬܐ", voc = "", translit = "mṣʿt'" }   # voc intentionally empty; translit consonantal
+pos = "f., rt. ܡܨܥ"
+gloss_en = "the middle, middle part, centre; an interval"
+root = "ܡܨܥ"
+printed_forms = "examples printed: 'the earth is the centre of the universe', and ܡܨܥܬ ܢܗܪܘܬܐ Mesopotamia"   # the other forms the entry itself prints, described not transcribed
+layer = "printed Serto (West Syriac letterforms), pointed; points present on the plate but not transcribed — see vocalization_note"
+vocalization_note = "Payne Smith prints this entry in Serto with vowel points, and the points ARE visible on the plate; they are deliberately NOT transcribed here. The project has no control table for this typeface's pointing (the MUFI lesson: never read diacritic codepoints by eye), so `voc` is left empty and `translit` is CONSONANTAL ONLY. The consonantal skeleton, the part-of-speech tag and the English gloss are read directly off the plate and are reliable; the vocalisation is the open item for a reader who can control it."
+fills_gap_for = "midst, Lesson 2"
+uncertain = false
+sibling_entry = "The verb ܡܨܥ ('to be in the midst, place in the middle'; Pa. 'to come between, interpose, mediate') stands on the SAME page, p. 295 — this record is the noun only."
+
+[[sub_lemmas]]
+unvoc = "ܡܨܥܬ"
+gloss_en = "construct state, used as prep.: in the midst, between, amongst, at"
+raw = "Construct state ܡܨܥܬ prep. in the midst, between, amongst, at"
+
+[source]
+primer = "payne-smith-1903"
+page = 295
+leaf = "n310"
+archive_id = "compendioussyria00payn"

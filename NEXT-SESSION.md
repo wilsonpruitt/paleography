@@ -5,7 +5,7 @@
 
 ---
 
-## ⭐ THE IMMEDIATE NEXT TASK — run R1 extraction, per `SYRIAC-R1-RUNBOOK.md`
+## ✅ DONE — R1 extraction, per `SYRIAC-R1-RUNBOOK.md` (history; the live task is further down)
 
 ✅ **G2 PASSED, 2026-09-02.** The throwaway drill prototype got built (private Claude Artifact
 "First Light," iterated live with Wilson through several rounds — randomized order, a
@@ -170,45 +170,65 @@ been read. Everything else in this primer's R1 zone (all nine original runbook t
 the bonus preposition record) is now extracted, tier-1 checked, AND re-verified where the
 check found something.
 
-## ⭐ THE NEW IMMEDIATE NEXT TASK — Payne Smith vocab gap, `PAYNE-SMITH-VOCAB-RUNBOOK.md`
+## ✅ DONE — Payne Smith vocab gap, closed 2026-09-02 (Opus, on Wilson's "opus go for step 2")
 
-✅ **Checked Lessons 1–10's own "New lemmas" lists against the 874-record Nestle R4 glossary,
-2026-09-02.** Finding: R4 itself is COMPLETE (`GLOSSARY-SHARD.md` — don't re-run it), but
-Nestle's own glossary simply doesn't define ~22 words the lessons need, because the lessons
-pull from Peshitta/Gospel passages beyond Nestle's own examples. Found and calibrated a second
-PD source — Payne Smith's *Compendious Syriac Dictionary* (1903), `compendioussyria00payn` on
-archive.org, same hOCR tooling as the other two scans this pilot already uses, leaf = page +
-15 (checked twice). Text-search confirms 21 of 22 target words are in it directly, the 22nd
-("lampstand") under the period term "candlestick."
+**27 R4 records in the new `quarry/payne-smith-1903/r4/`** — all 22 original targets, plus the
+four smaller items the runbook parked (ordinals ܫܬܝܬܝܐ / ܫܒܝܥܝܐ, ܐܡܝܢ "amen", ܒܝܫܐ "evil"),
+minus **Cain**, which got a ruling instead of a record: Payne Smith has **no entry for ܩܐܝܢ**
+at all — six text hits, every one a citation inside another word's entry, and the ܩ section's
+opening page (486) read in full shows no headword. Not even a bare cross-reference. It's a
+`word_notes` flag for whichever Lesson 9 record uses it; that record isn't written yet and was
+deliberately not invented.
 
-**Full target list, Step 1 (locate) method, schema proposal, and the token-burn hard stop are
-all written up in `PAYNE-SMITH-VOCAB-RUNBOOK.md` — read that, not this summary, before
-starting.** Nothing has been extracted yet; Step 1 (precise headword location per word) hasn't
-even run — what exists so far is a noisy English-text-hit list, explicitly flagged in the
-runbook as a fallback cross-check, not the real locating method. Start there.
+Full write-up, corrected page numbers, and the method are the **last section of
+`PAYNE-SMITH-VOCAB-RUNBOOK.md`** — read that, not this summary. Three things worth carrying:
 
-**Next task is R1: grammar-paradigm extraction, steered by what Lessons 2–10 actually need**
-(§7a's ruling — never the whole 40–70-record body blind). The steering work is already done:
-`SYRIAC-R1-RUNBOOK.md` (written 2026-09-02) walks every "new form cells" line in
-`SYRIAC-LESSON-PLAN.md` §2 and produces a deduplicated nine-paradigm target list, notes which
-of the six existing R1 calibration records already cover part of it (the two pronoun tables,
-`p023-1`/`p023-2`, need only adjudication, not re-extraction), flags which lesson-mentioned
-forms are recognition-only and should NOT get a full paradigm pull, and leaves one open
-scoping question for Wilson (how syntax-note items like the relative ܕ or the prohibition
-ܠܳܐ + imperfect should be captured — `word_notes` vs. a light `kind = "syntax-note"` R1 record).
-**Start there, follow its three steps (locate on the plates → extract after Wilson's go →
-adjudicate), and do not extract before the runbook's own hard-stop token-burn estimate gets a
-"which model, and go?" from Wilson.**
+1. ⛔ **The runbook's own "real fix" retraction was itself wrong.** Its `n = api_page − 53`
+   rule is not a constant offset (58 leaves are marked `Delete` in `scandata.xml` and drop out
+   of the image sequence), so it degrades from ~1 at the front to ~53 at the back and produced
+   at least three wrong-lemma "high confidence" locations (deep, debtor, multiply) that were
+   caught only by checking the root on the plate. The method that works — pageindex+searchtext
+   sliced per leaf, `scandata.xml` for leaf→image, **printed page = n − 15**, and then a
+   free self-check (most pages' OCR begins with their own printed number: **431/453 agree**) —
+   is written up as a reusable recipe. ⭐ Run that self-check first on any future archive.org scan.
+2. ⛔ **`voc` is empty in all 27 records, on purpose.** The plates are pointed and the points are
+   visible, but there is no control table for this typeface's pointing and no second
+   transcription, so the consonantal skeleton + POS + English gloss went in (all plate-read,
+   all reliable) and the vocalisation stayed out, flagged in each record. **This is now the
+   single highest-value thing to hand a Syriacist if that seat is ever filled** — 27 records
+   that need only vowel points, not re-extraction.
+3. **10 of 27 carry `uncertain = true`**, none of them a doubtful lemma — they are coverage
+   gaps (part of a long entry ran past the crop) or genuinely unresolvable plate details. One
+   is a real hole to close: **`p491-qadesh` has the Pael but NOT the Ethpaal that Lesson 6
+   wants**, and `p557-shbaq` has only senses f–h. Each is one more crop of a page already
+   fetched.
 
-**What this is NOT:** not the generative multiple-choice drill *engine* described in
-`SYRIAC-LANGUAGE-PILOT.md` §10 (a bigger, separate design decision — building it over R1–R4
-records at scale, for every future language). Not the SRS/Tabella-adjacent vocab-and-parsing
-engine Wilson flagged the same session G2 passed (`paleography.md`, noted 2026-09-02, not
-started) — that's a different structure for a different problem (recall scheduling, not
-content variety) and isn't scoped yet. Not writing Lessons 2–10 out as full documents either —
-that's a Fable/Sonnet sequencing pass over `SYRIAC-LESSON-PLAN.md`'s existing scores, and per
-§6 a lesson is built backward from its R1/R3 material, so the extraction in this runbook feeds
-that writing pass, not the other way around.
+⚠ The directory + schema shape used (`quarry/payne-smith-1903/r4/`, `source.primer =
+"payne-smith-1903"`, `fills_gap_for`) is the runbook's **proposed** extension — unopposed but
+never actually blessed by Wilson. Worth a one-word ruling before anything else lands under it.
+
+## ⭐ THE IMMEDIATE NEXT TASK — write Lessons 2–10 out as documents
+
+Everything upstream is now in place. `SYRIAC-LESSON-PLAN.md` has all ten lessons scored;
+`LESSON-0.md` and `LESSON-1.md` are fully worked and G2-passed; R3 has 20 solid keyed pages;
+R1's nine paradigm targets are all extracted and tier-1 collated against Nöldeke; and the R4
+vocabulary gap those lessons opened is now closed by the Payne Smith pull above. Per §6 a
+lesson is built backward from its R1/R3 material, so the material has to exist first — it does.
+
+This is a **sequencing/writing pass, not extraction** — Fable to set the pattern on one lesson,
+a cheaper model for the rest, per the model-prudence rubric. Two things to fold in as you write:
+- Each Payne Smith record names the lesson it serves in `fills_gap_for` — use that as the
+  vocabulary checklist per lesson, and write the `word_notes` cross-links back the other way.
+- **Cain (Lesson 9) needs a `word_notes` gloss written by hand**, since no dictionary record
+  backs it. Same likely applies to any other proper noun a lesson introduces — check before
+  assuming R4 covers it.
+
+**What this is NOT:** not the generative multiple-choice drill *engine* (`SYRIAC-LANGUAGE-PILOT.md`
+§10 — a bigger, separate design decision, building over R1–R4 records at scale for every future
+language). Not the SRS/Tabella-adjacent vocab-and-parsing engine Wilson flagged the session G2
+passed (`paleography.md`, 2026-09-02, not started, not scoped). Not more R1 or R4 extraction —
+both zones are done for this primer, and the two genuinely open R1 items (`p034-1`'s
+person-assignment, `p063-1`'s second bāṯar-shaped word) need a real reader, not another pass.
 
 ---
 

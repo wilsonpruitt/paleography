@@ -1,4 +1,9 @@
-# Payne Smith vocab-gap runbook — locate targets set up 2026-09-02, extraction NOT run
+# Payne Smith vocab-gap runbook — ✅ STEP 2 RUN 2026-09-02, 27 records landed
+
+> ⛔ **Read the LAST section of this file first** ("STEP 2 RUN"). Everything above it is the
+> setup, and **two of its offset schemes have been retracted** — including the `api − 53` rule
+> in the middle retraction, which is also wrong. The corrected page numbers, the method that
+> actually works, and the Cain ruling are all at the bottom.
 
 *Written the session after the R1 grammar pull finished. Purpose: close the vocabulary gap
 found by checking `SYRIAC-LESSON-PLAN.md`'s Lessons 1–10 "New lemmas" lists against the
@@ -272,3 +277,118 @@ a plate look (still cheap — one image per word, not a transcription pass). Ful
 of any entry (Step 2 proper) still waits for Wilson's "which model, and go?" on the real count,
 now that the target list above is solid enough to make that count precise: **16–22 single-page
 reads**, not the runbook's earlier 60–100k-token guess based on a noisier list.
+
+---
+
+## ✅ STEP 2 RUN — 2026-09-02, Opus, on Wilson's "opus go for step 2"
+
+**27 records landed** in the new `quarry/payne-smith-1903/r4/` (the proposed-but-unconfirmed
+directory/schema shape from the "Step 2" section above — used as proposed; still unblessed).
+That is all 22 original targets **plus** the four smaller items the "Out of scope" section said
+to fold in (ordinals ܫܬܝܬܝܐ / ܫܒܝܥܝܐ, ܐܡܝܢ, ܒܝܫܐ), and **minus Cain**, which gets a note
+instead of a record (see below). Every record parses (`tomllib`), every one carries
+`fills_gap_for`, and every one carries the calibration header: *first extraction from this
+source, no Syriacist seat, and — unlike the R1 records — **no independent control source at
+all**, since this dictionary's vocabulary has no Nöldeke-equivalent to collate against.*
+
+### ⛔⛔ SECOND RETRACTION — the `api "page" − 53` conversion is ALSO wrong
+
+The "RETRACTION + real fix" section above replaced the broken pageindex offsets with
+archive.org's search-inside API and the rule **`n = api_page − 53`**, "validated at two
+independent points." **That rule is wrong too**, and its results table's page numbers are wrong
+with it. Caught the same way as last time, by plate-checking: "hover" at api 602 → the rule's
+n549 shows printed p. 534, running heads ܪܛܒ…ܪܝܫ — an entirely different part of the ܪ section
+from ܪܚܦ, which is really on p. 538. And the rule produces **negative leaves** for the front of
+the book ("mourner" api 34 → n −19), which the runbook already noticed and mis-diagnosed as a
+front-matter irregularity. It isn't: **the offset is not constant.** It grows from ~1 at the
+front of the book to ~53 near the back, because the scan has **58 leaves marked `Delete` in
+`scandata.xml`** that are dropped from the image derivative sequence but still counted by the
+API. A constant correction factor does not exist here either. ⚑ Third time this project has
+been bitten by an offset that *returns real text* rather than erroring
+([[feedback_empty-grep-is-not-absence]]'s sibling failure mode).
+
+### The method that actually works — three files, no guessing, self-checking
+
+1. `…_hocr_pageindex.json.gz` + `…_hocr_searchtext.txt.gz`. The pageindex has **710 entries,
+   one per leaf, index `i` = leafNum**; entry `i`'s FIRST number-pair is a char range into the
+   small searchtext file. Slicing those gives clean **per-leaf plain text you can grep locally**
+   — no API round-trip, full-page context, and every English gloss in the book is searchable.
+2. `…_scandata.xml` → build `leafNum → image index` by counting only leaves whose
+   `addToAccessFormats` is `true` (652 of 710 survive). **That image index IS the `n` in
+   `/download/<id>/page/n<N>.jpg`.**
+3. **Printed page = `n − 15`**, which is the one formula in this runbook that was right all
+   along. ⭐ **And it is self-checking, cheaply:** most pages' OCR text begins with the printed
+   page number, so `n − 15` can be validated against the scan's own text on every page at once.
+   Done here: **431 of 453 pages that print a legible number agree exactly**; the ~20
+   disagreements are OCR digit errors (`341` for `356`, `142` for `357`), not mapping errors.
+   Run that check first on any future scan — it costs one script and settles the whole question.
+
+⚠ **The searchtext's within-page reading order is NOT reliably positional** (columns interleave
+around section headings — p. 356 was a live case), so a character-offset→pixel-position estimate
+is a decent *first* crop guess and nothing more. Budget one or two re-crops per word.
+
+### Where the words actually are (corrected; supersedes the results table above)
+
+Printed page — `n` is always page + 15. Root-checked against the plate in every case.
+
+deep ܬܗܘܡܐ **605** · hover ܪܚܦ **538** · evening ܪܡܫܐ **544** · luminary ܢܗܝܪܐ **329** ·
+sanctify ܩܕܫ **491** · debt ܚܘܒܐ **129** · debtor ܚܝܒܐ **139** · persecute ܪܕܦ **530** ·
+henceforth ܡܟܝܠ **271** · city ܡܕܝܢܬܐ **252** · lampstand ܡܢܪܬܐ **283** · bushel ܣܐܬܐ **356** ·
+reward ܐܓܪܐ **3** · forgive ܫܒܩ **557** · righteousness ܟܐܢܘܬܐ **202** · keeper ܢܛܘܪܐ **336** ·
+crafty ܥܪܝܡ **428** · beast ܚܝܘܬܐ **140** · mourner ܐܒܝܠܐ **2** · meek ܡܟܝܟܐ **270** ·
+gather ܟܢܫ **219** · multiply ܣܓܐ **360** · midst ܡܨܥܬܐ **295** · amen ܐܡܝܢ **19** ·
+evil ܒܝܫܐ **43** · seventh ܫܒܝܥܝܐ **556** · sixth ܫܬܝܬܝܐ **600**.
+
+Three of the old table's "high confidence" rows were **wrong lemmas**, caught only by checking
+the root on the plate — worth recording, because they are exactly the failure the runbook
+predicted and then half-trusted anyway:
+- **deep** → the table's p. 121 is ܗܘܬܐ "an abyss, deep," a ܗ-section word. ܬܗܘܡܐ is at the
+  very back of the book, p. 605.
+- **debtor** → the table's p. 353 is ܬܒܘܥܐ (rt. ܬܒܥ) "a debtor; a culprit." ܚܝܒܐ is p. 139.
+- **multiply** → the table's p. 229 is a ܟ-section Aphel. ܣܓܐ is p. 360.
+- **midst**, which the table gave up on as unresolved, is not hard at all: ܡܨܥܬܐ *and* its verb
+  ܡܨܥ are both on **p. 295**, and the noun even prints its own construct-state prepositional use
+  ("in the midst, between, amongst, at"), which is the sense Lesson 2 wants.
+
+### ⛔ The real open item: THE VOCALISATION IS NOT TRANSCRIBED
+
+Every record has `voc = ""` and a **consonantal-only** `translit`, with a `vocalization_note`
+saying so in the record itself. This is deliberate and it is the honest reading of the house
+rule, not a shortcut: Payne Smith **does** print pointed Serto, the points **are** visible on
+the plate at max derivative resolution (3412 px page width — there is no higher one), but this
+project has **no control table for this typeface's pointing** and no second transcription. The
+MUFI lesson ([[reference_paleography-gt-ingest]]) says don't read diacritic codepoints by eye;
+so the consonantal skeleton, the part-of-speech tag and the English gloss — all of which are
+large, unambiguous and plate-read — go in, and the pointing stays out, flagged, for a reader who
+can control it. ⭐ **If a Syriacist seat is ever filled, this is the single highest-value thing
+to hand them: 27 records that need only their vowel points, not re-extraction.**
+
+### 10 of 27 records carry `uncertain = true`, and none of it is a doubtful lemma
+
+Two causes only, both about *coverage*, not about *reading*: (a) part of a long entry ran past
+the crop and was taken from the scan's own OCR rather than the plate — `p019-amin` senses b/c,
+`p538-rhep`'s Genesis 1:2 citation, `p605-tehoma` sense b, `p491-qadesh` (⚠ **the Ethpaal that
+Lesson 6 actually wants was not read** — only the Peal note and the Pael), `p557-shbaq` (senses
+a–e and the headword line unread; only the forgive senses f–h are plate-read); (b) something
+genuinely unresolvable on the plate — `p202-kenutha`'s two side-by-side emphatic spellings,
+`p003-agra`'s two-word sub-lemma, `p283-mnarta`'s `root` (editorially supplied — the entry tags
+it only "Heb." and gives no `rt.`), `p329-nahira`'s headword line, and `p270-makika`, which is
+**not a headword at all**: Payne Smith files ܡܟܝܟܐ as the second passive participial form under
+the verb ܡܟ.
+
+### ⭐ Cain — RULED, no record. Payne Smith has no entry for ܩܐܝܢ.
+
+Checked both ways. (1) A full-book text search for "Cain" returns **six hits, every one a
+citation inside some other word's entry** — e.g. under ܥܠܘܒܐ "an oppressor, tyrant: *Cain was
+the ~ of Abel*", and under ܙܘܥܐ "trembling, unrest: *unrest and fear like that of Cain*". (2)
+The alphabetical check: the ܩ section opens on **p. 486** and that page was read in full — it
+runs ܩܐܪܘܣ, ܩܐܛܘܣ, ܩܝܛܘܣ, ܩܐܦܐ, ܩܐܣܝܐ … with **no ܩܐܝܢ**. So the runbook's own hypothesis was
+right and it isn't even a bare cross-reference; the name simply isn't lemmatised. **Do not force
+it into R4.** It is a `word_notes` item on whichever Lesson 9 record uses it — that record is
+not written yet and was deliberately not invented here.
+
+### Not done, deliberately
+
+`voc` for all 27 (above — needs a reader, not another pass) · the five coverage gaps listed
+under (a), each of which is one more crop of a page already fetched, not a new search · a
+`fills_gap_for` cross-link written back into the Lesson 2–10 documents, which don't exist yet.
