@@ -8,7 +8,27 @@ upm = 1000
 advance = 885
 bbox = "59,-185,816,475"
 outline = "M604 0Q543 0 501.5 28.0Q460 56 447 97H443Q435 58 418.5 20.0Q402 -18 379.0 -53.5Q356 -89 328.5 -122.0Q301 -155 270 -185L224 -147Q276 -91 312.5 -36.0Q349 19 372.0 80.5Q395 142 403 217Q406 246 408.0 280.5Q410 315 414 343Q334 345 260.0 355.5Q186 366 132.5 380.0Q79 394 59 405L85 475Q147 451 237.0 433.0Q327 415 429 415Q452 415 480.5 417.0Q509 419 537.5 421.0Q566 423 589.0 425.0Q612 427 625 427Q686 427 732.5 404.0Q779 381 798 324Q804 307 808.0 285.5Q812 264 814.0 238.0Q816 212 816 182Q816 124 799.5 83.5Q783 43 743.5 21.5Q704 0 635 0ZM655 76Q707 76 725.0 103.0Q743 130 743 182Q743 245 733.0 283.0Q723 321 698.5 337.5Q674 354 630 354Q599 354 563.0 350.0Q527 346 483 343Q481 333 479.5 316.0Q478 299 477.0 283.0Q476 267 476 260Q476 228 478.0 204.0Q480 180 486.0 161.5Q492 143 503 125Q519 101 545.0 88.5Q571 76 611 76Z"
+letter = "ܡ"
+name = "Mīm"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[87.7,469.0], [108.3,427.0], [60.7,405.7], [109.3,426.7], [265.3,391.3], [448.3,379.0], [439.3,139.0], [417.0,122.3], [381.3,19.3], [417.0,122.3], [439.0,138.7], [470.0,120.0], [507.3,69.3], [564.0,44.3], [689.0,44.0], [748.0,71.7], [774.3,135.0], [775.3,249.3], [756.3,326.3], [716.3,370.7]]
+status = "proposed"
+source = "kiraz-2012 §538 (Estrangelā Mīm, isolated+final, stroke 1)"
+note = """
+"Stroke 1-2-3-4-5-6 begins around the mean line and moves in circular counterclockwise motion through points 2, 3, and 4. At pt 5 it moves slightly up and ends at pt 6." (Stroke 2, a short straight line at pt 7-8, is a minor secondary foot not separately traced here -- flagged, not guessed.)
+"""
+
+[[stroke]]
+median = [[379.0,14.7], [336.3,-58.3], [268.0,-147.7]]
+status = "proposed"
+source = "kiraz-2012 §538 (Estrangelā Mīm, isolated+final, stroke 2 -- tail)"
+note = """
+"Stroke 7-8 is a straight line." The tail hanging below baseline where both loops converge.
+"""

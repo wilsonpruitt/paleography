@@ -8,7 +8,19 @@ upm = 1000
 advance = 678
 bbox = "59,-288,1102,110"
 outline = "M1082 -288Q993 -267 904.5 -243.0Q816 -219 727.0 -193.0Q638 -167 546.5 -138.0Q455 -109 359 -78Q314 -63 273.5 -50.0Q233 -37 198.5 -24.5Q164 -12 137.0 -1.0Q110 10 91 20Q72 30 65.5 41.5Q59 53 59 65Q59 86 71.0 98.0Q83 110 99 110Q112 110 139.0 100.0Q166 90 193.5 77.0Q221 64 237 56Q265 43 304.0 27.0Q343 11 379.5 -2.5Q416 -16 437 -23Q524 -53 589.5 -75.0Q655 -97 710.0 -114.5Q765 -132 820.5 -148.0Q876 -164 943.5 -182.0Q1011 -200 1102 -223Z"
+letter = "ܢ"
+name = "Nūn"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[106.3, 66.0], [294.7, -14.3], [700.7, -148.7], [1056.0, -246.7], [1080.0, -234.7]]
+status = "proposed"
+source = "kiraz-2012 §541 (Estrangelā Nūn, isolated/standalone, documentary hand)"
+note = """
+"The stand-alone graph begins at the baseline at pt 1. In a documentary hand, it moves in a slope and ends at pt 3 above the descender line."
+"""

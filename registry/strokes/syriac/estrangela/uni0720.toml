@@ -8,7 +8,27 @@ upm = 1000
 advance = 656
 bbox = "49,0,591,753"
 outline = "M230 0Q148 0 107.5 23.0Q67 46 49 85L101 131Q117 109 136.0 97.0Q155 85 186.5 80.5Q218 76 268 76H518Q505 118 486.5 174.0Q468 230 444.0 295.5Q420 361 393.5 432.5Q367 504 339.0 578.0Q311 652 283 725L355 753Q365 729 382.0 683.0Q399 637 420.5 579.0Q442 521 464.5 459.0Q487 397 507.5 339.0Q528 281 544.0 235.5Q560 190 568 166Q579 131 585.0 106.0Q591 81 591 59Q591 46 588.0 35.0Q585 24 579.0 16.5Q573 9 564.0 4.5Q555 0 543 0Z"
+letter = "ܠ"
+name = "Lāmaḏ"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[551.7, 70.0], [522.7, 183.0], [382.3, 572.0], [333.0, 702.7], [312.0, 712.3]]
+status = "proposed"
+source = "kiraz-2012 §535 (Estrangelā Lāmaḏ, stroke 1 -- shaft)"
+note = """
+"Stroke 1-2 begins at the baseline at pt 1, and moves upward to pt 2, just above the ascender line. The stroke is usually clubbed at pt 2."
+"""
+
+[[stroke]]
+median = [[551.7, 70.0], [547.7, 46.0], [516.7, 38.7], [245.0, 38.3], [156.7, 47.7], [98.0, 78.3], [70.0, 81.0]]
+status = "proposed"
+source = "kiraz-2012 §535 (Estrangelā Lāmaḏ, stroke 2 -- base)"
+note = """
+"Stroke 1-3 begins at pt 1 as well and moves left terminating with a tail at pt 3."
+"""

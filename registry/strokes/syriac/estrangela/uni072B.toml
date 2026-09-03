@@ -8,7 +8,35 @@ upm = 1000
 advance = 945
 bbox = "49,0,896,426"
 outline = "M445 206Q445 247 441.0 278.5Q437 310 420 326Q410 336 397.0 341.5Q384 347 367 350Q350 353 333.0 354.5Q316 356 305 357Q286 359 275.0 366.5Q264 374 264 394Q264 411 275.0 418.5Q286 426 303 426H657Q674 426 684.0 419.0Q694 412 694 395Q694 375 684.0 369.0Q674 363 654 360Q643 359 628.5 357.0Q614 355 593 351Q576 348 562.5 342.5Q549 337 539 326Q524 310 518.5 276.0Q513 242 513 203V76H678Q728 76 759.0 80.5Q790 85 810.0 96.5Q830 108 846 129L896 85Q879 46 833.5 23.0Q788 0 705 0H230Q148 0 107.5 23.0Q67 46 49 85L101 131Q117 109 136.0 97.0Q155 85 186.5 80.5Q218 76 268 76H445ZM479 394Q479 395 479.0 395.0Q479 395 479 394Q479 395 479.0 394.5Q479 394 479 394Z"
+letter = "ܫ"
+name = "Šīn"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[70.0, 81.0], [98.0, 78.3], [149.3, 49.7], [217.3, 39.3], [690.3, 38.3], [785.7, 48.0], [848.0, 78.7], [879.7, 81.7]]
+status = "proposed"
+source = "kiraz-2012 §560 (Estrangelā Šīn, stroke 1 -- base)"
+note = """
+"Stroke 1-2 draws the base upon which the body sits. The stroke is clubbed at pt 1."
+"""
+
+[[stroke]]
+median = [[478.7, 80.0], [479.7, 372.7], [509.0, 382.0]]
+status = "proposed"
+source = "kiraz-2012 §560 (Estrangelā Šīn, stroke 2 -- neck)"
+note = """
+"Stroke 3-4 draws the neck."
+"""
+
+[[stroke]]
+median = [[300.0, 392.7], [422.0, 386.7], [479.7, 372.7], [539.7, 387.3], [661.3, 394.3]]
+status = "proposed"
+source = "kiraz-2012 §560 (Estrangelā Šīn, stroke 3 -- arc)"
+note = """
+"Stroke 5-3-6 is an arc that forms the upper part of the graph. It begins at pt 5, moves down slightly to pt 3, then up to pt 6 in a symmetrical manner."
+"""

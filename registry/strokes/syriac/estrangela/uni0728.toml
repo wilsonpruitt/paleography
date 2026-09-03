@@ -8,7 +8,19 @@ upm = 1000
 advance = 626
 bbox = "-195,-381,539,120"
 outline = "M539 114Q537 75 517.5 49.5Q498 24 468.0 12.0Q438 0 402 0Q369 0 342.5 7.0Q316 14 295 24Q275 33 258.5 39.0Q242 45 227 45Q208 45 191.0 33.5Q174 22 174 -2Q174 -25 192.5 -41.0Q211 -57 245.0 -70.0Q279 -83 324 -98Q373 -114 411.0 -128.0Q449 -142 475 -159Q502 -175 515.0 -197.5Q528 -220 528 -250Q528 -278 519.0 -300.0Q510 -322 487 -339Q466 -354 434.0 -363.5Q402 -373 348.0 -377.0Q294 -381 206 -381Q184 -381 139.0 -380.0Q94 -379 36.0 -377.5Q-22 -376 -82.5 -373.5Q-143 -371 -195 -367L-189 -302Q-147 -303 -104.0 -303.5Q-61 -304 -16.5 -304.5Q28 -305 73.5 -305.0Q119 -305 165 -305Q257 -305 313.5 -302.5Q370 -300 401 -294Q433 -288 444.0 -277.0Q455 -266 455 -250Q455 -237 441.5 -225.0Q428 -213 394.5 -199.0Q361 -185 301 -168Q259 -156 223.0 -142.0Q187 -128 159.5 -110.0Q132 -92 116.5 -65.5Q101 -39 101 -1Q101 35 119.0 62.0Q137 89 166.5 104.5Q196 120 229 120Q257 120 277.5 113.0Q298 106 317 98Q336 90 356.5 83.0Q377 76 404 76Q431 76 447.5 85.5Q464 95 470 114Z"
+letter = "ܨ"
+name = "Ṣāḏē"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[193.0,74.0], [261.3,76.7], [379.0,41.3], [445.3,46.0], [365.3,43.0], [266.0,75.7], [215.3,78.7], [182.0,70.3], [156.7,52.0], [139.3,-4.0], [151.7,-51.0], [187.3,-83.3], [406.3,-164.7], [466.7,-197.7], [481.7,-216.0], [489.0,-250.3], [476.0,-297.7], [431.3,-323.7], [347.7,-338.0], [-157.3,-335.0], [-173.3,-348.3]]
+status = "proposed"
+source = "kiraz-2012 §553 (Estrangelā Ṣāḏē)"
+note = """
+"The stroke begins at pt 1 on the baseline, then moves upward to pt 2 then downward to pt 3, then back to pt 1 creating a Serṭā initial-like dentical. It then moves to the left... then slightly upward to pt 4. Then it curves down well below the descender line creating the spine. It then changes direction and draws a horizontal shaft... The final part... becomes thinner as the stroke approaches its end." One stroke.
+"""

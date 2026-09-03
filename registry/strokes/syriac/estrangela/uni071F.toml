@@ -8,7 +8,19 @@ upm = 1000
 advance = 889
 bbox = "68,-364,950,392"
 outline = "M882 -364Q851 -275 818.5 -191.5Q786 -108 755.0 -33.5Q724 41 694.5 102.5Q665 164 639 208Q611 256 590.5 278.0Q570 300 541 300Q505 300 489.0 271.5Q473 243 465 182Q458 124 442.5 78.0Q427 32 393.5 5.5Q360 -21 299 -21Q243 -21 200.0 4.0Q157 29 127.5 71.0Q98 113 83.0 166.5Q68 220 68 277Q68 291 70.0 311.5Q72 332 77.5 354.0Q83 376 91 392L156 366Q149 351 145.5 327.0Q142 303 142 280Q142 237 152.0 196.5Q162 156 181.5 124.0Q201 92 230.0 73.5Q259 55 296 55Q325 55 344.5 65.5Q364 76 377.0 107.0Q390 138 396 198Q405 282 440.5 328.5Q476 375 543 375Q570 375 595.0 365.0Q620 355 647.0 326.5Q674 298 706 243Q728 206 753.5 152.5Q779 99 809.0 27.5Q839 -44 874.5 -136.0Q910 -228 950 -344Z"
+letter = "ܟ"
+name = "Kāp"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[108.7, 315.3], [112.7, 204.0], [151.0, 102.7], [186.7, 59.7], [216.3, 38.3], [297.0, 18.7], [358.3, 30.3], [396.7, 65.7], [417.3, 118.3], [443.7, 254.7], [474.0, 312.0], [501.0, 328.7], [539.7, 335.7], [577.7, 329.7], [605.7, 314.7], [648.7, 263.7], [704.0, 168.0], [794.7, -33.7], [904.0, -320.3], [936.3, -337.0]]
+status = "proposed"
+source = "kiraz-2012 §532 (Estrangelā Kāp, isolated+final)"
+note = """
+"The stroke begins at the far left of the graph at pt 1 around the mean line. It moves down in a counterclockwise manner to pt 2 where it begins to move up again towards pt 3. At pt 4, the stroke moves direction again and moves downward and ends on or below the descender line at pt 4." One stroke, clubbed at pt 1.
+"""

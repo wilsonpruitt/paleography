@@ -8,7 +8,19 @@ upm = 1000
 advance = 539
 bbox = "44,-18,465,610"
 outline = "M221 497Q200 497 186.0 510.0Q172 523 172 553Q172 581 185.0 595.5Q198 610 221 610Q246 610 259.5 595.5Q273 581 273 553Q273 526 259.0 511.5Q245 497 221 497ZM44 426H315Q348 426 369.5 415.0Q391 404 402.5 386.0Q414 368 417 345L465 -18H393L348 314Q346 332 338.5 340.0Q331 348 318.5 350.5Q306 353 288 353H44Z"
+letter = "ܪ"
+name = "Rīš"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[80.0, 389.7], [308.3, 388.7], [346.3, 381.3], [367.7, 367.0], [384.0, 318.0], [424.3, 15.0], [462.0, -15.7]]
+status = "proposed"
+source = "kiraz-2012 §511/§559 (Estrangelā Rīš, shares Dālaṯ's ductus)"
+note = """
+"For Rīš, see under Dālaṯ, 10.9" -- same one-stroke ductus, distinguished from Dālaṯ only by a supralinear vs. sublinear point (not traced, out of v1 scope per SYRIAC-CALLIGRAPHY-PLAN.md).
+"""

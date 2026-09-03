@@ -8,7 +8,19 @@ upm = 1000
 advance = 743
 bbox = "65,-29,688,713"
 outline = "M615 -5Q607 28 594.0 76.5Q581 125 566 174Q557 203 548.0 229.5Q539 256 531.0 278.0Q523 300 517.0 313.5Q511 327 507 330Q498 330 477.5 323.5Q457 317 430.0 307.0Q403 297 374 284L414 178Q420 162 426.5 137.0Q433 112 433 94Q433 48 413.5 21.0Q394 -6 360.5 -17.5Q327 -29 285 -29Q255 -29 221.0 -23.5Q187 -18 157.5 -7.0Q128 4 108 18Q86 35 75.5 56.0Q65 77 65 108Q65 153 93.0 187.5Q121 222 170.0 253.0Q219 284 282 317L143 686L213 713L350 349Q406 375 443.5 386.0Q481 397 500 397Q533 397 554.5 382.5Q576 368 591 329Q620 253 643.5 168.5Q667 84 688 -5ZM307 253Q260 230 218.5 204.5Q177 179 155 154Q146 144 142.0 134.0Q138 124 138 115Q138 93 153.0 78.5Q168 64 191.5 56.0Q215 48 241.0 45.0Q267 42 290 42Q305 42 320.5 44.0Q336 46 347.0 56.5Q358 67 358 90Q358 103 353.5 123.0Q349 143 340 166Z"
+letter = "ܬ"
+name = "Taw"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[207.0,700.3], [191.0,664.3], [328.0,299.3], [313.7,285.0], [281.3,278.3], [199.3,232.3], [130.3,178.3], [112.7,152.7], [104.0,113.3], [114.3,66.0], [156.0,32.3], [225.3,12.7], [302.7,9.0], [367.7,26.3], [388.3,60.0], [389.3,126.0], [340.7,286.3], [328.0,303.0], [342.0,317.0], [501.7,361.7], [532.7,355.0], [557.3,312.7], [642.3,31.0]]
+status = "proposed"
+source = "kiraz-2012 §563 (Estrangelā Taw)"
+note = """
+"The stroke begins at pt 1 just under the baseline, and moves up to pt 2 at or slightly under the mean line. It then moves to pt 3 at the baseline, then pt 4, then up to pt 5. The stroke is clubbed at pt 5 in some book hands." One stroke.
+"""

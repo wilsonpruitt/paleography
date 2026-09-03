@@ -8,7 +8,19 @@ upm = 1000
 advance = 610
 bbox = "68,-9,545,436"
 outline = "M473 -9Q467 27 460.0 68.0Q453 109 445.0 148.5Q437 188 429 220Q417 268 402.5 299.5Q388 331 363.5 346.5Q339 362 297 362Q251 362 216.0 339.0Q181 316 161.5 278.5Q142 241 142 197Q142 149 162.0 119.5Q182 90 216.0 77.0Q250 64 292 64Q320 64 337.0 66.0Q354 68 375 74L396 9Q371 -1 343.0 -5.0Q315 -9 283 -9Q223 -9 174.5 13.0Q126 35 97.0 80.0Q68 125 68 195Q68 242 85.5 285.0Q103 328 133.5 362.0Q164 396 205.0 416.0Q246 436 294 436Q357 436 396.5 414.0Q436 392 460.5 346.5Q485 301 501 230Q512 184 523.5 126.0Q535 68 545 -9Z"
+letter = "ܘ"
+name = "Waw"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[507.3, 20.3], [458.0, 251.3], [433.3, 319.0], [408.7, 357.0], [360.0, 388.7], [294.7, 398.0], [230.0, 386.3], [178.0, 356.0], [230.0, 386.3], [294.7, 398.0], [360.0, 388.7], [408.7, 357.0], [433.3, 319.0], [458.0, 251.3], [507.3, 20.3]]
+status = "proposed"
+source = "kiraz-2012 §517 (Estrangelā Waw)"
+note = """
+"The stroke begins at the baseline at pt 1 and moves upward in a counterclockwise circular motion passing by pt 2 at or above the mean line, and ending up at pt 3 at the baseline." One stroke.
+"""

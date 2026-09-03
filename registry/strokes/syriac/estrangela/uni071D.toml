@@ -8,7 +8,19 @@ upm = 1000
 advance = 243
 bbox = "59,-140,194,216"
 outline = "M194 33Q194 -2 184.0 -32.5Q174 -63 160.5 -86.0Q147 -109 134 -122Q125 -131 116.5 -135.5Q108 -140 100 -140Q85 -140 73.5 -130.0Q62 -120 62 -104Q62 -94 66.5 -84.5Q71 -75 80 -64Q103 -35 115.5 -11.5Q128 12 130 31Q125 54 112.5 80.0Q100 106 79 134Q70 146 64.5 157.0Q59 168 59 179Q59 196 72.5 206.0Q86 216 99 216Q107 216 115.5 212.0Q124 208 133 199Q153 178 173.5 132.5Q194 87 194 33Z"
+letter = "ܝ"
+name = "Yūḏ"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[97.3, 176.0], [121.0, 146.3], [142.7, 107.0], [156.3, 70.3], [160.7, 39.0], [157.0, -2.0], [146.0, -32.7], [125.7, -68.3], [99.0, -101.7]]
+status = "proposed"
+source = "kiraz-2012 §529 (Estrangelā Yūḏ, isolated)"
+note = """
+"The stroke is curved in the shape of an arc. It begins between the baseline and mean line at pt 1, and ends below the baseline at pt 3, passing by pt 2." One denticle.
+"""

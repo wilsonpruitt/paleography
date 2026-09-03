@@ -8,7 +8,27 @@ upm = 1000
 advance = 930
 bbox = "68,-8,861,437"
 outline = "M676 75Q727 75 750.5 93.0Q774 111 781.0 139.5Q788 168 788 198Q788 284 755.5 323.0Q723 362 643 362Q609 362 582.0 359.0Q555 356 535 353L426 -6L361 5L458 354Q439 358 417.0 360.5Q395 363 373.5 364.0Q352 365 333 365Q281 365 237.5 352.5Q194 340 168.0 307.5Q142 275 142 216Q142 152 174.0 116.5Q206 81 264 57L231 -8Q152 23 110.0 78.0Q68 133 68 225Q68 292 98.0 339.0Q128 386 183.0 411.5Q238 437 312 437Q353 437 383.5 434.5Q414 432 441.0 429.0Q468 426 498 426Q544 426 581.0 431.0Q618 436 649 436Q709 436 750.0 418.0Q791 400 815.0 367.5Q839 335 850.0 291.0Q861 247 861 195Q861 171 857.0 144.5Q853 118 842.0 92.5Q831 67 809.5 46.0Q788 25 753.0 12.5Q718 0 667 0Q665 0 658.0 0.5Q651 1 643 2L646 76Q659 75 665.5 75.0Q672 75 676 75Z"
+letter = "ܗ"
+name = "Hē"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[737.3, 47.7], [780.7, 70.0], [810.0, 113.7], [823.3, 194.0], [814.7, 279.0], [794.7, 331.3], [764.7, 366.0], [716.3, 389.3], [652.0, 398.3], [495.7, 388.3], [289.3, 399.3], [222.0, 386.3], [169.0, 360.7], [122.3, 305.0], [105.7, 221.7], [123.3, 127.3], [143.0, 95.7], [179.0, 62.0]]
+status = "proposed"
+source = "kiraz-2012 §514 (Estrangelā Hē, isolated, stroke 1)"
+note = """
+"Stroke 1-2-3-4-5-6 begins at pt 1 on the baseline. It moves to the right to pt 2 where it curves and begins to move upward to pt 3 near the mean line. There it curves again and moves to the left to pt 5... At pt 5, it curves yet again and begins moving in a circular counterclockwise motion ending at pt 6 on the baseline."
+"""
+
+[[stroke]]
+median = [[490.0, 345.3], [401.7, 30.0], [424.3, -3.3]]
+status = "proposed"
+source = "kiraz-2012 §514 (Estrangelā Hē, isolated, stroke 2)"
+note = """
+"Stroke 4-7 is a vertical shaft that drops from pt 4 to pt 7, and sometimes extends below the baseline."
+"""

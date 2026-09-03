@@ -8,7 +8,19 @@ upm = 1000
 advance = 275
 bbox = "68,-37,209,426"
 outline = "M137 -37Q131 17 122.0 80.5Q113 144 103.5 207.0Q94 270 84.5 325.0Q75 380 68 417L141 426Q147 394 154.0 350.5Q161 307 169.0 257.5Q177 208 185.0 156.5Q193 105 199.0 55.5Q205 6 209 -37Z"
+letter = "ܙ"
+name = "Zayn"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[128.7, 410.3], [110.7, 385.7], [167.3, 12.0]]
+status = "proposed"
+source = "kiraz-2012 §520 (Estrangelā Zayn, isolated)"
+note = """
+"The stroke begins on or around the mean line at pt 1, and moves downward to slightly below the baseline at pt 2. The stroke is usually clubbed at pt 1."
+"""

@@ -8,7 +8,19 @@ upm = 1000
 advance = 701
 bbox = "49,0,632,348"
 outline = "M488 0Q445 0 413.5 9.5Q382 19 359 44Q344 29 310.5 14.5Q277 0 219 0Q158 0 110.5 26.5Q63 53 49 89L94 132Q110 110 130.5 98.0Q151 86 174.5 81.0Q198 76 222 76Q233 76 253.0 78.0Q273 80 293.5 86.5Q314 93 325 106Q313 135 305.0 174.0Q297 213 292.5 248.5Q288 284 288 304Q288 328 300.0 337.0Q312 346 329 346Q335 346 341.0 344.0Q347 342 353.0 334.5Q359 327 363 311Q369 292 373.5 266.0Q378 240 381.5 212.5Q385 185 387.0 161.5Q389 138 389 123Q399 95 427.5 85.5Q456 76 490 76Q519 76 542.5 84.0Q566 92 569 109Q559 141 550.0 180.0Q541 219 535.5 254.0Q530 289 530 310Q530 324 535.5 332.5Q541 341 550.0 344.5Q559 348 568 348Q575 348 581.0 346.0Q587 344 593.5 336.5Q600 329 605 311Q613 288 619.0 256.5Q625 225 628.5 192.5Q632 160 632 133Q632 98 621.5 72.5Q611 47 591.5 31.0Q572 15 546.0 7.5Q520 0 488 0Z"
+letter = "ܚ"
+name = "Ḥēṯ"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[92.3, 90.0], [100.7, 76.0], [138.7, 54.7], [219.7, 39.3], [286.7, 48.0], [355.3, 74.7], [355.7, 136.3], [325.3, 309.7], [359.7, 78.0], [428.0, 47.0], [483.7, 39.3], [547.3, 49.3], [584.3, 71.3], [599.7, 140.0], [565.7, 310.7], [599.7, 140.0], [594.7, 96.0]]
+status = "proposed"
+source = "kiraz-2012 §523-524 (Estrangelā Ḥēṯ, isolated -- one broken stroke, two joined denticles)"
+note = """
+"The stroke begins at or slightly under the mean line at pt 1, moving downward towards the baseline where it curves at pt 2 and changes direction to the left. At pt 3, the stroke moves upward to pt 4, and then traces itself back to pt 3, finishing the stroke at pt 5 with a tail."
+"""

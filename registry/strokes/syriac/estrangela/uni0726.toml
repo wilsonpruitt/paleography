@@ -8,7 +8,19 @@ upm = 1000
 advance = 843
 bbox = "49,0,785,552"
 outline = "M230 0Q148 0 107.5 23.0Q67 46 49 85L101 131Q117 109 136.0 97.0Q155 85 186.5 80.5Q218 76 268 76H716Q709 111 697.5 150.0Q686 189 672 226Q632 213 590.0 207.5Q548 202 510 202Q451 202 405.0 214.5Q359 227 333.0 260.0Q307 293 307 353Q307 396 322.5 432.0Q338 468 364.0 495.0Q390 522 422.5 537.0Q455 552 489 552Q532 552 566.5 538.5Q601 525 632.0 486.5Q663 448 693 373Q704 346 716.0 314.5Q728 283 739.5 250.0Q751 217 761 186Q785 113 785 83Q785 43 765.5 21.5Q746 0 712 0ZM513 274Q552 274 585.5 278.5Q619 283 647 291Q642 305 637.0 318.0Q632 331 626.5 344.5Q621 358 615 371Q594 418 574.5 440.5Q555 463 534.5 470.0Q514 477 488 477Q460 477 435.5 460.0Q411 443 395.5 416.0Q380 389 380 359Q380 312 413.0 293.0Q446 274 513 274Z"
+letter = "ܦ"
+name = "Pē"
 
-# [[stroke]] entries go here -- array order = stroke order,
-# point order within a median = pen direction. See
-# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.
+# Skeleton-traced (skimage skeletonize -> shortest path through waypoints -> RDP
+# simplify), per tools/strokes.py trace() -- see uni0710.toml for the method's
+# full history. Waypoints are start/end (and, for branching or looping strokes,
+# forced midpoints) read off Kiraz's guideline description; the traced path
+# between them is the real ink centerline, not estimated.
+
+[[stroke]]
+median = [[679.3, 293.0], [637.3, 408.7], [587.7, 480.3], [558.7, 500.0], [525.7, 509.7], [490.7, 513.0], [442.0, 504.3], [388.3, 468.0], [355.0, 414.7], [344.7, 349.7], [360.3, 289.3], [400.3, 256.7], [468.3, 241.0], [577.0, 242.7], [683.7, 263.0], [698.3, 255.0], [746.0, 105.3], [742.0, 51.0], [683.7, 38.3], [224.0, 39.0], [156.7, 47.7], [98.0, 78.3], [62.7, 82.0]]
+status = "proposed"
+source = "kiraz-2012 §550 (Estrangelā Pē)"
+note = """
+"The stroke begins at pt 1 just under the mean line. It moves in circular form to pt 2, then to pt 3 between the mean line and the ascender line... From pt 3, it moves in a shaft-like form to pt 4 at the base line. The base stroke is then drawn from pt 4 to pt 5 to form the tail." One stroke.
+"""
