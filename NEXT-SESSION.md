@@ -309,9 +309,38 @@ afterward, same pattern as the web build's own Phases A–E.
    sheet across several rounds rather than the book-in-hand paper check the plan called for
    — real bugs were still caught and fixed live (branch-point spurs on Ālap/Gāmal, Bēth's
    topology, the two retrace bugs above). All 22 `uni07*.toml` isolated-form strokes now
-   `status = "confirmed"`. **Next: Phase 4 — wire the figures into Lesson 0's prose via
-   `make_learn.py`, build the `/letters` reference page, feed the static figure into
-   `make_pdf.py`. Deploy is its own hard stop regardless of what Phase 4 produces.**
+   `status = "confirmed"`.
+   ✅ **PHASE 4 (wire in) BUILT 2026-09-03, Sonnet, same session.** All three consumers
+   the plan named in §7:
+   1. **Lesson 0's prose** — `{stroke:ܐ}` markers (the plan's own suggested syntax, §7)
+      added to every letter table row. `make_learn.py` gained `stroke_widget_html()`
+      (static-by-default, click/Enter plays the animate view once and holds) and
+      `check_stroke_markers()`, an unconditional gate under `--check` too — a lesson can
+      never ship citing unconfirmed or missing ductus, mirrors the existing
+      record-ref-must-exist check.
+   2. **`/letters`** — a new reference page, all 22 in a grid, generated straight from
+      `registry/strokes/`, added to the shared nav.
+   3. **`make_pdf.py`** — the Lesson 0 letters worksheet gets the static figure beside
+      each copy-blank, exactly the ruling §10.3 deferred ("item 2 owns formation").
+   ⛔ **Real bug caught building this, not by trusting a green build**: `make_pdf.py`
+   renders the lesson notes through `make_primers.render()` directly (its own docstring:
+   a separate consumer of `LESSON-N.md`), so `make_learn`'s marker substitution never ran
+   there — a first PDF build left literal `{stroke:ܫ}` text sitting in the printed Batch E
+   table. Only caught by rendering actual PDF pages with `pdftoppm` and looking, not by
+   the build's own exit code. Fixed with `inject_stroke_figures_print()`, static-only
+   (paper doesn't animate). **Lesson for next time this pattern repeats: every consumer
+   of `LESSON-N.md` that renders independently needs its own marker pass — don't assume
+   one fix in `make_learn.py` covers `make_pdf.py` too.**
+   Also caught and fixed en route: `tools/strokes.py`'s `svg()` already puts
+   `class="stroke-fig"` on its own root `<svg>` — naming the new wrapper span the same
+   collided (66 elements matched instead of 22 on `--check`-adjacent DOM inspection,
+   though functionally harmless since `[data-n]` kept the CSS correctly scoped). Renamed
+   to `.stroke-widget` throughout. Both the web wiring and the PDF wiring were verified
+   against real rendered output (Playwright screenshots + DOM checks for the web pages,
+   `pdftoppm`-rendered PDF pages for print), not just clean `--check`/exit-code runs.
+   **Not done, not blocking:** the `--lesson N`/full-course PDF rebuild for lessons other
+   than 0 (they don't cite any letters, so nothing to wire — only Lesson 0 uses
+   `{stroke:X}`). Deploy is still its own hard stop, unrelated to any of the above.
    *(Kickoff-era note, kept for the record:)* Kickoff brief written 2026-09-03 (Sonnet, prep only, no rulings) →
    `SYRIAC-CALLIGRAPHY-KICKOFF.md`. READ THAT FILE FIRST when this starts — it is the
    research handoff (what exists, what doesn't, five open questions, HanziWriter as prior
