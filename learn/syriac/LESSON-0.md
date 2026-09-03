@@ -27,26 +27,26 @@ to the next batch of five.
 
 ### Batch A
 
-| Letter | Name | Sound |
-|---|---|---|
-| ܐ | **Ålaf** | a light catch in the throat — the gap in English "uh‑oh" |
-| ܒ | **Bēth** | b |
-| ܓ | **Gåmal** | g (as in "go") |
-| ܕ | **Dålath** | d |
-| ܗ | **He** | h |
+| Letter | Name | Sound | Stroke |
+|---|---|---|---|
+| ܐ | **Ålaf** | a light catch in the throat — the gap in English "uh‑oh" | {stroke:ܐ} |
+| ܒ | **Bēth** | b | {stroke:ܒ} |
+| ܓ | **Gåmal** | g (as in "go") | {stroke:ܓ} |
+| ܕ | **Dålath** | d | {stroke:ܕ} |
+| ܗ | **He** | h | {stroke:ܗ} |
 
 **Test yourself.** Cover the table. Name these, left to right: ܗ ܓ ܐ ܕ ܒ ܓ ܗ. (Answer:
 He, Gåmal, Ålaf, Dålath, Bēth, Gåmal, He.)
 
 ### Batch B
 
-| Letter | Name | Sound |
-|---|---|---|
-| ܘ | **Vav** | v/w |
-| ܙ | **Zain** | z, as in "zero" |
-| ܚ | **Cheth** | a hard, breathy h from the back of the throat — no English equivalent; close to Scottish "loch" |
-| ܛ | **Teth** | a heavier, emphatic t |
-| ܝ | **Yud** | y |
+| Letter | Name | Sound | Stroke |
+|---|---|---|---|
+| ܘ | **Vav** | v/w | {stroke:ܘ} |
+| ܙ | **Zain** | z, as in "zero" | {stroke:ܙ} |
+| ܚ | **Cheth** | a hard, breathy h from the back of the throat — no English equivalent; close to Scottish "loch" | {stroke:ܚ} |
+| ܛ | **Teth** | a heavier, emphatic t | {stroke:ܛ} |
+| ܝ | **Yud** | y | {stroke:ܝ} |
 
 **Test yourself.** ܝ ܚ ܘ ܛ ܙ ܝ ܘ. (Answer: Yud, Cheth, Vav, Teth, Zain, Yud, Vav.)
 
@@ -57,25 +57,25 @@ hit one of these two later, stop and check the dot before you guess.
 
 ### Batch C
 
-| Letter | Name | Sound |
-|---|---|---|
-| ܟ | **Kåf** | k (a softer "kh" between vowels) |
-| ܠ | **Låmadh** | l |
-| ܡ | **Mīm** | m |
-| ܢ | **Nūn** | n |
-| ܣ | **Semkath** | s |
+| Letter | Name | Sound | Stroke |
+|---|---|---|---|
+| ܟ | **Kåf** | k (a softer "kh" between vowels) | {stroke:ܟ} |
+| ܠ | **Låmadh** | l | {stroke:ܠ} |
+| ܡ | **Mīm** | m | {stroke:ܡ} |
+| ܢ | **Nūn** | n | {stroke:ܢ} |
+| ܣ | **Semkath** | s | {stroke:ܣ} |
 
 **Test yourself.** ܡ ܟ ܣ ܠ ܢ ܡ ܟ. (Answer: Mīm, Kåf, Semkath, Låmadh, Nūn, Mīm, Kåf.)
 
 ### Batch D
 
-| Letter | Name | Sound |
-|---|---|---|
-| ܥ | **'E** | a guttural throat-sound with no English equivalent — like Hebrew *ayin* or Arabic *ʿayn* |
-| ܦ | **Pē** | p/f |
-| ܨ | **Såde** | a heavier, emphatic s |
-| ܩ | **Qūf** | a k made further back in the throat |
-| ܪ | **Rīsh** | r — remember the dot-above rule from Batch B |
+| Letter | Name | Sound | Stroke |
+|---|---|---|---|
+| ܥ | **'E** | a guttural throat-sound with no English equivalent — like Hebrew *ayin* or Arabic *ʿayn* | {stroke:ܥ} |
+| ܦ | **Pē** | p/f | {stroke:ܦ} |
+| ܨ | **Såde** | a heavier, emphatic s | {stroke:ܨ} |
+| ܩ | **Qūf** | a k made further back in the throat | {stroke:ܩ} |
+| ܪ | **Rīsh** | r — remember the dot-above rule from Batch B | {stroke:ܪ} |
 
 **Test yourself.** ܪ ܕ ܥ ܩ ܨ ܪ ܕ. (Answer: Rīsh, Dålath, 'E, Qūf, Såde, Rīsh, Dålath. If
 you swapped Rīsh and Dålath anywhere, go back and look at the dot — that mistake is normal
@@ -83,10 +83,10 @@ on a first pass and the whole point of testing it now.)
 
 ### Batch E
 
-| Letter | Name | Sound |
-|---|---|---|
-| ܫ | **Shīn** | sh |
-| ܬ | **Tau** | t (a softer "th" as in "thin," between vowels) |
+| Letter | Name | Sound | Stroke |
+|---|---|---|---|
+| ܫ | **Shīn** | sh | {stroke:ܫ} |
+| ܬ | **Tau** | t (a softer "th" as in "thin," between vowels) | {stroke:ܬ} |
 
 Only two left, because this batch closes the alphabet. **Test yourself on all 22** before
 moving on: cover the tables above and name, in order, ܐ ܒ ܓ ܕ ܗ ܘ ܙ ܚ ܛ ܝ ܟ ܠ ܡ ܢ ܣ ܥ ܦ ܨ ܩ ܪ

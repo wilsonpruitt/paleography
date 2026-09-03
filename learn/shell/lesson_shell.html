@@ -71,6 +71,28 @@ tbody tr:last-child td{border-bottom:0}
  border:1px solid var(--line);border-radius:var(--r);padding:1px 6px;color:var(--dim);
  margin-left:6px}
 .lessonnav{display:flex;justify-content:space-between;gap:14px;margin-top:36px;font-size:15px}
+
+/* Stroke-order figures: {stroke:X} markers, injected by learn/tools/make_learn.py
+   (SYRIAC-CALLIGRAPHY-PLAN.md §7). Static (numbered) by default; click/Enter plays
+   the animated draw once and holds the finished letter. */
+.stroke-widget{display:inline-flex;align-items:center;justify-content:center;
+ width:40px;height:40px;border:1px solid var(--line);border-radius:var(--r);
+ background:var(--surface);color:var(--text);cursor:pointer;flex:none;
+ vertical-align:middle}
+.stroke-widget:hover,.stroke-widget:focus-visible{border-color:var(--accent);outline:none}
+.stroke-widget svg{width:80%;height:80%;display:block}
+.stroke-widget-missing{font-family:var(--syr);font-size:19px;color:var(--dim);cursor:default}
+.stroke-anim .stroke-path{stroke-dasharray:1;stroke-dashoffset:1;animation-name:draw-stroke;
+ animation-timing-function:ease-in-out;animation-fill-mode:forwards}
+@keyframes draw-stroke{0%{stroke-dashoffset:1}100%{stroke-dashoffset:0}}
+.stroke-widget[data-n="1"] .stroke-anim .stroke-path:nth-of-type(2){animation-duration:1.9s;animation-delay:0s}
+.stroke-widget[data-n="2"] .stroke-anim .stroke-path:nth-of-type(2){animation-duration:.95s;animation-delay:0s}
+.stroke-widget[data-n="2"] .stroke-anim .stroke-path:nth-of-type(3){animation-duration:.95s;animation-delay:.95s}
+.stroke-widget[data-n="3"] .stroke-anim .stroke-path:nth-of-type(2){animation-duration:.63s;animation-delay:0s}
+.stroke-widget[data-n="3"] .stroke-anim .stroke-path:nth-of-type(3){animation-duration:.63s;animation-delay:.63s}
+.stroke-widget[data-n="3"] .stroke-anim .stroke-path:nth-of-type(4){animation-duration:.63s;animation-delay:1.26s}
+@media (prefers-reduced-motion: reduce){.stroke-widget{cursor:default}
+ .stroke-anim .stroke-path{animation:none!important;stroke-dashoffset:0}}
 </style>
 </head>
 <body>
@@ -79,6 +101,7 @@ tbody tr:last-child td{border-bottom:0}
   <h1 class="wm"><a href="/">A Syriac Chrestomathy</a></h1>
   <div class="spacer"></div>
   <nav class="navlinks">
+    <a class="nav" href="/letters">letters</a>
     <a class="nav" href="/sources">sources</a>
     <a class="nav" href="/for-syriacists">for syriacists</a>
   </nav>
@@ -86,6 +109,31 @@ tbody tr:last-child td{border-bottom:0}
 __BODY__
 __FOOTER__
 </div>
+<script>
+(function(){
+  function toggle(fig){
+    var stat = fig.querySelector(".stroke-stat"), anim = fig.querySelector(".stroke-anim");
+    if (anim.hidden) {
+      stat.hidden = true; anim.hidden = false;
+      // Force a reflow so the CSS animation restarts every time, not just the first click.
+      fig.querySelectorAll(".stroke-path").forEach(function(p){
+        p.style.animation = "none"; void p.offsetHeight; p.style.animation = "";
+      });
+    } else {
+      anim.hidden = true; stat.hidden = false;
+    }
+  }
+  document.addEventListener("click", function(e){
+    var fig = e.target.closest(".stroke-widget");
+    if (fig) toggle(fig);
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var fig = e.target.closest(".stroke-widget");
+    if (fig) { e.preventDefault(); toggle(fig); }
+  });
+})();
+</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -32,8 +32,122 @@ ROOT = LEARN.parent                              # repo root
 
 sys.path.insert(0, str(ROOT / "tools"))
 import make_primers  # noqa: E402  (render(), inline() -- the shared closed-set Markdown renderer)
+import strokes  # noqa: E402  (Phase 4: {stroke:X} markers -> registry/strokes/ figures)
 sys.path.insert(0, str(HERE))
 import make_drill  # noqa: E402  (Phase B: drill/L*.toml -> site/drill/L*.json, + verbatim check)
+
+STROKE_DIR = ROOT / "registry" / "strokes" / "syriac" / "estrangela"
+_stroke_cache = {}
+
+
+def _stroke_data(letter_char):
+    """Load registry/strokes/.../uni{XXXX}.toml for an isolated-form letter, cached.
+    Returns None if the file doesn't exist at all (a letter this script never
+    reached); the caller separately checks for an empty [[stroke]] list (a stub
+    that was extracted but never authored)."""
+    cp = f"{ord(letter_char):04X}"
+    if cp not in _stroke_cache:
+        path = STROKE_DIR / f"uni{cp}.toml"
+        _stroke_cache[cp] = strokes.load(path) if path.exists() else None
+    return _stroke_cache[cp]
+
+
+def extract_stroke_markers(text):
+    """Every {stroke:X} marker in a lesson's raw Markdown, in order."""
+    return re.findall(r"\{stroke:(.)\}", text)
+
+
+def check_stroke_markers(text, fname, errors):
+    """Unconditional gate (runs under --check too): every {stroke:X} marker must
+    resolve to a registry entry that actually has confirmed ductus, not a bare
+    extraction stub. Mirrors the existing record-ref-must-exist check above."""
+    for ch in extract_stroke_markers(text):
+        data = _stroke_data(ch)
+        cp = f"U+{ord(ch):04X}"
+        if data is None:
+            errors.append(f"{fname}: {{stroke:{ch}}} ({cp}) has no registry/strokes/ entry")
+        elif not data.get("stroke"):
+            errors.append(f"{fname}: {{stroke:{ch}}} ({cp}) registry entry has no [[stroke]] data yet")
+        elif any(s.get("status") != "confirmed" for s in data["stroke"]):
+            errors.append(f"{fname}: {{stroke:{ch}}} ({cp}) has unconfirmed stroke data")
+
+
+def stroke_widget_html(ch):
+    """The click/Enter-to-play stroke figure for one letter -- static (numbered)
+    shown by default, animated view toggled in. Shared by inject_stroke_figures()
+    (lesson prose markers) and build_letters_page() (the standalone reference)."""
+    data = _stroke_data(ch)
+    if data is None or not data.get("stroke"):
+        return f'<span class="stroke-widget stroke-widget-missing">{ch}</span>'
+    stat = strokes.svg(data, mode="static")
+    anim = strokes.svg(data, mode="animate")
+    n = len(data["stroke"])
+    return (
+        f'<span class="stroke-widget" data-n="{n}" role="button" tabindex="0" '
+        'aria-label="Play stroke order, or press again to go back to the numbered view">'
+        f'<span class="stroke-stat">{stat}</span>'
+        f'<span class="stroke-anim" hidden>{anim}</span>'
+        "</span>"
+    )
+
+
+def inject_stroke_figures(body):
+    """Replace every {stroke:X} marker in already-rendered HTML with the actual
+    figure, per SYRIAC-CALLIGRAPHY-PLAN.md §7. Runs on the rendered HTML, not the
+    Markdown source, so it never has to fight make_primers' own escaping:
+    {stroke:ܐ} survives html.escape() untouched (no special chars), and this is
+    the only place that ever has to know what a marker means."""
+    return re.sub(r"\{stroke:(.)\}", lambda m: stroke_widget_html(m.group(1)), body)
+
+
+# The 22 Estrangela consonants in alphabetical order, with the exact transliteration
+# LESSON-0.md itself uses (not the more academic Kiraz-citation spelling the stroke
+# TOML sources carry -- this page is a companion to the live course, so it matches
+# the course's own names, per registry/strokes/syriac/estrangela/*.toml's own letter
+# field for the glyph and Kiraz section for the ductus).
+LETTERS_ORDER = [
+    ("ܐ", "Ålaf"), ("ܒ", "Bēth"), ("ܓ", "Gåmal"), ("ܕ", "Dålath"), ("ܗ", "He"),
+    ("ܘ", "Vav"), ("ܙ", "Zain"), ("ܚ", "Cheth"), ("ܛ", "Teth"), ("ܝ", "Yud"),
+    ("ܟ", "Kåf"), ("ܠ", "Låmadh"), ("ܡ", "Mīm"), ("ܢ", "Nūn"), ("ܣ", "Semkath"),
+    ("ܥ", "'E"), ("ܦ", "Pē"), ("ܨ", "Såde"), ("ܩ", "Qūf"), ("ܪ", "Rīsh"),
+    ("ܫ", "Shīn"), ("ܬ", "Tau"),
+]
+
+LETTERS_STYLE = """<style>
+.lettergrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+ gap:14px;margin:22px 0}
+.lettercard{border:1px solid var(--line);border-radius:var(--r);padding:14px;
+ text-align:center;background:var(--surface)}
+.lettercard .stroke-widget{width:84px;height:84px;margin:0 auto 10px;cursor:pointer}
+.lettercard .name{font-family:var(--serif);font-size:17px;margin-bottom:2px}
+.lettercard .cp{font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums}
+</style>"""
+
+
+def build_letters_page(write):
+    if not write:
+        return
+    cards = []
+    for ch, name in LETTERS_ORDER:
+        widget = stroke_widget_html(ch)
+        cp = f"U+{ord(ch):04X}"
+        cards.append(f'<div class="lettercard">{widget}'
+                      f'<div class="name">{name}</div><div class="cp">{cp}</div></div>')
+    body = (LETTERS_STYLE +
+            "<h1>The 22 letters, stroke by stroke</h1>"
+            "<p>Estrangela, isolated form. Each figure opens numbered; click or press "
+            "Enter to watch the pen order, click again to go back. Traced from George "
+            "Kiraz's <em>Tūrrāṣ Mamllā</em> §502–§563 against "
+            "the outline of Noto Sans Syriac -- source citations live per letter in "
+            "<code>registry/strokes/syriac/estrangela/</code>. This is a reference for "
+            "coming back to after <a href=\"/lesson/0\">Lesson 0</a>, not a first "
+            "introduction to the alphabet.</p>"
+            '<div class="lettergrid">' + "".join(cards) + "</div>")
+    page = wrap_page("The 22 Letters", "Every Estrangela letter's stroke order, "
+                      "traced from Kiraz's ductus and playable on click.", body)
+    dest = SITE / "letters" / "index.html"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(page, encoding="utf-8")
 
 SYRIAC_DIR = LEARN / "syriac"
 SHELL = LEARN / "shell" / "lesson_shell.html"
@@ -563,6 +677,8 @@ def run(write):
             where = f"{lf.name}:{line_no}" if line_no else lf.name
             errors.append(f"{where}: {msg}")
 
+        check_stroke_markers(text, lf.name, errors)
+
         action_lines[n] = extract_action_line(n, text, lf.name, errors)
 
         meta = lesson_metadata_paragraph(text)
@@ -592,6 +708,7 @@ def run(write):
             drill_html = (f'\n<div data-lesson="{lid}">{drill_shell_src}</div>\n'
                           if lid in drill_compiled and drill_shell_src else "")
             body = make_primers.render(head_text) + drill_html + make_primers.render(rest_text)
+            body = inject_stroke_figures(body)
             body = body.replace("<table>", '<div class="tablewrap"><table>').replace(
                 "</table>", "</table></div>")
             footer = build_record_footer(refs, [])
@@ -612,6 +729,7 @@ def run(write):
             dest.write_text(page, encoding="utf-8")
 
     build_prose_pages(errors, write)
+    build_letters_page(write)
     build_sources_page(records, course, write)
     build_index_page(lesson_files, full_lesson_texts, action_lines, write)
     build_vercel_config(write)
