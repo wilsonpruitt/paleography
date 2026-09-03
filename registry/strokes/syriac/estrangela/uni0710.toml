@@ -11,14 +11,15 @@ outline = "M746 -8Q714 -2 674.0 18.0Q634 38 586.5 72.5Q539 107 484 156Q429 205 3
 letter = "ܐ"
 name = "Ālap"
 
-# Coordinates are estimated -- fitted to THIS font's outline against Kiraz's
-# guideline grid (baseline 0, mean line ~430, ascender line ~610 in font
-# units, derived from this sample of three letters, not yet checked across
-# all 22). Order, stroke count, direction and every quoted phrase are
-# Kiraz's, not estimated.
+# Coordinates are measured, not guessed: sampled from the rendered outline's
+# own ink (column/row centerlines of the rasterized glyph, tools/strokes.py's
+# debug rig) at the x/y Kiraz's prose points to. Wilson caught the first pass
+# (hand-guessed against the prose alone) visibly missing the actual ink --
+# see git history. Order, stroke count, direction and every quoted phrase
+# are Kiraz's; only the numbers are this font's.
 
 [[stroke]]
-median = [[850, 520], [550, 380], [180, 10]]
+median = [[915, 546], [155, 337], [170, 10]]
 status = "confirmed"
 source = "kiraz-2012 §502 (Estrangela Ālap, stroke 1)"
 note = """
@@ -30,7 +31,7 @@ stroke is clubbed at pt 1."
 """
 
 [[stroke]]
-median = [[430, 380], [620, 40]]
+median = [[410, 265], [600, 110], [730, 10]]
 status = "confirmed"
 source = "kiraz-2012 §502 (Estrangela Ālap, stroke 2)"
 note = """

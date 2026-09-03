@@ -16,7 +16,7 @@ name = "Gāmal"
 # this glyph's own bbox (y down to -375) is the evidence for how far.
 
 [[stroke]]
-median = [[300, 480], [700, -50], [1100, -375], [700, -50], [300, 350], [150, 480]]
+median = [[480, 480], [970, -70], [1300, -323], [970, -70], [450, 29], [60, 50]]
 status = "confirmed"
 source = "kiraz-2012 §508 (Estrangela Gāmal, isolated+initial -- one broken stroke)"
 note = """

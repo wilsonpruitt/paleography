@@ -12,9 +12,17 @@ letter = "ܒ"
 name = "Bēth"
 
 # See uni0710.toml's header note on coordinate provenance -- same method.
+# Second correction on this letter: Kiraz's own figure (§505, zoomed off the
+# scan) shows pt1 with pt2 just LEFT of it and pt3 just RIGHT -- i.e. after
+# the pt1->pt2 nub and the retrace, "continues to pt3" carries on PAST pt1
+# in the original rightward direction, not back leftward. In this font the
+# short pt1->pt3 hop of Kiraz's compact diagram is stretched into the whole
+# flat top (measured x 400->800) before the curve down through the loop
+# (x 800->889) to baseline. The first fix here had pt1 at the loop end,
+# which skipped the entire flat top -- Wilson caught it missing "tracking".
 
 [[stroke]]
-median = [[820, 390], [760, 340], [815, 385], [280, 390], [150, 40], [60, 15]]
+median = [[420, 385], [370, 375], [800, 355], [853, 200], [819, 80], [150, 45], [75, 76]]
 status = "confirmed"
 source = "kiraz-2012 §505 (Estrangela Bēt, isolated -- one broken stroke)"
 note = """
