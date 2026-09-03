@@ -251,18 +251,33 @@ on Fable**, and steer it toward ending in a written score (a plan/conventions fi
 `SYRIAC-WEB-PLAN.md` itself was scored, not toward code. A cheaper session executes the score
 afterward, same pattern as the web build's own Phases A–E.
 
-1. ✅ **SCORED 2026-09-02 (Fable) → `SYRIAC-PDF-PLAN.md`. Execution = Sonnet, Phase 0 first
-   (hand-assemble Lesson 2, Wilson prints it duplex and runs it with a pencil — the paper G2).**
-   Settled by a smoke test on this Mac, not by taste: headless Google Chrome (installed)
-   shapes pointed Estrangela correctly and embeds Noto Sans Syriac as a subset; it IGNORES
-   `break-before: right`, so duplex parity (every sheet's front on an odd page) is the
-   generator's job — count pages with `pdfinfo`, pad, merge with `qpdf`, all already on the
-   machine, zero new deps. Unit = the SHEET (front questions / back answers), four per lesson,
-   chunked so no side can overflow and checked by page count. ⭐ One fact that corrects the web
-   plan: the live site uses **Noto Sans Syriac from Google Fonts, not Meltho** — which is
-   exactly right for a PDF, since embedding subsets fonts and Meltho's no-modification licence
-   was never resolved for that; Noto/Garamond/Plex are OFL. §9 lists seven rulings, each with a
-   default a bare "go" takes. *(Original ask, kept for the record:)* grammar notes up front,
+1. ✅ **SCORED 2026-09-02 (Fable) → `SYRIAC-PDF-PLAN.md`. Phases 0+1 BUILT same day (Sonnet,
+   commit `c849312`) — `learn/tools/make_pdf.py` + `learn/shell/print.css` +
+   `learn/fonts/` (self-hosted OFL: EB Garamond, IBM Plex Sans, Noto Sans Syriac).**
+   All 11 lessons pass `--check` and are written to `learn/site/pdf/lesson-N[.pdf|-a4.pdf]`
+   plus `chrestomathy[.pdf|-a4.pdf]` (gitignored, built not committed, regenerate with
+   `python3 learn/tools/make_pdf.py`). Five real bugs found by rendering-and-looking, not
+   page-counting alone (full list in the commit message): a CSS comment containing a literal
+   `</style>` closed the style element early and dumped the rest of the stylesheet as visible
+   page text; the vocabulary sheet needed a HALVED cap since it shows both directions per
+   word; the forms sheet was printing the cell answer next to its own blank (fixed to show
+   neither answer, matching "closed-book"); Lesson 0's letters and pairs/triples sheets had
+   no cap and silently overflowed past the fixed footer (Chrome doesn't repaginate content
+   colliding with `position:fixed`, so the page-count check missed it — only spotted by
+   rasterizing and looking); a fresh `--user-data-dir` never exits after `--print-to-pdf`
+   (background component-updater fetches outlive the render) — fixed by polling for a
+   size-stable output file instead of waiting on the process to exit. ⬜ **OWED, and only
+   Wilson can do it — the actual paper G3 gate the plan calls for**: three PDFs sent via
+   SendUserFile (Lesson 0, Lesson 2, Lesson 10 — start/median/capstone) for him to print
+   duplex and run with a pencil. ⚠ **One known cosmetic gap, not yet fixed**: a few dense
+   Stage-1 word-by-word tables (many short columns) run past the print margin on paper,
+   where the web page can scroll horizontally and paper can't — needs either smaller type
+   for wide tables or a wrapping strategy, best judged after Wilson's own read-through.
+   Phase 2 (wire into the site + deploy) is UNSTARTED and has its own hard stop
+   (production deploy) per the plan's own §7. Scoring-session details (the smoke test that
+   ruled out LaTeX/weasyprint/wkhtmltopdf, the duplex-parity mechanism, the Noto-not-Meltho
+   fact, §9's seven rulings) are in `SYRIAC-PDF-PLAN.md` itself, not repeated here.
+   *(Original ask, kept for the record:)* grammar notes up front,
    drills at the end, **answers printed on the back** (so the sheet works closed-book,
    face-down, the way a paper worksheet would). Nothing was scoped at the time: not the
    layout, not the generation tool (LaTeX? a print
