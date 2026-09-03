@@ -60,6 +60,12 @@ def extract(font_path, script, hand, out_dir, forms=("isol", "init", "medi", "fi
         if not name.startswith("uni0"):
             continue
         base = name.split(".")[0]
+        try:
+            cp = int(base[3:], 16)
+        except ValueError:
+            continue
+        if not (0x0700 <= cp <= 0x074F):  # Syriac Unicode block only
+            continue
         suffix = name[len(base):]  # "", ".init", ".medi", ".fina"
         form = {"": "isol", ".init": "init", ".medi": "medi", ".fina": "fina"}.get(suffix)
         if form is None or form not in forms:
@@ -87,6 +93,10 @@ def extract(font_path, script, hand, out_dir, forms=("isol", "init", "medi", "fi
             }
         }
         fname = out_dir / f"{name}.toml"
+        if fname.exists():
+            existing = load(fname)
+            if existing.get("stroke"):
+                continue  # never clobber hand-authored strokes on a re-extract
         with open(fname, "w") as f:
             _toml_dump(stub, f)
         written.append(fname)
