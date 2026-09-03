@@ -1,0 +1,14 @@
+[glyph]
+script = "syriac"
+hand = "estrangela"
+codepoint = "uni073C"
+form = "isol"
+font = "NotoSansSyriac-Var.ttf"
+upm = 1000
+advance = 0
+bbox = "-35,-120,34,-9"
+outline = "M-2 -20Q3 -9 15 -9Q22 -9 28.0 -13.0Q34 -17 34 -25Q34 -30 31 -38L1 -109Q-4 -120 -16 -120Q-23 -120 -29.0 -115.5Q-35 -111 -35 -104Q-35 -98 -32 -91Z"
+
+# [[stroke]] entries go here -- array order = stroke order,
+# point order within a median = pen direction. See
+# SYRIAC-CALLIGRAPHY-PLAN.md §3 for the schema.

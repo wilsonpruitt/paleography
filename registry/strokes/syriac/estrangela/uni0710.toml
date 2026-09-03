@@ -1,0 +1,43 @@
+[glyph]
+script = "syriac"
+hand = "estrangela"
+codepoint = "uni0710"
+form = "isol"
+font = "NotoSansSyriac-Var.ttf"
+upm = 1000
+advance = 930
+bbox = "73,-8,922,595"
+outline = "M746 -8Q714 -2 674.0 18.0Q634 38 586.5 72.5Q539 107 484 156Q429 205 374.5 237.5Q320 270 265.5 286.5Q211 303 156 303H148Q157 267 165.5 230.0Q174 193 181.5 155.0Q189 117 196.0 78.0Q203 39 208 0H134Q130 29 125.5 56.5Q121 84 116.0 110.5Q111 137 105.5 162.5Q100 188 95 213Q85 263 79.0 291.0Q73 319 73 326Q73 369 102 377Q129 374 157.5 371.5Q186 369 223.0 367.5Q260 366 310 366Q406 366 507.0 395.5Q608 425 702.0 477.0Q796 529 869 595L922 547Q860 477 772.0 425.5Q684 374 585.0 344.0Q486 314 390 307V302Q422 290 458.0 266.5Q494 243 535 209Q576 175 610.0 149.5Q644 124 671 107Q699 90 726.0 78.0Q753 66 780 58Z"
+letter = "ܐ"
+name = "Ālap"
+
+# Coordinates are estimated -- fitted to THIS font's outline against Kiraz's
+# guideline grid (baseline 0, mean line ~430, ascender line ~610 in font
+# units, derived from this sample of three letters, not yet checked across
+# all 22). Order, stroke count, direction and every quoted phrase are
+# Kiraz's, not estimated.
+
+[[stroke]]
+median = [[850, 520], [550, 380], [180, 10]]
+status = "confirmed"
+source = "kiraz-2012 §502 (Estrangela Ālap, stroke 1)"
+note = """
+"Stroke 1-2-3 draws the horizontal shaft and the first leg of the graph. It
+begins half-way between the mean and ascender lines at pt 1, moves downward
+and to the left to pt 2, then makes a sharp turn and continues downward to
+pt 3, ending either on, or slightly below, the baseline. In some hands, the
+stroke is clubbed at pt 1."
+"""
+
+[[stroke]]
+median = [[430, 380], [620, 40]]
+status = "confirmed"
+source = "kiraz-2012 §502 (Estrangela Ālap, stroke 2)"
+note = """
+"Stroke 4-5 draws the second leg. It starts slightly below the mean line at
+pt 4 where it joins the first stroke, moving downward at an angle to pt 5
+..., ending either on, or slightly above, the baseline. ... The order of the
+two strokes is attested in a very late manuscript where the second stroke is
+missing" -- i.e. the order given (leg 1 then leg 2) is the norm, not
+absolute.
+"""

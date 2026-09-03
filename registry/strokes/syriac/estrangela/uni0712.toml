@@ -1,0 +1,29 @@
+[glyph]
+script = "syriac"
+hand = "estrangela"
+codepoint = "uni0712"
+form = "isol"
+font = "NotoSansSyriac-Var.ttf"
+upm = 1000
+advance = 958
+bbox = "49,0,889,429"
+outline = "M240 0Q157 0 110.5 22.0Q64 44 49 78L96 131Q112 113 132.0 100.5Q152 88 184.0 82.0Q216 76 266 76H729Q780 76 798.5 99.5Q817 123 817 175Q817 198 814.0 223.0Q811 248 807 264Q795 317 767.5 335.0Q740 353 690 353Q656 353 620.5 352.0Q585 351 549.5 349.5Q514 348 479 348Q411 348 375.5 350.5Q340 353 326 357V429Q337 427 356.0 425.0Q375 423 404.5 422.0Q434 421 474 421Q513 421 551.5 422.5Q590 424 628.5 425.0Q667 426 705 426Q752 426 787.5 411.5Q823 397 846.0 364.0Q869 331 879 275Q881 263 883.5 245.0Q886 227 887.5 208.5Q889 190 889 175Q889 84 848.5 42.0Q808 0 708 0Z"
+letter = "ܒ"
+name = "Bēth"
+
+# See uni0710.toml's header note on coordinate provenance -- same method.
+
+[[stroke]]
+median = [[820, 390], [760, 340], [815, 385], [280, 390], [150, 40], [60, 15]]
+status = "confirmed"
+source = "kiraz-2012 §505 (Estrangela Bēt, isolated -- one broken stroke)"
+note = """
+"The stroke begins at pt 1 just around the mean line. It moves a short
+distance to the left to pt 2, then traces itself back to pt 1 and continues
+to pt 3. At pt 2, the pen moves down slightly, creating a clubbed end. At pt
+3, the stroke curves and changes direction downward to the baseline at pt 4.
+Then, it changes direction again and moves horizontally to the left" to the
+tail at pt 6 (isolated allograph). One TOML median approximates Kiraz's
+retrace (pt1->pt2->pt1->pt3) as a single pass through the nub rather than
+literally doubling back -- the animation reads the same either way.
+"""
