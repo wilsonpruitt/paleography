@@ -212,19 +212,72 @@ Full write-up, corrected page numbers, and the method are the **last section of
 "payne-smith-1903"`, `fills_gap_for`) is the runbook's **proposed** extension — unopposed but
 never actually blessed by Wilson. Worth a one-word ruling before anything else lands under it.
 
-## ⭐ THE IMMEDIATE NEXT TASK — the web build, per `SYRIAC-WEB-PLAN.md`
+## ✅ DONE — the web build, per `SYRIAC-WEB-PLAN.md` (history; the live task is further down)
 
 ✅ **Lessons 2–10 WRITTEN 2026-09-02** (commit `42c6e14`, Opus-tier fork, all Syriac verbatim from
 the R3 records; two source flags carried forward unresolved — c068-1's v.11 conjunction in L2,
 c080-1's v.14 word order in L10). The course is complete on paper: `learn/syriac/LESSON-0.md` … `learn/syriac/LESSON-10.md`.
 
-**Now: `SYRIAC-WEB-PLAN.md`** (Fable, 2026-09-02) — the score for **syriac.paleography.app**:
-book + drill generated from one source, three surfaces (learner `/N`, scholar `/about` `/sources`
-`/for-syriacists`, everyone `/`), First Light's engine split from its Lesson-0/1 data and made
-per-lesson config, drill sidecars extracted from the `.md` with a verbatim `--check`, R1/R3/R4
-records rendered as pages so a Syriacist can click through to the plate reading. **Phases A–E
-in §5; ⛔ seven rulings in §7 wanted from Wilson before Phase A starts.** The held Syriacist
-outreach (item 2 below) is gated on this build existing.
+✅ **All five phases of `SYRIAC-WEB-PLAN.md` §5 shipped, 2026-09-02–03, Sonnet (Opus on
+`/about`/`/for-syriacists` prose per §8).** **syriac.paleography.app is LIVE** — Vercel project
+`paleography-syriac` (Labs team), Cloudflare CNAME, TLS confirmed. Phase A (tree + renderer +
+981 R1/R3/R4 record pages), B (drill engine, generalized from the G2-passed "First Light"
+artifact, `learn/syriac/drill/L00.toml`/`L01.toml` transcribed verbatim), C (sidecars L02–L10),
+D (`/about`, `/for-syriacists`, `/sources`, `/`), E (deploy) — all committed, `master` at
+`03031a2`+ (see `git log --oneline` for the full commit chain, one per phase).
+
+Two real content gaps this build's own verbatim check caught and Wilson ruled on rather than
+silently working around: Lesson 0 was missing First Light's "Pairs" track (added, per his
+"add it to the lesson" ruling); Lesson 0's opening paragraph read backwards ("Lesson 1 asked
+you to...") from when Lesson 0 was retrofitted before Lesson 1 — fixed 2026-09-02 along with
+three other live-site fixes from Wilson's own read-through: Lesson 1's Stage 0 was fully
+re-teaching the alphabet Lesson 0 already covers (trimmed to what's actually new); the italic
+metadata paragraph was rendering raw `quarry/...toml` paths as a wall of `<code>` chips on the
+page (now stripped from display, kept for the record-footer machinery); the drill mount moved
+from after Stage 1 to right after the headnotes; the drill's inherited `position:sticky` header
+(fine for First Light as a standalone app, wrong embedded mid-page) drifted on mobile Safari —
+now static, verified with Playwright at a 390×844 viewport.
+
+**Held per NEXT-SESSION.md's own standing ruling:** the Syriacist outreach email (item 2 below)
+is unblocked now that a live public artifact exists to point to — still explicitly Wilson's own
+send, not part of the build.
+
+## ⭐ THE IMMEDIATE NEXT TASK — two new ideas, scored 2026-09-03, not started
+
+Wilson raised both live, right after the web build shipped, and explicitly asked for a
+**separate session to design them** rather than have either built ad hoc off a one-line ask.
+Per [[reference_model-prudence-rubric]], both are greenfield-scoping work — **run that session
+on Fable**, and steer it toward ending in a written score (a plan/conventions file) the way
+`SYRIAC-WEB-PLAN.md` itself was scored, not toward code. A cheaper session executes the score
+afterward, same pattern as the web build's own Phases A–E.
+
+1. **A downloadable PDF per lesson** — grammar notes up front, drills at the end, **answers
+   printed on the back** (so the sheet works closed-book, face-down, the way a paper worksheet
+   would). Nothing is scoped yet: not the layout, not the generation tool (LaTeX? a print
+   stylesheet + browser print-to-PDF? `weasyprint`/`wkhtmltopdf` off the same rendered HTML
+   Phase A already produces?), not whether it's one PDF per lesson or one for the whole course,
+   not where the file lives (uploaded per lesson? generated at build time into `learn/site/`
+   alongside everything else, so `make_learn.py` owns it the way it owns every other surface?).
+   The lesson content itself (`learn/syriac/LESSON-N.md`, `drill/LNN.toml`) is already the
+   single source everything else in this build derives from — the PDF should be a fourth
+   consumer of that same source, not a fifth hand-authored thing to keep in sync.
+2. **A calligraphy / stroke-order generator**, showing HOW a letter is formed (pen-path order),
+   not just its finished shape — the thing Lesson 0 currently doesn't teach at all (it's
+   recognition-only: name the shape, say the sound). **This is not a new idea — it is
+   `SYRIAC-LANGUAGE-PILOT.md` §10's second deferred idea, already scoped in outline**: a
+   generation *engine* keyed off each script's stroke-order data (not a hand-drawn animation
+   per letter, so it's cheap to point at a future script), producing an animated GIF or
+   equivalent of a letter's strokes flowing in order, then a word's letters flowing and
+   joining. **Read that section before starting** — it already raises the one real
+   architectural question this session needs to settle: whether the engine belongs on the
+   *language* side (`syriac.paleography.app`, teaching formation) or the *hand* side
+   (`paleography.app`, since ductus is a manuscript-reading fact too), or is shared machinery
+   like the registry itself. Cross-project by design — Hebrew, Coptic, Devanagari and Syriac's
+   own Serto/East Syriac variants all hit the same wall, so whatever gets built should not be
+   Estrangela-specific under the hood even though it ships for Estrangela first.
+
+Not yet decided whether these are one Fable session or two — item 2 is the harder
+architectural call (it isn't only a Syriac decision) and may be worth scoring on its own.
 
 ## ✅ DONE — write Lessons 2–10 out as documents (history)
 
