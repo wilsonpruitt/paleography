@@ -63,6 +63,31 @@ NOTES_END_HEADING[0] = "## Part 4"
 NOTES_END_HEADING[7] = "## Stage 2"
 
 
+def inject_stroke_figures_print(body):
+    """Print's own {stroke:X} -> figure pass. make_pdf.py renders lesson notes
+    through make_primers.render() directly (see module docstring: a separate
+    consumer of LESSON-N.md, not a call into make_learn.py's run()), so
+    make_learn.inject_stroke_figures() -- built for the web page, wrapping each
+    figure in a click/animate widget -- never runs here. Paper doesn't animate;
+    this reuses stroke_print_figure()'s static-only rendering instead of
+    quietly leaving the literal marker text in a printed page."""
+    return re.sub(r"\{stroke:(.)\}", lambda m: stroke_print_figure(m.group(1)), body)
+
+
+def stroke_print_figure(letter_char):
+    """A small static (numbered) stroke figure for one letter, sized for print.
+    SYRIAC-CALLIGRAPHY-PLAN.md §10 ruling 3: the letter sheet gets a plain ruled
+    copy-row, no stroke arrows -- that was the PDF plan's own ruling, written
+    before this project (item 2) existed to own formation. It exists now, so
+    this is that beside-the-rule figure, per SYRIAC-CALLIGRAPHY-PLAN.md §7.
+    Print is static-only -- no click/animate, paper doesn't do that."""
+    data = make_learn._stroke_data(letter_char)
+    if data is None or not data.get("stroke"):
+        return ""
+    svg = make_learn.strokes.svg(data, mode="static")
+    return f'<span class="stroke-print">{svg}</span>'
+
+
 def find_chrome():
     for c in CHROME_CANDIDATES:
         if Path(c).exists():
@@ -240,6 +265,7 @@ def build_notes_html(n, text, page_size):
     # make_primers.render() turns into its own <h1> -- the same way the web page gets its
     # title, per make_learn.py's run(). Adding a second <h1> here would duplicate it.
     body_html = make_primers.render(head_text) + make_primers.render(notes_rest)
+    body_html = inject_stroke_figures_print(body_html)
     body_html = body_html.replace("<table>", '<div class="tablewrap"><table>').replace(
         "</table>", "</table></div>")
     body = body_html + footer
@@ -352,6 +378,7 @@ def text_items_sheet(title, groups, lesson_label):
 def letters_sheet(letters, lesson_label, title="Letters"):
     items = "".join(
         f'<div class="item"><span class="n">{i+1}.</span> {syr(l["p"])} '
+        f'{stroke_print_figure(l["p"])}'
         f'<span class="blank"></span> <span class="blank"></span></div>'
         for i, l in enumerate(letters)
     )

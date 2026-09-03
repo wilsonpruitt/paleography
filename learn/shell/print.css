@@ -76,6 +76,12 @@ td code, th code{font-size:12pt}
   vertical-align:-0.15em}
 .blank.wide{min-width:9em}
 
+/* Stroke-order figure beside the copy-row, SYRIAC-CALLIGRAPHY-PLAN.md §7. Static
+   (numbered) only -- paper doesn't animate. */
+.stroke-print{display:inline-block;width:0.9em;height:0.9em;margin:0 0.5em;
+  vertical-align:-0.2em;border:0.5pt solid var(--line);border-radius:2pt}
+.stroke-print svg{width:100%;height:100%;display:block;color:var(--ink)}
+
 .vocabgrid{display:grid;grid-template-columns:1fr 1fr;column-gap:18pt}
 .vocabgrid .col h4{margin-top:0}
 
