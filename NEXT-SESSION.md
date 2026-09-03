@@ -288,14 +288,30 @@ afterward, same pattern as the web build's own Phases A–E.
    The lesson content itself (`learn/syriac/LESSON-N.md`, `drill/LNN.toml`) is already the
    single source everything else in this build derives from — the PDF should be a fourth
    consumer of that same source, not a fifth hand-authored thing to keep in sync.
-2. ✅ **SCORED 2026-09-03 (Fable) → `SYRIAC-CALLIGRAPHY-PLAN.md`. Read that, not the
-   kickoff. Nothing built. Seven rulings in its §10 await Wilson; the one that gates real
-   work is #2 — Kiraz, *Tūrrāṣ Mamllā* vol. I (Gorgias 2012), the only printed ductus, is
-   needed on the desk before Phase 3 (Phases 0–2 don't need it). Ownership question
-   collapsed: one repo holds both surfaces, so data → `registry/strokes/`, engine →
-   `tools/strokes.py`, Lesson 0 first consumer. Output is inline SVG (static figure +
-   CSS-animated), GIF dropped. Execution = Sonnet, Phases 0–4; Wilson's hour with the
-   book is Phase 3 (G4, the pencil gate).**
+2. ✅ **SCORED 2026-09-03 (Fable) → `SYRIAC-CALLIGRAPHY-PLAN.md`.** Ownership collapsed:
+   one repo holds both surfaces, so data → `registry/strokes/`, engine → `tools/strokes.py`,
+   Lesson 0 first consumer. Output is inline SVG (static figure + CSS-animated), GIF dropped.
+   ✅ **PHASES 0–2 BUILT same day (Sonnet).** Kiraz, *Tūrrāṣ Mamllā* vol. I (Gorgias 2012),
+   landed same session — full ductus chapter (§502–§563), not just the front-matter preview.
+   `tools/strokes.py` gained `extract`, `svg`, and `trace` (skimage skeletonize → shortest
+   path through waypoints read off Kiraz's guideline prose → RDP simplify) — a real function
+   + CLI subcommand, not a scratch script. All 22 Estrangela isolated letters traced under
+   `registry/strokes/syriac/estrangela/uni07*.toml`, each citing its Kiraz section verbatim.
+   ⚠ **Real bug class hit twice, worth knowing for the next script's letters**: a stroke
+   that goes out to a tip and comes back (a ring like Waw, a V-bowl like Ṭēṯ) can get
+   shortest-pathed as a straight retrace of its own outbound route instead of discovering
+   the far side — looks like the letter is "half-built" in a static render, not just an
+   animation glitch. Fix is real waypoints on the far side, or (for Waw) finding the ring's
+   actual opening in the ink and tracing directly between the two real endpoints. A
+   diagnostic proof-sheet Artifact (all 22, static+animate toggle) is what caught both.
+   ✅ **PHASE 3 (G4, the pencil gate) PASSED 2026-09-03, Wilson's own words: "I ran phase 3
+   a little ahead. The strokes look good by my eye."** Ran the visual pass against the proof
+   sheet across several rounds rather than the book-in-hand paper check the plan called for
+   — real bugs were still caught and fixed live (branch-point spurs on Ālap/Gāmal, Bēth's
+   topology, the two retrace bugs above). All 22 `uni07*.toml` isolated-form strokes now
+   `status = "confirmed"`. **Next: Phase 4 — wire the figures into Lesson 0's prose via
+   `make_learn.py`, build the `/letters` reference page, feed the static figure into
+   `make_pdf.py`. Deploy is its own hard stop regardless of what Phase 4 produces.**
    *(Kickoff-era note, kept for the record:)* Kickoff brief written 2026-09-03 (Sonnet, prep only, no rulings) →
    `SYRIAC-CALLIGRAPHY-KICKOFF.md`. READ THAT FILE FIRST when this starts — it is the
    research handoff (what exists, what doesn't, five open questions, HanziWriter as prior
