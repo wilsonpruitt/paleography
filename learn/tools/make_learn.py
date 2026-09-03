@@ -105,6 +105,44 @@ def lesson_metadata_paragraph(text):
     return " ".join(buf)
 
 
+DROP_HEADNOTE_PREFIXES = ("*Syriac language pilot,", "**If any stage defeats you,")
+
+
+def split_lesson_body(text):
+    """Separate a lesson's opening headnotes from its main body, dropping two paragraphs
+    that are process/authoring notes rather than reader-facing content: the italic
+    metadata paragraph (record-path citations meant for `extract_record_refs`/the footer,
+    not for display -- rendered raw it becomes a wall of <code> chips showing internal
+    paths like `quarry/nestle-1889-en/r1/p004-1.toml` on the page) and the "if any stage
+    defeats you" paragraph (addressed to a G2 tester filing a bug report, not a learner).
+
+    Splits at the first '---' line, which every lesson uses to end its headnotes block
+    before Stage 0 (or Lesson 0's Part 1) -- verified present in all eleven lessons.
+    Returns (head_text, rest_text); the caller renders each separately and puts the drill
+    mount between them, so the tool sits near the top of the page (right after the title
+    and the "what you'll be able to do" line) instead of after Stage 1."""
+    lines = text.split("\n")
+    try:
+        hr = lines.index("---")
+    except ValueError:
+        return text, ""
+    head_lines, rest_lines = lines[:hr], lines[hr:]
+
+    blocks, cur = [], []
+    for ln in head_lines:
+        if ln.strip() == "" and cur:
+            blocks.append(cur)
+            cur = []
+        else:
+            cur.append(ln)
+    if cur:
+        blocks.append(cur)
+    kept = [b for b in blocks
+            if not any(b[0].lstrip().startswith(p) for p in DROP_HEADNOTE_PREFIXES)]
+    head_text = "\n\n".join("\n".join(b) for b in kept)
+    return head_text, "\n".join(rest_lines)
+
+
 def extract_record_refs(meta_text, lesson_name):
     """Backtick tokens ending .toml. A full path (contains '/') sets the current
     primer+rtype; a bare filename inherits the most recent full path's dir. Raises
@@ -549,12 +587,13 @@ def run(write):
             title_line = text.split("\n", 1)[0]
             title = title_line.lstrip("#").strip()
             desc = meta.strip()[:200]
-            body = make_primers.render(text)
+            head_text, rest_text = split_lesson_body(text)
+            lid = f"L{n:02d}"
+            drill_html = (f'\n<div data-lesson="{lid}">{drill_shell_src}</div>\n'
+                          if lid in drill_compiled and drill_shell_src else "")
+            body = make_primers.render(head_text) + drill_html + make_primers.render(rest_text)
             body = body.replace("<table>", '<div class="tablewrap"><table>').replace(
                 "</table>", "</table></div>")
-            lid = f"L{n:02d}"
-            if lid in drill_compiled and drill_shell_src:
-                body += f'\n<div data-lesson="{lid}">{drill_shell_src}</div>\n'
             footer = build_record_footer(refs, [])
             prevn = f'<a href="/lesson/{n-1}">&larr; Lesson {n-1}</a>' if n > 0 else '<a href="/">&larr; Course</a>'
             nextn = f'<a href="/lesson/{n+1}">Lesson {n+1} &rarr;</a>' if n < N_LESSONS - 1 else '<span></span>'

@@ -5,15 +5,15 @@ alphabet table, p.4 of his 1889 grammar (record `quarry/nestle-1889-en/r1/p004-1
 need: this document, a pencil, and about 30–40 minutes. No Bible, no prayer, no meaning at
 all in this lesson — that is on purpose.*
 
-**What this lesson is for.** Lesson 1 asked you to read real words for meaning, and that
-buried the shapes under the sense — you were solving two problems at once. This lesson
-solves only one: given an ink-shape, say its name and its sound. Every drill below uses
-**invented, meaningless letter-strings**. If a "word" here happened to mean something, that
-would be an accident, not a design.
+**What this lesson is for.** Learning shapes and learning sense at the same time is two
+problems at once, and Lesson 1 — real words, real meaning — will ask you to solve both
+together. This lesson solves only one first: given an ink-shape, say its name and its sound.
+Every drill below uses **invented, meaningless letter-strings**. If a "word" here happened
+to mean something, that would be an accident, not a design.
 
-**One setup note (fonts), same as Lesson 1.** If the Syriac below shows as boxes: install
-the free Meltho font "Estrangelo Edessa" (bethmardutho.org → Meltho fonts) and reopen this
-file. Most Macs render it without installing anything.
+**One setup note (fonts).** If the Syriac below shows as boxes: install the free Meltho
+font "Estrangelo Edessa" (bethmardutho.org → Meltho fonts) and reopen this file. Most Macs
+render it without installing anything. Lesson 1 onward carries the same note.
 
 ---
 

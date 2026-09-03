@@ -46,7 +46,11 @@
 #drill-root button{font:inherit; cursor:pointer;}
 #drill-root :focus-visible{outline:2px solid var(--focus); outline-offset:2px;}
 #drill-root .dwrap{padding:0 20px 28px;}
-#drill-root header.dtop{position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(6px); border-bottom:1px solid var(--paper-line); border-radius:14px 14px 0 0;}
+/* First Light's own header was `position:sticky` -- right for a standalone full-screen
+   app, wrong once embedded mid-page in a lesson: pinned to the viewport rather than the
+   card, it detaches from its own rounded card on scroll and, on mobile Safari's dynamic
+   viewport-height address bar, visibly drifts and loses its centering. Static instead. */
+#drill-root header.dtop{background:var(--paper-raised); border-bottom:1px solid var(--paper-line); border-radius:14px 14px 0 0;}
 #drill-root .dtop-inner{padding:16px 20px 12px; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;}
 #drill-root .dbrand h1{font-size:1.25rem; font-weight:700;}
 #drill-root .dscorechip{font-variant-numeric:tabular-nums; background:var(--paper-raised); border:1px solid var(--paper-line); border-radius:999px; padding:6px 14px; font-size:.85rem; color:var(--ink-soft); white-space:nowrap;}

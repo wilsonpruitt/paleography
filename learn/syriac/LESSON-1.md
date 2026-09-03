@@ -22,50 +22,31 @@ Genesis 1 in the later Serto typeface, but the words are the words — we render
 
 ---
 
-## Stage 0 — Orientation (10 minutes; do not memorize anything)
+## Stage 0 — Orientation (5 minutes; two things new since Lesson 0)
 
-Four facts, then a reference table you will look back at constantly. Looking back is not
-cheating; it is the method.
+You already have the alphabet, the direction, and the joining rule from Lesson 0. A printed
+page gives you two things bare letters didn't:
 
-1. **Syriac reads right to left.** The first word of the Bible is at the top RIGHT.
-2. **It is an alphabet**, 22 letters, all consonants — a cousin of Hebrew's, an ancestor of
-   Arabic's. Most letters join to their neighbors, so letters change shape slightly at the
-   start, middle, or end of a word (the way a handwritten *e* changes depending on what it's
-   attached to). Don't learn the variants; just know they exist so they don't alarm you.
-3. **The vowels are small marks above and below the letters.** In this lesson's text they are
-   written in (a kindness of the printer — most real Syriac leaves them out, and by lesson 5
-   you won't need them either).
-4. **Two dots over a word (◌̈ — called *seyāmē*) mean it's plural.** Free information the
+1. **The vowels are small marks above and below the letters.** In this lesson's text they
+   are written in (a kindness of the printer — most real Syriac leaves them out, and by
+   lesson 5 you won't need them either).
+2. **Two dots over a word (◌̈ — called *seyāmē*) mean it's plural.** Free information the
    text hands you before you've read a single letter. You'll see it twice today.
 
-### The letters in today's passage (19 of the 22)
+### Four letters, glued to the front of a word
 
-Read the table once, gently. Column two is the letter by itself; it will look slightly
-different joined-up in the text.
+Today's passage leans on four one-letter prefixes — the same shape as the letter, just
+stuck onto the front of the next word with no space:
 
-| name | letter | sounds like | worth noticing |
-|---|:---:|---|---|
-| ālap | ܐ | silent, or a catch in the throat; carries a vowel | the most common letter today — most nouns END with it (reading right-to-left, that means their LAST letter is the leftmost) |
-| bēth | ܒ | b (sometimes v) | glued to the front of a word it means "in" |
-| dālath | ܕ | d | **dot BELOW** · glued to the front of a word it means "of / that / which" |
-| hē | ܗ | h | |
-| waw | ܘ | w; also the vowel "u/o" | glued to the front of a word it means "and" — today's text uses it constantly |
-| zayn | ܙ | z | |
-| ḥēth | ܚ | rough h, as in Bach | |
-| yudh | ܝ | y; also the vowel "i" | the smallest letter (the "jot" of Matt 5:18) |
-| kāp | ܟ | k (sometimes kh) | |
-| lāmadh | ܠ | l | the tall one; glued to the front it means "to", and also points out the object of a verb |
-| mim | ܡ | m | |
-| nun | ܢ | n | |
-| ʿē | ܥ | a swallowed sound with no English equivalent; treat as silent | |
-| pē | ܦ | p (sometimes f) | |
-| ṣādhē | ܨ | emphatic ts/s | |
-| qop | ܩ | a deep k | |
-| rēsh | ܪ | r | **dot ABOVE** — the dot is the only thing separating it from dālath |
-| shin | ܫ | sh | |
-| taw | ܬ | t | |
+| letter | glued meaning |
+|:---:|---|
+| ܒ | "in" |
+| ܕ | "of / that / which" — **dot BELOW**, the mark that tells it apart from ܪ below |
+| ܘ | "and" — this text uses it constantly |
+| ܠ | "to", and also marks the object of a verb |
 
-(You will meet the remaining three — gāmal ܓ, ṭēth ܛ, semkath ܣ — in lessons 2–4.)
+(Today's passage uses 19 of the 22 letters; the remaining three — gāmal ܓ, ṭēth ܛ,
+semkath ܣ — first appear in Lesson 2.)
 
 ### The vowel marks in today's passage
 
