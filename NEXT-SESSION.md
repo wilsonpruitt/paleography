@@ -288,7 +288,15 @@ afterward, same pattern as the web build's own Phases A–E.
    The lesson content itself (`learn/syriac/LESSON-N.md`, `drill/LNN.toml`) is already the
    single source everything else in this build derives from — the PDF should be a fourth
    consumer of that same source, not a fifth hand-authored thing to keep in sync.
-2. ⬜ **Kickoff brief written 2026-09-03 (Sonnet, prep only, no rulings) →
+2. ✅ **SCORED 2026-09-03 (Fable) → `SYRIAC-CALLIGRAPHY-PLAN.md`. Read that, not the
+   kickoff. Nothing built. Seven rulings in its §10 await Wilson; the one that gates real
+   work is #2 — Kiraz, *Tūrrāṣ Mamllā* vol. I (Gorgias 2012), the only printed ductus, is
+   needed on the desk before Phase 3 (Phases 0–2 don't need it). Ownership question
+   collapsed: one repo holds both surfaces, so data → `registry/strokes/`, engine →
+   `tools/strokes.py`, Lesson 0 first consumer. Output is inline SVG (static figure +
+   CSS-animated), GIF dropped. Execution = Sonnet, Phases 0–4; Wilson's hour with the
+   book is Phase 3 (G4, the pencil gate).**
+   *(Kickoff-era note, kept for the record:)* Kickoff brief written 2026-09-03 (Sonnet, prep only, no rulings) →
    `SYRIAC-CALLIGRAPHY-KICKOFF.md`. READ THAT FILE FIRST when this starts — it is the
    research handoff (what exists, what doesn't, five open questions, HanziWriter as prior
    art worth evaluating) so the actual scoping session doesn't re-derive context.** ⚠ **The
