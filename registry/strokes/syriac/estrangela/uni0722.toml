@@ -19,7 +19,7 @@ name = "Nūn"
 
 [[stroke]]
 median = [[106.3, 66.0], [294.7, -14.3], [700.7, -148.7], [1056.0, -246.7], [1080.0, -234.7]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §541 (Estrangelā Nūn, isolated/standalone, documentary hand)"
 note = """
 "The stand-alone graph begins at the baseline at pt 1. In a documentary hand, it moves in a slope and ends at pt 3 above the descender line."

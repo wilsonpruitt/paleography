@@ -19,7 +19,7 @@ name = "Dālaṯ"
 
 [[stroke]]
 median = [[80.0, 389.7], [308.3, 388.7], [346.3, 381.3], [367.7, 367.0], [384.0, 318.0], [424.3, 15.0], [462.0, -15.7]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §511 (Estrangelā Dālaṯ/Rīš)"
 note = """
 "begins at pt 1 around the mean line, moving to the right to pt 2, then changing direction downward to pt 3." One stroke. (Rīš uni072A shares this ductus, differs only by point position, per §559.)

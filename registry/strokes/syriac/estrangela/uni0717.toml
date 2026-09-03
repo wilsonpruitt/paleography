@@ -19,7 +19,7 @@ name = "Hē"
 
 [[stroke]]
 median = [[737.3, 47.7], [780.7, 70.0], [810.0, 113.7], [823.3, 194.0], [814.7, 279.0], [794.7, 331.3], [764.7, 366.0], [716.3, 389.3], [652.0, 398.3], [495.7, 388.3], [289.3, 399.3], [222.0, 386.3], [169.0, 360.7], [122.3, 305.0], [105.7, 221.7], [123.3, 127.3], [143.0, 95.7], [179.0, 62.0]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §514 (Estrangelā Hē, isolated, stroke 1)"
 note = """
 "Stroke 1-2-3-4-5-6 begins at pt 1 on the baseline. It moves to the right to pt 2 where it curves and begins to move upward to pt 3 near the mean line. There it curves again and moves to the left to pt 5... At pt 5, it curves yet again and begins moving in a circular counterclockwise motion ending at pt 6 on the baseline."
@@ -27,7 +27,7 @@ note = """
 
 [[stroke]]
 median = [[490.0, 345.3], [401.7, 30.0], [424.3, -3.3]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §514 (Estrangelā Hē, isolated, stroke 2)"
 note = """
 "Stroke 4-7 is a vertical shaft that drops from pt 4 to pt 7, and sometimes extends below the baseline."

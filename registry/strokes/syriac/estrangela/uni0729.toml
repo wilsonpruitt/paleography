@@ -19,7 +19,7 @@ name = "Qāp"
 
 [[stroke]]
 median = [[320.0, 40.0], [346.7, 67.0], [314.7, 157.0], [304.3, 215.0], [302.3, 304.0], [318.3, 358.7], [339.3, 377.0], [375.7, 387.3], [568.7, 389.7], [665.7, 376.7], [691.3, 358.3], [708.0, 329.3], [722.3, 263.7], [728.3, 161.7], [718.0, 101.7], [688.3, 62.0], [623.7, 42.0], [486.7, 38.3], [425.0, 44.7], [346.3, 66.7], [286.7, 15.0], [210.7, -2.0], [145.3, 8.3], [91.0, 44.0], [69.0, 46.3]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §556 (Estrangelā Qāp, isolated+initial)"
 note = """
 "The stroke begins at pt 1 on the baseline, moves in clockwise motion passing by pt 2 then 3, then 4. At pt 4, a tail is drawn ending at pt 5." One stroke, one bowl.

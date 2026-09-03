@@ -19,7 +19,7 @@ name = "Yūḏ"
 
 [[stroke]]
 median = [[97.3, 176.0], [121.0, 146.3], [142.7, 107.0], [156.3, 70.3], [160.7, 39.0], [157.0, -2.0], [146.0, -32.7], [125.7, -68.3], [99.0, -101.7]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §529 (Estrangelā Yūḏ, isolated)"
 note = """
 "The stroke is curved in the shape of an arc. It begins between the baseline and mean line at pt 1, and ends below the baseline at pt 3, passing by pt 2." One denticle.

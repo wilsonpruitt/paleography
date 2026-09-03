@@ -19,7 +19,7 @@ name = "Ṣāḏē"
 
 [[stroke]]
 median = [[193.0,74.0], [261.3,76.7], [379.0,41.3], [445.3,46.0], [365.3,43.0], [266.0,75.7], [215.3,78.7], [182.0,70.3], [156.7,52.0], [139.3,-4.0], [151.7,-51.0], [187.3,-83.3], [406.3,-164.7], [466.7,-197.7], [481.7,-216.0], [489.0,-250.3], [476.0,-297.7], [431.3,-323.7], [347.7,-338.0], [-157.3,-335.0], [-173.3,-348.3]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §553 (Estrangelā Ṣāḏē)"
 note = """
 "The stroke begins at pt 1 on the baseline, then moves upward to pt 2 then downward to pt 3, then back to pt 1 creating a Serṭā initial-like dentical. It then moves to the left... then slightly upward to pt 4. Then it curves down well below the descender line creating the spine. It then changes direction and draws a horizontal shaft... The final part... becomes thinner as the stroke approaches its end." One stroke.

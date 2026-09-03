@@ -19,7 +19,7 @@ name = "Ṭēṯ"
 
 [[stroke]]
 median = [[333.3,697.0], [322.0,671.0], [542.0,106.7], [552.7,41.0], [578.0,35.7], [588.7,-30.3], [696.3,-287.3], [711.7,-306.0], [732.7,-311.7], [767.0,-302.7], [821.3,-226.7], [868.0,-135.0], [904.0,-32.7], [908.0,38.3], [217.3,39.3], [149.3,49.7], [98.0,78.3], [65.0,81.7]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §526 (Estrangelā Ṭēṯ)"
 note = """
 "The stroke begins at or above the ascender line and moves downward to pt 2 just above the descender line. Then it takes a sharp turn towards pt 3 on the baseline, followed by another sharp turn left to create a line on the baseline ending with the tail at pt 4." One stroke: shaft above baseline, bowl below, tail along baseline.

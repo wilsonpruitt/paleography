@@ -19,7 +19,7 @@ name = "Mīm"
 
 [[stroke]]
 median = [[87.7,469.0], [108.3,427.0], [60.7,405.7], [109.3,426.7], [265.3,391.3], [448.3,379.0], [439.3,139.0], [417.0,122.3], [381.3,19.3], [417.0,122.3], [439.0,138.7], [470.0,120.0], [507.3,69.3], [564.0,44.3], [689.0,44.0], [748.0,71.7], [774.3,135.0], [775.3,249.3], [756.3,326.3], [716.3,370.7]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §538 (Estrangelā Mīm, isolated+final, stroke 1)"
 note = """
 "Stroke 1-2-3-4-5-6 begins around the mean line and moves in circular counterclockwise motion through points 2, 3, and 4. At pt 5 it moves slightly up and ends at pt 6." (Stroke 2, a short straight line at pt 7-8, is a minor secondary foot not separately traced here -- flagged, not guessed.)
@@ -27,7 +27,7 @@ note = """
 
 [[stroke]]
 median = [[379.0,14.7], [336.3,-58.3], [268.0,-147.7]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §538 (Estrangelā Mīm, isolated+final, stroke 2 -- tail)"
 note = """
 "Stroke 7-8 is a straight line." The tail hanging below baseline where both loops converge.

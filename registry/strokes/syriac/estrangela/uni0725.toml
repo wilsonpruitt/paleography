@@ -19,7 +19,7 @@ name = "ʿē"
 
 [[stroke]]
 median = [[59.7, 82.7], [98.0, 78.3], [149.3, 49.7], [217.3, 39.3], [642.7, 36.3], [659.7, 51.0], [748.7, 40.3], [866.0, 38.3]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §547 (Estrangelā ʿē, stroke 2 -- base)"
 note = """
 "Stroke 1-3 begins at pt 1 and moves left to pt 3 drawing a tail."
@@ -27,7 +27,7 @@ note = """
 
 [[stroke]]
 median = [[639.3, 89.3], [632.3, 104.3], [534.7, 179.7], [437.7, 277.7], [361.3, 373.0], [366.0, 400.0]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §547 (Estrangelā ʿē, stroke 1 -- shaft)"
 note = """
 "Stroke 1-2 begins at the baseline at pt 1, and moves upward to pt 2, just above the mean line."

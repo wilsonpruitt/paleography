@@ -19,7 +19,7 @@ name = "Šīn"
 
 [[stroke]]
 median = [[70.0, 81.0], [98.0, 78.3], [149.3, 49.7], [217.3, 39.3], [690.3, 38.3], [785.7, 48.0], [848.0, 78.7], [879.7, 81.7]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §560 (Estrangelā Šīn, stroke 1 -- base)"
 note = """
 "Stroke 1-2 draws the base upon which the body sits. The stroke is clubbed at pt 1."
@@ -27,7 +27,7 @@ note = """
 
 [[stroke]]
 median = [[478.7, 80.0], [479.7, 372.7], [509.0, 382.0]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §560 (Estrangelā Šīn, stroke 2 -- neck)"
 note = """
 "Stroke 3-4 draws the neck."
@@ -35,7 +35,7 @@ note = """
 
 [[stroke]]
 median = [[300.0, 392.7], [422.0, 386.7], [479.7, 372.7], [539.7, 387.3], [661.3, 394.3]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §560 (Estrangelā Šīn, stroke 3 -- arc)"
 note = """
 "Stroke 5-3-6 is an arc that forms the upper part of the graph. It begins at pt 5, moves down slightly to pt 3, then up to pt 6 in a symmetrical manner."

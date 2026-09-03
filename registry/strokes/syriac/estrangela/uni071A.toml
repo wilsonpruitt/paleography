@@ -19,7 +19,7 @@ name = "Ḥēṯ"
 
 [[stroke]]
 median = [[92.3, 90.0], [100.7, 76.0], [138.7, 54.7], [219.7, 39.3], [286.7, 48.0], [355.3, 74.7], [355.7, 136.3], [325.3, 309.7], [359.7, 78.0], [428.0, 47.0], [483.7, 39.3], [547.3, 49.3], [584.3, 71.3], [599.7, 140.0], [565.7, 310.7], [599.7, 140.0], [594.7, 96.0]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §523-524 (Estrangelā Ḥēṯ, isolated -- one broken stroke, two joined denticles)"
 note = """
 "The stroke begins at or slightly under the mean line at pt 1, moving downward towards the baseline where it curves at pt 2 and changes direction to the left. At pt 3, the stroke moves upward to pt 4, and then traces itself back to pt 3, finishing the stroke at pt 5 with a tail."

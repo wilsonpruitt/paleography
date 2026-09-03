@@ -19,7 +19,7 @@ name = "Kāp"
 
 [[stroke]]
 median = [[108.7, 315.3], [112.7, 204.0], [151.0, 102.7], [186.7, 59.7], [216.3, 38.3], [297.0, 18.7], [358.3, 30.3], [396.7, 65.7], [417.3, 118.3], [443.7, 254.7], [474.0, 312.0], [501.0, 328.7], [539.7, 335.7], [577.7, 329.7], [605.7, 314.7], [648.7, 263.7], [704.0, 168.0], [794.7, -33.7], [904.0, -320.3], [936.3, -337.0]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §532 (Estrangelā Kāp, isolated+final)"
 note = """
 "The stroke begins at the far left of the graph at pt 1 around the mean line. It moves down in a counterclockwise manner to pt 2 where it begins to move up again towards pt 3. At pt 4, the stroke moves direction again and moves downward and ends on or below the descender line at pt 4." One stroke, clubbed at pt 1.

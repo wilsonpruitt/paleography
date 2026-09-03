@@ -19,7 +19,7 @@ name = "Waw"
 
 [[stroke]]
 median = [[510.3,18.0], [462.3,235.3], [427.3,330.7], [408.7,357.0], [377.0,381.7], [300.0,398.0], [221.7,383.0], [161.3,340.0], [121.0,275.7], [106.0,196.3], [118.7,121.0], [154.7,70.3], [208.3,40.7], [290.0,28.7]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §517 (Estrangelā Waw)"
 note = """
 "The stroke begins at the baseline at pt 1 and moves upward in a counterclockwise circular motion passing by pt 2 at or above the mean line, and ending up at pt 3 at the baseline." One stroke.

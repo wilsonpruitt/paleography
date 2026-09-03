@@ -19,7 +19,7 @@ name = "Pē"
 
 [[stroke]]
 median = [[679.3, 293.0], [637.3, 408.7], [587.7, 480.3], [558.7, 500.0], [525.7, 509.7], [490.7, 513.0], [442.0, 504.3], [388.3, 468.0], [355.0, 414.7], [344.7, 349.7], [360.3, 289.3], [400.3, 256.7], [468.3, 241.0], [577.0, 242.7], [683.7, 263.0], [698.3, 255.0], [746.0, 105.3], [742.0, 51.0], [683.7, 38.3], [224.0, 39.0], [156.7, 47.7], [98.0, 78.3], [62.7, 82.0]]
-status = "proposed"
+status = "confirmed"
 source = "kiraz-2012 §550 (Estrangelā Pē)"
 note = """
 "The stroke begins at pt 1 just under the mean line. It moves in circular form to pt 2, then to pt 3 between the mean line and the ascender line... From pt 3, it moves in a shaft-like form to pt 4 at the base line. The base stroke is then drawn from pt 4 to pt 5 to form the tail." One stroke.
