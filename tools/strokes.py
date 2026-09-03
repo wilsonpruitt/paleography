@@ -136,7 +136,8 @@ def svg(data, mode="animate", stroke_width=46, size=220):
         f'<svg viewBox="{vb}" xmlns="http://www.w3.org/2000/svg" class="stroke-fig" data-mode="{mode}">',
         f'<g {flip}>',
         f'<clipPath id="clip-{g["codepoint"].replace(".", "-")}"><path d="{g["outline"]}"/></clipPath>',
-        f'<path d="{g["outline"]}" fill="currentColor" opacity="0.12"/>',
+        f'<path d="{g["outline"]}" fill="currentColor" fill-opacity="0.16" '
+        f'stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5"/>',
     ]
     n = len(strokes)
     for i, s in enumerate(strokes):
