@@ -108,6 +108,101 @@ def load(path):
         return tomllib.load(f)
 
 
+def trace(data, waypoints_font, scale=3, eps=4):
+    """Skeleton-trace a stroke's median from real ink, not hand-picked points.
+
+    Rasterizes the glyph outline, skeletonizes it (skimage), builds a pixel-
+    adjacency graph (networkx), and walks the shortest path through each
+    waypoint in order (waypoints are (x,y) in font units, snapped to the
+    nearest skeleton pixel -- pass 2 for a simple stroke, more to force the
+    path through a specific branch at a T/X junction). Returns an RDP-
+    simplified point list (eps in font units) ready to drop into `median`.
+
+    This replaced hand-picking sample points after repeated rounds of
+    corner-cutting and jolty curves on manually eyeballed coordinates --
+    see git history on the first three pilot letters (Alap/Beth/Gamal).
+    """
+    import io
+    import cairosvg
+    import numpy as np
+    import networkx as nx
+    from PIL import Image
+    from skimage.morphology import skeletonize
+
+    g = data["glyph"]
+    x0, y0, x1, y1 = [float(v) for v in g["bbox"].split(",")]
+    pad = 30
+    w = (x1 - x0) + 2 * pad
+    h = (y1 - y0) + 2 * pad
+    vb = f"{x0 - pad} {-(y1) - pad} {w} {h}"
+    svg_src = (
+        f'<svg viewBox="{vb}" xmlns="http://www.w3.org/2000/svg" '
+        f'width="{w * scale}" height="{h * scale}">'
+        f'<rect x="{x0 - pad}" y="{-(y1) - pad}" width="{w}" height="{h}" fill="white"/>'
+        f'<path d="{g["outline"]}" fill="#000" transform="scale(1,-1)"/></svg>'
+    )
+    png = cairosvg.svg2png(bytestring=svg_src.encode())
+    img = np.array(Image.open(io.BytesIO(png)).convert("L")) < 128
+
+    def to_px(fx, fy):
+        return ((fx - (x0 - pad)) * scale, (-(fy) - (-(y1) - pad)) * scale)
+
+    def to_font(px, py):
+        return (px / scale + (x0 - pad), -(py / scale + (-(y1) - pad)))
+
+    skel = skeletonize(img)
+    ys, xs = np.where(skel)
+    pix = set(zip(ys.tolist(), xs.tolist()))
+    graph = nx.Graph()
+    for (y, x) in pix:
+        graph.add_node((y, x))
+        for dy in (-1, 0, 1):
+            for dx in (-1, 0, 1):
+                if dy == 0 and dx == 0:
+                    continue
+                nb = (y + dy, x + dx)
+                if nb in pix:
+                    graph.add_edge((y, x), nb, weight=(dy * dy + dx * dx) ** 0.5)
+
+    pix_arr = np.array(list(pix))
+
+    def nearest(py, px):
+        d = (pix_arr[:, 0] - py) ** 2 + (pix_arr[:, 1] - px) ** 2
+        return tuple(pix_arr[d.argmin()])
+
+    nodes = [nearest(*to_px(fx, fy)[::-1]) for (fx, fy) in waypoints_font]
+    full = [nodes[0]]
+    for a, b in zip(nodes, nodes[1:]):
+        full.extend(nx.shortest_path(graph, a, b, weight="weight")[1:])
+    points = [to_font(px, py) for (py, px) in full]
+    return _rdp(points, eps)
+
+
+def _rdp(points, eps):
+    """Ramer-Douglas-Peucker simplification: keeps corners, drops points a
+    straight chord already approximates within `eps` font units."""
+    import math
+
+    if len(points) < 3:
+        return points
+
+    def perp_dist(pt, a, b):
+        (x, y), (x1, y1), (x2, y2) = pt, a, b
+        if (x1, y1) == (x2, y2):
+            return math.hypot(x - x1, y - y1)
+        num = abs((y2 - y1) * x - (x2 - x1) * y + x2 * y1 - y2 * x1)
+        return num / math.hypot(y2 - y1, x2 - x1)
+
+    dmax, idx = 0, 0
+    for i in range(1, len(points) - 1):
+        d = perp_dist(points[i], points[0], points[-1])
+        if d > dmax:
+            dmax, idx = d, i
+    if dmax > eps:
+        return _rdp(points[: idx + 1], eps)[:-1] + _rdp(points[idx:], eps)
+    return [points[0], points[-1]]
+
+
 def _smooth_path(points):
     """Catmull-Rom-to-cubic-Bezier smoothing over a polyline: passes exactly
     THROUGH every given point (unlike a quadratic-through-midpoints curve,
@@ -185,6 +280,11 @@ def main():
     rd.add_argument("toml_path")
     rd.add_argument("--mode", default="animate", choices=["animate", "static"])
 
+    tr = sub.add_parser("trace")
+    tr.add_argument("toml_path")
+    tr.add_argument("--waypoints", required=True, help="x1,y1;x2,y2;...")
+    tr.add_argument("--eps", type=float, default=4)
+
     args = ap.parse_args()
     if args.cmd == "extract":
         forms = tuple(args.forms.split(","))
@@ -193,6 +293,11 @@ def main():
     elif args.cmd == "render":
         data = load(args.toml_path)
         print(svg(data, mode=args.mode))
+    elif args.cmd == "trace":
+        data = load(args.toml_path)
+        wps = [tuple(float(v) for v in pt.split(",")) for pt in args.waypoints.split(";")]
+        pts = trace(data, wps, eps=args.eps)
+        print(", ".join(f"[{round(x,1)}, {round(y,1)}]" for x, y in pts))
 
 
 if __name__ == "__main__":
