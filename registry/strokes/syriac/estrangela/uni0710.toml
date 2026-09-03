@@ -11,31 +11,24 @@ outline = "M746 -8Q714 -2 674.0 18.0Q634 38 586.5 72.5Q539 107 484 156Q429 205 3
 letter = "ܐ"
 name = "Ālap"
 
-# Coordinates are measured, not guessed: sampled from the rendered outline's
-# own ink (column/row centerlines of the rasterized glyph, tools/strokes.py's
-# debug rig) at the x/y Kiraz's prose points to. Wilson caught the first pass
-# (hand-guessed against the prose alone) visibly missing the actual ink --
-# see git history. Order, stroke count, direction and every quoted phrase
-# are Kiraz's; only the numbers are this font's.
-#
-# Second round: Wilson caught this diagonal still reading slightly off after
-# the first fix. Cause: the top diagonal isn't straight (it curves), but the
-# median only had 2 points (start + crotch), so a straight interpolation
-# drifted off the true centerline mid-stroke -- same cause hit the left leg
-# too, which bows left before returning right to its tip; a straight
-# crotch->tip jump cut across empty space and the clip dropped it entirely
-# (the disconnected fragment Wilson would have seen next). Both segments now
-# sampled densely along their real curve, not just their endpoints.
-
-# Third round: Wilson correctly diagnosed the real cause after the smoothing
-# swap didn't fix it -- the crotch isn't a sharp point at all, it's a short
-# region (roughly y 300-320) where the two arms' ink actually MERGES into one
-# blob before the notch opens up below it. Jumping straight from the
-# diagonal's point to the leg's point cut across that notch. Added a point
-# anchored inside the measured merge zone so the curve stays in real ink.
+# History: three rounds of hand-picked sample points each got caught by
+# Wilson cutting a corner or, once padded with enough points to stop
+# cutting, reading as jolty/kinked (Bēth's loop, Gāmal's reversal, both hit
+# this). The problem was never the smoothing math -- it was that manually
+# eyeballed points can't be trusted to sit exactly on the true centerline or
+# be evenly spaced through a turn. Replaced hand-picking with an actual
+# skeleton trace: skimage.morphology.skeletonize on the rasterized outline,
+# a pixel-adjacency graph (networkx), shortest path between the stroke's
+# start/end (snapped to the nearest skeleton pixel), then Ramer-Douglas-
+# Peucker simplification (eps=4 font units) down to a manageable point
+# count. This is the medial axis of the real ink, not a guess at it -- see
+# an ad hoc rig pulled together for this, not yet a first-class
+# tools/strokes.py command. Order, stroke count, direction and every quoted
+# phrase are Kiraz's; only the coordinates are this font's, traced not
+# guessed.
 
 [[stroke]]
-median = [[910, 546], [700, 432], [500, 358], [300, 320], [260, 298], [120, 270], [145, 150], [170, 10]]
+median = [[910.0, 546.7], [868.3, 545.3], [790.3, 484.3], [706.3, 434.7], [615.7, 393.7], [521.7, 363.0], [433.7, 344.3], [360.3, 337.0], [344.0, 320.7], [224.0, 334.3], [116.3, 335.0], [118.0, 273.7], [165.7, 33.7], [179.7, 22.0]]
 status = "confirmed"
 source = "kiraz-2012 §502 (Estrangela Ālap, stroke 1)"
 note = """
@@ -47,7 +40,7 @@ stroke is clubbed at pt 1."
 """
 
 [[stroke]]
-median = [[410, 255], [500, 189], [600, 110], [700, 48], [730, 10]]
+median = [[410.7, 255.3], [621.3, 94.3], [724.7, 37.7], [735.3, 12.0]]
 status = "confirmed"
 source = "kiraz-2012 §502 (Estrangela Ālap, stroke 2)"
 note = """

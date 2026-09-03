@@ -11,24 +11,17 @@ outline = "M240 0Q157 0 110.5 22.0Q64 44 49 78L96 131Q112 113 132.0 100.5Q152 88
 letter = "ܒ"
 name = "Bēth"
 
-# See uni0710.toml's header note on coordinate provenance -- same method.
-# Second correction on this letter: Kiraz's own figure (§505, zoomed off the
-# scan) shows pt1 with pt2 just LEFT of it and pt3 just RIGHT -- i.e. after
-# the pt1->pt2 nub and the retrace, "continues to pt3" carries on PAST pt1
-# in the original rightward direction, not back leftward. In this font the
-# short pt1->pt3 hop of Kiraz's compact diagram is stretched into the whole
-# flat top (measured x 400->800) before the curve down through the loop
-# (x 800->889) to baseline. The first fix here had pt1 at the loop end,
-# which skipped the entire flat top -- Wilson caught it missing "tracking".
-
-# Third round: the loop's own arc was undersampled (2 points across a near-
-# 180-degree turn), and the switch to Catmull-Rom actually made that worse
-# -- wide spacing through a sharp turn overshoots and wobbles with this
-# spline where the old one didn't. Fixed the same way as Ālap's crotch:
-# more real measurements, not a different curve-fitting trick.
+# See uni0710.toml's header note on coordinate provenance and history --
+# same skeleton-trace method as the final fix there (medians below are a
+# skimage skeletonize + shortest-path trace between pt1 and the tail,
+# RDP-simplified, not hand-picked points). Topology confirmed against
+# Kiraz's own figure (§505, zoomed off the scan): after the pt1->pt2 nub and
+# retrace, "continues to pt3" carries on PAST pt1 in the original rightward
+# direction -- in this font that short hop is stretched into the whole flat
+# top before curving down through the loop to baseline.
 
 [[stroke]]
-median = [[420, 385], [370, 375], [800, 355], [834, 300], [848, 240], [853, 180], [848, 120], [819, 80], [500, 38], [150, 45], [75, 76]]
+median = [[410.0, 386.0], [701.0, 389.0], [757.3, 381.0], [796.0, 362.0], [815.7, 340.7], [830.7, 311.7], [849.7, 218.7], [847.0, 124.0], [837.3, 92.7], [819.7, 67.0], [781.3, 47.3], [710.0, 39.0], [254.0, 38.3], [153.0, 49.7], [116.7, 64.0], [98.7, 78.3]]
 status = "confirmed"
 source = "kiraz-2012 §505 (Estrangela Bēt, isolated -- one broken stroke)"
 note = """

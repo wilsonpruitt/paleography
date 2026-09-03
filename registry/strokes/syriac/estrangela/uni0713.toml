@@ -11,12 +11,17 @@ outline = "M1222 -335Q1182 -306 1135.0 -274.5Q1088 -243 1033 -211Q977 -178 912.0
 letter = "ܓ"
 name = "Gāmal"
 
-# See uni0710.toml's header note on coordinate provenance -- same method.
-# Gāmal's descender genuinely runs below the descender line per Kiraz;
-# this glyph's own bbox (y down to -375) is the evidence for how far.
+# See uni0710.toml's header note on coordinate provenance and history --
+# same skeleton-trace method as the final fix there (skimage skeletonize +
+# shortest-path trace through pt1, the reversal tip, and the tail,
+# RDP-simplified, not hand-picked points). Gāmal's descender genuinely runs
+# below the descender line per Kiraz; this glyph's own bbox (y down to -375)
+# is the evidence for how far. The tiny back-and-forth at the reversal tip
+# (two near-duplicate points a few units apart) is the actual traced pen
+# reversal, not noise -- left in rather than collapsed to one point.
 
 [[stroke]]
-median = [[480, 480], [970, -70], [1300, -323], [970, -70], [450, 29], [60, 50]]
+median = [[481.0, 485.0], [649.3, 271.7], [759.0, 143.3], [883.3, 12.3], [979.7, -74.7], [998.7, -128.3], [1269.7, -323.7], [1299.3, -319.7], [1269.7, -323.7], [999.0, -128.3], [988.0, -133.7], [932.3, -122.3], [817.0, -66.3], [677.7, -16.7], [548.7, 14.7], [438.3, 31.0], [273.0, 38.0], [94.7, 27.7], [60.0, 50.7]]
 status = "confirmed"
 source = "kiraz-2012 §508 (Estrangela Gāmal, isolated+initial -- one broken stroke)"
 note = """
