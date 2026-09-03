@@ -251,9 +251,21 @@ on Fable**, and steer it toward ending in a written score (a plan/conventions fi
 `SYRIAC-WEB-PLAN.md` itself was scored, not toward code. A cheaper session executes the score
 afterward, same pattern as the web build's own Phases A–E.
 
-1. **A downloadable PDF per lesson** — grammar notes up front, drills at the end, **answers
-   printed on the back** (so the sheet works closed-book, face-down, the way a paper worksheet
-   would). Nothing is scoped yet: not the layout, not the generation tool (LaTeX? a print
+1. ✅ **SCORED 2026-09-02 (Fable) → `SYRIAC-PDF-PLAN.md`. Execution = Sonnet, Phase 0 first
+   (hand-assemble Lesson 2, Wilson prints it duplex and runs it with a pencil — the paper G2).**
+   Settled by a smoke test on this Mac, not by taste: headless Google Chrome (installed)
+   shapes pointed Estrangela correctly and embeds Noto Sans Syriac as a subset; it IGNORES
+   `break-before: right`, so duplex parity (every sheet's front on an odd page) is the
+   generator's job — count pages with `pdfinfo`, pad, merge with `qpdf`, all already on the
+   machine, zero new deps. Unit = the SHEET (front questions / back answers), four per lesson,
+   chunked so no side can overflow and checked by page count. ⭐ One fact that corrects the web
+   plan: the live site uses **Noto Sans Syriac from Google Fonts, not Meltho** — which is
+   exactly right for a PDF, since embedding subsets fonts and Meltho's no-modification licence
+   was never resolved for that; Noto/Garamond/Plex are OFL. §9 lists seven rulings, each with a
+   default a bare "go" takes. *(Original ask, kept for the record:)* grammar notes up front,
+   drills at the end, **answers printed on the back** (so the sheet works closed-book,
+   face-down, the way a paper worksheet would). Nothing was scoped at the time: not the
+   layout, not the generation tool (LaTeX? a print
    stylesheet + browser print-to-PDF? `weasyprint`/`wkhtmltopdf` off the same rendered HTML
    Phase A already produces?), not whether it's one PDF per lesson or one for the whole course,
    not where the file lives (uploaded per lesson? generated at build time into `learn/site/`
