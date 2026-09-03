@@ -32,7 +32,8 @@ header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
 h1.wm{font-family:var(--serif);font-size:24px;font-weight:400;margin:0}
 h1.wm a{color:var(--text);text-decoration:none}
 .spacer{flex:1}
-header a.nav{color:var(--muted);text-decoration:none;font-size:15px}
+header .navlinks{display:flex;gap:14px}
+header a.nav{color:var(--muted);text-decoration:none;font-size:15px;white-space:nowrap}
 header a.nav:hover{color:var(--text)}
 h1{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.25;margin:0 0 6px}
 h2{font-family:var(--serif);font-weight:400;font-size:24px;margin:36px 0 10px;
@@ -77,8 +78,10 @@ tbody tr:last-child td{border-bottom:0}
 <header>
   <h1 class="wm"><a href="/">A Syriac Chrestomathy</a></h1>
   <div class="spacer"></div>
-  <a class="nav" href="/sources">sources</a>
-  <a class="nav" href="/for-syriacists">for syriacists</a>
+  <nav class="navlinks">
+    <a class="nav" href="/sources">sources</a>
+    <a class="nav" href="/for-syriacists">for syriacists</a>
+  </nav>
 </header>
 __BODY__
 __FOOTER__
