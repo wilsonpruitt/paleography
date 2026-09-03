@@ -27,8 +27,15 @@ name = "Ālap"
 # (the disconnected fragment Wilson would have seen next). Both segments now
 # sampled densely along their real curve, not just their endpoints.
 
+# Third round: Wilson correctly diagnosed the real cause after the smoothing
+# swap didn't fix it -- the crotch isn't a sharp point at all, it's a short
+# region (roughly y 300-320) where the two arms' ink actually MERGES into one
+# blob before the notch opens up below it. Jumping straight from the
+# diagonal's point to the leg's point cut across that notch. Added a point
+# anchored inside the measured merge zone so the curve stays in real ink.
+
 [[stroke]]
-median = [[910, 546], [700, 432], [500, 358], [300, 320], [120, 270], [145, 150], [170, 10]]
+median = [[910, 546], [700, 432], [500, 358], [300, 320], [260, 298], [120, 270], [145, 150], [170, 10]]
 status = "confirmed"
 source = "kiraz-2012 §502 (Estrangela Ālap, stroke 1)"
 note = """

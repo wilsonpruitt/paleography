@@ -21,8 +21,14 @@ name = "Bēth"
 # (x 800->889) to baseline. The first fix here had pt1 at the loop end,
 # which skipped the entire flat top -- Wilson caught it missing "tracking".
 
+# Third round: the loop's own arc was undersampled (2 points across a near-
+# 180-degree turn), and the switch to Catmull-Rom actually made that worse
+# -- wide spacing through a sharp turn overshoots and wobbles with this
+# spline where the old one didn't. Fixed the same way as Ālap's crotch:
+# more real measurements, not a different curve-fitting trick.
+
 [[stroke]]
-median = [[420, 385], [370, 375], [800, 355], [853, 200], [819, 80], [150, 45], [75, 76]]
+median = [[420, 385], [370, 375], [800, 355], [834, 300], [848, 240], [853, 180], [848, 120], [819, 80], [500, 38], [150, 45], [75, 76]]
 status = "confirmed"
 source = "kiraz-2012 §505 (Estrangela Bēt, isolated -- one broken stroke)"
 note = """
