@@ -109,18 +109,20 @@ def load(path):
 
 
 def _smooth_path(points):
-    """Quadratic-through-midpoints smoothing over a polyline -- same trick
-    strokesvg and most stroke-median renderers use so a hand-authored 4-8
-    point median doesn't render as visibly faceted."""
+    """Catmull-Rom-to-cubic-Bezier smoothing over a polyline: passes exactly
+    THROUGH every given point (unlike a quadratic-through-midpoints curve,
+    which only approaches its control points and visibly cuts corners --
+    caught on Alap's crotch, a genuinely sharp turn per Kiraz's own prose).
+    Smooth between points, exact at them."""
     if len(points) < 3:
         return "M " + " L ".join(f"{x},{y}" for x, y in points)
+    pts = [points[0]] + list(points) + [points[-1]]  # phantom endpoints
     d = f"M {points[0][0]},{points[0][1]} "
-    for i in range(1, len(points) - 1):
-        x0, y0 = points[i]
-        x1, y1 = points[i + 1]
-        mx, my = (x0 + x1) / 2, (y0 + y1) / 2
-        d += f"Q {x0},{y0} {mx},{my} "
-    d += f"L {points[-1][0]},{points[-1][1]}"
+    for i in range(1, len(pts) - 2):
+        p0, p1, p2, p3 = pts[i - 1], pts[i], pts[i + 1], pts[i + 2]
+        c1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
+        c2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
+        d += f"C {c1[0]:.1f},{c1[1]:.1f} {c2[0]:.1f},{c2[1]:.1f} {p2[0]},{p2[1]} "
     return d
 
 
