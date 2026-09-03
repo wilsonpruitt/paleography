@@ -288,7 +288,13 @@ afterward, same pattern as the web build's own Phases A–E.
    The lesson content itself (`learn/syriac/LESSON-N.md`, `drill/LNN.toml`) is already the
    single source everything else in this build derives from — the PDF should be a fourth
    consumer of that same source, not a fifth hand-authored thing to keep in sync.
-2. **A calligraphy / stroke-order generator**, showing HOW a letter is formed (pen-path order),
+2. ⬜ **Kickoff brief written 2026-09-03 (Sonnet, prep only, no rulings) →
+   `SYRIAC-CALLIGRAPHY-KICKOFF.md`. READ THAT FILE FIRST when this starts — it is the
+   research handoff (what exists, what doesn't, five open questions, HanziWriter as prior
+   art worth evaluating) so the actual scoping session doesn't re-derive context.** ⚠ **The
+   scoping itself is Fable work, not Sonnet** — greenfield cross-project architecture
+   decision, per the model-prudence rubric; a "check your model" nudge was given
+   2026-09-02 when this was raised. **A calligraphy / stroke-order generator**, showing HOW a letter is formed (pen-path order),
    not just its finished shape — the thing Lesson 0 currently doesn't teach at all (it's
    recognition-only: name the shape, say the sound). **This is not a new idea — it is
    `SYRIAC-LANGUAGE-PILOT.md` §10's second deferred idea, already scoped in outline**: a
