@@ -17,9 +17,18 @@ name = "Ālap"
 # (hand-guessed against the prose alone) visibly missing the actual ink --
 # see git history. Order, stroke count, direction and every quoted phrase
 # are Kiraz's; only the numbers are this font's.
+#
+# Second round: Wilson caught this diagonal still reading slightly off after
+# the first fix. Cause: the top diagonal isn't straight (it curves), but the
+# median only had 2 points (start + crotch), so a straight interpolation
+# drifted off the true centerline mid-stroke -- same cause hit the left leg
+# too, which bows left before returning right to its tip; a straight
+# crotch->tip jump cut across empty space and the clip dropped it entirely
+# (the disconnected fragment Wilson would have seen next). Both segments now
+# sampled densely along their real curve, not just their endpoints.
 
 [[stroke]]
-median = [[915, 546], [155, 337], [170, 10]]
+median = [[910, 546], [700, 432], [500, 358], [300, 320], [120, 270], [145, 150], [170, 10]]
 status = "confirmed"
 source = "kiraz-2012 §502 (Estrangela Ālap, stroke 1)"
 note = """
@@ -31,7 +40,7 @@ stroke is clubbed at pt 1."
 """
 
 [[stroke]]
-median = [[410, 265], [600, 110], [730, 10]]
+median = [[410, 255], [500, 189], [600, 110], [700, 48], [730, 10]]
 status = "confirmed"
 source = "kiraz-2012 §502 (Estrangela Ālap, stroke 2)"
 note = """
