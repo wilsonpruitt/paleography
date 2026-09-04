@@ -341,6 +341,41 @@ afterward, same pattern as the web build's own Phases A–E.
    **Not done, not blocking:** the `--lesson N`/full-course PDF rebuild for lessons other
    than 0 (they don't cite any letters, so nothing to wire — only Lesson 0 uses
    `{stroke:X}`). Deploy is still its own hard stop, unrelated to any of the above.
+   ⚠ **Post-deploy: Mīm (uni0721) was still broken, and the debugging saga is worth reading
+   before touching stroke data again.** After the first deploy, Wilson reported Mīm's ring
+   incomplete and the tail starting halfway. What followed was a real methodological trap:
+   every fix attempt (native stroke at various widths, a hand-built offset-ribbon fill, a
+   disc-stamped fill, clip-path on/off) looked FIXED in Playwright screenshots but Wilson
+   kept reporting the SAME break in both Safari and real Chrome. The false lead was
+   "Chromium silently drops thick round-joined strokes over tight curvature" — plausible,
+   reproduced repeatedly in Playwright, entirely wrong. **Root cause, found only once Wilson
+   published a live Artifact so he could give ground truth from his own real browser**: his
+   test showed every stroke-width from 8 to 46 stopping at the identical spot — proof it
+   was never a rendering bug, since width can't matter if the path never reaches the ink.
+   Root cause was `tools/strokes.py`'s coverage: stroke 1's traced median only went around
+   the TOP and RIGHT of the ring and stopped, never continuing back around the bottom/inner
+   side to close the loop; stroke 2 started ~90 units below where the tail's ink actually
+   begins. **Verified with a reusable, renderer-independent method**: rasterize the true
+   glyph outline (fill) and the drawn stroke (also filled, any width) via cairosvg, then
+   count what fraction of true-ink pixels the stroke never touches — 56% uncovered before
+   the fix, ~0 real after (the residual "uncovered" is just the round pen's edge sitting a
+   few units inside the font's sharper contour, expected). **Lesson for next time a traced
+   letter "looks broken": check ink COVERAGE (does the path reach every part of the true
+   shape) before suspecting the renderer — a screenshot showing a gap could be either PATH
+   OMISSION (fixed here, real, renderer-independent) or a RENDERER LIMIT (chased for over an
+   hour here, was a phantom). The coverage-percentage script is the fast, cheap test to run
+   FIRST; only chase renderer theories if coverage is already ~100% and it still looks wrong.**
+   Also: **Playwright's browser here runs software rendering (SwiftShader/no-GPU)** — it can
+   diverge from what a user's real hardware-accelerated Chrome or Safari shows, and did,
+   repeatedly, across an entire investigation. Don't trust a Playwright screenshot alone to
+   close out a rendering bug report; get the user's own eyes on it (or a published Artifact,
+   which they can view in their own real browser) before declaring victory.
+   Wilson confirmed the corrected version via that Artifact, 2026-09-03: **"yes corrected
+   one gets it finally. we may need some future polish but at least we understand each other
+   and offer the stroke."** `uni0721.toml`'s two strokes rewritten; `tools/strokes.py`'s
+   short-lived `stroke_width` per-glyph override and ribbon/disc-fill helpers were added and
+   then removed again once the real cause was found — the file is back to one rendering path
+   for all 22 letters. **Still not pushed/deployed as of this note** — do that next.
    *(Kickoff-era note, kept for the record:)* Kickoff brief written 2026-09-03 (Sonnet, prep only, no rulings) →
    `SYRIAC-CALLIGRAPHY-KICKOFF.md`. READ THAT FILE FIRST when this starts — it is the
    research handoff (what exists, what doesn't, five open questions, HanziWriter as prior

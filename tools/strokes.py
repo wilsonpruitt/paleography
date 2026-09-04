@@ -14,6 +14,7 @@ letter" rather than a bare line.
 No dependency beyond fontTools (already installed for python3.11 on this Mac).
 """
 import argparse
+import math
 import pathlib
 import sys
 
@@ -226,11 +227,21 @@ def svg(data, mode="animate", stroke_width=46, size=220):
     x0, y0, x1, y1 = [float(v) for v in g["bbox"].split(",")]
     pad = 60
     vb = f"{x0 - pad} {-(y1) - pad} {(x1 - x0) + 2 * pad} {(y1 - y0) + 2 * pad}"
+    # Explicit, SQUARE width/height (not just viewBox) give the <svg> a real,
+    # aspect-neutral intrinsic size. A non-square intrinsic size (e.g. sized to
+    # the glyph's own tall/narrow or wide/short bbox) breaks CSS `width/height: N%`
+    # sizing in the widget CSS -- browsers derive height from width via the SVG's
+    # own aspect ratio instead of resolving each percentage against the container,
+    # silently overflowing tall letters (Zayn) and shrinking wide ones (Mim).
+    # Square-to-square percentages can't hit that bug; the actual letterboxing of
+    # a non-square glyph into this square box is left to viewBox + the default
+    # preserveAspectRatio (xMidYMid meet). Caught on the /letters proof page.
     # font coords are y-up with baseline 0; SVG is y-down, so flip.
     flip = f'transform="scale(1,-1)"'
     strokes = data.get("stroke", [])
     parts = [
-        f'<svg viewBox="{vb}" xmlns="http://www.w3.org/2000/svg" class="stroke-fig" data-mode="{mode}">',
+        f'<svg viewBox="{vb}" width="{size}" height="{size}" '
+        f'xmlns="http://www.w3.org/2000/svg" class="stroke-fig" data-mode="{mode}">',
         f'<g {flip}>',
         f'<clipPath id="clip-{g["codepoint"].replace(".", "-")}"><path d="{g["outline"]}"/></clipPath>',
         f'<path d="{g["outline"]}" fill="currentColor" fill-opacity="0.16" '
